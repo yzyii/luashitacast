@@ -41,41 +41,41 @@ end
 
 function gcmage.EquipStaff()
     local spell = gData.GetAction();
-	
+    
     if (spell.Skill == 'Healing Magic') then
         if lightstaff ~= '' then gFunc.Equip('Main', lightstaff); end
     elseif (spell.Skill == 'Elemental Magic') then
         if (spell.Element == 'Fire') then
             gcmage.EquipStaffNuke(firestaff);
         elseif (spell.Element == 'Earth') then
-		    gcmage.EquipStaffNuke(earthstaff);
+            gcmage.EquipStaffNuke(earthstaff);
         elseif (spell.Element == 'Water') then
-		    gcmage.EquipStaffNuke(waterstaff);
+            gcmage.EquipStaffNuke(waterstaff);
         elseif (spell.Element == 'Wind') then
-		    gcmage.EquipStaffNuke(windstaff);
+            gcmage.EquipStaffNuke(windstaff);
         elseif (spell.Element == 'Ice') then
-		    gcmage.EquipStaffNuke(icestaff);
+            gcmage.EquipStaffNuke(icestaff);
         elseif (spell.Element == 'Thunder') then
-		    gcmage.EquipStaffNuke(thunderstaff);
+            gcmage.EquipStaffNuke(thunderstaff);
         end
     elseif (spell.Skill == 'Enfeebling Magic') then
-		if string.contains(spell.Name, 'Sleep') or string.contains(spell.Name, 'Blind') then
-		    gcmage.EquipStaffEnfeebling(darkstaff);
-		elseif string.contains(spell.Name, 'Bind') or string.contains(spell.Name, 'Paralyze') then
-		    gcmage.EquipStaffEnfeebling(icestaff);
-		elseif string.contains(spell.Name, 'Slow') then
-		    gcmage.EquipStaffEnfeebling(earthstaff);
-		elseif string.contains(spell.Name, 'Silence') or string.contains(spell.Name, 'Gravity') then
-		    gcmage.EquipStaffEnfeebling(windstaff);
-		elseif string.contains(spell.Name, 'Poison') then
-		    gcmage.EquipStaffEnfeebling(waterstaff);
-		elseif string.contains(spell.Name, 'Dia') then
-		    gcmage.EquipStaffEnfeebling(lightstaff);
+        if string.contains(spell.Name, 'Sleep') or string.contains(spell.Name, 'Blind') then
+            gcmage.EquipStaffEnfeebling(darkstaff);
+        elseif string.contains(spell.Name, 'Bind') or string.contains(spell.Name, 'Paralyze') then
+            gcmage.EquipStaffEnfeebling(icestaff);
+        elseif string.contains(spell.Name, 'Slow') then
+            gcmage.EquipStaffEnfeebling(earthstaff);
+        elseif string.contains(spell.Name, 'Silence') or string.contains(spell.Name, 'Gravity') then
+            gcmage.EquipStaffEnfeebling(windstaff);
+        elseif string.contains(spell.Name, 'Poison') then
+            gcmage.EquipStaffEnfeebling(waterstaff);
+        elseif string.contains(spell.Name, 'Dia') then
+            gcmage.EquipStaffEnfeebling(lightstaff);
         end
     elseif (spell.Skill == 'Dark Magic') then
-		if string.contains(spell.Name, 'Stun') then
-		    if thunderstaff ~= '' then gFunc.Equip('Main', thunderstaff); end
-		else
+        if string.contains(spell.Name, 'Stun') then
+            if thunderstaff ~= '' then gFunc.Equip('Main', thunderstaff); end
+        else
             if darkstaff ~= '' then gFunc.Equip('Main', darkstaff); end
         end
     elseif (spell.Skill == 'Divine Magic') then
@@ -85,18 +85,18 @@ end
 
 function gcmage.EquipStaffEnfeebling(staff)
     if staff ~= '' then
-	    gFunc.Equip('Main', staff);
+        gFunc.Equip('Main', staff);
     else
-	    gFunc.EquipSet('FallbackEnfeeblingSub');
-	end
+        gFunc.EquipSet('FallbackEnfeeblingSub');
+    end
 end
 
 function gcmage.EquipStaffNuke(staff)
     if staff ~= '' then
-	    gFunc.Equip('Main', staff);
+        gFunc.Equip('Main', staff);
     else
-	    gFunc.EquipSet('FallbackNukeSub');
-	end
+        gFunc.EquipSet('FallbackNukeSub');
+    end
 end
 
 function gcmage.DoMidcast()
@@ -116,20 +116,20 @@ function gcmage.DoMidcast()
         end
         if (player.SubJob == "WHM") then
             gFunc.EquipSet('WHMSJ');
-		end
+        end
     elseif (spell.Skill == 'Elemental Magic') then
-	    local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
+        local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
         gFunc.EquipSet('Nuke');
         if (gcdisplay.GetToggle('Nuke') == 'ACC') or (ElementalDebuffs:contains(spell.Name)) then
             gFunc.EquipSet('NukeACC');
             if (player.SubJob == "BLM") then
                 gFunc.EquipSet('BLMSJ');
-		    end
-			if (weather.WeatherElement == 'Dark') and diabolos_earring then
-		        gFunc.Equip('Ear2', 'Diabolos\'s Earring');
-		    end
+            end
+            if (weather.WeatherElement == 'Dark') and diabolos_earring then
+                gFunc.Equip('Ear2', 'Diabolos\'s Earring');
+            end
         else
-		    if (spell.Element == weather.WeatherElement) or (spell.Element == weather.DayElement) then
+            if (spell.Element == weather.WeatherElement) or (spell.Element == weather.DayElement) then
                 if (spell.Element == 'Fire') and karinobi then
                     gFunc.Equip('Waist', 'Karin Obi');
                 elseif (spell.Element == 'Earth') and dorinobi then
@@ -143,35 +143,35 @@ function gcmage.DoMidcast()
                 elseif (spell.Element == 'Thunder') and rairinobi then
                     gFunc.Equip('Waist', 'Rairin Obi');
                 end
-			end
-			if (spell.Element == weather.DayElement) and sorcerers_tonban then
+            end
+            if (spell.Element == weather.DayElement) and sorcerers_tonban then
                 gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
-			end
-			if (player.HPP < 76 and player.TP < 1000) and sorcerers_ring then
-			    gFunc.Equip('Ring1', 'Sorcerer\'s Ring');
-			end
-        	if (spell.MppAftercast < 51) and uggalepih_pendant then
-            	gFunc.Equip('Neck', 'Uggalepih Pendant');
-        	end
+            end
+            if (player.HPP < 76 and player.TP < 1000) and sorcerers_ring then
+                gFunc.Equip('Ring1', 'Sorcerer\'s Ring');
+            end
+            if (spell.MppAftercast < 51) and uggalepih_pendant then
+                gFunc.Equip('Neck', 'Uggalepih Pendant');
+            end
         end
     elseif (spell.Skill == 'Enfeebling Magic') then
         gFunc.EquipSet('Enfeebling');
-		if (weather.WeatherElement == 'Dark') and diabolos_earring then
-		    gFunc.Equip('Ear2', 'Diabolos\'s Earring');
-		end
-		if (string.contains(spell.Name, 'Paralyze') or string.contains(spell.Name, 'Slow')) then
+        if (weather.WeatherElement == 'Dark') and diabolos_earring then
+            gFunc.Equip('Ear2', 'Diabolos\'s Earring');
+        end
+        if (string.contains(spell.Name, 'Paralyze') or string.contains(spell.Name, 'Slow')) then
             gFunc.EquipSet('EnfeeblingMND');
-		elseif (string.contains(spell.Name, 'Gravity') or string.contains(spell.Name, 'Blind')) then
-		    gFunc.EquipSet('EnfeeblingINT');
+        elseif (string.contains(spell.Name, 'Gravity') or string.contains(spell.Name, 'Blind')) then
+            gFunc.EquipSet('EnfeeblingINT');
         end
     elseif (spell.Skill == 'Dark Magic') then
         gFunc.EquipSet('Dark');
-		if (weather.DayElement == 'Dark') and diabolos_ring then
-		    gFunc.Equip('Ring1', 'Diabolos\'s Ring');
-		end
-		if (weather.WeatherElement == 'Dark') and diabolos_earring then
-		    gFunc.Equip('Ear2', 'Diabolos\'s Earring');
-		end
+        if (weather.DayElement == 'Dark') and diabolos_ring then
+            gFunc.Equip('Ring1', 'Diabolos\'s Ring');
+        end
+        if (weather.WeatherElement == 'Dark') and diabolos_earring then
+            gFunc.Equip('Ear2', 'Diabolos\'s Earring');
+        end
     elseif (spell.Skill == 'Divine Magic') then
         gFunc.EquipSet('Enfeebling');
     end

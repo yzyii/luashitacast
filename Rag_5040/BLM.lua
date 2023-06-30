@@ -4,27 +4,27 @@ local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
         Body = 'Sorcerer\'s Coat',
-		Ring2 = 'Sattva Ring',
-		Ear1 = 'Loquac. Earring',
+        Ring2 = 'Sattva Ring',
+        Ear1 = 'Loquac. Earring',
         Ear2 = 'Ethereal Earring',
-		Back = 'Umbra Cape',
+        Back = 'Umbra Cape',
         Feet = 'Rostrum Pumps',
-	},
+    },
     Resting = {
         Main = 'Pluto\'s Staff',
         Body = 'Sorcerer\'s Coat',
         Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
-	},
+    },
     Town = {
-	},
+    },
     Dt = {},
     Movement = {},
 
     Precast = {
-		Ear1 = 'Loquac. Earring',
+        Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
-	},
+    },
 
     Cure = {
         Ammo = 'Phtm. Tathlum',
@@ -42,9 +42,9 @@ local sets = {
         Feet = 'Errant Pigaches',
     },
     Cursna = { -- Healing Magic
-		Neck = 'Healing Torque',
-		Legs = 'Druid\'s Slops',
-	},
+        Neck = 'Healing Torque',
+        Legs = 'Druid\'s Slops',
+    },
 
     Enhancing = {
         Main = 'Kirin\'s Pole',
@@ -63,7 +63,7 @@ local sets = {
         Feet = 'Errant Pigaches',
     },
     Stoneskin = { -- Enhancing Skill and MND
-	},
+    },
 
     Enfeebling = {
         Ammo = 'Phtm. Tathlum',
@@ -106,22 +106,22 @@ local sets = {
         Ear2 = 'Moldavite Earring',
         Body = 'Igqira Weskit',
         Hands = 'Wizard\'s Gloves',
-		Ring1 = 'Snow Ring',
+        Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
-		Legs = 'Mahatma Slops',
+        Legs = 'Mahatma Slops',
         Feet = 'Rostrum Pumps',
     },
     NukeACC = { -- Also used for Elemental DoTs
-	};
-	FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
-	
-	WHMSJ = { -- Used for -enmity on Curing
+    };
+    FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
+    
+    WHMSJ = { -- Used for -enmity on Curing
         Ear2 = 'Healer\'s Earring',
-	};
-	
-	TP = {},
+    };
+    
+    TP = {},
 };
 profile.Sets = sets;
 
@@ -142,7 +142,7 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua');
 
 profile.OnLoad = function()
     gcinclude.Load();
-	profile.SetMacroBook();
+    profile.SetMacroBook();
 end
 
 profile.OnUnload = function()

@@ -6,37 +6,37 @@ local sets = {
         Main = 'Terra\'s Staff',
         Legs = 'Blood Cuisses',
         Ring2 = 'Sattva Ring',
-		Ear1 = 'Loquac. Earring',
+        Ear1 = 'Loquac. Earring',
         Ear2 = 'Ethereal Earring',
-		Back = 'Umbra Cape',
+        Back = 'Umbra Cape',
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Feet = 'Dst. Leggings +1',
-	},
+    },
     Resting = {
         Head = 'Duelist\'s Chapeau',
-	    Main = 'Pluto\'s Staff',
+        Main = 'Pluto\'s Staff',
         Body = 'Mahatma Hpl.',
-		Waist = 'Duelist\'s Belt',
+        Waist = 'Duelist\'s Belt',
         Legs = 'Baron\'s Slops',
-	},
+    },
     Town = {
         Body = 'Mahatma Hpl.',
-	},
+    },
     Dt = {
         Head = 'Darksteel Cap +1',
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
-	},
+    },
     Movement = {
-	},
+    },
 
     Precast = {
         Head = 'Warlock\'s Chapeau',
-		Ear1 = 'Loquac. Earring',
-	},
+        Ear1 = 'Loquac. Earring',
+    },
 
     Cure = {
         Head = 'Errant Hat',
@@ -54,8 +54,8 @@ local sets = {
     },
     Cursna = { -- Healing Magic
         Legs = 'Warlock\'s Tights',
-	},
-	
+    },
+    
     Enhancing = {
         Main = 'Mythic Wand +1',
         Sub = 'Numinous Shield',
@@ -73,12 +73,12 @@ local sets = {
         Feet = 'Errant Pigaches',
     },
     Stoneskin = { -- Enhancing Skill and MND
-	},
+    },
 
     Enfeebling = {
         Head = 'Duelist\'s Chapeau',
         Neck = 'Enfeebling Torque',
-		Body = 'Warlock\'s Tabard',
+        Body = 'Warlock\'s Tabard',
         Hands = 'Nashira Gages',
         Back = 'Errant Cape',
         Waist = 'Swift Belt',
@@ -140,22 +140,22 @@ local sets = {
     },
     NukeACC = { -- Also used for Elemental DoTs
         Legs = 'Duelist\'s Tights',
-	};
-	FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
+    };
+    FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
 
-	BLMSJ = { -- Used for additional MACC when NukeACC is being used
+    BLMSJ = { -- Used for additional MACC when NukeACC is being used
         Ear2 = 'Wizard\'s Earring',
-	};
-	WHMSJ = { -- Used for -enmity on Curing
+    };
+    WHMSJ = { -- Used for -enmity on Curing
         Ear2 = 'Healer\'s Earring',
-	};
-	
-	TP = {
+    };
+    
+    TP = {
         Main = 'Martial Anelace',
         Sub = 'Numinous Shield',
-	},
-	
-	Convert = { -- Type /vert to equip this set and /lock your gear at the same time.
+    },
+    
+    Convert = { -- Type /vert to equip this set and /lock your gear at the same time.
         Main = 'Apollo\'s Staff',
         Ammo = 'Phtm. Tathlum',
         Head = 'Faerie Hairpin',
@@ -170,7 +170,7 @@ local sets = {
         Waist = 'Hierarch Belt',
         Legs = 'Blood Cuisses',
         Feet = 'Errant Pigaches',
-	},
+    },
 };
 profile.Sets = sets;
 
@@ -191,7 +191,7 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua');
 
 profile.OnLoad = function()
     gcinclude.Load();
-	profile.SetMacroBook();
+    profile.SetMacroBook();
 end
 
 profile.OnUnload = function()
