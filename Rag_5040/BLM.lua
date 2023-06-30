@@ -1,5 +1,7 @@
 local profile = {};
 
+local fastCastValue = 0.025 -- 2.5% from gear
+
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -158,7 +160,7 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast();
+    gcmage.DoPrecast(fastCastValue);
 end
 
 profile.HandleMidcast = function()

@@ -34,9 +34,16 @@ Everything below can be ignored.
 
 local gcmage = T{};
 
-function gcmage.DoPrecast()
+function gcmage.DoPrecast(fastCastValue)
+    local spell = gData.GetAction();
+    local minimumBuffer = 0.2;
+    local packetDelay = 0.25;
+    local castDelay = ((spell.CastTime * (1 - fastCastValue)) / 1000) - minimumBuffer;
+    if (castDelay >= packetDelay) then
+        gFunc.SetMidDelay(castDelay);
+    end
+
     gFunc.EquipSet('Precast')
-    gcmage.EquipStaff();
 end
 
 function gcmage.EquipStaff()
@@ -100,6 +107,10 @@ function gcmage.EquipStaffNuke(staff)
 end
 
 function gcmage.DoMidcast()
+    gFunc.InterimEquipSet('Idle');
+    if (gcdisplay.GetToggle('DT') == true) then gFunc.InterimEquipSet('Dt') end;
+    if (gcdisplay.GetToggle('Kite') == true) then gFunc.InterimEquipSet('Movement') end;
+
     local weather = gData.GetEnvironment();
     local spell = gData.GetAction();
     local player = gData.GetPlayer();

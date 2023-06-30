@@ -1,5 +1,7 @@
 local profile = {};
 
+local fastCastValue = 0.26 -- 20% from traits 6% from gear
+
 local sets = {
     Idle = {
         Head = 'Duelist\'s Chapeau',
@@ -207,7 +209,7 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast();
+    gcmage.DoPrecast(fastCastValue);
 end
 
 profile.HandleMidcast = function()
