@@ -149,7 +149,7 @@ function gcinclude.RunWarpCudgel()
     AshitaCore:GetChatManager():QueueCommand(-1, '/equip main "Warp Cudgel"');
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main');
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub');
-	gcdisplay.AdvanceToggle('Lock');
+    gcdisplay.AdvanceToggle('Lock');
     local function usecudgel()
         AshitaCore:GetChatManager():QueueCommand(-1, '/item "Warp Cudgel" <me>');
     end
