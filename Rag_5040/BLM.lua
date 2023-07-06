@@ -41,7 +41,7 @@ local sets = {
         Back = 'Errant Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Custom Slacks',
-        Feet = 'Errant Pigaches',
+        Feet = 'Mahatma Pigaches',
     },
     Cursna = { -- Healing Magic
         Neck = 'Healing Torque',
@@ -62,7 +62,7 @@ local sets = {
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Custom Slacks',
-        Feet = 'Errant Pigaches',
+        Feet = 'Mahatma Pigaches',
     },
     Stoneskin = { -- Enhancing Skill and MND
     },
@@ -80,7 +80,7 @@ local sets = {
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Igqira Lappas',
-        Feet = 'Errant Pigaches',
+        Feet = 'Mahatma Pigaches',
     },
     FallbackEnfeeblingSub = {}, -- Used only when you do not have complete staff sets
 

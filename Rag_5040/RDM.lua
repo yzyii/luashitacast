@@ -14,6 +14,7 @@ local sets = {
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Feet = 'Dst. Leggings +1',
+        Ammo = 'Hedgehog Bomb',
     },
     Resting = {
         Head = 'Duelist\'s Chapeau',
@@ -52,12 +53,13 @@ local sets = {
         Back = 'Errant Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
-        Feet = 'Errant Pigaches',
+        Feet = 'Mahatma Pigaches',
+        Ammo = 'Hedgehog Bomb',
     },
     Cursna = { -- Healing Magic
         Legs = 'Warlock\'s Tights',
     },
-    
+
     Enhancing = {
         Main = 'Mythic Wand +1',
         Sub = 'Numinous Shield',
@@ -72,7 +74,8 @@ local sets = {
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Warlock\'s Tights',
-        Feet = 'Errant Pigaches',
+        Feet = 'Mahatma Pigaches',
+        Ammo = 'Hedgehog Bomb',
     },
     Stoneskin = { -- Enhancing Skill and MND
     },
@@ -80,19 +83,20 @@ local sets = {
     Enfeebling = {
         Head = 'Duelist\'s Chapeau',
         Neck = 'Enfeebling Torque',
+        Ear1 = 'Cmn. Earring',
+        Ear2 = 'Cmn. Earring',
         Body = 'Warlock\'s Tabard',
         Hands = 'Nashira Gages',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Aqua Ring',
         Back = 'Errant Cape',
         Waist = 'Swift Belt',
         Legs = 'Mahatma Slops',
-        Feet = 'Errant Pigaches',
+        Feet = 'Mahatma Pigaches',
+        Ammo = 'Hedgehog Bomb',
     },
     EnfeeblingMND = {
-        Ear1 = 'Cmn. Earring',
-        Ear2 = 'Cmn. Earring',
         Hands = 'Dvt. Mitts +1',
-        Ring1 = 'Aqua Ring',
-        Ring2 = 'Aqua Ring',
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
     },
@@ -159,7 +163,7 @@ local sets = {
     
     Convert = { -- Type /vert to equip this set and /lock your gear at the same time.
         Main = 'Apollo\'s Staff',
-        Ammo = 'Phtm. Tathlum',
+        Ammo = 'Hedgehog Bomb',
         Head = 'Faerie Hairpin',
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Loquac. Earring',
@@ -171,7 +175,7 @@ local sets = {
         Back = 'Errant Cape',
         Waist = 'Hierarch Belt',
         Legs = 'Blood Cuisses',
-        Feet = 'Errant Pigaches',
+        Feet = 'Mahatma Pigaches',
     },
 };
 profile.Sets = sets;
