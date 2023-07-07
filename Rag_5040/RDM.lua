@@ -85,10 +85,13 @@ local sets = {
         Neck = 'Jeweled Collar', -- 10
         Body = 'Scorpion Breastplate', -- 9
         Legs = 'Blood Cuisses', -- 21
-        -- Ring1 = 'Malflame Ring', -- 9
+        Feet = 'Power Sandals', -- 7
+        Ring2 = 'Sattva Ring',
+        Back = 'Hexerei Cape',
+        -- Ring1 = 'Ruby Ring', -- 9
         -- Waist = 'Water Belt', -- 20
         -- Hands = 'Scorpion Gauntlets', -- 5
-        -- Feet = 'Power Sandals', -- 7
+
     },
     IceRes = {
         Main = 'Vulcan\'s Staff', -- 20
@@ -100,9 +103,10 @@ local sets = {
         Body = 'Feral Jerkin', -- 6
         Hands = 'Feral Gloves', -- 4
         Legs = 'Feral Trousers', -- 6
+        Ring2 = 'Sattva Ring',
         -- Feet = 'Crimson Greaves', -- 20
         -- Waist = 'Fire Belt', -- 20
-        -- Ring1 = 'Malflame Ring', -- 9
+        -- Ring1 = 'Diamond Ring', -- 9
     },
     Hate = {
         Neck = 'Harmonia\'s Torque', -- 3
