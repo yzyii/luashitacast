@@ -36,7 +36,7 @@ local gcmage = T{};
 
 function gcmage.DoPrecast(fastCastValue)
     local spell = gData.GetAction();
-    local minimumBuffer = 0.2;
+    local minimumBuffer = 0.25;
     local packetDelay = 0.25;
     local castDelay = ((spell.CastTime * (1 - fastCastValue)) / 1000) - minimumBuffer;
     if (castDelay >= packetDelay) then
@@ -108,25 +108,42 @@ end
 
 function gcmage.DoMidcast()
     gFunc.InterimEquipSet('Idle');
-    if (gcdisplay.GetToggle('DT') == true) then gFunc.InterimEquipSet('Dt') end;
+    if (gcdisplay.GetToggle('DT') == true) then gFunc.InterimEquipSet('DT') end;
+    if (gcdisplay.GetToggle('MDT') == true) then gFunc.InterimEquipSet('MDT') end;
+    if (gcdisplay.GetToggle('FireRes') == true) then gFunc.InterimEquipSet('FireRes') end;
+    if (gcdisplay.GetToggle('IceRes') == true) then gFunc.InterimEquipSet('IceRes') end;
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.InterimEquipSet('Movement') end;
 
     local weather = gData.GetEnvironment();
     local spell = gData.GetAction();
     local player = gData.GetPlayer();
 
-    if (spell.Skill == 'Enhancing Magic') then
+    if (spell.Skill == 'Ninjutsu') then
+        if string.contains(spell.Name, 'Utsusemi') then
+            gFunc.InterimEquipSet('SIRD');
+            gFunc.EquipSet('Haste');
+        end
+    elseif (spell.Skill == 'Enhancing Magic') then
         gFunc.EquipSet('Enhancing');
         if string.match(spell.Name, 'Stoneskin') then
             gFunc.EquipSet('Stoneskin');
         end
+        if (string.match(spell.Name, 'Haste') or string.match(spell.Name, 'Refresh') or string.match(spell.Name, 'Blink')) then
+            gFunc.EquipSet('Haste');
+        end
+        if string.match(spell.Name, 'Aquaveil') then
+            gFunc.InterimEquipSet('SIRD');
+            gFunc.EquipSet('SIRD');
+        end
     elseif (spell.Skill == 'Healing Magic') then
         gFunc.EquipSet('Cure');
+        if (gcdisplay.GetToggle('Hate') == true) then
+            gFunc.EquipSet('Hate');
+        elseif (player.SubJob == "WHM") then
+            gFunc.EquipSet('WHMSJ');
+        end
         if string.match(spell.Name, 'Cursna') then
             gFunc.EquipSet('Cursna');
-        end
-        if (player.SubJob == "WHM") then
-            gFunc.EquipSet('WHMSJ');
         end
     elseif (spell.Skill == 'Elemental Magic') then
         local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
@@ -159,7 +176,7 @@ function gcmage.DoMidcast()
                 gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
             end
             if (player.HPP < 76 and player.TP < 1000) and sorcerers_ring then
-                gFunc.Equip('Ring1', 'Sorcerer\'s Ring');
+                gFunc.Equip('Ring2', 'Sorcerer\'s Ring');
             end
             if (spell.MppAftercast < 51) and uggalepih_pendant then
                 gFunc.Equip('Neck', 'Uggalepih Pendant');
@@ -175,11 +192,17 @@ function gcmage.DoMidcast()
         elseif (string.contains(spell.Name, 'Gravity') or string.contains(spell.Name, 'Blind')) then
             gFunc.EquipSet('EnfeeblingINT');
         end
+        if (gcdisplay.GetToggle('Hate') == true) then
+            if (string.contains(spell.Name, 'Sleep') or string.contains(spell.Name, 'Blind') or string.contains(spell.Name, 'Dispel')) then
+                gFunc.EquipSet('Hate');
+            end
+        end
     elseif (spell.Skill == 'Dark Magic') then
         gFunc.EquipSet('Dark');
-        if (weather.DayElement == 'Dark') and diabolos_ring then
-            gFunc.Equip('Ring1', 'Diabolos\'s Ring');
+        if (weather.DayElement == 'Dark') and diabolos_ring and player.MPP < 86 then
+            gFunc.Equip('Ring2', 'Diabolos\'s Ring');
         end
+        -- Remove the Following if you have Dark Earring / Abyssal Earring
         if (weather.WeatherElement == 'Dark') and diabolos_earring then
             gFunc.Equip('Ear2', 'Diabolos\'s Earring');
         end

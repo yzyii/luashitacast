@@ -1,6 +1,6 @@
 local profile = {};
 
-local fastCastValue = 0.025 -- 2.5% from gear
+local fastCastValue = 0.04 -- 4% from gear
 
 local sets = {
     Idle = {
@@ -18,10 +18,15 @@ local sets = {
         Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
     },
-    Town = {
-    },
-    Dt = {},
+    Town = {},
+    DT = {},
+    MDT = {},
     Movement = {},
+    SIRD = {},
+    Haste = {},
+    FireRes = {},
+    IceRes = {},
+    Hate = {},
 
     Precast = {
         Ear1 = 'Loquac. Earring',
