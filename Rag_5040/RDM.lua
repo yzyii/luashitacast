@@ -56,8 +56,7 @@ local sets = {
         -- Feet = 'Coral Greaves +1', -- 2
         -- Feet = 'Crimson Greaves',
     },
-    Movement = {
-    },
+    Movement = {},
     SIRD = { -- 102% to Cap
         Main = 'Hermit\'s Wand', -- 25
         Sub = 'Hermit\'s Wand', -- 25
@@ -91,7 +90,6 @@ local sets = {
         -- Ring1 = 'Ruby Ring', -- 9
         -- Waist = 'Water Belt', -- 20
         -- Hands = 'Scorpion Gauntlets', -- 5
-
     },
     IceRes = {
         Main = 'Vulcan\'s Staff', -- 20
@@ -141,7 +139,7 @@ local sets = {
         Waist = 'Penitent\'s Rope', -- 3
         Legs = 'Mahatma Slops', -- 4
         Feet = 'Mahatma Pigaches', -- 3
-        Ammo = 'Hedgehog Bomb',
+        Ammo = 'Hedgehog Bomb', -- 1
         Head = 'Raven Beret', -- 8
         Body = 'Raven Jupon', -- 9
         Hands = 'Raven Bracers', -- 5
@@ -188,7 +186,7 @@ local sets = {
         Hands = 'Nashira Gages',
         Ring1 = 'Aqua Ring',
         Ring2 = 'Aqua Ring',
-        Back = 'Errant Cape',
+        Back = 'Prism Cape',
         Waist = 'Swift Belt',
         Legs = 'Mahatma Slops',
         Feet = 'Mahatma Pigaches',
@@ -198,7 +196,6 @@ local sets = {
     },
     EnfeeblingMND = {
         Hands = 'Dvt. Mitts +1',
-        Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
@@ -210,7 +207,6 @@ local sets = {
         Hands = 'Duelist\'s Gloves',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
-        Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Feet = 'Wise Pigaches',
     },
@@ -253,7 +249,17 @@ local sets = {
         -- Ear1 = 'Novio Earring',
         -- Hands = 'Zenith Mitts',
     },
-    NukeACC = { -- Also used for Elemental DoTs
+    NukeACC = {
+        Ear1 = 'Abyssal Earring',
+        Ear2 = 'Morion Earring +1',
+        Legs = 'Duelist\'s Tights',
+        Hands = 'Duelist\'s Gloves',
+        Feet = 'Wise Pigaches',
+        -- Back = 'Merciful Cape',
+    };
+    NukeDOT = {
+        Ear1 = 'Abyssal Earring',
+        Ear2 = 'Morion Earring +1',
         Legs = 'Duelist\'s Tights',
         Hands = 'Duelist\'s Gloves',
         Feet = 'Wise Pigaches',

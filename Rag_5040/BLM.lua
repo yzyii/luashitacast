@@ -11,21 +11,68 @@ local sets = {
         Ear2 = 'Ethereal Earring',
         Back = 'Umbra Cape',
         Feet = 'Rostrum Pumps',
+        Ammo = 'Hedgehog Bomb',
     },
     Resting = {
         Main = 'Pluto\'s Staff',
-        Body = 'Sorcerer\'s Coat',
+        Body = 'Mahatma Hpl.',
         Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
+        -- Ear1 = 'Relaxing Earring',
     },
     Town = {},
-    DT = {},
-    MDT = {},
+    DT = {
+        -- Ring1 = 'Jelly Ring', -- 5
+	},
+    MDT = { -- Shell IV provides 23% MDT
+        Head = 'Green Ribbon +1',
+        Neck = 'Jeweled Collar',
+        Back = 'Hexerei Cape', -- 3
+        Ring2 = 'Sattva Ring', -- 5
+        -- Ring1 = 'Merman\'s Ring', -- 4
+        -- Ear1 = 'Merman\'s Earring', -- 2
+        -- Ear2 = 'Merman\'s Earring', -- 2
+	},
     Movement = {},
-    SIRD = {},
-    Haste = {},
-    FireRes = {},
-    IceRes = {},
+    SIRD = { -- 102% to Cap
+        Main = 'Hermit\'s Wand', -- 25
+        Sub = 'Hermit\'s Wand', -- 25
+        Head = 'Nashira Turban', -- 10
+        Waist = 'Heko Obi +1', -- 8
+        Feet = 'Wizard\'s Sabots', --20
+        -- Waist = 'Druid\'s Rope', -- +2
+        -- Neck = 'Willpower Torque', -- 5
+    },
+    Haste = {
+        Ear1 = 'Loquac. Earring',
+        Hands = 'Nashira Gages',
+        Waist = 'Swift Belt',
+        -- Feet = 'Nashira Crackows',
+        -- Legs = 'Nashira Serawheels',
+    },
+    FireRes = {
+        Main = 'Neptune\'s Staff', -- 20
+        Ear1 = 'Ruby Earring', -- 10
+        Ear2 = 'Ruby Earring', -- 10
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Feet = 'Power Sandals', -- 7
+        Ring2 = 'Sattva Ring',
+        Back = 'Hexerei Cape',
+        -- Ring1 = 'Ruby Ring', -- 9
+        -- Waist = 'Water Belt', -- 20
+    },
+    IceRes = {
+        Main = 'Vulcan\'s Staff', -- 20
+        Ear1 = 'Ruby Earring', -- 10
+        Ear2 = 'Ruby Earring', -- 10
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Ring2 = 'Sattva Ring',
+        Back = 'Hexerei Cape',
+        -- Waist = 'Fire Belt', -- 20
+        -- Ring1 = 'Diamond Ring', -- 9
+    },
     Hate = {},
 
     Precast = {
@@ -34,28 +81,31 @@ local sets = {
     },
 
     Cure = {
-        Ammo = 'Phtm. Tathlum',
-        Head = 'Errant Hat',
+        Ammo = 'Hedgehog Bomb', -- 1
+        Head = 'Errant Hat', -- 5
         Neck = 'Healing Torque',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
-        Body = 'Mahatma Hpl.',
+        Body = 'Mahatma Hpl.', -- 4
         Hands = 'Dvt. Mitts +1',
         Ring1 = 'Aqua Ring',
         Ring2 = 'Aqua Ring',
-        Back = 'Errant Cape',
-        Waist = 'Penitent\'s Rope',
-        Legs = 'Custom Slacks',
-        Feet = 'Mahatma Pigaches',
+        Back = 'Errant Cape', -- 5
+        Waist = 'Penitent\'s Rope', -- 3
+        Legs = 'Mahatma Slops', -- 4
+        Feet = 'Mahatma Pigaches', -- 3
+        -- Hands = 'Errant Cuffs', -- 2
     },
     Cursna = { -- Healing Magic
         Neck = 'Healing Torque',
         Legs = 'Druid\'s Slops',
+        Main = 'Prelatic Pole',
+        -- Back = 'Altruistic Cape',
     },
 
     Enhancing = {
         Main = 'Kirin\'s Pole',
-        Ammo = 'Phtm. Tathlum',
+        Ammo = 'Hedgehog Bomb',
         Head = 'Errant Hat',
         Neck = 'Enhancing Torque',
         Ear1 = 'Cmn. Earring',
@@ -66,32 +116,51 @@ local sets = {
         Ring2 = 'Aqua Ring',
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
-        Legs = 'Custom Slacks',
+        Legs = 'Mahatma Slops',
         Feet = 'Mahatma Pigaches',
     },
     Stoneskin = { -- Enhancing Skill and MND
+        -- Neck = 'Stone Gorget',
     },
 
     Enfeebling = {
-        Ammo = 'Phtm. Tathlum',
+        Ammo = 'Hedgehog Bomb',
         Head = 'Igqira Tiara',
         Neck = 'Enfeebling Torque',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
         Body = 'Wizard\'s Coat',
-        Hands = 'Dvt. Mitts +1',
+        Hands = 'Nashira Gages',
         Ring1 = 'Aqua Ring',
         Ring2 = 'Aqua Ring',
         Back = 'Prism Cape',
-        Waist = 'Penitent\'s Rope',
+        Waist = 'Swift Belt',
         Legs = 'Igqira Lappas',
         Feet = 'Mahatma Pigaches',
+        -- Back = 'Altruistic Cape',
+        -- Ear2 = 'Enfeebling Earring',
+    },
+    EnfeeblingMND = {
+        Hands = 'Dvt. Mitts +1',
+        Waist = 'Penitent\'s Rope',
+        Ear1 = 'Cmn. Earring',
+        Ear2 = 'Cmn. Earring',
+    },
+    EnfeeblingINT = {
+        Ammo = 'Phtm. Tathlum',
+        Ear1 = 'Abyssal Earring',
+        Ear2 = 'Morion Earring +1',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Waist = 'Penitent\'s Rope',
+        Feet = 'Rostrum Pumps',
+        -- Hands = 'Errant Cuffs',
     },
     FallbackEnfeeblingSub = {}, -- Used only when you do not have complete staff sets
 
     Dark = {
         Ammo = 'Phtm. Tathlum',
-        Head = 'Demon Helm +1',
+        Head = 'Nashira Turban',
         Neck = 'Dark Torque',
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Morion Earring +1',
@@ -103,6 +172,8 @@ local sets = {
         Waist = 'Penitent\'s Rope',
         Legs = 'Wizard\'s Tonban',
         Feet = 'Rostrum Pumps',
+        -- Back = 'Merciful Cape',
+        -- Ear2 = 'Dark Earring',
     },
 
     Nuke = {
@@ -119,14 +190,36 @@ local sets = {
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
         Feet = 'Rostrum Pumps',
+        -- Ear1 = 'Novio Earring',
+        -- Hands = 'Zenith Mitts',
     },
-    NukeACC = { -- Also used for Elemental DoTs
-    };
+    NukeACC = {
+        Hands = 'Wizard\'s Gloves',
+    },
+	NukeDOT = {},
+	--[[
+	NukeDOT = {
+        Main = 'Kirin\'s Pole',
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Demon Helm +1',
+        -- Neck = 'Prudence Torque',
+        Ear1 = 'Abyssal Earring',
+        Ear2 = 'Morion Earring +1',
+        Body = 'Mahatma Hpl.',
+        -- Hands = 'Errant Cuffs',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Back = 'Prism Cape',
+        -- Waist = 'Sorcerer\'s Belt',
+        Legs = 'Mahatma Slops',
+        Feet = 'Rostrum Pumps',
+	},
+	]]
     FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
     
     WHMSJ = { -- Used for -enmity on Curing
         Ear2 = 'Healer\'s Earring',
-    };
+    },
     
     TP = {},
 };

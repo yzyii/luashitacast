@@ -148,13 +148,18 @@ function gcmage.DoMidcast()
     elseif (spell.Skill == 'Elemental Magic') then
         local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
         gFunc.EquipSet('Nuke');
-        if (gcdisplay.GetToggle('Nuke') == 'ACC') or (ElementalDebuffs:contains(spell.Name)) then
+        if (gcdisplay.GetToggle('Nuke') == 'ACC') then
             gFunc.EquipSet('NukeACC');
+            if (weather.WeatherElement == 'Dark') and diabolos_earring then
+                gFunc.Equip('Ear2', 'Diabolos\'s Earring');
+            end
             if (player.SubJob == "BLM") then
                 gFunc.EquipSet('BLMSJ');
             end
-            if (weather.WeatherElement == 'Dark') and diabolos_earring then
-                gFunc.Equip('Ear2', 'Diabolos\'s Earring');
+		elseif (ElementalDebuffs:contains(spell.Name)) then
+            gFunc.EquipSet('NukeDOT');
+            if (player.SubJob == "BLM") then
+                gFunc.EquipSet('BLMSJ');
             end
         else
             if (spell.Element == weather.WeatherElement) or (spell.Element == weather.DayElement) then
