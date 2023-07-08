@@ -78,8 +78,8 @@ local sets = {
     },
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
-        Ear1 = 'Ruby Earring', -- 10
-        Ear2 = 'Ruby Earring', -- 10
+        Ear1 = 'Cmn. Earring', -- 11
+        Ear2 = 'Cmn. Earring', -- 11
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Body = 'Scorpion Breastplate', -- 9
@@ -87,9 +87,9 @@ local sets = {
         Feet = 'Power Sandals', -- 7
         Ring2 = 'Sattva Ring',
         Back = 'Hexerei Cape',
+        Hands = 'Scorpion Gauntlets', -- 5
         -- Ring1 = 'Ruby Ring', -- 9
         -- Waist = 'Water Belt', -- 20
-        -- Hands = 'Scorpion Gauntlets', -- 5
     },
     IceRes = {
         Main = 'Vulcan\'s Staff', -- 20
@@ -229,6 +229,7 @@ local sets = {
         -- Back = 'Merciful Cape',
         -- Ear2 = 'Dark Earring',
         -- Hands = 'Crimson Fng. Gnt.',
+        -- Body = 'Nashira Manteel',
     },
 
     Nuke = {
@@ -267,20 +268,13 @@ local sets = {
     };
     FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
 
-    BLMSJ = { -- Used for additional MACC when NukeACC is being used
-        Ear2 = 'Wizard\'s Earring',
-    };
-    WHMSJ = { -- Used for -enmity on Curing
-        Ear2 = 'Healer\'s Earring',
-    };
-    
     TP = {
         Main = 'Martial Anelace',
         Sub = 'Numinous Shield',
         -- Main = 'Joyeuse',
         -- Sub = 'Genbu\'s Shield',
     },
-    
+
     Convert = { -- Type /vert to equip this set and /lock your gear at the same time.
         Main = 'Apollo\'s Staff',
         Head = 'Faerie Hairpin',
@@ -288,7 +282,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Geist Earring',
         Body = 'Black Cotehardie',
-        Hands = 'Dvt. Mitts +1',
+        Hands = 'Errant Cuffs',
         Ring1 = 'Ether Ring',
         Ring2 = 'Astral Ring',
         Back = 'Errant Cape',

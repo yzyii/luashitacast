@@ -23,7 +23,7 @@ local sets = {
     Town = {},
     DT = {
         -- Ring1 = 'Jelly Ring', -- 5
-	},
+    },
     MDT = { -- Shell IV provides 23% MDT
         Head = 'Green Ribbon +1',
         Neck = 'Jeweled Collar',
@@ -32,7 +32,7 @@ local sets = {
         -- Ring1 = 'Merman\'s Ring', -- 4
         -- Ear1 = 'Merman\'s Earring', -- 2
         -- Ear2 = 'Merman\'s Earring', -- 2
-	},
+    },
     Movement = {},
     SIRD = { -- 102% to Cap
         Main = 'Hermit\'s Wand', -- 25
@@ -52,8 +52,8 @@ local sets = {
     },
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
-        Ear1 = 'Ruby Earring', -- 10
-        Ear2 = 'Ruby Earring', -- 10
+        Ear1 = 'Cmn. Earring', -- 11
+        Ear2 = 'Cmn. Earring', -- 11
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Feet = 'Power Sandals', -- 7
@@ -87,14 +87,13 @@ local sets = {
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
         Body = 'Mahatma Hpl.', -- 4
-        Hands = 'Dvt. Mitts +1',
         Ring1 = 'Aqua Ring',
         Ring2 = 'Aqua Ring',
         Back = 'Errant Cape', -- 5
         Waist = 'Penitent\'s Rope', -- 3
         Legs = 'Mahatma Slops', -- 4
         Feet = 'Mahatma Pigaches', -- 3
-        -- Hands = 'Errant Cuffs', -- 2
+        Hands = 'Errant Cuffs', -- 2
     },
     Cursna = { -- Healing Magic
         Neck = 'Healing Torque',
@@ -154,7 +153,7 @@ local sets = {
         Ring2 = 'Snow Ring',
         Waist = 'Penitent\'s Rope',
         Feet = 'Rostrum Pumps',
-        -- Hands = 'Errant Cuffs',
+        Hands = 'Errant Cuffs',
     },
     FallbackEnfeeblingSub = {}, -- Used only when you do not have complete staff sets
 
@@ -174,6 +173,7 @@ local sets = {
         Feet = 'Rostrum Pumps',
         -- Back = 'Merciful Cape',
         -- Ear2 = 'Dark Earring',
+        -- Body = 'Nashira Manteel',
     },
 
     Nuke = {
@@ -196,9 +196,9 @@ local sets = {
     NukeACC = {
         Hands = 'Wizard\'s Gloves',
     },
-	NukeDOT = {},
-	--[[
-	NukeDOT = {
+    NukeDOT = {},
+    --[[
+    NukeDOT = {
         Main = 'Kirin\'s Pole',
         Ammo = 'Phtm. Tathlum',
         Head = 'Demon Helm +1',
@@ -206,21 +206,17 @@ local sets = {
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Morion Earring +1',
         Body = 'Mahatma Hpl.',
-        -- Hands = 'Errant Cuffs',
+        Hands = 'Errant Cuffs',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
         Back = 'Prism Cape',
         -- Waist = 'Sorcerer\'s Belt',
         Legs = 'Mahatma Slops',
         Feet = 'Rostrum Pumps',
-	},
-	]]
-    FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
-    
-    WHMSJ = { -- Used for -enmity on Curing
-        Ear2 = 'Healer\'s Earring',
     },
-    
+    ]]
+    FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
+
     TP = {},
 };
 profile.Sets = sets;
