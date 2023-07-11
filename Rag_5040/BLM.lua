@@ -11,7 +11,6 @@ local sets = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Back = 'Umbra Cape',
-        Feet = 'Rostrum Pumps',
         Ammo = 'Hedgehog Bomb',
     },
     Resting = {
@@ -24,9 +23,20 @@ local sets = {
     },
     Town = {},
     DT = {
+        Main = 'Terra\'s Staff',
+        Body = 'Sorcerer\'s Coat',
+        Ring1 = 'Merman\'s Ring',
+        Ring2 = 'Sattva Ring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Back = 'Umbra Cape',
+        Ammo = 'Hedgehog Bomb',
         -- Ring1 = 'Jelly Ring', -- 5
     },
     MDT = { -- Shell IV provides 23% MDT
+        Main = 'Terra\'s Staff',
+        Body = 'Sorcerer\'s Coat',
+        Ammo = 'Hedgehog Bomb',
         Head = 'Green Ribbon +1',
         Neck = 'Jeweled Collar',
         Back = 'Hexerei Cape', -- 3
@@ -37,6 +47,13 @@ local sets = {
     },
     Movement = {},
     SIRD = { -- 102% to Cap
+        Body = 'Sorcerer\'s Coat',
+        Ring1 = 'Merman\'s Ring',
+        Ring2 = 'Sattva Ring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Back = 'Umbra Cape',
+        Ammo = 'Hedgehog Bomb',
         Main = 'Hermit\'s Wand', -- 25
         Sub = 'Hermit\'s Wand', -- 25
         Head = 'Nashira Turban', -- 10
@@ -53,6 +70,9 @@ local sets = {
         -- Legs = 'Nashira Serawheels',
     },
     FireRes = {
+        Body = 'Sorcerer\'s Coat',
+        Ring1 = 'Merman\'s Ring',
+        Ammo = 'Hedgehog Bomb',
         Main = 'Neptune\'s Staff', -- 20
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
@@ -65,6 +85,9 @@ local sets = {
         -- Waist = 'Water Belt', -- 20
     },
     IceRes = {
+        Body = 'Sorcerer\'s Coat',
+        Ring1 = 'Merman\'s Ring',
+        Ammo = 'Hedgehog Bomb',
         Main = 'Vulcan\'s Staff', -- 20
         Ear1 = 'Ruby Earring', -- 10
         Ear2 = 'Ruby Earring', -- 10
@@ -76,6 +99,11 @@ local sets = {
         -- Ring1 = 'Diamond Ring', -- 9
     },
     LightningRes = {
+        Body = 'Sorcerer\'s Coat',
+        Ring1 = 'Merman\'s Ring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Ammo = 'Hedgehog Bomb',
         Main = 'Terra\'s Staff', -- 20
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
