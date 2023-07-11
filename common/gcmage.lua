@@ -116,37 +116,45 @@ function gcmage.EquipStaffNuke(staff)
     end
 end
 
-function gcmage.DoMidcast()
-    gFunc.InterimEquipSet('Idle');
-    if (gcdisplay.GetToggle('DT') == true) then gFunc.InterimEquipSet('DT') end;
-    if (gcdisplay.GetToggle('MDT') == true) then gFunc.InterimEquipSet('MDT') end;
-    if (gcdisplay.GetToggle('FireRes') == true) then gFunc.InterimEquipSet('FireRes') end;
-    if (gcdisplay.GetToggle('IceRes') == true) then gFunc.InterimEquipSet('IceRes') end;
-    if (gcdisplay.GetToggle('LightningRes') == true) then gFunc.InterimEquipSet('LightningRes') end;
-    if (gcdisplay.GetToggle('Kite') == true) then gFunc.InterimEquipSet('Movement') end;
+function gcmage.DoMidcast(sets)
+    if (player.MainJob == 'BLM') then
+        gFunc.InterimEquipSet(sets.SIRD);
+    else
+        gFunc.InterimEquipSet(sets.Casting);
+        if (gcdisplay.GetToggle('DT') == true) then gFunc.InterimEquipSet(sets.DT) end;
+        if (gcdisplay.GetToggle('MDT') == true) then gFunc.InterimEquipSet(sets.MDT) end;
+        if (gcdisplay.GetToggle('FireRes') == true) then gFunc.InterimEquipSet(sets.FireRes) end;
+        if (gcdisplay.GetToggle('IceRes') == true) then gFunc.InterimEquipSet(sets.IceRes) end;
+        if (gcdisplay.GetToggle('LightningRes') == true) then gFunc.InterimEquipSet(sets.LightningRes) end;
+        if (gcdisplay.GetToggle('Kite') == true) then gFunc.InterimEquipSet(sets.Movement) end;
+    end
 
     local weather = gData.GetEnvironment();
     local spell = gData.GetAction();
     local player = gData.GetPlayer();
     local target = gData.GetActionTarget();
-	local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0);
+    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0);
 
     if (spell.Skill == 'Ninjutsu') then
         if string.contains(spell.Name, 'Utsusemi') then
-            gFunc.InterimEquipSet('SIRD');
+            gFunc.InterimEquipSet(sets.SIRD);
             gFunc.EquipSet('Haste');
         end
     elseif (spell.Skill == 'Enhancing Magic') then
         gFunc.EquipSet('Enhancing');
         if string.match(spell.Name, 'Stoneskin') then
+            gFunc.InterimEquipSet(sets.SIRD);
             gFunc.EquipSet('Stoneskin');
+        end
+        if string.match(spell.Name, 'Blink') then
+            gFunc.InterimEquipSet(sets.SIRD);
         end
         if (string.match(spell.Name, 'Haste') or string.match(spell.Name, 'Refresh') or string.match(spell.Name, 'Blink')) then
             gFunc.EquipSet('Haste');
         end
         if string.match(spell.Name, 'Aquaveil') then
-            gFunc.InterimEquipSet('SIRD');
-            gFunc.EquipSet('SIRD');
+            gFunc.InterimEquipSet(sets.SIRD);
+            gFunc.EquipSet(sets.SIRD);
         end
         if (string.match(spell.Name, 'Sneak') and target.Name == me and dream_boots) then
             gFunc.Equip('Feet', 'Dream Boots +1');

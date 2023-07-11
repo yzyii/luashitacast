@@ -6,9 +6,10 @@ local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
         Body = 'Sorcerer\'s Coat',
+        Ring1 = 'Merman\'s Ring',
         Ring2 = 'Sattva Ring',
-        Ear1 = 'Loquac. Earring',
-        Ear2 = 'Ethereal Earring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
         Back = 'Umbra Cape',
         Feet = 'Rostrum Pumps',
         Ammo = 'Hedgehog Bomb',
@@ -30,9 +31,9 @@ local sets = {
         Neck = 'Jeweled Collar',
         Back = 'Hexerei Cape', -- 3
         Ring2 = 'Sattva Ring', -- 5
-        -- Ring1 = 'Merman\'s Ring', -- 4
-        -- Ear1 = 'Merman\'s Earring', -- 2
-        -- Ear2 = 'Merman\'s Earring', -- 2
+        Ring1 = 'Merman\'s Ring', -- 4
+        Ear1 = 'Merman\'s Earring', -- 2
+        Ear2 = 'Merman\'s Earring', -- 2
     },
     Movement = {},
     SIRD = { -- 102% to Cap
@@ -40,9 +41,9 @@ local sets = {
         Sub = 'Hermit\'s Wand', -- 25
         Head = 'Nashira Turban', -- 10
         Waist = 'Heko Obi +1', -- 8
-        Feet = 'Wizard\'s Sabots', --20
+        Feet = 'Wizard\'s Sabots', -- 20
+        Neck = 'Willpower Torque', -- 5
         -- Waist = 'Druid\'s Rope', -- +2
-        -- Neck = 'Willpower Torque', -- 5
     },
     Haste = {
         Ear1 = 'Loquac. Earring',
@@ -270,7 +271,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast();
+    gcmage.DoMidcast(sets);
 end
 
 return profile;
