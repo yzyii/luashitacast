@@ -22,6 +22,7 @@ local korin_obi = false
 local anrin_obi = false
 
 -- Set to true if you have the item
+local diabolos_pole = true
 local diabolos_earring = true
 local diabolos_ring = true
 local uggalepih_pendant = true
@@ -54,7 +55,8 @@ end
 
 function gcmage.EquipStaff()
     local spell = gData.GetAction();
-    
+    local weather = gData.GetEnvironment();
+
     if (spell.Skill == 'Healing Magic') then
         if light_staff ~= '' then gFunc.Equip('Main', light_staff); end
     elseif (spell.Skill == 'Elemental Magic') then
@@ -88,6 +90,8 @@ function gcmage.EquipStaff()
     elseif (spell.Skill == 'Dark Magic') then
         if string.contains(spell.Name, 'Stun') then
             if thunder_staff ~= '' then gFunc.Equip('Main', thunder_staff); end
+        elseif string.contains(spell.Name, 'Drain') or string.contains(spell.Name, 'Aspir') then
+            if (weather.WeatherElement == 'Dark' and diabolos_pole) then gFunc.Equip('Main', 'Diabolos\'s Pole'); end
         else
             if dark_staff ~= '' then gFunc.Equip('Main', dark_staff); end
         end
@@ -118,12 +122,14 @@ function gcmage.DoMidcast()
     if (gcdisplay.GetToggle('MDT') == true) then gFunc.InterimEquipSet('MDT') end;
     if (gcdisplay.GetToggle('FireRes') == true) then gFunc.InterimEquipSet('FireRes') end;
     if (gcdisplay.GetToggle('IceRes') == true) then gFunc.InterimEquipSet('IceRes') end;
+    if (gcdisplay.GetToggle('LightningRes') == true) then gFunc.InterimEquipSet('LightningRes') end;
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.InterimEquipSet('Movement') end;
 
     local weather = gData.GetEnvironment();
     local spell = gData.GetAction();
     local player = gData.GetPlayer();
     local target = gData.GetActionTarget();
+	local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0);
 
     if (spell.Skill == 'Ninjutsu') then
         if string.contains(spell.Name, 'Utsusemi') then

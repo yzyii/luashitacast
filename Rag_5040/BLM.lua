@@ -18,6 +18,7 @@ local sets = {
         Body = 'Mahatma Hpl.',
         Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
+        Neck = 'Checkered Scarf',
         -- Ear1 = 'Relaxing Earring',
     },
     Town = {},
@@ -47,7 +48,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Hands = 'Nashira Gages',
         Waist = 'Swift Belt',
-        -- Feet = 'Nashira Crackows',
+        Feet = 'Nashira Crackows',
         -- Legs = 'Nashira Serawheels',
     },
     FireRes = {
@@ -72,6 +73,17 @@ local sets = {
         Back = 'Hexerei Cape',
         -- Waist = 'Fire Belt', -- 20
         -- Ring1 = 'Diamond Ring', -- 9
+    },
+    LightningRes = {
+        Main = 'Terra\'s Staff', -- 20
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Ring2 = 'Sattva Ring',
+        Back = 'Hexerei Cape',
+        -- Ear1 = 'Topaz Earring', -- 10
+        -- Ear2 = 'Topaz Earring', -- 10
+        -- Waist = 'Earth Belt', -- 20
+        -- Ring1 = 'Spinel Ring', -- 9
     },
     Hate = {},
 
@@ -170,7 +182,7 @@ local sets = {
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Wizard\'s Tonban',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Nashira Crackows',
         -- Back = 'Merciful Cape',
         -- Ear2 = 'Dark Earring',
         -- Body = 'Nashira Manteel',

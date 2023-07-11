@@ -16,7 +16,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','iceres','hate','kite','nuke','warpme','vert','lock', 'fight'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','hate','kite','nuke','warpme','vert','lock', 'fight'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -44,14 +44,18 @@ function gcinclude.DoCommands(args)
         gcdisplay.AdvanceToggle('MDT');
         toggle = 'MDT Set';
         status = gcdisplay.GetToggle('MDT');
-    elseif (args[1] == 'fireres') then
+    elseif (args[1] == 'fireres' or args[1] == 'fres') then
         gcdisplay.AdvanceToggle('FireRes');
         toggle = 'Fire Resist Set';
         status = gcdisplay.GetToggle('FireRes');
-    elseif (args[1] == 'iceres') then
+    elseif (args[1] == 'iceres' or args[1] == 'ires') then
         gcdisplay.AdvanceToggle('IceRes');
         toggle = 'Ice Resist Set';
         status = gcdisplay.GetToggle('IceRes');
+    elseif (args[1] == 'lightningres' or args[1] == 'lres') then
+        gcdisplay.AdvanceToggle('LightningRes');
+        toggle = 'Lightning Resist Set';
+        status = gcdisplay.GetToggle('LightningRes');
     elseif (args[1] == 'hate') then
         gcdisplay.AdvanceToggle('Hate');
         toggle = 'Hate Set';
@@ -195,6 +199,7 @@ function gcinclude.DoDefault()
     if (gcdisplay.GetToggle('MDT') == true) then gFunc.EquipSet('MDT') end;
     if (gcdisplay.GetToggle('FireRes') == true) then gFunc.EquipSet('FireRes') end;
     if (gcdisplay.GetToggle('IceRes') == true) then gFunc.EquipSet('IceRes') end;
+    if (gcdisplay.GetToggle('LightningRes') == true) then gFunc.EquipSet('LightningRes') end;
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end;
 end
 
@@ -236,6 +241,7 @@ function gcinclude.SetVariables()
     gcdisplay.CreateToggle('MDT', false);
     gcdisplay.CreateToggle('FireRes', false);
     gcdisplay.CreateToggle('IceRes', false);
+    gcdisplay.CreateToggle('LightningRes', false);
     gcdisplay.CreateToggle('Hate', false);
     gcdisplay.CreateToggle('Kite', false);
     gcdisplay.CreateToggle('Lock', false);

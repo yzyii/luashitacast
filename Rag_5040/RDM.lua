@@ -22,6 +22,7 @@ local sets = {
         Body = 'Mahatma Hpl.',
         Waist = 'Duelist\'s Belt',
         Legs = 'Baron\'s Slops',
+        Neck = 'Checkered Scarf',
         -- Ear1 = 'Relaxing Earring',
     },
     Town = {
@@ -63,20 +64,20 @@ local sets = {
         Head = 'Nashira Turban', -- 10
         Body = 'Warlock\'s Tabard', -- 10
         Waist = 'Heko Obi +1', -- 8
-        Feet = 'Mountain Gaiters' -- 5
+        Feet = 'Mountain Gaiters', -- 5
+        Neck = 'Willpower Torque', -- 5
         -- Waist = 'Druid\'s Rope', -- +2
-        -- Neck = 'Willpower Torque', -- 5
     },
     Haste = {
         Head = 'Warlock\'s Chapeau',
         Ear1 = 'Loquac. Earring',
         Hands = 'Nashira Gages',
         Waist = 'Swift Belt',
+        Feet = 'Nashira Crackows',
         -- Body = 'Duelist\'s Tabard',
-        -- Feet = 'Nashira Crackows',
         -- Legs = 'Nashira Serawheels',
     },
-    FireRes = {
+    FireRes = { -- 133
         Main = 'Neptune\'s Staff', -- 20
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
@@ -91,7 +92,7 @@ local sets = {
         -- Ring1 = 'Ruby Ring', -- 9
         -- Waist = 'Water Belt', -- 20
     },
-    IceRes = {
+    IceRes = { -- 131
         Main = 'Vulcan\'s Staff', -- 20
         Ear1 = 'Ruby Earring', -- 10
         Ear2 = 'Ruby Earring', -- 10
@@ -106,6 +107,19 @@ local sets = {
         -- Waist = 'Fire Belt', -- 20
         -- Ring1 = 'Diamond Ring', -- 9
     },
+    LightningRes = { -- 122
+        Main = 'Terra\'s Staff', -- 20
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Legs = 'Blood Cuisses', -- 21
+        Ring2 = 'Sattva Ring',
+        -- Ear1 = 'Topaz Earring', -- 10
+        -- Ear2 = 'Topaz Earring', -- 10
+        -- Back = 'Lightning Mantle', -- 6
+		-- Ranged = 'Lightning Bow', -- 6
+        -- Waist = 'Earth Belt', -- 20
+        -- Ring1 = 'Spinel Ring', -- 9
+    },
     Hate = {
         Neck = 'Harmonia\'s Torque', -- 3
         Waist = 'Warwolf Belt', -- 3
@@ -118,8 +132,8 @@ local sets = {
         Feet = 'Dst. Leggings +1',
         Ammo = 'Phtm. Tathlum',
         Head = 'Baron\'s Chapeau', -- 2
+        Feet = 'Nashira Crackows',
         -- Body = 'Duelist\'s Tabard',
-        -- Feet = 'Nashira Crackows',
         -- Legs = 'Nashira Serawheels',
     },
 
@@ -225,7 +239,7 @@ local sets = {
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
-        Feet = 'Wise Pigaches',
+        Feet = 'Nashira Crackows',
         -- Back = 'Merciful Cape',
         -- Ear2 = 'Dark Earring',
         -- Hands = 'Crimson Fng. Gnt.',
