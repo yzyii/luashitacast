@@ -117,6 +117,12 @@ function gcmage.EquipStaffNuke(staff)
 end
 
 function gcmage.DoMidcast(sets)
+    local player = gData.GetPlayer();
+    local weather = gData.GetEnvironment();
+    local spell = gData.GetAction();
+    local target = gData.GetActionTarget();
+    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0);
+
     if (player.MainJob == 'BLM') then
         gFunc.InterimEquipSet(sets.SIRD);
     else
@@ -128,12 +134,6 @@ function gcmage.DoMidcast(sets)
         if (gcdisplay.GetToggle('LightningRes') == true) then gFunc.InterimEquipSet(sets.LightningRes) end;
         if (gcdisplay.GetToggle('Kite') == true) then gFunc.InterimEquipSet(sets.Movement) end;
     end
-
-    local weather = gData.GetEnvironment();
-    local spell = gData.GetAction();
-    local player = gData.GetPlayer();
-    local target = gData.GetActionTarget();
-    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0);
 
     if (spell.Skill == 'Ninjutsu') then
         if string.contains(spell.Name, 'Utsusemi') then
