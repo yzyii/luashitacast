@@ -17,7 +17,7 @@ local dorin_obi = false
 local suirin_obi = false
 local furin_obi = false
 local hyorin_obi = false
-local rairin_obi = false
+local rairin_obi = true
 local korin_obi = false
 local anrin_obi = false
 

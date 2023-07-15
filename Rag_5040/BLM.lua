@@ -221,7 +221,7 @@ local sets = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Demon Helm +1',
         Neck = 'Elemental Torque',
-        Ear1 = 'Abyssal Earring',
+        Ear1 = 'Novio Earring',
         Ear2 = 'Moldavite Earring',
         Body = 'Igqira Weskit',
         Hands = 'Wizard\'s Gloves',
@@ -231,7 +231,6 @@ local sets = {
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
         Feet = 'Rostrum Pumps',
-        -- Ear1 = 'Novio Earring',
         -- Hands = 'Zenith Mitts',
     },
     NukeACC = {

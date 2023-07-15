@@ -3,7 +3,7 @@ local shorterhand = T{};
 --[[
 List of commands that can be used
 ]]
-shorterhand.AliasList = T{'c4','c3','c2','c','i','s','ss','b','a'};
+shorterhand.AliasList = T{'c4','c3','c2','c','i','s','ss','b','av'};
 
 function shorterhand.DoCommands(args)
     local name = ''
@@ -25,7 +25,7 @@ function shorterhand.DoCommands(args)
         AshitaCore:GetChatManager():QueueCommand(1, '//stoneskin');
     elseif (args[1] == 'b') then
         AshitaCore:GetChatManager():QueueCommand(1, '//blink');
-    elseif (args[1] == 'a') then
+    elseif (args[1] == 'av') then
         AshitaCore:GetChatManager():QueueCommand(1, '//aquaveil');
     end
 end
