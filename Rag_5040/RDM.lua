@@ -42,7 +42,7 @@ local sets = {
         Waist = 'Duelist\'s Belt',
         Legs = 'Baron\'s Slops',
         Neck = 'Checkered Scarf',
-        -- Ear1 = 'Relaxing Earring',
+        Ear1 = 'Relaxing Earring',
     },
     Town = {
         Body = 'Mahatma Hpl.',
