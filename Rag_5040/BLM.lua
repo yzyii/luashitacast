@@ -31,7 +31,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Back = 'Umbra Cape',
         Ammo = 'Hedgehog Bomb',
-        -- Ring1 = 'Jelly Ring', -- 5
+        Ring1 = 'Jelly Ring',
     },
     MDT = { -- Shell IV provides 23% MDT
         Main = 'Terra\'s Staff',
@@ -114,7 +114,6 @@ local sets = {
         -- Waist = 'Earth Belt', -- 20
         -- Ring1 = 'Spinel Ring', -- 9
     },
-    Hate = {},
 
     Precast = {
         Ear1 = 'Loquac. Earring',

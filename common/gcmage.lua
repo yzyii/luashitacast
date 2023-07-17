@@ -32,6 +32,7 @@ local dream_boots = true
 local dream_mittens = true
 local wizards_earring = true
 local healers_earring = true
+local master_casters_bracelets = true
 
 --[[
 --------------------------------
@@ -182,6 +183,9 @@ function gcmage.DoMidcast(sets)
         gFunc.EquipSet('Nuke');
         if (gcdisplay.GetToggle('Nuke') == 'ACC') then
             gFunc.EquipSet('NukeACC');
+            if (gcdisplay.GetToggle('OOR') == true) and (player.MainJob == 'RDM') and master_casters_bracelets then
+                gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
+            end
             if (weather.WeatherElement == 'Dark') and diabolos_earring then
                 gFunc.Equip('Ear2', 'Diabolos\'s Earring');
             end
@@ -221,6 +225,9 @@ function gcmage.DoMidcast(sets)
         end
     elseif (spell.Skill == 'Enfeebling Magic') then
         gFunc.EquipSet('Enfeebling');
+        if (gcdisplay.GetToggle('OOR') == true) and master_casters_bracelets then
+            gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
+        end
         if (weather.WeatherElement == 'Dark') and diabolos_earring then
             gFunc.Equip('Ear2', 'Diabolos\'s Earring');
         end

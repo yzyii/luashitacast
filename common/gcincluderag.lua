@@ -16,7 +16,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','hate','kite','nuke','warpme','vert','lock', 'fight'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','hate','kite','nuke','warpme','vert','lock','fight','oor'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -56,10 +56,6 @@ function gcinclude.DoCommands(args)
         gcdisplay.AdvanceToggle('LightningRes');
         toggle = 'Lightning Resist Set';
         status = gcdisplay.GetToggle('LightningRes');
-    elseif (args[1] == 'hate') then
-        gcdisplay.AdvanceToggle('Hate');
-        toggle = 'Hate Set';
-        status = gcdisplay.GetToggle('Hate');
     elseif (args[1] == 'kite') then
         gcdisplay.AdvanceToggle('Kite');
         toggle = 'Kite Set';
@@ -69,44 +65,18 @@ function gcinclude.DoCommands(args)
         toggle = 'Equip Lock';
         status = gcdisplay.GetToggle('Lock');
         gcinclude.RunWarpCudgel();
+    elseif (args[1] == 'oor') then
+        gcdisplay.AdvanceToggle('OOR');
+        toggle = 'Out of Region Set';
+        status = gcdisplay.GetToggle('OOR');
     elseif (args[1] == 'lock') then
         gcdisplay.AdvanceToggle('Lock');
         toggle = 'Equip Lock';
         status = gcdisplay.GetToggle('Lock');
         if (not status) then
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Main');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Sub');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Range')
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ammo');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Head');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Neck');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear1');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear2');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Body');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Hands');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring1');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring2');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Back');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Waist');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Legs');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Feet');
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all');
         else
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Head');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Neck');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ear1');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ear2');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Body');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Hands');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ring1');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ring2');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Back');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Waist');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Legs');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Feet');
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all');
         end
     end
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
@@ -133,26 +103,20 @@ function gcinclude.DoCommands(args)
     end
     if (player.MainJob == 'RDM') then
         if (args[1] == 'vert') then
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac set Convert');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Head');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Neck');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ear1');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ear2');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Body');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Hands');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ring1');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ring2');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Back');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Waist');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Legs');
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Feet');
+            if (gcdisplay.GetToggle('OOR') == true) then
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac set ConvertOOR');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all');
+            else
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac set Convert');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all');
+            end
             gcdisplay.CreateToggle('Lock', true);
             toggle = 'Equip Lock';
             status = gcdisplay.GetToggle('Lock');
+        elseif (args[1] == 'hate') then
+            gcdisplay.AdvanceToggle('Hate');
+            toggle = 'Hate Set';
+            status = gcdisplay.GetToggle('Hate');
         end
     end
 
@@ -242,12 +206,15 @@ function gcinclude.SetVariables()
     gcdisplay.CreateToggle('FireRes', false);
     gcdisplay.CreateToggle('IceRes', false);
     gcdisplay.CreateToggle('LightningRes', false);
-    gcdisplay.CreateToggle('Hate', false);
     gcdisplay.CreateToggle('Kite', false);
     gcdisplay.CreateToggle('Lock', false);
+    gcdisplay.CreateToggle('OOR', false);
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
         gcdisplay.CreateCycle('Nuke', {[1] = 'DMG', [2] = 'ACC',});
         gcdisplay.CreateToggle('Fight', false);
+    end
+    if (player.MainJob == 'RDM') then
+        gcdisplay.CreateToggle('Hate', false);
     end
 end
 
