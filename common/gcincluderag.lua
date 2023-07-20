@@ -16,7 +16,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','hate','kite','nuke','warpme','vert','lock','fight','oor'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','hate','kite','nuke','warpme','vert','lock','fight','oor','idle'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -78,6 +78,10 @@ function gcinclude.DoCommands(args)
         else
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all');
         end
+    elseif (args[1] == 'idle') then
+        gcdisplay.AdvanceCycle('Idle');
+        toggle = 'Idle Gear Set';
+        status = gcdisplay.GetCycle('Idle');
     end
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
         if (args[1] == 'nuke') then
@@ -141,6 +145,10 @@ end
 
 function gcinclude.DoDefault()
     gFunc.EquipSet('Idle');
+    if (gcdisplay.GetCycle('Idle') == 'ALT') then gFunc.EquipSet('IdleALT') end;
+
+    local zone = gData.GetEnvironment();
+    if (zone.Area ~= nil) and (gcinclude.Towns:contains(zone.Area)) then gFunc.EquipSet('Town') end
 
     local player = gData.GetPlayer();
     if (player.Status == 'Resting') then
@@ -151,13 +159,6 @@ function gcinclude.DoDefault()
     elseif (player.IsMoving == true) then
         gFunc.EquipSet('Movement');
     end
-
-    local zone = gData.GetEnvironment();
-    if (zone.Area ~= nil) and (gcinclude.Towns:contains(zone.Area)) then gFunc.EquipSet('Town') end
-
-    local weakened = gData.GetBuffCount('Weakened');
-    local sleep = gData.GetBuffCount('Sleep');
-    local doom = (gData.GetBuffCount('Doom'))+(gData.GetBuffCount('Bane'));
 
     if (gcdisplay.GetToggle('DT') == true) then gFunc.EquipSet('DT') end;
     if (gcdisplay.GetToggle('MDT') == true) then gFunc.EquipSet('MDT') end;
@@ -209,6 +210,7 @@ function gcinclude.SetVariables()
     gcdisplay.CreateToggle('Kite', false);
     gcdisplay.CreateToggle('Lock', false);
     gcdisplay.CreateToggle('OOR', false);
+    gcdisplay.CreateCycle('Idle', {[1] = 'REG', [2] = 'ALT',});
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
         gcdisplay.CreateCycle('Nuke', {[1] = 'DMG', [2] = 'ACC',});
         gcdisplay.CreateToggle('Fight', false);

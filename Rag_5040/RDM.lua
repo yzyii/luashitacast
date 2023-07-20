@@ -19,6 +19,22 @@ local sets = {
         Waist = 'Warwolf Belt',
         Neck = 'Dark Torque',
     },
+    IdleALT = {
+        Head = 'Duelist\'s Chapeau',
+        Main = 'Terra\'s Staff',
+        Legs = 'Blood Cuisses',
+        Ring1 = 'Merman\'s Ring',
+        Ring2 = 'Sattva Ring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Back = 'Hexerei Cape',
+        Body = 'Dst. Harness +1',
+        Hands = 'Dst. Mittens +1',
+        Feet = 'Dst. Leggings +1',
+        Ammo = 'Hedgehog Bomb',
+        Waist = 'Warwolf Belt',
+        Neck = 'Dark Torque',
+    },
     Casting = {
         Head = 'Duelist\'s Chapeau',
         Main = 'Terra\'s Staff',
@@ -132,7 +148,7 @@ local sets = {
         Back = 'Hexerei Cape',
         Hands = 'Scorpion Gauntlets', -- 5
         -- Ring1 = 'Ruby Ring', -- 9
-        -- Waist = 'Water Belt', -- 20
+        Waist = 'Water Belt', -- 20
     },
     IceRes = { -- 131
         Ring1 = 'Merman\'s Ring',
@@ -150,7 +166,7 @@ local sets = {
         Legs = 'Feral Trousers', -- 6
         Ring2 = 'Sattva Ring',
         -- Feet = 'Crimson Greaves', -- 20
-        -- Waist = 'Fire Belt', -- 20
+        Waist = 'Fire Belt', -- 20
         -- Ring1 = 'Diamond Ring', -- 9
     },
     LightningRes = { -- 122
@@ -171,7 +187,7 @@ local sets = {
         Ammo = '',
         -- Ear1 = 'Topaz Earring', -- 10
         -- Ear2 = 'Topaz Earring', -- 10
-        -- Waist = 'Earth Belt', -- 20
+        Waist = 'Earth Belt', -- 20
         -- Ring1 = 'Spinel Ring', -- 9
     },
     Hate = {

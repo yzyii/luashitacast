@@ -181,7 +181,7 @@ function gcmage.DoMidcast(sets)
     elseif (spell.Skill == 'Elemental Magic') then
         local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
         gFunc.EquipSet('Nuke');
-        if (gcdisplay.GetToggle('Nuke') == 'ACC') then
+        if (gcdisplay.GetCycle('Nuke') == 'ACC') then
             gFunc.EquipSet('NukeACC');
             if (gcdisplay.GetToggle('OOR') == true) and (player.MainJob == 'RDM') and master_casters_bracelets then
                 gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
