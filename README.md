@@ -7,7 +7,7 @@ A combined RDM / BLM luashitacast for HorizonXI based off of https://github.com/
 - Edit Equipment Sets in RDM.lua or BLM.lua
 - Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua
 - Turn On / Off Additional Commands and Logging in gcincluderag.lua
-- The midcast delay assumes you use the PacketFlow plugin. If you don't adjust the value in gcmage.lua
+- The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the value in gcmage.lua
 
 - If you define a specific mainhand in regular sets, it will still equip the correct stave if you have them listed in gcmage.lua
 - FallbackNukeSub and FallbackEnfeeblingSub sets are used only if you wish to define a Sub due to not having a complete set of Elemental Staves.
