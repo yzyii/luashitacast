@@ -191,7 +191,7 @@ local sets = {
         -- Ring1 = 'Spinel Ring', -- 9
     },
     Hate = {
-        Ring1 = 'Jelly Ring',
+        Ring1 = 'Mermaid Ring', -- 2
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Ethereal Earring',
         Neck = 'Harmonia\'s Torque', -- 3
@@ -204,7 +204,9 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Ammo = 'Phtm. Tathlum',
         Head = 'Baron\'s Chapeau', -- 2
-        Feet = 'Nashira Crackows',
+        Feet = 'Heroic Boots', -- 1
+        -- Ear1 = 'Eris\' Earring +1', -- 3
+        -- Ear2 = 'Eris\' Earring +1', -- 3
         -- Body = 'Duelist\'s Tabard',
         -- Legs = 'Nashira Serawheels',
     },

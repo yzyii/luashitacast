@@ -216,6 +216,7 @@ local sets = {
         -- Back = 'Merciful Cape',
         -- Ear2 = 'Dark Earring',
         -- Body = 'Nashira Manteel',
+        -- Feet = 'Igqira Huaraches',
     },
 
     Nuke = {

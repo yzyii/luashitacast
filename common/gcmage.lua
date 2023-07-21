@@ -44,8 +44,8 @@ local gcmage = T{};
 
 function gcmage.DoPrecast(fastCastValue)
     local spell = gData.GetAction();
-    local minimumBuffer = 0.25;
-    local packetDelay = 0.25;
+    local minimumBuffer = 0.25; -- Can be lowered to 0.1 if you want
+    local packetDelay = 0.25; -- Change this to 0.4 if you do not use PacketFlow
     local castDelay = ((spell.CastTime * (1 - fastCastValue)) / 1000) - minimumBuffer;
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay);
