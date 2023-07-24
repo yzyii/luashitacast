@@ -16,7 +16,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','hate','kite','nuke','warpme','vert','lock','fight','oor','idle'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','hate','kite','nuke','warpme','vert','lock','fight','oor','idle'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -56,6 +56,10 @@ function gcinclude.DoCommands(args)
         gcdisplay.AdvanceToggle('LightningRes');
         toggle = 'Lightning Resist Set';
         status = gcdisplay.GetToggle('LightningRes');
+    elseif (args[1] == 'earthres' or args[1] == 'eres') then
+        gcdisplay.AdvanceToggle('EarthRes');
+        toggle = 'Earth Resist Set';
+        status = gcdisplay.GetToggle('EarthRes');
     elseif (args[1] == 'kite') then
         gcdisplay.AdvanceToggle('Kite');
         toggle = 'Kite Set';
@@ -165,6 +169,7 @@ function gcinclude.DoDefault()
     if (gcdisplay.GetToggle('FireRes') == true) then gFunc.EquipSet('FireRes') end;
     if (gcdisplay.GetToggle('IceRes') == true) then gFunc.EquipSet('IceRes') end;
     if (gcdisplay.GetToggle('LightningRes') == true) then gFunc.EquipSet('LightningRes') end;
+    if (gcdisplay.GetToggle('EarthRes') == true) then gFunc.EquipSet('EarthRes') end;
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end;
 end
 
@@ -207,6 +212,7 @@ function gcinclude.SetVariables()
     gcdisplay.CreateToggle('FireRes', false);
     gcdisplay.CreateToggle('IceRes', false);
     gcdisplay.CreateToggle('LightningRes', false);
+    gcdisplay.CreateToggle('EarthRes', false);
     gcdisplay.CreateToggle('Kite', false);
     gcdisplay.CreateToggle('Lock', false);
     gcdisplay.CreateToggle('OOR', false);

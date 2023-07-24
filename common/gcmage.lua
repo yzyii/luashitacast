@@ -133,6 +133,7 @@ function gcmage.DoMidcast(sets)
         if (gcdisplay.GetToggle('FireRes') == true) then gFunc.InterimEquipSet(sets.FireRes) end;
         if (gcdisplay.GetToggle('IceRes') == true) then gFunc.InterimEquipSet(sets.IceRes) end;
         if (gcdisplay.GetToggle('LightningRes') == true) then gFunc.InterimEquipSet(sets.LightningRes) end;
+        if (gcdisplay.GetToggle('EarthRes') == true) then gFunc.InterimEquipSet(sets.EarthRes) end;
         if (gcdisplay.GetToggle('Kite') == true) then gFunc.InterimEquipSet(sets.Movement) end;
     end
 

@@ -104,17 +104,28 @@ local sets = {
     LightningRes = {
         Body = 'Sorcerer\'s Coat',
         Ring1 = 'Merman\'s Ring',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
         Main = 'Terra\'s Staff', -- 20
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ring2 = 'Sattva Ring',
         Back = 'Hexerei Cape',
-        -- Ear1 = 'Topaz Earring', -- 10
-        -- Ear2 = 'Topaz Earring', -- 10
+        Ear1 = 'Topaz Earring', -- 10
+        Ear2 = 'Topaz Earring', -- 10
         Waist = 'Earth Belt', -- 20
         -- Ring1 = 'Spinel Ring', -- 9
+    },
+    EarthRes = {
+        Body = 'Sorcerer\'s Coat',
+        Ring1 = 'Maldust Ring', -- 10
+        Main = 'Auster\'s Staff', -- 20
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Ring2 = 'Sattva Ring',
+        Back = 'Hexerei Cape',
+        Ear1 = 'Topaz Earring', -- 10
+        Ear2 = 'Topaz Earring', -- 10
+        Waist = 'Wind Belt', -- 20
+        -- Ring2 = 'Topaz Ring', -- 9
     },
 
     Precast = {
