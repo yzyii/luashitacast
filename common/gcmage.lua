@@ -16,10 +16,10 @@ local karin_obi = false
 local dorin_obi = false
 local suirin_obi = false
 local furin_obi = false
-local hyorin_obi = false
+local hyorin_obi = true
 local rairin_obi = true
-local korin_obi = false
-local anrin_obi = false
+local korin_obi = true
+local anrin_obi = true
 
 -- Set to true if you have the item
 local diabolos_pole = true
