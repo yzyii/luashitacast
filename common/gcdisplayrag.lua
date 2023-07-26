@@ -48,12 +48,7 @@ function gcdisplay.Update()
     local player = AshitaCore:GetMemoryManager():GetPlayer();
     
     local MID = player:GetMainJob();
-    local SID = player:GetSubJob();
-    MainLV = player:GetMainJobLevel();
-    SubLV = player:GetSubJobLevel();
     Main = AshitaCore:GetResourceManager():GetString("jobs.names_abbr", MID);
-    Sub = AshitaCore:GetResourceManager():GetString("jobs.names_abbr", SID);
-    
 end
 
 function gcdisplay.CreateToggle(name, default)
@@ -96,7 +91,7 @@ function gcdisplay.Load()
     gcdisplay.Update();
     gcdisplay.FontObject = fonts.new(fontSettings);    
     ashita.events.register('d3d_present', 'gcdisplay_present_cb', function ()
-        local display = MainLV .. Main .. '/' .. SubLV .. Sub;
+        local display = Main;
         for k, v in pairs(Toggles) do
             display = display .. '   ';
             if (v == true) then
