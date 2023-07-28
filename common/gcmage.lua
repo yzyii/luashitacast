@@ -134,20 +134,20 @@ function gcmage.DoMidcast(sets)
         gFunc.InterimEquipSet(sets.SIRD);
     else
         gFunc.InterimEquipSet(sets.Casting);
-        if (gcdisplay.GetToggle('DT') == true) then
-            if (environment.Time >= 6 and environment.Time <= 18) then
-                gFunc.InterimEquipSet(sets.DT);
-            else
-                gFunc.InterimEquipSet(sets.DTNight);
-            end
-        end
-        if (gcdisplay.GetToggle('MDT') == true) then gFunc.InterimEquipSet(sets.MDT) end;
-        if (gcdisplay.GetToggle('FireRes') == true) then gFunc.InterimEquipSet(sets.FireRes) end;
-        if (gcdisplay.GetToggle('IceRes') == true) then gFunc.InterimEquipSet(sets.IceRes) end;
-        if (gcdisplay.GetToggle('LightningRes') == true) then gFunc.InterimEquipSet(sets.LightningRes) end;
-        if (gcdisplay.GetToggle('EarthRes') == true) then gFunc.InterimEquipSet(sets.EarthRes) end;
-        if (gcdisplay.GetToggle('Kite') == true) then gFunc.InterimEquipSet(sets.Movement) end;
     end
+
+    if (gcdisplay.Override = 'DT') then
+        if (environment.Time >= 6 and environment.Time <= 18) then
+            gFunc.InterimEquipSet(sets.DT);
+        else
+            gFunc.InterimEquipSet(sets.DTNight);
+        end
+    end
+    if (gcdisplay.Override = 'MDT') then gFunc.InterimEquipSet(sets.MDT) end;
+    if (gcdisplay.Override = 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end;
+    if (gcdisplay.Override = 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end;
+    if (gcdisplay.Override = 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end;
+    if (gcdisplay.Override = 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end;
 
     if (spell.Skill == 'Ninjutsu') then
         if string.contains(spell.Name, 'Utsusemi') then
