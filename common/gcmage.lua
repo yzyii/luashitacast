@@ -34,9 +34,6 @@ local wizards_earring = true
 local healers_earring = true
 local master_casters_bracelets = true
 
--- I can't be bothered rewriting this properly so this is specific to how I use a mostly DT set for my idle gear that hits the 50% cap at night due to Umbra Cape.
-local use_idle_for_dt_at_night = false
-
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -138,10 +135,10 @@ function gcmage.DoMidcast(sets)
     else
         gFunc.InterimEquipSet(sets.Casting);
         if (gcdisplay.GetToggle('DT') == true) then
-            if (environment.Time >= 6 and environment.Time <= 18) or (not use_idle_for_dt_at_night) then
+            if (environment.Time >= 6 and environment.Time <= 18) then
                 gFunc.InterimEquipSet(sets.DT);
             else
-                gFunc.InterimEquipSet(sets.Idle);
+                gFunc.InterimEquipSet(sets.DTNight);
             end
         end
         if (gcdisplay.GetToggle('MDT') == true) then gFunc.InterimEquipSet(sets.MDT) end;
