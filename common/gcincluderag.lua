@@ -41,23 +41,23 @@ function gcinclude.DoCommands(args)
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'mdt') then
-        gcdisplay.ToggleOverride('MDT');
+        gcinclude.ToggleOverride('MDT');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'fireres' or args[1] == 'fres') then
-        gcdisplay.ToggleOverride('FireRes');
+        gcinclude.ToggleOverride('FireRes');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'iceres' or args[1] == 'ires') then
-        gcdisplay.ToggleOverride('IceRes');
+        gcinclude.ToggleOverride('IceRes');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'lightningres' or args[1] == 'lres' or args[1] == 'thunderres' or args[1] == 'tres') then
-        gcdisplay.ToggleOverride('LightningRes');
+        gcinclude.ToggleOverride('LightningRes');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'earthres' or args[1] == 'eres') then
-        gcdisplay.ToggleOverride('EarthRes');
+        gcinclude.ToggleOverride('EarthRes');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'kite') then
