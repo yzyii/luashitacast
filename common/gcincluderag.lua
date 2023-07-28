@@ -37,27 +37,27 @@ function gcinclude.DoCommands(args)
     local status = nil;
     
     if (args[1] == 'dt') then
-        gcdisplay.Override = 'DT';
+        gcinclude.ToggleOverride('DT');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'mdt') then
-        gcdisplay.Override = 'MDT';
+        gcdisplay.ToggleOverride('MDT');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'fireres' or args[1] == 'fres') then
-        gcdisplay.Override = 'FireRes';
+        gcdisplay.ToggleOverride('FireRes');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'iceres' or args[1] == 'ires') then
-        gcdisplay.Override = 'IceRes';
+        gcdisplay.ToggleOverride('IceRes');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'lightningres' or args[1] == 'lres' or args[1] == 'thunderres' or args[1] == 'tres') then
-        gcdisplay.Override = 'LightningRes';
+        gcdisplay.ToggleOverride('LightningRes');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'earthres' or args[1] == 'eres') then
-        gcdisplay.Override = 'EarthRes';
+        gcdisplay.ToggleOverride('EarthRes');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'kite') then
@@ -78,7 +78,24 @@ function gcinclude.DoCommands(args)
         toggle = 'Equip Lock';
         status = gcdisplay.GetToggle('Lock');
         if (not status) then
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all');
+            if (gcdisplay.GetToggle('Fight') == true) then
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Range')
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ammo');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Head');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Neck');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear1');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear2');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Body');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Hands');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring1');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring2');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Back');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Waist');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Legs');
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Feet');
+            else
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all');
+            end
         else
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all');
         end
@@ -137,6 +154,14 @@ function gcinclude.DoCommands(args)
     end
 end
 
+function gcinclude.ToggleOverride(override)
+    if (gcdisplay.Override == 'override') then
+        gcdisplay.Override = 'None'
+    else
+        gcdisplay.Override = 'override';
+    end
+end
+
 function gcinclude.RunWarpCudgel()
     AshitaCore:GetChatManager():QueueCommand(-1, '/equip main "Warp Cudgel"');
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main');
@@ -160,22 +185,22 @@ function gcinclude.DoDefault()
         if (player.SubJob == "BLM") then
             gFunc.Equip('Back', 'Wizard\'s Mantle');
         end
-    elseif (player.IsMoving == true) then
+    elseif (player.IsMoving == true) and (gcdisplay.Override == 'None') then
         gFunc.EquipSet('Movement');
     end
 
-    if (gcdisplay.GetToggle('DT') == true) then
+    if (gcdisplay.Override == 'DT') then
         if (environment.Time >= 6 and environment.Time <= 18) then
             gFunc.EquipSet('DT');
         else
             gFunc.EquipSet('DTNight');
         end
     end
-    if (gcdisplay.GetToggle('MDT') == true) then gFunc.EquipSet('MDT') end;
-    if (gcdisplay.GetToggle('FireRes') == true) then gFunc.EquipSet('FireRes') end;
-    if (gcdisplay.GetToggle('IceRes') == true) then gFunc.EquipSet('IceRes') end;
-    if (gcdisplay.GetToggle('LightningRes') == true) then gFunc.EquipSet('LightningRes') end;
-    if (gcdisplay.GetToggle('EarthRes') == true) then gFunc.EquipSet('EarthRes') end;
+    if (gcdisplay.Override == 'MDT') then gFunc.EquipSet('MDT') end;
+    if (gcdisplay.Override == 'FireRes') then gFunc.EquipSet('FireRes') end;
+    if (gcdisplay.Override == 'IceRes') then gFunc.EquipSet('IceRes') end;
+    if (gcdisplay.Override == 'LightningRes') then gFunc.EquipSet('LightningRes') end;
+    if (gcdisplay.Override == 'EarthRes') then gFunc.EquipSet('EarthRes') end;
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end;
 end
 
