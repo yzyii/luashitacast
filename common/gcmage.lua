@@ -44,10 +44,10 @@ local gcmage = T{};
 
 function gcmage.DoPrecast(fastCastValue)
     local spell = gData.GetAction();
-	local player = gData.GetPlayer();
+    local player = gData.GetPlayer();
     if (player.SubJob == "RDM") then
-	     fastCastValue = fastCastValue + 0.15
-	end
+         fastCastValue = fastCastValue + 0.15
+    end
     local minimumBuffer = 0.25; -- Can be lowered to 0.1 if you want
     local packetDelay = 0.25; -- Change this to 0.4 if you do not use PacketFlow
     local castDelay = ((spell.CastTime * (1 - fastCastValue)) / 1000) - minimumBuffer;
@@ -151,7 +151,9 @@ function gcmage.DoMidcast(sets)
     elseif (spell.Skill == 'Enhancing Magic') then
         gFunc.EquipSet('Enhancing');
         if string.match(spell.Name, 'Stoneskin') then
-            gFunc.InterimEquipSet(sets.SIRD);
+            if (gcdisplay.GetToggle('Hate') == false) then
+                gFunc.InterimEquipSet(sets.SIRD);
+            end
             gFunc.EquipSet('Stoneskin');
         end
         if string.match(spell.Name, 'Blink') then
