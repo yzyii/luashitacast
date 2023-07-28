@@ -7,9 +7,6 @@ gcinclude.settings = {
     Shorterhand = true; -- set to true if you want to use the commands available in shorterhand.lua
 };
 
--- I can't be bothered rewriting this properly so this is specific to how I use a mostly DT set for my idle gear that hits the 50% cap at night due to Umbra Cape.
-local use_idle_for_dt_at_night = false
-
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -40,29 +37,29 @@ function gcinclude.DoCommands(args)
     local status = nil;
     
     if (args[1] == 'dt') then
-        gcdisplay.AdvanceToggle('DT');
-        toggle = 'DT Set';
-        status = gcdisplay.GetToggle('DT');
+        gcdisplay.Override = 'DT';
+        toggle = 'Override';
+        status = gcdisplay.Override;
     elseif (args[1] == 'mdt') then
-        gcdisplay.AdvanceToggle('MDT');
-        toggle = 'MDT Set';
-        status = gcdisplay.GetToggle('MDT');
+        gcdisplay.Override = 'MDT';
+        toggle = 'Override';
+        status = gcdisplay.Override;
     elseif (args[1] == 'fireres' or args[1] == 'fres') then
-        gcdisplay.AdvanceToggle('FireRes');
-        toggle = 'Fire Resist Set';
-        status = gcdisplay.GetToggle('FireRes');
+        gcdisplay.Override = 'FireRes';
+        toggle = 'Override';
+        status = gcdisplay.Override;
     elseif (args[1] == 'iceres' or args[1] == 'ires') then
-        gcdisplay.AdvanceToggle('IceRes');
-        toggle = 'Ice Resist Set';
-        status = gcdisplay.GetToggle('IceRes');
+        gcdisplay.Override = 'IceRes';
+        toggle = 'Override';
+        status = gcdisplay.Override;
     elseif (args[1] == 'lightningres' or args[1] == 'lres' or args[1] == 'thunderres' or args[1] == 'tres') then
-        gcdisplay.AdvanceToggle('LightningRes');
-        toggle = 'Lightning Resist Set';
-        status = gcdisplay.GetToggle('LightningRes');
+        gcdisplay.Override = 'LightningRes';
+        toggle = 'Override';
+        status = gcdisplay.Override;
     elseif (args[1] == 'earthres' or args[1] == 'eres') then
-        gcdisplay.AdvanceToggle('EarthRes');
-        toggle = 'Earth Resist Set';
-        status = gcdisplay.GetToggle('EarthRes');
+        gcdisplay.Override = 'EarthRes';
+        toggle = 'Override';
+        status = gcdisplay.Override;
     elseif (args[1] == 'kite') then
         gcdisplay.AdvanceToggle('Kite');
         toggle = 'Kite Set';
@@ -168,10 +165,10 @@ function gcinclude.DoDefault()
     end
 
     if (gcdisplay.GetToggle('DT') == true) then
-        if (environment.Time >= 6 and environment.Time <= 18) or (not use_idle_for_dt_at_night) then
+        if (environment.Time >= 6 and environment.Time <= 18) then
             gFunc.EquipSet('DT');
         else
-            gFunc.EquipSet('Idle');
+            gFunc.EquipSet('DTNight');
         end
     end
     if (gcdisplay.GetToggle('MDT') == true) then gFunc.EquipSet('MDT') end;
@@ -216,12 +213,6 @@ end
 function gcinclude.SetVariables()
     local player = gData.GetPlayer();
 
-    gcdisplay.CreateToggle('DT', false);
-    gcdisplay.CreateToggle('MDT', false);
-    gcdisplay.CreateToggle('FireRes', false);
-    gcdisplay.CreateToggle('IceRes', false);
-    gcdisplay.CreateToggle('LightningRes', false);
-    gcdisplay.CreateToggle('EarthRes', false);
     gcdisplay.CreateToggle('Kite', false);
     gcdisplay.CreateToggle('Lock', false);
     gcdisplay.CreateToggle('OOR', false);
