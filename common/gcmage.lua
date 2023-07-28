@@ -34,6 +34,9 @@ local wizards_earring = true
 local healers_earring = true
 local master_casters_bracelets = true
 
+-- I can't be bothered rewriting this properly so this is specific to how I use a mostly DT set for my idle gear that hits the 50% cap at night due to Umbra Cape.
+local use_idle_for_dt_at_night = false
+
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -62,7 +65,7 @@ end
 
 function gcmage.EquipStaff()
     local spell = gData.GetAction();
-    local weather = gData.GetEnvironment();
+    local environment = gData.GetEnvironment();
 
     if (spell.Skill == 'Healing Magic') then
         if light_staff ~= '' then gFunc.Equip('Main', light_staff); end
@@ -98,7 +101,7 @@ function gcmage.EquipStaff()
         if string.contains(spell.Name, 'Stun') then
             if thunder_staff ~= '' then gFunc.Equip('Main', thunder_staff); end
         elseif string.contains(spell.Name, 'Drain') or string.contains(spell.Name, 'Aspir') then
-            if (weather.WeatherElement == 'Dark' and diabolos_pole) then gFunc.Equip('Main', 'Diabolos\'s Pole'); end
+            if (environment.WeatherElement == 'Dark' and diabolos_pole) then gFunc.Equip('Main', 'Diabolos\'s Pole'); end
         else
             if dark_staff ~= '' then gFunc.Equip('Main', dark_staff); end
         end
@@ -125,7 +128,7 @@ end
 
 function gcmage.DoMidcast(sets)
     local player = gData.GetPlayer();
-    local weather = gData.GetEnvironment();
+    local environment = gData.GetEnvironment();
     local spell = gData.GetAction();
     local target = gData.GetActionTarget();
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0);
@@ -134,7 +137,13 @@ function gcmage.DoMidcast(sets)
         gFunc.InterimEquipSet(sets.SIRD);
     else
         gFunc.InterimEquipSet(sets.Casting);
-        if (gcdisplay.GetToggle('DT') == true) then gFunc.InterimEquipSet(sets.DT) end;
+        if (gcdisplay.GetToggle('DT') == true) then
+            if (environment.Time >= 6 and environment.Time <= 18) or (not use_idle_for_dt_at_night) then
+                gFunc.InterimEquipSet(sets.DT);
+            else
+                gFunc.InterimEquipSet(sets.Idle);
+            end
+        end
         if (gcdisplay.GetToggle('MDT') == true) then gFunc.InterimEquipSet(sets.MDT) end;
         if (gcdisplay.GetToggle('FireRes') == true) then gFunc.InterimEquipSet(sets.FireRes) end;
         if (gcdisplay.GetToggle('IceRes') == true) then gFunc.InterimEquipSet(sets.IceRes) end;
@@ -179,7 +188,7 @@ function gcmage.DoMidcast(sets)
         elseif (player.SubJob == "WHM" and healers_earring) then
             gFunc.Equip('Ear2', 'Healer\'s Earring');
         end
-        if (spell.Element == weather.WeatherElement) or (spell.Element == weather.DayElement) then
+        if (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
             if (spell.Element == 'Light') and korin_obi then
                 gFunc.Equip('Waist', 'Korin Obi');
             end
@@ -195,7 +204,7 @@ function gcmage.DoMidcast(sets)
             if (gcdisplay.GetToggle('OOR') == true) and (player.MainJob == 'RDM') and master_casters_bracelets then
                 gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
             end
-            if (weather.WeatherElement == 'Dark') and diabolos_earring then
+            if (environment.WeatherElement == 'Dark') and diabolos_earring then
                 gFunc.Equip('Ear2', 'Diabolos\'s Earring');
             end
             if (player.SubJob == "BLM" and wizards_earring) then
@@ -207,7 +216,7 @@ function gcmage.DoMidcast(sets)
                 gFunc.Equip('Ear2', 'Wizard\'s Earring');
             end
         else
-            if (spell.Element == weather.WeatherElement) or (spell.Element == weather.DayElement) then
+            if (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
                 if (spell.Element == 'Fire') and karin_obi then
                     gFunc.Equip('Waist', 'Karin Obi');
                 elseif (spell.Element == 'Earth') and dorin_obi then
@@ -222,7 +231,7 @@ function gcmage.DoMidcast(sets)
                     gFunc.Equip('Waist', 'Rairin Obi');
                 end
             end
-            if (spell.Element == weather.DayElement) and sorcerers_tonban then
+            if (spell.Element == environment.DayElement) and sorcerers_tonban then
                 gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
             end
             if (player.HPP < 76 and player.TP < 1000) and sorcerers_ring then
@@ -237,7 +246,7 @@ function gcmage.DoMidcast(sets)
         if (gcdisplay.GetToggle('OOR') == true) and master_casters_bracelets then
             gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
         end
-        if (weather.WeatherElement == 'Dark') and diabolos_earring then
+        if (environment.WeatherElement == 'Dark') and diabolos_earring then
             gFunc.Equip('Ear2', 'Diabolos\'s Earring');
         end
         if (string.contains(spell.Name, 'Paralyze') or string.contains(spell.Name, 'Slow')) then
@@ -252,14 +261,14 @@ function gcmage.DoMidcast(sets)
         end
     elseif (spell.Skill == 'Dark Magic') then
         gFunc.EquipSet('Dark');
-        if (weather.DayElement == 'Dark') and diabolos_ring and player.MPP < 86 then
+        if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP < 86 then
             gFunc.Equip('Ring2', 'Diabolos\'s Ring');
         end
         -- Remove the Following if you have Dark Earring / Abyssal Earring
-        if (weather.WeatherElement == 'Dark') and diabolos_earring then
+        if (environment.WeatherElement == 'Dark') and diabolos_earring then
             gFunc.Equip('Ear2', 'Diabolos\'s Earring');
         end
-        if (spell.Element == weather.WeatherElement) or (spell.Element == weather.DayElement) then
+        if (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
             if (spell.Element == 'Dark') and anrin_obi then
                 gFunc.Equip('Waist', 'Anrin Obi');
             end
