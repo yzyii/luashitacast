@@ -33,12 +33,11 @@ local sets = {
     DT = {
         Main = 'Terra\'s Staff',
         Body = 'Sorcerer\'s Coat',
-        Ring1 = 'Merman\'s Ring',
+        Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Back = 'Umbra Cape',
-        Ring1 = 'Jelly Ring',
     },
     MDT = { -- Shell IV provides 23% MDT
         Main = 'Terra\'s Staff',
