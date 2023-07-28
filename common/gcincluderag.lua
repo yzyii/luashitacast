@@ -155,10 +155,10 @@ function gcinclude.DoCommands(args)
 end
 
 function gcinclude.ToggleOverride(override)
-    if (gcdisplay.Override == 'override') then
+    if (gcdisplay.Override == override) then
         gcdisplay.Override = 'None'
     else
-        gcdisplay.Override = 'override';
+        gcdisplay.Override = override;
     end
 end
 
