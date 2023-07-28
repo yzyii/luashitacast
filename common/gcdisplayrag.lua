@@ -3,23 +3,22 @@
 local Toggles = {};
 local Cycles = {};
 local fonts = require('fonts');
-local Override = 'None';
+local Override = ''
 
 local gcdisplay = {
-    Toggles = {},
-    Values = {},
+	Override = 'None'
 };
 
 local fontSettings = T{
     visible = true,
-    font_family = 'Arial',
+    font_family = 'Segoe UI',
     font_height = 12,
     color = 0xFFFFFFFF,
     position_x = 300,
     position_y = 0,
     background = T{
         visible = true,
-        color = 0xFF000000,
+        color = 0x66000000,
     }
 };
 
@@ -92,7 +91,7 @@ function gcdisplay.Load()
     gcdisplay.Update();
     gcdisplay.FontObject = fonts.new(fontSettings);    
     ashita.events.register('d3d_present', 'gcdisplay_present_cb', function ()
-        local display = Main;
+        local display = '  ' .. Main;
         for k, v in pairs(Toggles) do
             display = display .. '   ';
             if (v == true) then
@@ -102,9 +101,9 @@ function gcdisplay.Load()
             end
         end
         for key, value in pairs(Cycles) do
-            display = display .. '  ' .. key .. ': ' .. '|cFF00FF00|' .. value.Array[value.Index] .. '|r';
+            display = display .. '   ' .. key .. ': ' .. '|cFF00FF00|' .. value.Array[value.Index] .. '|r';
         end
-        display = display .. '  ' .. 'Override' .. ': ' .. '|cFF00FF00|' .. Override .. '|r';
+        display = display .. '   ' .. 'Override' .. ': ' .. '|cFF00FF00|' .. gcdisplay.Override .. '|r' .. '  ';
         gcdisplay.FontObject.text = display;
     end);
 end
