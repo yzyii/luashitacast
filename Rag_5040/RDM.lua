@@ -79,6 +79,22 @@ local sets = {
         Neck = 'Willpower Torque',
         Ring1 = 'Jelly Ring', -- 5
     },
+    DTNight = {
+        Head = 'Dls. Chapeau +1',
+        Main = 'Terra\'s Staff',
+        Legs = 'Blood Cuisses',
+        Ring1 = 'Jelly Ring',
+        Ring2 = 'Sattva Ring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Ethereal Earring',
+        Back = 'Umbra Cape',
+        Body = 'Dst. Harness +1',
+        Hands = 'Dst. Mittens +1',
+        Feet = 'Dst. Leggings +1',
+        Ammo = 'Hedgehog Bomb',
+        Waist = 'Warwolf Belt',
+        Neck = 'Dark Torque',
+    },
     MDT = { -- Shell IV provides 23% MDT
         Main = 'Mythic Wand +1',
         Sub = 'Numinous Shield',
