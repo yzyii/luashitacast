@@ -39,6 +39,15 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Back = 'Umbra Cape',
     },
+    DTNight = {
+        Main = 'Terra\'s Staff',
+        Body = 'Sorcerer\'s Coat',
+        Ring1 = 'Jelly Ring',
+        Ring2 = 'Sattva Ring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Back = 'Umbra Cape',
+    },
     MDT = { -- Shell IV provides 23% MDT
         Main = 'Terra\'s Staff',
         Body = 'Sorcerer\'s Coat',
