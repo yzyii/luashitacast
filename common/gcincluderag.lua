@@ -7,6 +7,9 @@ gcinclude.settings = {
     Shorterhand = true; -- set to true if you want to use the commands available in shorterhand.lua
 };
 
+-- I can't be bothered rewriting this properly so this is specific to how I use a mostly DT set for my idle gear that hits the 50% cap at night due to Umbra Cape.
+local use_idle_for_dt_at_night = false
+
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -151,8 +154,8 @@ function gcinclude.DoDefault()
     gFunc.EquipSet('Idle');
     if (gcdisplay.GetCycle('Idle') == 'ALT') then gFunc.EquipSet('IdleALT') end;
 
-    local zone = gData.GetEnvironment();
-    if (zone.Area ~= nil) and (gcinclude.Towns:contains(zone.Area)) then gFunc.EquipSet('Town') end
+    local environment = gData.GetEnvironment();
+    if (environment.Area ~= nil) and (gcinclude.Towns:contains(environment.Area)) then gFunc.EquipSet('Town') end
 
     local player = gData.GetPlayer();
     if (player.Status == 'Resting') then
@@ -164,7 +167,13 @@ function gcinclude.DoDefault()
         gFunc.EquipSet('Movement');
     end
 
-    if (gcdisplay.GetToggle('DT') == true) then gFunc.EquipSet('DT') end;
+    if (gcdisplay.GetToggle('DT') == true) then
+        if (environment.Time >= 6 and environment.Time <= 18) or (not use_idle_for_dt_at_night) then
+            gFunc.EquipSet('DT');
+        else
+            gFunc.EquipSet('Idle');
+        end
+    end
     if (gcdisplay.GetToggle('MDT') == true) then gFunc.EquipSet('MDT') end;
     if (gcdisplay.GetToggle('FireRes') == true) then gFunc.EquipSet('FireRes') end;
     if (gcdisplay.GetToggle('IceRes') == true) then gFunc.EquipSet('IceRes') end;
