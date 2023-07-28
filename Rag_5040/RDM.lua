@@ -382,7 +382,7 @@ local sets = {
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Ethereal Earring',
-        Body = 'Warlock\'s Tabard',
+        Body = 'Black Cotehardie',
         Hands = 'Dls. Gloves +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
@@ -407,6 +407,7 @@ local sets = {
         Legs = 'Blood Cuisses',
         Feet = 'Mahatma Pigaches',
         Ammo = 'Hedgehog Bomb',
+        -- Body = 'Duelist\'s Tabard',
     },
 };
 profile.Sets = sets;

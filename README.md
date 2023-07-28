@@ -24,8 +24,9 @@ A combined RDM / BLM luashitacast for HorizonXI based off of https://github.com/
 /idle   - toggles between 2 different idle sets (REG and ALT)
 /oor    - forces use of Master Caster Bracelets / Republican Gold Medal for areas where these are active.
 /hate   - causes your cures, sleeps, blinds and dispels to equip +enmity set on cast.
-/iceres /ires  - toggles Ice Resistance set on/off
-/fireres /fres - toggles Fire Resistance set on/off
+/iceres /ires   - toggles Ice Resistance set on/off
+/fireres /fres  - toggles Fire Resistance set on/off
+/earthres /eres - toggles Earth Resistance set on/off
 /lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off
 ```
 
