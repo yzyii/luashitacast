@@ -70,10 +70,9 @@ local sets = {
         Main = 'Hermit\'s Wand', -- 25
         Sub = 'Hermit\'s Wand', -- 25
         Head = 'Nashira Turban', -- 10
-        Waist = 'Heko Obi +1', -- 8
+        Waist = 'Druid\'s Rope', -- 10
         Feet = 'Wizard\'s Sabots', -- 20
         Neck = 'Willpower Torque', -- 5
-        -- Waist = 'Druid\'s Rope', -- +2
     },
     Haste = {
         Ear1 = 'Loquac. Earring',
@@ -90,11 +89,10 @@ local sets = {
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Feet = 'Power Sandals', -- 7
-        Ring2 = 'Sattva Ring',
         Back = 'Hexerei Cape',
         Ring1 = 'Ruby Ring', -- 9
         Waist = 'Water Belt', -- 20
-        -- Ring1 = 'Malflame Ring', -- 10
+        Ring2 = 'Malflame Ring', -- 10
     },
     IceRes = {
         Body = 'Sorcerer\'s Coat',
@@ -114,17 +112,16 @@ local sets = {
         Main = 'Terra\'s Staff', -- 20
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Ring2 = 'Sattva Ring',
         Back = 'Hexerei Cape',
         Ear1 = 'Topaz Earring', -- 10
         Ear2 = 'Topaz Earring', -- 10
         Waist = 'Earth Belt', -- 20
         Ring1 = 'Spinel Ring', -- 9
-        -- Ring2 = 'Malflash Ring', -- 10
+        Ring2 = 'Malflash Ring', -- 10
     },
     EarthRes = {
         Body = 'Sorcerer\'s Coat',
-        Ring1 = 'Maldust Ring', -- 10
+        Ring2 = 'Maldust Ring', -- 10
         Main = 'Auster\'s Staff', -- 20
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
@@ -132,7 +129,7 @@ local sets = {
         Ear1 = 'Topaz Earring', -- 10
         Ear2 = 'Topaz Earring', -- 10
         Waist = 'Wind Belt', -- 20
-        Ring2 = 'Topaz Ring', -- 9
+        Ring1 = 'Topaz Ring', -- 9
     },
 
     Precast = {

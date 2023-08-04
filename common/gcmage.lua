@@ -261,7 +261,7 @@ function gcmage.DoMidcast(sets)
         if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP < 86 then
             gFunc.Equip('Ring2', 'Diabolos\'s Ring');
         end
-        -- Remove the Following if you have Dark Earring / Abyssal Earring
+        -- Remove the Following if you have Dark Earring + Abyssal Earring
         if (environment.WeatherElement == 'Dark') and diabolos_earring then
             gFunc.Equip('Ear2', 'Diabolos\'s Earring');
         end
