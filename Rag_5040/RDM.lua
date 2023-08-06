@@ -173,7 +173,7 @@ local sets = {
         Ring2 = 'Sattva Ring',
         -- Feet = 'Crimson Greaves', -- 20
         Waist = 'Fire Belt', -- 20
-        -- Ring2 = 'Malfrost Ring', -- 10
+        Ring2 = 'Malfrost Ring', -- 10
         Ring1 = 'Diamond Ring', -- 9
     },
     LightningRes = { -- 135
@@ -210,7 +210,6 @@ local sets = {
     },
     Hate = {
         Ring1 = 'Mermaid Ring', -- 2
-        Ear2 = 'Ethereal Earring',
         Neck = 'Harmonia\'s Torque', -- 3
         Waist = 'Warwolf Belt', -- 3
         Ring2 = 'Sattva Ring', -- 5
@@ -221,8 +220,8 @@ local sets = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Baron\'s Chapeau', -- 2
         Feet = 'Heroic Boots', -- 1
-        Ear1 = 'Eris\' Earring', -- 3
-        -- Ear2 = 'Eris\' Earring +1', -- 3
+        Ear1 = 'Eris\' Earring', -- 2
+        Ear2 = 'Eris\' Earring', -- 2
         -- Body = 'Duelist\'s Tabard',
         -- Legs = 'Nashira Serawheels',
     },
@@ -305,7 +304,7 @@ local sets = {
         Ammo = 'Phtm. Tathlum',
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Morion Earring +1',
-        Hands = 'Dls. Gloves +1',
+        Hands = 'Mahatma Cuffs',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
         Waist = 'Penitent\'s Rope',
@@ -340,7 +339,7 @@ local sets = {
         Ear1 = 'Novio Earring',
         Ear2 = 'Moldavite Earring',
         Body = 'Mahatma Hpl.',
-        Hands = 'Dls. Gloves +1',
+        Hands = 'Mahatma Cuffs',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
         Back = 'Prism Cape',
@@ -352,7 +351,7 @@ local sets = {
     },
     NukeACC = {
         Legs = 'Duelist\'s Tights',
-        Hands = 'Dls. Gloves +1',
+        Hands = 'Mahatma Cuffs',
         Feet = 'Wise Pigaches',
         -- Back = 'Merciful Cape',
     };
@@ -360,7 +359,7 @@ local sets = {
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Morion Earring +1',
         Legs = 'Duelist\'s Tights',
-        Hands = 'Dls. Gloves +1',
+        Hands = 'Mahatma Cuffs',
         Feet = 'Wise Pigaches',
         -- Back = 'Merciful Cape',
     };

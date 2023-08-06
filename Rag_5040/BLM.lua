@@ -105,7 +105,7 @@ local sets = {
         Back = 'Hexerei Cape',
         Waist = 'Fire Belt', -- 20
         Ring1 = 'Diamond Ring', -- 9
-        -- Ring2 = 'Malfrost Ring', -- 10
+        Ring2 = 'Malfrost Ring', -- 10
     },
     LightningRes = {
         Body = 'Sorcerer\'s Coat',
@@ -150,7 +150,7 @@ local sets = {
         Waist = 'Penitent\'s Rope', -- 3
         Legs = 'Mahatma Slops', -- 4
         Feet = 'Mahatma Pigaches', -- 3
-        Hands = 'Errant Cuffs', -- 2
+        Hands = 'Mahatma Cuffs', -- 3
     },
     Cursna = { -- Healing Magic
         Neck = 'Healing Torque',
@@ -210,7 +210,7 @@ local sets = {
         Ring2 = 'Snow Ring',
         Waist = 'Sorcerer\'s Belt',
         Feet = 'Rostrum Pumps',
-        Hands = 'Errant Cuffs',
+        Hands = 'Mahatma Cuffs',
     },
     FallbackEnfeeblingSub = {}, -- Used only when you do not have complete staff sets
 
@@ -263,7 +263,7 @@ local sets = {
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Morion Earring +1',
         Body = 'Mahatma Hpl.',
-        Hands = 'Errant Cuffs',
+        Hands = 'Mahatma Cuffs',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
         Back = 'Prism Cape',
