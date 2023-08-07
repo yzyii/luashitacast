@@ -182,6 +182,14 @@ function gcmage.DoMidcast(sets)
         gFunc.EquipSet('Cure');
         if (gcdisplay.GetToggle('Hate') == true) then
             gFunc.EquipSet('Hate');
+            if (string.match(spell.Name, 'Cure IV') and target.Name == me) then
+                gFunc.InterimEquipSet(sets.C4HPDown);
+                gFunc.EquipSet(sets.HPUp);
+            end
+            if (string.match(spell.Name, 'Cure III') and target.Name == me) then
+                gFunc.InterimEquipSet(sets.C3HPDown);
+                gFunc.EquipSet(sets.HPUp);
+            end
         elseif (player.SubJob == "WHM" and healers_earring) then
             gFunc.Equip('Ear2', 'Healer\'s Earring');
         end
