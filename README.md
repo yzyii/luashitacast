@@ -18,9 +18,9 @@ A combined RDM / BLM luashitacast for HorizonXI based off of https://github.com/
 /lock   - locks or unlocks all equipment.
 /kite   - toggles Kite set on/off
           /kite always takes precedence over any other set overrides active.
-		  e.g. if you have /kite and /fireres toggled on, 
-		  it will equip the kite set instead of or on top of the fire resistance set.
-		  this allows you to gain 12% move speed while keeping up most of your fire resistance.
+          e.g. if you have /kite and /fireres toggled on, 
+          it will equip the kite set instead of or on top of the fire resistance set.
+          this allows you to gain 12% move speed while keeping up most of your fire resistance.
 /oor    - forces use of Master Caster Bracelets / Republican Gold Medal.
           you can toggle this on when you are in areas where these are active.
 /fight  - equips the TP set and locks weapon and sub (or unlocks weapon and sub).
