@@ -260,7 +260,7 @@ function gcmage.DoMidcast(sets)
             gFunc.EquipSet('EnfeeblingINT');
         end
         if (gcdisplay.GetToggle('Hate') == true) then
-            if (string.contains(spell.Name, 'Sleep') or string.contains(spell.Name, 'Blind') or string.contains(spell.Name, 'Dispel')) then
+            if (string.contains(spell.Name, 'Sleep') or string.contains(spell.Name, 'Blind') or string.contains(spell.Name, 'Dispel') or string.contains(spell.Name, 'Bind')) then
                 gFunc.EquipSet('Hate');
             end
         end
