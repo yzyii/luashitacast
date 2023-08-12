@@ -453,6 +453,27 @@ local sets = {
         Ammo = 'Hedgehog Bomb',
         -- Body = 'Duelist\'s Tabard',
     },
+
+    Stun = { -- Type /csstun to equip this set and /lock your gear at the same time.
+        Main = 'Jupiter\'s Staff',
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Nashira Turban',
+        Neck = 'Dark Torque',
+        Ear1 = 'Abyssal Earring',
+        Ear2 = 'Morion Earring +1',
+        Body = 'Mahatma Hpl.',
+        Hands = 'Nashira Gages',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Back = 'Prism Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Mahatma Slops',
+        Feet = 'Nashira Crackows',
+        -- Back = 'Merciful Cape',
+        -- Ear2 = 'Dark Earring',
+        -- Hands = 'Blood Fng. Gnt.',
+        -- Body = 'Nashira Manteel',
+    },
 };
 profile.Sets = sets;
 

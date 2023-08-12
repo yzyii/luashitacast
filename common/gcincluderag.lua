@@ -16,7 +16,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','lock','fight','oor','idle'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -142,6 +142,12 @@ function gcinclude.DoCommands(args)
             gcdisplay.CreateToggle('Lock', true);
             toggle = 'Equip Lock';
             status = gcdisplay.GetToggle('Lock');
+        elseif (args[1] == 'csstun') then
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac set Stun');
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all');
+            gcdisplay.CreateToggle('Lock', true);
+            toggle = 'Equip Lock';
+            status = gcdisplay.GetToggle('Lock');
         elseif (args[1] == 'hate') then
             gcdisplay.AdvanceToggle('Hate');
             toggle = 'Hate Set';
@@ -168,8 +174,7 @@ end
 
 function gcinclude.RunWarpCudgel()
     AshitaCore:GetChatManager():QueueCommand(-1, '/equip main "Warp Cudgel"');
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main');
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all');
     local function usecudgel()
         AshitaCore:GetChatManager():QueueCommand(-1, '/item "Warp Cudgel" <me>');
     end
