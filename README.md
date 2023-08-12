@@ -54,7 +54,7 @@ A combined RDM / BLM luashitacast for HorizonXI based off of https://github.com/
 If you enable the Shorterhand setting in gcincluderag.lua, additional /commands will work.
 
 - shorterhand.lua is effectively just a pass through to shorthand you can define your own /commands in
-- using shorterhand syntax like 'me' or partial names will work. e.g. "/i me" will cast invisible on yourself.
+- using shorthand syntax like 'me' or partial names will work. e.g. "/i me" will cast invisible on yourself.
 
 ```
 /c4 - Cure IV
