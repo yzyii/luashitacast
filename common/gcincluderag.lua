@@ -16,7 +16,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','hate','kite','nuke','warpme','vert','lock','fight','oor','idle'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','lock','fight','oor','idle'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -58,6 +58,10 @@ function gcinclude.DoCommands(args)
         status = gcdisplay.Override;
     elseif (args[1] == 'earthres' or args[1] == 'eres') then
         gcinclude.ToggleOverride('EarthRes');
+        toggle = 'Override';
+        status = gcdisplay.Override;
+    elseif (args[1] == 'windres' or args[1] == 'wres') then
+        gcinclude.ToggleOverride('WindRes');
         toggle = 'Override';
         status = gcdisplay.Override;
     elseif (args[1] == 'kite') then
@@ -201,6 +205,7 @@ function gcinclude.DoDefault()
     if (gcdisplay.Override == 'IceRes') then gFunc.EquipSet('IceRes') end;
     if (gcdisplay.Override == 'LightningRes') then gFunc.EquipSet('LightningRes') end;
     if (gcdisplay.Override == 'EarthRes') then gFunc.EquipSet('EarthRes') end;
+    if (gcdisplay.Override == 'WindRes') then gFunc.EquipSet('WindRes') end;
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end;
 end
 

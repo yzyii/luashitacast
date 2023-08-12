@@ -97,8 +97,8 @@ local sets = {
     IceRes = {
         Body = 'Sorcerer\'s Coat',
         Main = 'Vulcan\'s Staff', -- 20
-        Ear1 = 'Ruby Earring', -- 10
-        Ear2 = 'Ruby Earring', -- 10
+        Ear1 = 'Diamond Earring', -- 10
+        Ear2 = 'Diamond Earring', -- 10
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ring2 = 'Sattva Ring',
@@ -130,6 +130,19 @@ local sets = {
         Ear2 = 'Topaz Earring', -- 10
         Waist = 'Wind Belt', -- 20
         Ring1 = 'Topaz Ring', -- 9
+    },
+    WindRes = {
+        Body = 'Sorcerer\'s Coat',
+        --Ring2 = 'Malgust Ring', -- 10
+        Main = 'Aquilo\'s Staff', -- 20
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Back = 'Hexerei Cape',
+        -- Hands = 'Mage\'s Cuffs', -- 5
+        Ear1 = 'Diamond Earring', -- 10
+        Ear2 = 'Diamond Earring', -- 10
+        Waist = 'Ice Belt', -- 20
+        Ring1 = 'Emerald Ring', -- 9
     },
 
     Precast = {

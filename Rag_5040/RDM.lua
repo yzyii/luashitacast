@@ -85,8 +85,8 @@ local sets = {
     },
     MDT = { -- Shell IV provides 23% MDT
         Main = 'Mythic Wand +1',
-        Sub = 'Numinous Shield',
-        Head = 'Coral Visor', -- 1
+        Sub = 'Nms. Shield +1',
+        Head = 'Dls. Chapeau +1',
         Neck = 'Jeweled Collar',
         Back = 'Hexerei Cape', -- 3
         Ring2 = 'Sattva Ring', -- 5
@@ -95,9 +95,9 @@ local sets = {
         Ear2 = 'Merman\'s Earring', -- 2
         Ammo = 'Hedgehog Bomb',
         Waist = 'Warwolf Belt',
-        Body = 'Coral Scale Mail', -- 3
+        Body = 'Cor. Scale Mail +1', -- 4
         Hands = 'Coral Fng. Gnt.', -- 1
-        Legs = 'Coral Cuisses', -- 2
+        Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
     },
     Movement = {
@@ -137,35 +137,35 @@ local sets = {
         Ear2 = 'Cmn. Earring', -- 11
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Body = 'Scorpion Breastplate', -- 9
+        Body = 'Scp. Breastplate', -- 9
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Power Sandals', -- 7
         Back = 'Hexerei Cape',
-        Hands = 'Scorpion Gauntlets', -- 5
+        Hands = 'Scp. Gauntlets', -- 5
         Ring2 = 'Malflame Ring', -- 10
         Ring1 = 'Ruby Ring', -- 9
         Waist = 'Water Belt', -- 20
     },
-    IceRes = { -- 141
+    IceRes = { -- 140
         Ammo = 'Hedgehog Bomb',
         Feet = 'Dst. Leggings +1',
         Main = 'Vulcan\'s Staff', -- 20
-        Ear1 = 'Ruby Earring', -- 10
-        Ear2 = 'Ruby Earring', -- 10
+        Ear1 = 'Diamond Earring', -- 10
+        Ear2 = 'Diamond Earring', -- 10
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Back = 'Ram Mantle +1', -- 6
-        Body = 'Feral Jerkin', -- 6
+        Back = 'Hexerei Cape',
+        -- Back = 'Tundra Mantle', -- 5
+        Body = 'Northern Jerkin', -- 6
         Hands = 'Feral Gloves', -- 4
         Legs = 'Feral Trousers', -- 6
-        Ring2 = 'Sattva Ring',
         -- Feet = 'Crimson Greaves', -- 20
         Waist = 'Fire Belt', -- 20
         Ring2 = 'Malfrost Ring', -- 10
         Ring1 = 'Diamond Ring', -- 9
     },
-    LightningRes = { -- 135
-        Body = 'Black Cotehardie', -- 3
+    LightningRes = { -- 132
+        Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Feet = 'Dst. Leggings +1',
         Main = 'Terra\'s Staff', -- 20
@@ -181,14 +181,15 @@ local sets = {
         Ring2 = 'Malflash Ring', -- 10
         Ring1 = 'Spinel Ring', -- 9
     },
-    EarthRes = { -- 140
+    EarthRes = { -- 143
         Ring2 = 'Maldust Ring', -- 10
         Feet = 'Dst. Leggings +1',
         Main = 'Auster\'s Staff', -- 20
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Body = 'Gaia Doublet', -- 10
-        -- Hands = 'Beak Gloves +1', -- 4
+        Back = 'Beak Mantle +1',
+        Hands = 'Dst. Mittens +1',
         Legs = 'Beak Trousers +1', -- 7
         -- Feet = 'Crimson Greaves', -- 20
         Ear1 = 'Topaz Earring', -- 10
@@ -196,6 +197,23 @@ local sets = {
         Waist = 'Wind Belt', -- 20
         Ring1 = 'Topaz Ring', -- 9
     },
+    WindRes = { -- 135
+        Legs = 'Dst. Subligar +1',
+        --Ring2 = 'Malgust Ring', -- 10
+        Main = 'Aquilo\'s Staff', -- 20
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Body = 'Northern Jerkin', -- 6
+        Back = 'Hexerei Cape',
+        -- Back = 'Tundra Mantle', -- 5
+        -- Hands = 'Mage\'s Cuffs', -- 5
+        -- Feet = 'Crimson Greaves', -- 20
+        Ear1 = 'Diamond Earring', -- 10
+        Ear2 = 'Diamond Earring', -- 10
+        Waist = 'Ice Belt', -- 20
+        Ring1 = 'Emerald Ring', -- 9
+    },
+
     Hate = {
         Ring1 = 'Mermaid Ring', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
@@ -213,7 +231,7 @@ local sets = {
         -- Body = 'Duelist\'s Tabard',
         -- Legs = 'Nashira Serawheels',
     },
-	C3HPDown = {
+    C3HPDown = {
         Head = 'Faerie Hairpin',
         Neck = 'Checkered Scarf',
         Ear1 = 'Merman\'s Earring',
@@ -223,8 +241,8 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Mahatma Pigaches',
         Ammo = 'Phtm. Tathlum',
-	},
-	C4HPDown = {
+    },
+    C4HPDown = {
         Head = 'Faerie Hairpin',
         Neck = 'Checkered Scarf',
         Ear1 = 'Merman\'s Earring',
@@ -238,13 +256,14 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Mahatma Pigaches',
         Ammo = 'Phtm. Tathlum',
-	},
-	HPUp = {
+    },
+    HPUp = {
         Ring1 = 'Mermaid Ring', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
         Waist = 'Warwolf Belt', -- 3
         Ring2 = 'Sattva Ring', -- 5
         Hands = 'Dst. Mittens +1',
+        -- Hands = 'Blood Fng. Gnt.',
         Body = 'Ogre Jerkin +1',
         Back = 'Gigant Mantle',
         Legs = 'Blood Cuisses',
@@ -253,7 +272,7 @@ local sets = {
         Feet = 'Heroic Boots', -- 1
         Ear1 = 'Eris\' Earring', -- 2
         Ear2 = 'Eris\' Earring', -- 2
-	},
+    },
 
     Precast = {
         Head = 'Wlk. Chapeau +1',
@@ -286,7 +305,7 @@ local sets = {
 
     Enhancing = {
         Main = 'Mythic Wand +1',
-        Sub = 'Numinous Shield',
+        Sub = 'Nms. Shield +1',
         Head = 'Errant Hat',
         Neck = 'Enhancing Torque',
         Ear1 = 'Cmn. Earring',
@@ -396,7 +415,7 @@ local sets = {
 
     TP = {
         Main = 'Martial Anelace',
-        Sub = 'Numinous Shield',
+        Sub = 'Nms. Shield +1',
         -- Main = 'Joyeuse',
         -- Sub = 'Genbu\'s Shield',
     },
