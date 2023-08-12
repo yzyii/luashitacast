@@ -1,6 +1,6 @@
 -- Modified from https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
--- Defines Staves to Equip on Precast. Will automatically equip the correct staff for a spell. Will work even if you don't have the staff.
+-- Defines Staves to equip. Will automatically equip the correct staff for a spell. Will work even if you don't have the staff.
 -- Leave as '' if you do not have the staff.
 local fire_staff = 'Vulcan\'s Staff'
 local earth_staff = 'Terra\'s Staff'
@@ -236,10 +236,10 @@ function gcmage.DoMidcast(sets)
                     gFunc.Equip('Waist', 'Rairin Obi');
                 end
             end
-            if (spell.Element == environment.DayElement) and sorcerers_tonban then
+            if (spell.Element == environment.DayElement) and sorcerers_tonban and (player.MainJob == 'BLM') then
                 gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
             end
-            if (player.HPP < 76 and player.TP < 1000) and sorcerers_ring then
+            if (player.HPP < 76 and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
                 gFunc.Equip('Ring2', 'Sorcerer\'s Ring');
             end
             if (spell.MppAftercast < 51) and uggalepih_pendant then

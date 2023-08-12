@@ -27,6 +27,7 @@ A combined RDM / BLM luashitacast for HorizonXI based off of https://github.com/
 /iceres /ires   - toggles Ice Resistance set on/off
 /fireres /fres  - toggles Fire Resistance set on/off
 /earthres /eres - toggles Earth Resistance set on/off
+/windres /wres - toggles Wind Resistance set on/off
 /lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off
 ```
 

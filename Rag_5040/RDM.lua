@@ -164,7 +164,7 @@ local sets = {
         Ring2 = 'Malfrost Ring', -- 10
         Ring1 = 'Diamond Ring', -- 9
     },
-    LightningRes = { -- 132
+    LightningRes = { -- 133
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Feet = 'Dst. Leggings +1',
@@ -173,7 +173,7 @@ local sets = {
         Neck = 'Jeweled Collar', -- 10
         Legs = 'Blood Cuisses', -- 21
         Back = 'Lightning Mantle', -- 6
-        Range = 'Lightning Bow', -- 6
+        Range = 'Lightning Bow +1', -- 7
         Ammo = '',
         Ear1 = 'Topaz Earring', -- 10
         Ear2 = 'Topaz Earring', -- 10
