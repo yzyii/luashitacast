@@ -66,33 +66,23 @@ function gcmage.EquipStaff()
 
     if (spell.Skill == 'Healing Magic') then
         if light_staff ~= '' then gFunc.Equip('Main', light_staff); end
-    elseif (spell.Skill == 'Elemental Magic') then
+    elseif (spell.Skill == 'Elemental Magic' or spell.Skill == 'Enfeebling Magic' or spell.Skill == 'Summoning') then
         if (spell.Element == 'Fire') then
-            gcmage.EquipStaffNuke(fire_staff);
+            gcmage.EquipStaffWithFallback(fire_staff);
         elseif (spell.Element == 'Earth') then
-            gcmage.EquipStaffNuke(earth_staff);
+            gcmage.EquipStaffWithFallback(earth_staff);
         elseif (spell.Element == 'Water') then
-            gcmage.EquipStaffNuke(water_staff);
+            gcmage.EquipStaffWithFallback(water_staff);
         elseif (spell.Element == 'Wind') then
-            gcmage.EquipStaffNuke(wind_staff);
+            gcmage.EquipStaffWithFallback(wind_staff);
         elseif (spell.Element == 'Ice') then
-            gcmage.EquipStaffNuke(ice_staff);
+            gcmage.EquipStaffWithFallback(ice_staff);
         elseif (spell.Element == 'Thunder') then
-            gcmage.EquipStaffNuke(thunder_staff);
-        end
-    elseif (spell.Skill == 'Enfeebling Magic') then
-        if string.contains(spell.Name, 'Sleep') or string.contains(spell.Name, 'Blind') then
-            gcmage.EquipStaffEnfeebling(dark_staff);
-        elseif string.contains(spell.Name, 'Bind') or string.contains(spell.Name, 'Paralyze') then
-            gcmage.EquipStaffEnfeebling(ice_staff);
-        elseif string.contains(spell.Name, 'Slow') then
-            gcmage.EquipStaffEnfeebling(earth_staff);
-        elseif string.contains(spell.Name, 'Silence') or string.contains(spell.Name, 'Gravity') then
-            gcmage.EquipStaffEnfeebling(wind_staff);
-        elseif string.contains(spell.Name, 'Poison') then
-            gcmage.EquipStaffEnfeebling(water_staff);
-        elseif string.contains(spell.Name, 'Dia') then
-            gcmage.EquipStaffEnfeebling(light_staff);
+            gcmage.EquipStaffWithFallback(thunder_staff);
+        elseif (spell.Element == 'Dark') then
+            gcmage.EquipStaffWithFallback(dark_staff);
+        elseif (spell.Element == 'Light') then
+            gcmage.EquipStaffWithFallback(light_staff);
         end
     elseif (spell.Skill == 'Dark Magic') then
         if string.contains(spell.Name, 'Stun') then
@@ -111,15 +101,13 @@ function gcmage.EquipStaffEnfeebling(staff)
     if staff ~= '' then
         gFunc.Equip('Main', staff);
     else
-        gFunc.EquipSet('FallbackEnfeeblingSub');
+        gFunc.EquipSet('FallbackSub');
     end
 end
 
-function gcmage.EquipStaffNuke(staff)
+function gcmage.EquipStaffWithFallback(staff)
     if staff ~= '' then
         gFunc.Equip('Main', staff);
-    else
-        gFunc.EquipSet('FallbackNukeSub');
     end
 end
 

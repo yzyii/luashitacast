@@ -101,7 +101,6 @@ local sets = {
         Ear2 = 'Diamond Earring', -- 10
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Ring2 = 'Sattva Ring',
         Back = 'Hexerei Cape',
         Waist = 'Fire Belt', -- 20
         Ring1 = 'Diamond Ring', -- 9
@@ -133,12 +132,12 @@ local sets = {
     },
     WindRes = {
         Body = 'Sorcerer\'s Coat',
-        --Ring2 = 'Malgust Ring', -- 10
+        Ring2 = 'Malgust Ring', -- 10
         Main = 'Aquilo\'s Staff', -- 20
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Back = 'Hexerei Cape',
-        -- Hands = 'Mage\'s Cuffs', -- 5
+        Hands = 'Mage\'s Cuffs', -- 5
         Ear1 = 'Diamond Earring', -- 10
         Ear2 = 'Diamond Earring', -- 10
         Waist = 'Ice Belt', -- 20
@@ -225,7 +224,6 @@ local sets = {
         Feet = 'Rostrum Pumps',
         Hands = 'Mahatma Cuffs',
     },
-    FallbackEnfeeblingSub = {}, -- Used only when you do not have complete staff sets
 
     Dark = {
         Ammo = 'Phtm. Tathlum',
@@ -265,6 +263,7 @@ local sets = {
     },
     NukeACC = {
         Hands = 'Wizard\'s Gloves',
+        Feet = 'Nashira Crackows',
     },
     NukeDOT = {},
     --[[
@@ -285,9 +284,11 @@ local sets = {
         Feet = 'Rostrum Pumps',
     },
     ]]
-    FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
 
     TP = {},
+    
+    FallbackSub = { -- Used only when you do not have complete staff sets
+    },
 };
 profile.Sets = sets;
 

@@ -188,16 +188,6 @@ function gcinclude.DoDefault()
     local environment = gData.GetEnvironment();
     if (environment.Area ~= nil) and (gcinclude.Towns:contains(environment.Area)) then gFunc.EquipSet('Town') end
 
-    local player = gData.GetPlayer();
-    if (player.Status == 'Resting') then
-        gFunc.EquipSet('Resting');
-        if (player.SubJob == "BLM") then
-            gFunc.Equip('Back', 'Wizard\'s Mantle');
-        end
-    elseif (player.IsMoving == true) and (gcdisplay.Override == 'None') then
-        gFunc.EquipSet('Movement');
-    end
-
     if (gcdisplay.Override == 'DT') then
         if (environment.Time >= 6 and environment.Time <= 18) then
             gFunc.EquipSet('DT');
@@ -212,6 +202,16 @@ function gcinclude.DoDefault()
     if (gcdisplay.Override == 'EarthRes') then gFunc.EquipSet('EarthRes') end;
     if (gcdisplay.Override == 'WindRes') then gFunc.EquipSet('WindRes') end;
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end;
+
+    local player = gData.GetPlayer();
+    if (player.Status == 'Resting') then
+        gFunc.EquipSet('Resting');
+        if (player.SubJob == "BLM") then
+            gFunc.Equip('Back', 'Wizard\'s Mantle');
+        end
+    elseif (player.IsMoving == true) and (gcdisplay.Override == 'None') then
+        gFunc.EquipSet('Movement');
+    end
 end
 
 function gcinclude.Load()
@@ -250,9 +250,9 @@ function gcinclude.SetVariables()
 
     gcdisplay.CreateToggle('Kite', false);
     gcdisplay.CreateToggle('Lock', false);
-    gcdisplay.CreateToggle('OOR', false);
     gcdisplay.CreateCycle('Idle', {[1] = 'REG', [2] = 'ALT',});
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
+        gcdisplay.CreateToggle('OOR', false);
         gcdisplay.CreateCycle('Nuke', {[1] = 'DMG', [2] = 'ACC',});
         gcdisplay.CreateToggle('Fight', false);
     end

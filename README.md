@@ -10,7 +10,7 @@ A combined RDM / BLM luashitacast for HorizonXI based off of https://github.com/
 - The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the value in gcmage.lua
 
 - If you define a specific mainhand in regular sets, it will still equip the correct stave if you have them listed in gcmage.lua
-- FallbackNukeSub and FallbackEnfeeblingSub sets are used only if you wish to define a Sub due to not having a complete set of Elemental Staves.
+- FallbackSub set is used only if you wish to define a Sub to fall back to using due to not having a complete set of Elemental Staves.
 
 ## Default Commands:
 ```

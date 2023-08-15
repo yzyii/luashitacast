@@ -96,7 +96,7 @@ local sets = {
         Ammo = 'Hedgehog Bomb',
         Waist = 'Warwolf Belt',
         Body = 'Cor. Scale Mail +1', -- 4
-        Hands = 'Coral Fng. Gnt.', -- 1
+        Hands = 'Coral Fng. Gnt. +1', -- 1
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
     },
@@ -154,8 +154,7 @@ local sets = {
         Ear2 = 'Diamond Earring', -- 10
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Back = 'Hexerei Cape',
-        -- Back = 'Tundra Mantle', -- 5
+        Back = 'Tundra Mantle', -- 5
         Body = 'Northern Jerkin', -- 6
         Hands = 'Feral Gloves', -- 4
         Legs = 'Feral Trousers', -- 6
@@ -199,14 +198,13 @@ local sets = {
     },
     WindRes = { -- 135
         Legs = 'Dst. Subligar +1',
-        --Ring2 = 'Malgust Ring', -- 10
+        Ring2 = 'Malgust Ring', -- 10
         Main = 'Aquilo\'s Staff', -- 20
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Body = 'Northern Jerkin', -- 6
-        Back = 'Hexerei Cape',
-        -- Back = 'Tundra Mantle', -- 5
-        -- Hands = 'Mage\'s Cuffs', -- 5
+        Back = 'Tundra Mantle', -- 5
+        Hands = 'Mage\'s Cuffs', -- 5
         -- Feet = 'Crimson Greaves', -- 20
         Ear1 = 'Diamond Earring', -- 10
         Ear2 = 'Diamond Earring', -- 10
@@ -358,7 +356,6 @@ local sets = {
         Waist = 'Penitent\'s Rope',
         Feet = 'Wise Pigaches',
     },
-    FallbackEnfeeblingSub = {}, -- Used only when you do not have complete staff sets
 
     Dark = {
         Ammo = 'Phtm. Tathlum',
@@ -400,7 +397,7 @@ local sets = {
     NukeACC = {
         Legs = 'Duelist\'s Tights',
         Hands = 'Mahatma Cuffs',
-        Feet = 'Wise Pigaches',
+        Feet = 'Nashira Crackows',
         -- Back = 'Merciful Cape',
     };
     NukeDOT = {
@@ -411,7 +408,6 @@ local sets = {
         Feet = 'Wise Pigaches',
         -- Back = 'Merciful Cape',
     };
-    FallbackNukeSub = {}, -- Used only when you do not have complete staff sets
 
     TP = {
         Main = 'Martial Anelace',
@@ -473,6 +469,9 @@ local sets = {
         -- Ear2 = 'Dark Earring',
         -- Hands = 'Blood Fng. Gnt.',
         -- Body = 'Nashira Manteel',
+    },
+    
+    FallbackSub = { -- Used only when you do not have complete staff sets
     },
 };
 profile.Sets = sets;
