@@ -191,7 +191,7 @@ local sets = {
         -- Neck = 'Stone Gorget',
     },
 
-    Enfeebling = { -- Base Set, not actually used for anything beyond Dia
+    Enfeebling = { -- Base Set, not actually used for anything beyond Dia. Probably not actually relevant unless I build a toggle to maximize M.Acc over stats with options like Balrahn's Ring
         Head = 'Igqira Tiara',
         Neck = 'Enfeebling Torque',
         Body = 'Wizard\'s Coat',
