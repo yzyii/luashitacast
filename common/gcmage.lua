@@ -244,7 +244,7 @@ function gcmage.DoMidcast(sets)
         end
         if (string.contains(spell.Name, 'Paralyze') or string.contains(spell.Name, 'Slow')) then
             gFunc.EquipSet('EnfeeblingMND');
-        elseif (string.contains(spell.Name, 'Gravity') or string.contains(spell.Name, 'Blind')) then
+        elseif (string.contains(spell.Name, 'Gravity') or string.contains(spell.Name, 'Blind') or string.contains(spell.Name, 'Bind') or string.contains(spell.Name, 'Dispel') or string.contains(spell.Name, 'Poison') or string.contains(spell.Name, 'Sleep')) then
             gFunc.EquipSet('EnfeeblingINT');
         end
         if (gcdisplay.GetToggle('Hate') == true) then

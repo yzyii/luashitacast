@@ -35,7 +35,7 @@ local sets = {
         Waist = 'Warwolf Belt',
         Neck = 'Dark Torque',
     },
-    Casting = {
+    Casting = { -- Used only to swap SIRD pieces in while retaining DT gear if your idle sets have DT pieces
         Waist = 'Druid\'s Rope',
         Neck = 'Willpower Torque',
     },
@@ -104,7 +104,7 @@ local sets = {
         Head = 'Dls. Chapeau +1',
         Legs = 'Blood Cuisses',
     },
-    SIRD = { -- 102% to Cap
+    SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
         Legs = 'Dst. Subligar +1',
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
@@ -121,7 +121,7 @@ local sets = {
         Feet = 'Mountain Gaiters', -- 5
         Neck = 'Willpower Torque', -- 5
     },
-    Haste = {
+    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Wlk. Chapeau +1',
         Ear1 = 'Loquac. Earring',
         Hands = 'Nashira Gages',
@@ -212,7 +212,7 @@ local sets = {
         Ring1 = 'Emerald Ring', -- 9
     },
 
-    Hate = {
+    Hate = { -- Switches to this set when casting Sleep, Blind, Dispel and Bind if /hate is toggled on
         Ring1 = 'Mermaid Ring', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
         Waist = 'Warwolf Belt', -- 3
@@ -323,28 +323,25 @@ local sets = {
         -- Neck = 'Stone Gorget',
     },
 
-    Enfeebling = {
+    Enfeebling = { -- Base Set, not actually used for anything beyond Dia
         Head = 'Dls. Chapeau +1',
         Neck = 'Enfeebling Torque',
-        Ear1 = 'Cmn. Earring',
-        Ear2 = 'Cmn. Earring',
         Body = 'Warlock\'s Tabard',
         Hands = 'Nashira Gages',
-        Ring1 = 'Aqua Ring',
-        Ring2 = 'Aqua Ring',
         Back = 'Prism Cape',
-        Waist = 'Swift Belt',
+        Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
-        Feet = 'Mahatma Pigaches',
-        Ammo = 'Hedgehog Bomb',
         -- Back = 'Altruistic Cape',
         -- Ear2 = 'Enfeebling Earring',
     },
     EnfeeblingMND = {
-        Hands = 'Dvt. Mitts +1',
-        Waist = 'Penitent\'s Rope',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Aqua Ring',
+        Hands = 'Dvt. Mitts +1',
+        Feet = 'Mahatma Pigaches',
+        Ammo = 'Hedgehog Bomb',
     },
     EnfeeblingINT = {
         Ammo = 'Phtm. Tathlum',
@@ -353,7 +350,6 @@ local sets = {
         Hands = 'Mahatma Cuffs',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
-        Waist = 'Penitent\'s Rope',
         Feet = 'Wise Pigaches',
     },
 
