@@ -60,7 +60,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring', -- 2
     },
     Movement = {},
-    SIRD = { -- 102% to Cap
+    SIRD = { -- 102% to Cap, used on all casts by default unless an Override set has been enabled.
         Body = 'Sorcerer\'s Coat',
         Ring1 = 'Merman\'s Ring',
         Ring2 = 'Sattva Ring',
@@ -74,7 +74,7 @@ local sets = {
         Feet = 'Wizard\'s Sabots', -- 20
         Neck = 'Willpower Torque', -- 5
     },
-    Haste = {
+    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Ear1 = 'Loquac. Earring',
         Hands = 'Nashira Gages',
         Waist = 'Swift Belt',
@@ -191,7 +191,7 @@ local sets = {
         -- Neck = 'Stone Gorget',
     },
 
-    Enfeebling = {
+    Enfeebling = { -- Base Set, not actually used for anything beyond Dia
         Head = 'Igqira Tiara',
         Neck = 'Enfeebling Torque',
         Body = 'Wizard\'s Coat',
@@ -263,8 +263,11 @@ local sets = {
         Hands = 'Wizard\'s Gloves',
         Feet = 'Nashira Crackows',
     },
-    NukeDOT = {},
-    --[[
+    NukeDOT = {
+        Ear1 = 'Abyssal Earring',
+        Ear2 = 'Morion Earring +1',
+	},
+    --[[ To be used once I actually get Prudence Torque and can reach 150 Int
     NukeDOT = {
         Main = 'Kirin\'s Pole',
         Ammo = 'Phtm. Tathlum',
