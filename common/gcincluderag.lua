@@ -209,7 +209,7 @@ function gcinclude.DoDefault()
         if (player.SubJob == "BLM") then
             gFunc.Equip('Back', 'Wizard\'s Mantle');
         end
-    elseif (player.IsMoving == true) and (gcdisplay.Override == 'None') then
+    elseif (player.IsMoving == true) and (gcdisplay.Override == 'None' or gcdisplay.Override == 'DT') then
         gFunc.EquipSet('Movement');
     end
 end
