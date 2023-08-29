@@ -6,7 +6,7 @@ local fonts = require('fonts');
 local Override = ''
 
 local gcdisplay = {
-	Override = 'None'
+    Override = 'None'
 };
 
 local fontSettings = T{

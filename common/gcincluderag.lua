@@ -259,6 +259,10 @@ function gcinclude.SetVariables()
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false);
     end
+    if (player.MainJob == 'BLM') then
+        gcdisplay.CreateToggle('Yellow', true);
+        gcdisplay.CreateToggle('MB', false);
+    end
 end
 
 return gcinclude;

@@ -148,6 +148,18 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
     },
+    Yellow = {
+        Head = 'Faerie Hairpin',
+        --Neck = 'Checkered Scarf',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Black Cotehardie',
+        Hands = 'Mahatma Cuffs',
+        Ring1 = 'Ether Ring',
+        Ring2 = 'Serket Ring',
+        Back = 'Umbra Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Zenith Slacks',
+    },
 
     Cure = {
         Ammo = 'Hedgehog Bomb', -- 1
@@ -233,11 +245,10 @@ local sets = {
         Hands = 'Src. Gloves +1',
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
-        Back = 'Prism Cape',
         Waist = 'Sorcerer\'s Belt',
         Legs = 'Wizard\'s Tonban',
         Feet = 'Nashira Crackows',
-        -- Back = 'Merciful Cape',
+        Back = 'Merciful Cape',
         -- Ear2 = 'Dark Earring',
         -- Body = 'Nashira Manteel',
         -- Feet = 'Igqira Huaraches',
@@ -262,11 +273,12 @@ local sets = {
     NukeACC = {
         Hands = 'Wizard\'s Gloves',
         Feet = 'Nashira Crackows',
+        Back = 'Merciful Cape',
     },
     NukeDOT = {
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Morion Earring +1',
-	},
+    },
     --[[ To be used once I actually get Prudence Torque and can reach 150 Int
     NukeDOT = {
         Main = 'Kirin\'s Pole',
@@ -285,6 +297,9 @@ local sets = {
         Feet = 'Rostrum Pumps',
     },
     ]]
+    MB = {
+        Hands = 'Src. Gloves +1',
+    },
 
     TP = {},
     

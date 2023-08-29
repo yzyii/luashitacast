@@ -58,6 +58,10 @@ function gcmage.DoPrecast(fastCastValue)
     -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
 
     gFunc.EquipSet('Precast')
+    
+    if (spell.Skill == 'Elemental Magic' and player.MainJob == 'BLM' and gcdisplay.GetToggle('Yellow') == true) then
+        gFunc.EquipSet('Yellow')
+    end
 end
 
 function gcmage.EquipStaff()
@@ -190,25 +194,27 @@ function gcmage.DoMidcast(sets)
             gFunc.EquipSet('Cursna');
         end
     elseif (spell.Skill == 'Elemental Magic') then
-        local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
         gFunc.EquipSet('Nuke');
-        if (gcdisplay.GetCycle('Nuke') == 'ACC') then
-            gFunc.EquipSet('NukeACC');
-            if (gcdisplay.GetToggle('OOR') == true) and (player.MainJob == 'RDM') and master_casters_bracelets then
-                gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
-            end
-            if (environment.WeatherElement == 'Dark') and diabolos_earring then
-                gFunc.Equip('Ear2', 'Diabolos\'s Earring');
-            end
-            if (player.SubJob == "BLM" and wizards_earring) then
-                gFunc.Equip('Ear2', 'Wizard\'s Earring');
-            end
-        elseif (ElementalDebuffs:contains(spell.Name)) then
+
+        local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
+        if (ElementalDebuffs:contains(spell.Name)) then
             gFunc.EquipSet('NukeDOT');
             if (player.SubJob == "BLM" and wizards_earring) then
                 gFunc.Equip('Ear2', 'Wizard\'s Earring');
             end
         else
+            if (gcdisplay.GetCycle('Nuke') == 'ACC') then
+                gFunc.EquipSet('NukeACC');
+                if (gcdisplay.GetToggle('OOR') == true) and (player.MainJob == 'RDM') and master_casters_bracelets then
+                    gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
+                end
+                if (environment.WeatherElement == 'Dark') and diabolos_earring then
+                    gFunc.Equip('Ear2', 'Diabolos\'s Earring');
+                end
+                if (player.SubJob == "BLM" and wizards_earring) then
+                    gFunc.Equip('Ear2', 'Wizard\'s Earring');
+                end
+            end
             if (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
                 if (spell.Element == 'Fire') and karin_obi then
                     gFunc.Equip('Waist', 'Karin Obi');
@@ -232,6 +238,9 @@ function gcmage.DoMidcast(sets)
             end
             if (spell.MppAftercast < 51) and uggalepih_pendant then
                 gFunc.Equip('Neck', 'Uggalepih Pendant');
+            end
+            if (gcdisplay.GetToggle('MB') == true) then
+                gFunc.EquipSet('MB')
             end
         end
     elseif (spell.Skill == 'Enfeebling Magic') then
