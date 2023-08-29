@@ -38,7 +38,7 @@ A combined RDM / BLM luashitacast for HorizonXI based off of https://github.com/
 [Additional Toggles]
 /nuke   - toggles Elemental Magic between regular DMG and MACC sets
 /idle   - toggles between using 2 different idle sets (REG and ALT)
-/yellow - equips gear to lower HP on pre-cast
+/yellow - equips gear to lower HP on pre-cast. This is on by default.
 /mb     - equips gear that gives bonuses to magic burst damage when casting nukes
 
 [Overrides]
