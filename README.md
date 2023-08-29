@@ -44,7 +44,7 @@ SMN to come as I level it :P
           use /lock to unlock again.
 ```
 
-## Default Commands (RDM):
+## Additional Commands for RDM:
 ```
 [Regular Toggles]
 /fight  - equips the TP set and locks weapon and sub (or unlocks weapon and sub).
@@ -58,10 +58,10 @@ SMN to come as I level it :P
           use /lock to unlock again.
 ```
 
-## Default Commands (BLM):
+## Additional Commands for BLM:
 ```
 [Regular Toggles]
-/yellow - equips gear to lower HP on pre-cast. This is on by default.
+/yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring. This is on by default.
 /mb     - equips gear that gives bonuses to magic burst damage when casting nukes
 ```
 
