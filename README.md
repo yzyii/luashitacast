@@ -18,7 +18,7 @@ SMN to come as I level it :P
 ```
 [Regular Toggles]
 /lock   - locks or unlocks all equipment.
-/kite   - toggles Kite set on/off
+/kite   - toggles Kite set on/off.
           /kite always takes precedence over any other set overrides active.
           e.g. if you have /kite and /fireres toggled on, 
           it will equip the kite set instead of or on top of the fire resistance set.
@@ -27,17 +27,17 @@ SMN to come as I level it :P
           you can toggle this on when you are in areas where these are active.
 
 [Additional Toggles]
-/nuke   - toggles Elemental Magic between regular DMG and MACC sets
-/idle   - toggles between using 2 different idle sets (REG and ALT)
+/nuke   - toggles Elemental Magic between regular DMG and MACC sets.
+/idle   - toggles between using 2 different idle sets (REG and ALT).
 
 [Overrides] (Changes your idle set to use these sets instead)
-/dt             - toggles DT set on/off
-/mdt            - toggles MDT set on/off
-/iceres /ires   - toggles Ice Resistance set on/off
-/fireres /fres  - toggles Fire Resistance set on/off
-/earthres /eres - toggles Earth Resistance set on/off
-/windres /wres  - toggles Wind Resistance set on/off
-/lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off
+/dt             - toggles DT set on/off.
+/mdt            - toggles MDT set on/off.
+/iceres /ires   - toggles Ice Resistance set on/off.
+/fireres /fres  - toggles Fire Resistance set on/off.
+/earthres /eres - toggles Earth Resistance set on/off.
+/windres /wres  - toggles Wind Resistance set on/off.
+/lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off.
 
 [Special Commands]
 /warpme - equips a warp cudgel and uses it after 30 seconds and locks equipment. 
@@ -48,7 +48,7 @@ SMN to come as I level it :P
 ```
 [Regular Toggles]
 /fight  - equips the TP set and locks weapon and sub (or unlocks weapon and sub).
-          you can still use /vert and /lock while /fight is toggled on
+          you can still use /vert and /lock while /fight is toggled on.
 /hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
 
 [Special Sets]
@@ -61,8 +61,9 @@ SMN to come as I level it :P
 ## Additional Commands for BLM:
 ```
 [Regular Toggles]
-/yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring. This is on by default.
-/mb     - equips gear that gives bonuses to magic burst damage when casting nukes
+/yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring.
+          This is on by default.
+/mb     - equips gear that gives bonuses to magic burst damage when casting nukes.
 ```
 
 ## Additional Commands (Shorterhand):
