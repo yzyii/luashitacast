@@ -71,3 +71,13 @@ If you enable the Shorterhand setting in gcincluderag.lua, additional /commands 
 /b  - Blink
 /a  - Aquaveil
 ```
+
+## Additional Notes
+
+LuAshitacast provides functionality to automatically equip Level Sync gear.
+
+This luashitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine.
+
+I may provide some additional /lock type sets similar to /vert and /csstun to mimic the same utility in the future or you could look to doing this yourself.
+
+e.g. /lockset1 /lockset2 /lockset3
