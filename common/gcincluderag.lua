@@ -262,10 +262,10 @@ function gcinclude.SetVariables()
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
         gcdisplay.CreateToggle('OOR', false);
         gcdisplay.CreateCycle('Nuke', {[1] = 'DMG', [2] = 'ACC',});
-        gcdisplay.CreateToggle('Fight', false);
     end
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false);
+        gcdisplay.CreateToggle('Fight', false);
     end
     if (player.MainJob == 'BLM') then
         gcdisplay.CreateToggle('Yellow', true);

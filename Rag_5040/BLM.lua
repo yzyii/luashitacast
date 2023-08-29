@@ -303,8 +303,6 @@ local sets = {
         Hands = 'Src. Gloves +1',
     },
 
-    TP = {},
-    
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
 };

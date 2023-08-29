@@ -6,7 +6,7 @@ SMN to come as I level it :P
 
 # How to Use
 
-- Edit Equipment Sets in RDM.lua or BLM.lua
+- Edit Equipment Sets in RDM.lua or BLM.lua. You may delete either of these if you're only looking for a lua one of the jobs.
 - Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua
 - Turn On / Off Additional Commands and Logging in gcincluderag.lua
 - The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the value in gcmage.lua
@@ -25,25 +25,12 @@ SMN to come as I level it :P
           this allows you to gain 12% move speed while keeping up most of your fire resistance.
 /oor    - forces use of Master Caster Bracelets / Republican Gold Medal.
           you can toggle this on when you are in areas where these are active.
-/fight  - equips the TP set and locks weapon and sub (or unlocks weapon and sub).
-          you can still use /vert and /lock while /fight is toggled on
-/hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
-
-[Special Sets]
-/warpme - equips a warp cudgel and uses it after 30 seconds and locks equipment. 
-          use /lock to unlock again.
-/vert   - equips the Convert set and locks equipment. 
-          use /lock to unlock again.
-/csstun - equips the Stun set and locks equipment (For Chainspell Stunning).
-          use /lock to unlock again.
 
 [Additional Toggles]
 /nuke   - toggles Elemental Magic between regular DMG and MACC sets
 /idle   - toggles between using 2 different idle sets (REG and ALT)
-/yellow - equips gear to lower HP on pre-cast. This is on by default.
-/mb     - equips gear that gives bonuses to magic burst damage when casting nukes
 
-[Overrides]
+[Overrides] (Changes your idle set to use these sets instead)
 /dt             - toggles DT set on/off
 /mdt            - toggles MDT set on/off
 /iceres /ires   - toggles Ice Resistance set on/off
@@ -51,6 +38,31 @@ SMN to come as I level it :P
 /earthres /eres - toggles Earth Resistance set on/off
 /windres /wres  - toggles Wind Resistance set on/off
 /lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off
+
+[Special Commands]
+/warpme - equips a warp cudgel and uses it after 30 seconds and locks equipment. 
+          use /lock to unlock again.
+```
+
+## Default Commands (RDM):
+```
+[Regular Toggles]
+/fight  - equips the TP set and locks weapon and sub (or unlocks weapon and sub).
+          you can still use /vert and /lock while /fight is toggled on
+/hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
+
+[Special Sets]
+/vert   - equips the Convert set and locks equipment. 
+          use /lock to unlock again.
+/csstun - equips the Stun set and locks equipment (For Chainspell Stunning).
+          use /lock to unlock again.
+```
+
+## Default Commands (BLM):
+```
+[Regular Toggles]
+/yellow - equips gear to lower HP on pre-cast. This is on by default.
+/mb     - equips gear that gives bonuses to magic burst damage when casting nukes
 ```
 
 ## Additional Commands (Shorterhand):
