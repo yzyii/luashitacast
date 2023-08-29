@@ -266,7 +266,7 @@ function gcmage.DoMidcast(sets)
         end
     elseif (spell.Skill == 'Dark Magic') then
         gFunc.EquipSet('Dark');
-        if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP < 86 then
+        if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP <= 85 then
             gFunc.Equip('Ring2', 'Diabolos\'s Ring');
         end
         -- Remove the Following if you have Dark Earring + Abyssal Earring
@@ -280,6 +280,7 @@ function gcmage.DoMidcast(sets)
         end
     elseif (spell.Skill == 'Divine Magic') then
         gFunc.EquipSet('Enfeebling');
+        gFunc.EquipSet('EnfeeblingMND');
     end
 
     gcmage.EquipStaff();
