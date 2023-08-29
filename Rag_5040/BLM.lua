@@ -76,6 +76,7 @@ local sets = {
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Ear1 = 'Loquac. Earring',
+        Head = 'Nashira Turban',
         Hands = 'Nashira Gages',
         Waist = 'Swift Belt',
         Feet = 'Nashira Crackows',
@@ -148,7 +149,9 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
     },
-    Yellow = {
+    Yellow = { -- Include Fast Cast gear in here as well
+        Ear1 = 'Loquac. Earring',
+        Feet = 'Rostrum Pumps',
         Head = 'Faerie Hairpin',
         Neck = 'Checkered Scarf',
         Ear2 = 'Merman\'s Earring',

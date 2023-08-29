@@ -60,7 +60,18 @@ function gcmage.DoPrecast(fastCastValue)
     gFunc.EquipSet('Precast')
 
     if (spell.Skill == 'Elemental Magic' and player.MainJob == 'BLM' and gcdisplay.GetToggle('Yellow') == true) then
-        gFunc.EquipSet('Yellow')
+        local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
+        if (not ElementalDebuffs:contains(spell.Name)) then
+            local function delayYellow()
+                gFunc.ForceEquipSet('Yellow')
+            end
+            local yellowDelay = math.floor(castDelay - 1)
+            if (yellowDelay <= 0) then
+                gFunc.EquipSet('Yellow')
+            else
+                delayYellow:once(yellowDelay);
+            end
+        end
     end
 end
 
@@ -98,14 +109,6 @@ function gcmage.EquipStaff()
         end
     elseif (spell.Skill == 'Divine Magic') then
         if light_staff ~= '' then gFunc.Equip('Main', light_staff); end
-    end
-end
-
-function gcmage.EquipStaffEnfeebling(staff)
-    if staff ~= '' then
-        gFunc.Equip('Main', staff);
-    else
-        gFunc.EquipSet('FallbackSub');
     end
 end
 
@@ -233,7 +236,7 @@ function gcmage.DoMidcast(sets)
             if (spell.Element == environment.DayElement) and sorcerers_tonban and (player.MainJob == 'BLM') then
                 gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
             end
-            if (player.HPP < 76 and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
+            if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
                 gFunc.Equip('Ring2', 'Sorcerer\'s Ring');
             end
             if (spell.MppAftercast < 51) and uggalepih_pendant then
