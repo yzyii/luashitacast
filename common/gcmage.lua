@@ -1,5 +1,3 @@
--- Modified from https://github.com/GetAwayCoxn/Luashitacast-Profiles
-
 -- Defines Staves to equip. Will automatically equip the correct staff for a spell. Will work even if you don't have the staff.
 -- Leave as '' if you do not have the staff.
 local fire_staff = 'Vulcan\'s Staff'
@@ -21,18 +19,32 @@ local rairin_obi = true
 local korin_obi = true
 local anrin_obi = true
 
--- Set to true if you have the item
+-- Set to true if you have the item, and specify which ring or earring slot it will override
 local diabolos_pole = true
-local diabolos_earring = true
-local diabolos_ring = true
 local uggalepih_pendant = true
 local sorcerers_tonban = true
-local sorcerers_ring = true
 local dream_boots = true
 local dream_mittens = true
-local wizards_earring = true
-local healers_earring = true
 local master_casters_bracelets = true
+
+local diabolos_earring = true
+local diabolos_earring_slot = 'Ear2'
+local wizards_earring = true
+local wizards_earring_slot = 'Ear2'
+local healers_earring = true
+local healers_earring_slot = 'Ear2'
+
+local diabolos_ring = true
+local diabolos_ring_slot = 'Ring2'
+local sorcerers_ring = true
+local sorcerers_ring_slot = 'Ring1' -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
+local ice_ring = true
+local ice_ring_slot = 'Ring2'
+local water_ring = true
+local water_ring_slot = 'Ring2'
+
+-- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
+local dark_and_diabolos_earrings = false
 
 --[[
 --------------------------------
@@ -46,7 +58,7 @@ function gcmage.DoPrecast(fastCastValue)
     local spell = gData.GetAction();
     local player = gData.GetPlayer();
     if (player.SubJob == "RDM") then
-         fastCastValue = fastCastValue + 0.15
+         fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
     local minimumBuffer = 0.25; -- Can be lowered to 0.1 if you want
     local packetDelay = 0.25; -- Change this to 0.4 if you do not use PacketFlow
@@ -131,18 +143,18 @@ function gcmage.DoMidcast(sets)
         gFunc.InterimEquipSet(sets.Casting);
     end
 
-    if (gcdisplay.Override == 'DT') then
+    if (gcdisplay.IdleSet == 'DT') then
         if (environment.Time >= 6 and environment.Time <= 18) then
             gFunc.InterimEquipSet(sets.DT);
         else
             gFunc.InterimEquipSet(sets.DTNight);
         end
     end
-    if (gcdisplay.Override == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end;
-    if (gcdisplay.Override == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end;
-    if (gcdisplay.Override == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end;
-    if (gcdisplay.Override == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end;
-    if (gcdisplay.Override == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end;
+    if (gcdisplay.IdleSet == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end;
+    if (gcdisplay.IdleSet == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end;
+    if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end;
+    if (gcdisplay.IdleSet == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end;
+    if (gcdisplay.IdleSet == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end;
 
     if (spell.Skill == 'Ninjutsu') then
         if string.contains(spell.Name, 'Utsusemi') then
@@ -186,12 +198,13 @@ function gcmage.DoMidcast(sets)
                 gFunc.EquipSet(sets.HPUp);
             end
         elseif (player.SubJob == "WHM" and healers_earring) then
-            gFunc.Equip('Ear2', 'Healer\'s Earring');
-        end
-        if (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
+            gFunc.Equip(healers_earring_slot, 'Healer\'s Earring');
+        elseif (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
             if (spell.Element == 'Light') and korin_obi then
                 gFunc.Equip('Waist', 'Korin Obi');
             end
+		elseif (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
+			gFunc.Equip(water_ring_slot, 'Water Ring');
         end
         if string.match(spell.Name, 'Cursna') then
             gFunc.EquipSet('Cursna');
@@ -203,7 +216,7 @@ function gcmage.DoMidcast(sets)
         if (ElementalDebuffs:contains(spell.Name)) then
             gFunc.EquipSet('NukeDOT');
             if (player.SubJob == "BLM" and wizards_earring) then
-                gFunc.Equip('Ear2', 'Wizard\'s Earring');
+                gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring');
             end
         else
             if (gcdisplay.GetCycle('Nuke') == 'ACC') then
@@ -212,10 +225,13 @@ function gcmage.DoMidcast(sets)
                     gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
                 end
                 if (environment.WeatherElement == 'Dark') and diabolos_earring then
-                    gFunc.Equip('Ear2', 'Diabolos\'s Earring');
+                    gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring');
                 end
                 if (player.SubJob == "BLM" and wizards_earring) then
-                    gFunc.Equip('Ear2', 'Wizard\'s Earring');
+                    gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring');
+                end
+                if (environment.DayElement == 'Ice') and ice_ring and player.MPP <= 85 then
+                    gFunc.Equip(ice_ring_slot, 'Ice Ring');
                 end
             end
             if (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
@@ -237,7 +253,7 @@ function gcmage.DoMidcast(sets)
                 gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
             end
             if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
-                gFunc.Equip('Ring2', 'Sorcerer\'s Ring');
+                gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring');
             end
             if (spell.MppAftercast < 51) and uggalepih_pendant then
                 gFunc.Equip('Neck', 'Uggalepih Pendant');
@@ -252,7 +268,7 @@ function gcmage.DoMidcast(sets)
             gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
         end
         if (environment.WeatherElement == 'Dark') and diabolos_earring then
-            gFunc.Equip('Ear2', 'Diabolos\'s Earring');
+            gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring');
         end
         if (string.contains(spell.Name, 'Paralyze') or string.contains(spell.Name, 'Slow')) then
             gFunc.EquipSet('EnfeeblingMND');
@@ -267,11 +283,10 @@ function gcmage.DoMidcast(sets)
     elseif (spell.Skill == 'Dark Magic') then
         gFunc.EquipSet('Dark');
         if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP <= 85 then
-            gFunc.Equip('Ring2', 'Diabolos\'s Ring');
+            gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring');
         end
-        -- Remove the Following if you have Dark Earring + Abyssal Earring
-        if (environment.WeatherElement == 'Dark') and diabolos_earring then
-            gFunc.Equip('Ear2', 'Diabolos\'s Earring');
+        if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_diabolos_earrings) then
+            gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring');
         end
         if (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
             if (spell.Element == 'Dark') and anrin_obi then

@@ -1,5 +1,3 @@
--- Modified from https://github.com/GetAwayCoxn/Luashitacast-Profiles
-
 local gcinclude = T{};
 
 gcinclude.settings = {
@@ -16,7 +14,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb','rebind'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -37,33 +35,37 @@ function gcinclude.DoCommands(args)
     local status = nil;
     
     if (args[1] == 'dt') then
-        gcinclude.ToggleOverride('DT');
-        toggle = 'Override';
-        status = gcdisplay.Override;
+        gcinclude.ToggleIdleSet('DT');
+        toggle = 'IdleSet';
+        status = gcdisplay.IdleSet;
     elseif (args[1] == 'mdt') then
-        gcinclude.ToggleOverride('MDT');
-        toggle = 'Override';
-        status = gcdisplay.Override;
+        gcinclude.ToggleIdleSet('MDT');
+        toggle = 'IdleSet';
+        status = gcdisplay.IdleSet;
     elseif (args[1] == 'fireres' or args[1] == 'fres') then
-        gcinclude.ToggleOverride('FireRes');
-        toggle = 'Override';
-        status = gcdisplay.Override;
+        gcinclude.ToggleIdleSet('FireRes');
+        toggle = 'IdleSet';
+        status = gcdisplay.IdleSet;
     elseif (args[1] == 'iceres' or args[1] == 'ires') then
-        gcinclude.ToggleOverride('IceRes');
-        toggle = 'Override';
-        status = gcdisplay.Override;
+        gcinclude.ToggleIdleSet('IceRes');
+        toggle = 'IdleSet';
+        status = gcdisplay.IdleSet;
     elseif (args[1] == 'lightningres' or args[1] == 'lres' or args[1] == 'thunderres' or args[1] == 'tres') then
-        gcinclude.ToggleOverride('LightningRes');
-        toggle = 'Override';
-        status = gcdisplay.Override;
+        gcinclude.ToggleIdleSet('LightningRes');
+        toggle = 'IdleSet';
+        status = gcdisplay.IdleSet;
     elseif (args[1] == 'earthres' or args[1] == 'eres') then
-        gcinclude.ToggleOverride('EarthRes');
-        toggle = 'Override';
-        status = gcdisplay.Override;
+        gcinclude.ToggleIdleSet('EarthRes');
+        toggle = 'IdleSet';
+        status = gcdisplay.IdleSet;
     elseif (args[1] == 'windres' or args[1] == 'wres') then
-        gcinclude.ToggleOverride('WindRes');
-        toggle = 'Override';
-        status = gcdisplay.Override;
+        gcinclude.ToggleIdleSet('WindRes');
+        toggle = 'IdleSet';
+        status = gcdisplay.IdleSet;
+    elseif (args[1] == 'idle') then
+        gcinclude.ToggleIdleSet('Idle');
+        toggle = 'IdleSet';
+        status = gcdisplay.IdleSet;
     elseif (args[1] == 'kite') then
         gcdisplay.AdvanceToggle('Kite');
         toggle = 'Kite Set';
@@ -85,6 +87,8 @@ function gcinclude.DoCommands(args)
         gcdisplay.AdvanceToggle('OOR');
         toggle = 'Out of Region Set';
         status = gcdisplay.GetToggle('OOR');
+    elseif (args[1] == 'rebind') then
+        AshitaCore:GetChatManager():QueueCommand(-1, '/bind F1 /lac fwd ' .. args[2]);
     elseif (args[1] == 'lock') then
         gcdisplay.AdvanceToggle('Lock');
         toggle = 'Equip Lock';
@@ -111,10 +115,6 @@ function gcinclude.DoCommands(args)
         else
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all');
         end
-    elseif (args[1] == 'idle') then
-        gcdisplay.AdvanceCycle('Idle');
-        toggle = 'Idle Gear Set';
-        status = gcdisplay.GetCycle('Idle');
     end
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
         if (args[1] == 'nuke') then
@@ -172,11 +172,22 @@ function gcinclude.DoCommands(args)
     end
 end
 
-function gcinclude.ToggleOverride(override)
-    if (gcdisplay.Override == override) then
-        gcdisplay.Override = 'None'
+local lastIdleSet = 'Normal'
+
+function gcinclude.ToggleIdleSet(idleSet)
+    if (idleSet == 'Idle') then
+	    if (gcdisplay.IdleSet == 'Normal') then
+		    gcdisplay.IdleSet = 'Alternate'
+		else
+		    gcdisplay.IdleSet = 'Normal'
+		end
+		lastIdleSet = gcdisplay.IdleSet
     else
-        gcdisplay.Override = override;
+        if (idleSet == gcdisplay.IdleSet) then
+		    gcdisplay.IdleSet = lastIdleSet
+		else
+            gcdisplay.IdleSet = idleSet;
+		end
     end
 end
 
@@ -189,26 +200,40 @@ function gcinclude.RunWarpCudgel()
     usecudgel:once(31);
 end
 
-function gcinclude.DoDefault()
+function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     gFunc.EquipSet('Idle');
-    if (gcdisplay.GetCycle('Idle') == 'ALT') then gFunc.EquipSet('IdleALT') end;
+    if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALT') end;
+
+	local player = gData.GetPlayer();
+
+    if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
+        if (player.SubJob == "NIN") and player.MP >= ninSJMMP - 50 then
+			gFunc.EquipSet('IdleMaxMP')
+		elseif (player.SubJob == "WHM") and player.MP >= whmSJMMP - 50 then
+			gFunc.EquipSet('IdleMaxMP')
+		elseif (player.SubJob == "BLM") and player.MP >= blmSJMMP - 50 then
+			gFunc.EquipSet('IdleMaxMP')
+		elseif (player.SubJob == "RDM") and player.MP >= rdmSJMMP - 50 then
+			gFunc.EquipSet('IdleMaxMP')
+		end
+	end
 
     local environment = gData.GetEnvironment();
     if (environment.Area ~= nil) and (gcinclude.Towns:contains(environment.Area)) then gFunc.EquipSet('Town') end
 
-    if (gcdisplay.Override == 'DT') then
+    if (gcdisplay.IdleSet == 'DT') then
         if (environment.Time >= 6 and environment.Time <= 18) then
             gFunc.EquipSet('DT');
         else
             gFunc.EquipSet('DTNight');
         end
     end
-    if (gcdisplay.Override == 'MDT') then gFunc.EquipSet('MDT') end;
-    if (gcdisplay.Override == 'FireRes') then gFunc.EquipSet('FireRes') end;
-    if (gcdisplay.Override == 'IceRes') then gFunc.EquipSet('IceRes') end;
-    if (gcdisplay.Override == 'LightningRes') then gFunc.EquipSet('LightningRes') end;
-    if (gcdisplay.Override == 'EarthRes') then gFunc.EquipSet('EarthRes') end;
-    if (gcdisplay.Override == 'WindRes') then gFunc.EquipSet('WindRes') end;
+    if (gcdisplay.IdleSet == 'MDT') then gFunc.EquipSet('MDT') end;
+    if (gcdisplay.IdleSet == 'FireRes') then gFunc.EquipSet('FireRes') end;
+    if (gcdisplay.IdleSet == 'IceRes') then gFunc.EquipSet('IceRes') end;
+    if (gcdisplay.IdleSet == 'LightningRes') then gFunc.EquipSet('LightningRes') end;
+    if (gcdisplay.IdleSet == 'EarthRes') then gFunc.EquipSet('EarthRes') end;
+    if (gcdisplay.IdleSet == 'WindRes') then gFunc.EquipSet('WindRes') end;
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end;
 
     local player = gData.GetPlayer();
@@ -217,7 +242,7 @@ function gcinclude.DoDefault()
         if (player.SubJob == "BLM") then
             gFunc.Equip('Back', 'Wizard\'s Mantle');
         end
-    elseif (player.IsMoving == true) and (gcdisplay.Override == 'None' or gcdisplay.Override == 'DT') then
+    elseif (player.IsMoving == true) and (gcdisplay.IdleSet == 'None' or gcdisplay.IdleSet == 'DT') then
         gFunc.EquipSet('Movement');
     end
 end
@@ -227,7 +252,14 @@ function gcinclude.Load()
     gcdisplay.Load:once(2);
     gcinclude.SetVariables:once(2);
     gcinclude.SetAlias:once(2);
-    
+
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F1 /lac fwd fres');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F2 /lac fwd kite');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F3 /lac fwd dt');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F4 /lac fwd mdt');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia');
+
     if gcinclude.settings.Shorterhand then
         shorterhand.Load();
     end
@@ -258,7 +290,6 @@ function gcinclude.SetVariables()
 
     gcdisplay.CreateToggle('Kite', false);
     gcdisplay.CreateToggle('Lock', false);
-    gcdisplay.CreateCycle('Idle', {[1] = 'REG', [2] = 'ALT',});
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
         gcdisplay.CreateToggle('OOR', false);
         gcdisplay.CreateCycle('Nuke', {[1] = 'DMG', [2] = 'ACC',});

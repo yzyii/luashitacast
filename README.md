@@ -28,9 +28,9 @@ SMN to come as I level it :P
 
 [Additional Toggles]
 /nuke   - toggles Elemental Magic between regular DMG and MACC sets.
-/idle   - toggles between using 2 different idle sets (REG and ALT).
 
-[Overrides] (Changes your idle set to use these sets instead)
+[Idle Sets] (Changes your idle set to use these sets instead)
+/idle           - toggles between using 2 different idle sets (Normal and Alternate i.e. Idle and IdleALT).
 /dt             - toggles DT set on/off.
 /mdt            - toggles MDT set on/off.
 /iceres /ires   - toggles Ice Resistance set on/off.
@@ -64,6 +64,21 @@ SMN to come as I level it :P
 /yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring.
           This is on by default.
 /mb     - equips gear that gives bonuses to magic burst damage when casting nukes.
+```
+
+## Keybinds:
+
+This luashitacast binds the following:
+```
+F1  - Fire Res
+F2  - Kite
+F3  - DT
+F4  - MDT
+
+F9  - Stun
+F10 - Dia
+
+You can use "/rebind XYZ" to bind F1 to a different set e.g. /rebind tres will rebind F1 to lightning resistance.
 ```
 
 ## Additional Commands (Shorterhand):

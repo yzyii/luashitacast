@@ -2,6 +2,10 @@ local profile = {};
 
 local fastCastValue = 0.32 -- 20% from traits 12% from gear
 
+local ninSJMaxMP = 605 -- The Max MP you have when /nin in your idle set
+local whmSJMaxMP = 683 -- The Max MP you have when /whm in your idle set
+local blmSJMaxMP = 702 -- The Max MP you have when /blm in your idle set
+
 local sets = {
     Idle = {
         Head = 'Dls. Chapeau +1',
@@ -35,7 +39,31 @@ local sets = {
         Waist = 'Warwolf Belt',
         Neck = 'Dark Torque',
     },
-    Casting = { -- Used only to swap SIRD pieces in while retaining DT gear if your idle sets have DT pieces
+	IdleMaxMP = {
+        Head = 'Dls. Chapeau +1',
+        Main = 'Terra\'s Staff',
+        Legs = 'Blood Cuisses',
+        Ring1 = 'Serket Ring',
+        Ring2 = 'Sattva Ring',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Ethereal Earring',
+        Back = 'Umbra Cape',
+        Body = 'Mahatma Hpl.',
+        Hands = 'Blood Fng. Gnt.',
+        Feet = 'Crimson Greaves',
+        Ammo = 'Hedgehog Bomb',
+        Waist = 'Hierarch Belt',
+        Neck = 'Uggalepih Pendant',
+	},
+    Precast = {
+        Head = 'Wlk. Chapeau +1',
+        Ear1 = 'Loquac. Earring',
+        -- Body = 'Duelist\'s Tabard',
+    },
+    Casting = { -- Default Casting Equipment when using Idle sets
+        Head = 'Dls. Chapeau +1',
+        Ear1 = 'Merman\'s Earring',
+        Body = 'Dst. Harness +1',
         Waist = 'Druid\'s Rope',
         Neck = 'Willpower Torque',
     },
@@ -49,7 +77,6 @@ local sets = {
         Ear1 = 'Relaxing Earring',
     },
     Town = {
-        Body = 'Mahatma Hpl.',
     },
     DT = {
         Main = 'Terra\'s Staff', -- 20
@@ -270,12 +297,6 @@ local sets = {
         Ear2 = 'Eris\' Earring', -- 2
     },
 
-    Precast = {
-        Head = 'Wlk. Chapeau +1',
-        Ear1 = 'Loquac. Earring',
-        -- Body = 'Duelist\'s Tabard',
-    },
-
     Cure = {
         Neck = 'Healing Torque',
         Ear2 = 'Cmn. Earring',
@@ -302,17 +323,17 @@ local sets = {
     Enhancing = {
         Main = 'Mythic Wand +1',
         Sub = 'Nms. Shield +1',
-        Head = 'Errant Hat',
+        Head = 'Wlk. Chapeau +1',
         Neck = 'Enhancing Torque',
         Ear1 = 'Cmn. Earring',
-        Ear2 = 'Cmn. Earring',
+        Ear2 = 'Ethereal Earring',
         Body = 'Mahatma Hpl.',
-        Hands = 'Dls. Gloves +1',
+        Hands = 'Blood Fng. Gnt.',
         Ring1 = 'Aqua Ring',
-        Ring2 = 'Aqua Ring',
-        Waist = 'Penitent\'s Rope',
+        Ring2 = 'Sattva Ring',
+        Waist = 'Swift Belt',
         Legs = 'Warlock\'s Tights',
-        Feet = 'Mahatma Pigaches',
+        Feet = 'Nashira Crackows',
         Ammo = 'Hedgehog Bomb',
         Back = 'Merciful Cape',
     },
@@ -494,7 +515,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcinclude.DoDefault();
+    gcinclude.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000);
 end
 
 profile.HandlePrecast = function()

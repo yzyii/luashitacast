@@ -3,10 +3,10 @@
 local Toggles = {};
 local Cycles = {};
 local fonts = require('fonts');
-local Override = ''
+local IdleSet = ''
 
 local gcdisplay = {
-    Override = 'None'
+    IdleSet = 'Normal'
 };
 
 local fontSettings = T{
@@ -103,7 +103,7 @@ function gcdisplay.Load()
         for key, value in pairs(Cycles) do
             display = display .. '   ' .. key .. ': ' .. '|cFF00FF00|' .. value.Array[value.Index] .. '|r';
         end
-        display = display .. '   ' .. 'Override' .. ': ' .. '|cFF00FF00|' .. gcdisplay.Override .. '|r' .. '  ';
+        display = display .. '   ' .. 'IdleSet' .. ': ' .. '|cFF00FF00|' .. gcdisplay.IdleSet .. '|r' .. '  ';
         gcdisplay.FontObject.text = display;
     end);
 end

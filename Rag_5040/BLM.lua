@@ -2,6 +2,10 @@ local profile = {};
 
 local fastCastValue = 0.04 -- 4% from gear
 
+local ninSJNukeMaxMP = 706 -- The Max MP you have when /nin in your nuking set
+local whmSJNukeMaxMP = 784 -- The Max MP you have when /whm in your nuking set
+local rdmSJNukeMaxMP = 765 -- The Max MP you have when /rdm in your nuking set
+
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -11,6 +15,13 @@ local sets = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Back = 'Umbra Cape',
+        Feet = 'Rostrum Pumps',
+        Head = 'Faerie Hairpin',
+        Neck = 'Checkered Scarf',
+        Hands = 'Mahatma Cuffs',
+        Waist = 'Hierarch Belt',
+        Legs = 'Zenith Slacks',
+        Ammo = 'Hedgehog Bomb',
     },
     IdleALT = {
         Main = 'Terra\'s Staff',
@@ -19,8 +30,31 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Back = 'Hexerei Cape',
+        Back = 'Umbra Cape',
+        Feet = 'Rostrum Pumps',
+        Head = 'Faerie Hairpin',
+        Neck = 'Checkered Scarf',
+        Hands = 'Mahatma Cuffs',
+        Waist = 'Hierarch Belt',
+        Legs = 'Zenith Slacks',
+        Ammo = 'Hedgehog Bomb',
     },
+	IdleMaxMP = {
+        Main = 'Terra\'s Staff',
+        Body = 'Sorcerer\'s Coat',
+        Ring1 = 'Merman\'s Ring',
+        Ring2 = 'Sattva Ring',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Back = 'Umbra Cape',
+        Feet = 'Rostrum Pumps',
+        Head = 'Faerie Hairpin',
+        Neck = 'Checkered Scarf',
+        Hands = 'Mahatma Cuffs',
+        Waist = 'Hierarch Belt',
+        Legs = 'Zenith Slacks',
+        Ammo = 'Hedgehog Bomb',
+	},
     Resting = {
         Main = 'Pluto\'s Staff',
         Body = 'Mahatma Hpl.',
@@ -102,7 +136,7 @@ local sets = {
         Ear2 = 'Diamond Earring', -- 10
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Back = 'Tundra Mantle', -- 5
+        Back = 'Blue Cape +1', -- 7
         Waist = 'Fire Belt', -- 20
         Ring1 = 'Diamond Ring', -- 9
         Ring2 = 'Malfrost Ring', -- 10
@@ -125,7 +159,7 @@ local sets = {
         Main = 'Auster\'s Staff', -- 20
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Back = 'Hexerei Cape',
+        Back = 'Blue Cape +1', -- 7
         Ear1 = 'Topaz Earring', -- 10
         Ear2 = 'Topaz Earring', -- 10
         Waist = 'Wind Belt', -- 20
@@ -137,7 +171,7 @@ local sets = {
         Main = 'Aquilo\'s Staff', -- 20
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Back = 'Tundra Mantle', -- 5
+        Back = 'Blue Cape +1', -- 7
         Hands = 'Mage\'s Cuffs', -- 5
         Ear1 = 'Diamond Earring', -- 10
         Ear2 = 'Diamond Earring', -- 10
@@ -337,7 +371,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcinclude.DoDefault();
+    gcinclude.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP);
 end
 
 profile.HandlePrecast = function()
