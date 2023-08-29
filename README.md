@@ -1,6 +1,8 @@
 # Rag's RDM / BLM luashitacast
 
-A combined RDM / BLM luashitacast for HorizonXI based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
+A combined RDM / BLM luashitacast for HorizonXI that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
+
+SMN to come as I level it :P
 
 # How to Use
 
