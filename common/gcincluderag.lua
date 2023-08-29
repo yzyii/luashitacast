@@ -16,7 +16,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -68,6 +68,14 @@ function gcinclude.DoCommands(args)
         gcdisplay.AdvanceToggle('Kite');
         toggle = 'Kite Set';
         status = gcdisplay.GetToggle('Kite');
+    elseif (args[1] == 'yellow') then
+        gcdisplay.AdvanceToggle('Yellow');
+        toggle = 'Yellow Set';
+        status = gcdisplay.GetToggle('Yellow');
+    elseif (args[1] == 'mb') then
+        gcdisplay.AdvanceToggle('MB');
+        toggle = 'MB Set';
+        status = gcdisplay.GetToggle('MB');
     elseif (args[1] == 'warpme') then
         gcdisplay.AdvanceToggle('Lock');
         toggle = 'Equip Lock';

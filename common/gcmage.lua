@@ -58,7 +58,7 @@ function gcmage.DoPrecast(fastCastValue)
     -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
 
     gFunc.EquipSet('Precast')
-    
+
     if (spell.Skill == 'Elemental Magic' and player.MainJob == 'BLM' and gcdisplay.GetToggle('Yellow') == true) then
         gFunc.EquipSet('Yellow')
     end
