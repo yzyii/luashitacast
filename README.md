@@ -70,15 +70,15 @@ SMN to come as I level it :P
 
 This luashitacast binds the following:
 ```
-F1  - Fire Res
-F2  - Kite
-F3  - DT
-F4  - MDT
+Alt+F1  - Fire Res
+Alt+F2  - Kite
+Alt+F3  - DT
+Alt+F4  - MDT
 
 F9  - Stun
 F10 - Dia
 
-You can use "/rebind XYZ" to bind F1 to a different set e.g. /rebind tres will rebind F1 to lightning resistance.
+You can use "/rebind XYZ" to bind Alt+F1 to a different set e.g. /rebind tres will rebind Alt+F1 to lightning resistance.
 ```
 
 ## Additional Commands (Shorterhand):

@@ -312,15 +312,10 @@ local sets = {
         Back = 'Merciful Cape',
     },
     NukeDOT = {
-        Ear1 = 'Abyssal Earring',
-        Ear2 = 'Morion Earring +1',
-    },
-    --[[ To be used once I actually get Prudence Torque and can reach 150 Int
-    NukeDOT = {
         Main = 'Kirin\'s Pole',
         Ammo = 'Phtm. Tathlum',
         Head = 'Demon Helm +1',
-        -- Neck = 'Prudence Torque',
+        Neck = 'Prudence Torque',
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Morion Earring +1',
         Body = 'Mahatma Hpl.',
@@ -332,7 +327,6 @@ local sets = {
         Legs = 'Mahatma Slops',
         Feet = 'Rostrum Pumps',
     },
-    ]]
     MB = {
         Hands = 'Src. Gloves +1',
     },

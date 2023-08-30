@@ -154,6 +154,8 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     if (string.match(spell.Name, 'Haste')
         or string.match(spell.Name, 'Refresh')
         or string.match(spell.Name, 'Blink')
+        or string.match(spell.Name, 'Sneak')
+        or string.match(spell.Name, 'Invisible')
         or string.match(spell.Name, 'Aquaveil')
         or string.contains(spell.Name, 'Protect')
         or string.contains(spell.Name, 'Shell')
@@ -163,6 +165,12 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         or string.contains(spell.Name, 'Reraise')) then
 
         skipCast_Spell = true;
+        if (string.match(spell.Name, 'Sneak') and target.Name == me and dream_boots) then
+            gFunc.Equip('Feet', 'Dream Boots +1');
+        end
+        if (string.match(spell.Name, 'Invisible') and target.Name == me and dream_mittens) then
+            gFunc.Equip('Hands', 'Dream Mittens +1');
+        end
     end
 
     if (skipCast_MP and skipCast_Spell) then
@@ -216,6 +224,19 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         end
         if (string.match(spell.Name, 'Invisible') and target.Name == me and dream_mittens) then
             gFunc.Equip('Hands', 'Dream Mittens +1');
+        end
+        if (string.match(spell.Name, 'Haste')
+            or string.match(spell.Name, 'Refresh')
+            or string.match(spell.Name, 'Blink')
+            or string.match(spell.Name, 'Sneak')
+            or string.match(spell.Name, 'Invisible')
+            or string.match(spell.Name, 'Aquaveil')
+            or string.contains(spell.Name, 'Protect')
+            or string.contains(spell.Name, 'Shell')) then
+
+            if (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
+                gFunc.Equip(water_ring_slot, 'Water Ring');
+            end
         end
     elseif (spell.Skill == 'Healing Magic') then
         gFunc.EquipSet('Cure');

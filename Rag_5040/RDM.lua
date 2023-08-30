@@ -74,7 +74,9 @@ local sets = {
         Waist = 'Duelist\'s Belt',
         Legs = 'Baron\'s Slops',
         Neck = 'Checkered Scarf',
-        Ear1 = 'Relaxing Earring',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Relaxing Earring',
+        Back = 'Errant Cape',
     },
     Town = {
     },

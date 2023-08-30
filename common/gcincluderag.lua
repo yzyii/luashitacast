@@ -88,7 +88,7 @@ function gcinclude.DoCommands(args)
         toggle = 'Out of Region Set';
         status = gcdisplay.GetToggle('OOR');
     elseif (args[1] == 'rebind') then
-        AshitaCore:GetChatManager():QueueCommand(-1, '/bind F1 /lac fwd ' .. args[2]);
+        AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd ' .. args[2]);
     elseif (args[1] == 'lock') then
         gcdisplay.AdvanceToggle('Lock');
         toggle = 'Equip Lock';
@@ -253,10 +253,10 @@ function gcinclude.Load()
     gcinclude.SetVariables:once(2);
     gcinclude.SetAlias:once(2);
 
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F1 /lac fwd fres');
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F2 /lac fwd kite');
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F3 /lac fwd dt');
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F4 /lac fwd mdt');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd fres');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F2 /lac fwd kite');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F3 /lac fwd dt');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F4 /lac fwd mdt');
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun');
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia');
 
