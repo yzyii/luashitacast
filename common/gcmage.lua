@@ -235,7 +235,8 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
             if (spell.Element == 'Light') and korin_obi then
                 gFunc.Equip('Waist', 'Korin Obi');
             end
-        elseif (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
+        end
+        if (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
             gFunc.Equip(water_ring_slot, 'Water Ring');
         end
         if string.match(spell.Name, 'Cursna') then
