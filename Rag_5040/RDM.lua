@@ -39,7 +39,7 @@ local sets = {
         Waist = 'Warwolf Belt',
         Neck = 'Dark Torque',
     },
-	IdleMaxMP = {
+    IdleMaxMP = {
         Head = 'Dls. Chapeau +1',
         Main = 'Terra\'s Staff',
         Legs = 'Blood Cuisses',
@@ -54,7 +54,7 @@ local sets = {
         Ammo = 'Hedgehog Bomb',
         Waist = 'Hierarch Belt',
         Neck = 'Uggalepih Pendant',
-	},
+    },
     Precast = {
         Head = 'Wlk. Chapeau +1',
         Ear1 = 'Loquac. Earring',
@@ -480,7 +480,7 @@ local sets = {
         -- Ear2 = 'Dark Earring',
         -- Body = 'Nashira Manteel',
     },
-    
+
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
 };
@@ -523,7 +523,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets);
+    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000);
 end
 
 return profile;

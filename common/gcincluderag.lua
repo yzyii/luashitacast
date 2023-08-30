@@ -33,7 +33,7 @@ function gcinclude.DoCommands(args)
     local player = gData.GetPlayer();
     local toggle = nil;
     local status = nil;
-    
+
     if (args[1] == 'dt') then
         gcinclude.ToggleIdleSet('DT');
         toggle = 'IdleSet';
@@ -166,7 +166,7 @@ function gcinclude.DoCommands(args)
     if gcinclude.settings.Messages then
         gcinclude.Message(toggle, status)
     end
-    
+
     if gcinclude.settings.Shorterhand then
         shorterhand.DoCommands(args);
     end
@@ -176,18 +176,18 @@ local lastIdleSet = 'Normal'
 
 function gcinclude.ToggleIdleSet(idleSet)
     if (idleSet == 'Idle') then
-	    if (gcdisplay.IdleSet == 'Normal') then
-		    gcdisplay.IdleSet = 'Alternate'
-		else
-		    gcdisplay.IdleSet = 'Normal'
-		end
-		lastIdleSet = gcdisplay.IdleSet
+        if (gcdisplay.IdleSet == 'Normal') then
+            gcdisplay.IdleSet = 'Alternate'
+        else
+            gcdisplay.IdleSet = 'Normal'
+        end
+        lastIdleSet = gcdisplay.IdleSet
     else
         if (idleSet == gcdisplay.IdleSet) then
-		    gcdisplay.IdleSet = lastIdleSet
-		else
+            gcdisplay.IdleSet = lastIdleSet
+        else
             gcdisplay.IdleSet = idleSet;
-		end
+        end
     end
 end
 
@@ -204,19 +204,19 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     gFunc.EquipSet('Idle');
     if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALT') end;
 
-	local player = gData.GetPlayer();
+    local player = gData.GetPlayer();
 
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
         if (player.SubJob == "NIN") and player.MP >= ninSJMMP - 50 then
-			gFunc.EquipSet('IdleMaxMP')
-		elseif (player.SubJob == "WHM") and player.MP >= whmSJMMP - 50 then
-			gFunc.EquipSet('IdleMaxMP')
-		elseif (player.SubJob == "BLM") and player.MP >= blmSJMMP - 50 then
-			gFunc.EquipSet('IdleMaxMP')
-		elseif (player.SubJob == "RDM") and player.MP >= rdmSJMMP - 50 then
-			gFunc.EquipSet('IdleMaxMP')
-		end
-	end
+            gFunc.EquipSet('IdleMaxMP')
+        elseif (player.SubJob == "WHM") and player.MP >= whmSJMMP - 50 then
+            gFunc.EquipSet('IdleMaxMP')
+        elseif (player.SubJob == "BLM") and player.MP >= blmSJMMP - 50 then
+            gFunc.EquipSet('IdleMaxMP')
+        elseif (player.SubJob == "RDM") and player.MP >= rdmSJMMP - 50 then
+            gFunc.EquipSet('IdleMaxMP')
+        end
+    end
 
     local environment = gData.GetEnvironment();
     if (environment.Area ~= nil) and (gcinclude.Towns:contains(environment.Area)) then gFunc.EquipSet('Town') end

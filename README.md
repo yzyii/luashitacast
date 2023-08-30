@@ -20,7 +20,7 @@ SMN to come as I level it :P
 /lock   - locks or unlocks all equipment.
 /kite   - toggles Kite set on/off.
           /kite always takes precedence over any other set overrides active.
-          e.g. if you have /kite and /fireres toggled on, 
+          e.g. if you have /kite and /fireres toggled on,
           it will equip the kite set instead of or on top of the fire resistance set.
           this allows you to gain 12% move speed while keeping up most of your fire resistance.
 /oor    - forces use of Master Caster Bracelets / Republican Gold Medal.
@@ -40,7 +40,7 @@ SMN to come as I level it :P
 /lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off.
 
 [Special Commands]
-/warpme - equips a warp cudgel and uses it after 30 seconds and locks equipment. 
+/warpme - equips a warp cudgel and uses it after 30 seconds and locks equipment.
           use /lock to unlock again.
 ```
 
@@ -52,7 +52,7 @@ SMN to come as I level it :P
 /hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
 
 [Special Sets]
-/vert   - equips the Convert set and locks equipment. 
+/vert   - equips the Convert set and locks equipment.
           use /lock to unlock again.
 /csstun - equips the Stun set and locks equipment (For Chainspell Stunning).
           use /lock to unlock again.

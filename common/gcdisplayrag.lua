@@ -27,7 +27,7 @@ function gcdisplay.AdvanceCycle(name)
     if (type(ctable) ~= 'table') then
         return;
     end
-    
+
     ctable.Index = ctable.Index + 1;
     if (ctable.Index > #ctable.Array) then
         ctable.Index = 1;
@@ -46,7 +46,7 @@ end
 
 function gcdisplay.Update()
     local player = AshitaCore:GetMemoryManager():GetPlayer();
-    
+
     local MID = player:GetMainJob();
     Main = AshitaCore:GetResourceManager():GetString("jobs.names_abbr", MID);
 end
@@ -89,7 +89,7 @@ end
 
 function gcdisplay.Load()
     gcdisplay.Update();
-    gcdisplay.FontObject = fonts.new(fontSettings);    
+    gcdisplay.FontObject = fonts.new(fontSettings);
     ashita.events.register('d3d_present', 'gcdisplay_present_cb', function ()
         local display = '  ' .. Main;
         for k, v in pairs(Toggles) do

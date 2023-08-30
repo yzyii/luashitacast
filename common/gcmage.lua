@@ -130,12 +130,44 @@ function gcmage.EquipStaffWithFallback(staff)
     end
 end
 
-function gcmage.DoMidcast(sets)
+function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     local player = gData.GetPlayer();
     local environment = gData.GetEnvironment();
     local spell = gData.GetAction();
     local target = gData.GetActionTarget();
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0);
+
+    local skipCast_MP = false;
+    if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
+        if (player.SubJob == "NIN") and player.MP > ninSJMMP then
+            skipCast_MP = true;
+        elseif (player.SubJob == "WHM") and player.MP > whmSJMMP then
+            skipCast_MP = true;
+        elseif (player.SubJob == "BLM") and player.MP > blmSJMMP then
+            skipCast_MP = true;
+        elseif (player.SubJob == "RDM") and player.MP > rdmSJMMP then
+            skipCast_MP = true;
+        end
+    end
+
+    local skipCast_Spell = false;
+    if (string.match(spell.Name, 'Haste')
+        or string.match(spell.Name, 'Refresh')
+        or string.match(spell.Name, 'Blink')
+        or string.match(spell.Name, 'Aquaveil')
+        or string.contains(spell.Name, 'Protect')
+        or string.contains(spell.Name, 'Shell')
+        or string.contains(spell.Name, 'Cure')
+        or string.contains(spell.Name, 'Curaga')
+        or string.contains(spell.Name, 'Regen')
+        or string.contains(spell.Name, 'Reraise')) then
+
+        skipCast_Spell = true;
+    end
+
+    if (skipCast_MP and skipCast_Spell) then
+        do return end
+    end
 
     if (player.MainJob == 'BLM') then
         gFunc.InterimEquipSet(sets.SIRD);
@@ -203,8 +235,8 @@ function gcmage.DoMidcast(sets)
             if (spell.Element == 'Light') and korin_obi then
                 gFunc.Equip('Waist', 'Korin Obi');
             end
-		elseif (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
-			gFunc.Equip(water_ring_slot, 'Water Ring');
+        elseif (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
+            gFunc.Equip(water_ring_slot, 'Water Ring');
         end
         if string.match(spell.Name, 'Cursna') then
             gFunc.EquipSet('Cursna');

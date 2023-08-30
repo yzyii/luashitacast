@@ -126,7 +126,7 @@ local sets = {
     NukeDOT = {},
 
     TP = {},
-    
+
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
 };

@@ -39,7 +39,7 @@ local sets = {
         Legs = 'Zenith Slacks',
         Ammo = 'Hedgehog Bomb',
     },
-	IdleMaxMP = {
+    IdleMaxMP = {
         Main = 'Terra\'s Staff',
         Body = 'Sorcerer\'s Coat',
         Ring1 = 'Merman\'s Ring',
@@ -54,7 +54,7 @@ local sets = {
         Waist = 'Hierarch Belt',
         Legs = 'Zenith Slacks',
         Ammo = 'Hedgehog Bomb',
-	},
+    },
     Resting = {
         Main = 'Pluto\'s Staff',
         Body = 'Mahatma Hpl.',
@@ -379,7 +379,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets);
+    gcmage.DoMidcast(sets, ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP);
 end
 
 return profile;
