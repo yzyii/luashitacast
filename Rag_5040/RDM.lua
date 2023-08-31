@@ -82,7 +82,7 @@ local sets = {
     },
     DT = {
         Main = 'Terra\'s Staff', -- 20
-        Head = 'Darksteel Cap +1', -- 2
+        Head = 'Dls. Chapeau +1',
         Body = 'Dst. Harness +1', -- 4
         Hands = 'Dst. Mittens +1', -- 2
         Ring2 = 'Sattva Ring', -- 5
@@ -259,32 +259,21 @@ local sets = {
         -- Legs = 'Nashira Serawheels',
     },
     C3HPDown = {
-        Head = 'Faerie Hairpin',
+        Neck = 'Checkered Scarf',
+        Ear2 = 'Merman\'s Earring',
+    },
+    C4HPDown = {
         Neck = 'Checkered Scarf',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Back = 'Umbra Cape',
-        Waist = 'Penitent\'s Rope',
-        Legs = 'Dst. Subligar +1',
-        Feet = 'Mahatma Pigaches',
-        Ammo = 'Phtm. Tathlum',
-    },
-    C4HPDown = {
-        Head = 'Darksteel Cap +1',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Blue Cotehardie',
         Hands = 'Mahatma Cuffs', -- Replace with Zenith Cuffs
-        Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Umbra Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Zenith Slacks', -- Replace with Darksteel Subligar
         Feet = 'Dst. Leggings +1', -- Replace with Mahatma Pigaches
-        Ammo = 'Phtm. Tathlum',
     },
     HPUp = {
-        Ring1 = 'Mermaid Ring', -- 2
+        Ring1 = 'Bomb Queen Ring',
         Neck = 'Harmonia\'s Torque', -- 3
         Waist = 'Warwolf Belt', -- 3
         Ring2 = 'Sattva Ring', -- 5
