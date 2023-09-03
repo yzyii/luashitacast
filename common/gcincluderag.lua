@@ -94,9 +94,7 @@ function gcinclude.DoCommands(args)
         toggle = 'Equip Lock';
         status = gcdisplay.GetToggle('Lock');
         if (not status) then
-            if (gcdisplay.GetToggle('Fight') == true) then
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Range')
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ammo');
+            if (gcdisplay.IdleSet == 'Fight') then
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Head');
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Neck');
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear1');
@@ -121,21 +119,6 @@ function gcinclude.DoCommands(args)
             gcdisplay.AdvanceCycle('Nuke');
             toggle = 'Nuking Gear Set';
             status = gcdisplay.GetCycle('Nuke');
-        elseif (args[1] == 'fight') then
-            if (gcdisplay.GetToggle('Fight') == false) then
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac set TP');
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main');
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub');
-                gcdisplay.AdvanceToggle('Fight');
-                toggle = 'Mage Weapon Lock';
-                status = gcdisplay.GetToggle('Fight');
-            else
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Main');
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Sub');
-                gcdisplay.AdvanceToggle('Fight');
-                toggle = 'Mage Weapon Lock';
-                status = gcdisplay.GetToggle('Fight');
-            end
         end
     end
     if (player.MainJob == 'RDM') then
@@ -160,6 +143,10 @@ function gcinclude.DoCommands(args)
             gcdisplay.AdvanceToggle('Hate');
             toggle = 'Hate Set';
             status = gcdisplay.GetToggle('Hate');
+        elseif (args[1] == 'fight') then
+            gcinclude.ToggleIdleSet('Fight');
+            toggle = 'IdleSet';
+            status = gcdisplay.IdleSet;
         end
     end
 
@@ -185,10 +172,17 @@ function gcinclude.ToggleIdleSet(idleSet)
     else
         if (idleSet == gcdisplay.IdleSet) then
             gcdisplay.IdleSet = lastIdleSet
+            if (idleSet == 'Fight') then
+                gcinclude.UnlockWeapon:once(1);
+            end
         else
             gcdisplay.IdleSet = idleSet;
+            if (idleSet == 'Fight') then
+                gcinclude.LockWeapon:once(1);
+            end
         end
     end
+
 end
 
 function gcinclude.RunWarpCudgel()
@@ -199,6 +193,8 @@ function gcinclude.RunWarpCudgel()
     end
     usecudgel:once(31);
 end
+
+local lastIdleSetBeforeEngaged = ''
 
 function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     gFunc.EquipSet('Idle');
@@ -220,6 +216,18 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
 
     local environment = gData.GetEnvironment();
     if (environment.Area ~= nil) and (gcinclude.Towns:contains(environment.Area)) then gFunc.EquipSet('Town') end
+
+    if (player.Status == 'Engaged' and lastIdleSetBeforeEngaged == '') then
+        lastIdleSetBeforeEngaged = gcdisplay.IdleSet;
+        gcinclude.ToggleIdleSet('Fight');
+    end
+    if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
+        gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged);
+        lastIdleSetBeforeEngaged = '';
+        gcinclude.UnlockWeapon:once(1);
+    end
+
+    if (gcdisplay.IdleSet == 'Fight') then gFunc.EquipSet('TP') end;
 
     if (gcdisplay.IdleSet == 'DT') then
         if (environment.Time >= 6 and environment.Time <= 18) then
@@ -245,6 +253,20 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     elseif (player.IsMoving == true) and (gcdisplay.IdleSet == 'None' or gcdisplay.IdleSet == 'DT') then
         gFunc.EquipSet('Movement');
     end
+end
+
+function gcinclude.LockWeapon()
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo');
+end
+
+function gcinclude.UnlockWeapon()
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Main');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Sub');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Range');
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ammo');
 end
 
 function gcinclude.Load()
@@ -296,7 +318,6 @@ function gcinclude.SetVariables()
     end
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false);
-        gcdisplay.CreateToggle('Fight', false);
     end
     if (player.MainJob == 'BLM') then
         gcdisplay.CreateToggle('Yellow', true);

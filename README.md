@@ -47,8 +47,9 @@ SMN to come as I level it :P
 ## Additional Commands for RDM:
 ```
 [Regular Toggles]
-/fight  - equips the TP set and locks weapon and sub (or unlocks weapon and sub).
+/fight  - equips the TP set and locks weapon, sub, range and ammo (or unlocks).
           you can still use /vert and /lock while /fight is toggled on.
+          this is automatically used for you when engaging or disengaging.
 /hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
 
 [Special Sets]

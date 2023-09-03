@@ -50,7 +50,7 @@ local sets = {
         Back = 'Umbra Cape',
         Body = 'Mahatma Hpl.',
         Hands = 'Blood Fng. Gnt.',
-        Feet = 'Crimson Greaves',
+        Feet = 'Blood Greaves',
         Ammo = 'Hedgehog Bomb',
         Waist = 'Hierarch Belt',
         Neck = 'Uggalepih Pendant',
@@ -175,7 +175,7 @@ local sets = {
         Ring1 = 'Ruby Ring', -- 9
         Waist = 'Water Belt', -- 20
     },
-    IceRes = { -- 140
+    IceRes = { -- 141
         Ammo = 'Hedgehog Bomb',
         Feet = 'Dst. Leggings +1',
         Main = 'Vulcan\'s Staff', -- 20
@@ -187,7 +187,7 @@ local sets = {
         Body = 'Northern Jerkin', -- 6
         Hands = 'Feral Gloves', -- 4
         Legs = 'Feral Trousers', -- 6
-        Feet = 'Crimson Greaves', -- 20
+        Feet = 'Blood Greaves', -- 21
         Waist = 'Fire Belt', -- 20
         Ring2 = 'Malfrost Ring', -- 10
         Ring1 = 'Diamond Ring', -- 9
@@ -209,7 +209,7 @@ local sets = {
         Ring2 = 'Malflash Ring', -- 10
         Ring1 = 'Spinel Ring', -- 9
     },
-    EarthRes = { -- 143
+    EarthRes = { -- 144
         Ring2 = 'Maldust Ring', -- 10
         Feet = 'Dst. Leggings +1',
         Main = 'Auster\'s Staff', -- 20
@@ -219,13 +219,13 @@ local sets = {
         Back = 'Beak Mantle +1',
         Hands = 'Dst. Mittens +1',
         Legs = 'Beak Trousers +1', -- 7
-        Feet = 'Crimson Greaves', -- 20
+        Feet = 'Blood Greaves', -- 21
         Ear1 = 'Topaz Earring', -- 10
         Ear2 = 'Topaz Earring', -- 10
         Waist = 'Wind Belt', -- 20
         Ring1 = 'Topaz Ring', -- 9
     },
-    WindRes = { -- 135
+    WindRes = { -- 136
         Legs = 'Dst. Subligar +1',
         Ring2 = 'Malgust Ring', -- 10
         Main = 'Aquilo\'s Staff', -- 20
@@ -234,7 +234,7 @@ local sets = {
         Body = 'Northern Jerkin', -- 6
         Back = 'Tundra Mantle', -- 5
         Hands = 'Mage\'s Cuffs', -- 5
-        Feet = 'Crimson Greaves', -- 20
+        Feet = 'Blood Greaves', -- 21
         Ear1 = 'Diamond Earring', -- 10
         Ear2 = 'Diamond Earring', -- 10
         Waist = 'Ice Belt', -- 20
@@ -413,13 +413,6 @@ local sets = {
         Back = 'Merciful Cape',
     };
 
-    TP = {
-        Main = 'Martial Anelace',
-        Sub = 'Nms. Shield +1',
-        -- Main = 'Joyeuse',
-        -- Sub = 'Genbu\'s Shield',
-    },
-
     Convert = { -- Type /vert to equip this set and /lock your gear at the same time.
         Main = 'Apollo\'s Staff',
         Head = 'Faerie Hairpin',
@@ -449,7 +442,7 @@ local sets = {
         Back = 'Errant Cape',
         Waist = 'Hierarch Belt',
         Legs = 'Blood Cuisses',
-        Feet = 'Crimson Greaves',
+        Feet = 'Blood Greaves',
         Ammo = 'Hedgehog Bomb',
     },
 
@@ -470,6 +463,57 @@ local sets = {
         Hands = 'Blood Fng. Gnt.',
         -- Ear2 = 'Dark Earring',
         -- Body = 'Nashira Manteel',
+    },
+
+    TP = {
+        Main = 'Joyeuse',
+        Sub = 'Nms. Shield +1',
+        Range = 'Lightning Bow +1',
+        Ammo = '',
+        Head = 'Dls. Chapeau +1',
+        -- Head = 'Walahra Turban', -- 4
+        -- Neck = 'PCC',
+        -- Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        -- Body = 'Nashira Manteel', -- 3
+        Hands = 'Dusk Gloves', -- 3
+        -- Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Sattva Ring',
+        -- Back = 'Forager's Mantle',
+        Waist = 'Swift Belt', -- 4
+        -- Legs = 'Nashira Serawheels', -- 2
+        Feet = 'Nashira Crackows', -- Dusk 2
+        -- Sub = 'Genbu\'s Shield',
+    },
+
+    WS = {
+        Head = 'Optical Hat',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        -- Neck = 'PCC',
+        Body = 'Blue Cotehardie',
+        Hands = 'Ogre Gloves +1',
+        Ring1 = 'Ruby Ring',
+        -- Ring2 = 'Flame Ring',
+        -- Back = 'Forager's Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Duelist\'s Tights',
+        -- Legs = 'Dusk Trousers',
+        -- Feet = 'Rutter Sabatons',
+    },
+    WS_Soil = {
+        -- Neck = 'Soil Gorget',
+    },
+    WS_Spirits = {
+        Ring1 = 'Bomb Queen Ring',
+        Ring2 = 'Sattva Ring',
+        Hands = 'Blood Fng. Gnt.',
+        Body = 'Ogre Jerkin +1',
+        Back = 'Gigant Mantle',
+        Legs = 'Blood Cuisses',
+        Head = 'Dls. Chapeau +1',
+        Feet = 'Blood Greaves',
+        Ear2 = 'Ethereal Earring',
     },
 
     FallbackSub = { -- Used only when you do not have complete staff sets
@@ -515,6 +559,18 @@ end
 
 profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000);
+end
+
+profile.HandleWeaponskill = function()
+    local action = gData.GetAction();
+
+    gFunc.EquipSet(sets.WS);
+
+    if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') then
+        gFunc.EquipSet(sets.WS_Soil);
+    elseif (action.Name == 'Spirits Within') then
+        gFunc.EquipSet(sets.WS_Spirits);
+    end
 end
 
 return profile;

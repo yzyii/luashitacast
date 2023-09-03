@@ -5,24 +5,22 @@ local fastCastValue = 0.00 -- 0% from gear
 local sets = {
     Idle = {
         Head = 'Austere Hat',
-        --Head = 'Traveler\'s Hat',
-        Legs = 'Custom Slacks',
+        Legs = 'Evoker\'s Spats',
         Ring1 = 'Serket Ring',
         Ring2 = 'Ether Ring',
-        --Ring1 = 'Saintly Ring',
-        --Ring2 = 'Saintly Ring',
         Ear1 = 'Healer\'s Earring',
         Ear2 = 'Morion Earring +1',
         Back = 'Red Cape +1',
         Body = 'Austere Robe',
         Hands = 'Austere Cuffs',
-        --Hands = 'Seer\'s Mitts +1',
         Feet = 'Mannequin Pumps',
         Ammo = 'Fortune Egg',
         Waist = 'Druid\'s Rope',
         Neck = 'Justice Badge',
     },
     IdleALT = {},
+    IdleMaxMP = {
+    },
     Resting = {
         Main = 'Pluto\'s Staff',
         Body = 'Seer\'s Tunic',
@@ -161,7 +159,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcinclude.DoDefault();
+    gcinclude.DoDefault(10000, 10000, 10000, 10000);
 end
 
 profile.HandlePrecast = function()
@@ -169,7 +167,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets);
+    gcmage.DoMidcast(sets, 10000, 10000, 10000, 10000);
 end
 
 return profile;
