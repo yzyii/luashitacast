@@ -3,7 +3,6 @@
 local Toggles = {};
 local Cycles = {};
 local fonts = require('fonts');
-local IdleSet = ''
 
 local gcdisplay = {
     IdleSet = 'Normal'

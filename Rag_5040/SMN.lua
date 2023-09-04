@@ -160,6 +160,7 @@ end
 
 profile.HandleDefault = function()
     gcinclude.DoDefault(10000, 10000, 10000, 10000);
+    gcmage.DoDefault();
 end
 
 profile.HandlePrecast = function()

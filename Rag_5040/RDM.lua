@@ -553,6 +553,7 @@ end
 
 profile.HandleDefault = function()
     gcinclude.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000);
+    gcmage.DoDefault();
 end
 
 profile.HandlePrecast = function()

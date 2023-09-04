@@ -27,6 +27,7 @@ local dream_boots = true
 local dream_mittens = true
 local master_casters_bracelets = true
 local skulkers_cape = false
+local wizards_mantle = true
 
 local diabolos_earring = true
 local diabolos_earring_slot = 'Ear2'
@@ -53,7 +54,16 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcinclude = gFunc.LoadFile('common\\gcincluderag.lua');
+
 local gcmage = T{};
+
+function gcmage.DoDefault()
+    local player = gData.GetPlayer();
+    if (player.Status == 'Resting' and player.SubJob == "BLM" and wizards_mantle) then
+        gFunc.Equip('Back', 'Wizard\'s Mantle');
+    end
+end
 
 function gcmage.DoPrecast(fastCastValue)
     local spell = gData.GetAction();
@@ -140,13 +150,13 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
 
     local skipCast_MP = false;
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
-        if (player.SubJob == "NIN") and player.MP > ninSJMMP then
+        if (player.SubJob == "NIN") and player.MP > ninSJMMP + gcinclude.add_mp then
             skipCast_MP = true;
-        elseif (player.SubJob == "WHM") and player.MP > whmSJMMP then
+        elseif (player.SubJob == "WHM") and player.MP > whmSJMMP + gcinclude.add_mp then
             skipCast_MP = true;
-        elseif (player.SubJob == "BLM") and player.MP > blmSJMMP then
+        elseif (player.SubJob == "BLM") and player.MP > blmSJMMP + gcinclude.add_mp then
             skipCast_MP = true;
-        elseif (player.SubJob == "RDM") and player.MP > rdmSJMMP then
+        elseif (player.SubJob == "RDM") and player.MP > rdmSJMMP + gcinclude.add_mp then
             skipCast_MP = true;
         end
     end

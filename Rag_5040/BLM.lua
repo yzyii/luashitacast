@@ -333,6 +333,8 @@ local sets = {
 
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
+
+    TP = {},
 };
 profile.Sets = sets;
 
@@ -366,6 +368,7 @@ end
 
 profile.HandleDefault = function()
     gcinclude.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP);
+    gcmage.DoDefault();
 end
 
 profile.HandlePrecast = function()

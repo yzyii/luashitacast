@@ -1,9 +1,16 @@
-local gcinclude = T{};
+local gcinclude = {
+    add_mp = 0 -- Do not edit this
+};
 
 gcinclude.settings = {
     Messages = true; -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles, certain messages will always appear
     Shorterhand = true; -- set to true if you want to use the commands available in shorterhand.lua
 };
+
+local tp_diabolos_earring = true
+local tp_diabolos_earring_slot = 'Ear2'
+local tp_fencers_ring = false
+local tp_fencers_ring_slot = 'Ring1'
 
 --[[
 --------------------------------
@@ -14,7 +21,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb','rebind'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb','rebind','addmp'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -23,7 +30,7 @@ shorterhand = gFunc.LoadFile('common\\shorterhand.lua');
 
 function gcinclude.Message(toggle, status)
     if toggle ~= nil and status ~= nil then
-        print(chat.header('GCinclude'):append(chat.message(toggle .. ' is now ' .. tostring(status))))
+        print(chat.header('Ashitacast'):append(chat.message(toggle .. ' is now ' .. tostring(status))))
     end
 end
 
@@ -34,7 +41,15 @@ function gcinclude.DoCommands(args)
     local toggle = nil;
     local status = nil;
 
-    if (args[1] == 'dt') then
+    if (args[1] == 'addmp') then
+        if (args[2] ~= nil) then
+            toggle = 'Add MP';
+            status = args[2]
+            gcinclude.add_mp = args[2]
+        else
+            print(chat.header('Ashitacast'):append(chat.message('Add MP is ' .. gcinclude.add_mp)))
+        end
+    elseif (args[1] == 'dt') then
         gcinclude.ToggleIdleSet('DT');
         toggle = 'IdleSet';
         status = gcdisplay.IdleSet;
@@ -70,14 +85,6 @@ function gcinclude.DoCommands(args)
         gcdisplay.AdvanceToggle('Kite');
         toggle = 'Kite Set';
         status = gcdisplay.GetToggle('Kite');
-    elseif (args[1] == 'yellow') then
-        gcdisplay.AdvanceToggle('Yellow');
-        toggle = 'Yellow Set';
-        status = gcdisplay.GetToggle('Yellow');
-    elseif (args[1] == 'mb') then
-        gcdisplay.AdvanceToggle('MB');
-        toggle = 'MB Set';
-        status = gcdisplay.GetToggle('MB');
     elseif (args[1] == 'warpme') then
         gcdisplay.AdvanceToggle('Lock');
         toggle = 'Equip Lock';
@@ -149,6 +156,18 @@ function gcinclude.DoCommands(args)
             status = gcdisplay.IdleSet;
         end
     end
+    if (player.MainJob == 'RDM') then
+        if (args[1] == 'mb') then
+            gcdisplay.AdvanceToggle('MB');
+            toggle = 'MB Set';
+            status = gcdisplay.GetToggle('MB');
+        elseif (args[1] == 'yellow') then
+            gcdisplay.AdvanceToggle('Yellow');
+            toggle = 'Yellow Set';
+            status = gcdisplay.GetToggle('Yellow');
+        end
+    end
+
 
     if gcinclude.settings.Messages then
         gcinclude.Message(toggle, status)
@@ -182,7 +201,6 @@ function gcinclude.ToggleIdleSet(idleSet)
             end
         end
     end
-
 end
 
 function gcinclude.RunWarpCudgel()
@@ -203,13 +221,13 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     local player = gData.GetPlayer();
 
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
-        if (player.SubJob == "NIN") and player.MP >= ninSJMMP - 50 then
+        if (player.SubJob == "NIN") and player.MP >= ninSJMMP + gcinclude.add_mp - 50 then
             gFunc.EquipSet('IdleMaxMP')
-        elseif (player.SubJob == "WHM") and player.MP >= whmSJMMP - 50 then
+        elseif (player.SubJob == "WHM") and player.MP >= whmSJMMP + gcinclude.add_mp - 50 then
             gFunc.EquipSet('IdleMaxMP')
-        elseif (player.SubJob == "BLM") and player.MP >= blmSJMMP - 50 then
+        elseif (player.SubJob == "BLM") and player.MP >= blmSJMMP + gcinclude.add_mp - 50 then
             gFunc.EquipSet('IdleMaxMP')
-        elseif (player.SubJob == "RDM") and player.MP >= rdmSJMMP - 50 then
+        elseif (player.SubJob == "RDM") and player.MP >= rdmSJMMP + gcinclude.add_mp - 50 then
             gFunc.EquipSet('IdleMaxMP')
         end
     end
@@ -227,7 +245,15 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         gcinclude.UnlockWeapon:once(1);
     end
 
-    if (gcdisplay.IdleSet == 'Fight') then gFunc.EquipSet('TP') end;
+    if (gcdisplay.IdleSet == 'Fight') then
+        gFunc.EquipSet('TP')
+        if tp_diabolos_earring then
+            gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring');
+        end
+        if tp_fencers_ring then
+            gFunc.Equip(tp_fencers_ring_slot, 'Fencer\'s Ring');
+        end
+    end
 
     if (gcdisplay.IdleSet == 'DT') then
         if (environment.Time >= 6 and environment.Time <= 18) then
@@ -247,9 +273,6 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     local player = gData.GetPlayer();
     if (player.Status == 'Resting') then
         gFunc.EquipSet('Resting');
-        if (player.SubJob == "BLM") then
-            gFunc.Equip('Back', 'Wizard\'s Mantle');
-        end
     elseif (player.IsMoving == true) and (gcdisplay.IdleSet == 'None' or gcdisplay.IdleSet == 'DT') then
         gFunc.EquipSet('Movement');
     end

@@ -40,8 +40,10 @@ SMN to come as I level it :P
 /lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off.
 
 [Special Commands]
-/warpme - equips a warp cudgel and uses it after 30 seconds and locks equipment.
-          use /lock to unlock again.
+/warpme         - equips a warp cudgel and uses it after 30 seconds and locks equipment.
+                  use /lock to unlock again.
+/addmp [number] - adds a set amount of mp to decide usage of the IdleMaxMP sets for use when eating food or other +mp effects.
+                  type /addmp without a number to display the current value.
 ```
 
 ## Additional Commands for RDM:
