@@ -9,7 +9,7 @@ gcinclude.settings = {
 
 local tp_diabolos_earring = true
 local tp_diabolos_earring_slot = 'Ear2'
-local tp_fencers_ring = false
+local tp_fencers_ring = true
 local tp_fencers_ring_slot = 'Ring1'
 
 --[[
@@ -179,6 +179,7 @@ function gcinclude.DoCommands(args)
 end
 
 local lastIdleSet = 'Normal'
+local lastIdleSetBeforeEngaged = ''
 
 function gcinclude.ToggleIdleSet(idleSet)
     if (idleSet == 'Idle') then
@@ -193,6 +194,7 @@ function gcinclude.ToggleIdleSet(idleSet)
             gcdisplay.IdleSet = lastIdleSet
             if (idleSet == 'Fight') then
                 gcinclude.UnlockWeapon:once(1);
+                lastIdleSetBeforeEngaged = ''
             end
         else
             gcdisplay.IdleSet = idleSet;
@@ -211,8 +213,6 @@ function gcinclude.RunWarpCudgel()
     end
     usecudgel:once(31);
 end
-
-local lastIdleSetBeforeEngaged = ''
 
 function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     gFunc.EquipSet('Idle');
@@ -240,9 +240,11 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         gcinclude.ToggleIdleSet('Fight');
     end
     if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
-        gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged);
-        lastIdleSetBeforeEngaged = '';
-        gcinclude.UnlockWeapon:once(1);
+        if (player.TP == 0) then
+            gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged);
+            lastIdleSetBeforeEngaged = '';
+            gcinclude.UnlockWeapon:once(1);
+        end
     end
 
     if (gcdisplay.IdleSet == 'Fight') then
