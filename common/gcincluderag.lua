@@ -250,7 +250,7 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         if tp_diabolos_earring then
             gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring');
         end
-        if tp_fencers_ring then
+        if (tp_fencers_ring and player.HPP <= 75 and player.TP <= 1000) then
             gFunc.Equip(tp_fencers_ring_slot, 'Fencer\'s Ring');
         end
     end
