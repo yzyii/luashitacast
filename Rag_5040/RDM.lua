@@ -473,6 +473,7 @@ local sets = {
         Head = 'Dls. Chapeau +1',
         -- Head = 'Walahra Turban', -- 4
         -- Neck = 'PCC',
+        Ear1 = 'Merman\'s Earring',
         -- Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         -- Body = 'Nashira Manteel', -- 3
@@ -487,8 +488,9 @@ local sets = {
     },
 
     WS = {
-        Head = 'Optical Hat',
+        -- Head = 'Optical Hat',
         Ear1 = 'Merman\'s Earring',
+        -- Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         -- Neck = 'PCC',
         Body = 'Blue Cotehardie',
