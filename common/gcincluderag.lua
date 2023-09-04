@@ -194,6 +194,9 @@ function gcinclude.ToggleIdleSet(idleSet)
             gcdisplay.IdleSet = lastIdleSet
             if (idleSet == 'Fight') then
                 gcinclude.UnlockWeapon:once(1);
+				if (lastIdleSetBeforeEngaged ~= '') then
+                    gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged);
+				end
                 lastIdleSetBeforeEngaged = ''
             end
         else
