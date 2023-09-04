@@ -26,6 +26,7 @@ local sorcerers_tonban = true
 local dream_boots = true
 local dream_mittens = true
 local master_casters_bracelets = true
+local skulkers_cape = false
 
 local diabolos_earring = true
 local diabolos_earring_slot = 'Ear2'
@@ -173,6 +174,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         if (string.match(spell.Name, 'Invisible') and target.Name == me and dream_mittens) then
             gFunc.Equip('Hands', 'Dream Mittens +1');
         end
+        if ((string.match(spell.Name, 'Sneak') or string.match(spell.Name, 'Invisible')) and target.Name == me and skulkers_cape) then
+            gFunc.Equip('Back', 'Skulker\'s Cape');
+        end
     end
 
     if (skipCast_MP and skipCast_Spell) then
@@ -226,6 +230,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         end
         if (string.match(spell.Name, 'Invisible') and target.Name == me and dream_mittens) then
             gFunc.Equip('Hands', 'Dream Mittens +1');
+        end
+        if ((string.match(spell.Name, 'Sneak') or string.match(spell.Name, 'Invisible')) and target.Name == me and skulkers_cape) then
+            gFunc.Equip('Back', 'Skulker\'s Cape');
         end
         if (string.match(spell.Name, 'Haste')
             or string.match(spell.Name, 'Refresh')
