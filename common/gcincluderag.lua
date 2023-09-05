@@ -3,8 +3,8 @@ local gcinclude = {
 }
 
 gcinclude.settings = {
-    Messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles, certain messages will always appear
-    Shorterhand = true -- set to true if you want to use the commands available in shorterhand.lua
+    Messages = true, -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles, certain messages will always appear
+	Shorterhand = true -- set to true if you want to use the commands available in shorterhand.lua
 }
 
 local tp_diabolos_earring = true
