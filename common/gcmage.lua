@@ -188,6 +188,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
             gFunc.Equip('Back', 'Skulker\'s Cape');
         end
     end
+    if (gcdisplay.GetToggle('Hate') == true) then
+        skipCast_Spell = false;
+    end
 
     if (skipCast_MP and skipCast_Spell) then
         do return end
