@@ -30,7 +30,8 @@ SMN to come as I level it :P
 /mode   - toggles Elemental Magic between regular Potency / Damage and Magic Accuracy sets.
 
 [Idle Sets] (Changes your idle set to use these sets instead)
-/idle           - toggles between using 2 different idle sets (Normal and Alternate i.e. Idle and IdleALT).
+/idle           - toggles between using 2 different idle sets 
+                  i.e. Normal and Alternate / Idle and IdleALT.
 /dt             - toggles DT set on/off.
 /mdt            - toggles MDT set on/off.
 /iceres /ires   - toggles Ice Resistance set on/off.
@@ -42,7 +43,8 @@ SMN to come as I level it :P
 [Special Commands]
 /warpme           - equips a warp cudgel and uses it after 30 seconds and locks equipment.
                     use /lock to unlock again.
-/addmp [number]   - adds a set amount of mp to decide usage of the IdleMaxMP sets for use when eating food or other +mp effects.
+/addmp [number]   - adds a set amount of MP to decide usage of the IdleMaxMP sets.
+                    This can be used when eating food or for other +MP effects.
                     type /addmp without a number to display the current value.
 /lockset [number] - equips the given lockset and locks equipment
                     use /lock to unlock again.
@@ -83,7 +85,8 @@ Alt+F4  - MDT
 F9  - Stun
 F10 - Dia
 
-You can use "/rebind XYZ" to bind Alt+F1 to a different set e.g. /rebind tres will rebind Alt+F1 to lightning resistance.
+You can use "/rebind XYZ" to bind Alt+F1 to a different set.
+e.g. /rebind tres will rebind Alt+F1 to lightning resistance.
 ```
 
 ## Additional Commands (Shorterhand):
