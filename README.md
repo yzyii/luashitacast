@@ -112,3 +112,9 @@ This luashitacast intentionally does NOT make use of this functionality to make 
 I may provide some additional /lock type sets similar to /vert and /csstun to poorly mimic the same utility in the future or you could look to doing this yourself.
 
 e.g. /lockset1 /lockset2 /lockset3
+
+## TODO
+
+- Add locksets
+- Add Enfeebling Accuracy set and switch Nuke: ACC / Nuke: DMG to Magic: Accuracy / Magic: Potency
+- Add Stealth Earring / Sub for /nin
