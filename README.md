@@ -77,10 +77,10 @@ SMN to come as I level it :P
 
 This luashitacast binds the following:
 ```
-Alt+F1  - Fire Res
-Alt+F2  - Kite
-Alt+F3  - DT
-Alt+F4  - MDT
+Alt+F1 - Fire Res
+Alt+F2 - Kite
+Alt+F3 - DT
+Alt+F4 - MDT
 
 F9  - Stun
 F10 - Dia
