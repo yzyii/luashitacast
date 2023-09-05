@@ -1,4 +1,4 @@
-local profile = {};
+local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear
 
@@ -349,12 +349,12 @@ local sets = {
     },
 
     TP = {},
-};
-profile.Sets = sets;
+}
+profile.Sets = sets
 
 profile.SetMacroBook = function()
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1');
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 10');
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 10')
 end
 
 --[[
@@ -363,34 +363,34 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua');
-gcinclude = gFunc.LoadFile('common\\gcincluderag.lua');
-gcmage = gFunc.LoadFile('common\\gcmage.lua');
+gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
+gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
+gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.OnLoad = function()
-    gcinclude.Load();
-    profile.SetMacroBook();
+    gcinclude.Load()
+    profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
-    gcinclude.Unload();
+    gcinclude.Unload()
 end
 
 profile.HandleCommand = function(args)
-    gcinclude.DoCommands(args);
+    gcinclude.DoCommands(args)
 end
 
 profile.HandleDefault = function()
-    gcinclude.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP);
-    gcmage.DoDefault();
+    gcinclude.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP)
+    gcmage.DoDefault()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast(fastCastValue);
+    gcmage.DoPrecast(fastCastValue)
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP);
+    gcmage.DoMidcast(sets, ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP)
 end
 
-return profile;
+return profile

@@ -1,4 +1,4 @@
-local profile = {};
+local profile = {}
 
 local fastCastValue = 0.32 -- 20% from traits 12% from gear
 
@@ -410,7 +410,7 @@ local sets = {
         Back = 'Merciful Cape',
         Legs = 'Duelist\'s Tights',
         Feet = 'Nashira Crackows',
-    };
+    },
     NukeDOT = {
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Morion Earring +1',
@@ -418,7 +418,7 @@ local sets = {
         Back = 'Merciful Cape',
         Legs = 'Duelist\'s Tights',
         Feet = 'Wise Pigaches',
-    };
+    },
 
     Convert = { -- Type /vert to equip this set and /lock your gear at the same time.
         Main = 'Apollo\'s Staff',
@@ -556,12 +556,12 @@ local sets = {
 
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
-};
-profile.Sets = sets;
+}
+profile.Sets = sets
 
 profile.SetMacroBook = function()
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1');
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1');
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
 --[[
@@ -570,46 +570,46 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua');
-gcinclude = gFunc.LoadFile('common\\gcincluderag.lua');
-gcmage = gFunc.LoadFile('common\\gcmage.lua');
+gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
+gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
+gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.OnLoad = function()
-    gcinclude.Load();
-    profile.SetMacroBook();
+    gcinclude.Load()
+    profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
-    gcinclude.Unload();
+    gcinclude.Unload()
 end
 
 profile.HandleCommand = function(args)
-    gcinclude.DoCommands(args);
+    gcinclude.DoCommands(args)
 end
 
 profile.HandleDefault = function()
-    gcinclude.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000);
-    gcmage.DoDefault();
+    gcinclude.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000)
+    gcmage.DoDefault()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast(fastCastValue);
+    gcmage.DoPrecast(fastCastValue)
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000);
+    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000)
 end
 
 profile.HandleWeaponskill = function()
-    local action = gData.GetAction();
+    local action = gData.GetAction()
 
-    gFunc.EquipSet(sets.WS);
+    gFunc.EquipSet(sets.WS)
 
     if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') then
-        gFunc.EquipSet(sets.WS_Soil);
+        gFunc.EquipSet(sets.WS_Soil)
     elseif (action.Name == 'Spirits Within') then
-        gFunc.EquipSet(sets.WS_Spirits);
+        gFunc.EquipSet(sets.WS_Spirits)
     end
 end
 
-return profile;
+return profile

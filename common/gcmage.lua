@@ -54,28 +54,28 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcinclude = gFunc.LoadFile('common\\gcincluderag.lua');
+gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 
-local gcmage = T{};
+local gcmage = T{}
 
 function gcmage.DoDefault()
-    local player = gData.GetPlayer();
+    local player = gData.GetPlayer()
     if (player.Status == 'Resting' and player.SubJob == "BLM" and wizards_mantle) then
-        gFunc.Equip('Back', 'Wizard\'s Mantle');
+        gFunc.Equip('Back', 'Wizard\'s Mantle')
     end
 end
 
 function gcmage.DoPrecast(fastCastValue)
-    local spell = gData.GetAction();
-    local player = gData.GetPlayer();
+    local spell = gData.GetAction()
+    local player = gData.GetPlayer()
     if (player.SubJob == "RDM") then
          fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
-    local minimumBuffer = 0.25; -- Can be lowered to 0.1 if you want
-    local packetDelay = 0.25; -- Change this to 0.4 if you do not use PacketFlow
-    local castDelay = ((spell.CastTime * (1 - fastCastValue)) / 1000) - minimumBuffer;
+    local minimumBuffer = 0.25 -- Can be lowered to 0.1 if you want
+    local packetDelay = 0.25 -- Change this to 0.4 if you do not use PacketFlow
+    local castDelay = ((spell.CastTime * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
-        gFunc.SetMidDelay(castDelay);
+        gFunc.SetMidDelay(castDelay)
     end
 
     -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
@@ -83,7 +83,7 @@ function gcmage.DoPrecast(fastCastValue)
     gFunc.EquipSet('Precast')
 
     if (spell.Skill == 'Elemental Magic' and player.MainJob == 'BLM' and gcdisplay.GetToggle('Yellow') == true) then
-        local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
+        local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' }
         if (not ElementalDebuffs:contains(spell.Name)) then
             local function delayYellow()
                 gFunc.ForceEquipSet('Yellow')
@@ -92,35 +92,35 @@ function gcmage.DoPrecast(fastCastValue)
             if (yellowDelay <= 0) then
                 gFunc.EquipSet('Yellow')
             else
-                delayYellow:once(yellowDelay);
+                delayYellow:once(yellowDelay)
             end
         end
     end
 end
 
 function gcmage.EquipStaff()
-    local spell = gData.GetAction();
-    local environment = gData.GetEnvironment();
+    local spell = gData.GetAction()
+    local environment = gData.GetEnvironment()
 
     if (spell.Skill == 'Healing Magic') then
         if light_staff ~= '' then gFunc.Equip('Main', light_staff); end
     elseif (spell.Skill == 'Elemental Magic' or spell.Skill == 'Enfeebling Magic' or spell.Skill == 'Summoning') then
         if (spell.Element == 'Fire') then
-            gcmage.EquipStaffWithFallback(fire_staff);
+            gcmage.EquipStaffWithFallback(fire_staff)
         elseif (spell.Element == 'Earth') then
-            gcmage.EquipStaffWithFallback(earth_staff);
+            gcmage.EquipStaffWithFallback(earth_staff)
         elseif (spell.Element == 'Water') then
-            gcmage.EquipStaffWithFallback(water_staff);
+            gcmage.EquipStaffWithFallback(water_staff)
         elseif (spell.Element == 'Wind') then
-            gcmage.EquipStaffWithFallback(wind_staff);
+            gcmage.EquipStaffWithFallback(wind_staff)
         elseif (spell.Element == 'Ice') then
-            gcmage.EquipStaffWithFallback(ice_staff);
+            gcmage.EquipStaffWithFallback(ice_staff)
         elseif (spell.Element == 'Thunder') then
-            gcmage.EquipStaffWithFallback(thunder_staff);
+            gcmage.EquipStaffWithFallback(thunder_staff)
         elseif (spell.Element == 'Dark') then
-            gcmage.EquipStaffWithFallback(dark_staff);
+            gcmage.EquipStaffWithFallback(dark_staff)
         elseif (spell.Element == 'Light') then
-            gcmage.EquipStaffWithFallback(light_staff);
+            gcmage.EquipStaffWithFallback(light_staff)
         end
     elseif (spell.Skill == 'Dark Magic') then
         if string.contains(spell.Name, 'Stun') then
@@ -137,31 +137,31 @@ end
 
 function gcmage.EquipStaffWithFallback(staff)
     if staff ~= '' then
-        gFunc.Equip('Main', staff);
+        gFunc.Equip('Main', staff)
     end
 end
 
 function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
-    local player = gData.GetPlayer();
-    local environment = gData.GetEnvironment();
-    local spell = gData.GetAction();
-    local target = gData.GetActionTarget();
-    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0);
+    local player = gData.GetPlayer()
+    local environment = gData.GetEnvironment()
+    local spell = gData.GetAction()
+    local target = gData.GetActionTarget()
+    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
-    local skipCast_MP = false;
+    local skipCast_MP = false
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
         if (player.SubJob == "NIN") and player.MP > ninSJMMP + gcinclude.add_mp then
-            skipCast_MP = true;
+            skipCast_MP = true
         elseif (player.SubJob == "WHM") and player.MP > whmSJMMP + gcinclude.add_mp then
-            skipCast_MP = true;
+            skipCast_MP = true
         elseif (player.SubJob == "BLM") and player.MP > blmSJMMP + gcinclude.add_mp then
-            skipCast_MP = true;
+            skipCast_MP = true
         elseif (player.SubJob == "RDM") and player.MP > rdmSJMMP + gcinclude.add_mp then
-            skipCast_MP = true;
+            skipCast_MP = true
         end
     end
 
-    local skipCast_Spell = false;
+    local skipCast_Spell = false
     if (string.match(spell.Name, 'Haste')
         or string.match(spell.Name, 'Refresh')
         or string.match(spell.Name, 'Blink')
@@ -177,19 +177,19 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         or string.contains(spell.Name, 'Regen')
         or string.contains(spell.Name, 'Reraise')) then
 
-        skipCast_Spell = true;
+        skipCast_Spell = true
         if (string.match(spell.Name, 'Sneak') and target.Name == me and dream_boots) then
-            gFunc.Equip('Feet', 'Dream Boots +1');
+            gFunc.Equip('Feet', 'Dream Boots +1')
         end
         if (string.match(spell.Name, 'Invisible') and target.Name == me and dream_mittens) then
-            gFunc.Equip('Hands', 'Dream Mittens +1');
+            gFunc.Equip('Hands', 'Dream Mittens +1')
         end
         if ((string.match(spell.Name, 'Sneak') or string.match(spell.Name, 'Invisible')) and target.Name == me and skulkers_cape) then
-            gFunc.Equip('Back', 'Skulker\'s Cape');
+            gFunc.Equip('Back', 'Skulker\'s Cape')
         end
     end
     if (gcdisplay.GetToggle('Hate') == true) then
-        skipCast_Spell = false;
+        skipCast_Spell = false
     end
 
     if (skipCast_MP and skipCast_Spell) then
@@ -197,55 +197,55 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     end
 
     if (player.MainJob == 'BLM') then
-        gFunc.InterimEquipSet(sets.SIRD);
+        gFunc.InterimEquipSet(sets.SIRD)
     else
-        gFunc.InterimEquipSet(sets.Casting);
+        gFunc.InterimEquipSet(sets.Casting)
     end
 
     if (gcdisplay.IdleSet == 'DT') then
         if (environment.Time >= 6 and environment.Time <= 18) then
-            gFunc.InterimEquipSet(sets.DT);
+            gFunc.InterimEquipSet(sets.DT)
         else
-            gFunc.InterimEquipSet(sets.DTNight);
+            gFunc.InterimEquipSet(sets.DTNight)
         end
     end
-    if (gcdisplay.IdleSet == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end;
-    if (gcdisplay.IdleSet == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end;
-    if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end;
-    if (gcdisplay.IdleSet == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end;
-    if (gcdisplay.IdleSet == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end;
+    if (gcdisplay.IdleSet == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end
+    if (gcdisplay.IdleSet == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end
+    if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end
+    if (gcdisplay.IdleSet == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end
+    if (gcdisplay.IdleSet == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end
 
     if (spell.Skill == 'Ninjutsu') then
         if string.contains(spell.Name, 'Utsusemi') then
-            gFunc.InterimEquipSet(sets.SIRD);
-            gFunc.EquipSet('Haste');
+            gFunc.InterimEquipSet(sets.SIRD)
+            gFunc.EquipSet('Haste')
         end
     elseif (spell.Skill == 'Enhancing Magic') then
-        gFunc.EquipSet('Enhancing');
+        gFunc.EquipSet('Enhancing')
         if string.match(spell.Name, 'Stoneskin') then
             if (gcdisplay.GetToggle('Hate') == false) then
-                gFunc.InterimEquipSet(sets.SIRD);
+                gFunc.InterimEquipSet(sets.SIRD)
             end
-            gFunc.EquipSet('Stoneskin');
+            gFunc.EquipSet('Stoneskin')
         end
         if string.match(spell.Name, 'Blink') then
-            gFunc.InterimEquipSet(sets.SIRD);
+            gFunc.InterimEquipSet(sets.SIRD)
         end
         if (string.match(spell.Name, 'Haste') or string.match(spell.Name, 'Refresh') or string.match(spell.Name, 'Blink')) then
-            gFunc.EquipSet('Haste');
+            gFunc.EquipSet('Haste')
         end
         if string.match(spell.Name, 'Aquaveil') then
-            gFunc.InterimEquipSet(sets.SIRD);
-            gFunc.EquipSet(sets.SIRD);
+            gFunc.InterimEquipSet(sets.SIRD)
+            gFunc.EquipSet(sets.SIRD)
         end
         if (string.match(spell.Name, 'Sneak') and target.Name == me and dream_boots) then
-            gFunc.Equip('Feet', 'Dream Boots +1');
+            gFunc.Equip('Feet', 'Dream Boots +1')
         end
         if (string.match(spell.Name, 'Invisible') and target.Name == me and dream_mittens) then
-            gFunc.Equip('Hands', 'Dream Mittens +1');
+            gFunc.Equip('Hands', 'Dream Mittens +1')
         end
         if ((string.match(spell.Name, 'Sneak') or string.match(spell.Name, 'Invisible')) and target.Name == me and skulkers_cape) then
-            gFunc.Equip('Back', 'Skulker\'s Cape');
+            gFunc.Equip('Back', 'Skulker\'s Cape')
         end
         if (string.match(spell.Name, 'Haste')
             or string.match(spell.Name, 'Refresh')
@@ -257,127 +257,127 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
             or string.contains(spell.Name, 'Shell')) then
 
             if (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
-                gFunc.Equip(water_ring_slot, 'Water Ring');
+                gFunc.Equip(water_ring_slot, 'Water Ring')
             end
         end
     elseif (spell.Skill == 'Healing Magic') then
-        gFunc.EquipSet('Cure');
+        gFunc.EquipSet('Cure')
         if (gcdisplay.GetToggle('Hate') == true) then
-            gFunc.EquipSet('Hate');
+            gFunc.EquipSet('Hate')
             if (string.match(spell.Name, 'Cure IV') and target.Name == me) then
-                gFunc.InterimEquipSet(sets.C4HPDown);
-                gFunc.EquipSet(sets.HPUp);
+                gFunc.InterimEquipSet(sets.C4HPDown)
+                gFunc.EquipSet(sets.HPUp)
             end
             if (string.match(spell.Name, 'Cure III') and target.Name == me) then
-                gFunc.InterimEquipSet(sets.C3HPDown);
-                gFunc.EquipSet(sets.HPUp);
+                gFunc.InterimEquipSet(sets.C3HPDown)
+                gFunc.EquipSet(sets.HPUp)
             end
         elseif (player.SubJob == "WHM" and healers_earring) then
-            gFunc.Equip(healers_earring_slot, 'Healer\'s Earring');
+            gFunc.Equip(healers_earring_slot, 'Healer\'s Earring')
         elseif (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
             if (spell.Element == 'Light') and korin_obi then
-                gFunc.Equip('Waist', 'Korin Obi');
+                gFunc.Equip('Waist', 'Korin Obi')
             end
         end
         if (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
-            gFunc.Equip(water_ring_slot, 'Water Ring');
+            gFunc.Equip(water_ring_slot, 'Water Ring')
         end
         if string.match(spell.Name, 'Cursna') then
-            gFunc.EquipSet('Cursna');
+            gFunc.EquipSet('Cursna')
         end
     elseif (spell.Skill == 'Elemental Magic') then
-        gFunc.EquipSet('Nuke');
+        gFunc.EquipSet('Nuke')
 
-        local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' };
+        local ElementalDebuffs = T{ 'Burn', 'Rasp', 'Drown', 'Choke', 'Frost', 'Shock' }
         if (ElementalDebuffs:contains(spell.Name)) then
-            gFunc.EquipSet('NukeDOT');
+            gFunc.EquipSet('NukeDOT')
             if (player.SubJob == "BLM" and wizards_earring) then
-                gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring');
+                gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring')
             end
         else
             if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
-                gFunc.EquipSet('NukeACC');
+                gFunc.EquipSet('NukeACC')
                 if (gcdisplay.GetToggle('OOR') == true) and (player.MainJob == 'RDM') and master_casters_bracelets then
-                    gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
+                    gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
                 end
                 if (environment.WeatherElement == 'Dark') and diabolos_earring then
-                    gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring');
+                    gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
                 end
                 if (player.SubJob == "BLM" and wizards_earring) then
-                    gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring');
+                    gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring')
                 end
                 if (environment.DayElement == 'Ice') and ice_ring and player.MPP <= 85 then
-                    gFunc.Equip(ice_ring_slot, 'Ice Ring');
+                    gFunc.Equip(ice_ring_slot, 'Ice Ring')
                 end
             end
             if (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
                 if (spell.Element == 'Fire') and karin_obi then
-                    gFunc.Equip('Waist', 'Karin Obi');
+                    gFunc.Equip('Waist', 'Karin Obi')
                 elseif (spell.Element == 'Earth') and dorin_obi then
-                    gFunc.Equip('Waist', 'Dorin Obi');
+                    gFunc.Equip('Waist', 'Dorin Obi')
                 elseif (spell.Element == 'Water') and suirin_obi then
-                    gFunc.Equip('Waist', 'Suirin Obi');
+                    gFunc.Equip('Waist', 'Suirin Obi')
                 elseif (spell.Element == 'Wind') and furin_obi then
-                    gFunc.Equip('Waist', 'Furin Obi');
+                    gFunc.Equip('Waist', 'Furin Obi')
                 elseif (spell.Element == 'Ice') and hyorin_obi then
-                    gFunc.Equip('Waist', 'Hyorin Obi');
+                    gFunc.Equip('Waist', 'Hyorin Obi')
                 elseif (spell.Element == 'Thunder') and rairin_obi then
-                    gFunc.Equip('Waist', 'Rairin Obi');
+                    gFunc.Equip('Waist', 'Rairin Obi')
                 end
             end
             if (spell.Element == environment.DayElement) and sorcerers_tonban and (player.MainJob == 'BLM') then
-                gFunc.Equip('Legs', 'Sorcerer\'s Tonban');
+                gFunc.Equip('Legs', 'Sorcerer\'s Tonban')
             end
             if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
-                gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring');
+                gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring')
             end
             if (spell.MppAftercast < 51) and uggalepih_pendant then
-                gFunc.Equip('Neck', 'Uggalepih Pendant');
+                gFunc.Equip('Neck', 'Uggalepih Pendant')
             end
             if (gcdisplay.GetToggle('MB') == true) then
                 gFunc.EquipSet('MB')
             end
         end
     elseif (spell.Skill == 'Enfeebling Magic') then
-        gFunc.EquipSet('Enfeebling');
+        gFunc.EquipSet('Enfeebling')
         if (gcdisplay.GetToggle('OOR') == true) and master_casters_bracelets then
-            gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
+            gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
         end
         if (environment.WeatherElement == 'Dark') and diabolos_earring then
-            gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring');
+            gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
         end
         if (string.contains(spell.Name, 'Paralyze') or string.contains(spell.Name, 'Slow')) then
-            gFunc.EquipSet('EnfeeblingMND');
+            gFunc.EquipSet('EnfeeblingMND')
         elseif (string.contains(spell.Name, 'Gravity') or string.contains(spell.Name, 'Blind') or string.contains(spell.Name, 'Bind') or string.contains(spell.Name, 'Dispel') or string.contains(spell.Name, 'Poison') or string.contains(spell.Name, 'Sleep')) then
-            gFunc.EquipSet('EnfeeblingINT');
+            gFunc.EquipSet('EnfeeblingINT')
         end
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
-            gFunc.EquipSet('EnfeeblingACC');
+            gFunc.EquipSet('EnfeeblingACC')
         end
         if (gcdisplay.GetToggle('Hate') == true) then
             if (string.contains(spell.Name, 'Sleep') or string.contains(spell.Name, 'Blind') or string.contains(spell.Name, 'Dispel') or string.contains(spell.Name, 'Bind')) then
-                gFunc.EquipSet('Hate');
+                gFunc.EquipSet('Hate')
             end
         end
     elseif (spell.Skill == 'Dark Magic') then
-        gFunc.EquipSet('Dark');
+        gFunc.EquipSet('Dark')
         if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP <= 85 then
-            gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring');
+            gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
         end
         if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_diabolos_earrings) then
-            gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring');
+            gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
         end
         if (spell.Element == environment.WeatherElement) or (spell.Element == environment.DayElement) then
             if (spell.Element == 'Dark') and anrin_obi then
-                gFunc.Equip('Waist', 'Anrin Obi');
+                gFunc.Equip('Waist', 'Anrin Obi')
             end
         end
     elseif (spell.Skill == 'Divine Magic') then
-        gFunc.EquipSet('Enfeebling');
-        gFunc.EquipSet('EnfeeblingMND');
+        gFunc.EquipSet('Enfeebling')
+        gFunc.EquipSet('EnfeeblingMND')
     end
 
-    gcmage.EquipStaff();
+    gcmage.EquipStaff()
 end
 
-return gcmage;
+return gcmage
