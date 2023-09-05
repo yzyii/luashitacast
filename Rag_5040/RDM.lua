@@ -19,8 +19,8 @@ local sets = {
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
-        Legs = 'Blood Cuisses',
         Waist = 'Warwolf Belt',
+        Legs = 'Blood Cuisses',
         Feet = 'Dst. Leggings +1',
     },
     IdleALT = {
@@ -35,8 +35,8 @@ local sets = {
         Ring1 = 'Merman\'s Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
-        Legs = 'Blood Cuisses',
         Waist = 'Warwolf Belt',
+        Legs = 'Blood Cuisses',
         Feet = 'Dst. Leggings +1',
     },
     IdleMaxMP = {
@@ -53,8 +53,8 @@ local sets = {
         Ring1 = 'Serket Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
-        Legs = 'Blood Cuisses',
         Waist = 'Hierarch Belt',
+        Legs = 'Blood Cuisses',
         Feet = 'Blood Greaves',
     },
     Precast = {
@@ -490,7 +490,7 @@ local sets = {
         Hands = 'Dusk Gloves', -- 3
         -- Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Sattva Ring',
-		-- Ring2 = 'Toreador\'s Ring',
+        -- Ring2 = 'Toreador\'s Ring',
         -- Back = 'Forager's Mantle',
         Waist = 'Swift Belt', -- 4
         -- Legs = 'Nashira Serawheels', -- 2
@@ -528,6 +528,26 @@ local sets = {
         Head = 'Dls. Chapeau +1',
         Feet = 'Blood Greaves',
     },
+
+    LockSet1 = {
+        Main = 'Fencing Degen',
+        Sub = 'Turtle Shield +1',
+        Ammo = 'Morion Tathlum',
+        Head = 'Traveler\'s Hat',
+        Neck = 'Justice Badge',
+        Ear1 = 'Healer\'s Earring',
+        Ear2 = 'Morion Earring +1',
+        Body = 'Ryl.Sqr. Robe',
+        Hands = 'Dvt. Mitts +1',
+        Ring1 = 'Saintly Ring',
+        Ring2 = 'Saintly Ring',
+        Back = 'White Cape',
+        Waist = 'Druid\'s Rope',
+        Legs = 'Custom Slacks',
+        Feet = 'Mannequin Pumps',
+    },
+    LockSet2 = {},
+    LockSet3 = {},
 
     FallbackSub = { -- Used only when you do not have complete staff sets
     },

@@ -40,10 +40,12 @@ SMN to come as I level it :P
 /lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off.
 
 [Special Commands]
-/warpme         - equips a warp cudgel and uses it after 30 seconds and locks equipment.
-                  use /lock to unlock again.
-/addmp [number] - adds a set amount of mp to decide usage of the IdleMaxMP sets for use when eating food or other +mp effects.
-                  type /addmp without a number to display the current value.
+/warpme           - equips a warp cudgel and uses it after 30 seconds and locks equipment.
+                    use /lock to unlock again.
+/addmp [number]   - adds a set amount of mp to decide usage of the IdleMaxMP sets for use when eating food or other +mp effects.
+                    type /addmp without a number to display the current value.
+/lockset [number] - equips the given lockset and locks equipment
+                    use /lock to unlock again.
 ```
 
 ## Additional Commands for RDM:
@@ -109,12 +111,7 @@ LuAshitacast provides functionality to automatically equip Level Sync gear.
 
 This luashitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine.
 
-I may provide some additional /lock type sets similar to /vert and /csstun to poorly mimic the same utility in the future or you could look to doing this yourself.
-
-e.g. /lockset1 /lockset2 /lockset3
-
 ## TODO
 
-- Add locksets
 - Add Enfeebling Accuracy set and switch Nuke: ACC / Nuke: DMG to Magic: Accuracy / Magic: Potency
-- Add Stealth Earring / Sub for /nin
+- Add Stealth Earring and Sub weapon for RDM/NIN 

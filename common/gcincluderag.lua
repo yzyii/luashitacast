@@ -21,7 +21,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb','rebind','addmp'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb','rebind','addmp','lockset'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -42,10 +42,10 @@ function gcinclude.DoCommands(args)
     local status = nil;
 
     if (args[1] == 'addmp') then
-        if (args[2] ~= nil) then
+        if (tonumber(args[2]) ~= nil) then
             toggle = 'Add MP';
             status = args[2]
-            gcinclude.add_mp = args[2]
+            gcinclude.add_mp = tonumber(args[2])
         else
             print(chat.header('Ashitacast'):append(chat.message('Add MP is ' .. gcinclude.add_mp)))
         end
@@ -96,6 +96,14 @@ function gcinclude.DoCommands(args)
         status = gcdisplay.GetToggle('OOR');
     elseif (args[1] == 'rebind') then
         AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd ' .. args[2]);
+    elseif (args[1] == 'lockset') then
+        if (tonumber(args[2]) ~= nil) then
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac set LockSet' .. args[2]);
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all');
+            gcdisplay.CreateToggle('Lock', true);
+            toggle = 'Equip Lock';
+            status = gcdisplay.GetToggle('Lock');
+        end
     elseif (args[1] == 'lock') then
         gcdisplay.AdvanceToggle('Lock');
         toggle = 'Equip Lock';
@@ -194,9 +202,9 @@ function gcinclude.ToggleIdleSet(idleSet)
             gcdisplay.IdleSet = lastIdleSet
             if (idleSet == 'Fight') then
                 gcinclude.UnlockWeapon:once(1);
-				if (lastIdleSetBeforeEngaged ~= '') then
+                if (lastIdleSetBeforeEngaged ~= '') then
                     gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged);
-				end
+                end
                 lastIdleSetBeforeEngaged = ''
             end
         else

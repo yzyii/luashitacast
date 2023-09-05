@@ -326,6 +326,25 @@ local sets = {
         Hands = 'Src. Gloves +1',
     },
 
+    LockSet1 = {
+        Main = 'Solid Wand',
+        Ammo = 'Morion Tathlum',
+        Head = 'Seer\'s Crown +1',
+        Neck = 'Black Neckerchief',
+        Ear1 = 'Healer\'s Earring',
+        Ear2 = 'Morion Earring +1',
+        Body = 'Ryl.Sqr. Robe',
+        Hands = 'Seer\'s Mitts +1',
+        Ring1 = 'Kshama Ring No.5',
+        Ring2 = 'Eremite\'s Ring',
+        Back = 'Red Cape +1',
+        Waist = 'Druid\'s Rope',
+        Legs = 'Seer\'s Slacks',
+        Feet = 'Custom M Boots',
+    },
+    LockSet2 = {},
+    LockSet3 = {},
+
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
 

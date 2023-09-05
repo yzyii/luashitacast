@@ -123,6 +123,25 @@ local sets = {
     },
     NukeDOT = {},
 
+    LockSet1 = {
+        Main = 'Solid Wand',
+        Ammo = 'Fortune Egg',
+        Head = 'Austere Hat',
+        Neck = 'Justice Badge',
+        Ear1 = 'Healer\'s Earring',
+        Ear2 = 'Morion Earring +1',
+        Body = 'Austere Robe',
+        Hands = 'Carbuncle Mitts',
+        Ring1 = 'Astral Ring',
+        Ring2 = 'Ether Ring',
+        Back = 'Red Cape +1',
+        Waist = 'Druid\'s Rope',
+        Legs = 'Custom Slacks',
+        Feet = 'Mannequin Pumps',
+    },
+    LockSet2 = {},
+    LockSet3 = {},
+
     TP = {},
 
     FallbackSub = { -- Used only when you do not have complete staff sets
