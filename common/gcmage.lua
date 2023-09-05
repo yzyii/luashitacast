@@ -56,7 +56,7 @@ Everything below can be ignored.
 
 gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 
-local gcmage = T{}
+local gcmage = {}
 
 function gcmage.DoDefault()
     local player = gData.GetPlayer()

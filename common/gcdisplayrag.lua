@@ -8,14 +8,14 @@ local gcdisplay = {
     IdleSet = 'Normal'
 }
 
-local fontSettings = T{
+local fontSettings = {
     visible = true,
     font_family = 'Segoe UI',
     font_height = 12,
     color = 0xFFFFFFFF,
     position_x = 300,
     position_y = 0,
-    background = T{
+    background = {
         visible = true,
         color = 0x66000000,
     }

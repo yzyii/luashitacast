@@ -21,9 +21,25 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','mode','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb','rebind','addmp','lockset'}
+gcinclude.AliasList = {
+    'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres',
+    'kite','lock','oor','idle','rebind','lockset','warpme','addmp',
+    'mode', -- RDM / BLM
+    'csstun','hate','vert','fight', -- RDM
+    'yellow','mb', -- BLM
+}
 
-gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'}
+gcinclude.Towns = T{
+    'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau',
+    'Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]',
+    'San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship',
+    'Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille',
+    'Bastok Mines','Bastok Markets','Port Bastok','Metalworks',
+    'Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower',
+    'Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno',
+    'Rabao','Selbina','Mhaura','Kazham','Norg',
+    'Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'
+}
 
 gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
 shorterhand = gFunc.LoadFile('common\\shorterhand.lua')
