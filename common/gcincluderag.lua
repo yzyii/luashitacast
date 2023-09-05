@@ -21,7 +21,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = {
+gcinclude.AliasList = T{
     'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres',
     'kite','lock','oor','idle','rebind','lockset','warpme','addmp',
     'mode', -- RDM / BLM
