@@ -3,7 +3,7 @@ local shorterhand = {}
 --[[
 List of commands that can be used
 ]]
-shorterhand.AliasList = {'c4','c3','c2','c','i','s','ss','b','av'}
+shorterhand.AliasList = T{'c4','c3','c2','c','i','s','ss','b','av'}
 
 function shorterhand.DoCommands(args)
     local name = ''
