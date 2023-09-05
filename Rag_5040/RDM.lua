@@ -497,6 +497,11 @@ local sets = {
         Feet = 'Nashira Crackows',
         -- Feet = 'Dusk Ledelsens', -- 2
     },
+    TP_NIN = {
+        -- Main = 'Enhancing Sword',
+        -- Sub = 'Joyeuse',
+        -- Ear1 = 'Stealth Earring',
+    },
 
     WS = {
         -- Head = 'Optical Hat',

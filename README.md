@@ -27,7 +27,7 @@ SMN to come as I level it :P
           you can toggle this on when you are in areas where these are active.
 
 [Additional Toggles]
-/nuke   - toggles Elemental Magic between regular DMG and MACC sets.
+/mode   - toggles Elemental Magic between regular Potency / Damage and Magic Accuracy sets.
 
 [Idle Sets] (Changes your idle set to use these sets instead)
 /idle           - toggles between using 2 different idle sets (Normal and Alternate i.e. Idle and IdleALT).
@@ -110,8 +110,3 @@ If you enable the Shorterhand setting in gcincluderag.lua, additional /commands 
 LuAshitacast provides functionality to automatically equip Level Sync gear.
 
 This luashitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine.
-
-## TODO
-
-- Add Enfeebling Accuracy set and switch Nuke: ACC / Nuke: DMG to Magic: Accuracy / Magic: Potency
-- Add Stealth Earring and Sub weapon for RDM/NIN 

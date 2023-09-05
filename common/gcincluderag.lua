@@ -21,7 +21,7 @@ Everything below can be ignored.
 --[[
 List of commands that can be used:
 ]]
-gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','nuke','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb','rebind','addmp','lockset'};
+gcinclude.AliasList = T{'dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','hate','kite','mode','warpme','vert','csstun','lock','fight','oor','idle','yellow','mb','rebind','addmp','lockset'};
 
 gcinclude.Towns = T{'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau','Southern San d\'Oria [S]','Bastok Markets [S]','Windurst Waters [S]','San d\'Oria-Jeuno Airship','Bastok-Jeuno Airship','Windurst-Jeuno Airship','Kazham-Jeuno Airship','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille','Bastok Mines','Bastok Markets','Port Bastok','Metalworks','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower','Ru\'Lude Gardens','Upper Jeuno','Lower Jeuno','Port Jeuno','Rabao','Selbina','Mhaura','Kazham','Norg','Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'};
 
@@ -130,10 +130,10 @@ function gcinclude.DoCommands(args)
         end
     end
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
-        if (args[1] == 'nuke') then
-            gcdisplay.AdvanceCycle('Nuke');
-            toggle = 'Nuking Gear Set';
-            status = gcdisplay.GetCycle('Nuke');
+        if (args[1] == 'mode') then
+            gcdisplay.AdvanceCycle('Mode');
+            toggle = 'Magic Mode';
+            status = gcdisplay.GetCycle('Mode');
         end
     end
     if (player.MainJob == 'RDM') then
@@ -260,6 +260,9 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
 
     if (gcdisplay.IdleSet == 'Fight') then
         gFunc.EquipSet('TP')
+        if (player.SubJob == 'NIN') then
+            gFunc.EquipSet('TP_NIN')
+        end
         if tp_diabolos_earring then
             gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring');
         end
@@ -307,9 +310,9 @@ end
 
 function gcinclude.Load()
     gSettings.AllowAddSet = true;
-    gcdisplay.Load:once(2);
-    gcinclude.SetVariables:once(2);
-    gcinclude.SetAlias:once(2);
+    gcdisplay.Load:once(1);
+    gcinclude.SetVariables:once(1);
+    gcinclude.SetAlias:once(1);
 
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd fres');
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F2 /lac fwd kite');
@@ -350,7 +353,7 @@ function gcinclude.SetVariables()
     gcdisplay.CreateToggle('Lock', false);
     if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
         gcdisplay.CreateToggle('OOR', false);
-        gcdisplay.CreateCycle('Nuke', {[1] = 'DMG', [2] = 'ACC',});
+        gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',});
     end
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false);

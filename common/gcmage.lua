@@ -295,7 +295,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
                 gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring');
             end
         else
-            if (gcdisplay.GetCycle('Nuke') == 'ACC') then
+            if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
                 gFunc.EquipSet('NukeACC');
                 if (gcdisplay.GetToggle('OOR') == true) and (player.MainJob == 'RDM') and master_casters_bracelets then
                     gFunc.Equip('Hands', 'Mst.Cst. Bracelets');
@@ -350,6 +350,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
             gFunc.EquipSet('EnfeeblingMND');
         elseif (string.contains(spell.Name, 'Gravity') or string.contains(spell.Name, 'Blind') or string.contains(spell.Name, 'Bind') or string.contains(spell.Name, 'Dispel') or string.contains(spell.Name, 'Poison') or string.contains(spell.Name, 'Sleep')) then
             gFunc.EquipSet('EnfeeblingINT');
+        end
+        if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
+            gFunc.EquipSet('EnfeeblingACC');
         end
         if (gcdisplay.GetToggle('Hate') == true) then
             if (string.contains(spell.Name, 'Sleep') or string.contains(spell.Name, 'Blind') or string.contains(spell.Name, 'Dispel') or string.contains(spell.Name, 'Bind')) then
