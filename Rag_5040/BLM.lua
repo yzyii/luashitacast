@@ -104,6 +104,7 @@ local sets = {
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
+        -- Ear2 = 'Magnetic Earring', -- 8
         Waist = 'Druid\'s Rope', -- 10
         Feet = 'Wizard\'s Sabots', -- 20
     },
