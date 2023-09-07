@@ -26,7 +26,7 @@ gcinclude.AliasList = T{
     'kite','lock','oor','idle','rebind','lockset','warpme','addmp',
     'mode', -- RDM / BLM
     'csstun','hate','vert','fight', -- RDM
-    'yellow','mb', -- BLM
+    'yellow','mb' -- BLM
 }
 
 gcinclude.Towns = T{
@@ -174,13 +174,13 @@ function gcinclude.DoCommands(args)
             gcdisplay.AdvanceToggle('Hate')
             toggle = 'Hate Set'
             status = gcdisplay.GetToggle('Hate')
-        elseif (args[1] == 'fight') then
+        elseif (args[1] == 'fight' and gcdisplay.IdleSet == 'Fight') then
             gcinclude.ToggleIdleSet('Fight')
             toggle = 'IdleSet'
             status = gcdisplay.IdleSet
         end
     end
-    if (player.MainJob == 'RDM') then
+    if (player.MainJob == 'BLM') then
         if (args[1] == 'mb') then
             gcdisplay.AdvanceToggle('MB')
             toggle = 'MB Set'
@@ -191,7 +191,6 @@ function gcinclude.DoCommands(args)
             status = gcdisplay.GetToggle('Yellow')
         end
     end
-
 
     if gcinclude.settings.Messages then
         gcinclude.Message(toggle, status)
@@ -224,10 +223,10 @@ function gcinclude.ToggleIdleSet(idleSet)
                 lastIdleSetBeforeEngaged = ''
             end
         else
-            gcdisplay.IdleSet = idleSet
             if (idleSet == 'Fight') then
                 gcinclude.LockWeapon:once(1)
             end
+            gcdisplay.IdleSet = idleSet
         end
     end
 end
@@ -305,7 +304,7 @@ function gcinclude.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     local player = gData.GetPlayer()
     if (player.Status == 'Resting') then
         gFunc.EquipSet('Resting')
-    elseif (player.IsMoving == true) and (gcdisplay.IdleSet == 'None' or gcdisplay.IdleSet == 'DT') then
+    elseif (player.IsMoving == true) and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT') then
         gFunc.EquipSet('Movement')
     end
 end

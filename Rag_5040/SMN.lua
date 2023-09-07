@@ -106,6 +106,8 @@ local sets = {
     },
     Stoneskin = { -- Enhancing Skill and MND
     },
+    Spikes = {
+    },
 
     Enfeebling = {
     },

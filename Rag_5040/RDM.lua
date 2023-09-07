@@ -337,6 +337,24 @@ local sets = {
     Stoneskin = { -- Enhancing Skill and MND
         -- Neck = 'Stone Gorget',
     },
+    Spikes = {
+        Main = 'Mythic Wand +1',
+        Sub = 'Nms. Shield +1',
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Wlk. Chapeau +1',
+        Neck = 'Enhancing Torque',
+        Ear1 = 'Novio Earring',
+        Ear2 = 'Moldavite Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = 'Dls. Gloves +1',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Back = 'Merciful Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Warlock\'s Tights',
+        Feet = 'Wise Pigaches',
+        -- Feet = 'Duelist\'s Boots',
+    },
 
     Enfeebling = {
         Head = 'Dls. Chapeau +1',
@@ -605,7 +623,7 @@ profile.HandleWeaponskill = function()
 
     gFunc.EquipSet(sets.WS)
 
-    if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') then
+    if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') or (action.Name == 'Evisceration') then
         gFunc.EquipSet(sets.WS_Soil)
     elseif (action.Name == 'Spirits Within') then
         gFunc.EquipSet(sets.WS_Spirits)

@@ -55,6 +55,17 @@ local sets = {
         Legs = 'Zenith Slacks',
         Feet = 'Rostrum Pumps',
     },
+    Casting = {
+        Main = 'Hermit\'s Wand', -- 25
+        Sub = 'Hermit\'s Wand', -- 25
+        Head = 'Nashira Turban', -- 10
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        -- Ear2 = 'Magnetic Earring', -- 8
+        Waist = 'Druid\'s Rope', -- 10
+        Feet = 'Wizard\'s Sabots', -- 20
+    },
     Resting = {
         Main = 'Pluto\'s Staff',
         Neck = 'Checkered Scarf',
@@ -232,6 +243,24 @@ local sets = {
     },
     Stoneskin = { -- Enhancing Skill and MND
         -- Neck = 'Stone Gorget',
+    },
+    Spikes = {
+        Main = 'Kirin\'s Pole',
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Demon Helm +1',
+        Neck = 'Enhancing Torque',
+        Ear1 = 'Novio Earring',
+        Ear2 = 'Moldavite Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = 'Mahatma Cuffs',
+        -- Hands = 'Zenith Mitts',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Back = 'Merciful Cape',
+        Waist = 'Penitent\'s Rope',
+        Waist = 'Sorcerer\'s Belt',
+        Legs = 'Mahatma Slops',
+        Feet = 'Src. Sabots +1',
     },
 
     Enfeebling = {
