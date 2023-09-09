@@ -84,7 +84,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmelee.DoMidcast()
+    gcmelee.DoMidcast(sets)
 end
 
 return profile
