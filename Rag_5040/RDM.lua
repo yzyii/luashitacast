@@ -72,9 +72,7 @@ local sets = {
     Town = {},
     Movement = {
         Head = 'Dls. Chapeau +1',
-        Hands = 'Blood Fng. Gnt.',
         Legs = 'Blood Cuisses',
-        Feet = 'Blood Greaves',
     },
 
     DT = {
