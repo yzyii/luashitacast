@@ -57,18 +57,6 @@ local sets = {
         Legs = 'Blood Cuisses',
         Feet = 'Blood Greaves',
     },
-    Precast = {
-        Head = 'Wlk. Chapeau +1',
-        Ear1 = 'Loquac. Earring',
-        -- Body = 'Duelist\'s Tabard',
-    },
-    Casting = { -- Default Casting Equipment when using Idle sets
-        Head = 'Dls. Chapeau +1',
-        Neck = 'Willpower Torque',
-        Ear1 = 'Merman\'s Earring',
-        Body = 'Dst. Harness +1',
-        Waist = 'Druid\'s Rope',
-    },
     Resting = {
         Main = 'Pluto\'s Staff',
         Head = 'Dls. Chapeau +1',
@@ -81,8 +69,14 @@ local sets = {
         Waist = 'Duelist\'s Belt',
         Legs = 'Baron\'s Slops',
     },
-    Town = {
+    Town = {},
+    Movement = {
+        Head = 'Dls. Chapeau +1',
+        Hands = 'Blood Fng. Gnt.',
+        Legs = 'Blood Cuisses',
+        Feet = 'Blood Greaves',
     },
+
     DT = {
         Main = 'Terra\'s Staff', -- 20
         Ammo = 'Hedgehog Bomb',
@@ -130,40 +124,6 @@ local sets = {
         Waist = 'Warwolf Belt',
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
-    },
-    Movement = {
-        Head = 'Dls. Chapeau +1',
-        Hands = 'Blood Fng. Gnt.',
-        Legs = 'Blood Cuisses',
-        Feet = 'Blood Greaves',
-    },
-    SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
-        Ammo = 'Hedgehog Bomb',
-        Head = 'Nashira Turban', -- 10
-        Neck = 'Willpower Torque', -- 5
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        -- Ear2 = 'Magnetic Earring', -- 8
-        Body = 'Warlock\'s Tabard', -- 10
-        Hands = 'Dst. Mittens +1',
-        Ring1 = 'Jelly Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Umbra Cape',
-        Waist = 'Druid\'s Rope', -- 10
-        Legs = 'Dst. Subligar +1',
-        Feet = 'Mountain Gaiters', -- 5
-    },
-    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
-        Head = 'Wlk. Chapeau +1',
-        Ear1 = 'Loquac. Earring',
-        -- Body = 'Duelist\'s Tabard',
-        Hands = 'Dusk Gloves',
-        Waist = 'Swift Belt',
-        -- Legs = 'Nashira Serawheels',
-        Feet = 'Nashira Crackows',
-        -- Feet = 'Dusk Ledelsens',
     },
     FireRes = { -- 143
         Main = 'Neptune\'s Staff', -- 20
@@ -247,6 +207,48 @@ local sets = {
         Feet = 'Blood Greaves', -- 21
     },
 
+    Precast = {
+        Head = 'Wlk. Chapeau +1',
+        Ear1 = 'Loquac. Earring',
+        -- Body = 'Duelist\'s Tabard',
+    },
+    Casting = { -- Default Casting Equipment when using Idle sets
+        Head = 'Dls. Chapeau +1',
+        Neck = 'Willpower Torque',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Dst. Harness +1',
+        Waist = 'Druid\'s Rope',
+    },
+    SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+        Main = 'Hermit\'s Wand', -- 25
+        Sub = 'Hermit\'s Wand', -- 25
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Nashira Turban', -- 10
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        -- Ear2 = 'Magnetic Earring', -- 8
+        Body = 'Warlock\'s Tabard', -- 10
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Jelly Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Umbra Cape',
+        Waist = 'Druid\'s Rope', -- 10
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Mountain Gaiters', -- 5
+    },
+    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
+        Head = 'Wlk. Chapeau +1',
+        Ear1 = 'Loquac. Earring',
+        -- Body = 'Duelist\'s Tabard',
+        Hands = 'Dusk Gloves',
+        Waist = 'Swift Belt',
+        -- Legs = 'Nashira Serawheels',
+        Feet = 'Nashira Crackows',
+        -- Feet = 'Dusk Ledelsens',
+    },
+
     Hate = { -- Switches to this set when casting Sleep, Blind, Dispel and Bind if /hate is toggled on
         Ammo = 'Phtm. Tathlum',
         Head = 'Baron\'s Chapeau', -- 2
@@ -264,8 +266,7 @@ local sets = {
         -- Legs = 'Nashira Serawheels',
         Feet = 'Heroic Boots', -- 1
     },
-    C3HPDown = {
-    },
+    C3HPDown = {},
     C4HPDown = {
         Head = 'Wlk. Chapeau +1',
         Neck = 'Checkered Scarf',
@@ -307,7 +308,7 @@ local sets = {
         Legs = 'Raven Hose', -- 6
         Feet = 'Raven Gaiters', -- 5
     },
-    Cursna = { -- Healing Magic
+    Cursna = {
         Main = 'Prelatic Pole',
         Neck = 'Healing Torque',
         -- Body = 'Duelist\'s Tabard',
@@ -334,7 +335,7 @@ local sets = {
         Feet = 'Nashira Crackows',
         -- Feet = 'Dusk Ledelsens',
     },
-    Stoneskin = { -- Enhancing Skill and MND
+    Stoneskin = {
         -- Neck = 'Stone Gorget',
     },
     Spikes = {
@@ -520,7 +521,6 @@ local sets = {
         -- Sub = 'Joyeuse',
         -- Ear1 = 'Stealth Earring',
     },
-
     WS = {
         -- Head = 'Optical Hat',
         -- Neck = 'PCC',
@@ -588,26 +588,23 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
-gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.OnLoad = function()
-    gcinclude.Load()
+    gcmage.Load()
     profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
-    gcinclude.Unload()
+    gcmage.Unload()
 end
 
 profile.HandleCommand = function(args)
-    gcinclude.DoCommands(args)
+    gcmage.DoCommands(args)
 end
 
 profile.HandleDefault = function()
-    gcinclude.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000)
-    gcmage.DoDefault()
+    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000)
 end
 
 profile.HandlePrecast = function()

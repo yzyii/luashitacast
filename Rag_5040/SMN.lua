@@ -19,21 +19,18 @@ local sets = {
         Neck = 'Justice Badge',
     },
     IdleALT = {},
-    IdleMaxMP = {
-    },
+    IdleMaxMP = {},
     Resting = {
         Main = 'Pluto\'s Staff',
         Body = 'Seer\'s Tunic',
     },
     Town = {},
+    Movement = {},
+
     DT = {},
     DTNight = {},
     MDT = { -- Shell IV provides 23% MDT
     },
-    Movement = {},
-    SIRD = { -- 102% to Cap
-    },
-    Haste = {},
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
         Ear1 = 'Cmn. Earring', -- 11
@@ -96,33 +93,29 @@ local sets = {
         -- Ear1 = 'Loquac. Earring',
         -- Feet = 'Rostrum Pumps',
     },
-
-    Cure = {
+    Casting = { -- Default Casting Equipment when using Idle sets
     },
-    Cursna = { -- Healing Magic
+    SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
     },
-
-    Enhancing = {
-    },
-    Stoneskin = { -- Enhancing Skill and MND
-    },
-    Spikes = {
+    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
     },
 
-    Enfeebling = {
-    },
-    EnfeeblingMND = {
-    },
-    EnfeeblingINT = {
-    },
+    Cure = {},
+    Cursna = {},
 
-    Dark = {
-    },
+    Enhancing = {},
+    Stoneskin = {},
+    Spikes = {},
 
-    Nuke = {
-    },
-    NukeACC = {
-    },
+    Enfeebling = {},
+    EnfeeblingMND = {},
+    EnfeeblingINT = {},
+    EnfeeblingACC = {},
+
+    Dark = {},
+
+    Nuke = {},
+    NukeACC = {},
     NukeDOT = {},
 
     LockSet1 = {
@@ -144,8 +137,6 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP = {},
-
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
 }
@@ -162,26 +153,23 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
-gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.OnLoad = function()
-    gcinclude.Load()
+    gcmage.Load()
     profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
-    gcinclude.Unload()
+    gcmage.Unload()
 end
 
 profile.HandleCommand = function(args)
-    gcinclude.DoCommands(args)
+    gcmage.DoCommands(args)
 end
 
 profile.HandleDefault = function()
-    gcinclude.DoDefault(10000, 10000, 10000, 10000)
-    gcmage.DoDefault()
+    gcmage.DoDefault(10000, 10000, 10000, 10000)
 end
 
 profile.HandlePrecast = function()

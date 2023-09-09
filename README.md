@@ -30,7 +30,7 @@ SMN to come as I level it :P
 /mode   - toggles Elemental Magic between regular Potency / Damage and Magic Accuracy sets.
 
 [Idle Sets] (Changes your idle set to use these sets instead)
-/idle           - toggles between using 2 different idle sets 
+/idle           - toggles between using 2 different idle sets
                   i.e. Normal and Alternate / Idle and IdleALT.
 /dt             - toggles DT set on/off.
 /mdt            - toggles MDT set on/off.

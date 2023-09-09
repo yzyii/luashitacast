@@ -1,9 +1,9 @@
 local shorterhand = {}
 
---[[
-List of commands that can be used
-]]
-shorterhand.AliasList = T{'c4','c3','c2','c','i','s','ss','b','av'}
+shorterhand.MageAliasList = T{ 'c4','c3','c2','c','i','s','ss','b','av' }
+shorterhand.RegularAliasList = T{ 'u1','u2' }
+
+local isMage = false
 
 function shorterhand.DoCommands(args)
     local name = ''
@@ -27,25 +27,36 @@ function shorterhand.DoCommands(args)
         AshitaCore:GetChatManager():QueueCommand(1, '//blink')
     elseif (args[1] == 'av') then
         AshitaCore:GetChatManager():QueueCommand(1, '//aquaveil')
+    elseif (args[1] == 'u1') then
+        AshitaCore:GetChatManager():QueueCommand(1, '/ma "Utsusemi: Ichi" <me>')
+    elseif (args[1] == 'u2') then
+        AshitaCore:GetChatManager():QueueCommand(1, '/ma "Utsusemi: Ni" <me>')
     end
 end
 
-function shorterhand.Load()
-    shorterhand.SetAlias:once(2)
+function shorterhand.Load(enableMageAliases)
+	isMage = enableMageAliases
+	if (isMage) then
+	    shorterhand.SetAlias(shorterhand.MageAliasList)
+	end
+	shorterhand.SetAlias(shorterhand.RegularAliasList)
 end
 
 function shorterhand.Unload()
-    shorterhand.ClearAlias()
+    if (isMage) then
+        shorterhand.ClearAlias(shorterhand.MageAliasList)
+	end
+	shorterhand.ClearAlias(shorterhand.RegularAliasList)
 end
 
-function shorterhand.SetAlias()
-    for _, v in ipairs(shorterhand.AliasList) do
+function shorterhand.SetAlias(aliasList)
+    for _, v in ipairs(aliasList) do
         AshitaCore:GetChatManager():QueueCommand(-1, '/alias /' .. v .. ' /lac fwd ' .. v)
     end
 end
 
-function shorterhand.ClearAlias()
-    for _, v in ipairs(shorterhand.AliasList) do
+function shorterhand.ClearAlias(aliasList)
+    for _, v in ipairs(aliasList) do
         AshitaCore:GetChatManager():QueueCommand(-1, '/alias del /' .. v)
     end
 end

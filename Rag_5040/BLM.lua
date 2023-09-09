@@ -55,17 +55,6 @@ local sets = {
         Legs = 'Zenith Slacks',
         Feet = 'Rostrum Pumps',
     },
-    Casting = {
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
-        Head = 'Nashira Turban', -- 10
-        Neck = 'Willpower Torque', -- 5
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        -- Ear2 = 'Magnetic Earring', -- 8
-        Waist = 'Druid\'s Rope', -- 10
-        Feet = 'Wizard\'s Sabots', -- 20
-    },
     Resting = {
         Main = 'Pluto\'s Staff',
         Neck = 'Checkered Scarf',
@@ -78,6 +67,8 @@ local sets = {
         Legs = 'Baron\'s Slops',
     },
     Town = {},
+    Movement = {},
+
     DT = {
         Main = 'Terra\'s Staff',
         Ear1 = 'Merman\'s Earring',
@@ -106,26 +97,6 @@ local sets = {
         Ring1 = 'Merman\'s Ring', -- 4
         Ring2 = 'Sattva Ring', -- 5
         Back = 'Hexerei Cape', -- 3
-    },
-    Movement = {},
-    SIRD = { -- 102% to Cap, used on all casts by default unless an Override set has been enabled.
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
-        Head = 'Nashira Turban', -- 10
-        Neck = 'Willpower Torque', -- 5
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        -- Ear2 = 'Magnetic Earring', -- 8
-        Waist = 'Druid\'s Rope', -- 10
-        Feet = 'Wizard\'s Sabots', -- 20
-    },
-    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
-        Head = 'Nashira Turban',
-        Ear1 = 'Loquac. Earring',
-        Hands = 'Nashira Gages',
-        Waist = 'Swift Belt',
-        -- Legs = 'Nashira Serawheels',
-        Feet = 'Nashira Crackows',
     },
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
@@ -189,6 +160,28 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
     },
+    Casting = {
+        Main = 'Hermit\'s Wand', -- 25
+        Sub = 'Hermit\'s Wand', -- 25
+        Head = 'Nashira Turban', -- 10
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        -- Ear2 = 'Magnetic Earring', -- 8
+        Waist = 'Druid\'s Rope', -- 10
+        Feet = 'Wizard\'s Sabots', -- 20
+    },
+    SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+        Main = 'Hermit\'s Wand', -- 25
+        Sub = 'Hermit\'s Wand', -- 25
+        Head = 'Nashira Turban', -- 10
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        -- Ear2 = 'Magnetic Earring', -- 8
+        Waist = 'Druid\'s Rope', -- 10
+        Feet = 'Wizard\'s Sabots', -- 20
+    },
     Yellow = { -- Include Fast Cast gear in here as well
         Head = 'Faerie Hairpin',
         Neck = 'Checkered Scarf',
@@ -201,6 +194,14 @@ local sets = {
         Waist = 'Penitent\'s Rope',
         Legs = 'Zenith Slacks',
         Feet = 'Rostrum Pumps',
+    },
+    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
+        Head = 'Nashira Turban',
+        Ear1 = 'Loquac. Earring',
+        Hands = 'Nashira Gages',
+        Waist = 'Swift Belt',
+        -- Legs = 'Nashira Serawheels',
+        Feet = 'Nashira Crackows',
     },
 
     Cure = {
@@ -218,7 +219,7 @@ local sets = {
         Legs = 'Mahatma Slops', -- 4
         Feet = 'Mahatma Pigaches', -- 3
     },
-    Cursna = { -- Healing Magic
+    Cursna = {
         Main = 'Prelatic Pole',
         Neck = 'Healing Torque',
         Legs = 'Druid\'s Slops',
@@ -241,7 +242,7 @@ local sets = {
         Legs = 'Mahatma Slops',
         Feet = 'Mahatma Pigaches',
     },
-    Stoneskin = { -- Enhancing Skill and MND
+    Stoneskin = {
         -- Neck = 'Stone Gorget',
     },
     Spikes = {
@@ -376,8 +377,6 @@ local sets = {
 
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
-
-    TP = {},
 }
 profile.Sets = sets
 
@@ -392,26 +391,23 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
-gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.OnLoad = function()
-    gcinclude.Load()
+    gcmage.Load()
     profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
-    gcinclude.Unload()
+    gcmage.Unload()
 end
 
 profile.HandleCommand = function(args)
-    gcinclude.DoCommands(args)
+    gcmage.DoCommands(args)
 end
 
 profile.HandleDefault = function()
-    gcinclude.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP)
-    gcmage.DoDefault()
+    gcmage.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP)
 end
 
 profile.HandlePrecast = function()
