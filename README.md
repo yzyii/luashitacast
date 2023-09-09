@@ -54,7 +54,7 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
 ## Additional Commands for RDM:
 ```
 [Regular Toggles]
-/mode   - toggles Elemental and Enfeebling Magic between regular Potency / Damage and Magic Accuracy sets.
+/mode   - toggles Elemental & Enfeebling Magic between normal Potency / Damage and Magic Accuracy sets.
 /oor    - forces use of Master Caster Bracelets / Republican Gold Medal.
           you can toggle this on when you are in areas where these are active.
 /hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
@@ -71,7 +71,7 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
 ## Additional Commands for BLM:
 ```
 [Regular Toggles]
-/mode   - toggles Elemental and Enfeebling Magic between regular Potency / Damage and Magic Accuracy sets.
+/mode   - toggles Elemental & Enfeebling Magic between normal Potency / Damage and Magic Accuracy sets.
 /oor    - forces use of Master Caster Bracelets for Enfeebling Magic.
           you can toggle this on when you are in areas where these are active.
 /yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring.
