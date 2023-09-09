@@ -4,7 +4,7 @@ A combined RDM / BLM / WHM luashitacast for HorizonXI that was originally based 
 
 SMN specific behaviour to come soon as I level it to 75.
 
-A WAR template is also provided that demonstrates and example for melee jobs which allows you to use all of the default commands and provides a small amount of logic for optimizing Utsusemi in gcmelee.lua.
+A WAR template is also provided that demonstrates an example for melee jobs which allows you to use all of the default commands and provides a small amount of logic for optimizing Utsusemi in gcmelee.lua.
 
 # How to Use
 
