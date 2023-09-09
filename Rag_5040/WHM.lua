@@ -1,5 +1,5 @@
 --[[
-    This is provided purely as a untested example template
+    This is provided purely as an example template. Only very basic sanity testing has been done.
 ]]
 
 local profile = {}
