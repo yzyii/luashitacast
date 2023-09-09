@@ -6,6 +6,10 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
 
+local ninSJMaxMP = 10000 -- The Max MP you have when /nin in your idle set
+local rdmSJMaxMP = 10000 -- The Max MP you have when /rdm in your idle set
+local blmSJMaxMP = 10000 -- The Max MP you have when /blm in your idle set
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -86,7 +90,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(10000, 10000, 10000, 10000)
+    gcmage.DoDefault(ninSJMaxMP, 10000, blmSJMaxMP, rdmSJMaxMP)
 end
 
 profile.HandlePrecast = function()
@@ -94,7 +98,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, 10000, 10000, 10000, 10000)
+    gcmage.DoMidcast(sets, ninSJMaxMP, 10000, blmSJMaxMP, rdmSJMaxMP)
 end
 
 return profile
