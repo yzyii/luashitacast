@@ -144,10 +144,9 @@ end
 function gcmage.SetVariables()
     local player = gData.GetPlayer()
 
-    if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
-        gcdisplay.CreateToggle('OOR', false)
-        gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
-    end
+    gcdisplay.CreateToggle('OOR', false)
+    gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
+
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false)
     end
@@ -172,16 +171,12 @@ function gcmage.DoCommands(args)
         else
             gcinclude.Message('Add MP', addMP)
         end
-    end
-
-    if (player.MainJob == 'RDM') or (player.MainJob == 'BLM') then
-        if (args[1] == 'mode') then
-            gcdisplay.AdvanceCycle('Mode')
-            gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
-        elseif (args[1] == 'oor') then
-            gcdisplay.AdvanceToggle('OOR')
-            gcinclude.Message('Out of Region', gcdisplay.GetToggle('OOR'))
-        end
+    elseif (args[1] == 'mode') then
+        gcdisplay.AdvanceCycle('Mode')
+        gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
+    elseif (args[1] == 'oor') then
+        gcdisplay.AdvanceToggle('OOR')
+        gcinclude.Message('Out of Region', gcdisplay.GetToggle('OOR'))
     end
 
     if (player.MainJob == 'RDM') then

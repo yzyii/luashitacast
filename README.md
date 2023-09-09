@@ -46,17 +46,17 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
 
 # Additional Commands for All Mage Jobs:
 ```
-/addmp [number]   - adds a set amount of MP to decide usage of the IdleMaxMP sets.
-                    This can be used when eating food or for other +MP effects.
-                    type /addmp without a number to display the current value.
+/addmp [number] - adds a set amount of MP to decide usage of the IdleMaxMP sets.
+                  This can be used when eating food or for other +MP effects.
+                  type /addmp without a number to display the current value.
+/oor            - forces use of Master Caster Bracelets / Republican Gold Medal.
+                  you can toggle this on when you are in areas where these are active.
 ```
 
 ## Additional Commands for RDM:
 ```
 [Regular Toggles]
 /mode   - toggles Elemental & Enfeebling Magic between Potency (Normal) and Magic Accuracy sets.
-/oor    - forces use of Master Caster Bracelets / Republican Gold Medal.
-          you can toggle this on when you are in areas where these are active.
 /hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
 /fight  - Used to turn off TP set.
           this is automatically used for you when disengaging if your TP is 0.
@@ -72,8 +72,6 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
 ```
 [Regular Toggles]
 /mode   - toggles Elemental & Enfeebling Magic between Potency (Normal) and Magic Accuracy sets.
-/oor    - forces use of Master Caster Bracelets for Enfeebling Magic.
-          you can toggle this on when you are in areas where these are active.
 /yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring.
           This is on by default.
 /mb     - equips gear that gives bonuses to magic burst damage when casting nukes.
