@@ -1,4 +1,4 @@
-local tp_diabolos_earring = true
+local tp_diabolos_earring = false
 local tp_diabolos_earring_slot = 'Ear2'
 
 --[[
