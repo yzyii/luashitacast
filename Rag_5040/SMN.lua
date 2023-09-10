@@ -16,7 +16,7 @@ local sets = {
         Feet = 'Mannequin Pumps',
         Ammo = 'Fortune Egg',
         Waist = 'Druid\'s Rope',
-        Neck = 'Justice Badge',
+        Neck = 'Smn. Torque',
     },
     IdleALT = {},
     IdleMaxMP = {},
