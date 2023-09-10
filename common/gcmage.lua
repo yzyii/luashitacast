@@ -93,7 +93,7 @@ local HateSpells = T{ 'Sleep','Sleep II','Blind','Dispel','Bind' }
 local DiabolosPoleSpells = T{ 'Aspir','Drain' }
 local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
 local SpikeSpells = T{ 'Blaze Spikes','Shock Spikes','Ice Spikes' }
-local CureSpells = T{ 'Cure','Cure II','Cure III','Cure IV','Curaga','Curaga II' }
+local CureSpells = T{ 'Cure','Cure II','Cure III','Cure IV','Cure V','Curaga','Curaga II','Curaga III','Curaga IV' }
 
 local ElementalStaffTable = {
     ['Fire'] = fire_staff,
