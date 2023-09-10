@@ -5,6 +5,24 @@ local kingdom_aketon = false
 local republic_aketon = false
 local federation_aketon = false
 
+local load_stylist = true
+
+--[[
+-----------------------------------
+Custom Keybinds. Change if Desired.
+-----------------------------------
+]]
+
+function DoCustom() -- Write your own custom Keybinds or logic in here that will get run OnLoad()
+    -- e.g.
+    -- AshitaCore:GetChatManager():QueueCommand(-1, '/bind space /jump')
+    -- AshitaCore:GetChatManager():QueueCommand(-1, '/bind m /map')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd fres')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F2 /lac fwd kite')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F3 /lac fwd dt')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F4 /lac fwd mdt')
+end
+
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -61,16 +79,20 @@ function gcinclude.Load(isMage)
     gcinclude.SetAlias(Overrides)
     gcinclude.SetAlias(Commands)
 
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd fres')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F2 /lac fwd kite')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F3 /lac fwd dt')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F4 /lac fwd mdt')
-
     if (use_shorterhand) then
         shorterhand.Load(isMage)
     end
 
+    DoCustom()
+
     gcdisplay.Load:once(1)
+
+    local function loadStylist()
+        AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
+    end
+    if (load_stylist) then
+        loadStylist:once(3)
+    end
 end
 
 function gcinclude.Unload()
