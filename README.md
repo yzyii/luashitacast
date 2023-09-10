@@ -56,7 +56,7 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
                   type /setmp without a number to display the current value.
 /oor            - forces use of Master Caster Bracelets / Republican Gold Medal.
                   you can toggle this on when you are in areas where these are active.
-/mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and Magic Accuracy sets.
+/mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and Accuracy sets.
 ```
 
 ## Additional Commands for RDM:
