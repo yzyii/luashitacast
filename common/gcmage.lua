@@ -317,12 +317,6 @@ function gcmage.SetupMidcastDelay(fastCastValue)
         gFunc.SetMidDelay(castDelay)
     end
 
-    -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
-end
-
-function gcmage.SetupYellowForceEquip()
-    local action = gData.GetAction()
-    local player = gData.GetPlayer()
     if (action.Skill == 'Elemental Magic' and player.MainJob == 'BLM' and gcdisplay.GetToggle('Yellow') == true) then
         if (not ElementalDebuffs:contains(action.Name)) then
             local function delayYellow()
@@ -336,6 +330,7 @@ function gcmage.SetupYellowForceEquip()
             end
         end
     end
+    -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
 end
 
 function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
