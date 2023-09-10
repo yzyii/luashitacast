@@ -581,6 +581,9 @@ function gcmage.EquipEnfeebling()
     end
     if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
         gFunc.EquipSet('EnfeeblingACC')
+        if (gcdisplay.GetToggle('OOR') == true) and master_casters_bracelets then
+            gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+        end
     end
     if (gcdisplay.GetToggle('Hate') == true) then
         if (HateSpells:contains(action.Name)) then
