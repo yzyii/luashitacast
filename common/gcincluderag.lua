@@ -57,7 +57,6 @@ local lastIdleSet = 'Normal'
 
 function gcinclude.Load(isMage)
     gSettings.AllowAddSet = true
-    gcdisplay.Load()
     gcinclude.SetVariables()
     gcinclude.SetAlias(Overrides)
     gcinclude.SetAlias(Commands)
@@ -70,6 +69,8 @@ function gcinclude.Load(isMage)
     if (use_shorterhand) then
         shorterhand.Load(isMage)
     end
+
+    gcdisplay.Load:once(1)
 end
 
 function gcinclude.Unload()
