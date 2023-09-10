@@ -56,12 +56,12 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
                   type /setmp without a number to display the current value.
 /oor            - forces use of Master Caster Bracelets / Republican Gold Medal.
                   you can toggle this on when you are in areas where these are active.
+/mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and Magic Accuracy sets.
 ```
 
 ## Additional Commands for RDM:
 ```
 [Regular Toggles]
-/mode   - toggles Elemental & Enfeebling Magic between Potency (Normal) and Magic Accuracy sets.
 /hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
 /fight  - Used to turn off TP set.
           this is automatically used for you when disengaging if your TP is 0.
@@ -76,7 +76,6 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
 ## Additional Commands for BLM:
 ```
 [Regular Toggles]
-/mode   - toggles Elemental & Enfeebling Magic between Potency (Normal) and Magic Accuracy sets.
 /yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring.
           This is on by default.
 /mb     - equips gear that gives bonuses to magic burst damage when casting nukes.
@@ -86,11 +85,13 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
 
 This luashitacast binds the following:
 ```
+[All Jobs]
 Alt+F1 - Fire Res
 Alt+F2 - Kite
 Alt+F3 - DT
 Alt+F4 - MDT
 
+[Mages]
 F9  - Stun
 F10 - Dia
 
@@ -106,6 +107,11 @@ If you enable the Shorterhand setting in gcincluderag.lua, additional /commands 
 - using shorthand syntax like 'me' or partial names will work. e.g. "/i me" will cast invisible on yourself.
 
 ```
+[All Jobs]
+/u1 - Utusemi: Ichi
+/u2 - Utsusemi: Ni
+
+[Mages]
 /c4 - Cure IV
 /c3 - Cure III
 /c2 - Cure II
@@ -115,8 +121,6 @@ If you enable the Shorterhand setting in gcincluderag.lua, additional /commands 
 /ss - Stoneskin
 /b  - Blink
 /a  - Aquaveil
-/u1 - Utusemi: Ichi
-/u2 - Utsusemi: Ni
 ```
 
 ## Additional Notes
