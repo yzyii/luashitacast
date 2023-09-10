@@ -64,7 +64,7 @@ gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 local gcmage = {}
 
 local AliasList = T{
-    'addmp',
+    'addmp','setmp',
     'oor','mode', -- RDM / BLM
     'csstun','hate','vert','fight', -- RDM
     'yellow','mb', -- BLM
@@ -124,6 +124,7 @@ local NukeObiOwnedTable = {
     ['Thunder'] = rairin_obi,
 }
 
+local setMP = 0
 local addMP = 0
 local lastIdleSetBeforeEngaged = ''
 
@@ -170,6 +171,13 @@ function gcmage.DoCommands(args)
             gcinclude.Message('Add MP', args[2])
         else
             gcinclude.Message('Add MP', addMP)
+        end
+    elseif (args[1] == 'setmp') then
+        if (tonumber(args[2]) ~= nil) then
+            setMP = tonumber(args[2])
+            gcinclude.Message('Set MP', args[2])
+        else
+            gcinclude.Message('Set MP', setMP)
         end
     elseif (args[1] == 'mode') then
         gcdisplay.AdvanceCycle('Mode')
@@ -227,7 +235,9 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
 
     gcinclude.DoDefaultIdle()
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
-        if (player.SubJob == "NIN") and player.MP >= ninSJMMP + addMP - 50 then
+        if (setMP > 0 and player.MP >= setMP + addMP - 50) then
+            gFunc.EquipSet('IdleMaxMP')
+        elseif (player.SubJob == "NIN") and player.MP >= ninSJMMP + addMP - 50 then
             gFunc.EquipSet('IdleMaxMP')
         elseif (player.SubJob == "WHM") and player.MP >= whmSJMMP + addMP - 50 then
             gFunc.EquipSet('IdleMaxMP')
@@ -373,7 +383,9 @@ function gcmage.ShouldSkipCast(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, isNoModSp
 
     local skipCast_MP = false
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
-        if (player.SubJob == "NIN") and player.MP > ninSJMMP + addMP then
+        if (setMP > 0 and player.MP > setMP + addMP) then
+            skipCast_MP = true
+        elseif (player.SubJob == "NIN") and player.MP > ninSJMMP + addMP then
             skipCast_MP = true
         elseif (player.SubJob == "WHM") and player.MP > whmSJMMP + addMP then
             skipCast_MP = true

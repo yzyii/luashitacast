@@ -46,9 +46,14 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
 
 # Additional Commands for All Mage Jobs:
 ```
-/addmp [number] - adds a set amount of MP to decide usage of the IdleMaxMP sets.
+/addmp [number] - adds a set amount of MP to decide usage of the IdleMaxMP set.
                   This can be used when eating food or for other +MP effects.
                   type /addmp without a number to display the current value.
+/setmp [number] - sets the mp at which your idle sets will automatically transition
+                  to using your IdleMaxMP set.
+                  This will override the values defined for /NIN /WHM /RDM /BLM as well.
+                  /addmp will still work as per normal in conjunction with this.
+                  type /setmp without a number to display the current value.
 /oor            - forces use of Master Caster Bracelets / Republican Gold Medal.
                   you can toggle this on when you are in areas where these are active.
 ```
