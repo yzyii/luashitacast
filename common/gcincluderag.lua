@@ -1,6 +1,10 @@
 local display_messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles
 local use_shorterhand = true -- set to true if you want to use the commands available in shorterhand.lua
 
+local kingdom_aketon = false
+local republic_aketon = false
+local federation_aketon = false
+
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -26,6 +30,10 @@ local Towns = T{
     'Rabao','Selbina','Mhaura','Kazham','Norg',
     'Mog Garden','Celennia Memorial Library','Western Adoulin','Eastern Adoulin'
 }
+
+local Sandy = T{ 'Southern San d\'Oria [S]','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille' };
+local Bastok = T{ 'Bastok Markets [S]','Bastok Mines','Bastok Markets','Port Bastok','Metalworks' };
+local Windy = T{ 'Windurst Waters [S]','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower' };
 
 local OverrideNameTable = {
     ['idle'] = 'Idle',
@@ -200,6 +208,9 @@ function gcinclude.DoDefaultOverride()
     local player = gData.GetPlayer()
 
     if (environment.Area ~= nil) and (Towns:contains(environment.Area)) then gFunc.EquipSet('Town') end
+    if (environment.Area ~= nil) and (Sandy:contains(environment.Area) and kingdom_aketon == true) then gFunc.Equip('Body', 'Kingdom Aketon') end
+    if (environment.Area ~= nil) and (Bastok:contains(environment.Area) and republic_aketon == true) then gFunc.Equip('Body', 'Republic Aketon') end
+    if (environment.Area ~= nil) and (Windy:contains(environment.Area) and federation_aketon == true) then gFunc.Equip('Body', 'Federation Aketon') end
 
     if (gcdisplay.IdleSet == 'DT') then
         if (environment.Time >= 6 and environment.Time <= 18) then
