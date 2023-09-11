@@ -64,7 +64,7 @@ gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 local gcmage = {}
 
 local AliasList = T{
-    'addmp','setmp',
+    'addmp','setmp','reset',
     'oor','mode', -- RDM / BLM
     'csstun','hate','vert','fight', -- RDM
     'yellow','mb', -- BLM
@@ -127,6 +127,7 @@ local NukeObiOwnedTable = {
 local setMP = 0
 local addMP = 0
 local lastIdleSetBeforeEngaged = ''
+local lastSummoningElement = ''
 
 function gcmage.Load()
     gcinclude.Load(true)
@@ -179,6 +180,12 @@ function gcmage.DoCommands(args)
         else
             gcinclude.Message('Set MP', setMP)
         end
+    elseif (args[1] == 'reset') then
+        setMP = 0
+        addMP = 0
+        lastIdleSetBeforeEngaged = ''
+        lastSummoningElement = ''
+        print(chat.header('GCMage'):append(chat.message('Reset Variables')))
     elseif (args[1] == 'mode') then
         gcdisplay.AdvanceCycle('Mode')
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
@@ -277,7 +284,16 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     end
 
     gcinclude.DoDefaultOverride()
+    if (player.MainJob == 'SMN') then
+        if (lastSummoningElement ~= '') then
+            local staff = ElementalStaffTable[lastSummoningElement]
+            if staff ~= '' then
+                gFunc.Equip('Main', staff)
+            end
+        end
+    end
     if (player.Status == 'Resting') then
+        lastSummoningElement = ''
         if (player.SubJob == "BLM" and wizards_mantle) then
             gFunc.Equip('Back', 'Wizard\'s Mantle')
         end
@@ -357,10 +373,12 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     elseif (action.Skill == 'Divine Magic') then
         gFunc.EquipSet('Enfeebling')
         gFunc.EquipSet('EnfeeblingMND')
+    elseif (action.Skill == 'Summoning') then
+        lastSummoningElement = action.Element
     end
 
     if (isNoModSpell) then
-        gFunc.EquipSet('Haste');
+        gFunc.EquipSet('Haste')
         if (environment.DayElement == 'Water') and water_ring and (player.MPP <= 85) and (action.Skill ~= 'Ninjutsu') then
             gFunc.Equip(water_ring_slot, 'Water Ring')
         end
@@ -452,7 +470,7 @@ function gcmage.EquipEnhancing()
     if (action.Name == 'Stoneskin') then
         gFunc.EquipSet('Stoneskin')
     elseif (SpikeSpells:contains(action.Name)) then
-        gFunc.EquipSet('Spikes');
+        gFunc.EquipSet('Spikes')
     elseif (target.Name == me) then
         if (action.Name == 'Sneak') then
             if (dream_boots) then
@@ -618,6 +636,13 @@ function gcmage.EquipStaff()
         if (DiabolosPoleSpells:contains(action.Name)) then
             if (environment.WeatherElement == 'Dark' and diabolos_pole) then gFunc.Equip('Main', 'Diabolos\'s Pole'); end
         end
+    end
+end
+
+function gcmage.DoAbility()
+    local action = gData.GetAction()
+    if (action.Name == 'Release') then
+        lastSummoningElement = ''
     end
 end
 

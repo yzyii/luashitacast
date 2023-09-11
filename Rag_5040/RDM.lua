@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.32 -- 20% from traits 12% from gear
+local fastCastValue = 0.42 -- 20% from traits 22% from gear
 
 local ninSJMaxMP = 605 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 683 -- The Max MP you have when /whm in your idle set
@@ -47,8 +47,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Merman\'s Earring',
         -- Ear2 = 'Magnetic Earring',
-        Body = 'Mahatma Hpl.',
-        -- Body = 'Duelist\'s Tabard',
+        Body = 'Duelist\'s Tabard',
         Hands = 'Blood Fng. Gnt.',
         Ring1 = 'Serket Ring',
         Ring2 = 'Sattva Ring',
@@ -208,7 +207,7 @@ local sets = {
     Precast = {
         Head = 'Wlk. Chapeau +1',
         Ear1 = 'Loquac. Earring',
-        -- Body = 'Duelist\'s Tabard',
+        Body = 'Duelist\'s Tabard',
     },
     Casting = { -- Default Casting Equipment when using Idle sets
         Head = 'Dls. Chapeau +1',
@@ -239,7 +238,7 @@ local sets = {
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Wlk. Chapeau +1',
         Ear1 = 'Loquac. Earring',
-        -- Body = 'Duelist\'s Tabard',
+        Body = 'Duelist\'s Tabard',
         Hands = 'Dusk Gloves',
         Waist = 'Swift Belt',
         -- Legs = 'Nashira Serawheels',
@@ -253,8 +252,7 @@ local sets = {
         Neck = 'Harmonia\'s Torque', -- 3
         Ear1 = 'Eris\' Earring', -- 2
         Ear2 = 'Eris\' Earring', -- 2
-        Body = 'Dst. Harness +1',
-        -- Body = 'Duelist\'s Tabard',
+        Body = 'Duelist\'s Tabard',
         Hands = 'Dusk Gloves',
         Ring1 = 'Mermaid Ring', -- 2
         Ring2 = 'Sattva Ring', -- 5
@@ -309,7 +307,7 @@ local sets = {
     Cursna = {
         Main = 'Prelatic Pole',
         Neck = 'Healing Torque',
-        -- Body = 'Duelist\'s Tabard',
+        Body = 'Duelist\'s Tabard',
         Legs = 'Warlock\'s Tights',
         -- Back = 'Altruistic Cape',
     },

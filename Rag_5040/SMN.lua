@@ -139,6 +139,38 @@ local sets = {
 
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
+
+    BP_Delay = {
+        Head = 'Austere Hat',
+        Legs = 'Evoker\'s Spats',
+        Ring1 = 'Serket Ring',
+        Ring2 = 'Ether Ring',
+        Ear1 = 'Healer\'s Earring',
+        Ear2 = 'Morion Earring +1',
+        Back = 'Red Cape +1',
+        Body = 'Austere Robe',
+        Hands = 'Austere Cuffs',
+        Feet = 'Mannequin Pumps',
+        Ammo = 'Fortune Egg',
+        Waist = 'Druid\'s Rope',
+        Neck = 'Smn. Torque',
+    },
+
+    BP = {
+        Head = 'Austere Hat',
+        Legs = 'Evoker\'s Spats',
+        Ring1 = 'Serket Ring',
+        Ring2 = 'Ether Ring',
+        Ear1 = 'Healer\'s Earring',
+        Ear2 = 'Morion Earring +1',
+        Back = 'Red Cape +1',
+        Body = 'Austere Robe',
+        Hands = 'Austere Cuffs',
+        Feet = 'Mannequin Pumps',
+        Ammo = 'Fortune Egg',
+        Waist = 'Druid\'s Rope',
+        Neck = 'Smn. Torque',
+    },
 }
 profile.Sets = sets
 
@@ -169,7 +201,12 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(10000, 10000, 10000, 10000)
+    local petAction = gData.GetPetAction();
+    if (petAction ~= nil) then
+        gFunc.EquipSet('BP')
+    else
+        gcmage.DoDefault(10000, 10000, 10000, 10000)
+    end
 end
 
 profile.HandlePrecast = function()
@@ -178,6 +215,11 @@ end
 
 profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, 10000, 10000, 10000, 10000)
+end
+
+profile.HandleAbility = function()
+    gcmage.DoAbility()
+    gFunc.EquipSet('BP_Delay')
 end
 
 return profile

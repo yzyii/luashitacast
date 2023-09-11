@@ -1,8 +1,6 @@
-# Rag's RDM / BLM / WHM luashitacast
+# Rag's RDM / BLM / WHM / SMN luashitacast
 
-A combined RDM / BLM / WHM luashitacast for HorizonXI that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
-
-SMN specific behaviour to come soon as I level it to 75.
+A combined RDM / BLM / WHM / SMN luashitacast for HorizonXI that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
 A WAR template is also provided that demonstrates an example for melee jobs which allows you to use all of the default commands and provides a small amount of logic for optimizing Utsusemi in gcmelee.lua.
 
