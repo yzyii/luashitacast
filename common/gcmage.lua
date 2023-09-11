@@ -300,7 +300,6 @@ end
 
 function gcmage.DoPrecast(fastCastValue)
     gcmage.SetupMidcastDelay(fastCastValue)
-    gcmage.SetupYellowForceEquip()
     gFunc.EquipSet('Precast')
 end
 
