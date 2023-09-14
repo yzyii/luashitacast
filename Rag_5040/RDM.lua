@@ -349,8 +349,7 @@ local sets = {
         Back = 'Merciful Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Warlock\'s Tights',
-        Feet = 'Wise Pigaches',
-        -- Feet = 'Duelist\'s Boots',
+        Feet = 'Duelist\'s Boots',
     },
 
     Enfeebling = {
@@ -417,8 +416,7 @@ local sets = {
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
-        Feet = 'Wise Pigaches',
-        -- Feet = 'Duelist\'s Boots',
+        Feet = 'Duelist\'s Boots',
     },
     NukeACC = {
         Hands = 'Mahatma Cuffs',
@@ -565,7 +563,22 @@ local sets = {
         Legs = 'Custom Slacks',
         Feet = 'Mannequin Pumps',
     },
-    LockSet2 = {},
+    LockSet2 = {
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Wlk. Chapeau +1',
+        Neck = 'Elemental Torque',
+        Ear1 = 'Novio Earring',
+        Ear2 = 'Moldavite Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = 'Mahatma Cuffs',
+        -- Hands = 'Zenith Mitts',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Back = 'Prism Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Mahatma Slops',
+        Feet = 'Duelist\'s Boots',
+    },
     LockSet3 = {},
 
     FallbackSub = { -- Used only when you do not have complete staff sets
