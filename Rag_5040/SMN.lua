@@ -23,6 +23,7 @@ local sets = {
     Resting = {
         Main = 'Pluto\'s Staff',
         Body = 'Seer\'s Tunic',
+        Legs = 'Baron\'s Slops',
     },
     Town = {},
     Movement = {},
@@ -157,7 +158,7 @@ local sets = {
     },
 
     BP = {
-        Head = 'Austere Hat',
+        Head = 'Evoker\'s Horn',
         Legs = 'Evoker\'s Spats',
         Ring1 = 'Serket Ring',
         Ring2 = 'Ether Ring',

@@ -489,8 +489,7 @@ local sets = {
 
     TP = {
         Main = 'Joyeuse',
-        Sub = 'Nms. Shield +1',
-        -- Sub = 'Genbu\'s Shield',
+        Sub = 'Genbu\'s Shield',
         Range = 'Lightning Bow +1',
         Ammo = '',
         Head = 'Dls. Chapeau +1',

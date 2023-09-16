@@ -118,8 +118,6 @@ function gcinclude.ClearAlias(aliasList)
 end
 
 function gcinclude.SetVariables()
-    local player = gData.GetPlayer()
-
     gcdisplay.CreateToggle('Kite', false)
     gcdisplay.CreateToggle('Lock', false)
 end

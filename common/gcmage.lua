@@ -132,9 +132,9 @@ local lastIdleSetBeforeEngaged = ''
 local lastSummoningElement = ''
 
 function gcmage.Load()
-    gcinclude.Load(true)
-    gcmage.SetVariables()
+    gcmage.SetVariables:once(1)
     gcinclude.SetAlias(AliasList)
+    gcinclude.Load(true)
 
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
