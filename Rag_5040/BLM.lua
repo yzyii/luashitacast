@@ -2,16 +2,16 @@ local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear
 
-local ninSJNukeMaxMP = 706 -- The Max MP you have when /nin in your nuking set
-local whmSJNukeMaxMP = 784 -- The Max MP you have when /whm in your nuking set
-local rdmSJNukeMaxMP = 765 -- The Max MP you have when /rdm in your nuking set
+local ninSJNukeMaxMP = 749 -- The Max MP you have when /nin in your nuking set
+local whmSJNukeMaxMP = 827 -- The Max MP you have when /whm in your nuking set
+local rdmSJNukeMaxMP = 808 -- The Max MP you have when /rdm in your nuking set
 
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
         Ammo = 'Hedgehog Bomb',
-        Head = 'Faerie Hairpin',
-        Neck = 'Checkered Scarf',
+        Head = 'Nashira Turban',
+        Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Sorcerer\'s Coat',
@@ -20,14 +20,14 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Zenith Slacks',
+        Legs = 'Sorcerer\'s Tonban',
         Feet = 'Rostrum Pumps',
     },
     IdleALT = {
         Main = 'Terra\'s Staff',
         Ammo = 'Hedgehog Bomb',
-        Head = 'Faerie Hairpin',
-        Neck = 'Checkered Scarf',
+        Head = 'Nashira Turban',
+        Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Sorcerer\'s Coat',
@@ -36,14 +36,14 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Zenith Slacks',
+        Legs = 'Sorcerer\'s Tonban',
         Feet = 'Rostrum Pumps',
     },
     IdleMaxMP = {
         Main = 'Terra\'s Staff',
         Ammo = 'Hedgehog Bomb',
-        Head = 'Faerie Hairpin',
-        Neck = 'Checkered Scarf',
+        Head = 'Nashira Turban',
+        Neck = 'Uggalepih Pendant',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Sorcerer\'s Coat',
@@ -52,7 +52,7 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Zenith Slacks',
+        Legs = 'Sorcerer\'s Tonban',
         Feet = 'Rostrum Pumps',
     },
     Resting = {
@@ -184,10 +184,10 @@ local sets = {
     },
     Yellow = { -- Include Fast Cast gear in here as well
         Head = 'Faerie Hairpin',
-        Neck = 'Checkered Scarf',
+        Neck = 'Jeweled Collar',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Merman\'s Earring',
-        Hands = 'Mahatma Cuffs',
+        Hands = 'Zenith Mitts +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
         Back = 'Blue Cape +1',
@@ -370,8 +370,34 @@ local sets = {
         Legs = 'Seer\'s Slacks',
         Feet = 'Custom M Boots',
     },
-    LockSet2 = {},
-    LockSet3 = {},
+    LockSet2 = {
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Demon Helm +1',
+        Neck = 'Elemental Torque',
+        Ear1 = 'Novio Earring',
+        Ear2 = 'Moldavite Earring',
+        Body = 'Igqira Weskit',
+        Hands = 'Zenith Mitts +1',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Back = 'Prism Cape',
+        Waist = 'Sorcerer\'s Belt',
+        Legs = 'Mahatma Slops',
+        Feet = 'Src. Sabots +1',
+	},
+    LockSet3 = {
+        Head = 'Faerie Hairpin',
+        Neck = 'Jeweled Collar',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Merman\'s Earring',
+        Hands = 'Zenith Mitts +1',
+        Ring1 = 'Ether Ring',
+        Ring2 = 'Serket Ring',
+        Back = 'Blue Cape +1',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Zenith Slacks',
+        Feet = 'Rostrum Pumps',
+	},
 
     FallbackSub = { -- Used only when you do not have complete staff sets
     },

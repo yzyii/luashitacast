@@ -348,7 +348,7 @@ local sets = {
         Back = 'Merciful Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Warlock\'s Tights',
-        Feet = 'Duelist\'s Boots',
+        Feet = 'Dls. Boots +1',
     },
 
     Enfeebling = {
@@ -414,7 +414,7 @@ local sets = {
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
-        Feet = 'Duelist\'s Boots',
+        Feet = 'Dls. Boots +1',
     },
     NukeACC = {
         Hands = 'Mahatma Cuffs',
@@ -573,7 +573,7 @@ local sets = {
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
-        Feet = 'Duelist\'s Boots',
+        Feet = 'Dls. Boots +1',
     },
     LockSet3 = {},
 
