@@ -609,7 +609,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000)
+    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil)
 end
 
 profile.HandlePrecast = function()
@@ -617,7 +617,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, 10000)
+    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil)
 end
 
 profile.HandleWeaponskill = function()

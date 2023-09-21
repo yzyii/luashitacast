@@ -226,7 +226,7 @@ profile.HandleDefault = function()
     if (petAction ~= nil) then
         gFunc.EquipSet('BP')
     else
-        gcmage.DoDefault(10000, 10000, 10000, 10000)
+        gcmage.DoDefault(nil, nil, nil, nil)
     end
 end
 
@@ -235,7 +235,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, 10000, 10000, 10000, 10000)
+    gcmage.DoMidcast(sets, nil, nil, nil, nil)
 end
 
 profile.HandleAbility = function()

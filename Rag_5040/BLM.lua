@@ -404,7 +404,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP)
+    gcmage.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, nil, rdmSJNukeMaxMP)
 end
 
 profile.HandlePrecast = function()
@@ -412,7 +412,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, ninSJNukeMaxMP, whmSJNukeMaxMP, 10000, rdmSJNukeMaxMP)
+    gcmage.DoMidcast(sets, ninSJNukeMaxMP, whmSJNukeMaxMP, nil, rdmSJNukeMaxMP)
 end
 
 return profile
