@@ -182,9 +182,9 @@ local sets = {
         Waist = 'Druid\'s Rope', -- 10
         Feet = 'Wizard\'s Sabots', -- 20
     },
-    Yellow = { -- Include Fast Cast gear in here as well
+    Yellow = { -- Fast Cast Gear will override this at times when the spell cast is too short.
         Head = 'Faerie Hairpin',
-        Neck = 'Jeweled Collar',
+        Neck = 'Checkered Scarf',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Merman\'s Earring',
         Hands = 'Zenith Mitts +1',
@@ -192,8 +192,7 @@ local sets = {
         Ring2 = 'Serket Ring',
         Back = 'Blue Cape +1',
         Waist = 'Penitent\'s Rope',
-        Legs = 'Zenith Slacks',
-        Feet = 'Wizard\'s Sabots',
+        Feet = 'Rostrum Pumps',
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Nashira Turban',
