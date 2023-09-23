@@ -246,13 +246,13 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
         if (setMP > 0 and player.MP >= setMP + addMP - 50) then
             gFunc.EquipSet('IdleMaxMP')
-        elseif (player.SubJob == "NIN") and player.MP >= ninSJMMP + addMP - 50 then
+        elseif (player.SubJob == "NIN") and ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP - 50 then
             gFunc.EquipSet('IdleMaxMP')
-        elseif (player.SubJob == "WHM") and player.MP >= whmSJMMP + addMP - 50 then
+        elseif (player.SubJob == "WHM") and whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP - 50 then
             gFunc.EquipSet('IdleMaxMP')
-        elseif (player.SubJob == "BLM") and player.MP >= blmSJMMP + addMP - 50 then
+        elseif (player.SubJob == "BLM") and blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP - 50 then
             gFunc.EquipSet('IdleMaxMP')
-        elseif (player.SubJob == "RDM") and player.MP >= rdmSJMMP + addMP - 50 then
+        elseif (player.SubJob == "RDM") and rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP - 50 then
             gFunc.EquipSet('IdleMaxMP')
         end
     end
