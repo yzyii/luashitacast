@@ -132,7 +132,7 @@ local lastIdleSetBeforeEngaged = ''
 local lastSummoningElement = ''
 
 function gcmage.Load()
-    gcmage.SetVariables:once(1)
+    gcmage.SetVariables:once(2)
     gcinclude.SetAlias(AliasList)
     gcinclude.Load(true)
 

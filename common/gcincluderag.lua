@@ -85,7 +85,7 @@ function gcinclude.Load(isMage)
 
     DoCustom()
 
-    gcdisplay.Load:once(1)
+    gcdisplay.Load:once(2)
 
     local function loadStylist()
         AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
