@@ -63,6 +63,13 @@ profile.HandleAbility = function()
         gFunc.Equip('Hands', 'Valor Gauntlets')
     elseif (action.Name == 'Sentinel' and valor_leggings) then
         gFunc.Equip('Legs', 'Valor Leggings')
+    elseif (action.Name == 'Cover') then
+        if (gallant_coronet) then
+            gFunc.Equip('Head', 'Gallant Coronet')
+        end
+        if (valor_surcoat) then
+            gFunc.Equip('Body', 'Valor Surcoat')
+        end
     end
 end
 
