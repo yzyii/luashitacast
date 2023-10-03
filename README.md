@@ -1,8 +1,14 @@
-# Rag's RDM / BLM / WHM / SMN luashitacast
+# Rag's LuAshitacast
 
-A combined RDM / BLM / WHM / SMN luashitacast for HorizonXI that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
+A combined LuAshitacast for HorizonXI that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
-A WAR template is also provided that demonstrates an example for melee jobs which allows you to use all of the default commands and provides a small amount of logic for optimizing Utsusemi in gcmelee.lua.
+These luas were originally written for RDM and BLM however all jobs can use the corresponding templates to automatically implement functionality that is shared across all jobs.
+
+e.g. All jobs are able to type /fres which will automatically swap your idle gear sets to the Fire Resist set.
+e.g. All melee jobs are able to type /tp to switch between Low Accuracy and High Accuracy TP sets.
+e.g. All mage jobs are able to type /mode to switch between Magic Potency vs Magic Accuracy sets.
+
+A WHM and WAR template is also provided that demonstrates an example for mage and melee jobs that could be copied and renamed to the correct job.
 
 # How to Use
 
@@ -86,7 +92,7 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
 
 ## Keybinds:
 
-This luashitacast binds the following:
+This LuAshitacast binds the following:
 ```
 [All Jobs]
 Alt+F1 - Fire Res
@@ -132,4 +138,4 @@ If you enable the Shorterhand setting in gcincluderag.lua, additional /commands 
 
 LuAshitacast provides functionality to automatically equip Level Sync gear.
 
-This luashitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine.
+This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine.
