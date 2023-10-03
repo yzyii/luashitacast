@@ -3,6 +3,10 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear
 
 local parade_gorget = true
+local gallant_leggings = true
+local valor_coronet = true
+local valor_gauntlets = true
+local valor_leggings = true
 
 local sets = {
     Idle = {},
@@ -46,6 +50,18 @@ end
 
 profile.HandleAbility = function()
     gFunc.EquipSet(sets.Hate);
+
+    local action = gData.GetAction()
+
+    if (action.Name == 'Holy Circle' and gallant_leggings) then
+        gFunc.Equip('Legs', 'Gallant Leggings')
+    elseif (action.Name == 'Rampart' and valor_coronet) then
+        gFunc.Equip('Head', 'Valor Coronet')
+    elseif (action.Name == 'Shield Bash' and valor_gauntlets) then
+        gFunc.Equip('Hands', 'Valor Gauntlets')
+    elseif (action.Name == 'Sentinel' and valor_leggings) then
+        gFunc.Equip('Legs', 'Valor Leggings')
+    end
 end
 
 profile.HandleWeaponskill = function()
