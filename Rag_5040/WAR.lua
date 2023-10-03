@@ -21,6 +21,7 @@ local sets = {
     LightningRes = {},
     EarthRes = {},
     WindRes = {},
+	Evasion = {},
 
     Precast = {},
     SIRD = { -- 102% to Cap

@@ -201,6 +201,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Blood Greaves', -- 21
     },
+	Evasion = {},
 
     Precast = {
         Head = 'Wlk. Chapeau +1',
