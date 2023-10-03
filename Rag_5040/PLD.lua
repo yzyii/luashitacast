@@ -71,6 +71,7 @@ end
 profile.HandleDefault = function()
     gcmelee.DoDefault()
 
+    local player = gData.GetPlayer()
 	if (parade_gorget and player.HPP >= 85) then
 		gFunc.Equip('Neck', 'Parade Gorget')
 	end
