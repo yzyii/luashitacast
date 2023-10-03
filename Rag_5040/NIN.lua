@@ -1,7 +1,3 @@
---[[
-    This is provided purely as an example template. Only very basic sanity testing has been done.
-]]
-
 local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
@@ -350,6 +346,8 @@ profile.HandleDefault = function()
 			gFunc.Equip('Hands', 'Kog. Tekko +1')
 		end
 	end
+	
+	gcmelee.DoDefaultOverride()
 end
 
 profile.HandlePrecast = function()

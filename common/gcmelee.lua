@@ -76,7 +76,9 @@ function gcmelee.DoDefault()
 			lastIdleSetBeforeEngaged = ''
 		end
     end
+end
 
+function gcmelee.DoDefaultOverride()
     gcinclude.DoDefaultOverride(true)
 end
 

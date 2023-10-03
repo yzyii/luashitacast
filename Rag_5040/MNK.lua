@@ -1,7 +1,3 @@
---[[
-    This is provided purely as an example template. Only very basic sanity testing has been done.
-]]
-
 local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
@@ -128,26 +124,33 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 profile.OnLoad = function()
     gcmelee.Load()
     profile.SetMacroBook()
+    -- You may add logic here
 end
 
 profile.OnUnload = function()
     gcmelee.Unload()
+    -- You may add logic here
 end
 
 profile.HandleCommand = function(args)
     gcmelee.DoCommands(args)
+    -- You may add logic here
 end
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
+    -- You may add logic here
+	gcmelee.DoDefaultOverride()
 end
 
 profile.HandlePrecast = function()
     gcmelee.DoPrecast(fastCastValue)
+	-- You may add logic here
 end
 
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
+	-- You may add logic here
 end
 
 return profile
