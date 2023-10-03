@@ -93,6 +93,10 @@ profile.HandleMidcast = function()
     local action = gData.GetAction()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
+    if (action.Skill ~= 'Ninjutsu') then
+        gFunc.EquipSet(sets.Hate);
+    end
+
     if (target.Name == me) then
         if (action.Name == 'Cure III') then
             gFunc.InterimEquipSet(sets.C3HPDown)
