@@ -16,9 +16,9 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 - Paste the contents of the luashitacast-master folder into ..\Game\config\addons\luashitacast\
 - Rename the Rag_5040 folder to [Your_Character_Name]_[Your_Character_ID]
 - Edit Equipment Sets in [JOB].lua. You may delete any of these if you're only looking for a lua one of the jobs.
-- Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua
-- Turn On / Off Additional Commands and Logging in gcincluderag.lua
-- The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the value in gcmage.lua (or gcmelee.lua for melee jobs)
+- Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua (or gcmelee.lua for melee jobs).
+- Turn On / Off Additional Commands and Logging in gcincluderag.lua.
+- The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the value in gcmage.lua (or gcmelee.lua for melee jobs).
 
 - If you define a specific mainhand in regular sets, it will still equip the correct stave if you have them listed in gcmage.lua
 - FallbackSub set is used only if you wish to define a Sub to fall back to using due to not having a complete set of Elemental Staves.
