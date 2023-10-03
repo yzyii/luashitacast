@@ -529,11 +529,11 @@ function gcmage.EquipHealing(maxMP, sets)
         gFunc.EquipSet('Hate')
         if (target.Name == me) then
             if (action.Name == 'Cure III') then
-                gFunc.InterimEquipSet(sets.C3HPDown)
-                gFunc.EquipSet('HPUp')
+                gFunc.InterimEquipSet(sets.Cheat_C3HPDown)
+                gFunc.EquipSet('Cheat_HPUp')
             elseif (action.Name == 'Cure IV') then
-                gFunc.InterimEquipSet(sets.C4HPDown)
-                gFunc.EquipSet('HPUp')
+                gFunc.InterimEquipSet(sets.Cheat_C4HPDown)
+                gFunc.EquipSet('Cheat_HPUp')
             end
         end
     end

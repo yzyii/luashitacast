@@ -26,9 +26,9 @@ local sets = {
     Haste = {},
 
     Hate = {},
-    C3HPDown = {},
-    C4HPDown = {},
-    HPUp = {},
+    Cheat_C3HPDown = {},
+    Cheat_C4HPDown = {},
+    Cheat_HPUp = {},
 
     LockSet1 = {},
     LockSet2 = {},
@@ -99,11 +99,11 @@ profile.HandleMidcast = function()
 
     if (target.Name == me) then
         if (action.Name == 'Cure III') then
-            gFunc.InterimEquipSet(sets.C3HPDown)
-            gFunc.EquipSet('HPUp')
+            gFunc.InterimEquipSet(sets.Cheat_C3HPDown)
+            gFunc.EquipSet(sets.Cheat_HPUp)
         elseif (action.Name == 'Cure IV') then
-            gFunc.InterimEquipSet(sets.C4HPDown)
-            gFunc.EquipSet('HPUp')
+            gFunc.InterimEquipSet(sets.Cheat_C4HPDown)
+            gFunc.EquipSet(sets.Cheat_HPUp)
         end
     end
 end

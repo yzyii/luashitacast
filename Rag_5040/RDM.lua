@@ -260,8 +260,8 @@ local sets = {
         -- Legs = 'Nashira Serawheels',
         Feet = 'Heroic Boots', -- 1
     },
-    C3HPDown = {},
-    C4HPDown = {
+    Cheat_C3HPDown = {},
+    Cheat_C4HPDown = {
         Head = 'Wlk. Chapeau +1',
         Neck = 'Checkered Scarf',
         Hands = 'Zenith Mitts +1',
@@ -269,7 +269,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Mahatma Pigaches',
     },
-    HPUp = {
+    Cheat_HPUp = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Baron\'s Chapeau', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
