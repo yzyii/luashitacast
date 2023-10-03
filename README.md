@@ -4,9 +4,9 @@ A combined LuAshitacast for HorizonXI that was originally based off of https://g
 
 These luas were originally written for RDM and BLM however all jobs can use the corresponding templates to automatically implement functionality that is shared across all jobs.
 
-e.g. All jobs are able to type /fres which will automatically swap your idle gear sets to the Fire Resist set.
-e.g. All melee jobs are able to type /tp to switch between Low Accuracy and High Accuracy TP sets.
-e.g. All mage jobs are able to type /mode to switch between Magic Potency vs Magic Accuracy sets.
+- e.g. All jobs are able to type /fres which will automatically swap your idle gear sets to the Fire Resist set.
+- e.g. All melee jobs are able to type /tp to switch between Low Accuracy and High Accuracy TP sets.
+- e.g. All mage jobs are able to type /mode to switch between Magic Potency vs Magic Accuracy sets.
 
 A WHM and WAR template is also provided that demonstrates an example for mage and melee jobs that could be copied and renamed to the correct job.
 
