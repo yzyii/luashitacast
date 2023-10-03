@@ -43,6 +43,7 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 /earthres /eres - toggles Earth Resistance set on/off.
 /windres /wres  - toggles Wind Resistance set on/off.
 /lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off.
+/evasion        - toggles Evasion set on/off. You could also use this set for counter sets on MNK or other special sets.
 
 [Special Commands]
 /warpme           - equips a warp cudgel and uses it after 30 seconds and locks equipment.
