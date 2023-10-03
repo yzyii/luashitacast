@@ -3,8 +3,10 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear
 
 local parade_gorget = true
+local gallant_coronet = true
 local gallant_leggings = true
 local valor_coronet = true
+local valor_surcoat = true
 local valor_gauntlets = true
 local valor_leggings = true
 
@@ -93,6 +95,16 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer()
     if (parade_gorget and player.HPP >= 85) then
         gFunc.Equip('Neck', 'Parade Gorget')
+    end
+
+    local cover = gData.GetBuffCount('Cover')
+    if (cover >= 1) then
+        if (gallant_coronet) then
+            gFunc.Equip('Head', 'Gallant Coronet')
+        end
+        if (valor_surcoat) then
+            gFunc.Equip('Body', 'Valor Surcoat')
+        end
     end
 
     gcmelee.DoDefaultOverride()
