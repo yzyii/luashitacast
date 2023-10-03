@@ -61,19 +61,21 @@ function gcmelee.DoDefault()
         gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
     end
 
-    if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
-        if (player.Status == 'Engaged') then
-            if (lastIdleSetBeforeEngaged == '') then
-                lastIdleSetBeforeEngaged = gcdisplay.IdleSet
+    if (player.MainJob ~= 'PLD') then
+        if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
+            if (player.Status == 'Engaged') then
+                if (lastIdleSetBeforeEngaged == '') then
+                    lastIdleSetBeforeEngaged = gcdisplay.IdleSet
+                end
+                gFunc.EquipSet('TP_' .. TpVariantTable[tp_variant]);
+                if (gcdisplay.IdleSet ~= TpVariantTable[tp_variant]) then
+                    gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
+                end
             end
-            gFunc.EquipSet('TP_' .. TpVariantTable[tp_variant]);
-            if (gcdisplay.IdleSet ~= TpVariantTable[tp_variant]) then
-                gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
+            if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
+                gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
+                lastIdleSetBeforeEngaged = ''
             end
-        end
-        if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
-            gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
-            lastIdleSetBeforeEngaged = ''
         end
     end
 end

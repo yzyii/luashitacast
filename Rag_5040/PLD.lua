@@ -34,9 +34,8 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP_LowAcc = {},
-    TP_HighAcc = {},
     WS = {},
+    WS_Spirits = {},
 }
 profile.Sets = sets
 
@@ -51,6 +50,10 @@ end
 
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
+
+    if (action.Name == 'Spirits Within') then
+        gFunc.EquipSet(sets.WS_Spirits)
+    end
 end
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
