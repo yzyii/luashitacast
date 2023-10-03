@@ -12,6 +12,9 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 
 # How to Use
 
+- Download the entire directory From Code > Download ZIP.
+- Paste the contents of the luashitacast-master folder into ..\Game\config\addons\luashitacast\
+- Rename the Rag_5040 folder to [Your_Character_Name]_[Your_Character_ID]
 - Edit Equipment Sets in [JOB].lua. You may delete any of these if you're only looking for a lua one of the jobs.
 - Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua
 - Turn On / Off Additional Commands and Logging in gcincluderag.lua
