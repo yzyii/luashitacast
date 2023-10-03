@@ -27,7 +27,7 @@ local sets = {
     LightningRes = {},
     EarthRes = {},
     WindRes = {},
-	Evasion = {},
+    Evasion = {},
 
     Precast = {},
     Casting = { -- Default Casting Equipment when using Idle sets

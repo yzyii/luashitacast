@@ -362,17 +362,17 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     local isNoModSpell = NoMods:contains(action.Name)
 
     local maxMP = 0
-	if (setMP > 0) then
-		maxMP = setMP + addMP
-	elseif (player.SubJob == "NIN" and ninSJMMP ~= nil) then
-		maxMP = ninSJMMP + addMP
-	elseif (player.SubJob == "WHM" and whmSJMMP ~= nil) then
-		maxMP = whmSJMMP + addMP
-	elseif (player.SubJob == "BLM" and blmSJMMP ~= nil) then
-		maxMP = blmSJMMP + addMP
-	elseif (player.SubJob == "RDM" and rdmSJMMP ~= nil) then
-		maxMP = rdmSJMMP + addMP
-	end
+    if (setMP > 0) then
+        maxMP = setMP + addMP
+    elseif (player.SubJob == "NIN" and ninSJMMP ~= nil) then
+        maxMP = ninSJMMP + addMP
+    elseif (player.SubJob == "WHM" and whmSJMMP ~= nil) then
+        maxMP = whmSJMMP + addMP
+    elseif (player.SubJob == "BLM" and blmSJMMP ~= nil) then
+        maxMP = blmSJMMP + addMP
+    elseif (player.SubJob == "RDM" and rdmSJMMP ~= nil) then
+        maxMP = rdmSJMMP + addMP
+    end
 
     if (gcmage.ShouldSkipCast(maxMP, isNoModSpell)) then
         do return end
@@ -400,9 +400,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     if (isNoModSpell) then
         gFunc.EquipSet('Haste')
         if (environment.DayElement == 'Water') and water_ring and (player.MPP <= 85) and (action.Skill ~= 'Ninjutsu') then
-		    if (maxMP == 0 or player.MP < maxMP * 0.85) then
+            if (maxMP == 0 or player.MP < maxMP * 0.85) then
                 gFunc.Equip(water_ring_slot, 'Water Ring')
-			end
+            end
         end
     end
 
@@ -521,9 +521,9 @@ function gcmage.EquipHealing(maxMP, sets)
         end
     end
     if (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
-		if (maxMP == 0 or player.MP < maxMP * 0.85) then
+        if (maxMP == 0 or player.MP < maxMP * 0.85) then
             gFunc.Equip(water_ring_slot, 'Water Ring')
-		end
+        end
     end
     if (gcdisplay.GetToggle('Hate') == true) then
         gFunc.EquipSet('Hate')
@@ -566,9 +566,9 @@ function gcmage.EquipElemental(maxMP)
                 gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring')
             end
             if (environment.DayElement == 'Ice') and ice_ring and player.MPP <= 85 then
-		        if (maxMP == 0 or player.MP < maxMP * 0.85) then
+                if (maxMP == 0 or player.MP < maxMP * 0.85) then
                     gFunc.Equip(ice_ring_slot, 'Ice Ring')
-				end
+                end
             end
         end
         if (action.Element == environment.WeatherElement) or (action.Element == environment.DayElement) then
@@ -585,9 +585,9 @@ function gcmage.EquipElemental(maxMP)
             gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring')
         end
         if (action.MppAftercast < 51) and uggalepih_pendant then
-		    if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
+            if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
                 gFunc.Equip('Neck', 'Uggalepih Pendant')
-			end
+            end
         end
         if (gcdisplay.GetToggle('MB') == true) then
             gFunc.EquipSet('MB')
@@ -631,9 +631,9 @@ function gcmage.EquipDark(maxMP)
 
     gFunc.EquipSet('Dark')
     if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP <= 85 then
-		if (maxMP == 0 or player.MP < maxMP * 0.85) then
+        if (maxMP == 0 or player.MP < maxMP * 0.85) then
             gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
-		end
+        end
     end
     if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_diabolos_earrings) then
         gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')

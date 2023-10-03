@@ -29,9 +29,9 @@ local sets = {
         Waist = 'Swift Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Ninja Kyahan',
-	},
+    },
     IdleALT = {
-		Main = '',
+        Main = '',
         Sub = '',
         Ammo = 'Happy Egg',
         Head = 'Arhat\'s Jinpachi',
@@ -46,7 +46,7 @@ local sets = {
         Waist = 'Warwolf Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Ninja Kyahan',
-	},
+    },
     Resting = {
         Main = '',
         Sub = '',
@@ -63,14 +63,14 @@ local sets = {
         Waist = 'Koga Sarashi',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Ninja Kyahan',
-	},
+    },
     Town = {},
     Movement = {
-		Feet = 'Ninja Kyahan',
-	},
+        Feet = 'Ninja Kyahan',
+    },
 
     DT = {
-	    Main = 'Earth Staff',
+        Main = 'Earth Staff',
         Sub = '',
         Ammo = 'Happy Egg',
         Head = 'Arhat\'s Jinpachi',
@@ -85,84 +85,84 @@ local sets = {
         Waist = 'Warwolf Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Suzaku\'s Sune-Ate',
-	},
+    },
     MDT = { -- Shell IV provides 23% MDT
-		Main = 'Earth Staff',
+        Main = 'Earth Staff',
         Head = 'Green Ribbon +1',
         Neck = 'Elemental Charm',
     },
     FireRes = {
-		Main = 'Water Staff', -- 15
-		Ammo = 'Happy Egg',
+        Main = 'Water Staff', -- 15
+        Ammo = 'Happy Egg',
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Elemental Charm', -- 6
         Ear1 = 'Ruby Earring', -- 10
         Ear2 = 'Ruby Earring', -- 10
-		Body = 'Bastokan Harness', -- 5
+        Body = 'Bastokan Harness', -- 5
         Hands = 'Seiryu\'s Kote',
         Ring1 = 'Jelly Ring', -- 0
         Ring2 = 'Malflame Ring', -- 10
         Back = 'Gigant Mantle',
         Waist = 'Warwolf Belt', -- 0
-		Legs = 'Raptor Trousers', -- 3
+        Legs = 'Raptor Trousers', -- 3
         Feet = 'Suzaku\'s Sune-Ate', -- 50
-	},
+    },
     IceRes = {
-	    Main = 'Fire Staff', -- 15
-		Ammo = 'Happy Egg',
+        Main = 'Fire Staff', -- 15
+        Ammo = 'Happy Egg',
         Head = 'Ninja Hatsuburi', -- 10
         Neck = 'Elemental Charm', -- 6
         Ear1 = 'Ruby Earring', -- 10
         Ear2 = 'Ruby Earring', -- 10
-		Body = 'Northern Jerkin', -- 6
-		Hands = 'Seiryu\'s Kote',
+        Body = 'Northern Jerkin', -- 6
+        Hands = 'Seiryu\'s Kote',
         Ring1 = 'Diamond Ring', -- 9
         Ring2 = 'Diamond Ring', -- 9
         Back = 'Gigant Mantle',
         Waist = 'Warwolf Belt', -- 0
-		Legs = 'Tiger Trousers', -- 4
-		Feet = 'Suzaku\'s Sune-Ate',
-	},
+        Legs = 'Tiger Trousers', -- 4
+        Feet = 'Suzaku\'s Sune-Ate',
+    },
     LightningRes = {
-	    Main = 'Earth Staff', -- 15
-		Ammo = 'Happy Egg',
+        Main = 'Earth Staff', -- 15
+        Ammo = 'Happy Egg',
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Elemental Charm', -- 6
         Ear1 = 'Pigeon Earring', -- 0
         Ear2 = 'Pigeon Earring', -- 0
-		Body = 'Arhat\'s Gi', -- 0
-		Hands = 'Seiryu\'s Kote',
+        Body = 'Arhat\'s Gi', -- 0
+        Hands = 'Seiryu\'s Kote',
         Ring1 = 'Jelly Ring',
         Ring2 = 'Bomb Queen Ring',
         Back = 'Gigant Mantle',
         Waist = 'Warwolf Belt', -- 0
-		Legs = 'Byakko\'s Haidate', -- 50
-		Feet = 'Ninja Kyahan',	
-	},
+        Legs = 'Byakko\'s Haidate', -- 50
+        Feet = 'Ninja Kyahan',
+    },
     EarthRes = {},
     WindRes = {},
-	Evasion = {
-		Main = 'Wind Staff', -- 10
-		Ammo = 'Happy Egg',
+    Evasion = {
+        Main = 'Wind Staff', -- 10
+        Ammo = 'Happy Egg',
         Head = 'Optical Hat', -- 10
         Neck = 'Evasion Torque', -- 7
         Ear1 = 'Dodge Earring', -- 3
         Ear2 = 'Dodge Earring', -- 3
-		Body = 'Scorpion Harness', -- 10
-		Hands = 'Seiryu\'s Kote',
+        Body = 'Scorpion Harness', -- 10
+        Hands = 'Seiryu\'s Kote',
         Ring1 = 'Jelly Ring',
         Ring2 = 'Bomb Queen Ring',
         Back = 'Gigant Mantle',
         Waist = 'Koga Sarashi', -- 4
-		Legs = 'Koga Hakama', -- 10
-		Feet = 'Fuma Sune-ate',
-	},
+        Legs = 'Koga Hakama', -- 10
+        Feet = 'Fuma Sune-ate',
+    },
 
     Precast = {},
     SIRD = { -- 102% to Cap
     },
     Haste = { -- Used for Utsusemi cooldown
-	    Head = 'Panther Mask',
+        Head = 'Panther Mask',
         Hands = 'Dusk Gloves',
         Ring1 = 'Shinobi Ring',
         Waist = 'Koga Sarashi',
@@ -176,7 +176,7 @@ local sets = {
         Back = 'Gigant Mantle',
     },
 
-	Hate = {
+    Hate = {
         Main = '',
         Sub = '',
         Ammo = '',
@@ -193,7 +193,7 @@ local sets = {
         Legs = 'Arhat\'s Hakama',
         Feet = 'Yasha Sune-Ate',
     },
-	NinDebuff = {
+    NinDebuff = {
         Main = '',
         Sub = '',
         Ammo = '',
@@ -208,8 +208,8 @@ local sets = {
         Waist = 'Koga Sarashi',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Koga Kyahan',
-	},
-	NinElemental = {
+    },
+    NinElemental = {
         Main = '',
         Head = 'Koga Hatsuburi',
         Neck = 'Harmonia\'s Torque',
@@ -228,7 +228,7 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-	TP_LowAcc = {
+    TP_LowAcc = {
         Main = '',
         Sub = '',
         Ammo = 'Bomb core',
@@ -262,7 +262,7 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = 'Fuma Sune-Ate',
     },
-	WS = {
+    WS = {
         Main = '',
         Sub = '',
         Ammo = 'Bomb core',
@@ -288,7 +288,7 @@ profile.SetMacroBook = function()
 end
 
 profile.HandleAbility = function()
-	gFunc.EquipSet(sets.Hate);
+    gFunc.EquipSet(sets.Hate);
 end
 
 profile.HandleItem = function()
@@ -306,12 +306,12 @@ end
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
-	if (koga_tekko and environment.Time < 6 and environment.Time >= 18) then
-		gFunc.Equip('Hands', 'Koga Tekko')
-	end
-	if (koga_tekko_plus_one and environment.Time < 7 and environment.Time >= 17) then
-		gFunc.Equip('Hands', 'Kog. Tekko +1')
-	end
+    if (koga_tekko and environment.Time < 6 and environment.Time >= 18) then
+        gFunc.Equip('Hands', 'Koga Tekko')
+    end
+    if (koga_tekko_plus_one and environment.Time < 7 and environment.Time >= 17) then
+        gFunc.Equip('Hands', 'Kog. Tekko +1')
+    end
 end
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
@@ -331,23 +331,23 @@ end
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
-	
+
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
 
     if (player.Status == 'Engaged') then
-		if (shinobi_ring and player.HPP <= 75 and player.TP <= 1000) then
-			gFunc.Equip(shinobi_ring_slot, 'Shinobi Ring')
-		end
-		if (koga_tekko and environment.Time < 6 and environment.Time >= 18) then
-			gFunc.Equip('Hands', 'Koga Tekko')
-		end
-		if (koga_tekko_plus_one and environment.Time < 7 and environment.Time >= 17) then
-			gFunc.Equip('Hands', 'Kog. Tekko +1')
-		end
-	end
-	
-	gcmelee.DoDefaultOverride()
+        if (shinobi_ring and player.HPP <= 75 and player.TP <= 1000) then
+            gFunc.Equip(shinobi_ring_slot, 'Shinobi Ring')
+        end
+        if (koga_tekko and environment.Time < 6 and environment.Time >= 18) then
+            gFunc.Equip('Hands', 'Koga Tekko')
+        end
+        if (koga_tekko_plus_one and environment.Time < 7 and environment.Time >= 17) then
+            gFunc.Equip('Hands', 'Kog. Tekko +1')
+        end
+    end
+
+    gcmelee.DoDefaultOverride()
 end
 
 profile.HandlePrecast = function()
@@ -356,20 +356,20 @@ end
 
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
-	
-	local action = gData.GetAction()
-	
-	if (action.Skill == 'Ninjutsu') then
-		if (NinDebuffs:contains(action.Name)) then
-			gFunc.EquipSet(sets.NinDebuff);
-		elseif (NinElemental:contains(action.Name)) then
-			gFunc.EquipSet(sets.NinElemental);
-		end
-	elseif (action.Skill == 'Enfeebling Magic') then
-		if (DrkDebuffs:contains(action.Name)) then
-			gFunc.EquipSet(sets.Hate);
-		end
-	end
+
+    local action = gData.GetAction()
+
+    if (action.Skill == 'Ninjutsu') then
+        if (NinDebuffs:contains(action.Name)) then
+            gFunc.EquipSet(sets.NinDebuff);
+        elseif (NinElemental:contains(action.Name)) then
+            gFunc.EquipSet(sets.NinElemental);
+        end
+    elseif (action.Skill == 'Enfeebling Magic') then
+        if (DrkDebuffs:contains(action.Name)) then
+            gFunc.EquipSet(sets.Hate);
+        end
+    end
 end
 
 return profile

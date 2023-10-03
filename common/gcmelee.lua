@@ -12,8 +12,8 @@ gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 local gcmelee = {}
 
 local TpVariantTable = {
-	[1] = 'LowAcc',
-	[2] = 'HighAcc',
+    [1] = 'LowAcc',
+    [2] = 'HighAcc',
 }
 
 local tp_variant = 1
@@ -42,13 +42,13 @@ function gcmelee.DoCommands(args)
         do return end
     end
 
-	if (args[1] == 'tpset' or args[1] == 'tp') then
-		tp_variant = tp_variant + 1
-		if (tp_variant > #TpVariantTable) then
-			tp_variant = 1
-		end
+    if (args[1] == 'tpset' or args[1] == 'tp') then
+        tp_variant = tp_variant + 1
+        if (tp_variant > #TpVariantTable) then
+            tp_variant = 1
+        end
         gcinclude.Message('TP Set', TpVariantTable[tp_variant])
-	end
+    end
 end
 
 function gcmelee.DoDefault()
@@ -62,19 +62,19 @@ function gcmelee.DoDefault()
     end
 
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
-		if (player.Status == 'Engaged') then
-			if (lastIdleSetBeforeEngaged == '') then
-				lastIdleSetBeforeEngaged = gcdisplay.IdleSet
-			end
-			gFunc.EquipSet('TP_' .. TpVariantTable[tp_variant]);
-			if (gcdisplay.IdleSet ~= TpVariantTable[tp_variant]) then
-				gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
-			end
-		end
-		if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
-			gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
-			lastIdleSetBeforeEngaged = ''
-		end
+        if (player.Status == 'Engaged') then
+            if (lastIdleSetBeforeEngaged == '') then
+                lastIdleSetBeforeEngaged = gcdisplay.IdleSet
+            end
+            gFunc.EquipSet('TP_' .. TpVariantTable[tp_variant]);
+            if (gcdisplay.IdleSet ~= TpVariantTable[tp_variant]) then
+                gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
+            end
+        end
+        if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
+            gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
+            lastIdleSetBeforeEngaged = ''
+        end
     end
 end
 
@@ -105,7 +105,7 @@ end
 
 function gcmelee.DoMidcast(sets)
     gcmelee.SetupInterimEquipSet(sets)
-	gFunc.EquipSet('Haste');
+    gFunc.EquipSet('Haste');
 end
 
 function gcmelee.SetupInterimEquipSet(sets)

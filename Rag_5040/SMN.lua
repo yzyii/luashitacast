@@ -96,7 +96,7 @@ local sets = {
         Waist = 'Ice Belt', -- 20
         Ring1 = 'Emerald Ring', -- 9
     },
-	Evasion = {},
+    Evasion = {},
 
     Precast = {
         Ear1 = 'Loquac. Earring',

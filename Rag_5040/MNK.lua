@@ -32,7 +32,7 @@ local sets = {
     LightningRes = {},
     EarthRes = {},
     WindRes = {},
-	Evasion = {},
+    Evasion = {},
 
     Precast = {},
     SIRD = { -- 102% to Cap
@@ -44,7 +44,7 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-	TP_LowAcc = {
+    TP_LowAcc = {
         Main = 'Impact Knuckles',
         Ammo = 'Happy Egg',
         Head = 'Mrc.Cpt. Headgear',
@@ -141,17 +141,17 @@ end
 profile.HandleDefault = function()
     gcmelee.DoDefault()
     -- You may add logic here
-	gcmelee.DoDefaultOverride()
+    gcmelee.DoDefaultOverride()
 end
 
 profile.HandlePrecast = function()
     gcmelee.DoPrecast(fastCastValue)
-	-- You may add logic here
+    -- You may add logic here
 end
 
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
-	-- You may add logic here
+    -- You may add logic here
 end
 
 return profile

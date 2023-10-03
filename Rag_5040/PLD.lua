@@ -18,14 +18,14 @@ local sets = {
     LightningRes = {},
     EarthRes = {},
     WindRes = {},
-	Evasion = {},
+    Evasion = {},
 
     Precast = {},
     SIRD = { -- 102% to Cap
     },
     Haste = {},
 
-	Hate = {},
+    Hate = {},
     C3HPDown = {},
     C4HPDown = {},
     HPUp = {},
@@ -34,9 +34,9 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-	TP_LowAcc = {},
+    TP_LowAcc = {},
     TP_HighAcc = {},
-	WS = {},
+    WS = {},
 }
 profile.Sets = sets
 
@@ -46,7 +46,7 @@ profile.SetMacroBook = function()
 end
 
 profile.HandleAbility = function()
-	gFunc.EquipSet(sets.Hate);
+    gFunc.EquipSet(sets.Hate);
 end
 
 profile.HandleWeaponskill = function()
@@ -72,11 +72,11 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
 
     local player = gData.GetPlayer()
-	if (parade_gorget and player.HPP >= 85) then
-		gFunc.Equip('Neck', 'Parade Gorget')
-	end
+    if (parade_gorget and player.HPP >= 85) then
+        gFunc.Equip('Neck', 'Parade Gorget')
+    end
 
-	gcmelee.DoDefaultOverride()
+    gcmelee.DoDefaultOverride()
 end
 
 profile.HandlePrecast = function()
@@ -90,15 +90,15 @@ profile.HandleMidcast = function()
     local action = gData.GetAction()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
-	if (target.Name == me) then
-		if (action.Name == 'Cure III') then
-			gFunc.InterimEquipSet(sets.C3HPDown)
-			gFunc.EquipSet('HPUp')
-		elseif (action.Name == 'Cure IV') then
-			gFunc.InterimEquipSet(sets.C4HPDown)
-			gFunc.EquipSet('HPUp')
-		end
-	end
+    if (target.Name == me) then
+        if (action.Name == 'Cure III') then
+            gFunc.InterimEquipSet(sets.C3HPDown)
+            gFunc.EquipSet('HPUp')
+        elseif (action.Name == 'Cure IV') then
+            gFunc.InterimEquipSet(sets.C4HPDown)
+            gFunc.EquipSet('HPUp')
+        end
+    end
 end
 
 return profile

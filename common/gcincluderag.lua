@@ -69,7 +69,7 @@ local OverrideNameTable = {
     ['eres'] = 'EarthRes',
     ['windres'] = 'WindRes',
     ['wres'] = 'WindRes',
-	['evasion'] = 'Evasion'
+    ['evasion'] = 'Evasion'
 }
 
 local lastIdleSet = 'Normal'
@@ -230,15 +230,15 @@ function gcinclude.DoDefaultOverride(isMelee)
     if (environment.Area ~= nil) and (Windy:contains(environment.Area) and federation_aketon == true) then gFunc.Equip('Body', 'Federation Aketon') end
 
     if (gcdisplay.IdleSet == 'DT') then
-	    if (isMelee) then
-		    gFunc.EquipSet('DT')
-		else
+        if (isMelee) then
+            gFunc.EquipSet('DT')
+        else
             if (environment.Time >= 6 and environment.Time <= 18) then
                 gFunc.EquipSet('DT')
             else
                 gFunc.EquipSet('DTNight')
             end
-		end
+        end
     end
     if (gcdisplay.IdleSet == 'MDT') then gFunc.EquipSet('MDT') end
     if (gcdisplay.IdleSet == 'FireRes') then gFunc.EquipSet('FireRes') end
@@ -246,7 +246,7 @@ function gcinclude.DoDefaultOverride(isMelee)
     if (gcdisplay.IdleSet == 'LightningRes') then gFunc.EquipSet('LightningRes') end
     if (gcdisplay.IdleSet == 'EarthRes') then gFunc.EquipSet('EarthRes') end
     if (gcdisplay.IdleSet == 'WindRes') then gFunc.EquipSet('WindRes') end
-	if (gcdisplay.IdleSet == 'Evasion') then gFunc.EquipSet('Evasion') end
+    if (gcdisplay.IdleSet == 'Evasion') then gFunc.EquipSet('Evasion') end
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end
 
     if (player.Status == 'Resting') then

@@ -154,7 +154,7 @@ local sets = {
         Back = 'Blue Cape +1', -- 7
         Waist = 'Ice Belt', -- 20
     },
-	Evasion = {},
+    Evasion = {},
 
     Precast = {
         Ear1 = 'Loquac. Earring',

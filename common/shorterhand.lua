@@ -35,18 +35,18 @@ function shorterhand.DoCommands(args)
 end
 
 function shorterhand.Load(enableMageAliases)
-	isMage = enableMageAliases
-	if (isMage) then
-	    shorterhand.SetAlias(shorterhand.MageAliasList)
-	end
-	shorterhand.SetAlias(shorterhand.RegularAliasList)
+    isMage = enableMageAliases
+    if (isMage) then
+        shorterhand.SetAlias(shorterhand.MageAliasList)
+    end
+    shorterhand.SetAlias(shorterhand.RegularAliasList)
 end
 
 function shorterhand.Unload()
     if (isMage) then
         shorterhand.ClearAlias(shorterhand.MageAliasList)
-	end
-	shorterhand.ClearAlias(shorterhand.RegularAliasList)
+    end
+    shorterhand.ClearAlias(shorterhand.RegularAliasList)
 end
 
 function shorterhand.SetAlias(aliasList)
