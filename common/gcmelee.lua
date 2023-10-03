@@ -111,7 +111,8 @@ end
 function gcmelee.SetupInterimEquipSet(sets)
     local action = gData.GetAction()
 
-    if (gcdisplay.IdleSet == 'DT') then gFunc.InterimEquipSet(sets.DT) end
+    gFunc.InterimEquipSet(sets.DT)
+
     if (gcdisplay.IdleSet == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end
     if (gcdisplay.IdleSet == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end
     if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end
