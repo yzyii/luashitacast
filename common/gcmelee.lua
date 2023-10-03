@@ -57,8 +57,10 @@ function gcmelee.DoDefault()
 
     gcinclude.DoDefaultIdle()
 
-    if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
-        gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
+    if (player.MainJob ~= 'PLD' and player.MainJob ~= 'NIN') then
+        if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
+            gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
+        end
     end
 
     if (player.MainJob ~= 'PLD') then
