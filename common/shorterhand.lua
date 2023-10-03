@@ -1,7 +1,7 @@
 local shorterhand = {}
 
 shorterhand.MageAliasList = T{ 'c4','c3','c2','c','i','s','ss','b','av' }
-shorterhand.RegularAliasList = T{ 'u1','u2' }
+shorterhand.RegularAliasList = T{ 'u1','u2','ichi','ni' }
 
 local isMage = false
 
@@ -27,9 +27,9 @@ function shorterhand.DoCommands(args)
         AshitaCore:GetChatManager():QueueCommand(1, '//blink')
     elseif (args[1] == 'av') then
         AshitaCore:GetChatManager():QueueCommand(1, '//aquaveil')
-    elseif (args[1] == 'u1') then
+    elseif (args[1] == 'u1' or args[1] == 'ichi') then
         AshitaCore:GetChatManager():QueueCommand(1, '/ma "Utsusemi: Ichi" <me>')
-    elseif (args[1] == 'u2') then
+    elseif (args[1] == 'u2' or args[1] == 'ni') then
         AshitaCore:GetChatManager():QueueCommand(1, '/ma "Utsusemi: Ni" <me>')
     end
 end

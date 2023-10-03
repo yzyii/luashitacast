@@ -34,7 +34,7 @@ shorterhand = gFunc.LoadFile('common\\shorterhand.lua')
 
 local gcinclude = {}
 
-local Overrides = T{ 'idle','dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres', }
+local Overrides = T{ 'idle','dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','evasion' }
 local Commands = T{ 'kite','lock','rebind','lockset','warpme' }
 
 local Towns = T{
@@ -68,7 +68,8 @@ local OverrideNameTable = {
     ['earthres'] = 'EarthRes',
     ['eres'] = 'EarthRes',
     ['windres'] = 'WindRes',
-    ['wres'] = 'WindRes'
+    ['wres'] = 'WindRes',
+	['evasion'] = 'Evasion'
 }
 
 local lastIdleSet = 'Normal'
@@ -214,17 +215,12 @@ function gcinclude.RunWarpCudgel()
     usecudgel:once(31)
 end
 
-function gcinclude.DoDefault()
-    gcinclude.DoDefaultIdle()
-    gcinclude.DoDefaultOverride()
-end
-
 function gcinclude.DoDefaultIdle()
     gFunc.EquipSet('Idle')
     if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALT') end
 end
 
-function gcinclude.DoDefaultOverride()
+function gcinclude.DoDefaultOverride(isMelee)
     local environment = gData.GetEnvironment()
     local player = gData.GetPlayer()
 
@@ -234,11 +230,15 @@ function gcinclude.DoDefaultOverride()
     if (environment.Area ~= nil) and (Windy:contains(environment.Area) and federation_aketon == true) then gFunc.Equip('Body', 'Federation Aketon') end
 
     if (gcdisplay.IdleSet == 'DT') then
-        if (environment.Time >= 6 and environment.Time <= 18) then
-            gFunc.EquipSet('DT')
-        else
-            gFunc.EquipSet('DTNight')
-        end
+	    if (isMelee) then
+		    gFunc.EquipSet('DT')
+		else
+            if (environment.Time >= 6 and environment.Time <= 18) then
+                gFunc.EquipSet('DT')
+            else
+                gFunc.EquipSet('DTNight')
+            end
+		end
     end
     if (gcdisplay.IdleSet == 'MDT') then gFunc.EquipSet('MDT') end
     if (gcdisplay.IdleSet == 'FireRes') then gFunc.EquipSet('FireRes') end
@@ -246,6 +246,7 @@ function gcinclude.DoDefaultOverride()
     if (gcdisplay.IdleSet == 'LightningRes') then gFunc.EquipSet('LightningRes') end
     if (gcdisplay.IdleSet == 'EarthRes') then gFunc.EquipSet('EarthRes') end
     if (gcdisplay.IdleSet == 'WindRes') then gFunc.EquipSet('WindRes') end
+	if (gcdisplay.IdleSet == 'Evasion') then gFunc.EquipSet('Evasion') end
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end
 
     if (player.Status == 'Resting') then

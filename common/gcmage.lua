@@ -285,7 +285,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         end
     end
 
-    gcinclude.DoDefaultOverride()
+    gcinclude.DoDefaultOverride(false)
     if (player.MainJob == 'SMN') then
         if (lastSummoningElement ~= '') then
             local staff = ElementalStaffTable[lastSummoningElement]
@@ -458,7 +458,7 @@ function gcmage.SetupInterimEquipSet(sets)
 
     gFunc.InterimEquipSet(sets.Casting)
     if (gcdisplay.IdleSet == 'DT') then
-        if (environment.Time >= 6 and environment.Time <= 18) then
+        if (environment.Time >= 6 and environment.Time < 18) then
             gFunc.InterimEquipSet(sets.DT)
         else
             gFunc.InterimEquipSet(sets.DTNight)

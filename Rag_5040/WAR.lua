@@ -14,7 +14,6 @@ local sets = {
     Movement = {},
 
     DT = {},
-    DTNight = {},
     MDT = { -- Shell IV provides 23% MDT
     },
     FireRes = {},
@@ -32,6 +31,11 @@ local sets = {
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
+
+	TP_LowAcc = {},
+    TP_HighAcc = {},
+
+    WS = {},
 }
 profile.Sets = sets
 
@@ -57,22 +61,23 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
+    gFunc.EquipSet(sets.WS)
     -- You may add logic here
 end
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.OnLoad = function()
-    gcinclude.Load(false)
+    gcmelee.Load()
     profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
-    gcinclude.Unload()
+    gcmelee.Unload()
 end
 
 profile.HandleCommand = function(args)
-    gcinclude.DoCommands(args)
+    gcmelee.DoCommands(args)
 end
 
 profile.HandleDefault = function()

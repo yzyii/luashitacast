@@ -29,7 +29,6 @@ local sets = {
     Movement = {},
 
     DT = {},
-    DTNight = {},
     MDT = { -- Shell IV provides 23% MDT
     },
     FireRes = {},
@@ -47,6 +46,39 @@ local sets = {
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
+
+	TP_LowAcc = {
+        Main = 'Impact Knuckles',
+        Ammo = 'Happy Egg',
+        Head = 'Mrc.Cpt. Headgear',
+        Neck = 'Spike Necklace',
+        Ear1 = 'Beetle Earring +1',
+        Ear2 = 'Beetle Earring +1',
+        Body = 'Power Gi',
+        Hands = 'Ochiudo\'s Kote',
+        Ring1 = 'Venerer Ring',
+        Ring2 = 'Courage Ring',
+        Back = '',
+        Waist = 'Purple Belt',
+        Legs = 'Republic Subligar',
+        Feet = 'Fed. Kyahan',
+    },
+    TP_HighAcc = {
+        Main = 'Impact Knuckles',
+        Ammo = 'Happy Egg',
+        Head = 'Mrc.Cpt. Headgear',
+        Neck = 'Spike Necklace',
+        Ear1 = 'Beetle Earring +1',
+        Ear2 = 'Beetle Earring +1',
+        Body = 'Power Gi',
+        Hands = 'Ochiudo\'s Kote',
+        Ring1 = 'Venerer Ring',
+        Ring2 = 'Courage Ring',
+        Back = '',
+        Waist = 'Purple Belt',
+        Legs = 'Republic Subligar',
+        Feet = 'Fed. Kyahan',
+    },
 
     WS = {
         Head = 'Mrc.Cpt. Headgear',
@@ -88,21 +120,22 @@ end
 
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
+    -- You may add logic here
 end
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.OnLoad = function()
-    gcinclude.Load(false)
+    gcmelee.Load()
     profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
-    gcinclude.Unload()
+    gcmelee.Unload()
 end
 
 profile.HandleCommand = function(args)
-    gcinclude.DoCommands(args)
+    gcmelee.DoCommands(args)
 end
 
 profile.HandleDefault = function()

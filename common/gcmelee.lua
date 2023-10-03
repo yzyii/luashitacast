@@ -11,6 +11,46 @@ gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 
 local gcmelee = {}
 
+local TpVariantTable = {
+	[1] = 'LowAcc',
+	[2] = 'HighAcc',
+}
+
+local tp_variant = 1
+
+local lastIdleSetBeforeEngaged = ''
+
+local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
+
+local AliasList = T{
+    'tpset','tp',
+}
+
+function gcmelee.Load()
+    gcinclude.SetAlias(AliasList)
+    gcinclude.Load(false)
+end
+
+function gcmelee.Unload()
+    gcinclude.Unload()
+    gcinclude.ClearAlias(AliasList)
+end
+
+function gcmelee.DoCommands(args)
+    if not (AliasList:contains(args[1])) then
+        gcinclude.DoCommands(args)
+        do return end
+    end
+
+	if (args[1] == 'tpset' or args[1] == 'tp') then
+		tp_variant = tp_variant + 1
+		if (tp_variant > #TpVariantTable) then
+			tp_variant = 1
+		end
+        gcinclude.Message('TP Set', TpVariantTable[tp_variant])
+	end
+end
+
 function gcmelee.DoDefault()
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
@@ -21,7 +61,23 @@ function gcmelee.DoDefault()
         gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
     end
 
-    gcinclude.DoDefaultOverride()
+    if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
+		if (player.Status == 'Engaged') then
+			if (lastIdleSetBeforeEngaged == '') then
+				lastIdleSetBeforeEngaged = gcdisplay.IdleSet
+			end
+			gFunc.EquipSet('TP_' .. TpVariantTable[tp_variant]);
+			if (gcdisplay.IdleSet ~= TpVariantTable[tp_variant]) then
+				gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
+			end
+		end
+		if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
+			gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
+			lastIdleSetBeforeEngaged = ''
+		end
+    end
+
+    gcinclude.DoDefaultOverride(true)
 end
 
 function gcmelee.DoPrecast(fastCastValue)
@@ -46,8 +102,23 @@ function gcmelee.SetupMidcastDelay(fastCastValue)
 end
 
 function gcmelee.DoMidcast(sets)
-    gFunc.InterimEquipSet(sets.SIRD)
-    gFunc.EquipSet('Haste');
+    gcmelee.SetupInterimEquipSet(sets)
+	gFunc.EquipSet('Haste');
+end
+
+function gcmelee.SetupInterimEquipSet(sets)
+    local action = gData.GetAction()
+
+    if (gcdisplay.IdleSet == 'DT') then gFunc.InterimEquipSet(sets.DT) end
+    if (gcdisplay.IdleSet == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end
+    if (gcdisplay.IdleSet == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end
+    if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end
+    if (gcdisplay.IdleSet == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end
+    if (gcdisplay.IdleSet == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end
+
+    if (SurvivalSpells:contains(action.Name)) then
+        gFunc.InterimEquipSet(sets.SIRD)
+    end
 end
 
 return gcmelee

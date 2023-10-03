@@ -57,6 +57,11 @@ A WAR template is also provided that demonstrates an example for melee jobs whic
 /mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and Accuracy sets.
 ```
 
+# Additional Commands for All Melee Jobs:
+```
+/tpset /tp - Toggles TP set between a LowAcc and HighAcc set. 
+```
+
 ## Additional Commands for RDM:
 ```
 [Regular Toggles]
@@ -108,6 +113,8 @@ If you enable the Shorterhand setting in gcincluderag.lua, additional /commands 
 [All Jobs]
 /u1 - Utusemi: Ichi
 /u2 - Utsusemi: Ni
+/ichi - Utusemi: Ichi
+/ni   - Utsusemi: Ni
 
 [Mages]
 /c4 - Cure IV
