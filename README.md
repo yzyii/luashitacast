@@ -43,7 +43,8 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 /earthres /eres - toggles Earth Resistance set on/off.
 /windres /wres  - toggles Wind Resistance set on/off.
 /lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off.
-/evasion        - toggles Evasion set on/off. You could also use this set for counter sets on MNK or other special sets.
+/evasion        - toggles Evasion set on/off.
+                  you could also use this set for counter sets on MNK or other special sets.
 
 [Special Commands]
 /warpme           - equips a warp cudgel and uses it after 30 seconds and locks equipment.
@@ -55,11 +56,11 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 # Additional Commands for All Mage Jobs:
 ```
 /addmp [number] - adds a set amount of MP to decide usage of the IdleMaxMP set.
-                  This can be used when eating food or for other +MP effects.
+                  this can be used when eating food or for other +MP effects.
                   type /addmp without a number to display the current value.
 /setmp [number] - sets the mp at which your idle sets will automatically transition
                   to using your IdleMaxMP set.
-                  This will override the values defined for /NIN /WHM /RDM /BLM as well.
+                  this will override the values defined for /NIN /WHM /RDM /BLM as well.
                   /addmp will still work as per normal in conjunction with this.
                   type /setmp without a number to display the current value.
 /oor            - forces use of Master Caster Bracelets / Republican Gold Medal.
@@ -69,15 +70,16 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 
 # Additional Commands for All Melee Jobs:
 ```
-/tpset /tp - Toggles TP set between a LowAcc and HighAcc set. Note that this will be overwritten if you have a DT or Fire Resistance etc. set enabled.
-             This is disabled for PLD in favour of just always using Idle sets instead.
+/tpset /tp - toggles TP set between a LowAcc and HighAcc set.
+             this will be overwritten if you have a DT or Fire Resistance etc. set enabled.
+             this is disabled for PLD in favour of just always using Idle sets instead.
 ```
 
 ## Additional Commands for RDM:
 ```
 [Regular Toggles]
 /hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
-/fight  - Used to turn off TP set.
+/fight  - used to turn off TP set.
           this is automatically used for you when disengaging if your TP is 0.
 
 [Special Sets]
