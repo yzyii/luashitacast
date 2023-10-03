@@ -69,7 +69,7 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 
 # Additional Commands for All Melee Jobs:
 ```
-/tpset /tp - Toggles TP set between a LowAcc and HighAcc set. 
+/tpset /tp - Toggles TP set between a LowAcc and HighAcc set. Note that this will be overwritten if you have a DT or Fire Resistance etc. set enabled.
 ```
 
 ## Additional Commands for RDM:
