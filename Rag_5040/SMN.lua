@@ -20,8 +20,40 @@ local sets = {
         -- Legs = '',
         Feet = 'Summoner\'s Pgch.',
     },
-    IdleALT = {},
-    IdleMaxMP = {},
+    IdleALT = {
+        Legs = 'Evoker\'s Spats',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Novia Earring',
+        Body = 'Austere Robe',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Summoner\'s Horn',
+        Neck = 'Smn. Torque',
+        -- Body = '',
+        Hands = 'Nashira Gages',
+        Ring1 = 'Sattva Ring',
+        Ring2 = 'Evoker\'s Ring',
+        Back = 'Blue Cape +1',
+        Waist = 'Hierarch Belt',
+        -- Legs = '',
+        Feet = 'Summoner\'s Pgch.',
+    },
+    IdleMaxMP = {
+        Legs = 'Evoker\'s Spats',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Novia Earring',
+        Body = 'Austere Robe',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Summoner\'s Horn',
+        Neck = 'Smn. Torque',
+        -- Body = '',
+        Hands = 'Nashira Gages',
+        Ring1 = 'Sattva Ring',
+        Ring2 = 'Evoker\'s Ring',
+        Back = 'Blue Cape +1',
+        Waist = 'Hierarch Belt',
+        -- Legs = '',
+        Feet = 'Summoner\'s Pgch.',
+    },
     Resting = {
         Main = 'Pluto\'s Staff',
         Neck = 'Checkered Scarf',
@@ -35,9 +67,31 @@ local sets = {
     Town = {},
     Movement = {},
 
-    DT = {},
-    DTNight = {},
+    DT = {
+        Main = 'Terra\'s Staff',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Ring1 = 'Jelly Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Umbra Cape',
+    },
+    DTNight = {
+        Main = 'Terra\'s Staff',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Ring1 = 'Jelly Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Umbra Cape',
+    },
     MDT = { -- Shell IV provides 23% MDT
+        Main = 'Terra\'s Staff',
+        Head = 'Green Ribbon +1',
+        Neck = 'Jeweled Collar',
+        Ear1 = 'Merman\'s Earring', -- 2
+        Ear2 = 'Merman\'s Earring', -- 2
+        Ring1 = 'Merman\'s Ring', -- 4
+        Ring2 = 'Sattva Ring', -- 5
+        Back = 'Hexerei Cape', -- 3
     },
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
@@ -103,17 +157,82 @@ local sets = {
         Feet = 'Rostrum Pumps',
     },
     Casting = { -- Default Casting Equipment when using Idle sets
+        Main = 'Hermit\'s Wand', -- 25
+        Sub = 'Hermit\'s Wand', -- 25
+        Head = 'Nashira Turban', -- 10
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Magnetic Earring', -- 8
+        Waist = 'Druid\'s Rope', -- 10
+        Feet = 'Mountain Gaiters', -- 5
     },
     SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+        Main = 'Hermit\'s Wand', -- 25
+        Sub = 'Hermit\'s Wand', -- 25
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Nashira Turban', -- 10
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Magnetic Earring', -- 8
+        Body = 'Raven Jupon',
+        Hands = 'Raven Bracers',
+        Ring1 = 'Jelly Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Umbra Cape',
+        Waist = 'Druid\'s Rope', -- 10
+        Legs = 'Raven Hose',
+        Feet = 'Mountain Gaiters', -- 5
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
+        Head = 'Nashira Turban',
+        Ear1 = 'Loquac. Earring',
+        Hands = 'Nashira Gages',
+        Waist = 'Swift Belt',
+        -- Legs = 'Nashira Serawheels',
+        Feet = 'Nashira Crackows',
     },
 
-    Cure = {},
-    Cursna = {},
+    Cure = {
+        Ammo = 'Hedgehog Bomb', -- 1
+        Head = 'Raven Beret', -- 8
+        Neck = 'Jeweled Collar',
+        Ear1 = 'Novia Earring', -- 7
+        Ear2 = 'Magnetic Earring',
+        Body = 'Raven Jupon', -- 9
+        Hands = 'Raven Bracers', -- 5
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Aqua Ring',
+        Back = 'Errant Cape', -- 5
+        Waist = 'Penitent\'s Rope', -- 3
+        Legs = 'Raven Hose', -- 6
+        Feet = 'Raven Gaiters', -- 5
+    },
+    Cursna = { -- Not implemented on ASB...
+        -- Main = 'Prelatic Pole',
+        -- Neck = 'Healing Torque',
+        -- Legs = 'Druid\'s Slops',
+        -- Back = 'Altruistic Cape',
+    },
 
-    Enhancing = {},
-    Stoneskin = {},
+    Enhancing = {
+        Main = 'Kirin\'s Pole',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Nashira Turban',
+        Neck = 'Enhancing Torque',
+        Ear1 = 'Cmn. Earring',
+        Ear2 = 'Cmn. Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = 'Dvt. Mitts +1',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Aqua Ring',
+        Back = 'Merciful Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Mahatma Slops',
+        Feet = 'Mahatma Pigaches',
+    },
+    Stoneskin = {
+        -- Neck = 'Stone Gorget',
+    },
     Spikes = {},
 
     Enfeebling = {},
