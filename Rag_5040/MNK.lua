@@ -58,7 +58,7 @@ local sets = {
         Back = '',
         Waist = 'Brown Belt',
         Legs = 'Republic Subligar',
-        Feet = 'Fed. Kyahan',
+        Feet = 'Fuma Kyahan',
     },
     TP_HighAcc = {
         Main = 'Tourney Patas',
@@ -74,7 +74,7 @@ local sets = {
         Back = '',
         Waist = 'Brown Belt',
         Legs = 'Republic Subligar',
-        Feet = 'Fed. Kyahan',
+        Feet = 'Fuma Kyahan',
     },
 
     WS = {

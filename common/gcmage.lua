@@ -33,7 +33,7 @@ local diabolos_earring = true
 local diabolos_earring_slot = 'Ear2'
 local wizards_earring = false
 local wizards_earring_slot = 'Ear2'
-local healers_earring = true
+local healers_earring = false
 local healers_earring_slot = 'Ear2'
 
 local diabolos_ring = true
