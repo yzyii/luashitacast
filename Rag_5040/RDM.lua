@@ -385,7 +385,7 @@ local sets = {
         Feet = 'Wise Pigaches',
     },
     EnfeeblingACC = {
-        -- Ear2 = 'Enfeebling Earring',
+        Ear2 = 'Enfeebling Earring',
         -- Back = 'Altruistic Cape',
         -- Legs = 'Nashira Serawheels',
     },

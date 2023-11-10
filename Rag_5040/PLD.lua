@@ -9,6 +9,8 @@ local valor_coronet = true
 local valor_surcoat = true
 local valor_gauntlets = true
 local valor_leggings = true
+local hercules_ring = true
+local hercules_ring_slot = 'Ring2'
 
 local sets = {
     Idle = {},
@@ -30,8 +32,10 @@ local sets = {
     SIRD = { -- 102% to Cap
     },
     Haste = {},
+    Haste_Ichi = {},
 
     Hate = {},
+    Hate_Flash = {},
     Cheat_C3HPDown = {},
     Cheat_C4HPDown = {},
     Cheat_HPUp = {},
@@ -39,6 +43,9 @@ local sets = {
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
+
+    TP_LowAcc = {},
+    TP_HighAcc = {},
 
     WS = {},
     WS_Spirits = {},
@@ -85,6 +92,7 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.OnLoad = function()
     gcmelee.Load()
+    gcmelee.SetIsDPS(false)
     profile.SetMacroBook()
 end
 
@@ -102,6 +110,10 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer()
     if (parade_gorget and player.HPP >= 85) then
         gFunc.Equip('Neck', 'Parade Gorget')
+    end
+
+    if (hercules_ring and player.HPP <= 50) then
+        gFunc.Equip(hercules_ring_slot, 'Hercules\' Ring')
     end
 
     local cover = gData.GetBuffCount('Cover')
@@ -130,6 +142,13 @@ profile.HandleMidcast = function()
 
     if (action.Skill ~= 'Ninjutsu') then
         gFunc.EquipSet(sets.Hate);
+        if (action.Name == 'Flash') then
+            gFunc.EquipSet(sets.Hate_Flash);
+        end
+    else
+        if (action.Name == 'Utusemi: Ichi') then
+            gFunc.EquipSet(sets.Haste_Ichi);
+        end
     end
 
     if (target.Name == me) then

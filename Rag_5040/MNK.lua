@@ -4,7 +4,7 @@ local fastCastValue = 0.00 -- 0% from gear
 
 local sets = {
     Idle = {
-        Main = 'Tourney Patas',
+        Main = 'T.M. Hooks +2',
         Ammo = 'Orphic Egg',
         Head = 'Mrc.Cpt. Headgear',
         Neck = 'Peacock Amulet',
@@ -17,7 +17,7 @@ local sets = {
         Back = '',
         Waist = 'Brown Belt',
         Legs = 'Republic Subligar',
-        Feet = 'Fed. Kyahan',
+        Feet = 'Fuma Kyahan',
     },
     IdleALT = {},
     Resting = {},
@@ -45,7 +45,7 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
-        Main = 'Tourney Patas',
+        Main = 'T.M. Hooks +2',
         Ammo = 'Orphic Egg',
         Head = 'Mrc.Cpt. Headgear',
         Neck = 'Peacock Amulet',
@@ -61,7 +61,7 @@ local sets = {
         Feet = 'Fuma Kyahan',
     },
     TP_HighAcc = {
-        Main = 'Tourney Patas',
+        Main = 'T.M. Hooks +2',
         Ammo = 'Orphic Egg',
         Head = 'Mrc.Cpt. Headgear',
         Neck = 'Peacock Amulet',
@@ -78,7 +78,7 @@ local sets = {
     },
 
     WS = {
-        Main = 'Tourney Patas',
+        Main = 'T.M. Hooks +2',
         Ammo = 'Orphic Egg',
         Head = 'Mrc.Cpt. Headgear',
         Neck = 'Peacock Amulet',

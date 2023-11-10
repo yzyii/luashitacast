@@ -73,6 +73,7 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 /tpset /tp - toggles TP set between a LowAcc and HighAcc set.
              this will be overwritten if you have a DT or Fire Resistance etc. set enabled.
              this is disabled for PLD in favour of just always using Idle sets instead.
+ /dps      - used for PLD to turn on DPS LowAcc / HighAcc TP set behaviour.
 ```
 
 ## Additional Commands for RDM:

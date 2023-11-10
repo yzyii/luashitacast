@@ -11,6 +11,8 @@ gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 
 local gcmelee = {}
 
+local isDPS = true
+
 local TpVariantTable = {
     [1] = 'LowAcc',
     [2] = 'HighAcc',
@@ -23,8 +25,12 @@ local lastIdleSetBeforeEngaged = ''
 local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
 
 local AliasList = T{
-    'tpset','tp',
+    'tpset','tp','dps',
 }
+
+function gcmelee.SetIsDPS(isDPSVal)
+    isDPS = isDPSVal
+end
 
 function gcmelee.Load()
     gcinclude.SetAlias(AliasList)
@@ -48,6 +54,13 @@ function gcmelee.DoCommands(args)
             tp_variant = 1
         end
         gcinclude.Message('TP Set', TpVariantTable[tp_variant])
+    elseif (args[1] == 'dps') then
+        isDPS = not isDPS
+        gcinclude.Message('DPS Mode', isDPS)
+        if (not isDPS) then
+            gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
+            lastIdleSetBeforeEngaged = ''
+        end
     end
 end
 
@@ -63,7 +76,7 @@ function gcmelee.DoDefault()
         end
     end
 
-    if (player.MainJob ~= 'PLD') then
+    if (isDPS) then
         if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
             if (player.Status == 'Engaged') then
                 if (lastIdleSetBeforeEngaged == '') then
