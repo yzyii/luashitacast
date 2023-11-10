@@ -3,14 +3,17 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear
 
 local parade_gorget = true
-local gallant_coronet = true
-local gallant_leggings = true
-local valor_coronet = true
-local valor_surcoat = true
-local valor_gauntlets = true
-local valor_leggings = true
+
 local hercules_ring = true
 local hercules_ring_slot = 'Ring2'
+
+-- Replace these with '' if you do not have them
+local gallant_coronet = 'Gallant Coronet'
+local gallant_leggings = 'Gallant Leggings'
+local valor_coronet = 'Valor Coronet'
+local valor_surcoat = 'Valor Surcoat'
+local valor_gauntlets = 'Valor Gauntlets'
+local valor_leggings = 'Valor Leggings'
 
 local sets = {
     Idle = {},
@@ -62,20 +65,20 @@ profile.HandleAbility = function()
 
     local action = gData.GetAction()
 
-    if (action.Name == 'Holy Circle' and gallant_leggings) then
-        gFunc.Equip('Legs', 'Gallant Leggings')
-    elseif (action.Name == 'Rampart' and valor_coronet) then
-        gFunc.Equip('Head', 'Valor Coronet')
-    elseif (action.Name == 'Shield Bash' and valor_gauntlets) then
-        gFunc.Equip('Hands', 'Valor Gauntlets')
-    elseif (action.Name == 'Sentinel' and valor_leggings) then
-        gFunc.Equip('Legs', 'Valor Leggings')
+    if (action.Name == 'Holy Circle' and gallant_leggings ~= '') then
+        gFunc.Equip('Legs', gallant_leggings)
+    elseif (action.Name == 'Rampart' and valor_coronet ~= '') then
+        gFunc.Equip('Head', valor_coronet)
+    elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
+        gFunc.Equip('Hands', valor_gauntlets)
+    elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then
+        gFunc.Equip('Legs', valor_leggings)
     elseif (action.Name == 'Cover') then
-        if (gallant_coronet) then
-            gFunc.Equip('Head', 'Gallant Coronet')
+        if (gallant_coronet ~= '') then
+            gFunc.Equip('Head', gallant_coronet)
         end
-        if (valor_surcoat) then
-            gFunc.Equip('Body', 'Valor Surcoat')
+        if (valor_surcoat ~= '') then
+            gFunc.Equip('Body', valor_surcoat)
         end
     end
 end
@@ -118,11 +121,11 @@ profile.HandleDefault = function()
 
     local cover = gData.GetBuffCount('Cover')
     if (cover >= 1) then
-        if (gallant_coronet) then
-            gFunc.Equip('Head', 'Gallant Coronet')
+        if (gallant_coronet ~= '') then
+            gFunc.Equip('Head', gallant_coronet)
         end
-        if (valor_surcoat) then
-            gFunc.Equip('Body', 'Valor Surcoat')
+        if (valor_surcoat ~= '') then
+            gFunc.Equip('Body', valor_surcoat)
         end
     end
 
