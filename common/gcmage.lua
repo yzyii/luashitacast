@@ -258,7 +258,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     end
 
     if (player.MainJob == 'RDM') then
-        if (player.Status == 'Engaged' and lastIdleSetBeforeEngaged == '') then
+        if (player.Status == 'Engaged' and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate')) then
             lastIdleSetBeforeEngaged = gcdisplay.IdleSet
             gcinclude.ToggleIdleSet('Fight')
             gcmage.LockWeapon:once(1)

@@ -299,6 +299,7 @@ local sets = {
         Ammo = 'Hedgehog Bomb', -- 1
         Head = 'Raven Beret', -- 8
         Neck = 'Jeweled Collar',
+        -- Neck = 'Benign Necklace',
         Ear1 = 'Novia Earring', -- 7
         Ear2 = 'Magnetic Earring',
         Body = 'Raven Jupon', -- 9
