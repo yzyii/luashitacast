@@ -2,18 +2,24 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
 
+-- Replace these with '' if you do not have them
+local temple_gaiters = 'Temple Gaiters'
+local temple_gloves = 'Temple Gloves'
+local temple_cyclas = 'Temple Cyclas'
+local temple_crown = 'Temple Crown'
+
 local sets = {
     Idle = {
         Main = 'T.M. Hooks +2',
         Ammo = 'Orphic Egg',
         Head = 'Mrc.Cpt. Headgear',
         Neck = 'Peacock Amulet',
-        Ear1 = 'Beetle Earring +1',
-        Ear2 = 'Beetle Earring +1',
-        Body = 'Jujitsu Gi',
+        Ear1 = 'Spike Earring',
+        Ear2 = 'Spike Earring',
+        Body = 'Scp. Harness +1',
         Hands = 'Ochiudo\'s Kote',
-        Ring1 = 'Sniper\'s Ring',
-        Ring2 = 'Woodsman Ring',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
         Back = '',
         Waist = 'Brown Belt',
         Legs = 'Republic Subligar',
@@ -32,6 +38,7 @@ local sets = {
     LightningRes = {},
     EarthRes = {},
     WindRes = {},
+    WaterRes = {},
     Evasion = {},
 
     Precast = {},
@@ -45,52 +52,13 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
-        Main = 'T.M. Hooks +2',
-        Ammo = 'Orphic Egg',
-        Head = 'Mrc.Cpt. Headgear',
-        Neck = 'Peacock Amulet',
-        Ear1 = 'Beetle Earring +1',
-        Ear2 = 'Beetle Earring +1',
-        Body = 'Jujitsu Gi',
-        Hands = 'Ochiudo\'s Kote',
-        Ring1 = 'Sniper\'s Ring',
-        Ring2 = 'Woodsman Ring',
-        Back = '',
-        Waist = 'Brown Belt',
-        Legs = 'Republic Subligar',
         Feet = 'Fuma Kyahan',
     },
     TP_HighAcc = {
-        Main = 'T.M. Hooks +2',
-        Ammo = 'Orphic Egg',
-        Head = 'Mrc.Cpt. Headgear',
-        Neck = 'Peacock Amulet',
-        Ear1 = 'Beetle Earring +1',
-        Ear2 = 'Beetle Earring +1',
-        Body = 'Jujitsu Gi',
-        Hands = 'Ochiudo\'s Kote',
-        Ring1 = 'Sniper\'s Ring',
-        Ring2 = 'Woodsman Ring',
-        Back = '',
-        Waist = 'Brown Belt',
-        Legs = 'Republic Subligar',
         Feet = 'Fuma Kyahan',
     },
 
     WS = {
-        Main = 'T.M. Hooks +2',
-        Ammo = 'Orphic Egg',
-        Head = 'Mrc.Cpt. Headgear',
-        Neck = 'Peacock Amulet',
-        Ear1 = 'Beetle Earring +1',
-        Ear2 = 'Beetle Earring +1',
-        Body = 'Jujitsu Gi',
-        Hands = 'Ochiudo\'s Kote',
-        Ring1 = 'Sniper\'s Ring',
-        Ring2 = 'Woodsman Ring',
-        Back = '',
-        Waist = 'Brown Belt',
-        Legs = 'Republic Subligar',
         Feet = 'Fed. Kyahan',
     },
 }
@@ -102,7 +70,20 @@ profile.SetMacroBook = function()
 end
 
 profile.HandleAbility = function()
-    -- You may add logic here
+    local action = gData.GetAction()
+
+    if (action.Name == 'Dodge' and temple_gaiters ~= '') then
+        gFunc.Equip('Feet', temple_gaiters)
+    end
+    if (action.Name == 'Boost' and temple_gloves ~= '') then
+        gFunc.Equip('Hands', temple_gloves)
+    end
+    if (action.Name == 'Chakra' and temple_cyclas ~= '') then
+        gFunc.Equip('Body', temple_cyclas)
+    end
+    if (action.Name == 'Focus' and temple_crown ~= '') then
+        gFunc.Equip('Head', temple_crown)
+    end
 end
 
 profile.HandleItem = function()

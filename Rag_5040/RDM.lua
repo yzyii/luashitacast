@@ -210,6 +210,23 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Blood Greaves', -- 21
     },
+    WaterRes = {
+        Main = 'Auster\'s Staff', -- 20
+        Ammo = 'Hedgehog Bomb',
+        -- Ammo = 'Arco de Velocidad',
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Ear1 = 'Topaz Earring', -- 10
+        Ear2 = 'Topaz Earring', -- 10
+        Body = 'Gaia Doublet', -- 10
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Topaz Ring', -- 9
+        Ring2 = 'Maldust Ring', -- 10
+        Back = 'Beak Mantle +1',
+        Waist = 'Wind Belt', -- 20
+        Legs = 'Beak Trousers +1', -- 7
+        Feet = 'Blood Greaves', -- 21
+    },
     Evasion = {},
 
     Precast = {
@@ -555,7 +572,7 @@ local sets = {
         Ammo = 'Morion Tathlum',
         Head = 'Traveler\'s Hat',
         Neck = 'Justice Badge',
-        Ear1 = 'Healer\'s Earring',
+        Ear1 = 'Enfeebling Earring',
         Ear2 = 'Morion Earring +1',
         Body = 'Ryl.Sqr. Robe',
         Hands = 'Dvt. Mitts +1',

@@ -4,7 +4,6 @@ local fastCastValue = 0.00 -- 0% from gear
 
 local sets = {
     Idle = {
-        Legs = 'Evoker\'s Spats',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Novia Earring',
         Body = 'Austere Robe',
@@ -17,11 +16,10 @@ local sets = {
         Ring2 = 'Evoker\'s Ring',
         Back = 'Blue Cape +1',
         Waist = 'Hierarch Belt',
-        -- Legs = '',
+        Legs = 'Summoner\'s Spats',
         Feet = 'Summoner\'s Pgch.',
     },
     IdleALT = {
-        Legs = 'Evoker\'s Spats',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Novia Earring',
         Body = 'Austere Robe',
@@ -34,11 +32,10 @@ local sets = {
         Ring2 = 'Evoker\'s Ring',
         Back = 'Blue Cape +1',
         Waist = 'Hierarch Belt',
-        -- Legs = '',
+        Legs = 'Summoner\'s Spats',
         Feet = 'Summoner\'s Pgch.',
     },
     IdleMaxMP = {
-        Legs = 'Evoker\'s Spats',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Novia Earring',
         Body = 'Austere Robe',
@@ -51,7 +48,7 @@ local sets = {
         Ring2 = 'Evoker\'s Ring',
         Back = 'Blue Cape +1',
         Waist = 'Hierarch Belt',
-        -- Legs = '',
+        Legs = 'Summoner\'s Spats',
         Feet = 'Summoner\'s Pgch.',
     },
     Resting = {
@@ -150,6 +147,7 @@ local sets = {
         Waist = 'Ice Belt', -- 20
         Ring1 = 'Emerald Ring', -- 9
     },
+    WaterRes = {},
     Evasion = {},
 
     Precast = {
@@ -270,7 +268,7 @@ local sets = {
 
     BP_Delay = {
         Head = 'Summoner\'s Horn',
-        Legs = 'Evoker\'s Spats',
+        Legs = 'Summoner\'s Spats',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
         Ear1 = 'Loquac. Earring',

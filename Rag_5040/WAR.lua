@@ -17,6 +17,7 @@ local sets = {
     LightningRes = {},
     EarthRes = {},
     WindRes = {},
+    WaterRes = {},
     Evasion = {},
 
     Precast = {},

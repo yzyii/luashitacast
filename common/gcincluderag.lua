@@ -34,7 +34,7 @@ shorterhand = gFunc.LoadFile('common\\shorterhand.lua')
 
 local gcinclude = {}
 
-local Overrides = T{ 'idle','dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','wres','evasion' }
+local Overrides = T{ 'idle','dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','ares','waterres','wres','evasion' }
 local Commands = T{ 'kite','lock','rebind','lockset','warpme' }
 
 local Towns = T{
@@ -68,7 +68,9 @@ local OverrideNameTable = {
     ['earthres'] = 'EarthRes',
     ['eres'] = 'EarthRes',
     ['windres'] = 'WindRes',
-    ['wres'] = 'WindRes',
+    ['ares'] = 'WindRes',
+    ['waterres'] = 'WaterRes',
+    ['wres'] = 'WaterRes',
     ['evasion'] = 'Evasion'
 }
 
@@ -246,6 +248,7 @@ function gcinclude.DoDefaultOverride(isMelee)
     if (gcdisplay.IdleSet == 'LightningRes') then gFunc.EquipSet('LightningRes') end
     if (gcdisplay.IdleSet == 'EarthRes') then gFunc.EquipSet('EarthRes') end
     if (gcdisplay.IdleSet == 'WindRes') then gFunc.EquipSet('WindRes') end
+    if (gcdisplay.IdleSet == 'WaterRes') then gFunc.EquipSet('WaterRes') end
     if (gcdisplay.IdleSet == 'Evasion') then gFunc.EquipSet('Evasion') end
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end
 
