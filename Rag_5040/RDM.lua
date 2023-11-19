@@ -220,10 +220,10 @@ local sets = {
         Ear2 = 'Cmn. Earring', -- 11
         Body = 'Cor. Scale Mail +1', -- 6
         Hands = 'Coral Fng. Gnt. +1', -- 4
-        -- Ring1 = 'Sapphire Ring', -- 9
+        Ring1 = 'Sapphire Ring', -- 9
 		-- Ring2 = 'Malflood Ring', -- 10
         Back = 'Hexerei Cape',
-        -- Waist = 'Lightning Belt', -- 20
+        Waist = 'Lightning Belt', -- 20
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Coral Greaves +1', -- 4
     },
@@ -348,7 +348,7 @@ local sets = {
         -- Body = 'Glamor Jupon',
         Hands = 'Dls. Gloves +1',
         Ring1 = 'Aqua Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = 'Aqua Ring',
         Back = 'Merciful Cape',
         Waist = 'Swift Belt',
         Legs = 'Warlock\'s Tights',
@@ -641,6 +641,13 @@ end
 
 profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil)
+
+    local action = gData.GetAction()
+    if (action.Name == 'Haste') then
+        gFunc.Equip('Ring2', 'Dilation Ring')
+	elseif (action.Name == 'Refresh') then
+        gFunc.Equip('Ring2', 'Dilation Ring')
+	end
 end
 
 profile.HandleWeaponskill = function()
