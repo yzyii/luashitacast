@@ -211,21 +211,21 @@ local sets = {
         Feet = 'Blood Greaves', -- 21
     },
     WaterRes = {
-        Main = 'Auster\'s Staff', -- 20
+        Main = 'Jupiter\'s Staff', -- 20
         Ammo = 'Hedgehog Bomb',
         -- Ammo = 'Arco de Velocidad',
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Ear1 = 'Topaz Earring', -- 10
-        Ear2 = 'Topaz Earring', -- 10
-        Body = 'Gaia Doublet', -- 10
-        Hands = 'Dst. Mittens +1',
-        Ring1 = 'Topaz Ring', -- 9
-        Ring2 = 'Maldust Ring', -- 10
-        Back = 'Beak Mantle +1',
-        Waist = 'Wind Belt', -- 20
-        Legs = 'Beak Trousers +1', -- 7
-        Feet = 'Blood Greaves', -- 21
+        Ear1 = 'Cmn. Earring', -- 11
+        Ear2 = 'Cmn. Earring', -- 11
+        Body = 'Cor. Scale Mail +1', -- 6
+        Hands = 'Coral Fng. Gnt. +1', -- 4
+        -- Ring1 = 'Sapphire Ring', -- 9
+		-- Ring2 = 'Malflood Ring', -- 10
+        Back = 'Hexerei Cape',
+        -- Waist = 'Lightning Belt', -- 20
+        Legs = 'Blood Cuisses', -- 21
+        Feet = 'Coral Greaves +1', -- 4
     },
     Evasion = {},
 
