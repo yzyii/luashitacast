@@ -6,6 +6,8 @@ local ninSJMaxMP = 605 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 683 -- The Max MP you have when /whm in your idle set
 local blmSJMaxMP = 702 -- The Max MP you have when /blm in your idle set
 
+local dilation_ring = true
+
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -643,9 +645,9 @@ profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil)
 
     local action = gData.GetAction()
-    if (action.Name == 'Haste') then
+    if (action.Name == 'Haste' and dilation_ring) then
         gFunc.Equip('Ring2', 'Dilation Ring')
-	elseif (action.Name == 'Refresh') then
+	elseif (action.Name == 'Refresh' and dilation_ring) then
         gFunc.Equip('Ring2', 'Dilation Ring')
 	end
 end
