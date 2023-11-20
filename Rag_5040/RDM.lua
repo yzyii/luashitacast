@@ -6,7 +6,9 @@ local ninSJMaxMP = 605 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 683 -- The Max MP you have when /whm in your idle set
 local blmSJMaxMP = 702 -- The Max MP you have when /blm in your idle set
 
+local blue_cotehardie = true
 local dilation_ring = true
+local dilation_ring_slot = 'Ring2'
 
 local sets = {
     Idle = {
@@ -213,7 +215,7 @@ local sets = {
         Body = 'Cor. Scale Mail +1', -- 6
         Hands = 'Coral Fng. Gnt. +1', -- 4
         Ring1 = 'Sapphire Ring', -- 9
-		-- Ring2 = 'Malflood Ring', -- 10
+        -- Ring2 = 'Malflood Ring', -- 10
         Back = 'Hexerei Cape',
         Waist = 'Lightning Belt', -- 20
         Legs = 'Blood Cuisses', -- 21
@@ -612,6 +614,11 @@ end
 
 profile.HandleDefault = function()
     gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil)
+
+    local player = gData.GetPlayer()
+    if (blue_cotehardie and player.MP <= 40) then
+        gFunc.Equip('Body', 'Blue Cotehardie')
+    end
 end
 
 profile.HandlePrecast = function()
@@ -622,11 +629,11 @@ profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil)
 
     local action = gData.GetAction()
-    if (action.Name == 'Haste' and dilation_ring) then
-        gFunc.Equip('Ring2', 'Dilation Ring')
-	elseif (action.Name == 'Refresh' and dilation_ring) then
-        gFunc.Equip('Ring2', 'Dilation Ring')
-	end
+    if (dilation_ring) then
+        if (action.Name == 'Haste' or action.Name == 'Refresh') then
+            gFunc.Equip(dilation_ring_slot, 'Dilation Ring')
+        end
+    end
 end
 
 profile.HandleWeaponskill = function()
