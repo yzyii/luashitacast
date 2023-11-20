@@ -217,10 +217,7 @@ local sets = {
         Legs = 'Mahatma Slops', -- 4
         Feet = 'Mahatma Pigaches', -- 3
     },
-    Cursna = { -- Not implemented on ASB...
-        -- Main = 'Prelatic Pole',
-        -- Neck = 'Healing Torque',
-        -- Legs = 'Druid\'s Slops',
+    Cursna = {
         -- Back = 'Altruistic Cape',
     },
 
@@ -308,7 +305,6 @@ local sets = {
         Waist = 'Sorcerer\'s Belt',
         Legs = 'Wizard\'s Tonban',
         Feet = 'Nashira Crackows',
-        -- Feet = 'Igqira Huaraches',
     },
 
     Nuke = {

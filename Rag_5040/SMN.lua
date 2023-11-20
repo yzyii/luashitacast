@@ -10,7 +10,7 @@ local sets = {
         Ammo = 'Hedgehog Bomb',
         Head = 'Summoner\'s Horn',
         Neck = 'Smn. Torque',
-        -- Body = '',
+        -- Body = 'Summoner\'s Doublet',
         Hands = 'Nashira Gages',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
@@ -18,6 +18,7 @@ local sets = {
         Waist = 'Hierarch Belt',
         Legs = 'Summoner\'s Spats',
         Feet = 'Summoner\'s Pgch.',
+        -- Feet = 'Evoker's Pigaches +1',
     },
     IdleALT = {
         Ear1 = 'Loquac. Earring',
@@ -26,7 +27,7 @@ local sets = {
         Ammo = 'Hedgehog Bomb',
         Head = 'Summoner\'s Horn',
         Neck = 'Smn. Torque',
-        -- Body = '',
+        -- Body = 'Summoner\'s Doublet',
         Hands = 'Nashira Gages',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
@@ -34,6 +35,7 @@ local sets = {
         Waist = 'Hierarch Belt',
         Legs = 'Summoner\'s Spats',
         Feet = 'Summoner\'s Pgch.',
+        -- Feet = 'Evoker's Pigaches +1',
     },
     IdleMaxMP = {
         Ear1 = 'Loquac. Earring',
@@ -42,7 +44,7 @@ local sets = {
         Ammo = 'Hedgehog Bomb',
         Head = 'Summoner\'s Horn',
         Neck = 'Smn. Torque',
-        -- Body = '',
+        -- Body = 'Summoner\'s Doublet',
         Hands = 'Nashira Gages',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
@@ -50,6 +52,7 @@ local sets = {
         Waist = 'Hierarch Belt',
         Legs = 'Summoner\'s Spats',
         Feet = 'Summoner\'s Pgch.',
+        -- Feet = 'Evoker's Pigaches +1',
     },
     Resting = {
         Main = 'Pluto\'s Staff',
@@ -205,10 +208,7 @@ local sets = {
         Legs = 'Raven Hose', -- 6
         Feet = 'Raven Gaiters', -- 5
     },
-    Cursna = { -- Not implemented on ASB...
-        -- Main = 'Prelatic Pole',
-        -- Neck = 'Healing Torque',
-        -- Legs = 'Druid\'s Slops',
+    Cursna = {
         -- Back = 'Altruistic Cape',
     },
 
