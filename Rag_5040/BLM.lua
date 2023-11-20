@@ -154,7 +154,17 @@ local sets = {
         Back = 'Blue Cape +1', -- 7
         Waist = 'Ice Belt', -- 20
     },
-    WaterRes = {},
+    WaterRes = {
+        Main = 'Jupiter\'s Staff', -- 20
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Ear1 = 'Cmn. Earring', -- 11
+        Ear2 = 'Cmn. Earring', -- 11
+        Ring1 = 'Sapphire Ring', -- 9
+        Ring2 = 'Malflood Ring', -- 10
+        Back = 'Hexerei Cape',
+        Waist = 'Lightning Belt', -- 20
+    },
     Evasion = {},
 
     Precast = {
@@ -295,7 +305,6 @@ local sets = {
         Neck = 'Dark Torque',
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Morion Earring +1',
-        -- Ear2 = 'Dark Earring',
         Body = 'Mahatma Hpl.',
         -- Body = 'Nashira Manteel',
         Hands = 'Src. Gloves +1',

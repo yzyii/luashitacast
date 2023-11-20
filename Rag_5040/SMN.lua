@@ -150,7 +150,17 @@ local sets = {
         Waist = 'Ice Belt', -- 20
         Ring1 = 'Emerald Ring', -- 9
     },
-    WaterRes = {},
+    WaterRes = {
+        Main = 'Jupiter\'s Staff', -- 20
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
+        Ear1 = 'Cmn. Earring', -- 11
+        Ear2 = 'Cmn. Earring', -- 11
+        Ring1 = 'Sapphire Ring', -- 9
+        Ring2 = 'Malflood Ring', -- 10
+        Back = 'Hexerei Cape',
+        Waist = 'Lightning Belt', -- 20
+    },
     Evasion = {},
 
     Precast = {

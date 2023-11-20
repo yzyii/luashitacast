@@ -1,7 +1,5 @@
 # Stuff To Get Right Now
-Malflood Ring
 Benign Necklace
-Tundra Jerkin
 Soil Gorget
 Thunder Gorget
 
@@ -11,34 +9,34 @@ Nashira Serawheels
 Nashira Manteel
 Dusk Ledelsens
 Altruistic Cape
-Dark Earring
 Stone Gorget
 
 **RDM / MNK**
 Brutal Earring
 Forager's Mantle
-Flame Ring
+Flame Ring 350
 
 **MNK**
-Cross Counters
-Fuma Suneate
-Black Belt
-Panther mask +1
-Shr.Znr.Kabuto
-Shura Haidate
+Fuma Suneate 700
+Black Belt 3000
+Shr.Znr.Kabuto 400
+Shura Haidate 500
+Shura Sune-Ate 250
+Panther mask +1 1500
+
+Wyvern Earring 1500
+Pilferer\'s Earring 50
+Dune boots
 Paisley Scarf
 Sanative Earring
 Melee Cape
-Dune boots
-Wyvern Earring
-Pilferer\'s Earring
-Shura Sune-Ate
 
 **MNK Counter**
-Arh. Jinpachi +1
-Arhat\'s Gi +1
-Rasetsu Tekko +1
-Avenger\'s Earring
+Cross Counters 2800
+Arh. Jinpachi +1 650
+Arhat\'s Gi +1 550
+Rasetsu Tekko +1 800
+Avenger\'s Earring 400
 Guarding Torque
 Boxer\'s Mantle
 
@@ -67,6 +65,7 @@ Dalmatica
 Sonic Belt
 
 **RDM**
+Dark Earring
 Mahatma Cape
 Dusk Gear +1
 Black Ribbon
