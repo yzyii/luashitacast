@@ -124,7 +124,7 @@ local sets = {
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
     },
-    FireRes = { -- 143
+    FireRes = { -- 144
         Main = 'Neptune\'s Staff', -- 20
         Ammo = 'Hedgehog Bomb',
         Head = 'Green Ribbon +1', -- 10
@@ -132,7 +132,7 @@ local sets = {
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
         Body = 'Scp. Breastplate', -- 9
-        Hands = 'Scp. Gauntlets', -- 5
+        Hands = 'Scp. Gnt. +1', -- 6
         Ring1 = 'Ruby Ring', -- 9
         Ring2 = 'Malflame Ring', -- 10
         Back = 'Hexerei Cape',

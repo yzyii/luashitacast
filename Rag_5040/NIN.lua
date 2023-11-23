@@ -74,10 +74,11 @@ end
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
-    if (koga_tekko and environment.Time < 6 and environment.Time >= 18) then
+    local environment = gData.GetEnvironment()
+    if (koga_tekko and (environment.Time < 6 or environment.Time >= 18)) then
         gFunc.Equip('Hands', 'Koga Tekko')
     end
-    if (koga_tekko_plus_one and environment.Time < 7 and environment.Time >= 17) then
+    if (koga_tekko_plus_one and (environment.Time < 7 or environment.Time >= 17)) then
         gFunc.Equip('Hands', 'Kog. Tekko +1')
     end
 end
@@ -107,10 +108,10 @@ profile.HandleDefault = function()
         if (shinobi_ring and player.HPP <= 75 and player.TP <= 1000) then
             gFunc.Equip(shinobi_ring_slot, 'Shinobi Ring')
         end
-        if (koga_tekko and environment.Time < 6 and environment.Time >= 18) then
+        if (koga_tekko and (environment.Time < 6 or environment.Time >= 18)) then
             gFunc.Equip('Hands', 'Koga Tekko')
         end
-        if (koga_tekko_plus_one and environment.Time < 7 and environment.Time >= 17) then
+        if (koga_tekko_plus_one and (environment.Time < 7 or environment.Time >= 17)) then
             gFunc.Equip('Hands', 'Kog. Tekko +1')
         end
     end
