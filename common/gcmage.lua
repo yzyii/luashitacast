@@ -149,7 +149,10 @@ function gcmage.SetVariables()
     local player = gData.GetPlayer()
 
     gcdisplay.CreateToggle('OOR', false)
-    gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
+
+    if (player.MainJob ~= 'BRD') then
+        gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
+    end
 
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false)
@@ -364,15 +367,15 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     end
 
     if (action.Skill == 'Bard Song' and player.MainJob == 'BRD' and gcdisplay.GetToggle('Yellow') == true) then
-		local function delayYellow()
-			gFunc.ForceEquipSet('Yellow')
-		end
-		local yellowDelay = math.floor(castDelay - 1)
-		if (yellowDelay <= 0) then
-			gFunc.EquipSet('Yellow')
-		else
-			delayYellow:once(yellowDelay)
-		end
+        local function delayYellow()
+            gFunc.ForceEquipSet('Yellow')
+        end
+        local yellowDelay = math.floor(castDelay - 1)
+        if (yellowDelay <= 0) then
+            gFunc.EquipSet('Yellow')
+        else
+            delayYellow:once(yellowDelay)
+        end
     end
     -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
 end

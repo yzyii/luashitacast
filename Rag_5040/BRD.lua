@@ -10,6 +10,9 @@ local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
+local minstrels_earring = true
+local minstrels_earring_slot = 'Ear2'
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -100,6 +103,11 @@ end
 
 profile.HandleDefault = function()
     gcmage.DoDefault(ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP)
+
+    local player = gData.GetPlayer()
+    if (minstrels_earring and player.HPP <= 25) then
+        gFunc.Equip(minstrels_earring_slot, 'Minstrel\'s Earring')
+    end
 end
 
 profile.HandlePrecast = function()
