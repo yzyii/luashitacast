@@ -39,8 +39,6 @@ local sets = {
     },
     SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
     },
-    Yellow = { -- Fast Cast Gear will override this at times when the spell cast is too short.
-    },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
     },
 

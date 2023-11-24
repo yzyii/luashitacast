@@ -161,9 +161,6 @@ function gcmage.SetVariables()
         gcdisplay.CreateToggle('Yellow', true)
         gcdisplay.CreateToggle('MB', false)
     end
-    if (player.MainJob == 'BRD') then
-        gcdisplay.CreateToggle('Yellow', true)
-    end
 end
 
 function gcmage.DoCommands(args)
@@ -238,13 +235,6 @@ function gcmage.DoCommands(args)
             gcdisplay.AdvanceToggle('MB')
             gcinclude.Message('MB', gcdisplay.GetToggle('MB'))
         elseif (args[1] == 'yellow') then
-            gcdisplay.AdvanceToggle('Yellow')
-            gcinclude.Message('Yellow', gcdisplay.GetToggle('Yellow'))
-        end
-    end
-
-    if (player.MainJob == 'BRD') then
-        if (args[1] == 'yellow') then
             gcdisplay.AdvanceToggle('Yellow')
             gcinclude.Message('Yellow', gcdisplay.GetToggle('Yellow'))
         end
@@ -363,18 +353,6 @@ function gcmage.SetupMidcastDelay(fastCastValue)
             else
                 delayYellow:once(yellowDelay)
             end
-        end
-    end
-
-    if (action.Skill == 'Bard Song' and player.MainJob == 'BRD' and gcdisplay.GetToggle('Yellow') == true) then
-        local function delayYellow()
-            gFunc.ForceEquipSet('Yellow')
-        end
-        local yellowDelay = math.floor(castDelay - 1)
-        if (yellowDelay <= 0) then
-            gFunc.EquipSet('Yellow')
-        else
-            delayYellow:once(yellowDelay)
         end
     end
     -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
