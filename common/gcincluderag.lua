@@ -94,7 +94,7 @@ function gcinclude.Load(isMage)
         AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
     end
     if (load_stylist) then
-        loadStylist:once(3)
+        loadStylist:once(5)
     end
 end
 

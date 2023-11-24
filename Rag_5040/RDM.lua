@@ -507,9 +507,11 @@ local sets = {
         -- Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         -- Body = 'Nashira Manteel', -- 3
+        Body = 'Scp. Harness +1',
         Hands = 'Dusk Gloves', -- 3
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
+        Back = 'Amemet Mantle +1',
         -- Back = 'Forager's Mantle',
         Waist = 'Swift Belt', -- 4
         -- Legs = 'Nashira Serawheels', -- 2
@@ -517,17 +519,12 @@ local sets = {
         -- Feet = 'Dusk Ledelsens', -- 2
     },
     TP_NIN = {
+        Main = 'Sapara of Trials',
+        Sub = 'Joyeuse',
     },
     WS = {
         Head = 'Optical Hat',
-        Neck = 'Peacock Amulet',
-        Ear1 = 'Merman\'s Earring',
-        -- Ear1 = 'Brutal Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Blue Cotehardie',
-        Ring2 = 'Ruby Ring',
-        -- Ring2 = 'Flame Ring',
-        -- Back = 'Forager's Mantle',
+        -- Body = 'Blue Cotehardie',
         Waist = 'Warwolf Belt',
         Legs = 'Duelist\'s Tights',
     },
