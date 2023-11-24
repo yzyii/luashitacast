@@ -7,6 +7,7 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear
 
 local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
+local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
@@ -102,7 +103,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP)
+    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP)
 
     local player = gData.GetPlayer()
     if (minstrels_earring and player.HPP <= 25) then
@@ -115,7 +116,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP)
+    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP)
 
     if (action.Type == 'Bard Song') then
         if string.match(action.Name, 'Valor') then
