@@ -82,7 +82,7 @@ function gcmelee.DoDefault()
                 if (lastIdleSetBeforeEngaged == '') then
                     lastIdleSetBeforeEngaged = gcdisplay.IdleSet
                 end
-                gFunc.EquipSet('TP_' .. TpVariantTable[tp_variant]);
+                gFunc.EquipSet('TP_' .. TpVariantTable[tp_variant])
                 if (gcdisplay.IdleSet ~= TpVariantTable[tp_variant]) then
                     gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
                 end
@@ -122,7 +122,7 @@ end
 
 function gcmelee.DoMidcast(sets)
     gcmelee.SetupInterimEquipSet(sets)
-    gFunc.EquipSet('Haste');
+    gFunc.EquipSet('Haste')
 end
 
 function gcmelee.SetupInterimEquipSet(sets)

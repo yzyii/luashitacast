@@ -659,7 +659,7 @@ function gcmage.EquipStaff()
         end
 
         if (DiabolosPoleSpells:contains(action.Name)) then
-            if (environment.WeatherElement == 'Dark' and diabolos_pole) then gFunc.Equip('Main', 'Diabolos\'s Pole'); end
+            if (environment.WeatherElement == 'Dark' and diabolos_pole) then gFunc.Equip('Main', 'Diabolos\'s Pole') end
         end
     end
 end

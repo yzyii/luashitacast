@@ -35,7 +35,7 @@ shorterhand = gFunc.LoadFile('common\\shorterhand.lua')
 local gcinclude = {}
 
 local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','ares','waterres','wres','evasion','eva' }
-local Commands = T{ 'kite','lock','rebind','lockset','warpme' }
+local Commands = T{ 'kite','lock','locktp','rebind','lockset','warpme' }
 
 local Towns = T{
     'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau',
@@ -125,6 +125,11 @@ end
 function gcinclude.SetVariables()
     gcdisplay.CreateToggle('Kite', false)
     gcdisplay.CreateToggle('Lock', false)
+
+    local player = gData.GetPlayer()
+	if (player.MainJob ~= 'RDM') then
+		gcdisplay.CreateToggle('LockTP', false)
+	end
 end
 
 function gcinclude.DoCommands(args)
@@ -162,10 +167,11 @@ function gcinclude.DoCommands(args)
             gcinclude.Message('Equip Lock', gcdisplay.GetToggle('Lock'))
         end
     elseif (args[1] == 'lock') then
+        local player = gData.GetPlayer()
         gcdisplay.AdvanceToggle('Lock')
         gcinclude.Message('Equip Lock', gcdisplay.GetToggle('Lock'))
         if (not gcdisplay.GetToggle('Lock')) then
-            if (gcdisplay.IdleSet == 'Fight') then
+            if (gcdisplay.IdleSet == 'Fight' or gcdisplay.GetToggle('LockTP')) then
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Head')
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Neck')
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear1')
@@ -180,9 +186,38 @@ function gcinclude.DoCommands(args)
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Feet')
             else
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
+                if (player.MainJob ~= 'RDM') then gcdisplay.CreateToggle('LockTP', false) end
             end
         else
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
+            if (player.MainJob ~= 'RDM') then gcdisplay.CreateToggle('LockTP', false) end
+        end
+    elseif (args[1] == 'locktp') then
+        gcdisplay.AdvanceToggle('LockTP')
+        gcinclude.Message('Weapons Lock', gcdisplay.GetToggle('LockTP'))
+        if (not gcdisplay.GetToggle('LockTP')) then
+            if (gcdisplay.IdleSet ~= 'Fight') then
+                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
+            end
+            gcdisplay.CreateToggle('Lock', false)
+        else
+            gcdisplay.CreateToggle('Lock', false)
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Head')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Neck')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear1')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear2')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Body')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Hands')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring1')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring2')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Back')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Waist')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Legs')
+			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Feet')
         end
     end
 end
