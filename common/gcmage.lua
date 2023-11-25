@@ -220,7 +220,7 @@ function gcmage.DoCommands(args)
             gcinclude.Message('Hate', gcdisplay.GetToggle('Hate'))
         elseif (args[1] == 'fight') then
             if (gcdisplay.IdleSet == 'Fight') then
-                gcmage.UnlockWeapon:once(1)
+                gcinclude.UnlockWeapon:once(1)
                 if (lastIdleSetBeforeEngaged ~= '') then
                     gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
                 end
@@ -264,13 +264,13 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         if (player.Status == 'Engaged' and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate')) then
             lastIdleSetBeforeEngaged = gcdisplay.IdleSet
             gcinclude.ToggleIdleSet('Fight')
-            gcmage.LockWeapon:once(1)
+            gcinclude.LockWeapon:once(1)
         end
         if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
             if (player.TP == 0) then
                 gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
                 lastIdleSetBeforeEngaged = ''
-                gcmage.UnlockWeapon:once(1)
+                gcinclude.UnlockWeapon:once(1)
             end
         end
 
@@ -308,20 +308,6 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
             gFunc.Equip('Back', 'Wizard\'s Mantle')
         end
     end
-end
-
-function gcmage.LockWeapon()
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo')
-end
-
-function gcmage.UnlockWeapon()
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Main')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Sub')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Range')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ammo')
 end
 
 function gcmage.DoPrecast(fastCastValue)
