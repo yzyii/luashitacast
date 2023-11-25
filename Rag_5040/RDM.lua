@@ -543,7 +543,7 @@ local sets = {
     },
 
     LockSet1 = {
-        Main = 'Fencing Degen',
+        Main = 'Solid Wand',
         Sub = 'Turtle Shield +1',
         Ammo = 'Morion Tathlum',
         Head = 'Traveler\'s Hat',
