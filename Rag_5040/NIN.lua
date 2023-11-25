@@ -267,7 +267,6 @@ profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
 
     local action = gData.GetAction()
-
     if (action.Skill == 'Ninjutsu') then
         if (NinDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.NinDebuff);

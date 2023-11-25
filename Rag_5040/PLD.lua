@@ -65,7 +65,6 @@ profile.HandleAbility = function()
     gFunc.EquipSet(sets.Hate);
 
     local action = gData.GetAction()
-
     if (action.Name == 'Holy Circle' and gallant_leggings ~= '') then
         gFunc.Equip('Legs', gallant_leggings)
     elseif (action.Name == 'Rampart' and valor_coronet ~= '') then
@@ -87,6 +86,7 @@ end
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
+    local action = gData.GetAction()
     if (action.Name == 'Spirits Within') then
         gFunc.EquipSet(sets.WS_Spirits)
     end
