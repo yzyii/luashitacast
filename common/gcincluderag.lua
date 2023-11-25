@@ -34,7 +34,7 @@ shorterhand = gFunc.LoadFile('common\\shorterhand.lua')
 
 local gcinclude = {}
 
-local Overrides = T{ 'idle','dt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','ares','waterres','wres','evasion','eva' }
+local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','ares','waterres','wres','evasion','eva' }
 local Commands = T{ 'kite','lock','rebind','lockset','warpme' }
 
 local Towns = T{
@@ -56,6 +56,7 @@ local Windy = T{ 'Windurst Waters [S]','Windurst Waters','Windurst Walls','Port 
 local OverrideNameTable = {
     ['idle'] = 'Idle',
     ['dt'] = 'DT',
+    ['pdt'] = 'DT',
     ['mdt'] = 'MDT',
     ['fireres'] = 'FireRes',
     ['fres'] = 'FireRes',

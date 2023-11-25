@@ -36,7 +36,7 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 [Idle Sets] (Changes your idle set to use these sets instead)
 /idle           - toggles between using 2 different idle sets
                   i.e. Normal and Alternate / Idle and IdleALT.
-/dt             - toggles DT set on/off.
+/dt /pdt        - toggles DT set on/off.
 /mdt            - toggles MDT set on/off.
 /iceres /ires   - toggles Ice Resistance set on/off.
 /fireres /fres  - toggles Fire Resistance set on/off.
@@ -44,7 +44,7 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 /windres /ares  - toggles Wind Resistance set on/off.
 /waterres /wres - toggles Water Resistance set on/off.
 /lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off.
-/evasion        - toggles Evasion set on/off.
+/evasion /eva   - toggles Evasion set on/off.
                   you could also use this set for counter sets on MNK or other special sets.
 
 [Special Commands]
