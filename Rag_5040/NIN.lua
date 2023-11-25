@@ -34,7 +34,7 @@ local sets = {
     SIRD = { -- 102% to Cap
     },
     Haste = { -- Used for Utsusemi cooldown
-	},
+    },
 
     Hate = {},
     NinDebuff = {},
