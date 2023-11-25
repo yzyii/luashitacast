@@ -27,6 +27,7 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 ```
 [Regular Toggles]
 /lock   - locks or unlocks all equipment.
+/locktp - locks or unlocks weapon slots.
 /kite   - toggles Kite set on/off.
           /kite always takes precedence over any other set overrides active.
           e.g. if you have /kite and /fireres toggled on,
