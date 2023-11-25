@@ -127,9 +127,9 @@ function gcinclude.SetVariables()
     gcdisplay.CreateToggle('Lock', false)
 
     local player = gData.GetPlayer()
-	if (player.MainJob ~= 'RDM') then
-		gcdisplay.CreateToggle('LockTP', false)
-	end
+    if (player.MainJob ~= 'RDM') then
+        gcdisplay.CreateToggle('LockTP', false)
+    end
 end
 
 function gcinclude.DoCommands(args)
@@ -206,18 +206,18 @@ function gcinclude.DoCommands(args)
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub')
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Head')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Neck')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear1')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear2')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Body')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Hands')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring1')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring2')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Back')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Waist')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Legs')
-			AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Feet')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Head')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Neck')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear1')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear2')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Body')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Hands')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring1')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring2')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Back')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Waist')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Legs')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Feet')
         end
     end
 end
