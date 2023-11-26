@@ -18,8 +18,8 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Body = 'Scp. Harness +1',
         Hands = 'Ochiudo\'s Kote',
-        Ring1 = 'Victory Ring',
-        Ring2 = 'Victory Ring',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
         Back = 'Amemet Mantle +1',
         Waist = 'Brown Belt',
         Legs = 'Republic Subligar',
@@ -59,13 +59,16 @@ local sets = {
     },
 
     WS = {
+        Neck = 'Spike Necklace',
+        Ring1 = 'Victory Ring',
+        Ring2 = 'Victory Ring',
         Feet = 'Fed. Kyahan',
     },
 }
 profile.Sets = sets
 
 profile.SetMacroBook = function()
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 2')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
