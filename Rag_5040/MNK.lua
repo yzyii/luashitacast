@@ -84,23 +84,13 @@ profile.HandleAbility = function()
     if (action.Name == 'Focus' and temple_crown ~= '') then
         gFunc.Equip('Head', temple_crown)
     end
-end
 
-profile.HandleItem = function()
-    -- You may add logic here
-end
-
-profile.HandlePreshot = function()
-    -- You may add logic here
-end
-
-profile.HandleMidshot = function()
-    -- You may add logic here
+    -- TODO Jump Logic
 end
 
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
-    -- You may add logic here
+    -- TODO WS Logic
 end
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
@@ -108,33 +98,28 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 profile.OnLoad = function()
     gcmelee.Load()
     profile.SetMacroBook()
-    -- You may add logic here
 end
 
 profile.OnUnload = function()
     gcmelee.Unload()
-    -- You may add logic here
 end
 
 profile.HandleCommand = function(args)
     gcmelee.DoCommands(args)
-    -- You may add logic here
 end
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
-    -- You may add logic here
+    -- TODO Counter Kampfer and SJ Logic
     gcmelee.DoDefaultOverride()
 end
 
 profile.HandlePrecast = function()
     gcmelee.DoPrecast(fastCastValue)
-    -- You may add logic here
 end
 
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
-    -- You may add logic here
 end
 
 return profile
