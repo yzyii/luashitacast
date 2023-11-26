@@ -77,7 +77,7 @@ profile.HandleWeaponskill = function()
     local action = gData.GetAction()
     if (action.Name == 'Evisceration') then
         gFunc.EquipSet(sets.WS_Evisceration)
-    elseif (action.Name == 'Shark Bite')
+    elseif (action.Name == 'Shark Bite') then
         gFunc.EquipSet(sets.WS_SharkBite)
     end
 end
@@ -87,19 +87,26 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 profile.OnLoad = function()
     gcmelee.Load()
     profile.SetMacroBook()
-    profile.CreateTHToggle:once(2)
-end
 
-profile.CreateTHToggle() = function()
-    gcdisplay.CreateToggle('TH', false)
+    gcinclude.SetAlias(T{'th'})
+    local function createToggle()
+        gcdisplay.CreateToggle('TH', false)
+    end
+    createToggle:once(2)
 end
 
 profile.OnUnload = function()
     gcmelee.Unload()
+    gcinclude.ClearAlias(T{'th'})
 end
 
 profile.HandleCommand = function(args)
-    gcmelee.DoCommands(args)
+    if (args[1] == 'th') then
+        gcdisplay.AdvanceToggle('TH')
+        gcinclude.Message('TH', gcdisplay.GetToggle('TH'))
+    else
+        gcmelee.DoCommands(args)
+    end
 end
 
 profile.HandleDefault = function()

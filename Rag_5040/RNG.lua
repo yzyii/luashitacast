@@ -92,7 +92,7 @@ profile.HandleWeaponskill = function()
     local action = gData.GetAction()
     if (action.Name == 'Slug Shot') then
         gFunc.EquipSet(sets.WS_SlugShot)
-    elseif (action.Name == 'Coronach')
+    elseif (action.Name == 'Coronach') then
         gFunc.EquipSet(sets.WS_Coronach)
     end
 end
