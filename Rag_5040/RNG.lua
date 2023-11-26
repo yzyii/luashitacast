@@ -43,6 +43,7 @@ local sets = {
     Shadowbind = {},
     Camouflage = {},
     Sharpshot = {},
+    UnlimitedShot = {},
 
     WS = {},
     WS_SlugShot = {},
@@ -78,6 +79,11 @@ end
 
 profile.HandleMidshot = function()
     gFunc.EquipSet(sets.Ranged_ACC)
+
+    local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
+    if (unlimitedShot == 1) then
+        gFunc.EquipSet(sets.UnlimitedShot)
+    end
 end
 
 profile.HandleWeaponskill = function()
