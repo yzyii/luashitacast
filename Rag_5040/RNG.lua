@@ -33,21 +33,20 @@ local sets = {
     TP_LowAcc = {},
     TP_HighAcc = {},
 
+    Ranged_ACC = {},
+    Ranged_ATK = {},
+
+    EnmityDown = {},
+
+    Barrage = {},
+    Scavenge = {},
+    Shadowbind = {},
+    Camouflage = {},
+    Sharpshot = {},
+
     WS = {},
-    WS_Evisceration = {},
-    WS_SharkBite = {},
-
-    SA = {},
-    TA = {},
-    SATA = {},
-
-    Flee = {},
-    Steal = {},
-    Mug = {},
-
-    TH = {},
-
-    Ranged = {},
+    WS_SlugShot = {},
+    WS_Coronach = {},
 }
 profile.Sets = sets
 
@@ -57,28 +56,38 @@ profile.SetMacroBook = function()
 end
 
 profile.HandleAbility = function()
+    gFunc.EquipSet(sets.EnmityDown)
+
     local action = gData.GetAction()
-    if (action.Name == 'Flee') then
-        gFunc.EquipSet(sets.Flee)
-    elseif (action.Name == 'Steal') then
-        gFunc.EquipSet(sets.Steal)
-    elseif (action.Name == 'Mug') then
-        gFunc.EquipSet(sets.Mug)
+    if (action.Name == 'Scavenge') then
+        gFunc.EquipSet(sets.Scavenge)
+    elseif (action.Name == 'Shadowbind') then
+        gFunc.EquipSet(sets.Shadowbind)
+    elseif (action.Name == 'Camouflage') then
+        gFunc.EquipSet(sets.Camouflage)
+    elseif (action.Name == 'Sharpshot') then
+        gFunc.EquipSet(sets.Sharpshot)
+    elseif (action.Name == 'Eagle Eye Shot') then
+        gFunc.EquipSet(sets.Ranged_ATK)
     end
 end
 
+profile.HandlePreshot = function()
+    -- You may add logic here
+end
+
 profile.HandleMidshot = function()
-    gFunc.EquipSet(sets.Ranged)
+    gFunc.EquipSet(sets.Ranged_ACC)
 end
 
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
     local action = gData.GetAction()
-    if (action.Name == 'Evisceration') then
-        gFunc.EquipSet(sets.WS_Evisceration)
-    elseif (action.Name == 'Shark Bite')
-        gFunc.EquipSet(sets.WS_SharkBite)
+    if (action.Name == 'Slug Shot') then
+        gFunc.EquipSet(sets.WS_SlugShot)
+    elseif (action.Name == 'Coronach')
+        gFunc.EquipSet(sets.WS_Coronach)
     end
 end
 
@@ -87,11 +96,6 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 profile.OnLoad = function()
     gcmelee.Load()
     profile.SetMacroBook()
-    profile.CreateTHToggle:once(2)
-end
-
-profile.CreateTHToggle() = function()
-    gcdisplay.CreateToggle('TH', false)
 end
 
 profile.OnUnload = function()
@@ -106,19 +110,9 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
     gcmelee.DoDefaultOverride()
 
-    if (gcdisplay.GetToggle('TH')) then
-        gFunc.EquipSet(sets.TH)
-    end
-
-    local sa = gData.GetBuffCount('Sneak Attack')
-    local ta = gData.GetBuffCount('Trick Attack')
-
-    if (sa == 1) and (ta == 1) then
-        gFunc.EquipSet(sets.SATA)
-    elseif (sa == 1) then
-        gFunc.EquipSet(sets.SA)
-    elseif (ta == 1) then
-        gFunc.EquipSet(sets.TA)
+    local barrage = gData.GetBuffCount('Barrage')
+    if (barrage == 1) then
+        gFunc.EquipSet(sets.Barrage)
     end
 end
 
