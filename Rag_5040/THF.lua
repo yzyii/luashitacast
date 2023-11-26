@@ -45,6 +45,8 @@ local sets = {
     Steal = {},
     Mug = {},
 
+    TH = {},
+
     Ranged = {},
 }
 profile.Sets = sets
@@ -85,6 +87,11 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 profile.OnLoad = function()
     gcmelee.Load()
     profile.SetMacroBook()
+    profile.CreateTHToggle:once(2)
+end
+
+profile.CreateTHToggle() = function()
+    gcdisplay.CreateToggle('TH', false)
 end
 
 profile.OnUnload = function()
@@ -98,6 +105,10 @@ end
 profile.HandleDefault = function()
     gcmelee.DoDefault()
     gcmelee.DoDefaultOverride()
+
+    if (gcdisplay.GetToggle('TH')) then
+        gFunc.EquipSet(sets.TH)
+    end
 
     local sa = gData.GetBuffCount('Sneak Attack');
     local ta = gData.GetBuffCount('Trick Attack');
