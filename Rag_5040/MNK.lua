@@ -10,9 +10,9 @@ local temple_crown = 'Temple Crown'
 
 local sets = {
     Idle = {
-        Main = 'Spartan Cesti',
+        Main = 'Wagh Baghnakhs',
         Ammo = 'Tiphia Sting',
-        Head = 'Temple Crown',
+        Head = 'Optical Hat',
         Neck = 'Peacock Amulet',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -52,13 +52,51 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
+        Head = 'Temple Crown',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Scp. Harness +1',
+        Hands = 'Ochiudo\'s Kote',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Amemet Mantle +1',
+        Waist = 'Brown Belt',
+        Legs = 'Republic Subligar',
         Feet = 'Fuma Kyahan',
     },
     TP_HighAcc = {
+        Head = 'Optical Hat',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Scp. Harness +1',
+        Hands = 'Ochiudo\'s Kote',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Amemet Mantle +1',
+        Waist = 'Brown Belt',
+        Legs = 'Republic Subligar',
+        Feet = 'Fuma Kyahan',
+    },
+
+    TP_Focus = {
+        Head = 'Temple Crown',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Scp. Harness +1',
+        Hands = 'Ochiudo\'s Kote',
+        Ring1 = 'Victory Ring',
+        Ring2 = 'Victory Ring',
+        Back = 'Amemet Mantle +1',
+        Waist = 'Brown Belt',
+        Legs = 'Republic Subligar',
         Feet = 'Fuma Kyahan',
     },
 
     WS = {
+        Head = 'Temple Crown',
         Neck = 'Spike Necklace',
         Ring1 = 'Victory Ring',
         Ring2 = 'Victory Ring',
@@ -113,6 +151,12 @@ end
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
+
+    local focus = gData.GetBuffCount('Focus')
+    if (focus == 1 and gcdisplay.IdleSet == 'LowAcc') then
+        gFunc.EquipSet(sets.TP_Focus)
+    end
+
     -- TODO Counter Kampfer and SJ Logic
     gcmelee.DoDefaultOverride()
 end

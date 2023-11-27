@@ -15,10 +15,34 @@ local minstrels_earring = true
 local minstrels_earring_slot = 'Ear2'
 
 local sets = {
-    Idle = {},
+    Idle = {
+        Main = 'Terra\'s Staff',
+        Range = 'Mythic Harp +1',
+        Neck = 'Checkered Scarf',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Vermillion Cloak',
+        Hands = 'Errant Cuffs',
+        Ring1 = 'Ether Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Umbra Cape',
+        Waist = 'Scouter\'s Rope',
+        Legs = 'Mahatma Slops',
+        Feet = 'Errant Pigaches',
+    },
     IdleALT = {},
     IdleMaxMP = {},
-    Resting = {},
+    Resting = {
+        Main = 'Dark Staff',
+        Head = 'Dls. Chapeau +1',
+        Neck = 'Checkered Scarf',
+        Ear1 = 'Relaxing Earring',
+        Ear2 = 'Magnetic Earring',
+        Body = 'Errant Hpl.',
+        Back = 'Errant Cape',
+        Waist = 'Duelist\'s Belt',
+        Legs = 'Baron\'s Slops',
+    },
     Town = {},
     Movement = {},
 
@@ -34,8 +58,36 @@ local sets = {
     WaterRes = {},
     Evasion = {},
 
-    Precast = {},
+    Precast = {
+        Main = 'Tutelary',
+        Range = 'Mythic Harp +1',
+        Head = 'Walkure Mask',
+        Neck = 'Shield Pendant',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Sha\'ir Manteel',
+        Hands = 'Dusk Gloves',
+        Ring1 = 'Minstrel\'s Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Gigant Mantle',
+        Waist = 'Powerful Rope',
+        Legs = 'Mahatma Slops',
+        Feet = 'Dance Shoes',
+    },
     Casting = { -- Default Casting Equipment when using Idle sets
+        Main = 'Terra\'s Staff',
+        Range = 'Mythic Harp +1',
+        Neck = 'Checkered Scarf',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Vermillion Cloak',
+        Hands = 'Errant Cuffs',
+        Ring1 = 'Ether Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Umbra Cape',
+        Waist = 'Scouter\'s Rope',
+        Legs = 'Mahatma Slops',
+        Feet = 'Errant Pigaches',
     },
     SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
     },
@@ -45,13 +97,82 @@ local sets = {
     Sing_Buff = {
     },
     Sing_Debuff = {
+        Main = 'Terra\'s Staff',
+        Head = 'Demon Helm',
+        Neck = 'Wind Torque',
+        Ear1 = 'Singing Earring',
+        Ear2 = 'Melody Earring +1',
+        Body = 'Errant Hpl.',
+        Hands = 'Choral Cuffs',
+        Ring1 = 'Angel\'s Ring',
+        Ring2 = 'Angel\'s Ring',
+        Back = 'Jester\'s Cape +1',
+        Waist = 'Corsette +1',
+        Legs = 'Mahatma Slops',
+        Feet = 'Dance Shoes',
     },
 
-    Cure = {},
+    Sing_Default = {
+        Range = 'Crumhorn +1',
+    },
+    Sing_PaeonMazurka = {
+        Range = 'Ebony Harp',
+    },
+    Sing_Valor = {
+        Range = 'Cornette +1',
+    },
+    Sing_March = {
+        Range = 'Faerie Piccolo'
+    },
+    Sing_Madrigal = {
+        Range = 'Traversiere +1'
+    },
+    Sing_Elegy = {
+        Range = 'Horn +1'
+        Main = 'Terra\'s Staff'
+    },
+    Sing_Lullaby = {
+        Range = 'Mary\'s Horn'
+        Main = 'Apollo\'s Staff'
+    },
+    Sing_FinaleRequiem = {
+        Range = 'Flute +1'
+        Main = 'Apollo\'s Staff'
+    },
+
+    Cure = {
+        Main = 'Apollo\'s Staff',
+        Head = 'Crow Beret',
+        Neck = 'Justice Badge',
+        Ear1 = 'Melody Earring',
+        Ear2 = 'Melody Earring +1',
+        Body = 'Crow Jupon',
+        Hands = 'Crow Bracers',
+        Ring1 = 'Sapphire Ring',
+        Ring2 = 'Sapphire Ring',
+        Back = 'Mist Silk Cape',
+        Waist = 'Friar\'s Rope',
+        Legs = 'Crow Hose',
+        Feet = 'Crow Gaiters',
+    },
     Cursna = {},
 
     Enhancing = {},
-    Stoneskin = {},
+    Stoneskin = {
+        Main = 'Apollo\'s Staff',
+        Head = 'Demon Helm',
+        Neck = 'Wind Torque',
+        Ear1 = 'Singing Earring',
+        Ear2 = 'Melody Earring +1',
+        Body = 'Errant Hpl.',
+        Hands = 'Zealot\'s Mitts',
+        Ring1 = 'Sapphire Ring',
+        Ring2 = 'Sapphire Ring',
+        Back = 'Mist Silk Cape',
+        Waist = 'Swift Belt',
+        Legs = 'Mahatma Slops',
+        Feet = 'Errant Pigaches',
+    },
     Spikes = {},
 
     Enfeebling = {},
@@ -76,7 +197,7 @@ profile.Sets = sets
 
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 9')
 end
 
 --[[
@@ -116,33 +237,30 @@ end
 profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP)
 
+    local action = gData.GetAction()
     if (action.Type == 'Bard Song') then
         if string.match(action.Name, 'Valor') then
-            gFunc.Equip('Range', 'Cornette +1');
-            gFunc.EquipSet(sets.Sing_Buff);
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_Valor)
         elseif string.match(action.Name, 'March') then
-            gFunc.Equip('Range', 'Faerie Piccolo');
-            gFunc.EquipSet(sets.Sing_Buff);
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_March)
         elseif string.match(action.Name, 'Madrigal') then
-            gFunc.Equip('Range', 'Traversiere +1');
-            gFunc.EquipSet(sets.Sing_Buff);
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_Madrigal)
         elseif string.match(action.Name, 'Elegy') then
-            gFunc.Equip('Range', 'Horn +1');
-            gFunc.Equip('Main', 'Terra\'s Staff');
-            gFunc.EquipSet(sets.Sing_Debuff);
-        elseif (string.match(action.Name, 'Lullaby')) or (action.Name == 'Magic Finale') or (string.match(action.Name, 'Requiem')) then
-            if (action.Name == 'Horde Lullaby' or action.Name == 'Foe Lullaby') then
-                gFunc.Equip('Main', 'Apollo\'s Staff');
-                gFunc.Equip('Range', 'Mary\'s Horn');
-            else
-                gFunc.Equip('Main', 'Apollo\'s Staff');
-                gFunc.Equip('Range', 'Flute +1');
-            end
-            gFunc.EquipSet(sets.Sing_Debuff);
+            gFunc.EquipSet(sets.Sing_Debuff)
+            gFunc.EquipSet(sets.Sing_Elegy)
+        elseif string.match(action.Name, 'Lullaby') then
+            gFunc.EquipSet(sets.Sing_Debuff)
+            gFunc.EquipSet(sets.Sing_Lullaby)
+        elseif (action.Name == 'Magic Finale') or (string.match(action.Name, 'Requiem') then
+            gFunc.EquipSet(sets.Sing_Debuff)
+            gFunc.EquipSet(sets.Sing_FinaleRequiem)
         elseif (action.Name == 'Chocobo Mazurka') or (string.match(action.Name, 'Paeon')) then
-            gFunc.Equip('Range', 'Ebony Harp');
+            gFunc.EquipSet(sets.Sing_Paeon)
         else
-            gFunc.Equip('Range', 'Crumhorn +1');
+            gFunc.EquipSet(sets.Sing_Default)
         end
     end
 end

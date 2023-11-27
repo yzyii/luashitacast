@@ -24,12 +24,13 @@ Shura Haidate 500
 Shura Sune-Ate 250
 Panther mask +1 1500
 
-Wyvern Earring 1500
-Pilferer\'s Earring 50
 Dune boots
 Paisley Scarf
 Sanative Earring
 Melee Cape
+
+Wyvern Earring 1500
+Pilferer\'s Earring 50
 
 **MNK Counter**
 Cross Counters 2800
@@ -53,7 +54,6 @@ MNK Back - Buburimu, Qufim
 MNK Feet -1 - Qufim
 MNK Hands -1 - Buburimu
 
-SMN Body - Beaucedine, Tavnazia
 MNK Legs - Sandoria, Buburimu
 
 # Pipe Dream Wish List
