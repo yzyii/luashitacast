@@ -122,22 +122,22 @@ local sets = {
         Range = 'Cornette +1',
     },
     Sing_March = {
-        Range = 'Faerie Piccolo'
+        Range = 'Faerie Piccolo',
     },
     Sing_Madrigal = {
-        Range = 'Traversiere +1'
+        Range = 'Traversiere +1',
     },
     Sing_Elegy = {
-        Range = 'Horn +1'
-        Main = 'Terra\'s Staff'
+        Range = 'Horn +1',
+        Main = 'Terra\'s Staff',
     },
     Sing_Lullaby = {
-        Range = 'Mary\'s Horn'
-        Main = 'Apollo\'s Staff'
+        Range = 'Mary\'s Horn',
+        Main = 'Apollo\'s Staff',
     },
     Sing_FinaleRequiem = {
-        Range = 'Flute +1'
-        Main = 'Apollo\'s Staff'
+        Range = 'Flute +1',
+        Main = 'Apollo\'s Staff',
     },
 
     Cure = {
