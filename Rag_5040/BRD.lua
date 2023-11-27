@@ -254,10 +254,10 @@ profile.HandleMidcast = function()
         elseif string.match(action.Name, 'Lullaby') then
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_Lullaby)
-        elseif (action.Name == 'Magic Finale') or (string.match(action.Name, 'Requiem') then
+        elseif (action.Name == 'Magic Finale') or string.match(action.Name, 'Requiem') then
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_FinaleRequiem)
-        elseif (action.Name == 'Chocobo Mazurka') or (string.match(action.Name, 'Paeon')) then
+        elseif (action.Name == 'Chocobo Mazurka') or string.match(action.Name, 'Paeon') then
             gFunc.EquipSet(sets.Sing_Paeon)
         else
             gFunc.EquipSet(sets.Sing_Default)
