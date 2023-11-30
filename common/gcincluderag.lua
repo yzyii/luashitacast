@@ -128,13 +128,12 @@ function gcinclude.SetVariables()
     gcdisplay.CreateToggle('Kite', false)
     gcdisplay.CreateToggle('Lock', false)
 
-    local player = gData.GetPlayer()
-
     local function loadNoTPLock()
+        local player = gData.GetPlayer()
         if (not NoTPLockJobs:contains(player.MainJob)) then
             if (player.MainJob ~= 'PLD') then
                 gcdisplay.CreateToggle('LockTP', true)
-                gcinclude.LockWeapon:once(5)
+                gcinclude.LockWeapon()
             else
                 gcdisplay.CreateToggle('LockTP', false)
             end

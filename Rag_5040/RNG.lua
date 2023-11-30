@@ -80,6 +80,11 @@ end
 profile.HandleMidshot = function()
     gFunc.EquipSet(sets.Ranged_ACC)
 
+    local barrage = gData.GetBuffCount('Barrage')
+    if (barrage == 1) then
+        gFunc.EquipSet(sets.Barrage)
+    end
+
     local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
     if (unlimitedShot == 1) then
         gFunc.EquipSet(sets.UnlimitedShot)
@@ -115,11 +120,6 @@ end
 profile.HandleDefault = function()
     gcmelee.DoDefault()
     gcmelee.DoDefaultOverride()
-
-    local barrage = gData.GetBuffCount('Barrage')
-    if (barrage == 1) then
-        gFunc.EquipSet(sets.Barrage)
-    end
 end
 
 profile.HandlePrecast = function()
