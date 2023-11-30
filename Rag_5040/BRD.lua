@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear
+local fastCastValue = 0.37 -- 0% from gear
 
 local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
@@ -94,7 +94,6 @@ local sets = {
     Sing_Buff = {
     },
     Sing_Debuff = {
-        Main = 'Terra\'s Staff',
         Head = 'Demon Helm',
         Neck = 'Wind Torque',
         Ear1 = 'Singing Earring',
@@ -110,7 +109,7 @@ local sets = {
     },
 
     Sing_Default = {
-        Range = 'Crumhorn +1',
+        Range = 'Cornette +1',
     },
     Sing_PaeonMazurka = {
         Range = 'Ebony Harp',
@@ -138,18 +137,15 @@ local sets = {
     },
     Sing_Carol = {
         Range = 'Crumhorn +1',
-        Main = 'Terra\'s Staff',
     },
     Sing_Mambo = {
-        Range = 'Crumhorn +1',
-        Main = 'Terra\'s Staff',
+        Range = 'Gemshorn +1',
     },
     Sing_Prelude = {
-        Range = 'Crumhorn +1',
-        Main = 'Terra\'s Staff',
+        Range = 'Angel\'s Flute +1',
     },
     Sing_Threnody = {
-        Range = 'Crumhorn +1',
+        Range = 'Piccolo +1',
     },
 
     Cure = {
@@ -287,7 +283,7 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_FinaleRequiem)
         elseif (action.Name == 'Chocobo Mazurka') or string.match(action.Name, 'Paeon') then
-            gFunc.EquipSet(sets.Sing_Paeon)
+            gFunc.EquipSet(sets.Sing_PaeonMazurka)
         else
             gFunc.EquipSet(sets.Sing_Default)
         end
