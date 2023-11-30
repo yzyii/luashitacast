@@ -114,14 +114,14 @@ local sets = {
     Sing_PaeonMazurka = {
         Range = 'Ebony Harp',
     },
-    Sing_Valor = {
+    Sing_Minuet = {
         Range = 'Cornette +1',
     },
     Sing_March = {
         Range = 'Faerie Piccolo',
     },
     Sing_Madrigal = {
-        Range = 'Traversiere +1',
+        Range = 'Traversiere +2',
     },
     Sing_Elegy = {
         Range = 'Horn +1',
@@ -252,9 +252,9 @@ profile.HandleMidcast = function()
 
     local action = gData.GetAction()
     if (action.Type == 'Bard Song') then
-        if string.match(action.Name, 'Valor') then
+        if string.match(action.Name, 'Minuet') then
             gFunc.EquipSet(sets.Sing_Buff)
-            gFunc.EquipSet(sets.Sing_Valor)
+            gFunc.EquipSet(sets.Sing_Minuet)
         elseif string.match(action.Name, 'March') then
             gFunc.EquipSet(sets.Sing_Buff)
             gFunc.EquipSet(sets.Sing_March)
