@@ -23,20 +23,19 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
         Waist = 'Scouter\'s Rope',
-        Legs = 'Mahatma Slops',
+        Legs = 'Dst. Subligar +1',
         Feet = 'Errant Pigaches',
     },
     IdleALT = {},
     IdleMaxMP = {},
     Resting = {
         Main = 'Dark Staff',
-        Head = 'Dls. Chapeau +1',
+        Head = 'Crow Beret',
         Neck = 'Checkered Scarf',
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
         Body = 'Errant Hpl.',
         Back = 'Errant Cape',
-        Waist = 'Duelist\'s Belt',
         Legs = 'Baron\'s Slops',
     },
     Town = {},
@@ -54,12 +53,13 @@ local sets = {
     WaterRes = {},
     Evasion = {},
 
-    Precast = {
+    Precast = {},
+    Precast_Songs = {
         Main = 'Tutelary',
         Range = 'Mythic Harp +1',
         Head = 'Walkure Mask',
         Neck = 'Shield Pendant',
-        Ear1 = 'Merman\'s Earring',
+        Ear1 = 'Physical Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Sha\'ir Manteel',
         Hands = 'Dusk Gloves',
@@ -67,23 +67,24 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Back = 'Gigant Mantle',
         Waist = 'Powerful Rope',
-        Legs = 'Mahatma Slops',
-        Feet = 'Dance Shoes',
+        Legs = 'Custom Slacks',
+        Feet = 'Custom M Boots',
     },
     Casting = { -- Default Casting Equipment when using Idle sets
         Main = 'Terra\'s Staff',
         Range = 'Mythic Harp +1',
-        Neck = 'Checkered Scarf',
+        Neck = 'Evasion Torque',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Vermillion Cloak',
-        Hands = 'Errant Cuffs',
+        Head = 'Darksteel Cap +1',
+        Body = 'Crow Jupon',
+        Hands = 'Crow Bracers',
         Ring1 = 'Ether Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
-        Waist = 'Scouter\'s Rope',
-        Legs = 'Mahatma Slops',
-        Feet = 'Errant Pigaches',
+        Waist = 'Powerful Rope',
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Crow Gaiters',
     },
     SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
     },
@@ -135,19 +136,34 @@ local sets = {
         Range = 'Flute +1',
         Main = 'Apollo\'s Staff',
     },
+    Sing_Carol = {
+        Range = 'Crumhorn +1',
+        Main = 'Terra\'s Staff',
+    },
+    Sing_Mambo = {
+        Range = 'Crumhorn +1',
+        Main = 'Terra\'s Staff',
+    },
+    Sing_Prelude = {
+        Range = 'Crumhorn +1',
+        Main = 'Terra\'s Staff',
+    },
+    Sing_Threnody = {
+        Range = 'Crumhorn +1',
+    },
 
     Cure = {
         Main = 'Apollo\'s Staff',
         Head = 'Crow Beret',
         Neck = 'Justice Badge',
-        Ear1 = 'Melody Earring',
-        Ear2 = 'Melody Earring +1',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
         Body = 'Crow Jupon',
         Hands = 'Crow Bracers',
         Ring1 = 'Sapphire Ring',
         Ring2 = 'Sapphire Ring',
         Back = 'Mist Silk Cape',
-        Waist = 'Friar\'s Rope',
+        Waist = 'Powerful Rope',
         Legs = 'Crow Hose',
         Feet = 'Crow Gaiters',
     },
@@ -228,6 +244,11 @@ end
 
 profile.HandlePrecast = function()
     gcmage.DoPrecast(fastCastValue)
+
+    local action = gData.GetAction()
+    if (action.Type == 'Bard Song') then
+        gFunc.EquipSet(sets.Precast_Songs)
+    end
 end
 
 profile.HandleMidcast = function()
@@ -244,6 +265,18 @@ profile.HandleMidcast = function()
         elseif string.match(action.Name, 'Madrigal') then
             gFunc.EquipSet(sets.Sing_Buff)
             gFunc.EquipSet(sets.Sing_Madrigal)
+        elseif string.match(action.Name, 'Carol') then
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_Carol)
+        elseif string.match(action.Name, 'Mambo') then
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_Mambo)
+        elseif string.match(action.Name, 'Prelude') then
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_Prelude)
+        elseif string.match(action.Name, 'Threnody') then
+            gFunc.EquipSet(sets.Sing_Debuff)
+            gFunc.EquipSet(sets.Sing_Threnody)
         elseif string.match(action.Name, 'Elegy') then
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_Elegy)
