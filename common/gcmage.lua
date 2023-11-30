@@ -318,12 +318,16 @@ end
 function gcmage.SetupMidcastDelay(fastCastValue)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
+	local castTime = action.CastTime
     if (player.SubJob == "RDM") then
-         fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
+        fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
+	if (action.Type == 'Bard Song' and string.match(action.Name, 'Prelude')) then
+	    castTime = 8000
+	end
     local minimumBuffer = 0.25 -- Can be lowered to 0.1 if you want
     local packetDelay = 0.25 -- Change this to 0.4 if you do not use PacketFlow
-    local castDelay = ((action.CastTime * (1 - fastCastValue)) / 1000) - minimumBuffer
+    local castDelay = ((castTime * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
     end
