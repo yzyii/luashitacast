@@ -37,6 +37,8 @@ local sets = {
 
     Charm = {},
     Reward = {},
+    Ready_Physical = {},
+    Ready_Magic = {},
 }
 profile.Sets = sets
 
@@ -148,6 +150,9 @@ profile.HandleCommand = function(args)
     end
 end
 
+local PetMagicAttack = T{'Gloom Spray','Fireball','Acid Spray','Molting Plumage','Cursed Sphere','Nectarous Deluge','Charged Whisker','Nepenthic Plunge'}
+local PetMagicAccuracy = T{'Toxic Spit','Acid Spray','Leaf Dagger','Venom Spray','Venom','Dark Spore','Sandblast','Dust Cloud','Stink Bomb','Slug Family','Intimidate','Gloeosuccus','Spider Web','Filamented Hold','Choke Breath','Blaster','Snow Cloud','Roar','Palsy Pollen','Spore','Brain Crush','Choke Breath','Silence Gas','Chaotic Eye','Sheep Song','Soporific','Predatory Glare','Sudden Lunge','Numbing Noise','Jettatura','Bubble Shower','Spoil','Scream','Noisome Powder','Acid Mist','Rhinowrecker','Swooping Frenzy','Venom Shower','Corrosive Ooze','Spiral Spin','Infrasonics','Hi-Freq Field','Purulent Ooze','Foul Waters','Sandpit','Infected Leech','Pestilent Plume'}
+
 profile.HandleDefault = function()
     gcmelee.DoDefault()
     gcmelee.DoDefaultOverride()
@@ -156,6 +161,14 @@ profile.HandleDefault = function()
     if (player.MP < 50 and (player.SubJob == 'WHM' or player.SubJob == 'BLM' or player.SubJob == 'RDM')) then
         if (gaudy_harness) then
             gFunc.Equip('Body', 'Gaudy Harness')
+        end
+    end
+
+    local petAction = gData.GetPetAction()
+    if (petAction ~= nil) then
+        gFunc.EquipSet(sets.Ready_Physical)
+        if (PetMagicAttack:contains(petAction) or PetMagicAccuracy:contains(petAction)) then
+            gFunc.EquipSet(sets.Ready_Magic)
         end
     end
 end
