@@ -21,7 +21,6 @@ local sets = {
         Main = 'Destroyers',
         -- Ammo = 'Tiphia Sting',
         Head = 'Temple Crown',
-        -- Head = 'Melee crown',
         Neck = 'Peacock Amulet',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
