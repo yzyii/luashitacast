@@ -8,7 +8,7 @@ These luas were originally written for RDM and BLM however all jobs can use the 
 - e.g. All melee jobs are able to type /tp to switch between Low Accuracy and High Accuracy TP sets.
 - e.g. All mage jobs are able to type /mode to switch between Magic Potency vs Magic Accuracy sets.
 
-A WHM and WAR template is also provided that demonstrates an example for mage and melee jobs that could be copied and renamed to the correct job.
+The only jobs currently not fully implemented are WAR, WHM, and DRK however implementation of these should be trivial. WHM probably actually already works out of the box but is simply untested.
 
 # How to Use
 
@@ -164,7 +164,7 @@ If you enable the Shorterhand setting in gcincluderag.lua, additional /commands 
 /s  - Sneak
 /ss - Stoneskin
 /b  - Blink
-/a  - Aquaveil
+/av - Aquaveil
 ```
 
 ## Additional Notes
