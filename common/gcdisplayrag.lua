@@ -33,6 +33,17 @@ function gcdisplay.AdvanceCycle(name)
     end
 end
 
+function gcdisplay.SetCycleIndex(name, index)
+    local ctable = Cycles[name]
+    if (type(ctable) ~= 'table') then
+        return
+    end
+
+    if (index <= #ctable.Array) then
+        ctable.Index = index
+    end
+end
+
 function gcdisplay.AdvanceToggle(name)
     if (type(Toggles[name]) ~= 'boolean') then
         return

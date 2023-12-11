@@ -257,6 +257,7 @@ end
 
 profile.OnUnload = function()
     gcmage.Unload()
+    gcinclude.ClearAlias(T{'sballad','shorde'})
 end
 
 profile.HandleCommand = function(args)

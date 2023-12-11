@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear
+local fastCastValue = 0.02 -- 2% from gear
 
 -- Replace these with '' if you do not have them
 local temple_gaiters = 'Temple Gaiters'
@@ -57,6 +57,7 @@ local sets = {
         Ring2 = 'Sattva Ring',
         -- Back = 'Boxer\'s Mantle'
         Legs = 'Temple Hose',
+        Feet = 'Melee Gaiters',
     },
     MDT = { -- Shell IV provides 23% MDT
     },
@@ -68,8 +69,21 @@ local sets = {
     WaterRes = {},
     Evasion = {},
 
-    Precast = {},
+    Precast = {
+        Ear1 = 'Loquac. Earring',
+    },
     SIRD = { -- 102% to Cap
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Magnetic Earring', -- 8
+        Body = 'Dst. Harness +1',
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Jelly Ring',
+        Ring2 = 'Sattva Ring',
+        -- Back = 'Boxer\'s Mantle'
+        -- Waist = 'Heko Obi +1', -- 8
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Mountain Gaiters', -- 5
     },
     Haste = { -- Used for Utsusemi cooldown
         Head = 'Panther mask +1',
