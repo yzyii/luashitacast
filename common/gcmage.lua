@@ -51,6 +51,7 @@ local tp_fencers_ring = true
 local tp_fencers_ring_slot = 'Ring1'
 
 local carbuncle_mitts = true
+local summoners_doublet = 'Summoner\'s Dblt.'
 
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_diabolos_earrings = false
@@ -298,6 +299,10 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
             if (lastSummoningElement == 'Light') then
                 if (carbuncle_mitts) then
                     gFunc.Equip('Hands', 'Carbuncle Mitts') -- Who cares about Light Spirit anyway
+                end
+            elseif (lastSummoningElement == environment.DayElement) then
+                if (summoners_doublet ~= '') then
+                    gFunc.Equip('Body', summoners_doublet)
                 end
             end
         end

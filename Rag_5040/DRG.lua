@@ -130,11 +130,6 @@ end
 
 profile.HandlePrecast = function()
     gcmelee.DoPrecast(fastCastValue)
-
-    local player = gData.GetPlayer()
-    if (player.SubJob == 'WHM' or player.SubJob == 'RDM') then
-        gFunc.EquipSet(sets.MaxHP)
-    end
 end
 
 profile.HandleMidcast = function()
