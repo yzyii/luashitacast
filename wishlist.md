@@ -20,7 +20,6 @@ Dark Earring
 Dusk Ledelsens
 
 **RDM / MNK**
-Brutal Earring
 Forager's Mantle
 
 **MNK**

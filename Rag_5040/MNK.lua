@@ -19,7 +19,7 @@ local kampfer_earring_slot = 'Ear2'
 local sets = {
     Idle = {
         Main = 'Destroyers',
-        -- Ammo = 'Tiphia Sting',
+        Ammo = 'Tiphia Sting',
         Head = 'Temple Crown',
         Neck = 'Peacock Amulet',
         Ear1 = 'Merman\'s Earring',
@@ -83,8 +83,7 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
-        Head = 'Panther Mask',
-        -- Head = 'Panther Mask +1',
+        Head = 'Panther Mask +1',
         Neck = 'Peacock Amulet',
         Ear1 = 'Merman\'s Earring',
         -- Ear1 = 'Brutal Earring',
@@ -144,13 +143,11 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
     },
     WS_DragonKick = {
-        -- Ring2 = 'Toreador\'s Ring',
         Legs = 'Byakko\'s Haidate',
         -- Feet = 'Dune boots',
     },
     WS_HowlingFist = {
         Head = 'Genbu\'s Kabuto',
-        -- Ring2 = 'Toreador\'s Ring',
     },
 
     Jump = {
