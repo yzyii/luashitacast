@@ -36,13 +36,13 @@ local sets = {
     },
     IdleALT = {},
     Resting = {
-        Head = 'Temple Crown',
+        Head = 'Raven Beret',
         -- Neck = 'Paisley Scarf',
         -- Ear2 = 'Sanative Earring',
         Body = 'Melee Cyclas',
-        Hands = 'Melee Gloves',
+        Hands = 'Dst. Mittens +1',
         -- Back = 'Melee Cape'
-        Feet = 'Melee Gaiters',
+        Feet = 'Dst. Leggings +1',
     },
     Town = {},
     Movement = {},
