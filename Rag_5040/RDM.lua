@@ -328,8 +328,7 @@ local sets = {
     },
 
     Enhancing = {
-        Main = 'Mythic Wand +1',
-        Sub = 'Nms. Shield +1',
+        Main = 'Terra\'s Staff',
         Ammo = 'Hedgehog Bomb',
         Head = 'Wlk. Chapeau +1',
         Neck = 'Enhancing Torque',
@@ -349,8 +348,7 @@ local sets = {
         -- Neck = 'Stone Gorget',
     },
     Spikes = {
-        Main = 'Mythic Wand +1',
-        Sub = 'Nms. Shield +1',
+        Main = 'Aquilo\'s Staff',
         Ammo = 'Phtm. Tathlum',
         Head = 'Wlk. Chapeau +1',
         Neck = 'Enhancing Torque',
