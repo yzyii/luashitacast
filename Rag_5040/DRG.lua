@@ -23,7 +23,7 @@ local sets = {
     WaterRes = {},
     Evasion = {},
 
-    Precast = {}, -- Not Required for DRG. This can be left empty.
+    Precast = {},
     SIRD = { -- 102% to Cap
     },
     Haste = { -- Used for Utsusemi cooldown
@@ -38,6 +38,7 @@ local sets = {
 
     MaxHP = {},
     BreathBonus = {},
+    Stoneskin = {},
 
     ['Ancient Circle'] = {},
     ['Jump'] = {},
@@ -76,8 +77,6 @@ local WeaponSkills = T{
     'Penta Thrust',
     'Geirskogul',
 }
-
-local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Stoneskin' }
 
 profile.HandleAbility = function()
     local action = gData.GetAction()
@@ -131,17 +130,24 @@ end
 
 profile.HandlePrecast = function()
     gcmelee.DoPrecast(fastCastValue)
-    local action = gData.GetAction()
-    if (SurvivalSpells:contains(action.Name)) then
+
+    local player = gData.GetPlayer()
+    if (player.SubJob == 'WHM' or player.SubJob == 'RDM') then
         gFunc.EquipSet(sets.MaxHP)
     end
 end
 
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
+
+    local player = gData.GetPlayer()
     local action = gData.GetAction()
-    if (SurvivalSpells:contains(action.Name)) then
-        gFunc.EquipSet(sets.MaxHP)
+    if (player.SubJob == 'WHM' or player.SubJob == 'RDM') then
+        if (action.Name == 'Stoneskin') then
+            gFunc.EquipSet(sets.Stoneskin)
+        else
+            gFunc.EquipSet(sets.MaxHP)
+        end
     end
 end
 
