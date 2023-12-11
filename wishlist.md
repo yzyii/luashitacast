@@ -1,51 +1,34 @@
 # Stuff To Get Right Now
 Benign Necklace
+Guarding Torque
+Shura Sune-Ate
+Kampfer Earring
+
 Soil Gorget
 Thunder Gorget
 Asuran Fists
 Destroyers Unlock
 
 # Stuff To Get
-**RDM**
+**RDM / BLM **
 Nashira Serawheels
 Nashira Manteel
 Stone Gorget
 Dark Earring
+
+** RDM **
 Dusk Ledelsens
 
 **RDM / MNK**
 Brutal Earring
 Forager's Mantle
-Flame Ring 350
 
 **MNK**
-Black Belt 3000
-Shura Sune-Ate 250
-
+Flame Ring
+Black Belt
 Dune boots
 Paisley Scarf
 Sanative Earring
-Melee Cape
-
-**MNK Counter**
-Cross Counters 2800
-Arh. Jinpachi +1 650
-Arhat\'s Gi +1 550
-Rasetsu Tekko +1 800
-Avenger\'s Earring 400
-Guarding Torque
-Boxer\'s Mantle
-
-**MNK Chakra / Chi Blast**
-Soil Ring
-Medieval Collar
-Robust Earring
-Mst. Sitabaki +1
-Mrc.Cpt. Belt
-
-
-
-
 
 # Relic
 BLM Head -1 - Valkurm
@@ -53,7 +36,11 @@ MNK Back - Buburimu, Qufim
 MNK Feet -1 - Qufim
 MNK Hands -1 - Buburimu
 
-# Pipe Dream Wish List
+
+
+
+
+# Wish List
 **LOL**
 Herald's Gaiters
 Defending Ring
@@ -71,7 +58,7 @@ Blue Cotehardie +1
 Jeweled Collar +1
 
 **RDM Hate**
-Resentment Cape
+Toreadors Cape
 Eris Earring +1
 Heroic Boots +1
 
@@ -90,6 +77,20 @@ Zenith Pumps +1
 **MNK**
 Faith Torque
 Bandomusha Kote
+
+**MNK Counter**
+Cross Counters 2500
+Arh. Jinpachi +1 650
+Arhat\'s Gi +1 550
+Rasetsu Tekko +1 800
+Avenger\'s Earring 400
+Boxer\'s Mantle
+
+**MNK Chakra / Chi Blast**
+Soil Ring
+Robust Earring
+Mst. Sitabaki +1
+Reverend Sash
 
 **Healing Skill** - This doesn't work on any private server for Cursna
 Prelatic Pole

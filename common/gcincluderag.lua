@@ -76,7 +76,7 @@ local OverrideNameTable = {
     ['eva'] = 'Evasion'
 }
 
-local NoTPLockJobs = T{ 'RDM','BLM','SMN','BRD' }
+local NoTPLockJobs = T{ 'RDM','BLM','WHM','SMN','BRD' }
 
 local lastIdleSet = 'Normal'
 
@@ -98,7 +98,7 @@ function gcinclude.Load(isMage)
         AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
     end
     if (load_stylist) then
-        loadStylist:once(5)
+        loadStylist:once(3)
     end
 end
 
@@ -131,12 +131,7 @@ function gcinclude.SetVariables()
     local function loadNoTPLock()
         local player = gData.GetPlayer()
         if (not NoTPLockJobs:contains(player.MainJob)) then
-            if (player.MainJob ~= 'PLD') then
-                gcdisplay.CreateToggle('LockTP', true)
-                gcinclude.LockWeapon()
-            else
-                gcdisplay.CreateToggle('LockTP', false)
-            end
+			gcdisplay.CreateToggle('LockTP', false)
         end
     end
     loadNoTPLock:once(2)
