@@ -60,6 +60,25 @@ profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
+local JobAbilities = T{
+    'Jump',
+    'High Jump',
+    'Super Jump',
+    'Spirit Link',
+    'Call Wyvern',
+    'Ancient Circle',
+}
+
+local WeaponSkills = T{
+    'Impulse Drive',
+    'Wheeling Thrust',
+    'Skewer',
+    'Penta Thrust',
+    'Geirskogul',
+}
+
+local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Stoneskin' }
+
 profile.HandleAbility = function()
     local action = gData.GetAction()
     if (action.Name == "Steady Wing") then
@@ -112,12 +131,18 @@ end
 
 profile.HandlePrecast = function()
     gcmelee.DoPrecast(fastCastValue)
-    gFunc.EquipSet(sets.MaxHP)
+    local action = gData.GetAction()
+    if (SurvivalSpells:contains(action.Name)) then
+        gFunc.EquipSet(sets.MaxHP)
+    end
 end
 
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
-    gFunc.EquipSet(sets.MaxHP)
+    local action = gData.GetAction()
+    if (SurvivalSpells:contains(action.Name)) then
+        gFunc.EquipSet(sets.MaxHP)
+    end
 end
 
 return profile
