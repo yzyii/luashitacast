@@ -1,6 +1,7 @@
 local profile = {}
 
-local fastCastValue = 0.37 -- 0% from gear
+local fastCastValue = 0.00
+local fastCastValueSong = 0.37
 
 local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
@@ -17,7 +18,7 @@ local sets = {
         Neck = 'Checkered Scarf',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Vermillion Cloak',
+        Body = 'Royal Cloak',
         Hands = 'Errant Cuffs',
         Ring1 = 'Ether Ring',
         Ring2 = 'Sattva Ring',
@@ -26,10 +27,25 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Errant Pigaches',
     },
-    IdleALT = {},
+    IdleALT = {
+        Main = 'Terra\'s Staff',
+        Range = 'Mythic Harp +1',
+        Neck = 'Checkered Scarf',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Head = 'Crow Beret',
+        Body = 'Crow Jupon',
+        Hands = 'Errant Cuffs',
+        Ring1 = 'Ether Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Umbra Cape',
+        Waist = 'Scouter\'s Rope',
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Errant Pigaches',
+    },
     IdleMaxMP = {},
     Resting = {
-        Main = 'Dark Staff',
+        Main = 'Pluto\'s Staff',
         Head = 'Crow Beret',
         Neck = 'Checkered Scarf',
         Ear1 = 'Relaxing Earring',
@@ -89,15 +105,19 @@ local sets = {
     SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
+        Body = 'Sha\'ir Manteel',
+        Hands = 'Dusk Gloves',
     },
 
     Sing_Buff = {
+        Main = 'Chanter\'s Staff',
     },
     Sing_Debuff = {
         Head = 'Demon Helm',
         Neck = 'Wind Torque',
         Ear1 = 'Singing Earring',
         Ear2 = 'Melody Earring +1',
+        Head = 'Bard\'s Roundlet',
         Body = 'Errant Hpl.',
         Hands = 'Choral Cuffs',
         Ring1 = 'Angel\'s Ring',
@@ -109,10 +129,13 @@ local sets = {
     },
 
     Sing_Default = {
-        Range = 'Cornette +1',
+        Range = 'Mythic Harp +1',
+    },
+    Sing_Default_Wind = {
+        Range = 'Horn +1',
     },
     Sing_PaeonMazurka = {
-        Range = 'Ebony Harp',
+        Range = 'Ebony Harp +1',
     },
     Sing_Minuet = {
         Range = 'Cornette +1',
@@ -131,8 +154,12 @@ local sets = {
         Range = 'Mary\'s Horn',
         Main = 'Apollo\'s Staff',
     },
+    Sing_HordeLullaby = {
+        Range = 'Nursemaid\'s Harp',
+        Main = 'Apollo\'s Staff',
+    },
     Sing_FinaleRequiem = {
-        Range = 'Flute +1',
+        Range = 'Hamelin Flute',
         Main = 'Apollo\'s Staff',
     },
     Sing_Carol = {
@@ -168,7 +195,7 @@ local sets = {
     Enhancing = {},
     Stoneskin = {
         Main = 'Apollo\'s Staff',
-        Head = 'Demon Helm',
+        Head = 'Bard\'s Roundlet',
         Neck = 'Wind Torque',
         Ear1 = 'Singing Earring',
         Ear2 = 'Melody Earring +1',
@@ -219,6 +246,13 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua')
 profile.OnLoad = function()
     gcmage.Load()
     profile.SetMacroBook()
+
+    gcinclude.SetAlias(T{'sballad','shorde'})
+    local function createToggle()
+        gcdisplay.CreateToggle('SmallBallad', false)
+        gcdisplay.CreateToggle('SmallHorde', false)
+    end
+    createToggle:once(2)
 end
 
 profile.OnUnload = function()
@@ -226,7 +260,15 @@ profile.OnUnload = function()
 end
 
 profile.HandleCommand = function(args)
-    gcmage.DoCommands(args)
+    if (args[1] == 'sballad') then
+        gcdisplay.AdvanceToggle('SmallBallad')
+        gcinclude.Message('SmallBallad', gcdisplay.GetToggle('SmallBallad'))
+    elseif (args[1] == 'shorde') then
+        gcdisplay.AdvanceToggle('SmallHorde')
+        gcinclude.Message('SmallHorde', gcdisplay.GetToggle('SmallHorde'))
+    else
+        gcmelee.DoCommands(args)
+    end
 end
 
 profile.HandleDefault = function()
@@ -239,11 +281,12 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast(fastCastValue)
-
     local action = gData.GetAction()
     if (action.Type == 'Bard Song') then
         gFunc.EquipSet(sets.Precast_Songs)
+        gcmage.DoPrecast(fastCastValueSong)
+    else
+        gcmage.DoPrecast(fastCastValue)
     end
 end
 
@@ -276,9 +319,20 @@ profile.HandleMidcast = function()
         elseif string.match(action.Name, 'Elegy') then
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_Elegy)
-        elseif string.match(action.Name, 'Lullaby') then
+        elseif string.match(action.Name, 'Foe Lullaby') then
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_Lullaby)
+        elseif string.match(action.Name, 'Horde Lullaby') then
+            gFunc.EquipSet(sets.Sing_Debuff)
+            gFunc.EquipSet(sets.Sing_HordeLullaby)
+            if (gcdisplay.GetToggle('SmallHorde')) then
+                gFunc.EquipSet(sets.Sing_Lullaby)
+            end
+        elseif string.match(action.Name, 'Ballad') then
+            gFunc.EquipSet(sets.Sing_Default)
+            if (gcdisplay.GetToggle('SmallBallad')) then
+                gFunc.EquipSet(sets.Sing_Default_Wind)
+            end
         elseif (action.Name == 'Magic Finale') or string.match(action.Name, 'Requiem') then
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_FinaleRequiem)

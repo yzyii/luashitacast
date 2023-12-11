@@ -228,7 +228,7 @@ local sets = {
         Feet = 'Mahatma Pigaches', -- 3
     },
     Cursna = {
-        -- Back = 'Altruistic Cape',
+        Back = 'Altruistic Cape',
     },
 
     Enhancing = {
@@ -273,8 +273,7 @@ local sets = {
         Neck = 'Enfeebling Torque',
         Ear2 = 'Enfeebling Earring',
         Body = 'Wizard\'s Coat',
-        Back = 'Prism Cape',
-        -- Back = 'Altruistic Cape',
+        Back = 'Altruistic Cape',
         Legs = 'Igqira Lappas',
     },
     EnfeeblingMND = {

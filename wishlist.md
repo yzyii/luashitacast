@@ -2,14 +2,16 @@
 Benign Necklace
 Soil Gorget
 Thunder Gorget
+Asuran Fists
+Destroyers Unlock
 
 # Stuff To Get
 **RDM**
 Nashira Serawheels
 Nashira Manteel
-Dusk Ledelsens
-Altruistic Cape
 Stone Gorget
+Dark Earring
+Dusk Ledelsens
 
 **RDM / MNK**
 Brutal Earring
@@ -17,20 +19,13 @@ Forager's Mantle
 Flame Ring 350
 
 **MNK**
-Fuma Suneate 700
 Black Belt 3000
-Shr.Znr.Kabuto 400
-Shura Haidate 500
 Shura Sune-Ate 250
-Panther mask +1 1500
 
 Dune boots
 Paisley Scarf
 Sanative Earring
 Melee Cape
-
-Wyvern Earring 1500
-Pilferer\'s Earring 50
 
 **MNK Counter**
 Cross Counters 2800
@@ -48,13 +43,15 @@ Robust Earring
 Mst. Sitabaki +1
 Mrc.Cpt. Belt
 
+
+
+
+
 # Relic
 BLM Head -1 - Valkurm
 MNK Back - Buburimu, Qufim
 MNK Feet -1 - Qufim
 MNK Hands -1 - Buburimu
-
-MNK Legs - Sandoria, Buburimu
 
 # Pipe Dream Wish List
 **LOL**
@@ -65,7 +62,6 @@ Dalmatica
 Sonic Belt
 
 **RDM**
-Dark Earring
 Mahatma Cape
 Dusk Gear +1
 Black Ribbon

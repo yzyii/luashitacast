@@ -8,11 +8,14 @@ local temple_gloves = 'Temple Gloves'
 local temple_cyclas = 'Temple Cyclas'
 local temple_crown = 'Temple Crown'
 
+local melee_gaiters = 'Melee Gaiters'
+local melee_gloves = 'Melee Gloves'
+
 local sets = {
     Idle = {
         Main = 'Wagh Baghnakhs',
         Ammo = 'Tiphia Sting',
-        Head = 'Optical Hat',
+        Head = 'Panther Mask',
         Neck = 'Peacock Amulet',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -22,11 +25,13 @@ local sets = {
         Ring2 = 'Toreador\'s Ring',
         Back = 'Amemet Mantle +1',
         Waist = 'Brown Belt',
-        Legs = 'Republic Subligar',
+        Legs = 'Temple Hose',
         Feet = 'Fuma Kyahan',
     },
     IdleALT = {},
-    Resting = {},
+    Resting = {
+        Body = 'Melee Cyclas',
+	},
     Town = {},
     Movement = {},
 
@@ -52,7 +57,7 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
-        Head = 'Temple Crown',
+        Head = 'Panther Mask',
         Neck = 'Peacock Amulet',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -62,7 +67,7 @@ local sets = {
         Ring2 = 'Toreador\'s Ring',
         Back = 'Amemet Mantle +1',
         Waist = 'Brown Belt',
-        Legs = 'Republic Subligar',
+        Legs = 'Temple Hose',
         Feet = 'Fuma Kyahan',
     },
     TP_HighAcc = {
@@ -76,28 +81,28 @@ local sets = {
         Ring2 = 'Toreador\'s Ring',
         Back = 'Amemet Mantle +1',
         Waist = 'Brown Belt',
-        Legs = 'Republic Subligar',
+        Legs = 'Temple Hose',
         Feet = 'Fuma Kyahan',
     },
 
     TP_Focus = {
-        Head = 'Temple Crown',
+        Head = 'Panther Mask',
         Neck = 'Peacock Amulet',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Scp. Harness +1',
         Hands = 'Ochiudo\'s Kote',
-        Ring1 = 'Victory Ring',
-        Ring2 = 'Victory Ring',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
         Back = 'Amemet Mantle +1',
         Waist = 'Brown Belt',
-        Legs = 'Republic Subligar',
+        Legs = 'Temple Hose',
         Feet = 'Fuma Kyahan',
     },
 
     WS = {
-        Head = 'Temple Crown',
-        Neck = 'Spike Necklace',
+        Head = 'Optical Hat',
+        Neck = 'Peacock Amulet',
         Ring1 = 'Victory Ring',
         Ring2 = 'Victory Ring',
         Feet = 'Fed. Kyahan',
@@ -124,6 +129,12 @@ profile.HandleAbility = function()
     end
     if (action.Name == 'Focus' and temple_crown ~= '') then
         gFunc.Equip('Head', temple_crown)
+    end
+    if (action.Name == 'Counterstance' and melee_gaiters ~= '') then
+        gFunc.Equip('Feet', melee_gaiters)
+    end
+    if (action.Name == 'Chakra' and melee_gloves ~= '') then
+        gFunc.Equip('Hands', melee_gloves)
     end
 
     -- TODO Jump Logic

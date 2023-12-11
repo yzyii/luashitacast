@@ -324,7 +324,7 @@ local sets = {
     Cursna = {
         Body = 'Duelist\'s Tabard',
         Legs = 'Warlock\'s Tights',
-        -- Back = 'Altruistic Cape',
+        Back = 'Altruistic Cape',
     },
 
     Enhancing = {
@@ -394,7 +394,7 @@ local sets = {
     },
     EnfeeblingACC = {
         Ear2 = 'Enfeebling Earring',
-        -- Back = 'Altruistic Cape',
+        Back = 'Altruistic Cape',
         -- Legs = 'Nashira Serawheels',
     },
 
@@ -507,11 +507,9 @@ local sets = {
         -- Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         -- Body = 'Nashira Manteel', -- 3
-        Body = 'Scp. Harness +1',
         Hands = 'Dusk Gloves', -- 3
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
-        Back = 'Amemet Mantle +1',
         -- Back = 'Forager's Mantle',
         Waist = 'Swift Belt', -- 4
         -- Legs = 'Nashira Serawheels', -- 2
@@ -519,12 +517,11 @@ local sets = {
         -- Feet = 'Dusk Ledelsens', -- 2
     },
     TP_NIN = {
-        Main = 'Sapara of Trials',
-        Sub = 'Joyeuse',
+        Main = 'Joyeuse',
+        Sub = 'Genbu\'s Shield',
     },
     WS = {
         Head = 'Optical Hat',
-        -- Body = 'Blue Cotehardie',
         Waist = 'Warwolf Belt',
         Legs = 'Duelist\'s Tights',
     },
@@ -560,6 +557,7 @@ local sets = {
         Feet = 'Mannequin Pumps',
     },
     LockSet2 = {
+	    Main = 'Aquilo\'s Staff',
         Ammo = 'Phtm. Tathlum',
         Head = 'Wlk. Chapeau +1',
         Neck = 'Elemental Torque',
