@@ -113,14 +113,13 @@ end
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
+    gcmelee.DoDefaultOverride()
 
     local petAction = gData.GetPetAction()
     if (petAction ~= nil) then
         gFunc.EquipSet(sets.BreathBonus)
         return
     end
-
-    gcmelee.DoDefaultOverride()
 
     local player = gData.GetPlayer()
     if (ethereal_earring == true and (player.SubJob == 'WHM' or player.SubJob == 'RDM')) then
