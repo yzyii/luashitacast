@@ -70,37 +70,58 @@ profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
---[[
---------------------------------
-Everything below can be ignored.
---------------------------------
-]]
+profile.HandleAbility = function()
+    -- You may add logic here
+end
+
+profile.HandleItem = function()
+    -- You may add logic here
+end
+
+profile.HandlePreshot = function()
+    -- You may add logic here
+end
+
+profile.HandleMidshot = function()
+    -- You may add logic here
+end
+
+profile.HandleWeaponskill = function()
+    gFunc.EquipSet(sets.WS)
+    -- You may add logic here
+end
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.OnLoad = function()
     gcmage.Load()
     profile.SetMacroBook()
+    -- You may add logic here
 end
 
 profile.OnUnload = function()
     gcmage.Unload()
+    -- You may add logic here
 end
 
 profile.HandleCommand = function(args)
     gcmage.DoCommands(args)
+    -- You may add logic here
 end
 
 profile.HandleDefault = function()
     gcmage.DoDefault(ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP)
+    -- You may add logic here
 end
 
 profile.HandlePrecast = function()
     gcmage.DoPrecast(fastCastValue)
+    -- You may add logic here
 end
 
 profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP)
+    -- You may add logic here
 end
 
 return profile
