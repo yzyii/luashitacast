@@ -268,7 +268,7 @@ profile.HandleCommand = function(args)
         gcdisplay.AdvanceToggle('SmallHorde')
         gcinclude.Message('SmallHorde', gcdisplay.GetToggle('SmallHorde'))
     else
-        gcmelee.DoCommands(args)
+        gcmage.DoCommands(args)
     end
 end
 
