@@ -140,7 +140,6 @@ profile.OnUnload = function()
 end
 
 profile.HandleCommand = function(args)
-    gcmelee.DoCommands(args)
     if (pets:contains(args[1])) then
         gcdisplay.SetCycleIndex('Pet', PetTable2[args[1]])
         gcinclude.Message('Pet', gcdisplay.GetCycle('Pet'))
