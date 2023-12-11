@@ -67,7 +67,8 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
                   type /setmp without a number to display the current value.
 /oor            - forces use of Master Caster Bracelets / Republican Gold Medal.
                   you can toggle this on when you are in areas where these are active.
-/mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and Accuracy sets.
+/mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and 
+                  Accuracy sets.
 ```
 
 # Additional Commands for All Melee Jobs:
@@ -75,7 +76,7 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 /tpset /tp - toggles TP set between a LowAcc and HighAcc set.
              this will be overwritten if you have a DT or Fire Resistance etc. set enabled.
              this is disabled for PLD in favour of just always using Idle sets instead.
- /dps      - used for PLD to turn on DPS LowAcc / HighAcc TP set behaviour.
+/dps       - used for PLD to turn on DPS LowAcc / HighAcc TP set behaviour.
 ```
 
 ## Additional Commands for RDM:
@@ -98,6 +99,28 @@ A WHM and WAR template is also provided that demonstrates an example for mage an
 /yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring.
           This is on by default.
 /mb     - equips gear that gives bonuses to magic burst damage when casting nukes.
+```
+
+## Additional Commands for BRD:
+```
+[Regular Toggles]
+/shorde  - switches to using the default foe lullaby set to reduce AOE in favour of Acc.
+/sballad - switches to using a wind instrument over string to reduce AOE.
+```
+
+## Additional Commands for BST:
+```
+[Regular Toggles]
+/sheep  - All of these toggles set what jug Call Beast will use.
+/lizard
+/crab
+/tiger
+```
+
+## Additional Commands for THF:
+```
+[Regular Toggles]
+/th - Forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
 ```
 
 ## Keybinds:
