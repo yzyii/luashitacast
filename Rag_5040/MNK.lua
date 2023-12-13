@@ -99,14 +99,13 @@ local sets = {
     TP_LowAcc = {
         Head = 'Panther Mask +1',
         Neck = 'Peacock Amulet',
-        Ear1 = 'Merman\'s Earring',
-        -- Ear1 = 'Brutal Earring',
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
         Hands = 'Melee Gloves',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
-        -- Back = 'Forager\'s Mantle',
+        Back = 'Forager\'s Mantle',
         Waist = 'Brown Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Fuma Sune-Ate',
@@ -114,15 +113,14 @@ local sets = {
     TP_HighAcc = {
         Head = 'Optical Hat',
         Neck = 'Peacock Amulet',
-        Ear1 = 'Merman\'s Earring',
-        -- Ear1 = 'Brutal Earring',
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
         -- Body = 'Shura Togi',
         Hands = 'Melee Gloves',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
-        -- Back = 'Forager\'s Mantle',
+        Back = 'Forager\'s Mantle',
         Waist = 'Brown Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Fuma Sune-Ate',
@@ -131,8 +129,7 @@ local sets = {
     TP_Focus = {
         Ring1 = 'Ruby Ring',
         -- Ring1 = 'Flame Ring',
-        Ring2 = 'Toreador\'s Ring',
-        -- Ring2 = 'Flame Ring',
+        Ring2 = 'Flame Ring',
     },
 
     SJ_DRG = {
@@ -148,7 +145,7 @@ local sets = {
         -- Neck = 'Thunder Gorget',
         Ring1 = 'Ruby Ring',
         -- Ring1 = 'Flame Ring',
-        -- Ring2 = 'Flame Ring',
+        Ring2 = 'Flame Ring',
         Legs = 'Shura Haidate',
         -- Feet = 'Shura Sune-Ate',
     },
@@ -166,7 +163,7 @@ local sets = {
 
     Jump = {
         Head = 'Genbu\'s Kabuto',
-        -- Ear1 = 'Brutal Earring',
+        Ear1 = 'Brutal Earring',
         -- Ear2 = 'Robust Earring',
         Ring1 = 'Topaz Ring',
         Ring2 = 'Toreador\'s Ring',
@@ -247,6 +244,7 @@ profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
     local action = gData.GetAction()
+    local player = gData.GetPlayer()
 
     if (action.Name == 'Asuran Fists') then
         gFunc.EquipSet(sets.WS_AsuranFists)
@@ -305,6 +303,9 @@ profile.HandleDefault = function()
     end
 
     gcmelee.DoDefaultOverride()
+
+    -- TODO: Hundred Fists Handling
+	-- TODO: Hundred Fists + Soul Voice Burn Mode
 end
 
 profile.HandlePrecast = function()
