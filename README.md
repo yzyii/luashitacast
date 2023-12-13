@@ -1,6 +1,6 @@
 # Rag's LuAshitacast
 
-A combined LuAshitacast for HorizonXI that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
+A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
 These luas were originally written for RDM and BLM however all jobs can use the corresponding templates to automatically implement functionality that is shared across all jobs.
 
@@ -9,6 +9,8 @@ These luas were originally written for RDM and BLM however all jobs can use the 
 - e.g. All mage jobs are able to type /mode to switch between Magic Potency vs Magic Accuracy sets.
 
 The only jobs currently not fully implemented are WAR, WHM, and DRK however implementation of these should be trivial. WHM probably actually already works out of the box but is simply untested.
+
+These luas were designed to be used in HorizonXI and therefore features such as automatically using opo-opo necklace when asleep or automatically cancelling shadows for Utsusemi: Ichi are not included.
 
 # How to Use
 
