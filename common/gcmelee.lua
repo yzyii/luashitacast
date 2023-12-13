@@ -1,6 +1,3 @@
-local tp_diabolos_earring = false
-local tp_diabolos_earring_slot = 'Ear2'
-
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -69,12 +66,6 @@ function gcmelee.DoDefault()
     local environment = gData.GetEnvironment()
 
     gcinclude.DoDefaultIdle()
-
-    if (player.MainJob ~= 'PLD' and player.MainJob ~= 'NIN') then
-        if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
-            gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
-        end
-    end
 
     if (isDPS) then
         if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then

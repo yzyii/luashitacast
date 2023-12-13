@@ -17,7 +17,7 @@ The only jobs currently not fully implemented are WAR, WHM, and DRK however impl
 - Note that **config** in the path. there may not be a luashitacast directory there if you have never used it before - just create one.
 - Rename the Rag_5040 folder to [Your_Character_Name]_[Your_Character_ID]
 - Edit Equipment Sets in [JOB].lua. You may delete any of these if you're only looking for a lua one of the jobs.
-- Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua (or gcmelee.lua for melee jobs).
+- Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua if you are using these luas for mage jobs.
 - Turn On / Off Additional Commands and Logging in gcincluderag.lua.
 - The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the value in gcmage.lua (or gcmelee.lua for melee jobs).
 

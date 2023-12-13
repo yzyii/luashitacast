@@ -51,6 +51,8 @@ local tp_fencers_ring = true
 local tp_fencers_ring_slot = 'Ring1'
 
 local carbuncle_mitts = true
+
+-- Replace these with '' if you do not have them
 local summoners_doublet = 'Summoner\'s Dblt.'
 local summoners_horn = 'Summoner\'s Horn'
 
