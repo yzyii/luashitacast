@@ -46,7 +46,16 @@ local sets = {
     Town = {},
     Movement = {},
 
-    DT = {
+    DT = {},
+    MDT = { -- Shell IV provides 23% MDT
+    },
+    FireRes = {},
+    IceRes = {},
+    LightningRes = {},
+    EarthRes = {},
+    WindRes = {},
+    WaterRes = {},
+    Evasion = {
         -- Main = 'Cross-Counters',
         -- Head = 'Arh. Jinpachi +1',
         -- Neck = 'Guarding Torque',
@@ -59,15 +68,6 @@ local sets = {
         Legs = 'Temple Hose',
         Feet = 'Melee Gaiters',
     },
-    MDT = { -- Shell IV provides 23% MDT
-    },
-    FireRes = {},
-    IceRes = {},
-    LightningRes = {},
-    EarthRes = {},
-    WindRes = {},
-    WaterRes = {},
-    Evasion = {},
 
     Precast = {
         Ear1 = 'Loquac. Earring',
@@ -92,8 +92,39 @@ local sets = {
         Feet = 'Fuma Sune-Ate',
     },
 
-    LockSet1 = {},
-    LockSet2 = {},
+    LockSet1 = {
+        Head = 'Shr.Znr.Kabuto',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Kirin\'s Osode',
+        Hands = 'Melee Gloves',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Warwolf Belt',
+        -- Waist = 'Black Belt',
+        Legs = 'Shura Haidate',
+        Feet = 'Mountain Gaiters',
+        -- Feet = 'Shura Sune-Ate',
+    },
+    LockSet2 = {
+        Head = 'Shr.Znr.Kabuto',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Kirin\'s Osode',
+        Hands = 'Melee Gloves',
+        Ring1 = 'Ruby Ring',
+        -- Ring1 = 'Flame Ring',
+        Ring2 = 'Flame Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Warwolf Belt',
+        -- Waist = 'Black Belt',
+        Legs = 'Shura Haidate',
+        Feet = 'Mountain Gaiters',
+        -- Feet = 'Shura Sune-Ate',
+    },
     LockSet3 = {},
 
     TP_LowAcc = {
@@ -195,7 +226,7 @@ local sets = {
         -- Back = 'Melee Cape'
         Legs = 'Temple Hose',
         Waist = 'Mrc.Cpt. Belt',
-		-- Waist = 'Reverend Sash',
+        -- Waist = 'Reverend Sash',
         Feet = 'Suzaku\'s Sune-Ate',
     },
 }
@@ -303,9 +334,6 @@ profile.HandleDefault = function()
     end
 
     gcmelee.DoDefaultOverride()
-
-    -- TODO: Hundred Fists Handling
-	-- TODO: Hundred Fists + Soul Voice Burn Mode
 end
 
 profile.HandlePrecast = function()
