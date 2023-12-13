@@ -13,7 +13,8 @@ The only jobs currently not fully implemented are WAR, WHM, and DRK however impl
 # How to Use
 
 - Download the entire directory From Code > Download ZIP.
-- Paste the contents of the luashitacast-master folder into ..\Game\config\addons\luashitacast\
+- Paste the contents of the luashitacast-master folder into ..\Game\**config**\addons\luashitacast\
+- Note that **config** in the path. there may not be a luashitacast directory there if you have never used it before - just create one.
 - Rename the Rag_5040 folder to [Your_Character_Name]_[Your_Character_ID]
 - Edit Equipment Sets in [JOB].lua. You may delete any of these if you're only looking for a lua one of the jobs.
 - Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua (or gcmelee.lua for melee jobs).
