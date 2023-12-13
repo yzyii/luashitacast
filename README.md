@@ -26,6 +26,22 @@ These luas were designed to be used in HorizonXI and therefore features such as 
 - If you define a specific mainhand in regular sets, it will still equip the correct stave if you have them listed in gcmage.lua
 - FallbackSub set is used only if you wish to define a Sub to fall back to using due to not having a complete set of Elemental Staves.
 
+# How to Update
+
+The luas were written so that updating your own copy to later versions that may have newer features should be minimal work. Search for the following marker in your existing files:
+
+```
+--[[
+--------------------------------
+Everything below can be ignored.
+--------------------------------
+]]
+```
+
+Copy everything above this line over to the new files.
+
+This will work 99% of the time unless you have added your own logic and therefore presumably know what you're doing already.
+
 ## Default Commands:
 ```
 [Regular Toggles]

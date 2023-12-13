@@ -1,3 +1,9 @@
+--[[
+--------------------------------
+Everything below can be ignored.
+--------------------------------
+]]
+
 local shorterhand = {}
 
 shorterhand.MageAliasList = T{ 'c4','c3','c2','c','i','s','ss','b','av' }

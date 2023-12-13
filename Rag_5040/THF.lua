@@ -56,6 +56,12 @@ profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
+--[[
+--------------------------------
+Everything below can be ignored.
+--------------------------------
+]]
+
 profile.HandleAbility = function()
     local action = gData.GetAction()
     if (action.Name == 'Flee') then

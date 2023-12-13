@@ -1,3 +1,9 @@
+--[[
+--------------------------------
+Everything below can be ignored.
+--------------------------------
+]]
+
 -- Modified from https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
 local Toggles = {}

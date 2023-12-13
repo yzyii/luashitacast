@@ -47,6 +47,12 @@ profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
+--[[
+--------------------------------
+Everything below can be ignored.
+--------------------------------
+]]
+
 profile.HandleAbility = function()
     local player = gData.GetPlayer()
     local action = gData.GetAction()
