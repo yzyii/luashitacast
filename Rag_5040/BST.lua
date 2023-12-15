@@ -2,6 +2,8 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
 
+local gaudy_harness = true
+
 local sets = {
     Idle = {
         Head = 'Panther Mask +1',
