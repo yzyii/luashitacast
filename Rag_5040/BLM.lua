@@ -272,7 +272,7 @@ local sets = {
         Head = 'Igqira Tiara',
         Neck = 'Enfeebling Torque',
         Ear2 = 'Enfeebling Earring',
-        Body = 'Wizard\'s Coat',
+        Body = 'Wzd. Coat +1',
         Back = 'Altruistic Cape',
         Legs = 'Igqira Lappas',
     },

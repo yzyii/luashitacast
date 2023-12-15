@@ -3,7 +3,20 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear
 
 local sets = {
-    Idle = {},
+    Idle = {
+        Head = 'Panther Mask +1',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Beastly Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Hauberk',
+        Hands = 'Ogre Gloves',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Swift Belt',
+        Legs = 'Ryl.Kgt. Breeches',
+        Feet = 'Thick Sollerets',
+    },
     IdleALT = {},
     Resting = {},
     Town = {},
@@ -24,19 +37,67 @@ local sets = {
     SIRD = { -- 102% to Cap
     },
     Haste = { -- Used for Utsusemi cooldown
+        Head = 'Panther Mask +1',
+        Hands = 'Dusk Gloves',
+        Waist = 'Swift Belt',
     },
 
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
 
-    TP_LowAcc = {},
-    TP_HighAcc = {},
+    TP_LowAcc = {
+        Ammo = 'Tiphia Sting',
+        Head = 'Panther Mask +1',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Beastly Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Hauberk',
+        Hands = 'Dusk Gloves',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Swift Belt',
+        Legs = 'Ryl.Kgt. Breeches',
+        Feet = 'Thick Sollerets',
+    },
+    TP_HighAcc = {
+        Ammo = 'Tiphia Sting',
+        Head = 'Panther Mask +1',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Beastly Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Hauberk',
+        Hands = 'Dusk Gloves',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Swift Belt',
+        Legs = 'Ryl.Kgt. Breeches',
+        Feet = 'Thick Sollerets',
+    },
 
-    WS = {},
+    WS = {
+        Ammo = 'Tiphia Sting',
+        Head = 'Wyvern Helm',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Beastly Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Hauberk',
+        Hands = 'Ogre Gloves',
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Ruby Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Swift Belt',
+        Legs = 'Ryl.Kgt. Breeches',
+        Feet = 'Thick Sollerets',
+    },
 
     Charm = {},
-    Reward = {},
+    Reward = {
+        Hands = 'Ogre Gloves',
+        Feet = 'Beast Gaiters',
+},
     Ready_Physical = {},
     Ready_Magic = {},
 }
@@ -44,14 +105,8 @@ profile.Sets = sets
 
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 6')
 end
-
---[[
---------------------------------
-Everything below can be ignored.
---------------------------------
-]]
 
 profile.HandleAbility = function()
     local player = gData.GetPlayer()
@@ -78,7 +133,7 @@ profile.HandleAbility = function()
         local pet = gcdisplay.GetCycle('Pet')
         if (pet == 'Sheep') then
             if (player.MainJobSync >= 43) then
-                gFunc.Equip('Ammo', 'S.Herbal Broth')
+                gFunc.Equip('Ammo', 'S. Herbal Broth')
             elseif (player.MainJobSync >= 23) then
                 gFunc.Equip('Ammo', 'Herbal Broth')
             else
@@ -106,6 +161,26 @@ profile.HandleAbility = function()
             else
                 print(chat.header('Ashitacast'):append(chat.message('Level too low...')))
             end
+        elseif (pet == 'Rabbit') then
+            if (player.MainJobSync >= 43) then
+                gFunc.Equip('Ammo', 'F. Carrot Broth')
+            else
+                print(chat.header('Ashitacast'):append(chat.message('Level too low...')))
+            end
+        elseif (pet == 'Mandy') then
+            if (player.MainJobSync >= 23) then
+                gFunc.Equip('Ammo', 'Alchemist Water')
+            else
+                print(chat.header('Ashitacast'):append(chat.message('Level too low...')))
+            end
+        elseif (pet == 'Flytrap') then
+            if (player.MainJobSync >= 53) then
+                gFunc.Equip('Ammo', 'N. Grasshopper Broth')
+            elseif (player.MainJobSync >= 28) then
+                gFunc.Equip('Ammo', 'Grasshopper Broth')
+            else
+                print(chat.header('Ashitacast'):append(chat.message('Level too low...')))
+            end
         end
     end
 end
@@ -116,19 +191,25 @@ end
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
-local pets = T{'sheep','lizard','crab','tiger'}
+local pets = T{'sheep','lizard','crab','tiger','rabbit','mandy','flytrap'}
 
 local PetTable1 = {
     [1] = 'Sheep',
     [2] = 'Lizard',
     [3] = 'Crab',
-    [4] = 'Tiger'
+    [4] = 'Tiger',
+    [5] = 'Rabbit',
+    [6] = 'Mandy',
+    [7] = 'Flytrap'
 }
 local PetTable2 = {
     ['sheep'] = 1,
     ['lizard'] = 2,
     ['crab'] = 3,
-    ['tiger'] = 4
+    ['tiger'] = 4,
+    ['rabbit'] = 5,
+    ['mandy'] = 6,
+    ['flytrap'] = 7
 }
 
 profile.OnLoad = function()
