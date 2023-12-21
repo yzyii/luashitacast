@@ -31,7 +31,7 @@ end
 
 function gcmelee.Load()
     gcinclude.SetAlias(AliasList)
-    gcinclude.Load(false)
+    gcinclude.Load()
 end
 
 function gcmelee.Unload()

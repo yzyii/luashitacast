@@ -59,12 +59,14 @@ This will work 99% of the time unless you have added your own logic and therefor
                   i.e. Normal and Alternate / Idle and IdleALT.
 /dt /pdt        - toggles DT set on/off.
 /mdt            - toggles MDT set on/off.
-/iceres /ires   - toggles Ice Resistance set on/off.
-/fireres /fres  - toggles Fire Resistance set on/off.
-/earthres /eres - toggles Earth Resistance set on/off.
-/windres /ares  - toggles Wind Resistance set on/off.
-/waterres /wres - toggles Water Resistance set on/off.
-/lightningres /lres /thunderres /tres - toggles Lightning Resistance set on/off.
+
+/iceres /ires /bres       - toggles Ice Resistance set on/off.
+/fireres /fres            - toggles Fire Resistance set on/off.
+/earthres /eres /sres     - toggles Earth Resistance set on/off.
+/windres /ares /wares     - toggles Wind Resistance set on/off.
+/waterres /wres /wires    - toggles Water Resistance set on/off.
+/lightningres /lres /tres - toggles Lightning Resistance set on/off.
+
 /evasion /eva   - toggles Evasion set on/off.
                   you could also use this set for counter sets on MNK or other special sets.
 
@@ -87,7 +89,7 @@ This will work 99% of the time unless you have added your own logic and therefor
                   type /setmp without a number to display the current value.
 /oor            - forces use of Master Caster Bracelets / Republican Gold Medal.
                   you can toggle this on when you are in areas where these are active.
-/mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and 
+/mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and
                   Accuracy sets.
 ```
 

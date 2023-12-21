@@ -6,10 +6,12 @@ Everything below can be ignored.
 
 local shorterhand = {}
 
-shorterhand.MageAliasList = T{ 'c4','c3','c2','c','i','s','ss','b','av' }
+shorterhand.MageAliasList = T{ 'c4','c3','c2','c','i','s','ss','b','pa','si','po','e','av', }
+shorterhand.BardAliasList = T{ 'ft','it','lt','et','wit','wat','dt','lit', }
 shorterhand.RegularAliasList = T{ 'u1','u2','ichi','ni' }
 
 local isMage = false
+local isBard = false
 
 function shorterhand.DoCommands(args)
     local name = ''
@@ -31,6 +33,30 @@ function shorterhand.DoCommands(args)
         AshitaCore:GetChatManager():QueueCommand(1, '//stoneskin')
     elseif (args[1] == 'b') then
         AshitaCore:GetChatManager():QueueCommand(1, '//blink')
+    elseif (args[1] == 'pa') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//paralyna ' .. name)
+    elseif (args[1] == 'si') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//silena ' .. name)
+    elseif (args[1] == 'po') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//poisona ' .. name)
+    elseif (args[1] == 'e') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//erase ' .. name)
+    elseif (args[1] == 'ft') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//firethrenody ' .. name)
+    elseif (args[1] == 'it') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//icethrenody ' .. name)
+    elseif (args[1] == 'lt') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//lightningthrenody ' .. name)
+    elseif (args[1] == 'et') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//earththrenody ' .. name)
+    elseif (args[1] == 'wit') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//windthrenody ' .. name)
+    elseif (args[1] == 'wat') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//waterthrenody ' .. name)
+    elseif (args[1] == 'dt') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//darkthrenody ' .. name)
+    elseif (args[1] == 'lit') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//lightthrenody ' .. name)
     elseif (args[1] == 'av') then
         AshitaCore:GetChatManager():QueueCommand(1, '//aquaveil')
     elseif (args[1] == 'u1' or args[1] == 'ichi') then
@@ -40,10 +66,14 @@ function shorterhand.DoCommands(args)
     end
 end
 
-function shorterhand.Load(enableMageAliases)
+function shorterhand.Load(enableMageAliases, enableBardAliases)
     isMage = enableMageAliases
     if (isMage) then
         shorterhand.SetAlias(shorterhand.MageAliasList)
+    end
+    isBard = enableBardAliases
+    if (isBard) then
+        shorterhand.SetAlias(shorterhand.BardAliasList)
     end
     shorterhand.SetAlias(shorterhand.RegularAliasList)
 end
@@ -51,6 +81,9 @@ end
 function shorterhand.Unload()
     if (isMage) then
         shorterhand.ClearAlias(shorterhand.MageAliasList)
+    end
+    if (isBard) then
+        shorterhand.ClearAlias(shorterhand.BardAliasList)
     end
     shorterhand.ClearAlias(shorterhand.RegularAliasList)
 end

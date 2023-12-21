@@ -138,7 +138,7 @@ local lastSummoningElement = ''
 function gcmage.Load()
     gcmage.SetVariables:once(2)
     gcinclude.SetAlias(AliasList)
-    gcinclude.Load(true)
+    gcinclude.Load()
 
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')

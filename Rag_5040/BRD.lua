@@ -19,7 +19,7 @@ local sets = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Royal Cloak',
-        Hands = 'Errant Cuffs',
+        Hands = 'Crow Bracers',
         Ring1 = 'Ether Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
@@ -35,7 +35,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Head = 'Crow Beret',
         Body = 'Crow Jupon',
-        Hands = 'Errant Cuffs',
+        Hands = 'Choral Cuffs',
         Ring1 = 'Ether Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
@@ -73,9 +73,9 @@ local sets = {
     Precast_Songs = {
         Main = 'Tutelary',
         Range = 'Mythic Harp +1',
-        Head = 'Walkure Mask',
+        Head = 'Genbu\'s Kabuto',
         Neck = 'Shield Pendant',
-        Ear1 = 'Physical Earring',
+        Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Sha\'ir Manteel',
         Hands = 'Dusk Gloves',
@@ -83,8 +83,8 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Back = 'Gigant Mantle',
         Waist = 'Powerful Rope',
-        Legs = 'Custom Slacks',
-        Feet = 'Custom M Boots',
+        Legs = 'Choral Cannions',
+        Feet = 'Dusk Ledelsens',
     },
     Casting = { -- Default Casting Equipment when using Idle sets
         Main = 'Terra\'s Staff',
@@ -107,13 +107,14 @@ local sets = {
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Body = 'Sha\'ir Manteel',
         Hands = 'Dusk Gloves',
+        Waist = 'Swift Belt',
+        Feet = 'Dusk Ledelsens',
     },
 
     Sing_Buff = {
         Main = 'Chanter\'s Staff',
     },
     Sing_Debuff = {
-        Head = 'Demon Helm',
         Neck = 'Wind Torque',
         Ear1 = 'Singing Earring',
         Ear2 = 'Melody Earring +1',
@@ -173,6 +174,9 @@ local sets = {
     },
     Sing_Threnody = {
         Range = 'Piccolo +1',
+    },
+    Sing_Hymnus = {
+        Range = 'Angel Lyre',
     },
 
     Cure = {
@@ -314,6 +318,9 @@ profile.HandleMidcast = function()
         elseif string.match(action.Name, 'Prelude') then
             gFunc.EquipSet(sets.Sing_Buff)
             gFunc.EquipSet(sets.Sing_Prelude)
+        elseif string.match(action.Name, 'Hymnus') then
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_Hymnus)
         elseif string.match(action.Name, 'Threnody') then
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_Threnody)

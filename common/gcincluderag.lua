@@ -23,6 +23,8 @@ function DoCustom() -- Write your own custom Keybinds or logic in here that will
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F4 /lac fwd mdt')
 end
 
+local MageJobs = T{ 'RDM','BLM','WHM','SMN','PLD','BRD','BST','DRG' } -- Due to how job changing and loading ashitacast works, just enable all shorthand macros for the following jobs
+
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -34,7 +36,7 @@ shorterhand = gFunc.LoadFile('common\\shorterhand.lua')
 
 local gcinclude = {}
 
-local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','lightningres','lres','thunderres','tres','earthres','eres','windres','ares','waterres','wres','evasion','eva' }
+local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','bres','lightningres','lres','tres','earthres','eres','sres','windres','wires','ares','waterres','wares','wres','evasion','eva' }
 local Commands = T{ 'kite','lock','locktp','rebind','lockset','warpme' }
 
 local Towns = T{
@@ -62,16 +64,19 @@ local OverrideNameTable = {
     ['fres'] = 'FireRes',
     ['iceres'] = 'IceRes',
     ['ires'] = 'IceRes',
+    ['bres'] = 'IceRes',
     ['lightningres'] = 'LightningRes',
     ['lres'] = 'LightningRes',
-    ['thunderres'] = 'LightningRes',
     ['tres'] = 'LightningRes',
     ['earthres'] = 'EarthRes',
     ['eres'] = 'EarthRes',
+    ['sres'] = 'EarthRes',
     ['windres'] = 'WindRes',
     ['ares'] = 'WindRes',
+    ['wires'] = 'WindRes',
     ['waterres'] = 'WaterRes',
     ['wres'] = 'WaterRes',
+    ['wares'] = 'WaterRes',
     ['evasion'] = 'Evasion',
     ['eva'] = 'Evasion'
 }
@@ -80,26 +85,37 @@ local NoTPLockJobs = T{ 'RDM','BLM','WHM','SMN','BRD' }
 
 local lastIdleSet = 'Normal'
 
-function gcinclude.Load(isMage)
+function gcinclude.Load()
     gSettings.AllowAddSet = true
     gcinclude.SetVariables()
     gcinclude.SetAlias(Overrides)
     gcinclude.SetAlias(Commands)
 
-    if (use_shorterhand) then
-        shorterhand.Load(isMage)
-    end
-
     DoCustom()
 
-    gcdisplay.Load:once(2)
+    gcdisplay.CreateToggle('Kite', false)
+    gcdisplay.CreateToggle('Lock', false)
 
-    local function loadStylist()
-        AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
+
+    local function delayLoad()
+        local player = gData.GetPlayer()
+        if (not NoTPLockJobs:contains(player.MainJob)) then
+            gcdisplay.CreateToggle('LockTP', false)
+        end
+
+        local isMage = MageJobs:contains(player.MainJob)
+        local isBard = player.MainJob == 'BRD'
+        if (use_shorterhand) then
+            shorterhand.Load(isMage, isBard)
+        end
+
+        gcdisplay.Load()
+
+        if (load_stylist) then
+            AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
+        end
     end
-    if (load_stylist) then
-        loadStylist:once(3)
-    end
+    delayLoad:once(3)
 end
 
 function gcinclude.Unload()
@@ -122,19 +138,6 @@ function gcinclude.ClearAlias(aliasList)
     for _, v in ipairs(aliasList) do
         AshitaCore:GetChatManager():QueueCommand(-1, '/alias del /' .. v)
     end
-end
-
-function gcinclude.SetVariables()
-    gcdisplay.CreateToggle('Kite', false)
-    gcdisplay.CreateToggle('Lock', false)
-
-    local function loadNoTPLock()
-        local player = gData.GetPlayer()
-        if (not NoTPLockJobs:contains(player.MainJob)) then
-			gcdisplay.CreateToggle('LockTP', false)
-        end
-    end
-    loadNoTPLock:once(2)
 end
 
 function gcinclude.LockWeapon()

@@ -61,7 +61,7 @@ local sets = {
         Back = 'Forager\'s Mantle',
         Waist = 'Swift Belt',
         Legs = 'Ryl.Kgt. Breeches',
-        Feet = 'Thick Sollerets',
+        Feet = 'Dusk Ledelsens',
     },
     TP_HighAcc = {
         Ammo = 'Tiphia Sting',
@@ -76,7 +76,7 @@ local sets = {
         Back = 'Forager\'s Mantle',
         Waist = 'Swift Belt',
         Legs = 'Ryl.Kgt. Breeches',
-        Feet = 'Thick Sollerets',
+        Feet = 'Dusk Ledelsens',
     },
 
     WS = {
@@ -90,7 +90,7 @@ local sets = {
         Ring1 = 'Flame Ring',
         Ring2 = 'Ruby Ring',
         Back = 'Forager\'s Mantle',
-        Waist = 'Swift Belt',
+        Waist = 'Warwolf Belt',
         Legs = 'Ryl.Kgt. Breeches',
         Feet = 'Thick Sollerets',
     },
