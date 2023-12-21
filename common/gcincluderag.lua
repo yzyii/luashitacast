@@ -87,7 +87,6 @@ local lastIdleSet = 'Normal'
 
 function gcinclude.Load()
     gSettings.AllowAddSet = true
-    gcinclude.SetVariables()
     gcinclude.SetAlias(Overrides)
     gcinclude.SetAlias(Commands)
 
