@@ -169,7 +169,7 @@ function gcinclude.UnlockNonWeapon()
 end
 
 function gcinclude.DoCommands(args)
-    local isShorterhandAlias = shorterhand.MageAliasList:contains(args[1]) or shorterhand.RegularAliasList:contains(args[1])
+    local isShorterhandAlias = shorterhand.MageAliasList:contains(args[1]) or shorterhand.RegularAliasList:contains(args[1]) or shorterhand.BardAliasList:contains(args[1])
     if (use_shorterhand and isShorterhandAlias) then
         shorterhand.DoCommands(args)
         do return end

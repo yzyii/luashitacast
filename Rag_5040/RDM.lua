@@ -274,7 +274,7 @@ local sets = {
         Hands = 'Dusk Gloves',
         Ring1 = 'Mermaid Ring', -- 2
         Ring2 = 'Sattva Ring', -- 5
-        Back = 'Prism Cape',
+        Back = 'Toreador\'s Cape', -- 4
         Waist = 'Warwolf Belt', -- 3
         Legs = 'Blood Cuisses',
         -- Legs = 'Nashira Serawheels',
@@ -282,15 +282,17 @@ local sets = {
     },
     Cheat_C3HPDown = {},
     Cheat_C4HPDown = {
-        Head = 'Wlk. Chapeau +1',
+        Head = 'Faerie Hairpin',
         Neck = 'Checkered Scarf',
         Hands = 'Zenith Mitts +1',
+        Waist = 'Penitent\'s Rope',
+        Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
         Legs = 'Dst. Subligar +1',
         Feet = 'Mahatma Pigaches',
     },
     Cheat_HPUp = {
-        Ammo = 'Phtm. Tathlum',
+        Ammo = 'Happy Egg',
         Head = 'Baron\'s Chapeau', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
         Ear1 = 'Eris\' Earring', -- 2
@@ -299,7 +301,7 @@ local sets = {
         Hands = 'Blood Fng. Gnt.',
         Ring1 = 'Bomb Queen Ring',
         Ring2 = 'Sattva Ring', -- 5
-        Back = 'Gigant Mantle',
+        Back = 'Toreador\'s Cape', -- 4
         Waist = 'Warwolf Belt', -- 3
         Legs = 'Blood Cuisses',
         Feet = 'Heroic Boots', -- 1
@@ -525,14 +527,16 @@ local sets = {
         Neck = 'Soil Gorget',
     },
     WS_Spirits = {
+        Head = 'Dls. Chapeau +1',
+        Ammo = 'Happy Egg',
         Ring1 = 'Bomb Queen Ring',
         Ring2 = 'Sattva Ring',
         Hands = 'Blood Fng. Gnt.',
         Body = 'Ogre Jerkin +1',
-        Back = 'Gigant Mantle',
+        Back = 'Prism Cape',
         Legs = 'Blood Cuisses',
         Head = 'Dls. Chapeau +1',
-        Feet = 'Blood Greaves',
+        Feet = 'Dusk Ledelsens',
     },
 
     LockSet1 = {
