@@ -215,7 +215,7 @@ local sets = {
     Cure = {
         Ammo = 'Hedgehog Bomb', -- 1
         Head = 'Nashira Turban', -- 5
-        Neck = 'Jeweled Collar',
+        Neck = 'Benign Necklace',
         Ear1 = 'Novia Earring', -- 7
         Ear2 = 'Magnetic Earring',
         Body = 'Mahatma Hpl.', -- 4
@@ -269,7 +269,7 @@ local sets = {
     },
 
     Enfeebling = {
-        Head = 'Igqira Tiara',
+        Head = 'Genie Tiara',
         Neck = 'Enfeebling Torque',
         Ear2 = 'Enfeebling Earring',
         Body = 'Wzd. Coat +1',

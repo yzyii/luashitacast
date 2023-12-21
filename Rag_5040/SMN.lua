@@ -16,8 +16,7 @@ local sets = {
         Back = 'Blue Cape +1',
         Waist = 'Hierarch Belt',
         Legs = 'Summoner\'s Spats',
-        Feet = 'Summoner\'s Pgch.',
-        -- Feet = 'Evoker's Pigaches +1',
+        Feet = 'Evk. Pigaches +1',
     },
     IdleALT = {
         Ear1 = 'Loquac. Earring',
@@ -32,8 +31,7 @@ local sets = {
         Back = 'Blue Cape +1',
         Waist = 'Hierarch Belt',
         Legs = 'Summoner\'s Spats',
-        Feet = 'Summoner\'s Pgch.',
-        -- Feet = 'Evoker's Pigaches +1',
+        Feet = 'Evk. Pigaches +1',
     },
     IdleMaxMP = {
         Ear1 = 'Loquac. Earring',
@@ -48,8 +46,7 @@ local sets = {
         Back = 'Blue Cape +1',
         Waist = 'Hierarch Belt',
         Legs = 'Summoner\'s Spats',
-        Feet = 'Summoner\'s Pgch.',
-        -- Feet = 'Evoker's Pigaches +1',
+        Feet = 'Evk. Pigaches +1',
     },
     Resting = {
         Main = 'Pluto\'s Staff',

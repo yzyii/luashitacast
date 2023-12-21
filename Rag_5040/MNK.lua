@@ -81,7 +81,7 @@ local sets = {
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
         -- Back = 'Boxer\'s Mantle'
-        -- Waist = 'Heko Obi +1', -- 8
+        Waist = 'Heko Obi +1', -- 8
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
@@ -105,8 +105,7 @@ local sets = {
         Waist = 'Warwolf Belt',
         -- Waist = 'Black Belt',
         Legs = 'Shura Haidate',
-        Feet = 'Mountain Gaiters',
-        -- Feet = 'Shura Sune-Ate',
+        Feet = 'Shura Sune-Ate',
     },
     LockSet2 = {
         Head = 'Shr.Znr.Kabuto',
@@ -122,8 +121,7 @@ local sets = {
         Waist = 'Warwolf Belt',
         -- Waist = 'Black Belt',
         Legs = 'Shura Haidate',
-        Feet = 'Mountain Gaiters',
-        -- Feet = 'Shura Sune-Ate',
+        Feet = 'Shura Sune-Ate',
     },
     LockSet3 = {},
 
@@ -173,15 +171,15 @@ local sets = {
 
     WS = {
         Head = 'Shr.Znr.Kabuto',
-        -- Neck = 'Thunder Gorget',
+        Neck = 'Thunder Gorget',
         Ring1 = 'Ruby Ring',
         -- Ring1 = 'Flame Ring',
         Ring2 = 'Flame Ring',
         Legs = 'Shura Haidate',
-        -- Feet = 'Shura Sune-Ate',
+        Feet = 'Shura Sune-Ate',
     },
     WS_AsuranFists = {
-        -- Neck = 'Soil Gorget',
+        Neck = 'Soil Gorget',
         Ear2 = 'Merman\'s Earring',
     },
     WS_DragonKick = {
@@ -203,8 +201,10 @@ local sets = {
         -- Feet = 'Dune boots',
     },
     Chakra = {
+	    Ammo = 'Happy Egg',
         Head = 'Genbu\'s Kabuto',
         Neck = 'Medieval Collar',
+		-- Fortitude Torque
         -- Ear1 = 'Robust Earring',
         -- Ear2 = 'Robust Earring',
         Ring1 = 'Topaz Ring',

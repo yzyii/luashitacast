@@ -308,8 +308,7 @@ local sets = {
     Cure = {
         Ammo = 'Hedgehog Bomb', -- 1
         Head = 'Raven Beret', -- 8
-        Neck = 'Jeweled Collar',
-        -- Neck = 'Benign Necklace',
+        Neck = 'Benign Necklace',
         Ear1 = 'Novia Earring', -- 7
         Ear2 = 'Magnetic Earring',
         Body = 'Raven Jupon', -- 9
@@ -342,7 +341,7 @@ local sets = {
         Waist = 'Swift Belt',
         Legs = 'Warlock\'s Tights',
         Feet = 'Nashira Crackows',
-        -- Feet = 'Dusk Ledelsens',
+        Feet = 'Dusk Ledelsens',
     },
     Stoneskin = {
         -- Neck = 'Stone Gorget',
@@ -523,7 +522,7 @@ local sets = {
         Legs = 'Duelist\'s Tights',
     },
     WS_Soil = {
-        -- Neck = 'Soil Gorget',
+        Neck = 'Soil Gorget',
     },
     WS_Spirits = {
         Ring1 = 'Bomb Queen Ring',
@@ -619,7 +618,7 @@ profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil)
 
     local action = gData.GetAction()
-    if (dilation_ring) then
+    if (dilation_ring) then -- Haste is technically MP inefficient but I prefer to just always use it anyway
         if (action.Name == 'Haste' or action.Name == 'Refresh') then
             gFunc.Equip(dilation_ring_slot, 'Dilation Ring')
         end
