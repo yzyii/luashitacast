@@ -187,6 +187,23 @@ If you enable the Shorterhand setting in gcincluderag.lua, additional /commands 
 /ss - Stoneskin
 /b  - Blink
 /av - Aquaveil
+/pa - Paralyna
+/si - Silena
+/po - Poisona
+/bl - Blindna
+/e  - Erase
+/pro4 - Protect IV
+/sh4  - Shell IV
+
+[Bard]
+/ft  - Fire Threnody
+/it  - Ice Threnody
+/lt  - Lightning Threnody
+/et  - Earth Threnody
+/wit - Wind Threnody
+/wat - Water Threnody
+/dat - Dark Threnody
+/lit - Light Threnody
 ```
 
 ## Additional Notes
