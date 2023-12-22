@@ -6,6 +6,8 @@ local ninSJNukeMaxMP = 749 -- The Max MP you have when /nin in your nuking set
 local whmSJNukeMaxMP = 827 -- The Max MP you have when /whm in your nuking set
 local rdmSJNukeMaxMP = 808 -- The Max MP you have when /rdm in your nuking set
 
+local warlocks_mantle = false
+
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -61,7 +63,6 @@ local sets = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
         Body = 'Mahatma Hpl.',
-        Back = 'Blue Cape +1',
         Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
     },
@@ -117,7 +118,7 @@ local sets = {
         Ear2 = 'Diamond Earring', -- 10
         Ring1 = 'Diamond Ring', -- 9
         Ring2 = 'Malfrost Ring', -- 10
-        Back = 'Blue Cape +1', -- 7
+        Back = 'Tundra Mantle', -- 5
         Waist = 'Fire Belt', -- 20
     },
     LightningRes = {
@@ -139,7 +140,7 @@ local sets = {
         Ear2 = 'Topaz Earring', -- 10
         Ring1 = 'Topaz Ring', -- 9
         Ring2 = 'Maldust Ring', -- 10
-        Back = 'Blue Cape +1', -- 7
+        Back = 'Hexerei Cape',
         Waist = 'Wind Belt', -- 20
     },
     WindRes = {
@@ -151,7 +152,7 @@ local sets = {
         Hands = 'Mage\'s Cuffs', -- 5
         Ring1 = 'Emerald Ring', -- 9
         Ring2 = 'Malgust Ring', -- 10
-        Back = 'Blue Cape +1', -- 7
+        Back = 'Tundra Mantle', -- 5
         Waist = 'Ice Belt', -- 20
     },
     WaterRes = {
@@ -199,7 +200,7 @@ local sets = {
         Hands = 'Zenith Mitts +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Blue Cape +1',
+        Back = 'Blue Cape',
         Waist = 'Penitent\'s Rope',
         Feet = 'Rostrum Pumps',
     },
@@ -411,7 +412,13 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast(fastCastValue)
+    local player = gData.GetPlayer()
+    if (player.SubJob == "RDM" and warlocks_mantle) then
+        gcmage.DoPrecast(fastCastValue + 0.02)
+        gFunc.Equip('Back', 'Warlock\'s Mantle')
+    else
+        gcmage.DoPrecast(fastCastValue)
+    end
 end
 
 profile.HandleMidcast = function()

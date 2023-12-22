@@ -47,7 +47,7 @@ local water_ring_slot = 'Ring2'
 
 local tp_diabolos_earring = true
 local tp_diabolos_earring_slot = 'Ear2'
-local tp_fencers_ring = true
+local tp_fencers_ring = false
 local tp_fencers_ring_slot = 'Ring1'
 
 local carbuncle_mitts = true
@@ -432,14 +432,14 @@ function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
     if (isNoModSpell) then
         skipCast_Spell = true
         if (target.Name == me) then
-            if (action.Name == 'Sneak') then
+            if (action.Name == 'Sneak' or string.match(action.Name, 'Monomi')) then
                 if (dream_boots) then
                     gFunc.Equip('Feet', 'Dream Boots +1')
                 end
                 if (skulkers_cape) then
                     gFunc.Equip('Back', 'Skulker\'s Cape')
                 end
-            elseif (action.Name == 'Invisible') then
+            elseif (action.Name == 'Invisible' or string.match(action.Name, 'Tonko')) then
                 if (dream_mittens) then
                     gFunc.Equip('Hands', 'Dream Mittens +1')
                 end

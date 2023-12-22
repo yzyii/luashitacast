@@ -6,8 +6,8 @@ Everything below can be ignored.
 
 local shorterhand = {}
 
-shorterhand.MageAliasList = T{ 'c4','c3','c2','c','i','s','ss','b','pa','si','po','e','av', }
-shorterhand.BardAliasList = T{ 'ft','it','lt','et','wit','wat','dt','lit', }
+shorterhand.MageAliasList = T{ 'c4','c3','c2','c','i','s','ss','b','pa','si','po','bl','e','av','pro4','sh4' }
+shorterhand.BardAliasList = T{ 'ft','it','lt','et','wit','wat','dat','lit', }
 shorterhand.RegularAliasList = T{ 'u1','u2','ichi','ni' }
 
 local isMage = false
@@ -39,21 +39,27 @@ function shorterhand.DoCommands(args)
         AshitaCore:GetChatManager():QueueCommand(1, '//silena ' .. name)
     elseif (args[1] == 'po') then
         AshitaCore:GetChatManager():QueueCommand(1, '//poisona ' .. name)
+    elseif (args[1] == 'bl') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//blindna ' .. name)
     elseif (args[1] == 'e') then
         AshitaCore:GetChatManager():QueueCommand(1, '//erase ' .. name)
+    elseif (args[1] == 'pro4') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//protect4 ' .. name)
+    elseif (args[1] == 'sh4') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//shell4 ' .. name)
     elseif (args[1] == 'ft') then
         AshitaCore:GetChatManager():QueueCommand(1, '//firethrenody ' .. name)
     elseif (args[1] == 'it') then
         AshitaCore:GetChatManager():QueueCommand(1, '//icethrenody ' .. name)
     elseif (args[1] == 'lt') then
-        AshitaCore:GetChatManager():QueueCommand(1, '//lightningthrenody ' .. name)
+        AshitaCore:GetChatManager():QueueCommand(1, '//ltngthrenody ' .. name)
     elseif (args[1] == 'et') then
         AshitaCore:GetChatManager():QueueCommand(1, '//earththrenody ' .. name)
     elseif (args[1] == 'wit') then
         AshitaCore:GetChatManager():QueueCommand(1, '//windthrenody ' .. name)
     elseif (args[1] == 'wat') then
         AshitaCore:GetChatManager():QueueCommand(1, '//waterthrenody ' .. name)
-    elseif (args[1] == 'dt') then
+    elseif (args[1] == 'dat') then
         AshitaCore:GetChatManager():QueueCommand(1, '//darkthrenody ' .. name)
     elseif (args[1] == 'lit') then
         AshitaCore:GetChatManager():QueueCommand(1, '//lightthrenody ' .. name)

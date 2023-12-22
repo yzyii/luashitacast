@@ -260,8 +260,7 @@ local sets = {
         Hands = 'Dusk Gloves',
         Waist = 'Swift Belt',
         -- Legs = 'Nashira Serawheels',
-        Feet = 'Nashira Crackows',
-        -- Feet = 'Dusk Ledelsens',
+        Feet = 'Dusk Ledelsens',
     },
 
     Hate = { -- Switches to this set when casting Sleep, Blind, Dispel and Bind if /hate is toggled on
@@ -329,7 +328,7 @@ local sets = {
     },
 
     Enhancing = {
-        Main = 'Terra\'s Staff',
+        Main = 'Neptune\'s Staff',
         Ammo = 'Hedgehog Bomb',
         Head = 'Wlk. Chapeau +1',
         Neck = 'Enhancing Torque',
@@ -342,11 +341,12 @@ local sets = {
         Back = 'Merciful Cape',
         Waist = 'Swift Belt',
         Legs = 'Warlock\'s Tights',
-        Feet = 'Nashira Crackows',
         Feet = 'Dusk Ledelsens',
     },
     Stoneskin = {
         -- Neck = 'Stone Gorget',
+        Hands = 'Dusk Gloves',
+        Back = 'Prism Cape',
     },
     Spikes = {
         Main = 'Aquilo\'s Staff',
@@ -511,8 +511,7 @@ local sets = {
         Back = 'Forager\'s Mantle',
         Waist = 'Swift Belt', -- 4
         -- Legs = 'Nashira Serawheels', -- 2
-        Feet = 'Nashira Crackows',
-        -- Feet = 'Dusk Ledelsens', -- 2
+        Feet = 'Dusk Ledelsens', -- 2
     },
     TP_NIN = {
         Main = 'Joyeuse',
