@@ -430,7 +430,6 @@ local sets = {
         Feet = 'Dls. Boots +1',
     },
     NukeACC = {
-        Hands = 'Mahatma Cuffs',
         Back = 'Merciful Cape',
         Legs = 'Duelist\'s Tights',
         Feet = 'Nashira Crackows',
