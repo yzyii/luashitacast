@@ -51,6 +51,7 @@ local tp_fencers_ring = false
 local tp_fencers_ring_slot = 'Ring1'
 
 local carbuncle_mitts = true
+local bahamuts_staff = false
 
 -- Replace these with '' if you do not have them
 local summoners_doublet = 'Summoner\'s Dblt.'
@@ -296,6 +297,9 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     if (player.MainJob == 'SMN') then
         if (lastSummoningElement ~= '') then
             local staff = ElementalStaffTable[lastSummoningElement]
+            if (bahamuts_staff) then
+                staff = 'Bahamut\'s Staff'
+            end
             if staff ~= '' then
                 gFunc.Equip('Main', staff)
             end
