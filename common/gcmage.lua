@@ -414,6 +414,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
                 gFunc.Equip(water_ring_slot, 'Water Ring')
             end
         end
+        gcmage.EquipSneakInvisGear()
     end
 
     gcmage.EquipStaff()
@@ -422,8 +423,6 @@ end
 function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
-    local target = gData.GetActionTarget()
-    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
     local skipCast_MP = false
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
@@ -435,23 +434,7 @@ function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
     local skipCast_Spell = false
     if (isNoModSpell) then
         skipCast_Spell = true
-        if (target.Name == me) then
-            if (action.Name == 'Sneak' or string.match(action.Name, 'Monomi')) then
-                if (dream_boots) then
-                    gFunc.Equip('Feet', 'Dream Boots +1')
-                end
-                if (skulkers_cape) then
-                    gFunc.Equip('Back', 'Skulker\'s Cape')
-                end
-            elseif (action.Name == 'Invisible' or string.match(action.Name, 'Tonko')) then
-                if (dream_mittens) then
-                    gFunc.Equip('Hands', 'Dream Mittens +1')
-                end
-                if (skulkers_cape) then
-                    gFunc.Equip('Back', 'Skulker\'s Cape')
-                end
-            end
-        end
+        gcmage.EquipSneakInvisGear()
     end
     if (CureSpells:contains(action.Name)) then
         if (gcdisplay.GetToggle('Hate') == false) then
@@ -460,6 +443,30 @@ function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
     end
 
     return skipCast_MP and skipCast_Spell
+end
+
+function gcmage.EquipSneakInvisGear()
+    local action = gData.GetAction()
+    local target = gData.GetActionTarget()
+    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
+
+    if (target.Name == me) then
+        if (action.Name == 'Sneak' or string.match(action.Name, 'Monomi')) then
+            if (dream_boots) then
+                gFunc.Equip('Feet', 'Dream Boots +1')
+            end
+            if (skulkers_cape) then
+                gFunc.Equip('Back', 'Skulker\'s Cape')
+            end
+        elseif (action.Name == 'Invisible' or string.match(action.Name, 'Tonko')) then
+            if (dream_mittens) then
+                gFunc.Equip('Hands', 'Dream Mittens +1')
+            end
+            if (skulkers_cape) then
+                gFunc.Equip('Back', 'Skulker\'s Cape')
+            end
+        end
+    end
 end
 
 function gcmage.SetupInterimEquipSet(sets)
