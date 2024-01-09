@@ -8,6 +8,8 @@ local shinobi_ring_slot = 'Ring2'
 local koga_tekko = false
 local koga_tekko_plus_one = true
 
+local uggalepih_pendant = true
+
 local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi' }
 local DrkDebuffs = T{ 'Bind', 'Sleep', 'Poison' }
 local NinElemental = T{ 'Hyoton: Ni', 'Katon: Ni', 'Huton: Ni', 'Doton: Ni', 'Raiton: Ni', 'Suiton: Ni' }
@@ -143,6 +145,9 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.NinDebuff);
         elseif (NinElemental:contains(action.Name)) then
             gFunc.EquipSet(sets.NinElemental);
+            if (action.MppAftercast < 51) and uggalepih_pendant then
+				gFunc.Equip('Neck', 'Uggalepih Pendant')
+            end
             local staff = ElementalStaffTable[action.Element]
             if staff ~= '' then
                 gFunc.Equip('Main', staff)
