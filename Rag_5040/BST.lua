@@ -4,6 +4,9 @@ local fastCastValue = 0.00 -- 0% from gear
 
 local gaudy_harness = true
 
+-- Replace these with '' if you do not have them
+local muscle_belt = 'Muscle Belt +1'
+
 local sets = {
     Idle = {
         Head = 'Panther Mask +1',
@@ -244,6 +247,11 @@ local PetMagicAccuracy = T{'Toxic Spit','Acid Spray','Leaf Dagger','Venom Spray'
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
+
+    if (player.HPP <= 50 and muscle_belt ~= '') then
+        gFunc.Equip('Waist', muscle_belt)
+    end
+
     gcmelee.DoDefaultOverride()
 
     local player = gData.GetPlayer()

@@ -9,7 +9,9 @@ local temple_cyclas = 'Temple Cyclas'
 local temple_crown = 'Temple Crown'
 
 local melee_gaiters = 'Melee Gaiters'
-local melee_gloves = 'Melee Gloves'
+local melee_gloves = 'Mel. Gloves +1'
+
+local muscle_belt = 'Muscle Belt +1'
 
 local kampfer_ring = true
 local kampfer_ring_slot = 'Ring2'
@@ -18,14 +20,13 @@ local kampfer_earring_slot = 'Ear2'
 
 local sets = {
     Idle = {
-        Main = 'Destroyers',
         Ammo = 'Tiphia Sting',
         Head = 'Temple Crown',
         Neck = 'Peacock Amulet',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
-        Hands = 'Melee Gloves',
+        Hands = 'Mel. Gloves +1',
         Ring1 = 'Merman\'s Ring',
         Ring2 = 'Sattva Ring',
         -- Back = 'Boxer\'s Mantle'
@@ -36,7 +37,7 @@ local sets = {
     IdleALT = {},
     Resting = {
         Head = 'Raven Beret',
-        -- Neck = 'Paisley Scarf',
+        Neck = 'Paisley Scarf',
         -- Ear2 = 'Sanative Earring',
         Body = 'Melee Cyclas',
         Hands = 'Dst. Mittens +1',
@@ -46,7 +47,20 @@ local sets = {
     Town = {},
     Movement = {},
 
-    DT = {},
+    DT = {
+        -- Main = 'Cross-Counters',
+        -- Head = 'Arh. Jinpachi +1',
+        Neck = 'Guarding Torque',
+        -- Neck = 'Evasion Torque',
+        -- Ear1 = 'Avenger\'s Earring',
+        -- Ear2 = 'Avenger\'s Earring',
+        -- Body = 'Arhat\'s Gi +1',
+        -- Hands = 'Rasetsu Tekko +1',
+        Ring2 = 'Sattva Ring',
+        -- Back = 'Boxer\'s Mantle'
+        Legs = 'Temple Hose',
+        Feet = 'Melee Gaiters',
+    },
     MDT = { -- Shell IV provides 23% MDT
     },
     FireRes = {},
@@ -56,17 +70,19 @@ local sets = {
     WindRes = {},
     WaterRes = {},
     Evasion = {
-        -- Main = 'Cross-Counters',
-        -- Head = 'Arh. Jinpachi +1',
-        -- Neck = 'Guarding Torque',
-        -- Ear1 = 'Avenger\'s Earring',
-        -- Ear2 = 'Avenger\'s Earring',
-        -- Body = 'Arhat\'s Gi +1',
-        -- Hands = 'Rasetsu Tekko +1',
-        Ring2 = 'Sattva Ring',
-        -- Back = 'Boxer\'s Mantle'
-        Legs = 'Temple Hose',
-        Feet = 'Melee Gaiters',
+        Head = 'Shr.Znr.Kabuto',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Kirin\'s Osode',
+        Hands = 'Mel. Gloves +1',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Warwolf Belt',
+        -- Waist = 'Black Belt',
+        Legs = 'Shura Haidate',
+        Feet = 'Shura Sune-Ate',
     },
 
     Precast = {
@@ -92,37 +108,8 @@ local sets = {
         Feet = 'Fuma Sune-Ate',
     },
 
-    LockSet1 = {
-        Head = 'Shr.Znr.Kabuto',
-        Neck = 'Peacock Amulet',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Kirin\'s Osode',
-        Hands = 'Melee Gloves',
-        Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Toreador\'s Ring',
-        Back = 'Forager\'s Mantle',
-        Waist = 'Warwolf Belt',
-        -- Waist = 'Black Belt',
-        Legs = 'Shura Haidate',
-        Feet = 'Shura Sune-Ate',
-    },
-    LockSet2 = {
-        Head = 'Shr.Znr.Kabuto',
-        Neck = 'Peacock Amulet',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Kirin\'s Osode',
-        Hands = 'Melee Gloves',
-        Ring1 = 'Ruby Ring',
-        -- Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
-        Back = 'Forager\'s Mantle',
-        Waist = 'Warwolf Belt',
-        -- Waist = 'Black Belt',
-        Legs = 'Shura Haidate',
-        Feet = 'Shura Sune-Ate',
-    },
+    LockSet1 = {},
+    LockSet2 = {},
     LockSet3 = {},
 
     TP_LowAcc = {
@@ -131,7 +118,7 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
-        Hands = 'Melee Gloves',
+        Hands = 'Mel. Gloves +1',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
@@ -146,7 +133,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
         -- Body = 'Shura Togi',
-        Hands = 'Melee Gloves',
+        Hands = 'Mel. Gloves +1',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
@@ -156,7 +143,7 @@ local sets = {
     },
 
     TP_Focus = {
-        Ring1 = 'Ruby Ring',
+        -- Ring1 = 'Ruby Ring',
         -- Ring1 = 'Flame Ring',
         Ring2 = 'Flame Ring',
     },
@@ -209,10 +196,10 @@ local sets = {
         -- Ear2 = 'Robust Earring',
         Ring1 = 'Topaz Ring',
         -- Ring1 = 'Soil Ring',
-        -- Ring2 = 'Soil Ring',
+        Ring2 = 'Sattva Ring',
         -- Back = 'Melee Cape',
         Waist = 'Warwolf Belt',
-        -- Legs = 'Mst. Sitabaki +1'
+        Legs = 'Mst. Sitabaki +1'
         Feet = 'Power sandals',
     },
 
@@ -337,6 +324,13 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.SJ_DRG)
     elseif (player.SubJob == 'THF') then
         gFunc.EquipSet(sets.SJ_THF)
+    end
+
+    if (player.HPP <= 50) then
+        gFunc.EquipSet(sets.Evasion)
+        if (muscle_belt ~= '') then
+            gFunc.Equip('Waist', muscle_belt)
+        end
     end
 
     gcmelee.DoDefaultOverride()

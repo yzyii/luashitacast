@@ -12,6 +12,23 @@ local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ich
 local DrkDebuffs = T{ 'Bind', 'Sleep', 'Poison' }
 local NinElemental = T{ 'Hyoton: Ni', 'Katon: Ni', 'Huton: Ni', 'Doton: Ni', 'Raiton: Ni', 'Suiton: Ni' }
 
+-- Leave as '' if you do not have the staff.
+local fire_staff = 'Vulcan\'s Staff'
+local earth_staff = 'Terra\'s Staff'
+local water_staff = 'Neptune\'s Staff'
+local wind_staff = 'Auster\'s Staff'
+local ice_staff = 'Aquilo\'s Staff'
+local thunder_staff = 'Jupiter\'s Staff'
+
+local ElementalStaffTable = {
+    ['Fire'] = fire_staff,
+    ['Earth'] = earth_staff,
+    ['Water'] = water_staff,
+    ['Wind'] = wind_staff,
+    ['Ice'] = ice_staff,
+    ['Thunder'] = thunder_staff,
+}
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -126,6 +143,10 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.NinDebuff);
         elseif (NinElemental:contains(action.Name)) then
             gFunc.EquipSet(sets.NinElemental);
+            local staff = ElementalStaffTable[action.Element]
+            if staff ~= '' then
+                gFunc.Equip('Main', staff)
+            end
         end
     elseif (action.Skill == 'Enfeebling Magic') then
         if (DrkDebuffs:contains(action.Name)) then
