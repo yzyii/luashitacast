@@ -51,6 +51,7 @@ local tp_fencers_ring = false
 local tp_fencers_ring_slot = 'Ring1'
 
 local carbuncle_mitts = true
+local yinyang_robe = true
 local bahamuts_staff = false
 
 -- Replace these with '' if you do not have them
@@ -59,6 +60,11 @@ local summoners_horn = 'Summoner\'s Horn'
 
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_diabolos_earrings = false
+
+function DoCustomKeybinds() -- Write your own custom Keybinds or logic in here that will get run OnLoad()
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
+end
 
 --[[
 --------------------------------
@@ -141,8 +147,7 @@ function gcmage.Load()
     gcinclude.SetAlias(AliasList)
     gcinclude.Load()
 
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
+    DoCustomKeybinds()
 end
 
 function gcmage.Unload()
@@ -307,6 +312,9 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
                 if (carbuncle_mitts) then
                     gFunc.Equip('Hands', 'Carbuncle Mitts') -- Who cares about Light Spirit anyway
                 end
+                if (yinyang_robe) then
+                    gFunc.Equip('Body', 'Yinyang Robe')
+                end
             elseif (lastSummoningElement == environment.DayElement) then
                 if (summoners_doublet ~= '') then
                     gFunc.Equip('Body', summoners_doublet)
@@ -328,7 +336,11 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
 end
 
 function gcmage.DoPrecast(fastCastValue)
-    gcmage.SetupMidcastDelay(fastCastValue)
+    local chainspell = gData.GetBuffCount('Chainspell')
+    if (chainspell == 0) then
+        gcmage.SetupMidcastDelay(fastCastValue)
+    end
+
     gFunc.EquipSet('Precast')
 end
 
@@ -370,6 +382,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     local environment = gData.GetEnvironment()
     local action = gData.GetAction()
     local isNoModSpell = NoMods:contains(action.Name)
+    local chainspell = gData.GetBuffCount('Chainspell')
 
     local maxMP = 0
     if (setMP > 0) then
@@ -388,12 +401,14 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         do return end
     end
 
-    gcmage.SetupInterimEquipSet(sets)
+    if (chainspell == 0) then
+        gcmage.SetupInterimEquipSet(sets)
+    end
 
     if (action.Skill == 'Enhancing Magic') then
         gcmage.EquipEnhancing()
     elseif (action.Skill == 'Healing Magic') then
-        gcmage.EquipHealing(maxMP, sets)
+        gcmage.EquipHealing(maxMP, sets, chainspell)
     elseif (action.Skill == 'Elemental Magic') then
         gcmage.EquipElemental(maxMP)
     elseif (action.Skill == 'Enfeebling Magic') then
@@ -521,7 +536,7 @@ function gcmage.EquipEnhancing()
     end
 end
 
-function gcmage.EquipHealing(maxMP, sets)
+function gcmage.EquipHealing(maxMP, sets, chainspell)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
     local environment = gData.GetEnvironment()
@@ -544,7 +559,7 @@ function gcmage.EquipHealing(maxMP, sets)
     end
     if (gcdisplay.GetToggle('Hate') == true) then
         gFunc.EquipSet('Hate')
-        if (target.Name == me) then
+        if (target.Name == me and chainspell == 0) then
             if (action.Name == 'Cure III') then
                 gFunc.InterimEquipSet(sets.Cheat_C3HPDown)
                 gFunc.EquipSet('Cheat_HPUp')
