@@ -1,7 +1,7 @@
 local profile = {}
 
-local fastCastValue = 0.00
-local fastCastValueSong = 0.37
+local fastCastValue = 0.02
+local fastCastValueSong = 0.39
 
 local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
@@ -20,12 +20,12 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Body = 'Royal Cloak',
         Hands = 'Crow Bracers',
-        Ring1 = 'Ether Ring',
+        Ring1 = 'Merman\'s Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
         Waist = 'Scouter\'s Rope',
         Legs = 'Dst. Subligar +1',
-        Feet = 'Errant Pigaches',
+        Feet = 'Rostrum Pumps',
     },
     IdleALT = {
         Main = 'Terra\'s Staff',
@@ -36,12 +36,12 @@ local sets = {
         Head = 'Crow Beret',
         Body = 'Crow Jupon',
         Hands = 'Choral Cuffs',
-        Ring1 = 'Ether Ring',
+        Ring1 = 'Merman\'s Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
         Waist = 'Scouter\'s Rope',
         Legs = 'Dst. Subligar +1',
-        Feet = 'Errant Pigaches',
+        Feet = 'Suzaku\'s Sune-ate',
     },
     IdleMaxMP = {},
     Resting = {
@@ -69,22 +69,24 @@ local sets = {
     WaterRes = {},
     Evasion = {},
 
-    Precast = {},
+    Precast = {
+       Feet = 'Rostrum Pumps',
+	},
     Precast_Songs = {
         Main = 'Tutelary',
         Range = 'Mythic Harp +1',
         Head = 'Genbu\'s Kabuto',
-        Neck = 'Shield Pendant',
+        Neck = 'Bird Whistle',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Sha\'ir Manteel',
-        Hands = 'Dusk Gloves',
+        Hands = 'Seiryu\'s Kote',
         Ring1 = 'Minstrel\'s Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = 'Bomb Queen Ring',
         Back = 'Gigant Mantle',
         Waist = 'Powerful Rope',
         Legs = 'Choral Cannions',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Rostrum Pumps',
     },
     Casting = { -- Default Casting Equipment when using Idle sets
         Main = 'Terra\'s Staff',
@@ -95,7 +97,7 @@ local sets = {
         Head = 'Darksteel Cap +1',
         Body = 'Crow Jupon',
         Hands = 'Crow Bracers',
-        Ring1 = 'Ether Ring',
+        Ring1 = 'Merman\'s Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
         Waist = 'Powerful Rope',
@@ -108,11 +110,18 @@ local sets = {
         Body = 'Sha\'ir Manteel',
         Hands = 'Dusk Gloves',
         Waist = 'Swift Belt',
+		Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens',
     },
 
     Sing_Buff = {
+        Head = 'Bard\'s Roundlet',
+        Neck = 'Wind Torque',
+        Ear1 = 'Singing Earring',
         Main = 'Chanter\'s Staff',
+		Body = 'Minstrel\'s Coat',
+        Hands = 'Choral Cuffs',
+		Legs = 'Choral Cannions',
     },
     Sing_Debuff = {
         Neck = 'Wind Torque',
@@ -126,7 +135,7 @@ local sets = {
         Back = 'Jester\'s Cape +1',
         Waist = 'Corsette +1',
         Legs = 'Mahatma Slops',
-        Feet = 'Dance Shoes',
+        Feet = 'Sha\'ir Crackows',
     },
 
     Sing_Default = {
@@ -200,17 +209,17 @@ local sets = {
     Stoneskin = {
         Main = 'Apollo\'s Staff',
         Head = 'Bard\'s Roundlet',
-        Neck = 'Wind Torque',
+        Neck = 'Justice Badge',
         Ear1 = 'Singing Earring',
         Ear2 = 'Melody Earring +1',
         Body = 'Errant Hpl.',
-        Hands = 'Zealot\'s Mitts',
+        Hands = 'Devotee\'s Mitts',
         Ring1 = 'Sapphire Ring',
         Ring2 = 'Sapphire Ring',
-        Back = 'Mist Silk Cape',
-        Waist = 'Swift Belt',
+        Back = 'Red Cape +1',
+        Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
-        Feet = 'Errant Pigaches',
+        Feet = 'Suzaku\'s Sune-ate',
     },
     Spikes = {},
 
