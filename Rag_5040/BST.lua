@@ -247,6 +247,7 @@ local PetMagicAccuracy = T{'Toxic Spit','Acid Spray','Leaf Dagger','Venom Spray'
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
+    local player = gData.GetPlayer()
 
     if (player.HPP <= 50 and muscle_belt ~= '') then
         gFunc.Equip('Waist', muscle_belt)
@@ -254,7 +255,6 @@ profile.HandleDefault = function()
 
     gcmelee.DoDefaultOverride()
 
-    local player = gData.GetPlayer()
     if (player.MP < 50 and (player.SubJob == 'WHM' or player.SubJob == 'BLM' or player.SubJob == 'RDM')) then
         if (gaudy_harness) then
             gFunc.Equip('Body', 'Gaudy Harness')
