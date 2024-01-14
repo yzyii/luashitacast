@@ -351,9 +351,6 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     if (player.SubJob == "RDM") then
         fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
-    if (action.Type == 'Bard Song' and string.match(action.Name, 'Prelude')) then
-        castTime = 8000
-    end
     local minimumBuffer = 0.25 -- Can be lowered to 0.1 if you want
     local packetDelay = 0.25 -- Change this to 0.4 if you do not use PacketFlow
     local castDelay = ((castTime * (1 - fastCastValue)) / 1000) - minimumBuffer

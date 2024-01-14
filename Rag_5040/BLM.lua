@@ -249,7 +249,7 @@ local sets = {
         Feet = 'Mahatma Pigaches',
     },
     Stoneskin = {
-        -- Neck = 'Stone Gorget',
+        Neck = 'Stone Gorget',
     },
     Spikes = {
         Main = 'Kirin\'s Pole',

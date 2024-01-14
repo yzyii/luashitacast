@@ -87,6 +87,7 @@ local lastIdleSet = 'Normal'
 
 function gcinclude.Load()
     gSettings.AllowAddSet = true
+    gSettings.SpellOffset = 10;
     gcinclude.SetAlias(Overrides)
     gcinclude.SetAlias(Commands)
 

@@ -344,7 +344,7 @@ local sets = {
         Feet = 'Dusk Ledelsens',
     },
     Stoneskin = {
-        -- Neck = 'Stone Gorget',
+        Neck = 'Stone Gorget',
         Hands = 'Dusk Gloves',
         Back = 'Prism Cape',
     },
