@@ -180,7 +180,7 @@ profile.HandleAbility = function()
             end
         elseif (pet == 'Flytrap') then
             if (player.MainJobSync >= 53) then
-                gFunc.Equip('Ammo', 'N. Grasshopper Broth')
+                gFunc.Equip('Ammo', 'N. Grass. Broth')
             elseif (player.MainJobSync >= 28) then
                 gFunc.Equip('Ammo', 'Grasshopper Broth')
             else
