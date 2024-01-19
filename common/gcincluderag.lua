@@ -304,6 +304,9 @@ function gcinclude.DoDefaultOverride(isMelee)
         gFunc.EquipSet('Resting')
     elseif (player.IsMoving == true) and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT') then
         gFunc.EquipSet('Movement')
+    elseif (player.IsMoving == true) and gcdisplay.IdleSet == 'Fight' then
+		gFunc.EquipSet('DT')
+        gFunc.EquipSet('Movement')
     end
 end
 

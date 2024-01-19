@@ -21,18 +21,18 @@ local kampfer_earring_slot = 'Ear2'
 local sets = {
     Idle = {
         Ammo = 'Tiphia Sting',
-        Head = 'Temple Crown',
-        Neck = 'Peacock Amulet',
+        Head = 'Genbu\'s Kabuto',
+        Neck = 'Evasion Torque',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
-        Hands = 'Mel. Gloves +1',
+        Hands = 'Dst. Mittens +1',
         Ring1 = 'Merman\'s Ring',
         Ring2 = 'Sattva Ring',
         -- Back = 'Boxer\'s Mantle'
-        Waist = 'Brown Belt',
+        Waist = 'Warwolf Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Melee Gaiters',
+        Feet = 'Dst. Leggings +1',
     },
     IdleALT = {},
     Resting = {
@@ -76,8 +76,8 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
         Hands = 'Mel. Gloves +1',
-        Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Toreador\'s Ring',
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Flame Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Warwolf Belt',
         -- Waist = 'Black Belt',
@@ -143,8 +143,7 @@ local sets = {
     },
 
     TP_Focus = {
-        -- Ring1 = 'Ruby Ring',
-        -- Ring1 = 'Flame Ring',
+        Ring1 = 'Flame Ring',
         Ring2 = 'Flame Ring',
     },
 
@@ -159,8 +158,7 @@ local sets = {
     WS = {
         Head = 'Shr.Znr.Kabuto',
         Neck = 'Thunder Gorget',
-        Ring1 = 'Ruby Ring',
-        -- Ring1 = 'Flame Ring',
+        Ring1 = 'Flame Ring',
         Ring2 = 'Flame Ring',
         Legs = 'Shura Haidate',
         Feet = 'Shura Sune-Ate',
@@ -199,7 +197,7 @@ local sets = {
         Ring2 = 'Sattva Ring',
         -- Back = 'Melee Cape',
         Waist = 'Warwolf Belt',
-        Legs = 'Mst. Sitabaki +1'
+        Legs = 'Mst. Sitabaki +1',
         Feet = 'Power sandals',
     },
 
@@ -326,8 +324,7 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.SJ_THF)
     end
 
-    if (player.HPP <= 50) then
-        gFunc.EquipSet(sets.Evasion)
+    if (player.HPP <= 50 and gcdisplay.IdleSet == 'Evasion') then
         if (muscle_belt ~= '') then
             gFunc.Equip('Waist', muscle_belt)
         end
