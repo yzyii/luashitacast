@@ -7,6 +7,7 @@ local whmSJNukeMaxMP = 827 -- The Max MP you have when /whm in your nuking set
 local rdmSJNukeMaxMP = 808 -- The Max MP you have when /rdm in your nuking set
 
 local warlocks_mantle = false
+local republic_circlet = false
 
 local sets = {
     Idle = {
@@ -397,14 +398,26 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua')
 profile.OnLoad = function()
     gcmage.Load()
     profile.SetMacroBook()
+
+    gcinclude.SetAlias(T{'ir'})
+    local function createToggle()
+        gcdisplay.CreateToggle('IR', false)
+    end
+    createToggle:once(2)
 end
 
 profile.OnUnload = function()
     gcmage.Unload()
+    gcinclude.ClearAlias(T{'ir'})
 end
 
 profile.HandleCommand = function(args)
-    gcmage.DoCommands(args)
+    if (args[1] == 'ir') then
+        gcdisplay.AdvanceToggle('IR')
+        gcinclude.Message('IR', gcdisplay.GetToggle('IR'))
+    else
+        gcmage.DoCommands(args)
+    end
 end
 
 profile.HandleDefault = function()
@@ -421,8 +434,19 @@ profile.HandlePrecast = function()
     end
 end
 
+local ElementalDebuffs = T{ 'Burn','Rasp','Drown','Choke','Frost','Shock' }
+
 profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJNukeMaxMP, whmSJNukeMaxMP, nil, rdmSJNukeMaxMP)
+
+    local action = gData.GetAction()
+    if (action.Skill == 'Elemental Magic') then
+        if (not ElementalDebuffs:contains(action.Name)) then
+            if (gcdisplay.GetToggle('IR') and republic_circlet == true) then
+                gFunc.Equip('Head', 'Republic Circlet')
+            end
+        end
+    end
 end
 
 return profile
