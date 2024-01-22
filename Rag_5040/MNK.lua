@@ -15,7 +15,7 @@ local muscle_belt = 'Muscle Belt +1'
 
 local kampfer_ring = true
 local kampfer_ring_slot = 'Ring2'
-local kampfer_earring = false
+local kampfer_earring = true
 local kampfer_earring_slot = 'Ear2'
 
 local sets = {
@@ -311,7 +311,13 @@ profile.HandleDefault = function()
             if (kampfer_ring) then
                 gFunc.Equip(kampfer_ring_slot, 'Kampfer Ring')
             end
-        elseif (player.HPP <= 25 and player.TP <= 1000) then
+        end
+        if (player.HPP <= 50) then
+            if (muscle_belt ~= '') then
+                gFunc.Equip('Waist', muscle_belt)
+            end
+        end
+        if (player.HPP <= 25 and player.TP <= 1000) then
             if (kampfer_earring) then
                 gFunc.Equip(kampfer_earring_slot, 'Kampfer Earring')
             end
@@ -322,12 +328,6 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.SJ_DRG)
     elseif (player.SubJob == 'THF') then
         gFunc.EquipSet(sets.SJ_THF)
-    end
-
-    if (player.HPP <= 50 and gcdisplay.IdleSet == 'Evasion') then
-        if (muscle_belt ~= '') then
-            gFunc.Equip('Waist', muscle_belt)
-        end
     end
 
     gcmelee.DoDefaultOverride()
