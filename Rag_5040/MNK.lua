@@ -158,6 +158,7 @@ local sets = {
     WS = {
         Head = 'Shr.Znr.Kabuto',
         Neck = 'Thunder Gorget',
+        Ear2 = 'Merman\'s Earring',
         Ring1 = 'Flame Ring',
         Ring2 = 'Flame Ring',
         Legs = 'Shura Haidate',
@@ -165,6 +166,7 @@ local sets = {
     },
     WS_AsuranFists = {
         Neck = 'Soil Gorget',
+        Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
     },
     WS_DragonKick = {
