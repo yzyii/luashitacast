@@ -127,7 +127,7 @@ local sets = {
         Feet = 'Fuma Sune-Ate',
     },
     TP_HighAcc = {
-        Head = 'Optical Hat',
+        Head = 'Shr.Znr.Kabuto',
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
@@ -169,6 +169,10 @@ local sets = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
     },
+    WS_AsuranFists_HighAcc = {
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+    },
     WS_DragonKick = {
         Legs = 'Byakko\'s Haidate',
         -- Feet = 'Dune boots',
@@ -188,10 +192,10 @@ local sets = {
         -- Feet = 'Dune boots',
     },
     Chakra = {
-	    Ammo = 'Happy Egg',
+        Ammo = 'Happy Egg',
         Head = 'Genbu\'s Kabuto',
         Neck = 'Medieval Collar',
-		-- Fortitude Torque
+        -- Fortitude Torque
         -- Ear1 = 'Robust Earring',
         -- Ear2 = 'Robust Earring',
         Ring1 = 'Topaz Ring',
@@ -272,6 +276,9 @@ profile.HandleWeaponskill = function()
 
     if (action.Name == 'Asuran Fists') then
         gFunc.EquipSet(sets.WS_AsuranFists)
+        if (gcdisplay.IdleSet == 'HighAcc') then
+            gFunc.EquipSet(sets.WS_AsuranFists_HighAcc)
+        end
     elseif (action.Name == 'Dragon Kick') then
         gFunc.EquipSet(sets.WS_DragonKick)
     elseif (action.Name == 'Howling Fist') then

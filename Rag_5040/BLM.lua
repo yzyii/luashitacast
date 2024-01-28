@@ -6,7 +6,7 @@ local ninSJNukeMaxMP = 749 -- The Max MP you have when /nin in your nuking set
 local whmSJNukeMaxMP = 827 -- The Max MP you have when /whm in your nuking set
 local rdmSJNukeMaxMP = 808 -- The Max MP you have when /rdm in your nuking set
 
-local warlocks_mantle = false
+local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false
 
 local sets = {

@@ -146,7 +146,7 @@ profile.HandleMidcast = function()
         elseif (NinElemental:contains(action.Name)) then
             gFunc.EquipSet(sets.NinElemental);
             if (action.MppAftercast < 51) and uggalepih_pendant then
-				gFunc.Equip('Neck', 'Uggalepih Pendant')
+                gFunc.Equip('Neck', 'Uggalepih Pendant')
             end
             local staff = ElementalStaffTable[action.Element]
             if staff ~= '' then

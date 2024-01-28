@@ -71,7 +71,7 @@ local sets = {
 
     Precast = {
        Feet = 'Rostrum Pumps',
-	},
+    },
     Precast_Songs = {
         Main = 'Tutelary',
         Range = 'Mythic Harp +1',
@@ -110,7 +110,7 @@ local sets = {
         Body = 'Sha\'ir Manteel',
         Hands = 'Dusk Gloves',
         Waist = 'Swift Belt',
-		Legs = 'Byakko\'s Haidate',
+        Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens',
     },
 
@@ -119,9 +119,9 @@ local sets = {
         Neck = 'Wind Torque',
         Ear1 = 'Singing Earring',
         Main = 'Chanter\'s Staff',
-		Body = 'Minstrel\'s Coat',
+        Body = 'Minstrel\'s Coat',
         Hands = 'Choral Cuffs',
-		Legs = 'Choral Cannions',
+        Legs = 'Choral Cannions',
     },
     Sing_Debuff = {
         Neck = 'Wind Torque',
