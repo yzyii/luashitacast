@@ -681,7 +681,7 @@ function gcmage.EquipStaff()
     local action = gData.GetAction()
     local environment = gData.GetEnvironment()
 
-    if (action.Skill ~= 'Enhancing Magic') then
+    if (action.Skill ~= 'Enhancing Magic' and not ElementalDebuffs:contains(action.Name)) then
         local staff = ElementalStaffTable[action.Element]
         if staff ~= '' then
             gFunc.Equip('Main', staff)
