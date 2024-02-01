@@ -88,14 +88,14 @@ local AliasList = T{
 
 local NoMods = T{
     'Haste','Refresh','Blink','Aquaveil',
-    'Regen','Regen II','Regen II',
+    'Regen','Regen II','Regen III',
     'Sneak', 'Invisible','Deodorize',
     'Protect','Protect II','Protect III','Protect IV','Protect V',
     'Protectra','Protectra II','Protectra III','Protectra IV','Protectra V',
     'Shell','Shell II','Shell III','Shell IV','Shell V',
     'Shellra','Shellra II','Shellra III','Shellra IV','Shellra V',
     'Warp', 'Warp II','Escape','Tractor',
-    'Raise','Reraise','Reraise II',
+    'Raise','Reraise','Reraise II','Reraise III',
     'Poisona','Paralyna','Silena','Blindna','Viruna','Erase',
     'Teleport-Holla','Teleport-Dem','Teleport-Mea',
     'Dia','Dia II',

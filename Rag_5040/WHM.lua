@@ -39,6 +39,9 @@ local sets = {
     },
 
     Cure = {},
+    Regen = {
+        Body = 'Cleric\'s Bliaut',
+    },
     Cursna = {},
 
     Enhancing = {},
@@ -127,6 +130,12 @@ end
 
 profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP)
+
+    local action = gData.GetAction()
+    if (string.match(action.Name, 'Regen')) then
+        gFunc.EquipSet('Regen')
+    end
+
     -- You may add logic here
 end
 
