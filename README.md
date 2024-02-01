@@ -15,14 +15,14 @@ These luas were designed to be used in HorizonXI and therefore features such as 
 # How to Use
 
 - Download the entire directory From Code > Download ZIP.
-- Paste the contents of the luashitacast-master folder into ..\\Game\\**config**\\addons\\luashitacast\\
+- Paste the **contents only** of the luashitacast-master folder into ..\\Game\\**config**\\addons\\luashitacast\\
 - Note that **config** in the path. there may not be a luashitacast directory there if you have never used it before - just create one.
 - Rename the Rag_5040 folder to [Your_Character_Name]_[Your_Character_ID]
 - [Your_Character_ID] may be obtained from another plugin such as MobDB.
 - Edit Equipment Sets in [JOB].lua. You may delete any of these if you're only looking for a lua one of the jobs.
 - Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua if you are using these luas for mage jobs.
 - Turn On / Off Additional Commands and Logging in gcincluderag.lua.
-- The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the value in gcmage.lua (or gcmelee.lua for melee jobs).
+- The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the values in gcmage.lua (or gcmelee.lua for melee jobs).
 
 - If you define a specific mainhand in regular sets, it will still equip the correct stave if you have them listed in gcmage.lua
 - FallbackSub set is used only if you wish to define a Sub to fall back to using due to not having a complete set of Elemental Staves.
