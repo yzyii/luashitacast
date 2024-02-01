@@ -50,6 +50,9 @@ local tp_diabolos_earring_slot = 'Ear2'
 local tp_fencers_ring = false
 local tp_fencers_ring_slot = 'Ring1'
 
+local overlords_ring = true
+local overlords_ring_slot = 'Ring1'
+
 local carbuncle_mitts = true
 local yinyang_robe = true
 local bahamuts_staff = false
@@ -667,6 +670,9 @@ function gcmage.EquipDark(maxMP)
             gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
         end
     end
+	if (DiabolosPoleSpells:contains(action.Name) and overlords_ring) then
+        gFunc.Equip(overlords_ring_slot, 'Overlord\'s Ring')
+	end
     if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_diabolos_earrings) then
         gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
     end
