@@ -372,7 +372,7 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     if (action.Type == 'Bard Song' and string.match(action.Name, 'Prelude')) then
         castTime = 8000
     end
-    if (action.Skill == 'Divine Magic' and action.Name == 'Banish III')) then
+    if (action.Skill == 'Divine Magic' and action.Name == 'Banish III') then
         castTime = 3000
     end
     local minimumBuffer = 0.25 -- Can be lowered to 0.1 if you want
