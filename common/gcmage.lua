@@ -472,6 +472,7 @@ function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
     if (CureSpells:contains(action.Name)) then
         if (gcdisplay.GetToggle('Hate') == false) then
             skipCast_Spell = true
+            gcmage.EquipStaff()
         end
     end
 
