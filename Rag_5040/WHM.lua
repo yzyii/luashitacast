@@ -138,7 +138,7 @@ profile.HandleMidcast = function()
         gFunc.EquipSet('Regen')
     end
     if (string.match(action.Name, 'Banish')) then
-        gFunc.EquipSet('Regen')
+        gFunc.EquipSet('Banish')
     end
 
     -- You may add logic here
