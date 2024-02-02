@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.04 -- 4% from gear
+local fastCastValue = 0.04 -- 4% from gear listed in Precast set
 
 local ninSJNukeMaxMP = 749 -- The Max MP you have when /nin in your nuking set
 local whmSJNukeMaxMP = 827 -- The Max MP you have when /whm in your nuking set

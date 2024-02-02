@@ -4,7 +4,7 @@
 
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear
+local fastCastValue = 0.00 -- 0% from gear listed in Precast set. Note: Do NOT include cure clogs / ruckes rung here.
 
 local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
