@@ -8,7 +8,7 @@ These luas were originally written for RDM and BLM however all jobs can use the 
 - e.g. All melee jobs are able to type /tp to switch between Low Accuracy and High Accuracy TP sets.
 - e.g. All mage jobs are able to type /mode to switch between Magic Potency vs Magic Accuracy sets.
 
-The only jobs currently not fully implemented are WAR, WHM, and DRK however implementation of these should be trivial. WHM probably actually already works out of the box but is simply untested.
+The only jobs currently not fully implemented are WAR and DRK however implementation of these should be trivial.
 
 These luas were designed to be used in HorizonXI and therefore features such as automatically using opo-opo necklace when asleep or automatically cancelling shadows for Utsusemi: Ichi are not included.
 
@@ -21,6 +21,7 @@ These luas were designed to be used in HorizonXI and therefore features such as 
 - [Your_Character_ID] may be obtained from another plugin such as MobDB.
 - Edit Equipment Sets in [JOB].lua. You may delete any of these if you're only looking for a lua one of the jobs.
 - Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua if you are using these luas for mage jobs.
+- Make sure you fill out the fastcastValue correctly in your [JOB].lua if you are using any Fast Cast gear in the Precast set.
 - Turn On / Off Additional Commands and Logging in gcincluderag.lua.
 - The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the values in gcmage.lua (or gcmelee.lua for melee jobs).
 
