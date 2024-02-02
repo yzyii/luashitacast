@@ -54,6 +54,7 @@ local sets = {
     EnfeeblingACC = {},
 
     Divine = {},
+    Banish = {},
     Dark = {},
 
     Nuke = {},
@@ -134,6 +135,9 @@ profile.HandleMidcast = function()
 
     local action = gData.GetAction()
     if (string.match(action.Name, 'Regen')) then
+        gFunc.EquipSet('Regen')
+    end
+    if (string.match(action.Name, 'Banish')) then
         gFunc.EquipSet('Regen')
     end
 
