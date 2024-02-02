@@ -57,6 +57,9 @@ local carbuncle_mitts = true
 local yinyang_robe = true
 local bahamuts_staff = false
 
+local cure_clogs = false
+local ruckes_rung = false
+
 -- Replace these with '' if you do not have them
 local summoners_doublet = 'Summoner\'s Dblt.'
 local summoners_horn = 'Summoner\'s Horn'
@@ -353,6 +356,18 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     local castTime = action.CastTime
     if (player.SubJob == "RDM") then
         fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
+    end
+    if (player.MainJob == "WHM") then
+        if (string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga')) then
+            if (cure_clogs) then
+                fastCastValue = fastCastValue + 0.15
+                gFunc.Equip('Feet', 'Cure Clogs')
+            end
+            if (ruckes_rung) then
+                fastCastValue = fastCastValue + 0.10
+                gFunc.Equip('Main', 'Rucke\'s Rung')
+            end
+        end
     end
     if (action.Type == 'Bard Song' and string.match(action.Name, 'Prelude')) then
         castTime = 8000
@@ -670,9 +685,9 @@ function gcmage.EquipDark(maxMP)
             gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
         end
     end
-	if (DiabolosPoleSpells:contains(action.Name) and overlords_ring) then
+    if (DiabolosPoleSpells:contains(action.Name) and overlords_ring) then
         gFunc.Equip(overlords_ring_slot, 'Overlord\'s Ring')
-	end
+    end
     if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_diabolos_earrings) then
         gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
     end
