@@ -397,6 +397,22 @@ local sets = {
         -- Legs = 'Nashira Serawheels',
     },
 
+    Divine = { -- Just using my Hate set here for Flash
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Baron\'s Chapeau', -- 2
+        Neck = 'Harmonia\'s Torque', -- 3
+        Ear1 = 'Eris\' Earring', -- 2
+        Ear2 = 'Eris\' Earring', -- 2
+        Body = 'Duelist\'s Tabard',
+        Hands = 'Dusk Gloves',
+        Ring1 = 'Mermaid Ring', -- 2
+        Ring2 = 'Sattva Ring', -- 5
+        Back = 'Toreador\'s Cape', -- 4
+        Waist = 'Warwolf Belt', -- 3
+        Legs = 'Blood Cuisses',
+        -- Legs = 'Nashira Serawheels',
+        Feet = 'Heroic Boots', -- 1
+    },
     Dark = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Nashira Turban',

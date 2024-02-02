@@ -300,6 +300,7 @@ local sets = {
     },
     EnfeeblingACC = {},
 
+    Divine = {},
     Dark = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Nashira Turban',
