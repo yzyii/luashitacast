@@ -4,6 +4,7 @@ local use_shorterhand = true -- set to true if you want to use the commands avai
 local kingdom_aketon = false
 local republic_aketon = false
 local federation_aketon = false
+local ducal_aketon = false
 
 local load_stylist = true
 
@@ -274,7 +275,12 @@ function gcinclude.DoDefaultOverride(isMelee)
     local environment = gData.GetEnvironment()
     local player = gData.GetPlayer()
 
-    if (environment.Area ~= nil) and (Towns:contains(environment.Area)) then gFunc.EquipSet('Town') end
+    if (environment.Area ~= nil) and (Towns:contains(environment.Area))	then
+        gFunc.EquipSet('Town')
+        if (kingdom_aketon == true) then
+            gFunc.Equip('Body', 'Ducal Aketon')
+        end
+    end
     if (environment.Area ~= nil) and (Sandy:contains(environment.Area) and kingdom_aketon == true) then gFunc.Equip('Body', 'Kingdom Aketon') end
     if (environment.Area ~= nil) and (Bastok:contains(environment.Area) and republic_aketon == true) then gFunc.Equip('Body', 'Republic Aketon') end
     if (environment.Area ~= nil) and (Windy:contains(environment.Area) and federation_aketon == true) then gFunc.Equip('Body', 'Federation Aketon') end
