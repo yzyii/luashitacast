@@ -275,9 +275,9 @@ function gcinclude.DoDefaultOverride(isMelee)
     local environment = gData.GetEnvironment()
     local player = gData.GetPlayer()
 
-    if (environment.Area ~= nil) and (Towns:contains(environment.Area))	then
+    if (environment.Area ~= nil) and (Towns:contains(environment.Area)) then
         gFunc.EquipSet('Town')
-        if (kingdom_aketon == true) then
+        if (ducal_aketon == true) then
             gFunc.Equip('Body', 'Ducal Aketon')
         end
     end
