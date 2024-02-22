@@ -58,7 +58,7 @@ local sets = {
         -- Hands = 'Rasetsu Tekko +1',
         Ring2 = 'Sattva Ring',
         -- Back = 'Boxer\'s Mantle'
-        Legs = 'Temple Hose',
+        Legs = 'Tpl. Hose +1',
         Feet = 'Melee Gaiters',
     },
     MDT = { -- Shell IV provides 23% MDT
@@ -71,7 +71,7 @@ local sets = {
     WaterRes = {},
     Evasion = {
         Head = 'Shr.Znr.Kabuto',
-        Neck = 'Peacock Amulet',
+        Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
@@ -114,7 +114,7 @@ local sets = {
 
     TP_LowAcc = {
         Head = 'Panther Mask +1',
-        Neck = 'Peacock Amulet',
+        Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
@@ -165,7 +165,7 @@ local sets = {
         Feet = 'Shura Sune-Ate',
     },
     WS_AsuranFists = {
-        Neck = 'Soil Gorget',
+        Neck = 'Faith Torque',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
     },
@@ -196,7 +196,7 @@ local sets = {
         Head = 'Genbu\'s Kabuto',
         Neck = 'Medieval Collar',
         -- Fortitude Torque
-        -- Ear1 = 'Robust Earring',
+        Ear1 = 'Robust Earring',
         -- Ear2 = 'Robust Earring',
         Ring1 = 'Topaz Ring',
         -- Ring1 = 'Soil Ring',
@@ -215,7 +215,7 @@ local sets = {
         Ring1 = 'Aqua Ring',
         Ring2 = 'Aqua Ring',
         -- Back = 'Melee Cape'
-        Legs = 'Temple Hose',
+        Legs = 'Tpl. Hose +1',
         Waist = 'Mrc.Cpt. Belt',
         -- Waist = 'Reverend Sash',
         Feet = 'Suzaku\'s Sune-Ate',
