@@ -107,7 +107,7 @@ local NoMods = T{
 
 local ElementalDebuffs = T{ 'Burn','Rasp','Drown','Choke','Frost','Shock' }
 local EnfeebMNDSpells = T{ 'Paralyze','Slow' }
-local EnfeebINTSpells = T{ 'Gravity','Blind','Bind','Dispel','Poison','Sleep','Sleep II','Sleepga','Sleepga II' }
+local EnfeebINTSpells = T{ 'Blind','Poison','Poison II' }
 local HateSpells = T{ 'Sleep','Sleep II','Blind','Dispel','Bind' }
 local DiabolosPoleSpells = T{ 'Aspir','Drain' }
 local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
