@@ -273,10 +273,7 @@ local sets = {
     Enfeebling = {
         Head = 'Genie Tiara',
         Neck = 'Enfeebling Torque',
-        Ear1 = 'Abyssal Earring',
-        Ear2 = 'Enfeebling Earring',
         Body = 'Wzd. Coat +1',
-        Back = 'Altruistic Cape',
         Legs = 'Igqira Lappas',
     },
     EnfeeblingMND = {
@@ -299,7 +296,10 @@ local sets = {
         Waist = 'Sorcerer\'s Belt',
         Feet = 'Rostrum Pumps',
     },
-    EnfeeblingACC = {},
+    EnfeeblingACC = {
+        Ear2 = 'Enfeebling Earring',
+        Back = 'Altruistic Cape',
+    },
 
     Divine = {},
     Dark = {

@@ -108,6 +108,7 @@ local NoMods = T{
 local ElementalDebuffs = T{ 'Burn','Rasp','Drown','Choke','Frost','Shock' }
 local EnfeebMNDSpells = T{ 'Paralyze','Slow' }
 local EnfeebINTSpells = T{ 'Blind','Poison','Poison II' }
+local EnfeebINTACCSpells = T{ 'Gravity','Bind','Dispel','Sleep','Sleep II','Sleepga','Sleepga II' }
 local HateSpells = T{ 'Sleep','Sleep II','Blind','Dispel','Bind' }
 local DiabolosPoleSpells = T{ 'Aspir','Drain' }
 local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
@@ -663,6 +664,9 @@ function gcmage.EquipEnfeebling()
         gFunc.EquipSet('EnfeeblingMND')
     elseif (EnfeebINTSpells:contains(action.Name)) then
         gFunc.EquipSet('EnfeeblingINT')
+    elseif (EnfeebINTACCSpells:contains(action.Name)) then
+        gFunc.EquipSet('EnfeeblingINT')
+        gFunc.EquipSet('EnfeeblingACC')
     end
     if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
         gFunc.EquipSet('EnfeeblingACC')
