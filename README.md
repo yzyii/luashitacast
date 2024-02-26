@@ -88,8 +88,6 @@ This will work 99% of the time unless you have added your own logic and therefor
                   this will override the values defined for /NIN /WHM /RDM /BLM as well.
                   /addmp will still work as per normal in conjunction with this.
                   type /setmp without a number to display the current value.
-/oor            - forces use of Master Caster Bracelets / Republican Gold Medal.
-                  you can toggle this on when you are in areas where these are active.
 /mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and
                   Accuracy sets.
 ```
