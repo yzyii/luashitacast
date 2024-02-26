@@ -624,7 +624,7 @@ function gcmage.EquipElemental(maxMP)
                 end
             end
         end
-        if (action.Element == environment.WeatherElement) or (action.Element == environment.DayElement) then
+        if (ObiCheck(action) >= 1) then
             local obi = NukeObiTable[action.Element]
             local obiOwned = NukeObiOwnedTable[action.Element]
             if (obiOwned) then
@@ -646,6 +646,59 @@ function gcmage.EquipElemental(maxMP)
             gFunc.EquipSet('MB')
         end
     end
+end
+
+function ObiCheck(spell)
+    local element = spell.Element
+    local zone = gData.GetEnvironment()
+
+    local DayElementTable = {
+        ['Firesday'] = 'Fire',
+        ['Earthsday'] = 'Earth',
+        ['Watersday'] = 'Water',
+        ['Windsday'] = 'Wind',
+        ['Iceday'] = 'Ice',
+        ['Lightningday'] = 'Thunder',
+        ['Lightsday'] = 'Light',
+        ['Darksday'] = 'Dark'
+    }
+
+    local badEle = {
+        ['Fire'] = 'Water',
+        ['Earth'] = 'Wind',
+        ['Water'] = 'Thunder',
+        ['Wind'] = 'Ice',
+        ['Ice'] = 'Fire',
+        ['Thunder'] = 'Earth',
+        ['Light'] = 'Dark',
+        ['Dark'] = 'Light'
+    };
+
+    local weight = 0
+
+    -- Day Comparison
+    if (DayElementTable[zone.Day] == element) then
+        weight = weight + 1
+    elseif (DayElementTable[zone.Day] == badEle[element]) then
+        weight = weight - 1
+    end
+
+    -- Weather Comparison
+    if string.find(zone.Weather, element) then
+        if string.find(zone.Weather, 'x2') then
+            weight = weight + 2
+        else
+            weight = weight + 1
+        end
+    elseif string.find(zone.Weather, badEle[element]) then
+        if string.find(zone.Weather, 'x2') then
+            weight = weight - 2
+        else
+            weight = weight - 1
+        end
+    end
+
+    return weight
 end
 
 function gcmage.EquipEnfeebling()
