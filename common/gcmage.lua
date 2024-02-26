@@ -79,12 +79,13 @@ Everything below can be ignored.
 ]]
 
 gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
+conquest = gFunc.LoadFile('common\\conquest.lua')
 
 local gcmage = {}
 
 local AliasList = T{
     'addmp','setmp','reset',
-    'oor','mode', -- RDM / BLM
+    'mode', -- RDM / BLM
     'csstun','hate','vert','fight', -- RDM
     'yellow','mb', -- BLM
 }
@@ -166,8 +167,6 @@ end
 function gcmage.SetVariables()
     local player = gData.GetPlayer()
 
-    gcdisplay.CreateToggle('OOR', false)
-
     if (player.MainJob ~= 'BRD') then
         gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
     end
@@ -212,14 +211,12 @@ function gcmage.DoCommands(args)
     elseif (args[1] == 'mode') then
         gcdisplay.AdvanceCycle('Mode')
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
-    elseif (args[1] == 'oor') then
-        gcdisplay.AdvanceToggle('OOR')
-        gcinclude.Message('Out of Region', gcdisplay.GetToggle('OOR'))
     end
 
     if (player.MainJob == 'RDM') then
         if (args[1] == 'vert') then
-            if (gcdisplay.GetToggle('OOR') == true) then
+            if (conquest:GetOutsideControl()) then
+                print(chat.header('GCMage'):append(chat.message('Out of Region - using ConvertOOR set.')))
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac set ConvertOOR')
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
             else
@@ -611,7 +608,8 @@ function gcmage.EquipElemental(maxMP)
     else
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
-            if (gcdisplay.GetToggle('OOR') == true) and (player.MainJob == 'RDM') and master_casters_bracelets then
+            if (conquest:GetOutsideControl()) and (player.MainJob == 'RDM') and master_casters_bracelets then
+                print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets')))
                 gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
             end
             if (environment.WeatherElement == 'Dark') and diabolos_earring then
@@ -655,7 +653,8 @@ function gcmage.EquipEnfeebling()
     local action = gData.GetAction()
 
     gFunc.EquipSet('Enfeebling')
-    if (gcdisplay.GetToggle('OOR') == true) and master_casters_bracelets then
+    if (conquest:GetOutsideControl()) and master_casters_bracelets then
+        print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets')))
         gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
     end
     if (environment.WeatherElement == 'Dark') and diabolos_earring then
@@ -674,7 +673,8 @@ function gcmage.EquipEnfeebling()
     end
     if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
         gFunc.EquipSet('EnfeeblingACC')
-        if (gcdisplay.GetToggle('OOR') == true) and master_casters_bracelets then
+        if (conquest:GetOutsideControl()) and master_casters_bracelets then
+            print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets')))
             gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
         end
     end

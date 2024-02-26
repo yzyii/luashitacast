@@ -400,26 +400,14 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua')
 profile.OnLoad = function()
     gcmage.Load()
     profile.SetMacroBook()
-
-    gcinclude.SetAlias(T{'ir'})
-    local function createToggle()
-        gcdisplay.CreateToggle('IR', false)
-    end
-    createToggle:once(2)
 end
 
 profile.OnUnload = function()
     gcmage.Unload()
-    gcinclude.ClearAlias(T{'ir'})
 end
 
 profile.HandleCommand = function(args)
-    if (args[1] == 'ir') then
-        gcdisplay.AdvanceToggle('IR')
-        gcinclude.Message('IR', gcdisplay.GetToggle('IR'))
-    else
-        gcmage.DoCommands(args)
-    end
+	gcmage.DoCommands(args)
 end
 
 profile.HandleDefault = function()
@@ -444,7 +432,8 @@ profile.HandleMidcast = function()
     local action = gData.GetAction()
     if (action.Skill == 'Elemental Magic') then
         if (not ElementalDebuffs:contains(action.Name)) then
-            if (gcdisplay.GetToggle('IR') and republic_circlet == true) then
+            if (conquest:GetInsideControl() and republic_circlet == true) then
+                print(chat.header('GCMage'):append(chat.message('In Region - Using Republic Circlet')))
                 gFunc.Equip('Head', 'Republic Circlet')
             end
         end
