@@ -185,8 +185,12 @@ function gcinclude.DoCommands(args)
     local player = gData.GetPlayer()
 
     if (isOverride) then
-        gcinclude.ToggleIdleSet(OverrideNameTable[args[1]])
-        gcinclude.Message('IdleSet', gcdisplay.IdleSet)
+        if (gcdisplay.IdleSet == 'Fight') then
+            print(chat.header('Ashitacast'):append(chat.message('Overriding in Fight mode is currently unsupported. Type /fight to disable Fight mode.')))
+        else
+            gcinclude.ToggleIdleSet(OverrideNameTable[args[1]])
+            gcinclude.Message('IdleSet', gcdisplay.IdleSet)
+        end
     elseif (args[1] == 'kite') then
         gcdisplay.AdvanceToggle('Kite')
         gcinclude.Message('Kite', gcdisplay.GetToggle('Kite'))
