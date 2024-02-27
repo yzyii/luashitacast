@@ -53,7 +53,7 @@ This will work 99% of the time unless you have added your own logic and therefor
           /kite always takes precedence over any other set overrides active.
           e.g. if you have /kite and /fireres toggled on,
           it will equip the kite set instead of or on top of the fire resistance set.
-          this allows you to gain 12% move speed while keeping up most of your fire resistance.
+          this allows you to gain 12% move speed while keeping most of your fire resistance.
 
 [Idle Sets] (Changes your idle set to use these sets instead)
 /idle           - toggles between using 2 different idle sets
@@ -136,6 +136,9 @@ This will work 99% of the time unless you have added your own logic and therefor
 /lizard
 /crab
 /tiger
+/rabbit
+/mandy
+/flytrap
 ```
 
 ## Additional Commands for THF:
