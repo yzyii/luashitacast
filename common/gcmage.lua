@@ -72,6 +72,7 @@ function DoCustomKeybinds() -- Write your own custom Keybinds or logic in here t
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
 end
 
+-- Set to true if you want messages every time Mst.Cst. Bracelets are used.
 local log_conquest = false
 
 --[[
