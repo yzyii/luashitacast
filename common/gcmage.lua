@@ -727,7 +727,6 @@ function gcmage.EquipEnfeebling()
     if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
         gFunc.EquipSet('EnfeeblingACC')
         if (conquest:GetOutsideControl()) and master_casters_bracelets then
-            print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets')))
             gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
         end
     end
