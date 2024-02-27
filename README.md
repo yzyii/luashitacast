@@ -2,13 +2,13 @@
 
 A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
-These luas were originally written for RDM and BLM however all jobs can use the corresponding templates to automatically implement functionality that is shared across all jobs.
+All jobs are fully implemented to my knowledge except for WAR and DRK however implementation of these should be trivial.
+
+Jobs use the corresponding templates to automatically implement functionality that is shared across all of them.
 
 - e.g. All jobs are able to type /fres which will automatically swap your idle gear sets to the Fire Resist set.
 - e.g. All melee jobs are able to type /tp to switch between Low Accuracy and High Accuracy TP sets.
 - e.g. All mage jobs are able to type /mode to switch between Magic Potency vs Magic Accuracy sets.
-
-The only jobs currently not fully implemented are WAR and DRK however implementation of these should be trivial.
 
 These luas were designed to be used in HorizonXI and therefore features such as automatically using opo-opo necklace when asleep or automatically cancelling shadows for Utsusemi: Ichi are not included.
 
