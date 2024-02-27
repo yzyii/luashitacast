@@ -110,8 +110,10 @@ This will work 99% of the time unless you have added your own logic and therefor
 [Special Sets]
 /vert   - equips the Convert set and locks equipment.
           use /lock to unlock again.
-/csstun - equips the Stun set and locks equipment (only still here for legacy reasons).
+/csstun - equips the Stun set and locks equipment.
           use /lock to unlock again.
+          Note that this is not actually required and only still here for legacy reasons.
+          Luashitacast works correctly with chainspell by default now.
 ```
 
 ## Additional Commands for BLM:
