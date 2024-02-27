@@ -340,6 +340,12 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         if (player.SubJob == "BLM" and wizards_mantle) then
             gFunc.Equip('Back', 'Wizard\'s Mantle')
         end
+        if (player.MPP >= 99) then
+            gFunc.EquipSet('IdleMaxMP')
+            if (dark_staff ~= '') then
+                gFunc.Equip('Main', dark_staff)
+            end
+        end
     end
 end
 
