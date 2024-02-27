@@ -72,6 +72,8 @@ function DoCustomKeybinds() -- Write your own custom Keybinds or logic in here t
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
 end
 
+local log_conquest = false
+
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -609,7 +611,7 @@ function gcmage.EquipElemental(maxMP)
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
             if (conquest:GetOutsideControl()) and (player.MainJob == 'RDM') and master_casters_bracelets then
-                print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets')))
+                if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
                 gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
             end
             if (environment.WeatherElement == 'Dark') and diabolos_earring then
@@ -707,7 +709,7 @@ function gcmage.EquipEnfeebling()
 
     gFunc.EquipSet('Enfeebling')
     if (conquest:GetOutsideControl()) and master_casters_bracelets then
-        print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets')))
+        if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
         gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
     end
     if (environment.WeatherElement == 'Dark') and diabolos_earring then
