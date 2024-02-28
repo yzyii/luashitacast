@@ -6,6 +6,10 @@ local republic_aketon = false
 local federation_aketon = false
 local ducal_aketon = false
 
+local dream_boots = true
+local dream_mittens = true
+local skulkers_cape = false
+
 local load_stylist = true
 
 --[[
@@ -317,6 +321,26 @@ function gcinclude.DoDefaultOverride(isMelee)
     elseif (gcdisplay.IdleSet == 'Fight' and player.Status ~= 'Engaged') then
         gFunc.EquipSet('DT')
         gFunc.EquipSet('Movement')
+    end
+end
+
+function gcinclude.DoItem()
+    local item = gData.GetAction();
+
+	if (item.Name == 'Silent Oil') then
+        if (dream_boots) then
+            gFunc.Equip('Feet', 'Dream Boots +1')
+        end
+        if (skulkers_cape) then
+            gFunc.Equip('Back', 'Skulker\'s Cape')
+        end
+    elseif (item.Name == 'Prism Powder') then
+        if (dream_mittens) then
+            gFunc.Equip('Hands', 'Dream Mittens +1')
+        end
+        if (skulkers_cape) then
+            gFunc.Equip('Back', 'Skulker\'s Cape')
+        end
     end
 end
 
