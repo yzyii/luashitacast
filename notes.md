@@ -3,6 +3,3 @@
 - Healing Torque
 - Druid\'s Slops
 - Healing Earring
-
-TODO:
-- Silent Oils / Prism Powder -> Equip Dream Gear / Skulkers Cape
