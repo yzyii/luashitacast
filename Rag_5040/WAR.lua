@@ -46,17 +46,14 @@ profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
---[[
---------------------------------
-Everything below can be ignored.
---------------------------------
-]]
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
     -- You may add logic here
 end
 
 profile.HandleItem = function()
+    gcinclude.DoItem()
     -- You may add logic here
 end
 
@@ -72,8 +69,6 @@ profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
     -- You may add logic here
 end
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.OnLoad = function()
     gcmelee.Load()
