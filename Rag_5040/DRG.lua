@@ -67,6 +67,8 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 local JobAbilities = T{
     'Jump',
     'High Jump',
@@ -93,6 +95,18 @@ profile.HandleAbility = function()
     end
 end
 
+profile.HandleItem = function()
+    gcinclude.DoItem()
+end
+
+profile.HandlePreshot = function()
+    -- You may add logic here
+end
+
+profile.HandleMidshot = function()
+    -- You may add logic here
+end
+
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
@@ -101,8 +115,6 @@ profile.HandleWeaponskill = function()
       gFunc.EquipSet(sets[action.Name])
     end
 end
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.OnLoad = function()
     gcmelee.Load()
