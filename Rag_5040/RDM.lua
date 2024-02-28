@@ -591,6 +591,34 @@ Everything below can be ignored.
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
+profile.HandleAbility = function()
+    -- You may add logic here
+end
+
+profile.HandleItem = function()
+    gcinclude.DoItem()
+end
+
+profile.HandlePreshot = function()
+    -- You may add logic here
+end
+
+profile.HandleMidshot = function()
+    -- You may add logic here
+end
+
+profile.HandleWeaponskill = function()
+    local action = gData.GetAction()
+
+    gFunc.EquipSet(sets.WS)
+
+    if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') or (action.Name == 'Evisceration') then
+        gFunc.EquipSet(sets.WS_Soil)
+    elseif (action.Name == 'Spirits Within') then
+        gFunc.EquipSet(sets.WS_Spirits)
+    end
+end
+
 profile.OnLoad = function()
     gcmage.Load()
     profile.SetMacroBook()
@@ -625,18 +653,6 @@ profile.HandleMidcast = function()
         if (action.Name == 'Haste' or action.Name == 'Refresh') then
             gFunc.Equip(dilation_ring_slot, 'Dilation Ring')
         end
-    end
-end
-
-profile.HandleWeaponskill = function()
-    local action = gData.GetAction()
-
-    gFunc.EquipSet(sets.WS)
-
-    if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') or (action.Name == 'Evisceration') then
-        gFunc.EquipSet(sets.WS_Soil)
-    elseif (action.Name == 'Spirits Within') then
-        gFunc.EquipSet(sets.WS_Spirits)
     end
 end
 
