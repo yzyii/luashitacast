@@ -62,6 +62,8 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 profile.HandleAbility = function()
     local action = gData.GetAction()
     if (action.Name == 'Flee') then
@@ -71,6 +73,14 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Mug') then
         gFunc.EquipSet(sets.Mug)
     end
+end
+
+profile.HandleItem = function()
+    gcinclude.DoItem()
+end
+
+profile.HandlePreshot = function()
+    -- You may add logic here
 end
 
 profile.HandleMidshot = function()
@@ -87,8 +97,6 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_SharkBite)
     end
 end
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.OnLoad = function()
     gcmelee.Load()
