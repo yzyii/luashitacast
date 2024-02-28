@@ -1,5 +1,5 @@
 -- Defines Staves to equip. Will automatically equip the correct staff for a spell. Will work even if you don't have the staff.
--- Leave as '' if you do not have the staff.
+-- Leave as '' if you do not have them.
 local fire_staff = 'Vulcan\'s Staff'
 local earth_staff = 'Terra\'s Staff'
 local water_staff = 'Neptune\'s Staff'
@@ -22,50 +22,52 @@ local anrin_obi = true
 -- Set to true if you have the item, and specify which ring or earring slot it will override
 local diabolos_pole = true
 local uggalepih_pendant = true
-local sorcerers_tonban = true
+local master_casters_bracelets = true
 local dream_boots = true
 local dream_mittens = true
-local master_casters_bracelets = true
 local skulkers_cape = false
 local wizards_mantle = false
 
 local diabolos_earring = true
 local diabolos_earring_slot = 'Ear2'
+local diabolos_ring = true
+local diabolos_ring_slot = 'Ring2'
+local ice_ring = true
+local ice_ring_slot = 'Ring2'
+local water_ring = true
+local water_ring_slot = 'Ring2'
+local overlords_ring = true
+local overlords_ring_slot = 'Ring1'
 local wizards_earring = false
 local wizards_earring_slot = 'Ear2'
 local healers_earring = false
 local healers_earring_slot = 'Ear2'
 
-local diabolos_ring = true
-local diabolos_ring_slot = 'Ring2'
-local sorcerers_ring = true
-local sorcerers_ring_slot = 'Ring1' -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
-local ice_ring = true
-local ice_ring_slot = 'Ring2'
-local water_ring = true
-local water_ring_slot = 'Ring2'
-
+-- RDM Specific
 local tp_diabolos_earring = true
 local tp_diabolos_earring_slot = 'Ear2'
 local tp_fencers_ring = false
 local tp_fencers_ring_slot = 'Ring1'
 
-local overlords_ring = true
-local overlords_ring_slot = 'Ring1'
+-- BLM Specific
+local sorcerers_tonban = true
+local sorcerers_ring = true
+local sorcerers_ring_slot = 'Ring1' -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
 
+-- SMN Specific
 local carbuncle_mitts = true
 local yinyang_robe = true
 local bahamuts_staff = false
-
-local cure_clogs = false
-local ruckes_rung = false
-
--- Replace these with '' if you do not have them
+-- Leave as '' if you do not have them.
 local summoners_doublet = 'Summoner\'s Dblt.'
 local summoners_horn = 'Summoner\'s Horn'
 
+-- WHM Specific
+local cure_clogs = false
+local ruckes_rung = false
+
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
-local dark_and_diabolos_earrings = false
+local dark_and_diabolos_earrings = true
 
 function DoCustomKeybinds() -- Write your own custom Keybinds or logic in here that will get run OnLoad()
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
@@ -149,6 +151,17 @@ local NukeObiOwnedTable = {
     ['Thunder'] = rairin_obi,
 }
 
+local WeakElementTable = {
+    ['Fire'] = 'Water',
+    ['Earth'] = 'Wind',
+    ['Water'] = 'Thunder',
+    ['Wind'] = 'Ice',
+    ['Ice'] = 'Fire',
+    ['Thunder'] = 'Earth',
+    ['Light'] = 'Dark',
+    ['Dark'] = 'Light'
+}
+
 local setMP = 0
 local addMP = 0
 local lastIdleSetBeforeEngaged = ''
@@ -173,7 +186,6 @@ function gcmage.SetVariables()
     if (player.MainJob ~= 'BRD') then
         gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
     end
-
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false)
     end
@@ -291,7 +303,6 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
                 gcinclude.UnlockWeapon:once(1)
             end
         end
-
         if (gcdisplay.IdleSet == 'Fight') then
             gFunc.EquipSet('TP')
             if (player.SubJob == 'NIN') then
@@ -538,30 +549,12 @@ end
 
 function gcmage.EquipEnhancing()
     local action = gData.GetAction()
-    local target = gData.GetActionTarget()
-    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
     gFunc.EquipSet('Enhancing')
     if (action.Name == 'Stoneskin') then
         gFunc.EquipSet('Stoneskin')
     elseif (SpikeSpells:contains(action.Name)) then
         gFunc.EquipSet('Spikes')
-    elseif (target.Name == me) then
-        if (action.Name == 'Sneak') then
-            if (dream_boots) then
-                gFunc.Equip('Feet', 'Dream Boots +1')
-            end
-            if (skulkers_cape) then
-                gFunc.Equip('Back', 'Skulker\'s Cape')
-            end
-        elseif (action.Name == 'Invisible') then
-            if (dream_mittens) then
-                gFunc.Equip('Hands', 'Dream Mittens +1')
-            end
-            if (skulkers_cape) then
-                gFunc.Equip('Back', 'Skulker\'s Cape')
-            end
-        end
     end
 end
 
@@ -633,7 +626,7 @@ function gcmage.EquipElemental(maxMP)
                 end
             end
         end
-        if (ObiCheck(action) >= 1) then
+        if (ObiCheck(action)) then
             local obi = NukeObiTable[action.Element]
             local obiOwned = NukeObiOwnedTable[action.Element]
             if (obiOwned) then
@@ -657,57 +650,16 @@ function gcmage.EquipElemental(maxMP)
     end
 end
 
-function ObiCheck(spell)
-    local element = spell.Element
-    local zone = gData.GetEnvironment()
+function ObiCheck(action)
+    local element = action.Element
+    local environment = gData.GetEnvironment()
+    local weakElement = WeakElementTable[element]
 
-    local DayElementTable = {
-        ['Firesday'] = 'Fire',
-        ['Earthsday'] = 'Earth',
-        ['Watersday'] = 'Water',
-        ['Windsday'] = 'Wind',
-        ['Iceday'] = 'Ice',
-        ['Lightningday'] = 'Thunder',
-        ['Lightsday'] = 'Light',
-        ['Darksday'] = 'Dark'
-    }
-
-    local badEle = {
-        ['Fire'] = 'Water',
-        ['Earth'] = 'Wind',
-        ['Water'] = 'Thunder',
-        ['Wind'] = 'Ice',
-        ['Ice'] = 'Fire',
-        ['Thunder'] = 'Earth',
-        ['Light'] = 'Dark',
-        ['Dark'] = 'Light'
-    };
-
-    local weight = 0
-
-    -- Day Comparison
-    if (DayElementTable[zone.Day] == element) then
-        weight = weight + 1
-    elseif (DayElementTable[zone.Day] == badEle[element]) then
-        weight = weight - 1
+    if environment.WeatherElement == element then
+        return environment.Weather:match('x2') or environment.DayElement ~= weakElement;
     end
 
-    -- Weather Comparison
-    if string.find(zone.Weather, element) then
-        if string.find(zone.Weather, 'x2') then
-            weight = weight + 2
-        else
-            weight = weight + 1
-        end
-    elseif string.find(zone.Weather, badEle[element]) then
-        if string.find(zone.Weather, 'x2') then
-            weight = weight - 2
-        else
-            weight = weight - 1
-        end
-    end
-
-    return weight
+    return environment.DayElement == element and environment.WeatherElement ~= weakElement;
 end
 
 function gcmage.EquipEnfeebling()
