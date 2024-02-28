@@ -113,6 +113,36 @@ profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 6')
 end
 
+--[[
+--------------------------------
+Everything below can be ignored.
+--------------------------------
+]]
+
+local pets = T{'sheep','lizard','crab','tiger','rabbit','mandy','flytrap'}
+
+local PetTable1 = {
+    [1] = 'Sheep',
+    [2] = 'Lizard',
+    [3] = 'Crab',
+    [4] = 'Tiger',
+    [5] = 'Rabbit',
+    [6] = 'Mandy',
+    [7] = 'Flytrap'
+}
+local PetTable2 = {
+    ['sheep'] = 1,
+    ['lizard'] = 2,
+    ['crab'] = 3,
+    ['tiger'] = 4,
+    ['rabbit'] = 5,
+    ['mandy'] = 6,
+    ['flytrap'] = 7
+}
+
+local PetMagicAttack = T{'Gloom Spray','Fireball','Acid Spray','Molting Plumage','Cursed Sphere','Nectarous Deluge','Charged Whisker','Nepenthic Plunge'}
+local PetMagicAccuracy = T{'Toxic Spit','Acid Spray','Leaf Dagger','Venom Spray','Venom','Dark Spore','Sandblast','Dust Cloud','Stink Bomb','Slug Family','Intimidate','Gloeosuccus','Spider Web','Filamented Hold','Choke Breath','Blaster','Snow Cloud','Roar','Palsy Pollen','Spore','Brain Crush','Choke Breath','Silence Gas','Chaotic Eye','Sheep Song','Soporific','Predatory Glare','Sudden Lunge','Numbing Noise','Jettatura','Bubble Shower','Spoil','Scream','Noisome Powder','Acid Mist','Rhinowrecker','Swooping Frenzy','Venom Shower','Corrosive Ooze','Spiral Spin','Infrasonics','Hi-Freq Field','Purulent Ooze','Foul Waters','Sandpit','Infected Leech','Pestilent Plume'}
+
 profile.HandleAbility = function()
     local player = gData.GetPlayer()
     local action = gData.GetAction()
@@ -190,32 +220,21 @@ profile.HandleAbility = function()
     end
 end
 
+profile.HandleItem = function()
+    gcinclude.DoItem()
+end
+
+profile.HandlePreshot = function()
+    -- You may add logic here
+end
+
+profile.HandleMidshot = function()
+    -- You may add logic here
+end
+
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 end
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
-
-local pets = T{'sheep','lizard','crab','tiger','rabbit','mandy','flytrap'}
-
-local PetTable1 = {
-    [1] = 'Sheep',
-    [2] = 'Lizard',
-    [3] = 'Crab',
-    [4] = 'Tiger',
-    [5] = 'Rabbit',
-    [6] = 'Mandy',
-    [7] = 'Flytrap'
-}
-local PetTable2 = {
-    ['sheep'] = 1,
-    ['lizard'] = 2,
-    ['crab'] = 3,
-    ['tiger'] = 4,
-    ['rabbit'] = 5,
-    ['mandy'] = 6,
-    ['flytrap'] = 7
-}
 
 profile.OnLoad = function()
     gcmelee.Load()
@@ -241,9 +260,6 @@ profile.HandleCommand = function(args)
         gcmelee.DoCommands(args)
     end
 end
-
-local PetMagicAttack = T{'Gloom Spray','Fireball','Acid Spray','Molting Plumage','Cursed Sphere','Nectarous Deluge','Charged Whisker','Nepenthic Plunge'}
-local PetMagicAccuracy = T{'Toxic Spit','Acid Spray','Leaf Dagger','Venom Spray','Venom','Dark Spore','Sandblast','Dust Cloud','Stink Bomb','Slug Family','Intimidate','Gloeosuccus','Spider Web','Filamented Hold','Choke Breath','Blaster','Snow Cloud','Roar','Palsy Pollen','Spore','Brain Crush','Choke Breath','Silence Gas','Chaotic Eye','Sheep Song','Soporific','Predatory Glare','Sudden Lunge','Numbing Noise','Jettatura','Bubble Shower','Spoil','Scream','Noisome Powder','Acid Mist','Rhinowrecker','Swooping Frenzy','Venom Shower','Corrosive Ooze','Spiral Spin','Infrasonics','Hi-Freq Field','Purulent Ooze','Foul Waters','Sandpit','Infected Leech','Pestilent Plume'}
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
