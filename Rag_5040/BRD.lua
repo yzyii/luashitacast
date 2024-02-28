@@ -274,7 +274,7 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    gFunc.EquipSet(sets.WS)
+    -- You may add logic here
 end
 
 profile.OnLoad = function()
