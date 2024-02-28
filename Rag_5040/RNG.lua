@@ -62,6 +62,8 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 profile.HandleAbility = function()
     gFunc.EquipSet(sets.EnmityDown)
 
@@ -77,6 +79,10 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Eagle Eye Shot') then
         gFunc.EquipSet(sets.Ranged_ATK)
     end
+end
+
+profile.HandleItem = function()
+    gcinclude.DoItem()
 end
 
 profile.HandlePreshot = function()
@@ -107,8 +113,6 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_Coronach)
     end
 end
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.OnLoad = function()
     gcmelee.Load()
