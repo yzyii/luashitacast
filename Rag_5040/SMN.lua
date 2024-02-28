@@ -318,6 +318,27 @@ Everything below can be ignored.
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
+profile.HandleAbility = function()
+    gcmage.DoAbility()
+    gFunc.EquipSet('BP_Delay')
+end
+
+profile.HandleItem = function()
+    gcinclude.DoItem()
+end
+
+profile.HandlePreshot = function()
+    -- You may add logic here
+end
+
+profile.HandleMidshot = function()
+    -- You may add logic here
+end
+
+profile.HandleWeaponskill = function()
+    -- You may add logic here
+end
+
 profile.OnLoad = function()
     gcmage.Load()
     profile.SetMacroBook()
@@ -346,11 +367,6 @@ end
 
 profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, nil, nil, nil, nil)
-end
-
-profile.HandleAbility = function()
-    gcmage.DoAbility()
-    gFunc.EquipSet('BP_Delay')
 end
 
 return profile
