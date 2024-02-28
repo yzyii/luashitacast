@@ -239,7 +239,7 @@ ashita.events.register('packet_in', 'LAC_Conquest_Module_HandleIncomingPacket', 
 
             print(chat.header('Conquest') .. chat.message('Updated conquest information.'));
         end
-        
+
         packetTime = os.clock() + 1;
         daysUntilConquest = days;
         currentControl = LookupControl(currentZone);
@@ -277,7 +277,7 @@ function lib:GetOutsideControl()
     if (currentControl == 'Unknown') then
         return false;
     end
-    
+
     return (currentControl ~= currentNation);
 end
 
