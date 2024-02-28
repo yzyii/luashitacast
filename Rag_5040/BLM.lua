@@ -427,7 +427,7 @@ profile.OnUnload = function()
 end
 
 profile.HandleCommand = function(args)
-	gcmage.DoCommands(args)
+    gcmage.DoCommands(args)
 end
 
 profile.HandleDefault = function()
