@@ -1,7 +1,3 @@
---[[
-    This is provided purely as an example template. Only very basic sanity testing has been done.
-]]
-
 local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set. Note: Do NOT include cure clogs / ruckes rung here.
@@ -84,12 +80,14 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmage = gFunc.LoadFile('common\\gcmage.lua')
+
 profile.HandleAbility = function()
     -- You may add logic here
 end
 
 profile.HandleItem = function()
-    -- You may add logic here
+    gcinclude.DoItem()
 end
 
 profile.HandlePreshot = function()
@@ -102,39 +100,32 @@ end
 
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
-    -- You may add logic here
 end
-
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.OnLoad = function()
     gcmage.Load()
     profile.SetMacroBook()
-    -- You may add logic here
 end
 
 profile.OnUnload = function()
     gcmage.Unload()
-    -- You may add logic here
 end
 
 profile.HandleCommand = function(args)
     gcmage.DoCommands(args)
-    -- You may add logic here
 end
 
 profile.HandleDefault = function()
     gcmage.DoDefault(ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP)
 
     local player = gData.GetPlayer()
-	if (player.Status == 'Engaged') then
+    if (player.Status == 'Engaged') then
         gFunc.EquipSet('TP')
-	end
+    end
 end
 
 profile.HandlePrecast = function()
     gcmage.DoPrecast(fastCastValue)
-    -- You may add logic here
 end
 
 profile.HandleMidcast = function()
@@ -147,8 +138,6 @@ profile.HandleMidcast = function()
     if (string.match(action.Name, 'Banish')) then
         gFunc.EquipSet('Banish')
     end
-
-    -- You may add logic here
 end
 
 return profile
