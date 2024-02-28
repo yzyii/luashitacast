@@ -67,6 +67,8 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 profile.HandleAbility = function()
     gFunc.EquipSet(sets.Hate);
 
@@ -89,6 +91,18 @@ profile.HandleAbility = function()
     end
 end
 
+profile.HandleItem = function()
+    gcinclude.DoItem()
+end
+
+profile.HandlePreshot = function()
+    -- You may add logic here
+end
+
+profile.HandleMidshot = function()
+    -- You may add logic here
+end
+
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
@@ -97,8 +111,6 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_Spirits)
     end
 end
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.OnLoad = function()
     gcmelee.Load()
