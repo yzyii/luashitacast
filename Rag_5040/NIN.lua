@@ -80,8 +80,22 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 profile.HandleAbility = function()
     gFunc.EquipSet(sets.Hate);
+end
+
+profile.HandleItem = function()
+    gcinclude.DoItem()
+end
+
+profile.HandlePreshot = function()
+    -- You may add logic here
+end
+
+profile.HandleMidshot = function()
+    -- You may add logic here
 end
 
 profile.HandleWeaponskill = function()
@@ -95,8 +109,6 @@ profile.HandleWeaponskill = function()
         gFunc.Equip('Hands', 'Kog. Tekko +1')
     end
 end
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.OnLoad = function()
     gcmelee.Load()
