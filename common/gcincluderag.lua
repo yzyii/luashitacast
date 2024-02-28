@@ -327,7 +327,7 @@ end
 function gcinclude.DoItem()
     local item = gData.GetAction();
 
-	if (item.Name == 'Silent Oil') then
+    if (item.Name == 'Silent Oil') then
         if (dream_boots) then
             gFunc.Equip('Feet', 'Dream Boots +1')
         end
