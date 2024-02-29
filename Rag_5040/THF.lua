@@ -2,6 +2,8 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
 
+local ta_rogue_armlets = true
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -95,6 +97,13 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_Evisceration)
     elseif (action.Name == 'Shark Bite') then
         gFunc.EquipSet(sets.WS_SharkBite)
+    end
+
+    local ta = gData.GetBuffCount('Trick Attack')
+    if (ta == 1) then
+        if (ta_rogue_armlets) then
+            gFunc.Equip('Hands', 'Rogue\'s Armlets +1')
+        end
     end
 end
 
