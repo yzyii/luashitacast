@@ -239,6 +239,9 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
+    TP = {}, -- No command currently implemented to quickly disable weapon slots for WHM yet. Just use "/lac disable Main" etc.
+    WS = {},
+
     FallbackSub = { -- Used only when you do not have complete staff sets
     },
 }
@@ -274,7 +277,7 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    -- You may add logic here
+    gFunc.EquipSet(sets.WS)
 end
 
 profile.OnLoad = function()
@@ -312,6 +315,11 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer()
     if (minstrels_earring and player.HPP <= 25) then
         gFunc.Equip(minstrels_earring_slot, 'Minstrel\'s Earring')
+    end
+
+    local player = gData.GetPlayer()
+    if (player.Status == 'Engaged') then
+        gFunc.EquipSet('TP')
     end
 end
 
