@@ -432,6 +432,8 @@ end
 
 profile.HandleDefault = function()
     gcmage.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, nil, rdmSJNukeMaxMP)
+
+    gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()

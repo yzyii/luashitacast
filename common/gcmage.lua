@@ -166,6 +166,7 @@ local setMP = 0
 local addMP = 0
 local lastIdleSetBeforeEngaged = ''
 local lastSummoningElement = ''
+local restingMaxMP = false
 
 function gcmage.Load()
     gcmage.SetVariables:once(2)
@@ -351,12 +352,15 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         if (player.SubJob == "BLM" and wizards_mantle) then
             gFunc.Equip('Back', 'Wizard\'s Mantle')
         end
-        if (player.MPP >= 99) then
+        if (player.MPP >= 99 or restingMaxMP) then
+            restingMaxMP = true
             gFunc.EquipSet('IdleMaxMP')
             if (dark_staff ~= '') then
                 gFunc.Equip('Main', dark_staff)
             end
         end
+    else
+        restingMaxMP = false
     end
 end
 

@@ -284,6 +284,8 @@ profile.HandleDefault = function()
             gFunc.EquipSet(sets.Ready_Magic)
         end
     end
+
+    gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()

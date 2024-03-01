@@ -150,6 +150,8 @@ profile.HandleDefault = function()
     elseif (ta == 1) then
         gFunc.EquipSet(sets.TA)
     end
+
+    gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()

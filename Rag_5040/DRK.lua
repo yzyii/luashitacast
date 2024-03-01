@@ -90,6 +90,7 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
     -- You may add logic here
     gcmelee.DoDefaultOverride()
+    gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()

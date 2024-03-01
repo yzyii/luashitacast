@@ -639,6 +639,8 @@ profile.HandleDefault = function()
     if (blue_cotehardie and player.MP <= 40) then
         gFunc.Equip('Body', 'Blue Cotehardie')
     end
+
+    gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()

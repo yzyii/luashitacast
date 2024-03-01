@@ -143,6 +143,8 @@ profile.HandleDefault = function()
     if (ethereal_earring == true and (player.SubJob == 'WHM' or player.SubJob == 'RDM')) then
         gFunc.Equip(ethereal_earring_slot, 'Ethereal Earring')
     end
+
+    gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()

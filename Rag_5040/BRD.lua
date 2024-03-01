@@ -321,6 +321,8 @@ profile.HandleDefault = function()
     if (player.Status == 'Engaged') then
         gFunc.EquipSet('TP')
     end
+
+    gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()

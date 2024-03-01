@@ -12,6 +12,26 @@ local skulkers_cape = false
 
 local load_stylist = true
 
+-- Add additional equipment here that you want to automatically lock when equipping
+local LockableEquipment = {
+    ['Main'] = T{'Warp Cudgel', 'Rep. Signet Staff', 'Kgd. Signet Staff', 'Fed. Signet Staff', 'Treat Staff II', 'Trick Staff II'},
+    ['Sub'] = T{'Warp Cudgel'},
+    ['Range'] = T{},
+    ['Ammo'] = T{},
+    ['Head'] = T{'Reraise Hairpin', 'Dream Hat +1'},
+    ['Neck'] = T{'Opo-opo Necklace'},
+    ['Ear1'] = T{'Reraise Earring'},
+    ['Ear2'] = T{'Reraise Earring'},
+    ['Body'] = T{'Custom Gilet +1', 'Mandra. Suit'},
+    ['Hands'] = T{'Dream Mittens +1'},
+    ['Ring1'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring'},
+    ['Ring2'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring'},
+    ['Back'] = T{},
+    ['Waist'] = T{},
+    ['Legs'] = T{},
+    ['Feet'] = T{'Powder Boots','Dream Boots +1'}
+}
+
 --[[
 -----------------------------------
 Custom Keybinds. Change if Desired.
@@ -199,9 +219,7 @@ function gcinclude.DoCommands(args)
         gcdisplay.AdvanceToggle('Kite')
         gcinclude.Message('Kite', gcdisplay.GetToggle('Kite'))
     elseif (args[1] == 'warpme') then
-        gcdisplay.CreateToggle('Lock', true)
         gcinclude.RunWarpCudgel()
-        gcinclude.Message('Equip Lock', gcdisplay.GetToggle('Lock'))
     elseif (args[1] == 'rebind') then
         AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd ' .. args[2])
     elseif (args[1] == 'lockset') then
@@ -267,7 +285,6 @@ end
 
 function gcinclude.RunWarpCudgel()
     AshitaCore:GetChatManager():QueueCommand(-1, '/equip main "Warp Cudgel"')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
     local function usecudgel()
         AshitaCore:GetChatManager():QueueCommand(-1, '/item "Warp Cudgel" <me>')
     end
@@ -342,6 +359,18 @@ function gcinclude.DoItem()
             gFunc.Equip('Back', 'Skulker\'s Cape')
         end
     end
+end
+
+function gcinclude.BuildLockableSet(equipment)
+    local lockableSet = {};
+
+    for slot, item in pairs(equipment) do
+        if (LockableEquipment[slot]:contains(item.Name)) then
+            lockableSet[slot] = item;
+        end
+    end
+
+    return lockableSet;
 end
 
 return gcinclude

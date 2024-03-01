@@ -359,6 +359,7 @@ profile.HandleDefault = function()
     else
         gcmage.DoDefault(nil, nil, nil, nil)
     end
+    gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()
