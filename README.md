@@ -88,6 +88,7 @@ This will work 99% of the time unless you have added your own logic and therefor
                   this will override the values defined for /NIN /WHM /RDM /BLM as well.
                   /addmp will still work as per normal in conjunction with this.
                   type /setmp without a number to display the current value.
+/resetmp        - resets addmp and setmp values to 0
 /mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and
                   Accuracy sets.
 ```

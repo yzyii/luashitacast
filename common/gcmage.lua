@@ -89,7 +89,7 @@ conquest = gFunc.LoadFile('common\\conquest.lua')
 local gcmage = {}
 
 local AliasList = T{
-    'addmp','setmp','reset',
+    'addmp','setmp','resetmp',
     'mode', -- RDM / BLM
     'csstun','hate','vert','fight', -- RDM
     'yellow','mb', -- BLM
@@ -218,12 +218,10 @@ function gcmage.DoCommands(args)
         else
             gcinclude.Message('Set MP', setMP)
         end
-    elseif (args[1] == 'reset') then
+    elseif (args[1] == 'resetmp') then
         setMP = 0
         addMP = 0
-        lastIdleSetBeforeEngaged = ''
-        lastSummoningElement = ''
-        print(chat.header('GCMage'):append(chat.message('Reset Variables')))
+        print(chat.header('Ashitacast'):append(chat.message('Reset MP')))
     elseif (args[1] == 'mode') then
         gcdisplay.AdvanceCycle('Mode')
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
