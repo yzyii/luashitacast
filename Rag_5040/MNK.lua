@@ -36,7 +36,6 @@ local sets = {
     },
     IdleALT = {},
     Resting = {
-        Head = 'Raven Beret',
         Neck = 'Paisley Scarf',
         -- Ear2 = 'Sanative Earring',
         Body = 'Melee Cyclas',
