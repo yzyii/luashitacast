@@ -65,8 +65,11 @@ local sets = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
         Body = 'Mahatma Hpl.',
+        -- Hands = 'Hydra Gloves', -- 5
         Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
+        -- Legs = 'Hydra Brais', -- 6
+        -- Feet = 'Hydra Gaiters', -- 5
     },
     Town = {},
     Movement = {},
@@ -318,6 +321,7 @@ local sets = {
         Waist = 'Sorcerer\'s Belt',
         Legs = 'Wizard\'s Tonban',
         Feet = 'Nashira Crackows',
+        -- Feet = 'Igqira Huaraches',
     },
 
     Nuke = {
