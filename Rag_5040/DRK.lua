@@ -62,10 +62,10 @@ end
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
-    local action = gData.GetAction();
-    if (action.Name == 'Weapon Bash') then 
+    local action = gData.GetAction()
+    if (action.Name == 'Weapon Bash') then
         gFunc.EquipSet(sets.WeaponBash)
-    elseif (action.Name == 'Arcane Circle') then 
+    elseif (action.Name == 'Arcane Circle') then
         gFunc.EquipSet(sets.ArcaneCircle)
     end
 end
@@ -95,10 +95,12 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_CrossReaper)
     end
 
-    local souleater = gData.GetBuffCount('Souleater')
+    -- Assumes you are using Evasion set as your zerg set.
     if (gcdisplay.IdleSet == 'Evasion') then
         gFunc.EquipSet(sets.Evasion)
     end
+
+    local souleater = gData.GetBuffCount('Souleater')
     if (souleater > 0) then
         gFunc.EquipSet(sets.SoulEater)
     end
@@ -140,7 +142,7 @@ end
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
 
-    local action = gData.GetAction();
+    local action = gData.GetAction()
     if (action.Skill == 'Elemental Magic') then
         gFunc.EquipSet(sets.Nuke)
     elseif (action.Skill == 'Enfeebling Magic') then
