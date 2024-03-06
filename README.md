@@ -44,7 +44,7 @@ Copy everything above this line over to the new files.
 
 This will work 99% of the time unless you have added your own logic and therefore presumably know what you're doing already.
 
-## Default Commands:
+# Default Commands:
 ```
 [Regular Toggles]
 /lock   - locks or unlocks all equipment.
