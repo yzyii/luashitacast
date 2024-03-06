@@ -69,7 +69,9 @@ This will work 99% of the time unless you have added your own logic and therefor
 /lightningres /lres /tres - toggles Lightning Resistance set on/off.
 
 /evasion /eva   - toggles Evasion set on/off.
-                  you could also use this set for counter sets on MNK or other special sets.
+                  you could also use this set for special sets
+                  such as a MNK Counter set, a DRK Zerg set etc.
+                  as it will simply override your default idle / TP gear.
 
 [Special Commands]
 /warpme           - equips a warp cudgel and uses it after 30 seconds and locks equipment.
