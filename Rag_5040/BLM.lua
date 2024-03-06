@@ -60,6 +60,7 @@ local sets = {
     },
     Resting = {
         Main = 'Pluto\'s Staff',
+        Head = 'Hydra Beret',
         Neck = 'Checkered Scarf',
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',

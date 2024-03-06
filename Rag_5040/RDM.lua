@@ -308,7 +308,7 @@ local sets = {
 
     Cure = {
         Ammo = 'Hedgehog Bomb', -- 1
-        Head = 'Raven Beret', -- 8
+        Head = 'Hydra Beret', -- 8
         Neck = 'Benign Necklace', -- 2
         Ear1 = 'Novia Earring', -- 7
         Ear2 = 'Magnetic Earring',
