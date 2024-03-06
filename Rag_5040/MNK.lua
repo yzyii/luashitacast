@@ -59,6 +59,7 @@ local sets = {
         -- Back = 'Boxer\'s Mantle'
         Legs = 'Tpl. Hose +1',
         Feet = 'Melee Gaiters',
+        -- Feet = 'Rasetsu Sune-Ate +1',
     },
     MDT = { -- Shell IV provides 23% MDT
     },
@@ -68,7 +69,7 @@ local sets = {
     EarthRes = {},
     WindRes = {},
     WaterRes = {},
-    Evasion = {
+    Evasion = { -- Currently using this as an override for BV2 Zergs
         Head = 'Shr.Znr.Kabuto',
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
@@ -79,7 +80,7 @@ local sets = {
         Ring2 = 'Flame Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Warwolf Belt',
-        -- Waist = 'Black Belt',
+        Waist = 'Black Belt',
         Legs = 'Shura Haidate',
         Feet = 'Shura Sune-Ate',
     },
@@ -87,7 +88,7 @@ local sets = {
     Precast = {
         Ear1 = 'Loquac. Earring',
     },
-    SIRD = { -- 102% to Cap
+    SIRD = { -- Combination of PDT and SIRD Gear equipped while casting Utsusemi
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Magnetic Earring', -- 8
