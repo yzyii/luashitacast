@@ -2,7 +2,7 @@
 
 A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
-All jobs are fully implemented to my knowledge except for WAR and DRK however implementation of these should be trivial.
+All jobs are fully implemented to my knowledge except for WAR however implementation should be trivial. DRK is implemented but untested.
 
 Jobs use the corresponding templates to automatically implement functionality that is shared across all of them.
 
