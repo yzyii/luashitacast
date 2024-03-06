@@ -66,9 +66,12 @@ local sets = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
         Body = 'Mahatma Hpl.',
+        -- Hands = 'Hydra Gloves', -- 5
         Back = 'Errant Cape',
         Waist = 'Duelist\'s Belt',
         Legs = 'Baron\'s Slops',
+        -- Legs = 'Hydra Brais', -- 6
+        -- Feet = 'Hydra Gaiters', -- 5
     },
     Town = {},
     Movement = {
@@ -314,12 +317,16 @@ local sets = {
         Ear2 = 'Magnetic Earring',
         Body = 'Raven Jupon', -- 9
         Hands = 'Raven Bracers', -- 5
+        -- Body = 'Hydra Doublet', -- 9
+        -- Hands = 'Hydra Gloves', -- 5
         Ring1 = 'Aqua Ring',
         Ring2 = 'Aqua Ring',
         Back = 'Errant Cape', -- 5
         Waist = 'Penitent\'s Rope', -- 3
         Legs = 'Raven Hose', -- 6
         Feet = 'Raven Gaiters', -- 5
+        -- Legs = 'Hydra Brais', -- 6
+        -- Feet = 'Hydra Gaiters', -- 5
     },
     Cursna = {
         Body = 'Duelist\'s Tabard',
@@ -531,11 +538,18 @@ local sets = {
     TP_NIN = {
         Main = 'Joyeuse',
         Sub = 'Genbu\'s Shield',
+        -- Main = 'Enhancing Sword',
+        -- Sub = 'Joyeuse',
+        -- Ear2 = 'Stealth Earring',
     },
     WS = {
         Head = 'Optical Hat',
         Waist = 'Warwolf Belt',
         Legs = 'Duelist\'s Tights',
+        -- Body = 'Assault Jerkin',
+        -- Hands = 'Ogre Gloves +1',
+        -- Legs = 'Dusk Trousers',
+        -- Feet = 'Rutter Sabatons',
     },
     WS_Soil = {
         Neck = 'Soil Gorget',
@@ -553,23 +567,7 @@ local sets = {
         Feet = 'Dusk Ledelsens',
     },
 
-    LockSet1 = {
-        Main = 'Solid Wand',
-        Sub = 'Turtle Shield +1',
-        Ammo = 'Morion Tathlum',
-        Head = 'Traveler\'s Hat',
-        Neck = 'Justice Badge',
-        Ear1 = 'Enfeebling Earring',
-        Ear2 = 'Morion Earring +1',
-        Body = 'Ryl.Sqr. Robe',
-        Hands = 'Dvt. Mitts +1',
-        Ring1 = 'Saintly Ring',
-        Ring2 = 'Saintly Ring',
-        Back = 'White Cape',
-        Waist = 'Druid\'s Rope',
-        Legs = 'Custom Slacks',
-        Feet = 'Mannequin Pumps',
-    },
+    LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
 
