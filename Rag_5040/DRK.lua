@@ -59,6 +59,12 @@ profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
+--[[
+--------------------------------
+Everything below can be ignored.
+--------------------------------
+]]
+
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
