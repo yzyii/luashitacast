@@ -66,12 +66,12 @@ local sets = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
         Body = 'Mahatma Hpl.',
-        -- Hands = 'Hydra Gloves', -- 5
+        -- Hands = 'Hydra Gloves',
         Back = 'Errant Cape',
         Waist = 'Duelist\'s Belt',
         Legs = 'Baron\'s Slops',
-        -- Legs = 'Hydra Brais', -- 6
-        -- Feet = 'Hydra Gaiters', -- 5
+        -- Legs = 'Hydra Brais',
+        -- Feet = 'Hydra Gaiters',
     },
     Town = {},
     Movement = {
