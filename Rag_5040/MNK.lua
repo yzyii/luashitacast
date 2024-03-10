@@ -197,6 +197,7 @@ local sets = {
         -- Fortitude Torque
         Ear1 = 'Robust Earring',
         -- Ear2 = 'Robust Earring',
+        Body = 'Kirin\'s Osode',
         Ring1 = 'Topaz Ring',
         -- Ring1 = 'Soil Ring',
         Ring2 = 'Sattva Ring',
@@ -215,8 +216,7 @@ local sets = {
         Ring2 = 'Aqua Ring',
         -- Back = 'Melee Cape'
         Legs = 'Tpl. Hose +1',
-        Waist = 'Mrc.Cpt. Belt',
-        -- Waist = 'Reverend Sash',
+        Waist = 'Reverend Sash',
         Feet = 'Suzaku\'s Sune-Ate',
     },
 }
