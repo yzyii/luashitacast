@@ -2,7 +2,7 @@
 
 A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
-All jobs are fully implemented to my knowledge except for WAR and DRK however implementation of these should be trivial.
+All jobs are fully implemented to my knowledge except for WAR however implementation should be trivial. DRK is implemented but untested.
 
 Jobs use the corresponding templates to automatically implement functionality that is shared across all of them.
 
@@ -44,7 +44,7 @@ Copy everything above this line over to the new files.
 
 This will work 99% of the time unless you have added your own logic and therefore presumably know what you're doing already.
 
-## Default Commands:
+# Default Commands:
 ```
 [Regular Toggles]
 /lock   - locks or unlocks all equipment.
@@ -69,7 +69,9 @@ This will work 99% of the time unless you have added your own logic and therefor
 /lightningres /lres /tres - toggles Lightning Resistance set on/off.
 
 /evasion /eva   - toggles Evasion set on/off.
-                  you could also use this set for counter sets on MNK or other special sets.
+                  you could also use this set for special sets
+                  such as a MNK Counter set, a DRK Zerg set etc.
+                  as it will simply override your default idle / TP gear.
 
 [Special Commands]
 /warpme           - equips a warp cudgel and uses it after 30 seconds and locks equipment.
