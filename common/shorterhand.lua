@@ -9,8 +9,8 @@ local shorterhand = {}
 shorterhand.MageAliasList = T{ 'c4','c3','c2','c',
                                'i','s','ss','b','av',
                                'pa','si','po','bl','e',
-                               'pro4','sh4','pro3','sh3','pro2','sh2','pro','sh',
-                               'prog2','shg2','prog','shg',
+                               'pro4','sh4','pro3','sh3','pro2','sh2','pro1','sh1',
+                               'prog2','shg2','prog1','shg1',
                                'b4','b3','b2','b1',
                                't4','t3','t2','t1',
                                'f4','f3','f2','f1',
@@ -143,17 +143,17 @@ function shorterhand.DoCommands(args)
         AshitaCore:GetChatManager():QueueCommand(1, '//protect2 ' .. name)
     elseif (args[1] == 'sh2') then
         AshitaCore:GetChatManager():QueueCommand(1, '//shell2 ' .. name)
-    elseif (args[1] == 'pro') then
+    elseif (args[1] == 'pro1') then
         AshitaCore:GetChatManager():QueueCommand(1, '//protect ' .. name)
-    elseif (args[1] == 'sh') then
+    elseif (args[1] == 'sh1') then
         AshitaCore:GetChatManager():QueueCommand(1, '//shell ' .. name)
     elseif (args[1] == 'prog2') then
         AshitaCore:GetChatManager():QueueCommand(1, '//protectra2 ' .. name)
     elseif (args[1] == 'shg2') then
         AshitaCore:GetChatManager():QueueCommand(1, '//shellra2 ' .. name)
-    elseif (args[1] == 'prog') then
+    elseif (args[1] == 'prog1') then
         AshitaCore:GetChatManager():QueueCommand(1, '//protectra ' .. name)
-    elseif (args[1] == 'shg') then
+    elseif (args[1] == 'shg1') then
         AshitaCore:GetChatManager():QueueCommand(1, '//shellra ' .. name)
     end
 end
