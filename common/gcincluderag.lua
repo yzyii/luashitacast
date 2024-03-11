@@ -48,7 +48,7 @@ function DoCustom() -- Write your own custom Keybinds or logic in here that will
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F4 /lac fwd mdt')
 end
 
-local MageJobs = T{ 'RDM','BLM','WHM','SMN','PLD','BRD','BST','DRG' } -- Due to how job changing and loading ashitacast works, just enable all shorthand macros for the following jobs
+local MageJobs = T{ 'RDM','BLM','WHM','SMN','PLD','BRD','BST','DRG','NIN' } -- Due to how job changing and loading ashitacast works, just enable all shorthand macros for the following jobs
 
 --[[
 --------------------------------
