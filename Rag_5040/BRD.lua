@@ -255,7 +255,7 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP = {}, -- No command currently implemented to quickly disable weapon slots for WHM yet. Just use "/lac disable Main" etc.
+    TP = {}, -- No command currently implemented to quickly disable weapon slots for BRD yet. Just use "/lac disable Main" etc.
     WS = {},
 
     FallbackSub = { -- Used only when you do not have complete staff sets
