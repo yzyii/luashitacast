@@ -70,7 +70,7 @@ Everything below can be ignored.
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
-    gFunc.EquipSet(sets.Hate);
+    gFunc.EquipSet(sets.Hate)
 
     local action = gData.GetAction()
     if (action.Name == 'Holy Circle' and gallant_leggings ~= '') then
@@ -164,13 +164,13 @@ profile.HandleMidcast = function()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
     if (action.Skill ~= 'Ninjutsu') then
-        gFunc.EquipSet(sets.Hate);
+        gFunc.EquipSet(sets.Hate)
         if (action.Name == 'Flash') then
-            gFunc.EquipSet(sets.Hate_Flash);
+            gFunc.EquipSet(sets.Hate_Flash)
         end
     else
         if (action.Name == 'Utusemi: Ichi') then
-            gFunc.EquipSet(sets.Haste_Ichi);
+            gFunc.EquipSet(sets.Haste_Ichi)
         end
     end
 

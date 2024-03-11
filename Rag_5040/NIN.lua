@@ -83,7 +83,7 @@ Everything below can be ignored.
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
-    gFunc.EquipSet(sets.Hate);
+    gFunc.EquipSet(sets.Hate)
 end
 
 profile.HandleItem = function()
@@ -155,9 +155,9 @@ profile.HandleMidcast = function()
     local action = gData.GetAction()
     if (action.Skill == 'Ninjutsu') then
         if (NinDebuffs:contains(action.Name)) then
-            gFunc.EquipSet(sets.NinDebuff);
+            gFunc.EquipSet(sets.NinDebuff)
         elseif (NinElemental:contains(action.Name)) then
-            gFunc.EquipSet(sets.NinElemental);
+            gFunc.EquipSet(sets.NinElemental)
             if (action.MppAftercast < 51) and uggalepih_pendant then
                 gFunc.Equip('Neck', 'Uggalepih Pendant')
             end
@@ -168,7 +168,7 @@ profile.HandleMidcast = function()
         end
     elseif (action.Skill == 'Enfeebling Magic') then
         if (DrkDebuffs:contains(action.Name)) then
-            gFunc.EquipSet(sets.Hate);
+            gFunc.EquipSet(sets.Hate)
         end
     end
 end

@@ -82,9 +82,9 @@ end
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
-    local action = gData.GetAction();
+    local action = gData.GetAction()
     if (action.Name == 'Tachi: Kaiten') then
-        gFunc.EquipSet(sets.WS_Kaiten);
+        gFunc.EquipSet(sets.WS_Kaiten)
     end
 end
 

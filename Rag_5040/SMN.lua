@@ -354,7 +354,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    local petAction = gData.GetPetAction();
+    local petAction = gData.GetPetAction()
     if (petAction ~= nil) then
         gFunc.EquipSet('BP')
     else
