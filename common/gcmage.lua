@@ -658,10 +658,10 @@ function ObiCheck(action)
     local weakElement = WeakElementTable[element]
 
     if environment.WeatherElement == element then
-        return environment.Weather:match('x2') or environment.DayElement ~= weakElement;
+        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
     end
 
-    return environment.DayElement == element and environment.WeatherElement ~= weakElement;
+    return environment.DayElement == element and environment.WeatherElement ~= weakElement
 end
 
 function gcmage.EquipEnfeebling()

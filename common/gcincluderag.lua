@@ -343,7 +343,7 @@ function gcinclude.DoDefaultOverride(isMelee)
 end
 
 function gcinclude.DoItem()
-    local item = gData.GetAction();
+    local item = gData.GetAction()
 
     if (item.Name == 'Silent Oil') then
         if (dream_boots) then
@@ -363,15 +363,20 @@ function gcinclude.DoItem()
 end
 
 function gcinclude.BuildLockableSet(equipment)
-    local lockableSet = {};
+    local lockableSet = {}
 
     for slot, item in pairs(equipment) do
         if (LockableEquipment[slot]:contains(item.Name)) then
-            lockableSet[slot] = item;
+            lockableSet[slot] = item
+            if (item.Name == 'Custom Gilet +1') then
+                lockableSet['Hands'] = 'Displaced'
+            elseif (item.Name == 'Mandra. Suit') then
+                lockableSet['Legs'] = 'Displaced'
+            end
         end
     end
 
-    return lockableSet;
+    return lockableSet
 end
 
 return gcinclude
