@@ -15,7 +15,7 @@ local sets = {
         Ring2 = 'Evoker\'s Ring',
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Summoner\'s Spats',
+        Legs = 'Evoker\'s Spats',
         Feet = 'Evk. Pigaches +1',
     },
     IdleALT = {
@@ -30,7 +30,7 @@ local sets = {
         Ring2 = 'Evoker\'s Ring',
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Summoner\'s Spats',
+        Legs = 'Evoker\'s Spats',
         Feet = 'Evk. Pigaches +1',
     },
     IdleMaxMP = {
@@ -45,7 +45,7 @@ local sets = {
         Ring2 = 'Evoker\'s Ring',
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Summoner\'s Spats',
+        Legs = 'Evoker\'s Spats',
         Feet = 'Evk. Pigaches +1',
     },
     Resting = {
