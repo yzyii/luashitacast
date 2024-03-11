@@ -4,7 +4,7 @@ local use_shorterhand = true -- set to true if you want to use the commands avai
 local kingdom_aketon = false
 local republic_aketon = false
 local federation_aketon = false
-local ducal_aketon = false
+local ducal_aketon = true
 
 local dream_boots = true
 local dream_mittens = true
