@@ -6,7 +6,7 @@ Everything below can be ignored.
 
 local shorterhand = {}
 
-shorterhand.MageAliasList = T{ 'c4','c3','c2','c',
+shorterhand.MageAliasList = T{ 'c4','c3','c2','c1','c',
                                'i','s','ss','b','av',
                                'pa','si','po','bl','e',
                                'pro4','sh4','pro3','sh3','pro2','sh2','pro1','sh1',
@@ -35,6 +35,8 @@ function shorterhand.DoCommands(args)
         AshitaCore:GetChatManager():QueueCommand(1, '//cure3 ' .. name)
     elseif (args[1] == 'c2') then
         AshitaCore:GetChatManager():QueueCommand(1, '//cure2 ' .. name)
+    elseif (args[1] == 'c1') then
+        AshitaCore:GetChatManager():QueueCommand(1, '//cure ' .. name)
     elseif (args[1] == 'c') then
         AshitaCore:GetChatManager():QueueCommand(1, '//cure ' .. name)
     elseif (args[1] == 'i') then
