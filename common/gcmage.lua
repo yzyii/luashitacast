@@ -229,7 +229,7 @@ function gcmage.DoCommands(args)
         gcdisplay.AdvanceCycle('Mode')
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
     elseif (args[1] == 'lag') then
-        lag = ~lag
+        lag =  not lag
         gcinclude.Message('Lag set to: ' .. lag)
     end
 
@@ -387,7 +387,7 @@ function gcmage.DoPrecast(fastCastValue)
             end
         end
     else
-        if (~lag) then
+        if (not lag) then
             gcmage.SetupMidcastDelay(fastCastValue)
         end
         gFunc.EquipSet('Precast')
@@ -466,7 +466,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         do return end
     end
 
-    if (chainspell == 0 and ~lag) then
+    if (chainspell == 0 and not lag) then
         gcmage.SetupInterimEquipSet(sets)
     end
 

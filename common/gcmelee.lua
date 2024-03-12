@@ -9,6 +9,7 @@ gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
 local gcmelee = {}
 
 local isDPS = true
+local lag = false
 
 local TpVariantTable = {
     [1] = 'LowAcc',
@@ -22,7 +23,7 @@ local lastIdleSetBeforeEngaged = ''
 local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
 
 local AliasList = T{
-    'tpset','tp','dps',
+    'tpset','tp','dps','lag',
 }
 
 function gcmelee.SetIsDPS(isDPSVal)
@@ -58,6 +59,9 @@ function gcmelee.DoCommands(args)
             gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
             lastIdleSetBeforeEngaged = ''
         end
+    elseif (args[1] == 'lag') then
+        lag = not lag
+        gcinclude.Message('Lag set to: ' .. lag)
     end
 end
 
@@ -91,7 +95,9 @@ function gcmelee.DoDefaultOverride()
 end
 
 function gcmelee.DoPrecast(fastCastValue)
-    gcmelee.SetupMidcastDelay(fastCastValue)
+    if (not lag) then
+        gcmelee.SetupMidcastDelay(fastCastValue)
+    end
     gFunc.EquipSet('Precast')
 end
 
@@ -112,7 +118,9 @@ function gcmelee.SetupMidcastDelay(fastCastValue)
 end
 
 function gcmelee.DoMidcast(sets)
-    gcmelee.SetupInterimEquipSet(sets)
+    if (not lag) then
+        gcmelee.SetupInterimEquipSet(sets)
+    end
     gFunc.EquipSet('Haste')
 end
 
