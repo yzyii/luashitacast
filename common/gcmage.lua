@@ -93,6 +93,7 @@ local AliasList = T{
     'mode', -- RDM / BLM
     'csstun','hate','vert','fight', -- RDM
     'yellow','mb', -- BLM
+    'lag',
 }
 
 local NoMods = T{
@@ -168,6 +169,8 @@ local lastIdleSetBeforeEngaged = ''
 local lastSummoningElement = ''
 local restingMaxMP = false
 
+local lag = false
+
 function gcmage.Load()
     gcmage.SetVariables:once(2)
     gcinclude.SetAlias(AliasList)
@@ -225,6 +228,9 @@ function gcmage.DoCommands(args)
     elseif (args[1] == 'mode') then
         gcdisplay.AdvanceCycle('Mode')
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
+    elseif (args[1] == 'lag') then
+        lag = ~lag
+        gcinclude.Message('Lag set to: ' .. lag)
     end
 
     if (player.MainJob == 'RDM') then
@@ -364,11 +370,28 @@ end
 
 function gcmage.DoPrecast(fastCastValue)
     local chainspell = gData.GetBuffCount('Chainspell')
-    if (chainspell == 0) then
-        gcmage.SetupMidcastDelay(fastCastValue)
-    end
+    if (chainspell > 0) then
+        if (gcdisplay.GetToggle('Hate') == true) then
+            gFunc.EquipSet('Hate')
 
-    gFunc.EquipSet('Precast')
+            local action = gData.GetAction()
+            local target = gData.GetActionTarget()
+            local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
+
+            if (target.Name == me) then
+                if (action.Name == 'Cure III') then
+                    gFunc.EquipSet('Cheat_C3HPDown')
+                elseif (action.Name == 'Cure IV') then
+                    gFunc.EquipSet('Cheat_C4HPDown')
+                end
+            end
+        end
+    else
+        if (~lag) then
+            gcmage.SetupMidcastDelay(fastCastValue)
+        end
+        gFunc.EquipSet('Precast')
+    end
 end
 
 function gcmage.SetupMidcastDelay(fastCastValue)
@@ -443,7 +466,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         do return end
     end
 
-    if (chainspell == 0) then
+    if (chainspell == 0 and ~lag) then
         gcmage.SetupInterimEquipSet(sets)
     end
 
@@ -583,12 +606,16 @@ function gcmage.EquipHealing(maxMP, sets, chainspell)
     end
     if (gcdisplay.GetToggle('Hate') == true) then
         gFunc.EquipSet('Hate')
-        if (target.Name == me and chainspell == 0) then
+        if (target.Name == me) then
             if (action.Name == 'Cure III') then
-                gFunc.InterimEquipSet(sets.Cheat_C3HPDown)
+                if (chainspell == 0) then
+                    gFunc.InterimEquipSet(sets.Cheat_C3HPDown)
+                end
                 gFunc.EquipSet('Cheat_HPUp')
             elseif (action.Name == 'Cure IV') then
-                gFunc.InterimEquipSet(sets.Cheat_C4HPDown)
+                if (chainspell == 0) then
+                    gFunc.InterimEquipSet(sets.Cheat_C4HPDown)
+                end
                 gFunc.EquipSet('Cheat_HPUp')
             end
         end
