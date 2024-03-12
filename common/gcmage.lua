@@ -706,7 +706,7 @@ function gcmage.EquipDark(maxMP)
     local action = gData.GetAction()
 
     gFunc.EquipSet('Dark')
-    if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP <= 85 then
+    if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP <= 85 and action.Name ~= 'Aspir' then
         if (maxMP == 0 or player.MP < maxMP * 0.85) then
             gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
         end
