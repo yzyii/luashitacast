@@ -177,6 +177,8 @@ If you enable the Shorterhand setting in gcincluderag.lua, additional /commands 
 - shorterhand.lua is effectively just a pass through to shorthand you can define your own /commands in
 - using shorthand syntax like 'me' or partial names will work. e.g. "/i me" will cast invisible on yourself.
 
+The following are some examples available. Check the file for the full list of commands.
+
 ```
 [All Jobs]
 /u1 - Utusemi: Ichi
