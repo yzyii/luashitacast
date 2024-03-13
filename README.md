@@ -14,8 +14,8 @@ These luas were designed to be used in HorizonXI and therefore features such as 
 
 # How to Use
 
-- Download the entire directory From Code > Download ZIP.
-- Paste the **contents only** of the luashitacast-master folder into ..\\Game\\**config**\\addons\\luashitacast\\
+- Download the entire directory From Code > Download ZIP or from Releases to the right.
+- Paste the **contents only** of the luashitacast-master folder (or luashitacast-1.0.0 etc.) into ..\\Game\\**config**\\addons\\luashitacast\\
 - Note that **config** in the path. there may not be a luashitacast directory there if you have never used it before - just create one.
 - Rename the Rag_5040 folder to [Your_Character_Name]_[Your_Character_ID]
 - [Your_Character_ID] may be obtained from another plugin such as MobDB.
