@@ -48,7 +48,6 @@ This will work 99% of the time unless you have added your own logic and therefor
 ```
 [Regular Toggles]
 /lock   - locks or unlocks all equipment.
-/locktp - locks or unlocks weapon slots.
 /kite   - toggles Kite set on/off.
           /kite always takes precedence over any other set overrides active.
           e.g. if you have /kite and /fireres toggled on,
@@ -78,6 +77,10 @@ This will work 99% of the time unless you have added your own logic and therefor
                     use /lock to unlock again.
 /lockset [number] - equips the given lockset and locks equipment
                     use /lock to unlock again.
+					
+/lag - removes midcast delays and yellow set delays for when a zone is lagging
+       to give ashitacast the maximum chance of actually equipping the correct gear on cast.
+       interim equip sets will no longer work when this is enabled.
 ```
 
 # Additional Commands for All Mage Jobs:
@@ -101,6 +104,7 @@ This will work 99% of the time unless you have added your own logic and therefor
              this will be overwritten if you have a DT or Fire Resistance etc. set enabled.
              this is disabled for PLD in favour of just always using Idle sets instead.
 /dps       - used for PLD to turn on DPS LowAcc / HighAcc TP set behaviour.
+/locktp    - locks or unlocks Main, Sub, Ranged and Ammo slots.
 ```
 
 ## Additional Commands for RDM:

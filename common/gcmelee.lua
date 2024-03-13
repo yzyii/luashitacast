@@ -61,7 +61,7 @@ function gcmelee.DoCommands(args)
         end
     elseif (args[1] == 'lag') then
         lag = not lag
-        gcinclude.Message('Lag set to: ' .. lag)
+        gcinclude.Message('[Note: Midcast Delays are disabled if Lag is true] Lag', lag)
     end
 end
 

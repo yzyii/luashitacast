@@ -230,7 +230,7 @@ function gcmage.DoCommands(args)
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
     elseif (args[1] == 'lag') then
         lag =  not lag
-        gcinclude.Message('Lag set to: ' .. lag)
+        gcinclude.Message('[Note: Midcast Delays are disabled if Lag is true] Lag', lag)
     end
 
     if (player.MainJob == 'RDM') then
@@ -386,11 +386,16 @@ function gcmage.DoPrecast(fastCastValue)
                 end
             end
         end
-    else
-        if (not lag) then
-            gcmage.SetupMidcastDelay(fastCastValue)
-        end
+    elseif (not lag) then
+        gcmage.SetupMidcastDelay(fastCastValue)
         gFunc.EquipSet('Precast')
+    else
+        gFunc.EquipSet('Precast')
+        if (action.Skill == 'Elemental Magic' and player.MainJob == 'BLM' and gcdisplay.GetToggle('Yellow') == true) then
+            if (not ElementalDebuffs:contains(action.Name)) then
+                gFunc.EquipSet('Yellow')
+            end
+        end
     end
 end
 

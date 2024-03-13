@@ -197,7 +197,7 @@ local sets = {
         Waist = 'Druid\'s Rope', -- 10
         Feet = 'Wizard\'s Sabots', -- 20
     },
-    Yellow = { -- Fast Cast Gear will override this at times when the spell cast is too short.
+    Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
         Head = 'Faerie Hairpin',
         Neck = 'Checkered Scarf',
         Ear1 = 'Loquac. Earring',
