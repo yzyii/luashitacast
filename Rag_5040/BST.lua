@@ -58,6 +58,8 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 local pets = T{'sheep','lizard','crab','tiger','rabbit','mandy','flytrap'}
 
 local PetTable1 = {
