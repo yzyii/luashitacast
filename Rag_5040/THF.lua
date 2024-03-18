@@ -50,6 +50,7 @@ local sets = {
     TH = {},
 
     Ranged = {},
+	Ranged_INT = {},
 }
 profile.Sets = sets
 
@@ -87,6 +88,11 @@ end
 
 profile.HandleMidshot = function()
     gFunc.EquipSet(sets.Ranged)
+
+    local ammo = ((gData.GetEquipment())['Ammo'])['Name']
+    if (ammo == 'Bloody Bolt') then
+        gFunc.EquipSet(sets.Ranged_INT)
+    end
 end
 
 profile.HandleWeaponskill = function()

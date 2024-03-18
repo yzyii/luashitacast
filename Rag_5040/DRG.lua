@@ -5,6 +5,8 @@ local fastCastValue = 0.00 -- 0% from gear
 local ethereal_earring = true
 local ethereal_earring_slot = 'Ear2'
 
+local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -148,7 +150,13 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmelee.DoPrecast(fastCastValue)
+    local player = gData.GetPlayer()
+    if (player.SubJob == "RDM" and warlocks_mantle) then
+        gcmelee.DoPrecast(fastCastValue + 0.02)
+        gFunc.Equip('Back', 'Warlock\'s Mantle')
+    else
+        gcmelee.DoPrecast(fastCastValue)
+    end
 end
 
 profile.HandleMidcast = function()

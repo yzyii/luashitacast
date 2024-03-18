@@ -4,6 +4,7 @@ local fastCastValue = 0.00 -- 0% from gear
 
 local sets = {
     Idle = {
+        Main = 'Terra\'s Staff',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Novia Earring',
         Ammo = 'Hedgehog Bomb',
@@ -19,6 +20,7 @@ local sets = {
         Feet = 'Evk. Pigaches +1',
     },
     IdleALT = {
+        Main = 'Terra\'s Staff',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Novia Earring',
         Ammo = 'Hedgehog Bomb',
@@ -34,6 +36,7 @@ local sets = {
         Feet = 'Evk. Pigaches +1',
     },
     IdleMaxMP = {
+        Main = 'Terra\'s Staff',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Novia Earring',
         Ammo = 'Hedgehog Bomb',
