@@ -93,6 +93,10 @@ profile.HandleMidshot = function()
     if (ammo == 'Bloody Bolt') then
         gFunc.EquipSet(sets.Ranged_INT)
     end
+
+    if (gcdisplay.GetToggle('TH')) then
+        gFunc.EquipSet(sets.TH)
+    end
 end
 
 profile.HandleWeaponskill = function()
