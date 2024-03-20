@@ -203,7 +203,7 @@ function gcinclude.DoCommands(args)
         gcinclude.Message('Kite', gcdisplay.GetToggle('Kite'))
     elseif (args[1] == 'warpme') then
         gcinclude.RunWarpCudgel()
-    elseif (args[1] == 'rebind') then
+    elseif (args[1] == 'rebind') then -- This is purely for myself only since I always forget ! is Alt...
         AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd ' .. args[2])
     elseif (args[1] == 'lockset') then
         if (tonumber(args[2]) ~= nil) then
