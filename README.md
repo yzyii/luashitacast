@@ -156,24 +156,6 @@ This will work 99% of the time unless you have added your own logic and therefor
 /th - Forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
 ```
 
-## Keybinds:
-
-This LuAshitacast binds the following:
-```
-[All Jobs]
-Alt+F1 - Fire Res
-Alt+F2 - Kite
-Alt+F3 - DT
-Alt+F4 - MDT
-
-[Mages]
-F9  - Stun
-F10 - Dia
-
-You can use "/rebind XYZ" to bind Alt+F1 to a different set.
-e.g. /rebind tres will rebind Alt+F1 to lightning resistance.
-```
-
 ## Additional Commands (Shorterhand):
 
 If you enable the Shorterhand setting in gcincluderag.lua, additional /commands will work.
