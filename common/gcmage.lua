@@ -640,9 +640,6 @@ function gcmage.EquipElemental(maxMP)
                 gFunc.Equip('Neck', 'Uggalepih Pendant')
             end
         end
-        if (action.Element == environment.DayElement) and sorcerers_tonban and (player.MainJob == 'BLM') then
-            gFunc.Equip('Legs', 'Sorcerer\'s Tonban')
-        end
         if (gcdisplay.GetToggle('MB') == true) then
             gFunc.EquipSet('MB')
         end
@@ -670,6 +667,9 @@ function gcmage.EquipElemental(maxMP)
             if (obiOwned) then
                 gFunc.Equip('Waist', obi)
             end
+        end
+        if (action.Element == environment.DayElement) and sorcerers_tonban and (player.MainJob == 'BLM') then
+            gFunc.Equip('Legs', 'Sorcerer\'s Tonban')
         end
         if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
             gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring')
