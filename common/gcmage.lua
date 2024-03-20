@@ -69,11 +69,6 @@ local ruckes_rung = false
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_diabolos_earrings = true
 
-function DoCustomKeybinds() -- Write your own custom Keybinds or logic in here that will get run OnLoad()
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
-end
-
 -- Set to true if you want messages every time Mst.Cst. Bracelets are used.
 local log_conquest = false
 
@@ -175,8 +170,6 @@ function gcmage.Load()
     gcmage.SetVariables:once(2)
     gcinclude.SetAlias(AliasList)
     gcinclude.Load()
-
-    DoCustomKeybinds()
 end
 
 function gcmage.Unload()
