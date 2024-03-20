@@ -17,7 +17,7 @@ shorterhand.MageAliasList = T{ 'c4','c3','c2','c1','c',
                                'w4','w3','w2','w1',
                                'a4','a3','a2','a1',
                                's4','s3','s2','s1',
-                               'bga','tga'
+                               'bg','tg'
                              }
 shorterhand.BardAliasList = T{ 'ft','it','lt','et','wit','wat','dat','lit', }
 shorterhand.RegularAliasList = T{ 'u1','u2','ichi','ni' }
@@ -80,9 +80,9 @@ function shorterhand.DoCommands(args)
     elseif (args[1] == 'u2' or args[1] == 'ni') then
         AshitaCore:GetChatManager():QueueCommand(1, '/ma "Utsusemi: Ni" <me>')
 
-    elseif (args[1] == 'bga') then
+    elseif (args[1] == 'bg') then
         AshitaCore:GetChatManager():QueueCommand(1, '//blizzaga3 ' .. name)
-    elseif (args[1] == 'tga') then
+    elseif (args[1] == 'tg') then
         AshitaCore:GetChatManager():QueueCommand(1, '//thundaga3 ' .. name)
     elseif (args[1] == 'b4') then
         AshitaCore:GetChatManager():QueueCommand(1, '//blizzard4 ' .. name)
