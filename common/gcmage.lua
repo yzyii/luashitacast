@@ -635,6 +635,17 @@ function gcmage.EquipElemental(maxMP)
             gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring')
         end
     else
+        if (action.MppAftercast < 51) and uggalepih_pendant then
+            if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
+                gFunc.Equip('Neck', 'Uggalepih Pendant')
+            end
+        end
+        if (action.Element == environment.DayElement) and sorcerers_tonban and (player.MainJob == 'BLM') then
+            gFunc.Equip('Legs', 'Sorcerer\'s Tonban')
+        end
+        if (gcdisplay.GetToggle('MB') == true) then
+            gFunc.EquipSet('MB')
+        end
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
             if (conquest:GetOutsideControl()) and (player.MainJob == 'RDM') and master_casters_bracelets then
@@ -660,19 +671,8 @@ function gcmage.EquipElemental(maxMP)
                 gFunc.Equip('Waist', obi)
             end
         end
-        if (action.Element == environment.DayElement) and sorcerers_tonban and (player.MainJob == 'BLM') then
-            gFunc.Equip('Legs', 'Sorcerer\'s Tonban')
-        end
         if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
             gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring')
-        end
-        if (action.MppAftercast < 51) and uggalepih_pendant then
-            if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
-                gFunc.Equip('Neck', 'Uggalepih Pendant')
-            end
-        end
-        if (gcdisplay.GetToggle('MB') == true) then
-            gFunc.EquipSet('MB')
         end
     end
 end
