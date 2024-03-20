@@ -50,9 +50,10 @@ local tp_fencers_ring = false
 local tp_fencers_ring_slot = 'Ring1'
 
 -- BLM Specific
-local sorcerers_tonban = true
 local sorcerers_ring = true
 local sorcerers_ring_slot = 'Ring1' -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
+-- Leave as '' if you do not have them.
+local sorcerers_tonban = 'Sorcerer\'s Tonban'
 
 -- SMN Specific
 local carbuncle_mitts = true
@@ -668,8 +669,8 @@ function gcmage.EquipElemental(maxMP)
                 gFunc.Equip('Waist', obi)
             end
         end
-        if (action.Element == environment.DayElement) and sorcerers_tonban and (player.MainJob == 'BLM') then
-            gFunc.Equip('Legs', 'Sorcerer\'s Tonban')
+        if (action.Element == environment.DayElement) and sorcerers_tonban ~= '' and (player.MainJob == 'BLM') then
+            gFunc.Equip('Legs', sorcerers_tonban)
         end
         if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
             gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring')
