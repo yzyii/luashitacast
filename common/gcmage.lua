@@ -51,9 +51,10 @@ local tp_fencers_ring = false
 local tp_fencers_ring_slot = 'Ring1'
 
 -- BLM Specific
-local sorcerers_tonban = true
 local sorcerers_ring = true
 local sorcerers_ring_slot = 'Ring1' -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
+-- Leave as '' if you do not have them.
+local sorcerers_tonban = 'Sorcerer\'s Tonban'
 
 -- SMN Specific
 local carbuncle_mitts = true
@@ -69,11 +70,6 @@ local ruckes_rung = false
 
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_diabolos_earrings = true
-
-function DoCustomKeybinds() -- Write your own custom Keybinds or logic in here that will get run OnLoad()
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
-end
 
 -- Set to true if you want messages every time Mst.Cst. Bracelets are used.
 local log_conquest = false
@@ -176,8 +172,6 @@ function gcmage.Load()
     gcmage.SetVariables:once(2)
     gcinclude.SetAlias(AliasList)
     gcinclude.Load()
-
-    DoCustomKeybinds()
 end
 
 function gcmage.Unload()
@@ -655,6 +649,14 @@ function gcmage.EquipElemental(maxMP)
             gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring')
         end
     else
+        if (action.MppAftercast < 51) and uggalepih_pendant then
+            if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
+                gFunc.Equip('Neck', 'Uggalepih Pendant')
+            end
+        end
+        if (gcdisplay.GetToggle('MB') == true) then
+            gFunc.EquipSet('MB')
+        end
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
             if (conquest:GetOutsideControl()) and (player.MainJob == 'RDM') and master_casters_bracelets then
@@ -680,19 +682,11 @@ function gcmage.EquipElemental(maxMP)
                 gFunc.Equip('Waist', obi)
             end
         end
-        if (action.Element == environment.DayElement) and sorcerers_tonban and (player.MainJob == 'BLM') then
-            gFunc.Equip('Legs', 'Sorcerer\'s Tonban')
+        if (action.Element == environment.DayElement) and sorcerers_tonban ~= '' and (player.MainJob == 'BLM') then
+            gFunc.Equip('Legs', sorcerers_tonban)
         end
         if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
             gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring')
-        end
-        if (action.MppAftercast < 51) and uggalepih_pendant then
-            if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
-                gFunc.Equip('Neck', 'Uggalepih Pendant')
-            end
-        end
-        if (gcdisplay.GetToggle('MB') == true) then
-            gFunc.EquipSet('MB')
         end
     end
 end

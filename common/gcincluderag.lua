@@ -32,22 +32,6 @@ local LockableEquipment = {
     ['Feet'] = T{'Powder Boots'}
 }
 
---[[
------------------------------------
-Custom Keybinds. Change if Desired.
------------------------------------
-]]
-
-function DoCustom() -- Write your own custom Keybinds or logic in here that will get run OnLoad()
-    -- e.g.
-    -- AshitaCore:GetChatManager():QueueCommand(-1, '/bind space /jump')
-    -- AshitaCore:GetChatManager():QueueCommand(-1, '/bind m /map')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd fres')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F2 /lac fwd kite')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F3 /lac fwd dt')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F4 /lac fwd mdt')
-end
-
 local MageJobs = T{ 'RDM','BLM','WHM','SMN','PLD','BRD','BST','DRG','NIN' } -- Due to how job changing and loading ashitacast works, just enable all shorthand macros for the following jobs
 
 --[[
@@ -114,8 +98,6 @@ function gcinclude.Load()
     gSettings.AllowAddSet = true
     gcinclude.SetAlias(Overrides)
     gcinclude.SetAlias(Commands)
-
-    DoCustom()
 
     gcdisplay.CreateToggle('Kite', false)
     gcdisplay.CreateToggle('Lock', false)
@@ -221,7 +203,7 @@ function gcinclude.DoCommands(args)
         gcinclude.Message('Kite', gcdisplay.GetToggle('Kite'))
     elseif (args[1] == 'warpme') then
         gcinclude.RunWarpCudgel()
-    elseif (args[1] == 'rebind') then
+    elseif (args[1] == 'rebind') then -- This is purely for myself only since I always forget ! is Alt...
         AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd ' .. args[2])
     elseif (args[1] == 'lockset') then
         if (tonumber(args[2]) ~= nil) then

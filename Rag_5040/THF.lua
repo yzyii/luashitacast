@@ -65,6 +65,8 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+local taOverride = 0
+
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
@@ -75,6 +77,8 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Steal)
     elseif (action.Name == 'Mug') then
         gFunc.EquipSet(sets.Mug)
+    elseif (action.Name == 'Trick Attack') then
+        taOverride = os.clock() + 2;        
     end
 end
 
@@ -110,7 +114,7 @@ profile.HandleWeaponskill = function()
     end
 
     local ta = gData.GetBuffCount('Trick Attack')
-    if (ta == 1) then
+    if (ta > 0) or (os.clock() < taOverride) then
         if (ta_rogue_armlets) then
             gFunc.Equip('Hands', 'Rogue\'s Armlets +1')
         end
