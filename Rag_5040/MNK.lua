@@ -49,8 +49,7 @@ local sets = {
     DT = {
         -- Main = 'Cross-Counters',
         -- Head = 'Arh. Jinpachi +1',
-        Neck = 'Guarding Torque',
-        -- Neck = 'Evasion Torque',
+        Neck = 'Evasion Torque',
         -- Ear1 = 'Avenger\'s Earring',
         -- Ear2 = 'Avenger\'s Earring',
         -- Body = 'Arhat\'s Gi +1',
@@ -149,7 +148,7 @@ local sets = {
 
     SJ_DRG = {
         Ear2 = 'Wyvern Earring',
-        -- Feet = 'Dune boots',
+        Feet = 'Dune boots',
     },
     SJ_THF = {
         Ear2 = 'Pilferer\'s Earring',
@@ -175,7 +174,7 @@ local sets = {
     },
     WS_DragonKick = {
         Legs = 'Byakko\'s Haidate',
-        -- Feet = 'Dune boots',
+        Feet = 'Dune boots',
     },
     WS_HowlingFist = {
         Head = 'Genbu\'s Kabuto',
@@ -189,7 +188,7 @@ local sets = {
         Ring2 = 'Toreador\'s Ring',
         Back = 'Wyvern Mantle',
         Legs = 'Shura Haidate',
-        -- Feet = 'Dune boots',
+        Feet = 'Dune boots',
     },
     Chakra = {
         Ammo = 'Happy Egg',
@@ -210,6 +209,7 @@ local sets = {
 
     ChiBlast = {
         Head = 'Temple Crown',
+        Neck = 'Faith Torque',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
         Hands = 'Dvt. Mitts +1',

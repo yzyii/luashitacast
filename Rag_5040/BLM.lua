@@ -2,9 +2,9 @@ local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set
 
-local ninSJNukeMaxMP = 749 -- The Max MP you have when /nin in your nuking set
-local whmSJNukeMaxMP = 827 -- The Max MP you have when /whm in your nuking set
-local rdmSJNukeMaxMP = 808 -- The Max MP you have when /rdm in your nuking set
+local ninSJNukeMaxMP = nil -- The Max MP you have when /nin in your nuking set
+local whmSJNukeMaxMP = nil -- The Max MP you have when /whm in your nuking set
+local rdmSJNukeMaxMP = nil -- The Max MP you have when /rdm in your nuking set
 
 local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false
@@ -26,38 +26,8 @@ local sets = {
         Legs = 'Sorcerer\'s Tonban',
         Feet = 'Rostrum Pumps',
     },
-    IdleALT = {
-        Main = 'Terra\'s Staff',
-        Ammo = 'Hedgehog Bomb',
-        Head = 'Sorcerer\'s Petas.',
-        Neck = 'Jeweled Collar',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Sorcerer\'s Coat',
-        Hands = 'Zenith Mitts +1',
-        Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Umbra Cape',
-        Waist = 'Hierarch Belt',
-        Legs = 'Sorcerer\'s Tonban',
-        Feet = 'Rostrum Pumps',
-    },
-    IdleMaxMP = {
-        Main = 'Terra\'s Staff',
-        Ammo = 'Hedgehog Bomb',
-        Head = 'Sorcerer\'s Petas.',
-        Neck = 'Jeweled Collar',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Sorcerer\'s Coat',
-        Hands = 'Zenith Mitts +1',
-        Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Umbra Cape',
-        Waist = 'Hierarch Belt',
-        Legs = 'Sorcerer\'s Tonban',
-        Feet = 'Rostrum Pumps',
-    },
+    IdleALT = {},
+    IdleMaxMP = {},
     Resting = {
         Main = 'Pluto\'s Staff',
         Head = 'Hydra Beret',
@@ -198,14 +168,13 @@ local sets = {
         Feet = 'Wizard\'s Sabots', -- 20
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
-        Head = 'Faerie Hairpin',
-        Neck = 'Checkered Scarf',
+        Head = 'Zenith Crown',
+        -- Neck = 'Checkered Scarf',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Merman\'s Earring',
         Hands = 'Zenith Mitts +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Blue Cape',
         Waist = 'Penitent\'s Rope',
         Feet = 'Rostrum Pumps',
     },

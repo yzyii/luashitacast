@@ -27,6 +27,7 @@ local dream_boots = true
 local dream_mittens = true
 local skulkers_cape = false
 local wizards_mantle = false
+local republic_gold_medal = true
 
 local diabolos_earring = true
 local diabolos_earring_slot = 'Ear2'
@@ -281,17 +282,28 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     local environment = gData.GetEnvironment()
 
     gcinclude.DoDefaultIdle()
+
+    local equipMaxMP = false
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
         if (setMP > 0 and player.MP >= setMP + addMP - 50) then
-            gFunc.EquipSet('IdleMaxMP')
+            equipMaxMP = true
         elseif (player.SubJob == "NIN") and ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP - 50 then
-            gFunc.EquipSet('IdleMaxMP')
+            equipMaxMP = true
         elseif (player.SubJob == "WHM") and whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP - 50 then
-            gFunc.EquipSet('IdleMaxMP')
+            equipMaxMP = true
         elseif (player.SubJob == "BLM") and blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP - 50 then
-            gFunc.EquipSet('IdleMaxMP')
+            equipMaxMP = true
         elseif (player.SubJob == "RDM") and rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP - 50 then
-            gFunc.EquipSet('IdleMaxMP')
+            equipMaxMP = true
+        end
+    end
+
+    if (equipMaxMP) then
+        gFunc.EquipSet('IdleMaxMP')
+        if (conquest:GetOutsideControl()) then
+            if (republic_gold_medal) then
+                gFunc.Equip('Neck', 'Rep.Gold Medal')
+            end
         end
     end
 
@@ -358,6 +370,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         end
         if (player.MPP >= 99 or restingMaxMP) then
             restingMaxMP = true
+            gcinclude.DoDefaultIdle()
             gFunc.EquipSet('IdleMaxMP')
             if (dark_staff ~= '') then
                 gFunc.Equip('Main', dark_staff)
