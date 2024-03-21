@@ -23,7 +23,10 @@
 - Breaking Change - Variable sorcerors_tonban in gcmage.lua changed to string to allow +1
 - Breaking Change - Add ConserveMP set to all Mage jobs.
 
-
 ## v1.1.1
 
 - BLM - Fix shorterhand not registering RDM spells
+
+## v1.1.2
+
+- THF - Add TP_NIN and Fix timing edge cases for SATA
