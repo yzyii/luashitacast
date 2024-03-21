@@ -63,8 +63,8 @@ This will work 99% of the time unless you have added your own logic and therefor
 /iceres /ires /bres       - toggles Ice Resistance set on/off.
 /fireres /fres            - toggles Fire Resistance set on/off.
 /earthres /eres /sres     - toggles Earth Resistance set on/off.
-/windres /ares /wares     - toggles Wind Resistance set on/off.
-/waterres /wres /wires    - toggles Water Resistance set on/off.
+/windres /ares /wires     - toggles Wind Resistance set on/off.
+/waterres /wres /wares    - toggles Water Resistance set on/off.
 /lightningres /lres /tres - toggles Lightning Resistance set on/off.
 
 /evasion /eva   - toggles Evasion set on/off.
