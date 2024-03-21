@@ -36,3 +36,7 @@
 - BST - Add TP_NIN
 - WHM - Add TP Lock identical to RDM
 - BRD - Add TP Lock identical to RDM
+
+## v1.1.4
+
+- PLD - Use Haste set over Hate when Sentinel is active
