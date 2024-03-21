@@ -34,6 +34,7 @@ local sets = {
 
     TP_LowAcc = {},
     TP_HighAcc = {},
+    TP_NIN = {},
 
     WS = {},
     WS_Evisceration = {},
@@ -65,6 +66,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+local saOverride = 0
 local taOverride = 0
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
@@ -77,8 +79,10 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Steal)
     elseif (action.Name == 'Mug') then
         gFunc.EquipSet(sets.Mug)
+    elseif (action.Name == 'Sneak Attack') then
+        saOverride = os.clock() + 2
     elseif (action.Name == 'Trick Attack') then
-        taOverride = os.clock() + 2;        
+        taOverride = os.clock() + 2
     end
 end
 
@@ -148,6 +152,12 @@ end
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
+
+    local player = gData.GetPlayer()
+	if (player.SubJob == 'NIN') then
+		gFunc.EquipSet('TP_NIN')
+	end
+
     gcmelee.DoDefaultOverride()
 
     if (gcdisplay.GetToggle('TH')) then
@@ -157,11 +167,11 @@ profile.HandleDefault = function()
     local sa = gData.GetBuffCount('Sneak Attack')
     local ta = gData.GetBuffCount('Trick Attack')
 
-    if (sa == 1) and (ta == 1) then
+    if (sa == 1 and ta == 1) or (os.clock() < saOverride and os.clock() < taOverride) then
         gFunc.EquipSet(sets.SATA)
-    elseif (sa == 1) then
+    elseif (sa == 1) or (os.clock() < saOverride) then
         gFunc.EquipSet(sets.SA)
-    elseif (ta == 1) then
+    elseif (ta == 1) or (os.clock() < taOverride) then
         gFunc.EquipSet(sets.TA)
     end
 
