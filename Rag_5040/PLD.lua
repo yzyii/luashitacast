@@ -36,10 +36,12 @@ local sets = {
     SIRD = { -- 102% to Cap
     },
     Haste = {},
-    Haste_Ichi = {},
+    Haste_Ichi = { -- Optional, provided here only if you wish to mix in SIRD or other stats over max haste
+    },
 
     Hate = {},
-    Hate_Flash = {},
+    Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
+    },
     Cheat_C3HPDown = {},
     Cheat_C4HPDown = {},
     Cheat_HPUp = {},
@@ -164,9 +166,14 @@ profile.HandleMidcast = function()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
     if (action.Skill ~= 'Ninjutsu') then
-        gFunc.EquipSet(sets.Hate)
-        if (action.Name == 'Flash') then
-            gFunc.EquipSet(sets.Hate_Flash)
+        local sentinel = gData.GetBuffCount('Sentinel')
+        if (sentinel >= 1) then
+            gFunc.EquipSet(sets.Haste)
+        else 
+            gFunc.EquipSet(sets.Hate)
+            if (action.Name == 'Flash') then
+                gFunc.EquipSet(sets.Hate_Flash)
+            end
         end
     else
         if (action.Name == 'Utusemi: Ichi') then
