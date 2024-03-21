@@ -170,6 +170,9 @@ local sets = {
         -- Legs = 'Nashira Serawheels',
         Feet = 'Nashira Crackows',
     },
+    ConserveMP = {
+        Ear2 = 'Magnetic Earring',
+    },
 
     Cure = {
         Ammo = 'Hedgehog Bomb', -- 1

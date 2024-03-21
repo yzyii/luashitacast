@@ -6,24 +6,32 @@ Everything below can be ignored.
 
 local shorterhand = {}
 
-shorterhand.MageAliasList = T{ 'c4','c3','c2','c1','c',
-                               'i','s','ss','b','av',
-                               'pa','si','po','bl','e',
-                               'pro4','sh4','pro3','sh3','pro2','sh2','pro1','sh1',
-                               'prog2','shg2','prog1','shg1',
-                               'b4','b3','b2','b1',
-                               't4','t3','t2','t1',
-                               'f4','f3','f2','f1',
-                               'w4','w3','w2','w1',
-                               'a4','a3','a2','a1',
-                               's4','s3','s2','s1',
-                               'bg','tg'
-                             }
-shorterhand.BardAliasList = T{ 'ft','it','lt','et','wit','wat','dat','lit', }
-shorterhand.RegularAliasList = T{ 'u1','u2','ichi','ni' }
+shorterhand.MageAliasList = T{
+    'c4','c3','c2','c1','c',
+    's','ss','b','av',
+    'pa','si','po','bl','e',
+    'pro4','sh4','pro3','sh3','pro2','sh2','pro1','sh1',
+    'prog2','shg2','prog1','shg1',
+}
+shorterhand.RDMAliasList = T{
+    'b3','b2','b1',
+    't3','t2','t1',
+    'f3','f2','f1',
+    'w3','w2','w1',
+    'a3','a2','a1',
+    's3','s2','s1',
+}
+shorterhand.BLMAliasList = T{
+    'b4','t4','f4','w4','a4','s4',
+    'bg','tg','fg','wg','ag','sg',
+}
+shorterhand.BRDAliasList = T{ 'ft','it','lt','et','wit','wat','dat','lit', }
+shorterhand.RegularAliasList = T{ 'u1','u2','ichi','ni','i', }
 
 local isMage = false
-local isBard = false
+local isBRD = false
+local isRDM = false
+local isBLM = false
 
 function shorterhand.DoCommands(args)
     local name = ''
@@ -40,7 +48,13 @@ function shorterhand.DoCommands(args)
     elseif (args[1] == 'c') then
         AshitaCore:GetChatManager():QueueCommand(1, '//cure ' .. name)
     elseif (args[1] == 'i') then
-        AshitaCore:GetChatManager():QueueCommand(1, '//invisible ' .. name)
+        local player = gData.GetPlayer()
+        local isNIN = player.MainJob == 'NIN' or player.SubJob == 'NIN'
+        if (isNIN and name == 'me') then
+            AshitaCore:GetChatManager():QueueCommand(1, '/ma "Tonko: Ni" <me>')
+        else
+            AshitaCore:GetChatManager():QueueCommand(1, '//invisible ' .. name)
+        end
     elseif (args[1] == 's') then
         AshitaCore:GetChatManager():QueueCommand(1, '//sneak ' .. name)
     elseif (args[1] == 'ss') then
@@ -160,14 +174,22 @@ function shorterhand.DoCommands(args)
     end
 end
 
-function shorterhand.Load(enableMageAliases, enableBardAliases)
+function shorterhand.Load(enableMageAliases, enableBrdAliases, enableRdmAliases, enableBlmAliases)
     isMage = enableMageAliases
     if (isMage) then
         shorterhand.SetAlias(shorterhand.MageAliasList)
     end
-    isBard = enableBardAliases
-    if (isBard) then
-        shorterhand.SetAlias(shorterhand.BardAliasList)
+    isBRD = enableBrdAliases
+    if (isBRD) then
+        shorterhand.SetAlias(shorterhand.BRDAliasList)
+    end
+    isRDM = enableRdmAliases
+    if (isRDM) then
+        shorterhand.SetAlias(shorterhand.RDMAliasList)
+    end
+    isBLM = enableBlmAliases
+    if (isBLM) then
+        shorterhand.SetAlias(shorterhand.BLMAliasList)
     end
     shorterhand.SetAlias(shorterhand.RegularAliasList)
 end
@@ -176,8 +198,14 @@ function shorterhand.Unload()
     if (isMage) then
         shorterhand.ClearAlias(shorterhand.MageAliasList)
     end
-    if (isBard) then
-        shorterhand.ClearAlias(shorterhand.BardAliasList)
+    if (isBRD) then
+        shorterhand.ClearAlias(shorterhand.BRDAliasList)
+    end
+    if (isRDM) then
+        shorterhand.ClearAlias(shorterhand.RDMAliasList)
+    end
+    if (isBLM) then
+        shorterhand.ClearAlias(shorterhand.BLMAliasList)
     end
     shorterhand.ClearAlias(shorterhand.RegularAliasList)
 end

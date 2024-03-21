@@ -500,9 +500,12 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
 
     if (isNoModSpell) then
         gFunc.EquipSet('Haste')
-        if (environment.DayElement == 'Water') and water_ring and (player.MPP <= 85) and (action.Skill ~= 'Ninjutsu') then
-            if (maxMP == 0 or player.MP < maxMP * 0.85) then
-                gFunc.Equip(water_ring_slot, 'Water Ring')
+        if (action.Skill ~= 'Ninjutsu') then
+            gFunc.EquipSet('ConserveMP')
+            if (environment.DayElement == 'Water') and water_ring and (player.MPP <= 85) then
+                if (maxMP == 0 or player.MP < maxMP * 0.85) then
+                    gFunc.Equip(water_ring_slot, 'Water Ring')
+                end
             end
         end
         gcmage.EquipSneakInvisGear()

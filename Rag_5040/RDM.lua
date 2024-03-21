@@ -267,6 +267,9 @@ local sets = {
         -- Legs = 'Nashira Serawheels',
         Feet = 'Dusk Ledelsens',
     },
+    ConserveMP = {
+        Ear2 = 'Magnetic Earring',
+    },
 
     Hate = { -- Switches to this set when casting Sleep, Blind, Dispel and Bind if /hate is toggled on
         Ammo = 'Phtm. Tathlum',

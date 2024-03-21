@@ -10,7 +10,7 @@ local dream_boots = true
 local dream_mittens = true
 local skulkers_cape = false
 
-local load_stylist = true
+local load_stylist = true -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work.
 
 -- Add additional equipment here that you want to automatically lock when equipping
 local LockableEquipment = {
@@ -110,9 +110,11 @@ function gcinclude.Load()
         end
 
         local isMage = MageJobs:contains(player.MainJob)
-        local isBard = player.MainJob == 'BRD'
+        local isBRD = player.MainJob == 'BRD'
+        local isRDM = player.MainJob == 'RDM'
+        local isBLM = player.MainJob == 'BLM'
         if (use_shorterhand) then
-            shorterhand.Load(isMage, isBard)
+            shorterhand.Load(isMage, isBRD, isRDM, isBLM)
         end
 
         gcdisplay.Load()
@@ -177,7 +179,7 @@ function gcinclude.UnlockNonWeapon()
 end
 
 function gcinclude.DoCommands(args)
-    local isShorterhandAlias = shorterhand.MageAliasList:contains(args[1]) or shorterhand.RegularAliasList:contains(args[1]) or shorterhand.BardAliasList:contains(args[1])
+    local isShorterhandAlias = shorterhand.MageAliasList:contains(args[1]) or shorterhand.RegularAliasList:contains(args[1]) or shorterhand.BRDAliasList:contains(args[1]) or shorterhand.RDMAliasList:contains(args[1]) or shorterhand.BLMAliasList:contains(args[1])
     if (use_shorterhand and isShorterhandAlias) then
         shorterhand.DoCommands(args)
         do return end

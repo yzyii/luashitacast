@@ -125,6 +125,9 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens',
     },
+    ConserveMP = {
+        Ear2 = 'Magnetic Earring',
+    },
 
     Sing_Buff = {
         Head = 'Bard\'s Roundlet',

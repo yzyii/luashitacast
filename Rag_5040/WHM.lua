@@ -33,6 +33,7 @@ local sets = {
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
     },
+    ConserveMP = {},
 
     Cure = {},
     Regen = {

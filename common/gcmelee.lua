@@ -1,3 +1,6 @@
+local fenrirs_earring = false
+local fenrirs_earring_slot = 'Ear2'
+
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -80,6 +83,10 @@ function gcmelee.DoDefault()
                 gFunc.EquipSet('TP_' .. TpVariantTable[tp_variant])
                 if (gcdisplay.IdleSet ~= TpVariantTable[tp_variant]) then
                     gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
+                end
+
+                if (fenrirs_earring) then
+                    gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
                 end
             end
             if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
