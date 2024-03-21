@@ -22,3 +22,8 @@
 - Breaking Change - Removed custom keybinds (users should do this in scripts or per lua themselves)
 - Breaking Change - Variable sorcerors_tonban in gcmage.lua changed to string to allow +1
 - Breaking Change - Add ConserveMP set to all Mage jobs.
+
+
+## v1.1.1
+
+- BLM - Fix shorterhand not registering RDM spells
