@@ -51,7 +51,7 @@ local sets = {
     TH = {},
 
     Ranged = {},
-	Ranged_INT = {},
+    Ranged_INT = {},
 }
 profile.Sets = sets
 
@@ -154,9 +154,9 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
 
     local player = gData.GetPlayer()
-	if (player.SubJob == 'NIN') then
-		gFunc.EquipSet('TP_NIN')
-	end
+    if (player.SubJob == 'NIN') then
+        gFunc.EquipSet('TP_NIN')
+    end
 
     gcmelee.DoDefaultOverride()
 
