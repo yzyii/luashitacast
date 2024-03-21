@@ -189,6 +189,7 @@ function shorterhand.Load(enableMageAliases, enableBrdAliases, enableRdmAliases,
     end
     isBLM = enableBlmAliases
     if (isBLM) then
+        shorterhand.SetAlias(shorterhand.RDMAliasList)
         shorterhand.SetAlias(shorterhand.BLMAliasList)
     end
     shorterhand.SetAlias(shorterhand.RegularAliasList)
@@ -205,6 +206,7 @@ function shorterhand.Unload()
         shorterhand.ClearAlias(shorterhand.RDMAliasList)
     end
     if (isBLM) then
+        shorterhand.ClearAlias(shorterhand.RDMAliasList)
         shorterhand.ClearAlias(shorterhand.BLMAliasList)
     end
     shorterhand.ClearAlias(shorterhand.RegularAliasList)
