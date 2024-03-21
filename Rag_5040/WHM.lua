@@ -62,7 +62,8 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP = {}, -- No command currently implemented to quickly disable weapon slots for WHM yet. Just use "/lac disable Main" etc.
+    TP = {},
+    TP_NIN = {},
     WS = {},
 
     FallbackSub = { -- Used only when you do not have complete staff sets
@@ -118,11 +119,6 @@ end
 
 profile.HandleDefault = function()
     gcmage.DoDefault(ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP)
-
-    local player = gData.GetPlayer()
-    if (player.Status == 'Engaged') then
-        gFunc.EquipSet('TP')
-    end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end

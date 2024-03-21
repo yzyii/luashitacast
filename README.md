@@ -131,11 +131,20 @@ This will work 99% of the time unless you have added your own logic and therefor
 /mb     - equips gear that gives bonuses to magic burst damage when casting nukes.
 ```
 
+## Additional Commands for WHM
+```
+[Regular Toggles]
+/fight  - used to turn off TP set.
+          this is automatically used for you when disengaging if your TP is 0.
+```
+
 ## Additional Commands for BRD:
 ```
 [Regular Toggles]
 /shorde  - switches to using the default foe lullaby set to reduce AOE in favour of Acc.
 /sballad - switches to using a wind instrument over string to reduce AOE.
+/fight  - used to turn off TP set.
+          this is automatically used for you when disengaging if your TP is 0.
 ```
 
 ## Additional Commands for BST:

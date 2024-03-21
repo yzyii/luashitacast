@@ -258,7 +258,8 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP = {}, -- No command currently implemented to quickly disable weapon slots for BRD yet. Just use "/lac disable Main" etc.
+    TP = {},
+    TP_NIN = {},
     WS = {},
 
     FallbackSub = { -- Used only when you do not have complete staff sets
@@ -334,11 +335,6 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer()
     if (minstrels_earring and player.HPP <= 25) then
         gFunc.Equip(minstrels_earring_slot, 'Minstrel\'s Earring')
-    end
-
-    local player = gData.GetPlayer()
-    if (player.Status == 'Engaged') then
-        gFunc.EquipSet('TP')
     end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))

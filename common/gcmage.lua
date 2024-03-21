@@ -248,7 +248,11 @@ function gcmage.DoCommands(args)
         elseif (args[1] == 'hate') then
             gcdisplay.AdvanceToggle('Hate')
             gcinclude.Message('Hate', gcdisplay.GetToggle('Hate'))
-        elseif (args[1] == 'fight') then
+        end
+    end
+
+    if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD') then
+        if (args[1] == 'fight') then
             if (gcdisplay.IdleSet == 'Fight') then
                 gcinclude.UnlockWeapon:once(1)
                 if (lastIdleSetBeforeEngaged ~= '') then
@@ -301,7 +305,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         end
     end
 
-    if (player.MainJob == 'RDM') then
+    if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD') then
         if (player.Status == 'Engaged' and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate')) then
             lastIdleSetBeforeEngaged = gcdisplay.IdleSet
             gcinclude.ToggleIdleSet('Fight')
@@ -322,7 +326,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
             if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
                 gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
             end
-            if (tp_fencers_ring and player.HPP <= 75 and player.TP <= 1000) then
+            if (player.MainJob == 'RDM' and tp_fencers_ring and player.HPP <= 75 and player.TP <= 1000) then
                 gFunc.Equip(tp_fencers_ring_slot, 'Fencer\'s Ring')
             end
         end

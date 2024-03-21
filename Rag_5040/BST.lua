@@ -37,6 +37,7 @@ local sets = {
 
     TP_LowAcc = {},
     TP_HighAcc = {},
+    TP_NIN = {},
 
     WS = {},
 
@@ -204,10 +205,13 @@ end
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
-    local player = gData.GetPlayer()
 
+    local player = gData.GetPlayer()
     if (player.HPP <= 50 and muscle_belt ~= '') then
         gFunc.Equip('Waist', muscle_belt)
+    end
+    if (player.SubJob == 'NIN') then
+        gFunc.EquipSet('TP_NIN')
     end
 
     gcmelee.DoDefaultOverride()

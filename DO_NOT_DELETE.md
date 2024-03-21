@@ -30,3 +30,9 @@
 ## v1.1.2
 
 - THF - Add TP_NIN and Fix timing edge cases for SATA
+
+## v1.1.3
+
+- BST - Add TP_NIN
+- WHM - Add TP Lock identical to RDM
+- BRD - Add TP Lock identical to RDM
