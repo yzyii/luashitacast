@@ -301,7 +301,7 @@ local sets = {
     Nuke = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Demon Helm +1',
-        Neck = 'Elemental Torque',
+        Neck = 'Prudence Torque',
         Ear1 = 'Novio Earring',
         Ear2 = 'Moldavite Earring',
         Body = 'Igqira Weskit',
@@ -315,6 +315,7 @@ local sets = {
     },
     NukeACC = {
         Head = 'Sorcerer\'s Petas.',
+        Neck = 'Elemental Torque',
         Hands = 'Wzd. Gloves +1',
         Back = 'Merciful Cape',
         Feet = 'Nashira Crackows',

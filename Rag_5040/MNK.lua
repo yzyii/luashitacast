@@ -5,7 +5,7 @@ local fastCastValue = 0.02 -- 2% from gear
 -- Replace these with '' if you do not have them
 local temple_gaiters = 'Temple Gaiters'
 local temple_gloves = 'Temple Gloves'
-local temple_cyclas = 'Temple Cyclas'
+local temple_cyclas = 'Tpl. Cyclas +1'
 local temple_crown = 'Temple Crown'
 
 local melee_gaiters = 'Melee Gaiters'
