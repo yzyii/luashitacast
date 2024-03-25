@@ -70,7 +70,6 @@ profile.HandleAbility = function()
     gFunc.EquipSet(sets.EnmityDown)
 
     local action = gData.GetAction()
-    local equipment = gData.GetEquipment()
     if (action.Name == 'Scavenge') then
         gFunc.EquipSet(sets.Scavenge)
     elseif (action.Name == 'Shadowbind') then
@@ -81,6 +80,8 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Sharpshot)
     elseif (action.Name == 'Eagle Eye Shot') then
         gFunc.EquipSet(sets.Ranged_ATK)
+
+        local equipment = gData.GetEquipment()
         local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
         if (unlimitedShot == 1) then
             gFunc.EquipSet(sets.UnlimitedShot)
@@ -95,6 +96,8 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    local equipment = gData.GetEquipment()
+    local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
     if (unlimitedShot == 0 and equipment.Ammo ~= nil and equipment.Ammo.Name == special_ammo)
         gFunc.CancelAction()
     end
@@ -108,7 +111,6 @@ profile.HandleMidshot = function()
         gFunc.EquipSet(sets.Barrage)
     end
 
-    local equipment = gData.GetEquipment()
     local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
     if (unlimitedShot == 1) then
         gFunc.EquipSet(sets.UnlimitedShot)
@@ -118,6 +120,7 @@ end
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
+    local equipment = gData.GetEquipment()
     local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
     if (unlimitedShot == 1) then
         gFunc.EquipSet(sets.UnlimitedShot)
