@@ -9,6 +9,9 @@ local rdmSJNukeMaxMP = nil -- The Max MP you have when /rdm in your nuking set
 local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false
 
+local opuntia_hoop = false
+local opuntia_hoop_slot = 'Ring1'
+
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -413,6 +416,11 @@ end
 profile.HandleDefault = function()
     gcmage.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, nil, rdmSJNukeMaxMP)
 
+    local spikes = gData.GetBuffCount('Blaze Spikes') + gData.GetBuffCount('Shock Spikes') + gData.GetBuffCount('Ice Spikes')
+    if (opuntia_hoop and spikes > 0) then
+        gFunc.Equip(opuntia_hoop_slot, 'Opuntia Hoop')
+    end
+
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
@@ -432,11 +440,13 @@ profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJNukeMaxMP, whmSJNukeMaxMP, nil, rdmSJNukeMaxMP)
 
     local action = gData.GetAction()
-    if (action.Skill == 'Elemental Magic') then
-        if (not ElementalDebuffs:contains(action.Name)) then
-            if (conquest:GetInsideControl() and republic_circlet == true) then
-                print(chat.header('GCMage'):append(chat.message('In Region - Using Republic Circlet')))
-                gFunc.Equip('Head', 'Republic Circlet')
+    if (republic_circlet == true) then
+        if (action.Skill == 'Elemental Magic' and gcdisplay.GetCycle('Mode') == 'Potency') then
+            if (not ElementalDebuffs:contains(action.Name)) then
+                if (conquest:GetInsideControl()) then
+                    print(chat.header('GCMage'):append(chat.message('In Region - Using Republic Circlet')))
+                    gFunc.Equip('Head', 'Republic Circlet')
+                end
             end
         end
     end
