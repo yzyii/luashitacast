@@ -86,6 +86,7 @@ profile.HandleAbility = function()
         if (unlimitedShot == 1) then
             gFunc.EquipSet(sets.UnlimitedShot)
         elseif (equipment.Ammo ~= nil and equipment.Ammo.Name == special_ammo)
+            print(chat.header('RNG'):append(chat.message('Action Canceled: Special Ammo Protection')))
             gFunc.CancelAction()
         end
     end
@@ -99,6 +100,7 @@ profile.HandlePreshot = function()
     local equipment = gData.GetEquipment()
     local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
     if (unlimitedShot == 0 and equipment.Ammo ~= nil and equipment.Ammo.Name == special_ammo)
+        print(chat.header('RNG'):append(chat.message('Action Canceled: Special Ammo Protection')))
         gFunc.CancelAction()
     end
 end
@@ -125,6 +127,7 @@ profile.HandleWeaponskill = function()
     if (unlimitedShot == 1) then
         gFunc.EquipSet(sets.UnlimitedShot)
     elseif (equipment.Ammo ~= nil and equipment.Ammo.Name == special_ammo)
+        print(chat.header('RNG'):append(chat.message('Action Canceled: Special Ammo Protection')))
         gFunc.CancelAction()
     end
 
