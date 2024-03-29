@@ -4,19 +4,33 @@ local fastCastValue = 0.00 -- 0% from gear
 
 local parade_gorget = true
 
-local hercules_ring = true
+local hercules_ring = false
 local hercules_ring_slot = 'Ring2'
 
 -- Replace these with '' if you do not have them
-local gallant_coronet = 'Gallant Coronet'
-local gallant_leggings = 'Gallant Leggings'
-local valor_coronet = 'Valor Coronet'
-local valor_surcoat = 'Valor Surcoat'
-local valor_gauntlets = 'Valor Gauntlets'
-local valor_leggings = 'Valor Leggings'
+local gallant_leggings = ''
+local valor_coronet = ''
+local valor_gauntlets = ''
+local valor_leggings = ''
 
 local sets = {
-    Idle = {},
+    Idle = {
+        --Head = 'displaced',
+        --Body = 'Royal Cloak',
+        Head = 'Gallant Coronet',
+        Body = 'Ryl.Kgt. Chainmail',
+
+        Neck = 'Parade Gorget',
+        Ear1 = 'Hospitaler Earring',
+        Ear2 = 'Mercen. Earring',
+        Hands = 'Gallant Gauntlets',
+        Ring1 = 'Phalanx Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'High Brth. Mantle',
+        Waist = 'Warrior\'s Belt +1',
+        Legs = 'Ryl.Kgt. Breeches',
+        Feet = 'Gallant Leggings',
+    },
     IdleALT = {},
     Resting = {},
     Town = {},
@@ -34,12 +48,18 @@ local sets = {
 
     Precast = {},
     SIRD = { -- 102% to Cap
+        Waist = 'Silver Obi +1',
     },
-    Haste = {},
+    Haste = {
+        Waist = 'Swift Belt',
+	},
     Haste_Ichi = { -- Optional, provided here only if you wish to mix in SIRD or other stats over max haste
     },
 
-    Hate = {},
+    Hate = {
+        Head = 'Gallant Coronet',
+        Body = 'Ryl.Kgt. Chainmail',
+	},
     Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
     },
     Cheat_C3HPDown = {},
@@ -55,11 +75,16 @@ local sets = {
 
     WS = {},
     WS_Spirits = {},
+
+    Cover = {
+        Head = 'Gallant Coronet',
+        Body = 'Ryl.Kgt. Chainmail',
+	},
 }
 profile.Sets = sets
 
 profile.SetMacroBook = function()
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
@@ -84,9 +109,7 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then
         gFunc.Equip('Legs', valor_leggings)
     elseif (action.Name == 'Cover') then
-        if (gallant_coronet ~= '') then
-            gFunc.Equip('Head', gallant_coronet)
-        end
+        gFunc.EquipSet(sets.Cover)
         if (valor_surcoat ~= '') then
             gFunc.Equip('Body', valor_surcoat)
         end
@@ -142,9 +165,7 @@ profile.HandleDefault = function()
 
     local cover = gData.GetBuffCount('Cover')
     if (cover >= 1) then
-        if (gallant_coronet ~= '') then
-            gFunc.Equip('Head', gallant_coronet)
-        end
+        gFunc.EquipSet(sets.Cover)
         if (valor_surcoat ~= '') then
             gFunc.Equip('Body', valor_surcoat)
         end

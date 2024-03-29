@@ -96,7 +96,7 @@ local sets = {
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
         -- Back = 'Boxer\'s Mantle'
-        Waist = 'Heko Obi +1', -- 8
+        Waist = 'Silver Obi +1', -- 8
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
@@ -193,8 +193,7 @@ local sets = {
     Chakra = {
         Ammo = 'Happy Egg',
         Head = 'Genbu\'s Kabuto',
-        Neck = 'Medieval Collar',
-        -- Fortitude Torque
+        Neck = 'Fortitude Torque',
         Ear1 = 'Robust Earring',
         -- Ear2 = 'Robust Earring',
         Body = 'Kirin\'s Osode',

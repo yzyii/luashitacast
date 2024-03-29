@@ -40,3 +40,10 @@
 ## v1.1.4
 
 - PLD - Use Haste set over Hate when Sentinel is active
+
+## v1.1.5
+
+- RNG - Added additional protection for using up special ammo for Unlimited shot
+- BLM - Fixed Republic Circlet logic
+- BLM - Add Opuntia Hoop logic
+- Breaking Change - PLD - Change cover to use a set

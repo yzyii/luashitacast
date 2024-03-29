@@ -309,6 +309,7 @@ local sets = {
         Ear2 = 'Moldavite Earring',
         Body = 'Igqira Weskit',
         Hands = 'Zenith Mitts +1',
+        -- Hands = 'Wzd. Gloves +1', -- Change to these on base set when fighting anything actually difficult.
         Ring1 = 'Snow Ring',
         Ring2 = 'Snow Ring',
         Back = 'Prism Cape',
