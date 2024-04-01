@@ -47,3 +47,7 @@
 - BLM - Fixed Republic Circlet logic
 - BLM - Add Opuntia Hoop logic
 - Breaking Change - PLD - Change cover to use a set
+
+## v1.1.6
+
+- Defaulting to not using shorterhand as shorthand config can do 99% of the same thing

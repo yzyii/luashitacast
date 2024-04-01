@@ -1,0 +1,154 @@
+##########################################################################
+#
+# Ashita v4 Default Script
+#
+# This script is executed at the start of the game to allow for the user
+# to configure their game instance automatically. Use this script to load
+# plugins, addons or adjust different settings as you see fit.
+#
+# File Syntax:
+#
+#  - Comments start with '#'.
+#  - Commands start with '/'.
+#
+##########################################################################
+
+##########################################################################
+#
+# Horizon Launcher Controlled Plugins and Addons
+#
+##########################################################################
+#
+# DO NOT TOUCH THIS BLOCK OR THE FILE WILL BE OVERRIDDEN - LAUNCHER EDITS ONLY
+#
+# --HORIZON_PLUGINS_START--
+/load addons
+/load screenshot
+/load HardwareMouse
+/load Minimap
+/load PacketFlow
+/load Shorthand
+/load thirdparty
+# --HORIZON_PLUGINS_STOP--
+#
+# --HORIZON_ADDONS_START--
+/addon load dynamic_entity_renamer
+/addon load allmaps
+/addon load aspect
+/addon load cfhblock
+/addon load Checker
+/addon load clock
+/addon load config
+/addon load craftmon
+/addon load distance
+/addon load drawdistance
+/addon load equipmon
+/addon load filterless
+/addon load filters
+/addon load fps
+/addon load hideconsole
+/addon load instantah
+/addon load Logs
+/addon load luashitacast
+/addon load macrofix
+/addon load timestamp
+/addon load tparty
+/addon load HXUI
+/addon load MobDB
+/addon load NoLock
+/addon load TargetLines
+# --HORIZON_ADDONS_STOP--
+#
+# DO NOT TOUCH THIS BLOCK OR THE FILE WILL BE OVERRIDDEN - LAUNCHER EDITS ONLY
+##########################################################################
+
+##########################################################################
+#
+# Custom user plugins and addons
+# Please be sure to review our approved list: https://horizonxi.com/addons
+#
+#########################################################################
+/addon load ticker
+/addon load chains
+/addon load ttimers
+
+#########################################################################
+#
+# Horizon Launcher Controlled Keybinds and Alias
+#
+##########################################################################
+#
+# DO NOT TOUCH THIS BLOCK OR THE FILE WILL BE OVERRIDDEN - LAUNCHER EDITS ONLY
+#
+# --HORIZON_KEYBINDS_START--
+/bind insert /ashita
+/bind SYSRQ /screenshot hide
+/bind ^v /paste
+/bind F11 /ambient
+/bind F12 /fps
+/bind ^F1 /ta <a10>
+/bind ^F2 /ta <a11>
+/bind ^F3 /ta <a12>
+/bind ^F4 /ta <a13>
+/bind ^F5 /ta <a14>
+/bind ^F6 /ta <a15>
+/bind !F1 /ta <a20>
+/bind !F2 /ta <a21>
+/bind !F3 /ta <a22>
+/bind !F4 /ta <a23>
+/bind !F5 /ta <a24>
+/bind !F6 /ta <a25>
+
+# --HORIZON_KEYBINDS_STOP--
+#
+# DO NOT TOUCH THIS BLOCK OR THE FILE WILL BE OVERRIDDEN - LAUNCHER EDITS ONLY
+##########################################################################
+
+##########################################################################
+#
+# Custom user keybinds and aliases
+#
+#########################################################################
+
+##########################################################################
+#
+# Plugin and Addon Configurations
+#
+# Use this section to configure loaded plugins, addons and Ashita.
+#
+# Important: The wait here is required! If you remove it, addons will not
+# see any commands inside of this file!
+#
+################### DO NOT TOUCH THIS WAIT LINE ##########################
+/wait 3
+##########################################################################
+
+
+##########################################################################
+#
+# Horizon Launcher Controlled Settings
+#
+##########################################################################
+#
+# DO NOT TOUCH THIS BLOCK OR THE FILE WILL BE OVERRIDDEN - LAUNCHER EDITS ONLY
+#
+# --HORIZON_SETTINGS_START--
+/ambient 255 255 255
+
+# --HORIZON_SETTINGS_STOP--
+#
+# DO NOT TOUCH THIS BLOCK OR THE FILE WILL BE OVERRIDDEN - LAUNCHER EDITS ONLY
+##########################################################################
+
+##########################################################################
+#
+# Custom user settings
+#
+#########################################################################
+/localsettings blureffect off
+/bind !F1 /lac fwd fres
+/bind !F2 /lac fwd kite
+/bind !F3 /lac fwd dt
+/bind !F4 /lac fwd mdt
+/bind F9 //stun
+/bind F10 //dia

@@ -165,50 +165,19 @@ This will work 99% of the time unless you have added your own logic and therefor
 /th - Forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
 ```
 
-## Additional Commands (Shorterhand):
+## Additional Commands (Shorterhand) (Deprecated):
 
 If you enable the Shorterhand setting in gcincluderag.lua, additional /commands will work.
 
+**Note: Shorthand supports this out of the box so it is suggested you just use that instead of turning this on.**
+
 - shorterhand.lua is effectively just a pass through to shorthand you can define your own /commands in
 - using shorthand syntax like 'me' or partial names will work. e.g. "/i me" will cast invisible on yourself.
+- You can check the file for the full list of commands however it is suggested you just use shorthand directly.
+
+A shorthand xml config file is also provided at extra/shorthand/default.xml that will accomplish almost the same thing.
 
 The following are some examples available. Check the file for the full list of commands.
-
-```
-[All Jobs]
-/u1 - Utusemi: Ichi
-/u2 - Utsusemi: Ni
-/ichi - Utusemi: Ichi
-/ni   - Utsusemi: Ni
-
-[Mages]
-/c4 - Cure IV
-/c3 - Cure III
-/c2 - Cure II
-/c  - Cure
-/i  - Invisible
-/s  - Sneak
-/ss - Stoneskin
-/b  - Blink
-/av - Aquaveil
-/pa - Paralyna
-/si - Silena
-/po - Poisona
-/bl - Blindna
-/e  - Erase
-/pro4 - Protect IV
-/sh4  - Shell IV
-
-[Bard]
-/ft  - Fire Threnody
-/it  - Ice Threnody
-/lt  - Lightning Threnody
-/et  - Earth Threnody
-/wit - Wind Threnody
-/wat - Water Threnody
-/dat - Dark Threnody
-/lit - Light Threnody
-```
 
 ## Additional Notes
 

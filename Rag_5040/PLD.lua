@@ -17,17 +17,16 @@ local sets = {
     Idle = {
         --Head = 'displaced',
         --Body = 'Royal Cloak',
-        Head = 'Gallant Coronet',
-        Body = 'Ryl.Kgt. Chainmail',
-
-        Neck = 'Parade Gorget',
-        Ear1 = 'Hospitaler Earring',
-        Ear2 = 'Mercen. Earring',
-        Hands = 'Gallant Gauntlets',
-        Ring1 = 'Phalanx Ring',
+        Head = 'Alumine Salade',
+        Body = 'Haubergeon',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Hands = 'Enkelados\'s Brc.',
+        Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Sattva Ring',
         Back = 'High Brth. Mantle',
-        Waist = 'Warrior\'s Belt +1',
+        Waist = 'Life Belt',
         Legs = 'Ryl.Kgt. Breeches',
         Feet = 'Gallant Leggings',
     },
@@ -51,15 +50,20 @@ local sets = {
         Waist = 'Silver Obi +1',
     },
     Haste = {
+        Head = 'Gallant Coronet',
+        Ear1 = 'Hospitaler Earring',
         Waist = 'Swift Belt',
-	},
+        Hands = 'Gallant Gauntlets',
+    },
     Haste_Ichi = { -- Optional, provided here only if you wish to mix in SIRD or other stats over max haste
     },
 
     Hate = {
         Head = 'Gallant Coronet',
-        Body = 'Ryl.Kgt. Chainmail',
-	},
+        Body = 'Haubergeon',
+        Ear1 = 'Hospitaler Earring',
+        Hands = 'Gallant Gauntlets',
+    },
     Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
     },
     Cheat_C3HPDown = {},
@@ -78,8 +82,8 @@ local sets = {
 
     Cover = {
         Head = 'Gallant Coronet',
-        Body = 'Ryl.Kgt. Chainmail',
-	},
+        Body = 'Haubergeon',
+    },
 }
 profile.Sets = sets
 

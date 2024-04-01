@@ -1,5 +1,5 @@
 local display_messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles
-local use_shorterhand = true -- set to true if you want to use the commands available in shorterhand.lua
+local use_shorterhand = false -- set to true if you want to use the commands available in shorterhand.lua
 
 local kingdom_aketon = false
 local republic_aketon = false
