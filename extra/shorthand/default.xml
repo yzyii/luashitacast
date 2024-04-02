@@ -19,7 +19,6 @@
 	</spell>
 
 	<spell id="1"> <!--Cure-->
-        <command>/c</command>
         <name>c</name>
         <command>/c1</command>
         <name>c1</name>
@@ -27,7 +26,6 @@
 	<spell id="2"> <!--Cure II-->
         <command>/c2</command>
         <name>c2</name>
-        <name>c3</name>
 	</spell>
 	<spell id="3"> <!--Cure III-->
         <command>/c3</command>
