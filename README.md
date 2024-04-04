@@ -165,17 +165,6 @@ This will work 99% of the time unless you have added your own logic and therefor
 /th - Forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
 ```
 
-## Additional Commands (Shorterhand) (Deprecated):
-
-If you enable the Shorterhand setting in gcincluderag.lua, additional /commands will work.
-
-**Note: Shorthand supports this out of the box so it is suggested you just use that instead of turning this on.**
-**A shorthand xml config file is also provided at extra/shorthand/default.xml that will accomplish basically the same thing.**
-
-- shorterhand.lua is effectively just a pass through to shorthand you can define your own /commands in
-- using shorthand syntax like 'me' or partial names will work. e.g. "/i me" will cast invisible on yourself.
-- You can check the file for the full list of commands however it is suggested you just use shorthand directly.
-
 ## Additional Notes
 
 LuAshitacast provides functionality to automatically equip Level Sync gear.

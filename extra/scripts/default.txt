@@ -68,9 +68,10 @@
 # Please be sure to review our approved list: https://horizonxi.com/addons
 #
 #########################################################################
-/addon load ticker
+/addon load hticks
 /addon load chains
 /addon load ttimers
+/load sequencer
 
 #########################################################################
 #
@@ -152,3 +153,6 @@
 /bind !F4 /lac fwd mdt
 /bind F9 //stun
 /bind F10 //dia
+/alias add /i //invisible
+/alias add /s //sneak
+/alias add /c //cure

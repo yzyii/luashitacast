@@ -1,5 +1,4 @@
 local display_messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles
-local use_shorterhand = false -- set to true if you want to use the commands available in shorterhand.lua
 
 local kingdom_aketon = false
 local republic_aketon = false
@@ -41,7 +40,6 @@ Everything below can be ignored.
 ]]
 
 gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
-shorterhand = gFunc.LoadFile('common\\shorterhand.lua')
 
 local gcinclude = {}
 
@@ -109,14 +107,6 @@ function gcinclude.Load()
             gcdisplay.CreateToggle('LockTP', false)
         end
 
-        local isMage = MageJobs:contains(player.MainJob)
-        local isBRD = player.MainJob == 'BRD'
-        local isRDM = player.MainJob == 'RDM'
-        local isBLM = player.MainJob == 'BLM'
-        if (use_shorterhand) then
-            shorterhand.Load(isMage, isBRD, isRDM, isBLM)
-        end
-
         gcdisplay.Load()
 
         if (load_stylist) then
@@ -131,10 +121,6 @@ function gcinclude.Unload()
     gcinclude.ClearAlias(Overrides)
     gcinclude.ClearAlias(Commands)
     gcdisplay.Unload()
-
-    if (use_shorterhand) then
-        shorterhand.Unload()
-    end
 end
 
 function gcinclude.SetAlias(aliasList)
@@ -179,12 +165,6 @@ function gcinclude.UnlockNonWeapon()
 end
 
 function gcinclude.DoCommands(args)
-    local isShorterhandAlias = shorterhand.MageAliasList:contains(args[1]) or shorterhand.RegularAliasList:contains(args[1]) or shorterhand.BRDAliasList:contains(args[1]) or shorterhand.RDMAliasList:contains(args[1]) or shorterhand.BLMAliasList:contains(args[1])
-    if (use_shorterhand and isShorterhandAlias) then
-        shorterhand.DoCommands(args)
-        do return end
-    end
-
     local isOverride = Overrides:contains(args[1])
 
     if not (isOverride or Commands:contains(args[1])) then

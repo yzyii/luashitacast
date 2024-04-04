@@ -51,3 +51,7 @@
 ## v1.1.6
 
 - Defaulting to not using shorterhand as shorthand config can do 99% of the same thing
+
+### v1.2.0
+
+- Stripped Shorterhand entirely in favour of using shorthand and aliases out of box
