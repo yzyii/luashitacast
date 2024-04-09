@@ -4,8 +4,8 @@ local fastCastValue = 0.00 -- 0% from gear
 
 local parade_gorget = true
 
-local hercules_ring = false
-local hercules_ring_slot = 'Ring2'
+local hercules_ring = true
+local hercules_ring_slot = 'Ring1'
 
 -- Replace these with '' if you do not have them
 local gallant_leggings = ''
@@ -15,17 +15,17 @@ local valor_leggings = ''
 
 local sets = {
     Idle = {
-        --Head = 'displaced',
-        --Body = 'Royal Cloak',
         Head = 'Alumine Salade',
+        -- Head = 'Aegishjalmr',
         Body = 'Haubergeon',
         Neck = 'Peacock Amulet',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Hands = 'Enkelados\'s Brc.',
+        Hands = 'Gallant Gauntlets',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Sattva Ring',
-        Back = 'High Brth. Mantle',
+        Back = 'Amemet Mantle',
+        -- Back = 'Valor Cape',
         Waist = 'Life Belt',
         Legs = 'Ryl.Kgt. Breeches',
         Feet = 'Gallant Leggings',
@@ -59,10 +59,15 @@ local sets = {
     },
 
     Hate = {
+        -- Head = 'Aegishjalmr',
         Head = 'Gallant Coronet',
         Body = 'Haubergeon',
         Ear1 = 'Hospitaler Earring',
         Hands = 'Gallant Gauntlets',
+        -- Ring1 = 'Mermaid Ring',
+        Ring1 = 'Hercules\' Ring',
+        -- Back = 'Valor Cape',
+        Feet = 'Valor Leggings',
     },
     Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
     },
@@ -194,7 +199,7 @@ profile.HandleMidcast = function()
         local sentinel = gData.GetBuffCount('Sentinel')
         if (sentinel >= 1) then
             gFunc.EquipSet(sets.Haste)
-        else 
+        else
             gFunc.EquipSet(sets.Hate)
             if (action.Name == 'Flash') then
                 gFunc.EquipSet(sets.Hate_Flash)

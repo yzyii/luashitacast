@@ -96,7 +96,7 @@ local sets = {
         Ear2 = 'Diamond Earring', -- 10
         Ring1 = 'Diamond Ring', -- 9
         Ring2 = 'Malfrost Ring', -- 10
-        Back = 'Tundra Mantle', -- 5
+        Back = 'Aurora Mantle', -- 7
         Waist = 'Fire Belt', -- 20
     },
     LightningRes = {
@@ -130,7 +130,7 @@ local sets = {
         Hands = 'Mage\'s Cuffs', -- 5
         Ring1 = 'Emerald Ring', -- 9
         Ring2 = 'Malgust Ring', -- 10
-        Back = 'Tundra Mantle', -- 5
+        Back = 'Aurora Mantle', -- 7
         Waist = 'Ice Belt', -- 20
     },
     WaterRes = {

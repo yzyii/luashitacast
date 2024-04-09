@@ -31,8 +31,6 @@ local LockableEquipment = {
     ['Feet'] = T{'Powder Boots'}
 }
 
-local MageJobs = T{ 'RDM','BLM','WHM','SMN','PLD','BRD','BST','DRG','NIN' } -- Due to how job changing and loading ashitacast works, just enable all shorthand macros for the following jobs
-
 --[[
 --------------------------------
 Everything below can be ignored.

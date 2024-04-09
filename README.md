@@ -21,10 +21,10 @@ These luas were designed to be used in HorizonXI and therefore features such as 
 - [Your_Character_ID] may be obtained from another plugin such as MobDB.
 - Edit Equipment Sets in [JOB].lua. You may delete any of these if you're only looking for a lua one of the jobs.
 - Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua if you are using these luas for mage jobs.
+- Edit Fenrir's Earring in gcmelee.lua if you are using these luas for melee jobs.
+- Edit Aketons and Dream gear etc. and turn on or off additional logging in gcincluderag.lua.
 - Make sure you fill out the fastcastValue correctly in your [JOB].lua if you are using any Fast Cast gear in the Precast set.
-- Turn On / Off Additional Commands and Logging in gcincluderag.lua.
 - The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the values in gcmage.lua (or gcmelee.lua for melee jobs).
-
 - If you define a specific mainhand in regular sets, it will still equip the correct stave if you have them listed in gcmage.lua
 - FallbackSub set is used only if you wish to define a Sub to fall back to using due to not having a complete set of Elemental Staves.
 
