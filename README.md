@@ -166,6 +166,10 @@ This will work 99% of the time unless you have added your own logic and therefor
 
 ## Additional Notes
 
-LuAshitacast provides functionality to automatically equip Level Sync gear.
+- LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. Level Sync content is a joke anyway. Just throw on some garbage gear full time and clear it. 
 
-This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine.
+- If LuAshitacast is crashing your game, chances are you are using an old version of it. Update to the latest version of it at https://github.com/ThornyFFXI/LuAshitacast
+
+- If your game is still crashing and you are using these on HorizonXI, make sure you are launching the game from the correct launcher. This is a bug with earlier HorizonXI launcher versions which opened an older version of the launcher. Assuming you installed to the default path, delete the shortcut on your desktop and make a new one pointing to: ..\\AppData\\Local\\HorizonXI_Launcher\\HorizonXI-Launcher.exe
+
+- If your game is still crashing at this point, some users have reported that turning off alias messages has worked for them. You can change aliases.silent to 1 within the boot config to suppress these messages. The file is located at: ..\\Game\\config\\boot\\ashita.ini
