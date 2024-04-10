@@ -107,7 +107,6 @@ This will work 99% of the time unless you have added your own logic and therefor
 /tpset /tp - toggles TP set between a LowAcc and HighAcc set.
              this will be overwritten if you have a DT or Fire Resistance etc. set enabled.
              this is disabled for PLD in favour of just always using Idle sets instead.
-/dps       - used for PLD to turn on DPS LowAcc / HighAcc TP set behaviour.
 /locktp    - locks or unlocks Main, Sub, Ranged and Ammo slots.
 ```
 
@@ -119,6 +118,7 @@ This will work 99% of the time unless you have added your own logic and therefor
           this is automatically used for you when disengaging if your TP is 0.
 
 [Special Sets]
+These commands and sets were created before /lockset was implemented and do the same thing.
 /vert   - equips the Convert set and locks equipment.
           use /lock to unlock again.
 /csstun - equips the Stun set and locks equipment.
@@ -129,7 +129,6 @@ This will work 99% of the time unless you have added your own logic and therefor
 
 ## Additional Commands for BLM:
 ```
-[Regular Toggles]
 /yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring.
           This is on by default.
 /mb     - equips gear that gives bonuses to magic burst damage when casting nukes.
@@ -137,14 +136,12 @@ This will work 99% of the time unless you have added your own logic and therefor
 
 ## Additional Commands for WHM
 ```
-[Regular Toggles]
 /fight  - used to turn off TP set.
           this is automatically used for you when disengaging if your TP is 0.
 ```
 
 ## Additional Commands for BRD:
 ```
-[Regular Toggles]
 /shorde  - switches to using the default foe lullaby set to reduce AOE in favour of Acc.
 /sballad - switches to using a wind instrument over string to reduce AOE.
 /fight  - used to turn off TP set.
@@ -153,8 +150,8 @@ This will work 99% of the time unless you have added your own logic and therefor
 
 ## Additional Commands for BST:
 ```
-[Regular Toggles]
-/sheep  - All of these toggles set what jug Call Beast will use.
+All of the following toggles set what jug Call Beast will use.
+/sheep
 /lizard
 /crab
 /tiger
@@ -165,8 +162,13 @@ This will work 99% of the time unless you have added your own logic and therefor
 
 ## Additional Commands for THF:
 ```
-[Regular Toggles]
 /th - Forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
+      Will also force you to equip TH gear when using a ranged attack.
+```
+
+## Additional Commands for THF:
+```
+/dps - used for PLD to turn on DPS LowAcc / HighAcc TP set behaviour.
 ```
 
 # Troubleshooting Crashes
