@@ -79,6 +79,8 @@ This will work 99% of the time unless you have added your own logic and therefor
                     use /lock to unlock again.
 /lockset [number] - equips the given lockset and locks equipment
                     use /lock to unlock again.
+                    This is primarily provided as a shortcut way to define some VERY basic
+                    level sync functionality or for use in conjunction with /lockstyle on.
 
 /lag - removes midcast delays and yellow set delays for when a zone is lagging
        to give ashitacast the maximum chance of actually equipping the correct gear on cast.
