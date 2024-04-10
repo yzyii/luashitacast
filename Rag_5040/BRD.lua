@@ -261,9 +261,6 @@ local sets = {
     TP = {},
     TP_NIN = {},
     WS = {},
-
-    FallbackSub = { -- Used only when you do not have complete staff sets
-    },
 }
 profile.Sets = sets
 
