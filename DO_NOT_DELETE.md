@@ -56,6 +56,6 @@
 
 - Stripped Shorterhand entirely in favour of using shorthand and aliases out of box
 
-### v1.2.0
+### v1.2.1
 
 - Removed unused files and FallbackSub set which has been deprecated for quite a while but never removed from the job luas
