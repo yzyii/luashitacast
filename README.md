@@ -187,4 +187,4 @@ This will work 99% of the time unless you have added your own logic and therefor
 
 Feel free to DM me on Discord for if you encounter bugs or have feature requests or if you are a WAR and are interested in using these templates to implement the job. I am easily found in the HorizonXI or Ashita Discords.
 
-Do NOT DM me if you have not bothered to read through this README entirely. You will be ignored.
+Do NOT DM me if you have not bothered to read through this README and did not follow the instructions written. You will be ignored.
