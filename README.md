@@ -28,6 +28,7 @@ These luas were designed to be used in HorizonXI and therefore features such as 
 - Make sure you fill out the fastcastValue correctly in your [JOB].lua if you are using any Fast Cast gear in the Precast set.
 - The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the values in gcmage.lua (or gcmelee.lua for melee jobs).
 - If you define a specific mainhand in regular sets, it will still equip the correct stave if you have them listed in gcmage.lua
+- If you have followed all these instructions and are experiencing crashes when loading the game or changing jobs, check out the Troubleshooting Crashes on the bottom of this page.
 
 # How to Update
 
