@@ -164,7 +164,7 @@ This will work 99% of the time unless you have added your own logic and therefor
 /th - Forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
 ```
 
-## Additional Notes
+## Additional Notes / Troubleshooting Crashes
 
 - LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. Level Sync content is a joke anyway. Just throw on some garbage gear full time and clear it. 
 
