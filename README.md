@@ -4,7 +4,7 @@ A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off
 
 All jobs are fully implemented to my knowledge except for WAR however implementation should be trivial (See Contact Me section below). 
 
-The intention for these luas is to comprehensively cover all required game mechanics for 75-era content as almost every other lua I have found either does not implement or poorly implements functionality such as resist sets, spell interruption rate down (SIRD) / midcast delay, or different set toggling.
+The intention for these luas is to comprehensively cover all required game mechanics for 75-era content as almost every other lua I have found either does not implement or poorly implements functionality such as dt/mdt/resist sets, spell interruption rate down (SIRD) / midcast delay, or different set toggling.
 
 Jobs use the corresponding templates to automatically implement functionality that is shared across all of them.
 
