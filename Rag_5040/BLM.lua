@@ -362,9 +362,6 @@ local sets = {
     },
     LockSet2 = {},
     LockSet3 = {},
-
-    FallbackSub = { -- Used only when you do not have complete staff sets
-    },
 }
 profile.Sets = sets
 
