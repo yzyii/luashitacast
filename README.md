@@ -2,7 +2,9 @@
 
 A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
-All jobs are fully implemented to my knowledge except for WAR however implementation should be trivial. DRK is implemented but untested.
+All jobs are fully implemented to my knowledge except for WAR however implementation should be trivial (See Contact Me section below). 
+
+The intention for these luas is to comprehensively cover all required game mechanics for 75-era content as almost every other lua I have found either does not implement or poorly implements functionality such as resist sets, spell interruption rate down (SIRD) or midcast delay.
 
 Jobs use the corresponding templates to automatically implement functionality that is shared across all of them.
 
@@ -164,12 +166,24 @@ This will work 99% of the time unless you have added your own logic and therefor
 /th - Forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
 ```
 
-## Additional Notes / Troubleshooting Crashes
-
-- LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. Level Sync content is a joke anyway. Just throw on some garbage gear full time and clear it. 
+# Troubleshooting Crashes
 
 - If LuAshitacast is crashing your game, chances are you are using an old version of it. Update to the latest version of it at https://github.com/ThornyFFXI/LuAshitacast
 
 - If your game is still crashing and you are using these on HorizonXI, make sure you are launching the game from the correct launcher. This is a bug with earlier HorizonXI launcher versions which opened an older version of the launcher. Assuming you installed to the default path, delete the shortcut on your desktop and make a new one pointing to: ..\\AppData\\Local\\HorizonXI_Launcher\\HorizonXI-Launcher.exe
 
 - If your game is still crashing at this point, some users have reported that turning off alias messages has worked for them. You can change aliases.silent to 1 within the boot config to suppress these messages. The file is located at: ..\\Game\\config\\boot\\ashita.ini
+
+ # Additional Notes
+
+- LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. Level Sync content is a joke anyway. Just throw on some garbage gear full time and clear it.
+
+- Horizon's interpretation of what is legal or not in LuAshitacast is poorly explained. This LuAshitacast attempts to abide by their rules.
+
+- e.g. Some users have asked me if equipping movement speed gear to override Dusk gear if they move their character during content is legal. Given that you are pushing movement keys to move your character, I consider this to be legal within the vague guidelines given by HorizonXI. You may disagree. Short of explicit guidance from a GM, this will not be changed to cater for you.
+
+# Contact Me
+
+Feel free to DM me on Discord for if you encounter bugs or have feature requests or if you are a WAR and are interested in using these templates to implement the job. I am easily found in the HorizonXI or Ashita Discords.
+
+Do NOT DM me if you have not bothered to read through this README entirely. You will be ignored.
