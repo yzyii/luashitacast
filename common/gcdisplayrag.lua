@@ -111,15 +111,15 @@ function gcdisplay.Load()
         for k, v in pairs(Toggles) do
             display = display .. '   '
             if (v == true) then
-                display = display .. '|cFF00FF00|' .. k .. '|r'
+                display = display .. '|cFF00EE00|' .. k .. '|r'
             else
-                display = display .. '|cFFFF0000|' .. k .. '|r'
+                display = display .. '|cFF989898|' .. k .. '|r'
             end
         end
         for key, value in pairs(Cycles) do
-            display = display .. '   ' .. key .. ': ' .. '|cFF00FF00|' .. value.Array[value.Index] .. '|r'
+            display = display .. '   ' .. key .. ': ' .. '|cFF00EE00|' .. value.Array[value.Index] .. '|r'
         end
-        display = display .. '   ' .. 'IdleSet' .. ': ' .. '|cFF00FF00|' .. gcdisplay.IdleSet .. '|r' .. '  '
+        display = display .. '   ' .. 'IdleSet' .. ': ' .. '|cFF00EE00|' .. gcdisplay.IdleSet .. '|r' .. '  '
         gcdisplay.FontObject.text = display
     end)
 end
