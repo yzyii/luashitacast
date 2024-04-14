@@ -41,6 +41,24 @@ local sets = {
         Feet = 'Glt. Leggings +1',
     },
     IdleALT = {
+        Main = 'Terra\'s Staff', -- 20
+        Sub = '',
+        Range = 'Rosenbogen',
+        Ammo = '',
+        Head = 'displaced',
+        Body = 'Royal Cloak',
+        Neck = 'Jeweled Collar',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Bloodbead Earring',
+        Hands = 'Dst. Mittens +1', -- 2
+        Ring1 = 'Merman\'s Ring',
+        Ring2 = 'Sattva Ring', -- 5
+        Back = 'Valor Cape',
+        Waist = 'Warwolf Belt',
+        Legs = 'Dst. Subligar +1', -- 3
+        Feet = 'Dst. Leggings +1', -- 2
+    },
+    IdleDT = {
         Main = 'Durandal',
         -- Sub = 'Master Shield',
         Sub = 'Koenig Shield',
@@ -58,6 +76,24 @@ local sets = {
         Waist = 'Warwolf Belt',
         Legs = 'Dst. Subligar +1',
         Feet = 'Glt. Leggings +1',
+    },
+    IdleALTDT = {
+        Main = 'Terra\'s Staff', -- 20
+        Sub = '',
+        Range = 'Rosenbogen',
+        Ammo = '',
+        Head = 'Darksteel Cap +1', -- 2
+        Body = 'Dst. Harness +1', -- 4
+        Neck = 'Jeweled Collar',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Bloodbead Earring',
+        Hands = 'Dst. Mittens +1', -- 2
+        Ring1 = 'Jelly Ring', -- 5
+        Ring2 = 'Sattva Ring', -- 5
+        Back = 'Valor Cape',
+        Waist = 'Warwolf Belt',
+        Legs = 'Dst. Subligar +1', -- 3
+        Feet = 'Dst. Leggings +1', -- 2
     },
     Resting = {
         Main = 'Pluto\'s Staff',
@@ -463,6 +499,13 @@ profile.HandleCommand = function(args)
     gcmelee.DoCommands(args)
 end
 
+local utsuBuffs = T{
+    [66] = 1,
+    [444] = 2,
+    [445] = 3,
+    [446] = 4,
+}
+
 profile.HandleDefault = function()
     gcmelee.DoDefault()
 
@@ -473,6 +516,22 @@ profile.HandleDefault = function()
 
     if (hercules_ring and player.HPP <= 50) then
         gFunc.Equip(hercules_ring_slot, 'Hercules\' Ring')
+    end
+
+    if (player.SubJob == 'NIN') then
+        local function GetShadowCount()
+            for buffId, shadowCount in pairs(utsuBuffs) do
+                if (gData.GetBuffCount(buffId) > 0) then
+                    return shadowCount
+                end
+            end
+
+            return 0
+        end
+        if (GetShadowCount() == 0) then
+            gFunc.EquipSet('IdleDT')
+            if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALTDT') end
+        end
     end
 
     local cover = gData.GetBuffCount('Cover')
