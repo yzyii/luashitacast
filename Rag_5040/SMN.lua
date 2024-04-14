@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear
+local fastCastValue = 0.04 -- 0% from gear
 
 local sets = {
     Idle = {

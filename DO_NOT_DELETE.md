@@ -59,3 +59,8 @@
 ### v1.2.1
 
 - Removed unused files and FallbackSub set which has been deprecated for quite a while but never removed from the job luas
+
+### v1.2.1
+
+- Breaking Change - PLD - Add missing valor_surcoat variable - How has no one told me this is missing until now...
+- PLD - Add Cure set

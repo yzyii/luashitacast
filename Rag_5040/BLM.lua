@@ -172,7 +172,7 @@ local sets = {
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
         Head = 'Zenith Crown',
-        -- Neck = 'Checkered Scarf',
+        Neck = 'Checkered Scarf',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Merman\'s Earring',
         Hands = 'Zenith Mitts +1',

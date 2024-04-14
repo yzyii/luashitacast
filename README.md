@@ -181,6 +181,8 @@ All of the following toggles set what jug Call Beast will use.
 
  # Additional Notes
 
+- To fix the "Sending packet to request current nation." message to stop polling when in town, you can open the in-game Status menu that displays your stats and experience points.
+
 - LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. Level Sync content is a joke anyway. Just throw on some garbage gear full time and clear it.
 
 - Horizon's rules of what is legal or not in LuAshitacast is poorly explained. This LuAshitacast attempts to abide by their rules.
