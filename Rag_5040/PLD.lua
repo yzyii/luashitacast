@@ -41,37 +41,45 @@ local sets = {
         Feet = 'Glt. Leggings +1',
     },
     IdleALT = {
-        Main = 'Terra Staff', -- 20
-        Sub = '',
+        Main = 'Durandal',
+        -- Sub = 'Master Shield',
+        Sub = 'Koenig Shield',
         Range = 'Rosenbogen',
         Ammo = '',
-        Head = 'Darksteel Cap +1', -- 2
-        Body = 'Dst. Harness +1', -- 4
-        Neck = 'Jeweled Collar',
+        Head = 'Darksteel Cap +1',
+        Body = 'Dst. Harness +1',
+        Neck = 'Shield Torque',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Bloodbead Earring',
-        Hands = 'Dst. Mittens +1', -- 2
-        Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring', -- 5
-        Back = 'Valor Cape',
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Jelly Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Boxer\'s Mantle',
         Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1', -- 3
-        Feet = 'Dst. Leggings +1', -- 2
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Glt. Leggings +1',
     },
     Resting = {
         Main = 'Pluto\'s Staff',
         Sub = '',
-        Neck = 'Checkered Scarf',
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
     },
-    Town = {},
+    Town = {
+        Main = 'Durandal',
+        Sub = 'Koenig Shield',
+        Head = 'Darksteel Cap +1',
+        Body = 'Ducal Aketon',
+        Hands = 'Vlr. Gauntlets +1',
+        Legs = 'Valor Breeches',
+        Feet = 'Valor Leggings',
+    },
     Movement = {
         Legs = 'Blood Cuisses',
     },
 
     DT = {
-        Main = 'Terra Staff', -- 20
+        Main = 'Terra\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
         Ammo = '',
@@ -355,7 +363,15 @@ local sets = {
         Feet = 'Valor Leggings',
     },
 
-    LockSet1 = {},
+    LockSet1 = {
+        Main = 'Durandal',
+        Sub = 'Koenig Shield',
+        Head = 'Darksteel Cap +1',
+        Body = 'Ducal Aketon',
+        Hands = 'Vlr. Gauntlets +1',
+        Legs = 'Valor Breeches',
+        Feet = 'Valor Leggings',
+    },
     LockSet2 = {},
     LockSet3 = {},
 
@@ -379,6 +395,9 @@ profile.Sets = sets
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
+
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //shieldbash')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //holy')
 end
 
 --[[

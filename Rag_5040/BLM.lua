@@ -368,6 +368,9 @@ profile.Sets = sets
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 10')
+
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
 end
 
 --[[
