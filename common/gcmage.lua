@@ -729,9 +729,15 @@ function gcmage.EquipEnfeebling()
     elseif (EnfeebINTACCSpells:contains(action.Name)) then
         gFunc.EquipSet('EnfeeblingINT')
         gFunc.EquipSet('EnfeeblingACC')
+        if (conquest:GetOutsideControl()) and master_casters_bracelets then
+            gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+        end
     elseif (EnfeebMNDACCSpells:contains(action.Name)) then
         gFunc.EquipSet('EnfeeblingMND')
         gFunc.EquipSet('EnfeeblingACC')
+        if (conquest:GetOutsideControl()) and master_casters_bracelets then
+            gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+        end
     end
     if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
         gFunc.EquipSet('EnfeeblingACC')
