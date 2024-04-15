@@ -14,12 +14,6 @@ local valor_surcoat = 'Valor Surcoat'
 local valor_gauntlets = 'Vlr. Gauntlets +1'
 local valor_leggings = 'Valor Leggings'
 
-        -- Sub = 'Nms. Shield +1',
-        -- Ear1 = 'Hades Earring',
-        -- Back = 'Shadow Mantle',
-        -- Ear1 = 'Cassie Earring',
-        -- Ear1 = 'Buckler Earring',
-
 local sets = {
     Idle = {
         Main = 'Durandal',
