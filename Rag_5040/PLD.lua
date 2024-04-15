@@ -403,9 +403,13 @@ Everything below can be ignored.
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
+    local action = gData.GetAction()
+    if (action.Name == 'Chivalry') then
+        return
+    end
+
     gFunc.EquipSet(sets.Hate)
 
-    local action = gData.GetAction()
     if (action.Name == 'Holy Circle' and gallant_leggings ~= '') then
         gFunc.Equip('Legs', gallant_leggings)
     elseif (action.Name == 'Rampart' and valor_coronet ~= '') then
