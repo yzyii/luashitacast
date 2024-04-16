@@ -64,3 +64,8 @@
 
 - Breaking Change - PLD - Add missing valor_surcoat variable - How has no one told me this is missing until now...
 - PLD - Add Cure set
+
+### v1.2.3
+
+- PLD Prevent Chivalry from swapping gear at all to ensure TP is not lost on usage.
+- RDM/BLM - Fix Master Caster Bracelet usage on stat insensitive debuffs.
