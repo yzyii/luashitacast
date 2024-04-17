@@ -67,5 +67,9 @@
 
 ### v1.2.3
 
-- PLD Prevent Chivalry from swapping gear at all to ensure TP is not lost on usage.
+- PLD - Prevent Chivalry from swapping gear at all to ensure TP is not lost on usage.
 - RDM/BLM - Fix Master Caster Bracelet usage on stat insensitive debuffs.
+
+### v1.2.4
+
+- RNG - Fix syntax errors on print lines
