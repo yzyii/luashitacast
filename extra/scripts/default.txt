@@ -147,12 +147,20 @@
 #
 #########################################################################
 /localsettings blureffect off
-/bind !F1 /lac fwd fres
-/bind !F2 /lac fwd kite
-/bind !F3 /lac fwd dt
-/bind !F4 /lac fwd mdt
+/bind +1 /lac fwd fres
+/bind +2 /lac fwd idle
+/bind +3 /lac fwd dt
+/bind +4 /lac fwd mdt
 /bind F9 //stun
 /bind F10 //dia
 /alias add /i //invisible
 /alias add /s //sneak
 /alias add /c //cure
+/alias add /ft //ft
+/alias add /it //it
+/alias add /wit //wit
+/alias add /et //et
+/alias add /lt //lt
+/alias add /wat //wat
+/alias add /lit //lit
+/alias add /dat //dat
