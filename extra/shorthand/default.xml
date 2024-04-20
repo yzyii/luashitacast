@@ -11,15 +11,12 @@
 
     <spell id="136"> <!--Invisible-->
         <command>/in</command>
-        <name>i</name>
     </spell>
     <spell id="137"> <!--Sneak-->
         <command>/sn</command>
-        <name>s</name>
     </spell>
 
     <spell id="1"> <!--Cure-->
-        <name>c</name>
         <command>/c1</command>
         <name>c1</name>
     </spell>
@@ -292,35 +289,27 @@
 
     <spell id="454"> <!--Fire Threnody-->
         <command>/ft</command>
-        <name>ft</name>
     </spell>
     <spell id="455"> <!--Ice Threnody-->
         <command>/it</command>
-        <name>it</name>
     </spell>
     <spell id="456"> <!--Wind Threnody-->
         <command>/wit</command>
-        <name>wit</name>
     </spell>
     <spell id="457"> <!--Earth Threnody-->
         <command>/et</command>
-        <name>et</name>
     </spell>
     <spell id="458"> <!--Ltng. Threnody-->
         <command>/lt</command>
-        <name>lt</name>
     </spell>
     <spell id="459"> <!--Water Threnody-->
         <command>/wat</command>
-        <name>wat</name>
     </spell>
     <spell id="460"> <!--Light Threnody-->
         <command>/lit</command>
-        <name>lit</name>
     </spell>
     <spell id="461"> <!--Dark Threnody-->
         <command>/dat</command>
-        <name>dat</name>
     </spell>
 
     <spell id="338"> <!--Utsusemi: Ichi-->

@@ -261,8 +261,7 @@ local sets = {
         Back = 'Boxer\'s Mantle',
         Waist = 'Swift Belt', -- 4
         -- Legs = 'Homam Cosciales', -- 3
-        -- Feet = 'Homam Gambieras', -- 3
-        Feet = 'Dusk Ledelsens', -- 2
+        Feet = 'Homam Gambieras', -- 3
     },
     Haste_Ichi = { -- Optional, provided here only if you wish to mix in SIRD or other stats over max haste
     },
@@ -299,8 +298,7 @@ local sets = {
         Back = 'Valor Cape',
         Waist = 'Swift Belt',
         -- Legs = 'Homam Cosciales',
-        -- Feet = 'Homam Gambieras',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Homam Gambieras',
     },
     Cheat_C3HPDown = {
         Main = 'Durandal',

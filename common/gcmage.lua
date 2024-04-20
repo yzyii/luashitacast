@@ -381,11 +381,14 @@ end
 
 function gcmage.DoPrecast(fastCastValue)
     local chainspell = gData.GetBuffCount('Chainspell')
+    local action = gData.GetAction()
+    local player = gData.GetPlayer()
+
     if (chainspell > 0) then
         if (gcdisplay.GetToggle('Hate') == true) then
             gFunc.EquipSet('Hate')
 
-            local action = gData.GetAction()
+
             local target = gData.GetActionTarget()
             local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
