@@ -73,3 +73,8 @@
 ### v1.2.4
 
 - RNG - Fix syntax errors on print lines
+
+### v1.2.5
+
+- Fix some collisions in shorthand causing commands such as /item to not work.
+- Fix /lag command which was never actually tested until now.
