@@ -90,7 +90,7 @@ local sets = {
         Neck = 'Jeweled Collar', -- 10
         Back = 'Hexerei Cape',
         Ear1 = 'Robust Earring', -- 11
-        Ear2 = 'Topaz Earring', -- 10
+        Ear2 = 'Robust Earring', -- 11
         Waist = 'Earth Belt', -- 20
         Ring1 = 'Spinel Ring', -- 9
         Ring2 = 'Malflash Ring', -- 10
@@ -102,7 +102,7 @@ local sets = {
         Neck = 'Jeweled Collar', -- 10
         Back = 'Hexerei Cape',
         Ear1 = 'Robust Earring', -- 11
-        Ear2 = 'Topaz Earring', -- 10
+        Ear2 = 'Robust Earring', -- 11
         Waist = 'Wind Belt', -- 20
         Ring1 = 'Topaz Ring', -- 9
     },
