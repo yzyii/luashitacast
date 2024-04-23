@@ -74,16 +74,14 @@ local sets = {
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
-        -- Body = 'Kirin\'s Osode',
         Body = 'Shura Togi',
         Hands = 'Mel. Gloves +1',
         Ring1 = 'Flame Ring',
         Ring2 = 'Flame Ring',
         Back = 'Forager\'s Mantle',
-        Waist = 'Warwolf Belt',
         Waist = 'Black Belt',
         Legs = 'Shura Haidate',
-        Feet = 'Shura Sune-Ate',
+        Feet = 'Dune Boots',
     },
 
     Precast = {
@@ -150,7 +148,7 @@ local sets = {
 
     SJ_DRG = {
         Ear2 = 'Wyvern Earring',
-        Feet = 'Dune boots',
+        Feet = 'Dune Boots',
     },
     SJ_THF = {
         Ear2 = 'Pilferer\'s Earring',
@@ -176,7 +174,7 @@ local sets = {
     },
     WS_DragonKick = {
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Dune boots',
+        Feet = 'Dune Boots',
     },
     WS_HowlingFist = {
         Head = 'Genbu\'s Kabuto',
@@ -190,7 +188,7 @@ local sets = {
         Ring2 = 'Toreador\'s Ring',
         Back = 'Wyvern Mantle',
         Legs = 'Shura Haidate',
-        Feet = 'Dune boots',
+        Feet = 'Dune Boots',
     },
     Chakra = {
         Ammo = 'Happy Egg',
@@ -220,6 +218,21 @@ local sets = {
         Legs = 'Tpl. Hose +1',
         Waist = 'Reverend Sash',
         Feet = 'Suzaku\'s Sune-Ate',
+    },
+
+    HundredFists = {
+        Head = 'Shr.Znr.Kabuto',
+        Neck = 'Faith Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Shura Togi',
+        Hands = 'Mel. Gloves +1',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Black Belt',
+        Legs = 'Shura Haidate',
+        Feet = 'Dune Boots',
     },
 }
 profile.Sets = sets
@@ -323,6 +336,11 @@ profile.HandleDefault = function()
 
     local player = gData.GetPlayer()
     local focus = gData.GetBuffCount('Focus')
+    local hundredFists = gData.GetBuffCount('Hundred Fists')
+
+    if (hundredFists == 1) then
+        gFunc.EquipSet(sets.HundredFists)
+    end
 
     if (focus == 1 and gcdisplay.IdleSet == 'LowAcc') then
         gFunc.EquipSet(sets.TP_Focus)

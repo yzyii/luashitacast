@@ -67,8 +67,8 @@
 
 ### v1.2.3
 
-- PLD - Prevent Chivalry from swapping gear at all to ensure TP is not lost on usage.
-- RDM/BLM - Fix Master Caster Bracelet usage on stat insensitive debuffs.
+- PLD - Prevent Chivalry from swapping gear at all to ensure TP is not lost on usage
+- RDM/BLM - Fix Master Caster Bracelet usage on stat insensitive debuffs
 
 ### v1.2.4
 
@@ -76,5 +76,13 @@
 
 ### v1.2.5
 
-- Fix some collisions in shorthand causing commands such as /item to not work.
-- Fix /lag command which was never actually tested until now.
+- Fix some collisions in shorthand causing commands such as /item to not work
+- Fix /lag command which was never actually tested until now
+
+### v1.2.6
+
+- Breaking Change - PLD - Added Rampart set and removed superfluous booleans for Cover and Rampart
+- SMN - Added Carbuncles Cuffs and Evokers Boots vars for Precast
+- MNK - Added Hundred Fists set
+- Fix /dps toggling
+- Add /mode for dps jobs

@@ -1,6 +1,9 @@
 local profile = {}
 
-local fastCastValue = 0.04 -- 0% from gear
+local fastCastValue = 0.04 -- 4% from gear not including carbuncles cuffs or evokers boots
+
+local carbuncles_cuffs = false
+local evokers_boots = false
 
 local sets = {
     Idle = {
@@ -341,6 +344,16 @@ end
 
 profile.HandlePrecast = function()
     gcmage.DoPrecast(fastCastValue)
+
+    local action = gData.GetAction()
+    if (action.Skill == 'Summoning') then
+        if (carbuncles_cuffs) then
+            gFunc.Equip('Hands', 'Carbuncle\'s Cuffs')
+        end
+        if (evokers_boots) then
+            gFunc.Equip('Feet', 'Evoker\'s Boots')
+        end
+    end
 end
 
 profile.HandleMidcast = function()
