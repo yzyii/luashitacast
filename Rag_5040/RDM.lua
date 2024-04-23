@@ -557,7 +557,7 @@ local sets = {
         Waist = 'Warwolf Belt',
         Legs = 'Duelist\'s Tights',
         -- Legs = 'Dusk Trousers',
-        -- Feet = 'Rutter Sabatons',
+        Feet = 'Rutter Sabatons',
     },
     WS_Soil = {
         Neck = 'Soil Gorget',

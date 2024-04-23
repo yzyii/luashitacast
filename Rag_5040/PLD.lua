@@ -9,8 +9,6 @@ local hercules_ring_slot = 'Ring1'
 
 -- Replace these with '' if you do not have them
 local gallant_leggings = 'Glt. Leggings +1'
-local valor_coronet = 'Valor Coronet'
-local valor_surcoat = 'Valor Surcoat'
 local valor_gauntlets = 'Vlr. Gauntlets +1'
 local valor_leggings = 'Valor Leggings'
 
@@ -371,19 +369,69 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP_LowAcc = {},
+    TP_LowAcc = {
+        Main = 'Joyeuse',
+        Sub = 'Koenig Shield',
+        Range = '',
+        Ammo = 'Tiphia Sting',
+        Head = 'Homam Zucchetto',
+        Neck = 'Fortitude Torque',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Brutal Earring',
+        Body = 'Haubergeon',
+        Hands = 'Dusk Gloves',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Swift Belt',
+        -- Legs = 'Homam Cosciales',
+        Legs = 'Valor Breeches',
+        Feet = 'Homam Gambieras',
+    },
     TP_HighAcc = {},
 
-    WS = {},
+    WS = {
+        Head = 'Optical Hat',
+        Neck = 'Soil Gorget',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Brutal Earring',
+        Body = 'Haubergeon',
+        Hands = 'Alkyoneus\'s Brc.',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Swift Belt',
+        Legs = 'Valor Breeches',
+        Feet = 'Rutter Sabatons',
+    },
     WS_Spirits = {},
 
     Cover = {
         Head = 'Gallant Coronet',
-        Body = 'Dst. Harness +1'
+        Body = 'Valor Surcoat',
     },
     Cure = {
         Main = 'Apollo\'s Staff',
         Ear1 = 'Hospitaler Earring',
+    },
+    Rampart = { -- Rampart gives VIT x2 damage shield in era
+        Main = 'Durandal',
+        Sub = 'Koenig Shield',
+        Range = 'Rosenbogen',
+        Ammo = '',
+        Head = 'Valor Coronet',
+        Neck = 'Fortitude Torque',
+        Ear1 = 'Robust Earring',
+        Ear2 = 'Robust Earring',
+        Body = 'Gaia Doublet',
+        Hands = 'Vlr. Gauntlets +1',
+        Ring1 = 'Topaz Ring',
+        -- Ring1 = 'Soil Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Valor Cape',
+        Waist = 'Warwolf Belt',
+        Legs = 'Beak Trousers +1',
+        Feet = 'Power Sandals',
     },
 }
 profile.Sets = sets
@@ -414,17 +462,14 @@ profile.HandleAbility = function()
 
     if (action.Name == 'Holy Circle' and gallant_leggings ~= '') then
         gFunc.Equip('Legs', gallant_leggings)
-    elseif (action.Name == 'Rampart' and valor_coronet ~= '') then
-        gFunc.Equip('Head', valor_coronet)
+    elseif (action.Name == 'Rampart') then
+        gFunc.EquipSet(sets.Rampart)
     elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
         gFunc.Equip('Hands', valor_gauntlets)
     elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then
         gFunc.Equip('Legs', valor_leggings)
     elseif (action.Name == 'Cover') then
         gFunc.EquipSet(sets.Cover)
-        if (valor_surcoat ~= '') then
-            gFunc.Equip('Body', valor_surcoat)
-        end
     end
 end
 
@@ -478,9 +523,6 @@ profile.HandleDefault = function()
     local cover = gData.GetBuffCount('Cover')
     if (cover >= 1) then
         gFunc.EquipSet(sets.Cover)
-        if (valor_surcoat ~= '') then
-            gFunc.Equip('Body', valor_surcoat)
-        end
     end
 
     gcmelee.DoDefaultOverride()

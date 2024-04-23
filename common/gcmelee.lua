@@ -26,7 +26,7 @@ local lastIdleSetBeforeEngaged = ''
 local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
 
 local AliasList = T{
-    'tpset','tp','dps','lag',
+    'tpset','tp','mode','dps','lag',
 }
 
 function gcmelee.SetIsDPS(isDPSVal)
@@ -49,7 +49,7 @@ function gcmelee.DoCommands(args)
         do return end
     end
 
-    if (args[1] == 'tpset' or args[1] == 'tp') then
+    if (args[1] == 'tpset' or args[1] == 'tp' or args[1] == 'mode') then
         tp_variant = tp_variant + 1
         if (tp_variant > #TpVariantTable) then
             tp_variant = 1
@@ -59,7 +59,7 @@ function gcmelee.DoCommands(args)
         isDPS = not isDPS
         gcinclude.Message('DPS Mode', isDPS)
         if (not isDPS) then
-            gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
+            gcinclude.ToggleIdleSet('Normal')
             lastIdleSetBeforeEngaged = ''
         end
     elseif (args[1] == 'lag') then
