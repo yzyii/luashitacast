@@ -10,7 +10,7 @@ local hercules_ring_slot = 'Ring1'
 -- Replace these with '' if you do not have them
 local gallant_leggings = 'Glt. Leggings +1'
 local valor_gauntlets = 'Vlr. Gauntlets +1'
-local valor_leggings = 'Valor Leggings'
+local valor_leggings = 'Vlr. Leggings +1'
 
 local sets = {
     Idle = {
@@ -100,7 +100,7 @@ local sets = {
         Body = 'Ducal Aketon',
         Hands = 'Vlr. Gauntlets +1',
         Legs = 'Valor Breeches',
-        Feet = 'Valor Leggings',
+        Feet = 'Vlr. Leggings +1',
     },
     Movement = {
         Legs = 'Blood Cuisses',
@@ -315,7 +315,7 @@ local sets = {
         Back = 'Valor Cape',
         Waist = 'Warwolf Belt',
         Legs = 'Valor Breeches',
-        Feet = 'Valor Leggings',
+        Feet = 'Vlr. Leggings +1',
     },
     Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
         Main = 'Durandal',
@@ -390,7 +390,7 @@ local sets = {
         Back = 'Valor Cape',
         Waist = 'Warwolf Belt',
         Legs = 'Valor Breeches',
-        Feet = 'Valor Leggings',
+        Feet = 'Vlr. Leggings +1',
     },
 
     LockSet1 = {
@@ -400,7 +400,7 @@ local sets = {
         Body = 'Ducal Aketon',
         Hands = 'Vlr. Gauntlets +1',
         Legs = 'Valor Breeches',
-        Feet = 'Valor Leggings',
+        Feet = 'Vlr. Leggings +1',
     },
     LockSet2 = {},
     LockSet3 = {},

@@ -32,6 +32,8 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
+    Preshot = {},
+
     TP_LowAcc = {},
     TP_HighAcc = {},
 
@@ -97,6 +99,8 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gFunc.EquipSet(sets.Preshot)
+
     local equipment = gData.GetEquipment()
     local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
     if (unlimitedShot == 0 and equipment.Ammo ~= nil and equipment.Ammo.Name == special_ammo) then
