@@ -86,3 +86,7 @@
 - MNK - Added Hundred Fists set
 - Fix /dps toggling
 - Add /mode for dps jobs
+
+### v1.2.7
+
+- RNG - Add preshot set for RNG
