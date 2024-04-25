@@ -87,7 +87,7 @@ This will work 99% of the time unless you have added your own logic and therefor
        interim equip sets will no longer work when this is enabled.
 ```
 
-# Additional Commands for All Mage Jobs:
+## Additional Commands for All Mage Jobs:
 ```
 /addmp [number] - adds a set amount of MP to decide usage of the IdleMaxMP set.
                   this can be used when eating food or for other +MP effects.
@@ -102,7 +102,7 @@ This will work 99% of the time unless you have added your own logic and therefor
                   Accuracy sets.
 ```
 
-# Additional Commands for All Melee Jobs:
+## Additional Commands for All Melee Jobs:
 ```
 /tpset /tp /mode - toggles TP set between a LowAcc and HighAcc set.
                    this will be overwritten if you have a DT or resistance set etc. enabled.
@@ -166,7 +166,7 @@ All of the following toggles set what jug Call Beast will use.
       Will also force you to equip TH gear when using a ranged attack.
 ```
 
-## Additional Commands for THF:
+## Additional Commands for PLD:
 ```
 /dps - used for PLD to turn on DPS LowAcc / HighAcc TP set behaviour.
 ```
