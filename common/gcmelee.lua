@@ -1,4 +1,4 @@
-local fenrirs_earring = false
+local fenrirs_earring = false -- Not used for RNG at all
 local fenrirs_earring_slot = 'Ear2'
 
 --[[
@@ -85,8 +85,10 @@ function gcmelee.DoDefault()
                     gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
                 end
 
-                if (fenrirs_earring) then
-                    gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+                if (player.MainJob ~= 'RNG') then
+                    if (fenrirs_earring and (environment.Time >= 6 or environment.Time < 18)) then
+                        gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+                    end
                 end
             end
             if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
