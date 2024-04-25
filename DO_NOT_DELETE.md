@@ -90,3 +90,4 @@
 ### v1.2.7
 
 - RNG - Add preshot set for RNG
+- All DD - Fixed Fenrir's Earring
