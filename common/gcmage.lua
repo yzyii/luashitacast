@@ -29,7 +29,7 @@ local skulkers_cape = false
 local wizards_mantle = false
 local republic_gold_medal = true
 
-local diabolos_earring = true
+local diabolos_earring = false
 local diabolos_earring_slot = 'Ear2'
 local diabolos_ring = true
 local diabolos_ring_slot = 'Ring2'
