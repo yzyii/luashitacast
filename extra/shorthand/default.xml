@@ -9,13 +9,6 @@
         <debug>false</dispelga>
     </settings>
 
-    <spell id="136"> <!--Invisible-->
-        <command>/in</command>
-    </spell>
-    <spell id="137"> <!--Sneak-->
-        <command>/sn</command>
-    </spell>
-
     <spell id="1"> <!--Cure-->
         <command>/c1</command>
         <name>c1</name>
