@@ -90,4 +90,7 @@
 ### v1.2.7
 
 - RNG - Add preshot set for RNG
-- All DD - Fixed Fenrir's Earring
+- All DD - Fixed Fenrir's Earring for Idle Handling
+
+### v1.2.8
+- All DD - Fixed Fenrir's Earring - Added WS Handling
