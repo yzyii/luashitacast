@@ -481,6 +481,8 @@ end
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
 
+    gcmelee.DoFenrirsEarring()
+
     local action = gData.GetAction()
     if (action.Name == 'Spirits Within') then
         gFunc.EquipSet(sets.WS_Spirits)

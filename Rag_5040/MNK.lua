@@ -318,6 +318,8 @@ profile.HandleWeaponskill = function()
     if (player.SubJob == 'THF') then
         gFunc.EquipSet(sets.SJ_THF)
     end
+
+    gcmelee.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()

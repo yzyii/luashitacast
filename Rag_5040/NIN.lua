@@ -108,6 +108,8 @@ profile.HandleWeaponskill = function()
     if (koga_tekko_plus_one and (environment.Time < 7 or environment.Time >= 17)) then
         gFunc.Equip('Hands', 'Kog. Tekko +1')
     end
+
+    gcmelee.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()

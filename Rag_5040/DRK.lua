@@ -110,6 +110,8 @@ profile.HandleWeaponskill = function()
     if (souleater > 0) then
         gFunc.EquipSet(sets.SoulEater)
     end
+
+    gcmelee.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()
