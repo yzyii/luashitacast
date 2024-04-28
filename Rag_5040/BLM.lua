@@ -27,7 +27,7 @@ local sets = {
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
         Legs = 'Sorcerer\'s Tonban',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Herald\'s Gaiters',
     },
     IdleALT = {},
     IdleMaxMP = {},
@@ -45,7 +45,9 @@ local sets = {
         -- Feet = 'Hydra Gaiters',
     },
     Town = {},
-    Movement = {},
+    Movement = {
+        Feet = 'Herald\'s Gaiters',
+    },
 
     DT = {
         Main = 'Terra\'s Staff',

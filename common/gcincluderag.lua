@@ -3,7 +3,7 @@ local display_messages = true -- set to true if you want chat log messages to ap
 local kingdom_aketon = false
 local republic_aketon = false
 local federation_aketon = false
-local ducal_aketon = true
+local ducal_aketon = false
 
 local dream_boots = true
 local dream_mittens = true

@@ -226,7 +226,9 @@ local sets = {
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Coral Greaves +1', -- 4
     },
-    Evasion = {},
+    Evasion = { -- hMP Toggle Set
+        Head = 'Hydra Beret',
+    },
 
     Precast = {
         Head = 'Wlk. Chapeau +1',
