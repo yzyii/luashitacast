@@ -116,6 +116,8 @@ profile.HandleWeaponskill = function()
     if (WeaponSkills:contains(action.Name)) then
       gFunc.EquipSet(sets[action.Name])
     end
+
+    gcmelee.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()

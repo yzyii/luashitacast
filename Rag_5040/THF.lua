@@ -123,6 +123,8 @@ profile.HandleWeaponskill = function()
             gFunc.Equip('Hands', 'Rogue\'s Armlets +1')
         end
     end
+
+    gcmelee.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()

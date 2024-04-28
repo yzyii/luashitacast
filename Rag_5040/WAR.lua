@@ -67,6 +67,7 @@ end
 
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
+    gcmelee.DoFenrirsEarring()
     -- You may add logic here
 end
 

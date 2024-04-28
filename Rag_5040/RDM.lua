@@ -622,7 +622,11 @@ profile.HandleWeaponskill = function()
 
     if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') or (action.Name == 'Evisceration') then
         gFunc.EquipSet(sets.WS_Soil)
-    elseif (action.Name == 'Spirits Within') then
+    end
+
+    gcmelee.DoFenrirsEarring()
+
+    if (action.Name == 'Spirits Within') then
         gFunc.EquipSet(sets.WS_Spirits)
     end
 end

@@ -1,4 +1,4 @@
-local fenrirs_earring = false -- Not used for RNG at all
+local fenrirs_earring = true -- Not used for RNG at all
 local fenrirs_earring_slot = 'Ear2'
 
 --[[
@@ -96,6 +96,19 @@ function gcmelee.DoDefault()
                 lastIdleSetBeforeEngaged = ''
             end
         end
+    end
+end
+
+function gcmelee.DoFenrirsEarring()
+    local player = gData.GetPlayer()
+    local environment = gData.GetEnvironment()
+
+    if (isDPS) then
+		if (player.MainJob ~= 'RNG') then
+			if (fenrirs_earring and (environment.Time >= 6 or environment.Time < 18)) then
+				gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+			end
+		end
     end
 end
 

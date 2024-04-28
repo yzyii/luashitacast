@@ -86,6 +86,8 @@ profile.HandleWeaponskill = function()
     if (action.Name == 'Tachi: Kaiten') then
         gFunc.EquipSet(sets.WS_Kaiten)
     end
+
+    gcmelee.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()
