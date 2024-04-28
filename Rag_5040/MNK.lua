@@ -33,7 +33,7 @@ local sets = {
         Back = 'Boxer\'s Mantle',
         Waist = 'Warwolf Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Dst. Leggings +1',
+        Feet = 'Herald\'s Gaiters',
     },
     IdleALT = {},
     Resting = {
@@ -45,7 +45,9 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     Town = {},
-    Movement = {},
+    Movement = {
+        Feet = 'Herald\'s Gaiters',
+    },
 
     DT = {
         -- Main = 'Cross-Counters',

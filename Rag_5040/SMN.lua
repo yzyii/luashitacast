@@ -20,7 +20,7 @@ local sets = {
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
         Legs = 'Evoker\'s Spats',
-        Feet = 'Evk. Pigaches +1',
+        Feet = 'Herald\'s Gaiters',
     },
     IdleALT = {},
     IdleMaxMP = {},
@@ -36,7 +36,9 @@ local sets = {
         Legs = 'Baron\'s Slops',
     },
     Town = {},
-    Movement = {},
+    Movement = {
+        Feet = 'Herald\'s Gaiters',
+    },
 
     DT = {
         Main = 'Terra\'s Staff',
