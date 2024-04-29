@@ -21,35 +21,34 @@ local sets = {
         Ammo = '',
         Head = 'displaced',
         Body = 'Royal Cloak',
-        Neck = 'Shield Torque',
+        Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Bloodbead Earring',
-        Hands = 'Dst. Mittens +1', -- 2
+        Ear2 = 'Merman\'s Earring',
+        Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring', -- 5
-        Back = 'Boxer\'s Mantle',
+        Ring2 = 'Sattva Ring',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1', -- 3
-        Feet = 'Glt. Leggings +1',
+        Legs = 'Coral Cuisses +1',
+        Feet = 'Coral Greaves +1',
     },
     IdleALT = {
-        Main = 'Durandal',
-        -- Sub = 'Master Shield',
-        Sub = 'Koenig Shield',
+        Main = 'Terra\'s Staff',
+        Sub = '',
         Range = 'Rosenbogen',
         Ammo = '',
-        Head = 'Darksteel Cap +1', -- 2
-        Body = 'Dst. Harness +1', -- 4
-        Neck = 'Shield Torque',
+        Head = 'displaced',
+        Body = 'Royal Cloak',
+        Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Bloodbead Earring',
-        Hands = 'Dst. Mittens +1', -- 2
-        Ring1 = 'Jelly Ring', -- 5
-        Ring2 = 'Sattva Ring', -- 5
-        Back = 'Boxer\'s Mantle',
+        Ear2 = 'Merman\'s Earring',
+        Hands = 'Coral Fng. Gnt. +1',
+        Ring1 = 'Merman\'s Ring',
+        Ring2 = 'Sattva Ring',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1', -- 3
-        Feet = 'Glt. Leggings +1',
+        Legs = 'Coral Cuisses +1',
+        Feet = 'Coral Greaves +1',
     },
     Resting = {
         Main = 'Pluto\'s Staff',
@@ -79,11 +78,11 @@ local sets = {
         Body = 'Dst. Harness +1', -- 4
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Bloodbead Earring',
+        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Hands = 'Dst. Mittens +1', -- 2
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = 'Sattva Ring', -- 5
-        Back = 'Valor Cape',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
         Legs = 'Dst. Subligar +1', -- 3
         Feet = 'Dst. Leggings +1', -- 2
@@ -101,7 +100,7 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1', -- 2
         Ring1 = 'Merman\'s Ring', -- 4
         Ring2 = 'Sattva Ring', -- 5
-        Back = 'Valor Cape',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
@@ -191,7 +190,7 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Emerald Ring', -- 9
         Ring2 = 'Malgust Ring', -- 10
-        Back = 'Valor Cape',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Ice Belt', -- 20
         Legs = 'Coral Cuisses +1',
         Feet = 'Blood Greaves', -- 21
@@ -209,7 +208,7 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1', -- 4
         Ring1 = 'Sapphire Ring', -- 9
         Ring2 = 'Malflood Ring', -- 10
-        Back = 'Valor Cape',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Lightning Belt', -- 20
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Coral Greaves +1', -- 4
@@ -218,7 +217,7 @@ local sets = {
 
     Precast = {
         Ear1 = 'Loquac. Earring',
-        Ear2 = 'Bloodbead Earring',
+        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Legs = 'Homam Cosciales',
     },
     SIRD = { -- 102% to Cap
@@ -229,7 +228,7 @@ local sets = {
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Magnetic Earring', -- 8
         -- Ear2 = 'Knightly Earring', -- 9
-        Ear2 = 'Bloodbead Earring',
+        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Merman\'s Ring',
@@ -266,12 +265,14 @@ local sets = {
         -- Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Loquac. Earring',
+        -- Ear1 = 'Hades Earring +1',
         Ear2 = 'Magnetic Earring',
+        -- Ear2 = 'Hades Earring +1',
         Body = 'Valor Surcoat',
         Hands = 'Vlr. Gauntlets +1',
         Ring1 = 'Hercules\' Ring',
         Ring2 = 'Sattva Ring',
-        Back = 'Valor Cape',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
         Legs = 'Valor Breeches',
         Feet = 'Vlr. Leggings +1',
@@ -283,11 +284,12 @@ local sets = {
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
+        -- Ear2 = 'Hades Earring +1',
         Body = 'Valor Surcoat',
         Hands = 'Homam Manopolas',
         Ring1 = 'Hercules\' Ring',
         Ring2 = 'Sattva Ring',
-        Back = 'Valor Cape',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Swift Belt',
         Legs = 'Homam Cosciales',
         Feet = 'Homam Gambieras',
@@ -340,12 +342,12 @@ local sets = {
         Head = 'Aegishjalmr',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
-        Ear2 = 'Bloodbead Earring',
+        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Body = 'Valor Surcoat',
         Hands = 'Vlr. Gauntlets +1',
         Ring1 = 'Bomb Queen Ring',
         Ring2 = 'Sattva Ring',
-        Back = 'Valor Cape',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
         Legs = 'Valor Breeches',
         Feet = 'Vlr. Leggings +1',
@@ -421,7 +423,7 @@ local sets = {
         Ring1 = 'Topaz Ring',
         -- Ring1 = 'Soil Ring',
         Ring2 = 'Sattva Ring',
-        Back = 'Valor Cape',
+        Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
         Legs = 'Beak Trousers +1',
         Feet = 'Power Sandals',
