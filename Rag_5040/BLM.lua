@@ -299,8 +299,7 @@ local sets = {
         Back = 'Merciful Cape',
         Waist = 'Sorcerer\'s Belt',
         Legs = 'Wizard\'s Tonban',
-        Feet = 'Nashira Crackows',
-        -- Feet = 'Igqira Huaraches',
+        Feet = 'Igqira Huaraches',
     },
 
     Nuke = {
