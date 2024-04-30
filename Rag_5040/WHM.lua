@@ -36,6 +36,7 @@ local sets = {
     ConserveMP = {},
 
     Cure = {},
+    Cure5 = {},
     Regen = {
         Body = 'Cleric\'s Bliaut',
     },
