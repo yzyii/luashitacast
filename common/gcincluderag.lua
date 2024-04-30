@@ -14,14 +14,14 @@ local load_stylist = true -- set to true to just load stylist on game start. thi
 -- Add additional equipment here that you want to automatically lock when equipping
 local LockableEquipment = {
     ['Main'] = T{'Warp Cudgel', 'Rep. Signet Staff', 'Kgd. Signet Staff', 'Fed. Signet Staff', 'Treat Staff II', 'Trick Staff II'},
-    ['Sub'] = T{'Warp Cudgel'},
+    ['Sub'] = T{},
     ['Range'] = T{},
     ['Ammo'] = T{},
     ['Head'] = T{'Reraise Hairpin', 'Dream Hat +1'},
     ['Neck'] = T{'Opo-opo Necklace'},
     ['Ear1'] = T{'Reraise Earring'},
     ['Ear2'] = T{'Reraise Earring'},
-    ['Body'] = T{'Custom Gilet +1', 'Mandra. Suit'},
+    ['Body'] = T{'Custom Gilet +1', 'Custom Top +1', 'Magna Gilet +1', 'Magna Top +1', 'Savage Top +1', 'Elder Gilet +1', 'Wonder Maillot +1', 'Wonder Top +1', 'Mandra. Suit'},
     ['Hands'] = T{},
     ['Ring1'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring'},
     ['Ring2'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring'},
@@ -330,10 +330,12 @@ function gcinclude.BuildLockableSet(equipment)
     for slot, item in pairs(equipment) do
         if (LockableEquipment[slot]:contains(item.Name)) then
             lockableSet[slot] = item
-            if (item.Name == 'Custom Gilet +1') then
+            if (item.Name == 'Custom Gilet +1' or item.Name == 'Custom Top +1' or item.Name == 'Magna Gilet +1' or item.Name == 'Magna Top +1' or item.Name == 'Savage Top +1' or item.Name == 'Elder Gilet +1' or item.Name == 'Wonder Maillot +1' or item.Name == 'Wonder Top +1') then
                 lockableSet['Hands'] = 'Displaced'
             elseif (item.Name == 'Mandra. Suit') then
                 lockableSet['Legs'] = 'Displaced'
+            elseif (slot == 'Main') then
+                lockableSet['Sub'] = 'Displaced'
             end
         end
     end
