@@ -96,3 +96,6 @@
 - All DD - Fixed Fenrir's Earring - Added WS Handling
 - WHM - Add Cure V set for WHM
 - Add all races custom purgonurgo warp tunic
+
+### v1.2.9
+- BLM - Add explicit Stun set
