@@ -45,7 +45,7 @@ local healers_earring = false
 local healers_earring_slot = 'Ear2'
 
 -- RDM Specific
-local tp_diabolos_earring = true
+local tp_diabolos_earring = false
 local tp_diabolos_earring_slot = 'Ear2'
 local tp_fencers_ring = false
 local tp_fencers_ring_slot = 'Ring1'
@@ -764,6 +764,10 @@ function gcmage.EquipDark(maxMP)
     local action = gData.GetAction()
 
     gFunc.EquipSet('Dark')
+    if (player.MainJob == 'BLM' or player.MainJob == 'RDM') then
+        gFunc.EquipSet('Stun')
+    end
+
     if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP <= 85 and action.Name ~= 'Aspir' then
         if (maxMP == 0 or player.MP < maxMP * 0.85) then
             gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')

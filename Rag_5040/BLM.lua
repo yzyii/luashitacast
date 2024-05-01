@@ -184,12 +184,13 @@ local sets = {
         Feet = 'Rostrum Pumps',
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
-        Head = 'Nashira Turban',
+        Head = 'Nashira Turban', -- 2
         Ear1 = 'Loquac. Earring',
-        Hands = 'Nashira Gages',
-        Waist = 'Swift Belt',
-        -- Legs = 'Nashira Serawheels',
-        Feet = 'Nashira Crackows',
+        Body = 'Nashira Manteel', -- 3
+        Hands = 'Nashira Gages', -- 1
+        Waist = 'Swift Belt', -- 4
+        -- Legs = 'Nashira Serawheels', -- 2
+        Feet = 'Nashira Crackows', -- 1
     },
     ConserveMP = {
         Ear2 = 'Magnetic Earring',
@@ -291,7 +292,6 @@ local sets = {
         Neck = 'Dark Torque',
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Dark Earring',
-        Body = 'Mahatma Hpl.',
         Body = 'Nashira Manteel',
         Hands = 'Src. Gloves +1',
         Ring1 = 'Snow Ring',
@@ -300,6 +300,22 @@ local sets = {
         Waist = 'Sorcerer\'s Belt',
         Legs = 'Wizard\'s Tonban',
         Feet = 'Igqira Huaraches',
+    },
+    Stun = {
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Nashira Turban',
+        Neck = 'Dark Torque',
+        Ear1 = 'Abyssal Earring',
+        Ear1 = 'Loquac. Earring',
+        Body = 'Nashira Manteel',
+        Hands = 'Nashira Gages',
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Snow Ring',
+        Back = 'Merciful Cape',
+        Waist = 'Swift Belt',
+        -- Legs = 'Nashira Serawheels',
+        Legs = 'Wizard\'s Tonban',
+        Feet = 'Nashira Crackows',
     },
 
     Nuke = {

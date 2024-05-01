@@ -506,7 +506,7 @@ local sets = {
         Feet = 'Blood Greaves',
     },
 
-    Stun = { -- Type /csstun to equip this set and /lock your gear at the same time.
+    Stun = { -- You can also type /csstun to equip this set and /lock your gear at the same time if you have a tinfoil hat.
         Main = 'Jupiter\'s Staff',
         Ammo = 'Phtm. Tathlum',
         Head = 'Nashira Turban',
