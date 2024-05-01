@@ -280,31 +280,6 @@
         <name>wg</name>
     </spell>
 
-    <spell id="454"> <!--Fire Threnody-->
-        <command>/ft</command>
-    </spell>
-    <spell id="455"> <!--Ice Threnody-->
-        <command>/it</command>
-    </spell>
-    <spell id="456"> <!--Wind Threnody-->
-        <command>/wit</command>
-    </spell>
-    <spell id="457"> <!--Earth Threnody-->
-        <command>/et</command>
-    </spell>
-    <spell id="458"> <!--Ltng. Threnody-->
-        <command>/lt</command>
-    </spell>
-    <spell id="459"> <!--Water Threnody-->
-        <command>/wat</command>
-    </spell>
-    <spell id="460"> <!--Light Threnody-->
-        <command>/lit</command>
-    </spell>
-    <spell id="461"> <!--Dark Threnody-->
-        <command>/dat</command>
-    </spell>
-
     <spell id="338"> <!--Utsusemi: Ichi-->
         <command>/u1</command>
         <name>u1</name>
