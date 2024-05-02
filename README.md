@@ -85,6 +85,10 @@ This will work 99% of the time unless you have added your own logic and therefor
 /lag - removes midcast delays and yellow set delays for when a zone is lagging
        to give ashitacast the maximum chance of actually equipping the correct gear on cast.
        interim equip sets will no longer work when this is enabled.
+
+/horizonmode - if you wish to use Horizon Mode in LuAshitacast to be 100% horizon approved,
+               you can then use this alias to manually trigger a handle default gear equip
+               using a key press!
 ```
 
 ## Additional Commands for All Mage Jobs:
