@@ -71,6 +71,7 @@
 /addon load hticks
 /addon load chains
 /addon load ttimers
+/addon load attendance
 /load sequencer
 
 #########################################################################
@@ -156,11 +157,12 @@
 /alias add /i //invisible
 /alias add /s //sneak
 /alias add /c //cure
-/alias add /ft //ft
-/alias add /it //it
-/alias add /wit //wit
-/alias add /et //et
-/alias add /lt //lt
-/alias add /wat //wat
-/alias add /lit //lit
-/alias add /dat //dat
+/alias add /ft //firetthrenody
+/alias add /it //icethrenody
+/alias add /wit //windthrenody
+/alias add /et //earththrenody
+/alias add /lt //ltngthrenody
+/alias add /wat //waterthrenody
+/alias add /lit //lightthrenody
+/alias add /dat //darkthrenody
+/alias add /po //poisona

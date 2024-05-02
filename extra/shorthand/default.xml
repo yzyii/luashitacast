@@ -43,10 +43,6 @@
         <name>av</name>
     </spell>
 
-    <spell id="14"> <!--Poisona-->
-        <command>/po</command>
-        <name>po</name>
-    </spell>
     <spell id="15"> <!--Paralyna-->
         <command>/pa</command>
         <name>pa</name>
