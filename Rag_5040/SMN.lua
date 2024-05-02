@@ -284,6 +284,12 @@ local sets = {
         Waist = 'Hierarch Belt',
         Neck = 'Smn. Torque',
     },
+    BP_Magical = {
+    },
+    BP_Physical = {
+    },
+    BP_Hybrid = {
+    },
 }
 profile.Sets = sets
 
@@ -297,6 +303,12 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+local SmnSkill = T{'Shining Ruby','Glittering Ruby','Crimson Howl','Inferno Howl','Frost Armor','Crystal Blessing','Aerial Armor','Hastega II','Fleet Wind','Hastega','Earthen Ward','Earthen Armor','Rolling Thunder','Lightning Armor','Soothing Current','Ecliptic Growl','Heavenward Howl','Ecliptic Howl','Noctoshield','Dream Shroud','Altana\'s Favor','Reraise','Reraise II','Reraise III','Raise','Raise II','Raise III','Wind\'s Blessing'}
+local SmnHealing = T{'Healing Ruby','Healing Ruby II','Whispering Wind','Spring Water'}
+local SmnMagical = T{'Searing Light','Meteorite','Holy Mist','Inferno','Fire II','Fire IV','Meteor Strike','Conflag Strike','Diamond Dust','Blizzard II','Blizzard IV','Heavenly Strike','Aerial Blast','Aero II','Aero IV','Wind Blade','Earthen Fury','Stone II','Stone IV','Geocrush','Judgement Bolt','Thunder II','Thunder IV','Thunderstorm','Thunderspark','Tidal Wave','Water II','Water IV','Grand Fall','Howling Moon','Lunar Bay','Ruinous Omen','Somnolence','Nether Blast','Night Terror','Level ? Holy'}
+local SmnEnfeebling = T{'Diamond Storm','Sleepga','Shock Squall','Slowga','Tidal Roar','Pavor Nocturnus','Ultimate Terror','Nightmare','Mewing Lullaby','Eerie Eye'}
+local SmnHybrid = T{'Flaming Crush','Burning Strike'};
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
@@ -338,6 +350,21 @@ profile.HandleDefault = function()
     local petAction = gData.GetPetAction()
     if (petAction ~= nil) then
         gFunc.EquipSet('BP')
+
+        -- Era provides near zero gear options so almost all of these just default to the default BP set or Magical
+        if (SmnSkill:contains(petAction.Name)) then
+            -- Do Nothing
+        elseif (SmnMagical:contains(petAction.Name)) then
+            gFunc.EquipSet(sets.BP_Magical)
+        elseif (SmnHybrid:contains(petAction.Name)) then
+            gFunc.EquipSet(sets.BP_Hybrid)
+        elseif (SmnHealing:contains(petAction.Name)) then
+            -- Do Nothing
+        elseif (SmnEnfeebling:contains(petAction.Name)) then
+            gFunc.EquipSet(sets.BP_Magical)
+        else
+            gFunc.EquipSet(sets.BP_Physical)
+        end
     else
         gcmage.DoDefault(nil, nil, nil, nil)
     end

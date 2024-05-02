@@ -106,7 +106,7 @@ local sets = {
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
     },
-    FireRes = {
+    FireRes = { -- 153
         Main = 'Neptune\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
@@ -119,12 +119,12 @@ local sets = {
         Hands = 'Tarasque Mitts', -- 5
         Ring1 = 'Ruby Ring', -- 9
         Ring2 = 'Malflame Ring', -- 10
-        Back = 'Dino Mantle',
+        Back = 'Dino Mantle', -- 4
         Waist = 'Water Belt', -- 20
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Power Sandals', -- 7
     },
-    IceRes = {
+    IceRes = { -- 151
         Main = 'Vulcan\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
@@ -142,7 +142,7 @@ local sets = {
         Legs = 'Feral Trousers', -- 6
         Feet = 'Blood Greaves', -- 21
     },
-    LightningRes = {
+    LightningRes = { -- 154
         Main = 'Terra\'s Staff', -- 20
         Sub = '',
         Range = 'Lightning Bow +1', -- 7
@@ -160,7 +160,7 @@ local sets = {
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Dst. Leggings +1',
     },
-    EarthRes = {
+    EarthRes = { -- 154
         Main = 'Auster\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
@@ -178,7 +178,7 @@ local sets = {
         Legs = 'Beak Trousers +1', -- 7
         Feet = 'Blood Greaves', -- 21
     },
-    WindRes = {
+    WindRes = { -- 135
         Main = 'Aquilo\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
@@ -196,7 +196,7 @@ local sets = {
         Legs = 'Coral Cuisses +1',
         Feet = 'Blood Greaves', -- 21
     },
-    WaterRes = {
+    WaterRes = { -- 145
         Main = 'Jupiter\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
