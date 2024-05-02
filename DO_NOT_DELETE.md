@@ -99,3 +99,6 @@
 
 ### v1.2.9
 - BLM - Add explicit Stun set
+
+### v1.2.10
+- SMN - Add additional sets for Magical, Hybrid and Physical BPs
