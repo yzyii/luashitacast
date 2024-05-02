@@ -102,3 +102,6 @@
 
 ### v1.2.10
 - SMN - Add additional sets for Magical, Hybrid and Physical BPs
+
+### v1.2.11
+- All Jobs - Delay equipping resting gear for 16 seconds to maximize regen / refresh type effects

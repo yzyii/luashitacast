@@ -283,8 +283,10 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
 
     local equipMaxMP = false
     if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
-        if (setMP > 0 and player.MP >= setMP + addMP - 50) then
-            equipMaxMP = true
+        if (setMP > 0) then
+            if (player.MP >= setMP + addMP - 50) then
+                equipMaxMP = true
+            end
         elseif (player.SubJob == "NIN") and ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP - 50 then
             equipMaxMP = true
         elseif (player.SubJob == "WHM") and whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP - 50 then

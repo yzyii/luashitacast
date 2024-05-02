@@ -259,6 +259,9 @@ function gcinclude.DoDefaultIdle()
     if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALT') end
 end
 
+local restTimestamp = 0
+local restTimestampRecorded = false
+
 function gcinclude.DoDefaultOverride(isMelee)
     local environment = gData.GetEnvironment()
     local player = gData.GetPlayer()
@@ -295,8 +298,18 @@ function gcinclude.DoDefaultOverride(isMelee)
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end
 
     if (player.Status == 'Resting') then
-        gFunc.EquipSet('Resting')
-    elseif (player.IsMoving == true) and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT' or gcdisplay.IdleSet == 'Fight') then
+        if (not restTimestampRecorded) then
+            restTimestamp = os.clock() + 16
+            restTimestampRecorded = true
+        end
+        if (os.clock() > restTimestamp) then
+            gFunc.EquipSet('Resting')
+        end
+    else
+        restTimestampRecorded = false
+    end
+
+    if (player.IsMoving == true) and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT' or gcdisplay.IdleSet == 'Fight') then
         gFunc.EquipSet('Movement')
     elseif (gcdisplay.IdleSet == 'Fight' and player.Status ~= 'Engaged') then
         gFunc.EquipSet('DT')
