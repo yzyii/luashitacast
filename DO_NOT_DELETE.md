@@ -106,3 +106,10 @@
 ### v1.2.11
 - All Jobs - Delay equipping resting gear for 16 seconds to maximize regen / refresh type effects
 - DRK - Fix bugs
+
+### v1.2.12
+- BLM - Automatically disable Yellow set when weakened
+- THF - Add set for Hide
+
+### v1.3.0
+- Add horizonmode. To be perfectly Horizon legal using the Horizon Mode setting in LuAshitacast, you can use this alias to manually trigger HandleDefault logic instead.

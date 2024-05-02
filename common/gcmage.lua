@@ -390,7 +390,6 @@ function gcmage.DoPrecast(fastCastValue)
         if (gcdisplay.GetToggle('Hate') == true) then
             gFunc.EquipSet('Hate')
 
-
             local target = gData.GetActionTarget()
             local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
@@ -407,6 +406,12 @@ function gcmage.DoPrecast(fastCastValue)
         gFunc.EquipSet('Precast')
     else
         gFunc.EquipSet('Precast')
+
+        local weakened = gData.GetBuffCount('Weakened');
+        if (weakened >= 1) then 
+            do return end
+        end
+
         if (action.Skill == 'Elemental Magic' and player.MainJob == 'BLM' and gcdisplay.GetToggle('Yellow') == true) then
             if (not ElementalDebuffs:contains(action.Name)) then
                 gFunc.EquipSet('Yellow')
@@ -445,6 +450,11 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     local castDelay = ((castTime * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
+    end
+
+    local weakened = gData.GetBuffCount('Weakened');
+    if (weakened >= 1) then 
+        do return end
     end
 
     if (action.Skill == 'Elemental Magic' and player.MainJob == 'BLM' and gcdisplay.GetToggle('Yellow') == true) then

@@ -45,6 +45,7 @@ local sets = {
     SATA = {},
 
     Flee = {},
+    Hide = {},
     Steal = {},
     Mug = {},
 
@@ -75,6 +76,8 @@ profile.HandleAbility = function()
     local action = gData.GetAction()
     if (action.Name == 'Flee') then
         gFunc.EquipSet(sets.Flee)
+    elseif (action.Name == 'Hide') then
+        gFunc.EquipSet(sets.Hide)
     elseif (action.Name == 'Steal') then
         gFunc.EquipSet(sets.Steal)
     elseif (action.Name == 'Mug') then
