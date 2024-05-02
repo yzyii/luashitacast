@@ -332,6 +332,10 @@ profile.HandleCommand = function(args)
     else
         gcmage.DoCommands(args)
     end
+
+    if (args[1] == 'horizonmode') then
+        profile.HandleDefault()
+    end
 end
 
 profile.HandleDefault = function()

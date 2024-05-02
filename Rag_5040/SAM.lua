@@ -101,6 +101,10 @@ end
 
 profile.HandleCommand = function(args)
     gcmelee.DoCommands(args)
+
+    if (args[1] == 'horizonmode') then
+        profile.HandleDefault()
+    end
 end
 
 profile.HandleDefault = function()

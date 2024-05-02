@@ -42,7 +42,7 @@ gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
 local gcinclude = {}
 
 local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','bres','lightningres','lres','tres','earthres','eres','sres','windres','wires','ares','waterres','wares','wres','evasion','eva' }
-local Commands = T{ 'kite','lock','locktp','rebind','lockset','warpme' }
+local Commands = T{ 'kite','lock','locktp','rebind','lockset','warpme','horizonmode' }
 
 local Towns = T{
     'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau',
