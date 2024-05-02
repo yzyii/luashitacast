@@ -105,3 +105,4 @@
 
 ### v1.2.11
 - All Jobs - Delay equipping resting gear for 16 seconds to maximize regen / refresh type effects
+- DRK - Fix bugs
