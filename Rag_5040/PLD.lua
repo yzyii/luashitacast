@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.02 -- 0% from gear
+local fastCastValue = 0.07 -- 0% from gear
 
 local parade_gorget = true
 

@@ -113,3 +113,6 @@
 
 ### v1.3.0
 - Add horizonmode. To be perfectly Horizon legal using the Horizon Mode setting in LuAshitacast, you can use this alias to manually trigger HandleDefault logic instead.
+
+### v1.3.1
+- Add Engaged check to TP_NIN for BST and THF

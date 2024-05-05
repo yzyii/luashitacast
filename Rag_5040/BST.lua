@@ -215,7 +215,7 @@ profile.HandleDefault = function()
     if (player.HPP <= 50 and muscle_belt ~= '') then
         gFunc.Equip('Waist', muscle_belt)
     end
-    if (player.SubJob == 'NIN') then
+    if (player.SubJob == 'NIN' and player.Status == 'Engaged') then
         gFunc.EquipSet('TP_NIN')
     end
 
