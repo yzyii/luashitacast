@@ -116,3 +116,8 @@
 
 ### v1.3.1
 - Add Engaged check to TP_NIN for BST and THF
+- BRD - Change Sing_Default to actually be used as the base set for all songs
+- BRD - Use Sing_Buff set on Ballads, Mazurka and Paeon as a base set
+- BRD - Add explicit Large and Small Ballad sets
+- BRD - Add explicit Large and Small Horde Lullaby sets
+- BRD - Add /srecast toggle
