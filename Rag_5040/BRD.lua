@@ -323,7 +323,7 @@ end
 
 profile.OnUnload = function()
     gcmage.Unload()
-    gcinclude.ClearAlias(T{'sballad','shorde'})
+    gcinclude.ClearAlias(T{'sballad','shorde','srecast'})
 end
 
 profile.HandleCommand = function(args)
@@ -333,6 +333,9 @@ profile.HandleCommand = function(args)
     elseif (args[1] == 'shorde') then
         gcdisplay.AdvanceToggle('SmallHorde')
         gcinclude.Message('SmallHorde', gcdisplay.GetToggle('SmallHorde'))
+    elseif (args[1] == 'srecast') then
+        gcdisplay.AdvanceToggle('SleepRecast')
+        gcinclude.Message('SleepRecast', gcdisplay.GetToggle('SleepRecast'))
     else
         gcmage.DoCommands(args)
     end
