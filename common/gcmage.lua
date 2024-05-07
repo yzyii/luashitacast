@@ -67,6 +67,8 @@ local summoners_horn = 'Summoner\'s Horn'
 -- WHM Specific
 local cure_clogs = false
 local ruckes_rung = false
+local medicine_ring = false
+local medicine_ring_slot = 'Ring1'
 
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_diabolos_earrings = true
@@ -641,6 +643,9 @@ function gcmage.EquipHealing(maxMP, sets, chainspell)
             gFunc.Equip(water_ring_slot, 'Water Ring')
         end
     end
+	if (player.MainJob == 'WHM' and medicine_ring and player.HPP <= 75 and player.TP <= 1000) then
+		gFunc.Equip(medicine_ring_slot, 'Medicine Ring')
+	end
     if (gcdisplay.GetToggle('Hate') == true) then
         gFunc.EquipSet('Hate')
         if (target.Name == me) then

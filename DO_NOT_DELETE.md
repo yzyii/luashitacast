@@ -114,10 +114,13 @@
 ### v1.3.0
 - Add horizonmode. To be perfectly Horizon legal using the Horizon Mode setting in LuAshitacast, you can use this alias to manually trigger HandleDefault logic instead.
 
-### v1.3.1
+### v1.3.2
 - Add Engaged check to TP_NIN for BST and THF
 - BRD - Change Sing_Default to actually be used as the base set for all songs
 - BRD - Use Sing_Buff set on Ballads, Mazurka and Paeon as a base set
 - BRD - Add explicit Large and Small Ballad sets
 - BRD - Add explicit Large and Small Horde Lullaby sets
 - BRD - Add /srecast toggle
+
+### v1.3.3
+- WHM - Add Medicine Ring
