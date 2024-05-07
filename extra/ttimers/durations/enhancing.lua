@@ -118,7 +118,7 @@ local function ApplyEnhancingAdditions(duration, augments)
             duration = duration + (merits * multiplier);
         end
     end
-    
+
     if mainJobLevel == 99 then
         local jobPoints = dataTracker:GetJobPointCount(5, 9);
         duration = duration + jobPoints;
@@ -162,7 +162,7 @@ local function ApplyReceivedModifiers(duration, augments)
     if dataTracker:GetBuffActive(534) then
         enhancingReceived = 0.5;
         local embolden = augments.Generic[0x174];
-        if embolden then            
+        if embolden then
             for _,v in pairs(embolden) do
                 enhancingReceived = enhancingReceived + (0.01 * (v + 1));
             end
@@ -202,7 +202,7 @@ local function CalculateBarelementDuration(targetId)
     local enhancingSkill = AshitaCore:GetMemoryManager():GetPlayer():GetCombatSkill(34):GetSkill();
     if (enhancingSkill < 240) then
         duration = enhancingSkill * 2;
-    end    
+    end
     return CalculateEnhancingDuration(duration, targetId);
 end
 
@@ -249,7 +249,7 @@ local function CalculateRegenDuration(baseDuration, targetId)
     if job.Main == 3 and job.MainLevel == 99 then
         duration = duration + (3 * dataTracker:GetJobPointCount(3, 8));
     end
-    
+
     --Light Arts
     if dataTracker:GetBuffActive(358) or dataTracker:GetBuffActive(401) then
         local schLevel = 0;
@@ -319,7 +319,7 @@ end
 
 local function Initialize(tracker, buffer)
     dataTracker = tracker;
-    
+
     --Protect
     buffer[43] = function(targetId)
         return CalculateProtectDuration(targetId), 40;
@@ -691,17 +691,17 @@ local function Initialize(tracker, buffer)
     buffer[134] = function(targetId)
         return CalculateProtectDuration(targetId), 41;
     end
-    
+
      --Invisible
      buffer[136] = function(targetId)
         return CalculateEnhancingDuration(300, targetId), 69; --Random variation with guarantee of at least 5 minutes..
      end
- 
+
       --Sneak
      buffer[137] = function(targetId)
         return CalculateEnhancingDuration(300, targetId), 71; --Random variation with guarantee of at least 5 minutes..
      end
- 
+
       --Deodorize
      buffer[138] = function(targetId)
         return CalculateEnhancingDuration(300, targetId), 70; --Random variation with guarantee of at least 5 minutes..

@@ -104,11 +104,11 @@ function gcmelee.DoFenrirsEarring()
     local environment = gData.GetEnvironment()
 
     if (isDPS) then
-		if (player.MainJob ~= 'RNG') then
-			if (fenrirs_earring and (environment.Time >= 6 or environment.Time < 18)) then
-				gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
-			end
-		end
+        if (player.MainJob ~= 'RNG') then
+            if (fenrirs_earring and (environment.Time >= 6 or environment.Time < 18)) then
+                gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+            end
+        end
     end
 end
 

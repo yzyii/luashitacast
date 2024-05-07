@@ -410,7 +410,7 @@ function gcmage.DoPrecast(fastCastValue)
         gFunc.EquipSet('Precast')
 
         local weakened = gData.GetBuffCount('Weakened');
-        if (weakened >= 1) then 
+        if (weakened >= 1) then
             do return end
         end
 
@@ -455,7 +455,7 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     end
 
     local weakened = gData.GetBuffCount('Weakened');
-    if (weakened >= 1) then 
+    if (weakened >= 1) then
         do return end
     end
 
@@ -643,9 +643,9 @@ function gcmage.EquipHealing(maxMP, sets, chainspell)
             gFunc.Equip(water_ring_slot, 'Water Ring')
         end
     end
-	if (player.MainJob == 'WHM' and medicine_ring and player.HPP <= 75 and player.TP <= 1000) then
-		gFunc.Equip(medicine_ring_slot, 'Medicine Ring')
-	end
+    if (player.MainJob == 'WHM' and medicine_ring and player.HPP <= 75 and player.TP <= 1000) then
+        gFunc.Equip(medicine_ring_slot, 'Medicine Ring')
+    end
     if (gcdisplay.GetToggle('Hate') == true) then
         gFunc.EquipSet('Hate')
         if (target.Name == me) then
