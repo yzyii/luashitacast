@@ -39,6 +39,7 @@ local sets = {
 
     WS = {},
     Warcry = {},
+    Provoke = {},
 
     DW = {
         Ear1 = 'Stealth Earring',
@@ -57,6 +58,8 @@ profile.HandleAbility = function()
     local action = gData.GetAction()
     if (action.Name == 'Warcry') then
         gFunc.EquipSet(sets.Warcry)
+    elseif (action.Name == 'Provoke') then
+        gFunc.EquipSet(sets.Provoke)
     end
 end
 
