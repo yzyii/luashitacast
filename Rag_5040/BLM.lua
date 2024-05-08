@@ -26,7 +26,7 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Sorcerer\'s Tonban',
+        Legs = 'Igqira Lappas',
         Feet = 'Herald\'s Gaiters',
     },
     IdleALT = {},
@@ -44,7 +44,13 @@ local sets = {
         -- Legs = 'Hydra Brais',
         -- Feet = 'Hydra Gaiters',
     },
-    Town = {},
+    Town = {
+        Main = 'Terra\'s Staff',
+        Head = 'Sorcerer\'s Petas.',
+        Body = 'Sorcerer\'s Coat',
+        Legs = 'Sorcerer\'s Tonban',
+        Feet = 'Herald\'s Gaiters',
+    },
     Movement = {
         Feet = 'Herald\'s Gaiters',
     },
