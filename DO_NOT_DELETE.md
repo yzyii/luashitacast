@@ -124,3 +124,6 @@
 
 ### v1.3.3
 - WHM - Add Medicine Ring
+
+### v1.3.4
+- WAR - Implements the job

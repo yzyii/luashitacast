@@ -2,7 +2,7 @@
 
 A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
-All jobs are fully implemented to my knowledge except for WAR however implementation should be trivial (See Contact Me section below).
+All jobs are fully implemented.
 
 The intention for these luas is to comprehensively cover all required game mechanics for 75-era content as almost every other lua I have found either does not implement or poorly implements functionality such as pdt / mdt / resist sets, spell interruption rate down (SIRD) / midcast delay, or different set toggling.
 
@@ -195,6 +195,6 @@ All of the following toggles set what jug Call Beast will use.
 
 # Contact Me
 
-Feel free to DM me on Discord for if you encounter bugs or have feature requests or if you are a WAR and are interested in using these templates to implement the job. I am easily found in the HorizonXI or Ashita Discords.
+Feel free to DM me on Discord for if you encounter bugs or have feature requests or functionality is missing. I am easily found in the HorizonXI or Ashita Discords.
 
 Do NOT DM me if you have not bothered to read through this README and did not follow the instructions written. You will be ignored.
