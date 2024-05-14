@@ -216,7 +216,7 @@ ashita.events.register('packet_out', 'LAC_Conquest_Module_HandleOutgoingPacket',
             print(chat.header('Conquest') .. chat.message('Sending packet to request conquest information.'))
             packetTime = os.clock() + 10
         elseif (currentNation == 'Unknown') then
-            local packet = struct.pack('L', 0)
+            local packet = struct.pack('LL', 0, 0)
             AshitaCore:GetPacketManager():AddOutgoingPacket(0x61, packet:totable())
             print(chat.header('Conquest') .. chat.message('Sending packet to request current nation.'))
             packetTime = os.clock() + 10

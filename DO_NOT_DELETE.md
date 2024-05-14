@@ -127,3 +127,6 @@
 
 ### v1.3.4
 - WAR - Implements the job
+
+### v1.3.5
+- Fix the conquest packet being sent on Horizon that causes it to constantly poll until you zone or check status menu
