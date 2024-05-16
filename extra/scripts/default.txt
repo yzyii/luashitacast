@@ -72,7 +72,9 @@
 /addon load chains
 /addon load ttimers
 /addon load attendance
+/addon load thotbar
 /load sequencer
+/load nameplate
 
 #########################################################################
 #
@@ -148,10 +150,6 @@
 #
 #########################################################################
 /localsettings blureffect off
-/bind +1 /lac fwd fres
-/bind +2 /lac fwd idle
-/bind +3 /lac fwd dt
-/bind +4 /lac fwd mdt
 /bind F9 //stun
 /bind F10 //dia
 /alias add /i //invisible

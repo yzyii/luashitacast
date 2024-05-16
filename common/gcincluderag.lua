@@ -42,7 +42,7 @@ gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
 local gcinclude = {}
 
 local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','bres','lightningres','lres','tres','earthres','eres','sres','windres','wires','ares','waterres','wares','wres','evasion','eva' }
-local Commands = T{ 'kite','lock','locktp','rebind','lockset','warpme','horizonmode' }
+local Commands = T{ 'kite','lock','locktp','lockset','warpme','horizonmode' }
 
 local Towns = T{
     'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau',
@@ -183,8 +183,6 @@ function gcinclude.DoCommands(args)
         gcinclude.Message('Kite', gcdisplay.GetToggle('Kite'))
     elseif (args[1] == 'warpme') then
         gcinclude.RunWarpCudgel()
-    elseif (args[1] == 'rebind') then -- This is purely for myself only since I always forget ! is Alt...
-        AshitaCore:GetChatManager():QueueCommand(-1, '/bind !F1 /lac fwd ' .. args[2])
     elseif (args[1] == 'lockset') then
         if (tonumber(args[2]) ~= nil) then
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac set LockSet' .. args[2])
