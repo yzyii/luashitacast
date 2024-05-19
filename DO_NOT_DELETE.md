@@ -130,3 +130,6 @@
 
 ### v1.3.5
 - Fix the conquest packet being sent on Horizon that causes it to constantly poll until you zone or check status menu
+
+### v1.3.5
+- Fix Stun set behaviour
