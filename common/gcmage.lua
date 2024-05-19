@@ -781,7 +781,7 @@ function gcmage.EquipDark(maxMP)
     local action = gData.GetAction()
 
     gFunc.EquipSet('Dark')
-    if (player.MainJob == 'BLM' or player.MainJob == 'RDM') then
+    if (player.MainJob == 'BLM' or player.MainJob == 'RDM') and (action.Name == 'Stun') then
         gFunc.EquipSet('Stun')
     end
 

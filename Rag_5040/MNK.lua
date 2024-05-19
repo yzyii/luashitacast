@@ -149,7 +149,7 @@ local sets = {
     },
 
     SJ_DRG = {
-        Ear2 = 'Wyvern Earring',
+        -- Ear2 = 'Wyvern Earring',
         Feet = 'Dune Boots',
     },
     SJ_THF = {
@@ -218,7 +218,7 @@ local sets = {
         Ring2 = 'Aqua Ring',
         Back = 'Melee Cape',
         Legs = 'Tpl. Hose +1',
-        Waist = 'Reverend Sash',
+        -- Waist = 'Reverend Sash',
         Feet = 'Suzaku\'s Sune-Ate',
     },
 
