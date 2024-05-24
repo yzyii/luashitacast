@@ -9,7 +9,6 @@ local hercules_ring_slot = 'Ring1'
 
 -- Replace these with '' if you do not have them
 local gallant_leggings = 'Glt. Leggings +1'
-local valor_gauntlets = 'Vlr. Gauntlets +1'
 local valor_leggings = 'Vlr. Leggings +1'
 
 local sets = {
@@ -265,8 +264,7 @@ local sets = {
         Head = 'Koenig Schaller',
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Magnetic Earring', -- 8
-        -- Ear2 = 'Knightly Earring', -- 9
-        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
+        Ear2 = 'Knightly Earring', -- 9
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Merman\'s Ring',
@@ -341,8 +339,7 @@ local sets = {
         Head = 'Darksteel Cap +1',
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Magnetic Earring', -- 8
-        -- Ear2 = 'Knightly Earring', -- 9
-        Ear2 = 'Merman\'s Earring',
+        Ear2 = 'Knightly Earring', -- 9
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Merman\'s Ring',
@@ -361,8 +358,7 @@ local sets = {
         Head = 'Faerie Hairpin',
         Neck = 'Star Necklace',
         Ear1 = 'Magnetic Earring',
-        -- Ear2 = 'Knightly Earring',
-        Ear2 = 'Merman\'s Earring',
+        Ear2 = 'Knightly Earring',
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Ether Ring',
@@ -466,6 +462,10 @@ local sets = {
         Legs = 'Beak Trousers +1',
         Feet = 'Power Sandals',
     },
+    ShieldBash = {
+        Ear2 = 'Knightly Earring',
+        Hands = 'Vlr. Gauntlets +1',
+    },
 }
 profile.Sets = sets
 
@@ -498,7 +498,7 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Rampart') then
         gFunc.EquipSet(sets.Rampart)
     elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
-        gFunc.Equip('Hands', valor_gauntlets)
+        gFunc.EquipSet(sets.ShieldBash)
     elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then
         gFunc.Equip('Legs', valor_leggings)
     elseif (action.Name == 'Cover') then

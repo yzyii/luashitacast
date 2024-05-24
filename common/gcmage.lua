@@ -91,7 +91,7 @@ local AliasList = T{
     'addmp','setmp','resetmp',
     'mode', -- RDM / BLM
     'csstun','hate','vert','fight', -- RDM
-    'yellow','mb', -- BLM
+    'yellow','mb','hnm', -- BLM
     'lag',
 }
 
@@ -193,6 +193,7 @@ function gcmage.SetVariables()
     if (player.MainJob == 'BLM') then
         gcdisplay.CreateToggle('Yellow', true)
         gcdisplay.CreateToggle('MB', false)
+        gcdisplay.CreateToggle('HNM', false)
     end
 end
 
@@ -273,6 +274,9 @@ function gcmage.DoCommands(args)
         elseif (args[1] == 'yellow') then
             gcdisplay.AdvanceToggle('Yellow')
             gcinclude.Message('Yellow', gcdisplay.GetToggle('Yellow'))
+        elseif (args[1] == 'hnm') then
+            gcdisplay.AdvanceToggle('HNM')
+            gcinclude.Message('HNM', gcdisplay.GetToggle('HNM'))
         end
     end
 end
@@ -673,22 +677,21 @@ function gcmage.EquipElemental(maxMP)
     local environment = gData.GetEnvironment()
 
     gFunc.EquipSet('Nuke')
+    if (gcdisplay.GetToggle('HNM') == true) then
+        gFunc.EquipSet('NukeHNM')
+    end
     if (ElementalDebuffs:contains(action.Name)) then
         gFunc.EquipSet('NukeDOT')
         if (player.SubJob == "BLM" and wizards_earring) then
             gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring')
         end
     else
-        if (action.MppAftercast < 51) and uggalepih_pendant then
-            if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
-                gFunc.Equip('Neck', 'Uggalepih Pendant')
-            end
-        end
-        if (gcdisplay.GetToggle('MB') == true) then
-            gFunc.EquipSet('MB')
-        end
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
+            if (gcdisplay.GetToggle('HNM') == true) then
+                gFunc.EquipSet('NukeACCHNM')
+            end
+
             if (conquest:GetOutsideControl()) and (player.MainJob == 'RDM') and master_casters_bracelets then
                 if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
                 gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
@@ -704,6 +707,14 @@ function gcmage.EquipElemental(maxMP)
                     gFunc.Equip(ice_ring_slot, 'Ice Ring')
                 end
             end
+        end
+        if (action.MppAftercast < 51) and uggalepih_pendant then
+            if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
+                gFunc.Equip('Neck', 'Uggalepih Pendant')
+            end
+        end
+        if (gcdisplay.GetToggle('MB') == true) then
+            gFunc.EquipSet('MB')
         end
         if (ObiCheck(action)) then
             local obi = NukeObiTable[action.Element]
