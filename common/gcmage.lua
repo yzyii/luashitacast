@@ -688,10 +688,6 @@ function gcmage.EquipElemental(maxMP)
     else
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
-            if (gcdisplay.GetToggle('HNM') == true) then
-                gFunc.EquipSet('NukeACCHNM')
-            end
-
             if (conquest:GetOutsideControl()) and (player.MainJob == 'RDM') and master_casters_bracelets then
                 if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
                 gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
