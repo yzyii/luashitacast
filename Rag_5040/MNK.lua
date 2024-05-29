@@ -33,7 +33,7 @@ local sets = {
         Back = 'Boxer\'s Mantle',
         Waist = 'Warwolf Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Herald\'s Gaiters',
+        Feet = 'Dst. Leggings +1',
     },
     IdleALT = {},
     Resting = {
