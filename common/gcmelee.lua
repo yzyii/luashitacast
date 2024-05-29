@@ -86,7 +86,7 @@ function gcmelee.DoDefault()
                 end
 
                 if (player.MainJob ~= 'RNG') then
-                    if (fenrirs_earring and (environment.Time >= 6 or environment.Time < 18)) then
+                    if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
                         gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
                     end
                 end
@@ -105,7 +105,7 @@ function gcmelee.DoFenrirsEarring()
 
     if (isDPS) then
         if (player.MainJob ~= 'RNG') then
-            if (fenrirs_earring and (environment.Time >= 6 or environment.Time < 18)) then
+            if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
                 gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
             end
         end
