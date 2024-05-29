@@ -149,7 +149,7 @@ local sets = {
     },
 
     SJ_DRG = {
-        -- Ear2 = 'Wyvern Earring',
+        Ear2 = 'Wyvern Earring',
         Feet = 'Dune Boots',
     },
     SJ_THF = {
