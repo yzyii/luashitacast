@@ -131,5 +131,11 @@
 ### v1.3.5
 - Fix the conquest packet being sent on Horizon that causes it to constantly poll until you zone or check status menu
 
-### v1.3.5
+### v1.3.6
 - Fix Stun set behaviour
+
+### v1.3.7
+- Adds an additional set and toggle for BLM for HNMs
+
+### v1.3.8
+- Fix fenrirs earring logic

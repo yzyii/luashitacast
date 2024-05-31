@@ -264,7 +264,7 @@ local sets = {
         Body = 'Duelist\'s Tabard',
         Hands = 'Dusk Gloves',
         Waist = 'Swift Belt',
-        -- Legs = 'Nashira Serawheels',
+        Legs = 'Nashira Serawheels',
         Feet = 'Dusk Ledelsens',
     },
     ConserveMP = {
@@ -283,8 +283,7 @@ local sets = {
         Ring2 = 'Sattva Ring', -- 5
         Back = 'Toreador\'s Cape', -- 4
         Waist = 'Warwolf Belt', -- 3
-        Legs = 'Blood Cuisses',
-        -- Legs = 'Nashira Serawheels',
+        Legs = 'Nashira Serawheels',
         Feet = 'Heroic Boots', -- 1
     },
     Cheat_C3HPDown = {},
@@ -404,7 +403,7 @@ local sets = {
     EnfeeblingACC = {
         Ear2 = 'Enfeebling Earring',
         Back = 'Altruistic Cape',
-        -- Legs = 'Nashira Serawheels',
+        Legs = 'Nashira Serawheels',
     },
 
     Divine = { -- Just using my Hate set here for Flash
@@ -419,8 +418,7 @@ local sets = {
         Ring2 = 'Sattva Ring', -- 5
         Back = 'Toreador\'s Cape', -- 4
         Waist = 'Warwolf Belt', -- 3
-        Legs = 'Blood Cuisses',
-        -- Legs = 'Nashira Serawheels',
+        Legs = 'Nashira Serawheels',
         Feet = 'Heroic Boots', -- 1
     },
     Dark = {
@@ -535,7 +533,7 @@ local sets = {
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Swift Belt', -- 4
-        -- Legs = 'Nashira Serawheels', -- 2
+        Legs = 'Nashira Serawheels', -- 2
         Feet = 'Dusk Ledelsens', -- 2
     },
     TP_NIN = {

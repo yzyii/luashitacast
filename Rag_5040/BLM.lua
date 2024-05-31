@@ -195,7 +195,7 @@ local sets = {
         Body = 'Nashira Manteel', -- 3
         Hands = 'Nashira Gages', -- 1
         Waist = 'Swift Belt', -- 4
-        -- Legs = 'Nashira Serawheels', -- 2
+        Legs = 'Nashira Serawheels', -- 2
         Feet = 'Nashira Crackows', -- 1
     },
     ConserveMP = {
@@ -319,8 +319,7 @@ local sets = {
         Ring2 = 'Snow Ring',
         Back = 'Merciful Cape',
         Waist = 'Swift Belt',
-        -- Legs = 'Nashira Serawheels',
-        Legs = 'Wizard\'s Tonban',
+        Legs = 'Nashira Serawheels',
         Feet = 'Nashira Crackows',
     },
 

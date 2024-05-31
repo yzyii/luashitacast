@@ -183,7 +183,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Hands = 'Nashira Gages',
         Waist = 'Swift Belt',
-        -- Legs = 'Nashira Serawheels',
+        Legs = 'Nashira Serawheels',
         Feet = 'Nashira Crackows',
     },
     ConserveMP = {
