@@ -63,6 +63,8 @@ local bahamuts_staff = false
 -- Leave as '' if you do not have them.
 local summoners_doublet = 'Summoner\'s Dblt.'
 local summoners_horn = 'Summoner\'s Horn'
+local conjurers_ring = false
+local conjurers_ring_slot = 'Ring1'
 
 -- WHM Specific
 local cure_clogs = false
@@ -349,6 +351,9 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
             end
             if staff ~= '' then
                 gFunc.Equip('Main', staff)
+            end
+            if (player.HPP <= 75 and player.TP < 1000) and conjurers_ring then
+                gFunc.Equip(conjurers_ring_slot, 'Conjurer\'s Ring')
             end
             if (lastSummoningElement == 'Light') then
                 if (carbuncle_mitts) then
