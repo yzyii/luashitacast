@@ -33,9 +33,11 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Relaxing Earring',
         Body = 'Mahatma Hpl.',
+        Hands = 'Hydra Gloves',
         Back = 'Summoner\'s Cape',
         Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
+        -- Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
     Town = {},
@@ -197,12 +199,13 @@ local sets = {
         Ear1 = 'Novia Earring', -- 7
         Ear2 = 'Magnetic Earring',
         Body = 'Hydra Doublet', -- 9
-        Hands = 'Raven Bracers', -- 5
+        Hands = 'Hydra Gloves', -- 5
         Ring1 = 'Aqua Ring',
         Ring2 = 'Aqua Ring',
         Back = { Name = 'Errant Cape', Priority = 100 }, -- 5
         Waist = 'Penitent\'s Rope', -- 3
         Legs = 'Raven Hose', -- 6
+        -- Legs = 'Hydra Brais', -- 6
         Feet = 'Hydra Gaiters', -- 5
     },
     Cursna = {
@@ -273,7 +276,7 @@ local sets = {
         Ear2 = 'Novia Earring',
         Back = 'Summoner\'s Cape',
         Body = 'Yinyang Robe',
-        Hands = { Name = 'Summoner\'s Brcr.', Priority = 100 },
+        Hands = { Name = 'Smn. Bracers +1', Priority = 100 },
         Feet = 'Summoner\'s Pgch.',
         Ammo = 'Hedgehog Bomb',
         Waist = { Name = 'Penitent\'s Rope', Priority = -1 },
@@ -281,15 +284,15 @@ local sets = {
     },
 
     BP = {
-        Head = 'Evoker\'s Horn',
+        Head = 'Evk. Horn +1',
         Legs = 'Evoker\'s Spats',
         Ring1 = { Name = 'Sattva Ring', Priority = 100 },
         Ring2 = 'Evoker\'s Ring',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
         Back = 'Summoner\'s Cape',
-        Body = 'Summoner\'s Dblt.',
-        Hands = 'Summoner\'s Brcr.',
+        Body = 'Smn. Doublet +1',
+        Hands = 'Smn. Bracers +1',
         Feet = 'Nashira Crackows',
         Ammo = 'Hedgehog Bomb',
         Waist = { Name = 'Hierarch Belt', Priority = 100 },

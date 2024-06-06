@@ -139,3 +139,6 @@
 
 ### v1.3.8
 - Fix fenrirs earring logic
+
+### v1.3.9
+- Add StunACC set for RDM

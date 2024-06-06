@@ -25,10 +25,10 @@ local sets = {
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Boxer\'s Mantle',
         Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1',
+        Legs = { Name = 'Dst. Subligar +1', Priority = 10 },
         Feet = 'Dst. Leggings +1',
     },
     IdleALT = {
@@ -43,10 +43,10 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1',
+        Legs = { Name = 'Dst. Subligar +1', Priority = 10 },
         Feet = 'Dst. Leggings +1',
     },
     IdleDT = {
@@ -57,16 +57,16 @@ local sets = {
         Ammo = '',
         Head = 'Darksteel Cap +1', -- 2
         Body = 'Dst. Harness +1', -- 4
-        Neck = 'Shield Torque',
+        Neck = { Name = 'Shield Torque', Priority = 100 },
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Hands = 'Dst. Mittens +1', -- 2
         Ring1 = 'Jelly Ring', -- 5
-        Ring2 = 'Sattva Ring', -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = 'Boxer\'s Mantle',
         Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1', -- 3
-        Feet = 'Glt. Leggings +1',
+        Legs = { Name = 'Dst. Subligar +1', Priority = 10 }, -- 3
+        Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
     },
     IdleALTDT = {
         Main = 'Terra\'s Staff', -- 20
@@ -80,10 +80,10 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Hands = 'Dst. Mittens +1', -- 2
         Ring1 = 'Jelly Ring', -- 5
-        Ring2 = 'Sattva Ring', -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1', -- 3
+        Legs = { Name = 'Dst. Subligar +1', Priority = 10 }, -- 3
         Feet = 'Dst. Leggings +1', -- 2
     },
     Resting = {
@@ -117,10 +117,10 @@ local sets = {
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Hands = 'Dst. Mittens +1', -- 2
         Ring1 = 'Jelly Ring', -- 5
-        Ring2 = 'Sattva Ring', -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1', -- 3
+        Legs = { Name = 'Dst. Subligar +1', Priority = 10 }, -- 3
         Feet = 'Dst. Leggings +1', -- 2
     },
     MDT = { -- Shell IV provides 23% MDT
@@ -136,7 +136,7 @@ local sets = {
         Body = 'Cor. Scale Mail +1', -- 4
         Hands = 'Coral Fng. Gnt. +1', -- 2
         Ring1 = 'Merman\'s Ring', -- 4
-        Ring2 = 'Sattva Ring', -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
         Legs = 'Coral Cuisses +1', -- 3
@@ -268,10 +268,10 @@ local sets = {
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Boxer\'s Mantle',
         Waist = 'Silver Obi +1', -- 8
-        Legs = 'Valor Breeches', -- 10
+        Legs = 'Vlr. Breeches +1', -- 10
         Feet = 'Mountain Gaiters', -- 5
     },
     Haste = {
@@ -285,7 +285,7 @@ local sets = {
         Hands = 'Homam Manopolas', -- 3
         -- Ring1 = 'Blitz Ring', -- 1
         Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Boxer\'s Mantle',
         Waist = 'Swift Belt', -- 4
         Legs = 'Homam Cosciales', -- 3
@@ -303,14 +303,15 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         -- Ear1 = 'Hades Earring +1',
         Ear2 = 'Magnetic Earring',
-        -- Ear2 = 'Hades Earring +1',
-        Body = 'Valor Surcoat',
+        -- Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
+        Body = 'Vlr. Surcoat +1',
+        -- Body = { Name = 'Hydra Haubert', Priority = -100 },
         Hands = 'Vlr. Gauntlets +1',
         Ring1 = 'Hercules\' Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
-        Legs = 'Valor Breeches',
+        Legs = { Name = 'Hydra Brayettes', Priority = -100 },
         Feet = 'Vlr. Leggings +1',
     },
     Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
@@ -321,10 +322,10 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
         -- Ear2 = 'Hades Earring +1',
-        Body = 'Valor Surcoat',
+        Body = 'Vlr. Surcoat +1',
         Hands = 'Homam Manopolas',
         Ring1 = 'Hercules\' Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Swift Belt',
         Legs = 'Homam Cosciales',
@@ -346,7 +347,7 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Back = 'Boxer\'s Mantle',
         Waist = 'Silver Obi +1', -- 8
-        Legs = 'Valor Breeches', -- 10
+        Legs = 'Vlr. Breeches +1', -- 10
         Feet = 'Mountain Gaiters', -- 5
     },
     Cheat_C4HPDown = {
@@ -356,17 +357,17 @@ local sets = {
         Range = 'Lightning Bow +1',
         Ammo = '',
         Head = 'Faerie Hairpin',
-        Neck = 'Star Necklace',
-        Ear1 = 'Magnetic Earring',
-        Ear2 = 'Knightly Earring',
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Magnetic Earring', -- 8
+        Ear2 = 'Knightly Earring', -- 9
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Settler\'s Cape',
-        Waist = 'Quick Belt',
-        Legs = 'Valor Breeches',
-        Feet = 'Mountain Gaiters',
+        Back = 'Settler\'s Cape', -- Remove w/ Hydra Body
+        Waist = 'Silver Obi +1', -- 8
+        Legs = 'Hydra Brayettes',
+        Feet = 'Mountain Gaiters', -- 5
     },
     Cheat_HPUp = {
         Main = 'Apollo\'s Staff',
@@ -376,14 +377,14 @@ local sets = {
         Head = 'Aegishjalmr',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
-        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
-        Body = 'Valor Surcoat',
+        Ear2 = 'Bloodbead Earring',
+        Body = 'Vlr. Surcoat +1',
         Hands = 'Vlr. Gauntlets +1',
         Ring1 = 'Bomb Queen Ring',
         Ring2 = 'Sattva Ring',
-        Back = { Name = 'Valor Cape', Priority = 100 },
+        Back = 'Valor Cape',
         Waist = 'Warwolf Belt',
-        Legs = 'Valor Breeches',
+        Legs = 'Vlr. Breeches +1',
         Feet = 'Vlr. Leggings +1',
     },
 
@@ -430,14 +431,14 @@ local sets = {
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Swift Belt',
-        Legs = 'Valor Breeches',
+        Legs = 'Vlr. Breeches +1',
         Feet = 'Rutter Sabatons',
     },
     WS_Spirits = {},
 
     Cover = {
         Head = 'Gallant Coronet',
-        Body = 'Valor Surcoat',
+        Body = 'Vlr. Surcoat +1',
     },
     Cure = {
         Main = 'Apollo\'s Staff',
@@ -448,7 +449,7 @@ local sets = {
         Sub = 'Koenig Shield',
         Range = 'Rosenbogen',
         Ammo = '',
-        Head = 'Valor Coronet',
+        Head = 'Koenig Schaller',
         Neck = 'Fortitude Torque',
         Ear1 = 'Robust Earring',
         Ear2 = 'Robust Earring',
@@ -456,7 +457,7 @@ local sets = {
         Hands = 'Kng. Handschuhs',
         Ring1 = 'Topaz Ring',
         -- Ring1 = 'Soil Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
         Legs = 'Beak Trousers +1',

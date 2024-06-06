@@ -54,14 +54,14 @@ local tp_fencers_ring_slot = 'Ring1'
 local sorcerers_ring = true
 local sorcerers_ring_slot = 'Ring1' -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
 -- Leave as '' if you do not have them.
-local sorcerers_tonban = 'Sorcerer\'s Tonban'
+local sorcerers_tonban = 'Src. Tonban +1'
 
 -- SMN Specific
 local carbuncle_mitts = true
 local yinyang_robe = true
 local bahamuts_staff = false
 -- Leave as '' if you do not have them.
-local summoners_doublet = 'Summoner\'s Dblt.'
+local summoners_doublet = 'Smn. Doublet +1'
 local summoners_horn = 'Summoner\'s Horn'
 local conjurers_ring = false
 local conjurers_ring_slot = 'Ring1'
@@ -246,7 +246,7 @@ function gcmage.DoCommands(args)
             gcdisplay.CreateToggle('Lock', true)
             gcinclude.Message('Equip Lock', gcdisplay.GetToggle('Lock'))
         elseif (args[1] == 'csstun') then
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac set Stun')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac set StunACC')
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
             gcdisplay.CreateToggle('Lock', true)
             gcinclude.Message('Equip Lock', gcdisplay.GetToggle('Lock'))
@@ -795,6 +795,10 @@ function gcmage.EquipDark(maxMP)
     gFunc.EquipSet('Dark')
     if (player.MainJob == 'BLM' or player.MainJob == 'RDM') and (action.Name == 'Stun') then
         gFunc.EquipSet('Stun')
+        local chainspell = gData.GetBuffCount('Chainspell')
+        if (chainspell > 0) then
+            gFunc.EquipSet('StunACC')
+        end
     end
 
     if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP <= 85 and action.Name ~= 'Aspir' then
