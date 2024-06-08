@@ -196,7 +196,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Body = 'Nashira Manteel', -- 3
         Hands = 'Nashira Gages', -- 1
-        Waist = 'Swift Belt', -- 4
+        Waist = 'Sonic Belt', -- 4
         Legs = 'Nashira Seraweels', -- 2
         Feet = 'Nashira Crackows', -- 1
     },
@@ -321,7 +321,7 @@ local sets = {
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
         Back = 'Merciful Cape',
-        Waist = 'Swift Belt',
+        Waist = 'Sonic Belt',
         Legs = 'Nashira Seraweels',
         Feet = 'Nashira Crackows',
     },
