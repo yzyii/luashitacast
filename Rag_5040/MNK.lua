@@ -78,7 +78,7 @@ local sets = {
         Body = 'Shura Togi',
         Hands = 'Mel. Gloves +1',
         Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Black Belt',
         Legs = 'Shura Haidate',
@@ -117,8 +117,7 @@ local sets = {
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
-        -- Body = 'Kirin\'s Osode',
-        Body = 'Shura Togi',
+        Body = 'Kirin\'s Osode',
         Hands = 'Mel. Gloves +1',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
@@ -144,7 +143,7 @@ local sets = {
 
     TP_Focus = {
         Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
     },
 
     SJ_DRG = {
@@ -160,7 +159,7 @@ local sets = {
         Neck = 'Thunder Gorget',
         Ear2 = 'Merman\'s Earring',
         Ring1 = 'Flame Ring',
-        Ring2 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
         Legs = 'Shura Haidate',
         Feet = 'Shura Sune-Ate',
     },
@@ -214,7 +213,7 @@ local sets = {
         Ear2 = 'Cmn. Earring',
         Hands = 'Dvt. Mitts +1',
         Ring1 = 'Aqua Ring',
-        Ring2 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
         Back = 'Melee Cape',
         Legs = 'Tpl. Hose +1',
         -- Waist = 'Reverend Sash',

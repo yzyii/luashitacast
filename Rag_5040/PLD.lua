@@ -142,7 +142,7 @@ local sets = {
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
     },
-    FireRes = { -- 153
+    FireRes = { -- 155
         Main = 'Neptune\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
@@ -152,15 +152,15 @@ local sets = {
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
         Body = 'Assault Brstplate', -- 15
-        Hands = 'Tarasque Mitts', -- 5
-        Ring1 = 'Ruby Ring', -- 9
+        Hands = 'Tarasque Mitts +1', -- 6
+        Ring1 = 'Triumph Ring', -- 10
         Ring2 = 'Malflame Ring', -- 10
         Back = 'Dino Mantle', -- 4
         Waist = 'Water Belt', -- 20
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Power Sandals', -- 7
     },
-    IceRes = { -- 151
+    IceRes = { -- 152
         Main = 'Vulcan\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
@@ -171,7 +171,7 @@ local sets = {
         Ear2 = 'Diamond Earring', -- 10
         Body = 'Assault Brstplate', -- 15
         Hands = 'Feral Gloves', -- 4
-        Ring1 = 'Diamond Ring', -- 9
+        Ring1 = 'Omniscient Ring', -- 10
         Ring2 = 'Malfrost Ring', -- 10
         Back = 'Ram Mantle +1', -- 6
         Waist = 'Fire Belt', -- 20
@@ -232,7 +232,7 @@ local sets = {
         Legs = 'Coral Cuisses +1',
         Feet = 'Blood Greaves', -- 21
     },
-    WaterRes = { -- 145
+    WaterRes = { -- 146
         Main = 'Jupiter\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
@@ -243,7 +243,7 @@ local sets = {
         Ear2 = 'Cmn. Earring', -- 11
         Body = 'Assault Brstplate', -- 15
         Hands = 'Coral Fng. Gnt. +1', -- 4
-        Ring1 = 'Sapphire Ring', -- 9
+        Ring1 = 'Communion Ring', -- 10
         Ring2 = 'Malflood Ring', -- 10
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Lightning Belt', -- 20
@@ -300,9 +300,8 @@ local sets = {
         Head = 'Aegishjalmr',
         -- Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
-        Ear1 = 'Loquac. Earring',
-        -- Ear1 = 'Hades Earring +1',
-        Ear2 = 'Magnetic Earring',
+        Ear1 = 'Hades Earring +1',
+        Ear2 = 'Loquac. Earring',
         -- Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Body = 'Vlr. Surcoat +1',
         -- Body = { Name = 'Hydra Haubert', Priority = -100 },
@@ -320,10 +319,10 @@ local sets = {
         Head = 'Homam Zucchetto',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Loquac. Earring',
-        Ear2 = 'Magnetic Earring',
-        -- Ear2 = 'Hades Earring +1',
+        Ear2 = 'Hades Earring +1',
         Body = 'Vlr. Surcoat +1',
         Hands = 'Homam Manopolas',
+        -- Body = { Name = 'Hydra Haubert', Priority = -100 },
         Ring1 = 'Hercules\' Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
