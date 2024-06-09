@@ -142,9 +142,9 @@ local sets = {
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
     },
-    FireRes = { -- 155
-        Main = 'Neptune\'s Staff', -- 20
-        Sub = '',
+    FireRes = { -- 150
+        Main = 'Durandal',
+        Sub = 'Nms. Shields +1', -- 15
         Range = 'Rosenbogen',
         Ammo = '',
         Head = 'Green Ribbon +1', -- 10
@@ -178,9 +178,9 @@ local sets = {
         Legs = 'Feral Trousers', -- 6
         Feet = 'Blood Greaves', -- 21
     },
-    LightningRes = { -- 154
-        Main = 'Terra\'s Staff', -- 20
-        Sub = '',
+    LightningRes = { -- 149
+        Main = 'Durandal',
+        Sub = 'Nms. Shields +1', -- 15
         Range = 'Lightning Bow +1', -- 7
         Ammo = '',
         Head = 'Green Ribbon +1', -- 10
@@ -283,8 +283,7 @@ local sets = {
         Ear2 = 'Magnetic Earring',
         Body = 'Dst. Harness +1',
         Hands = 'Dusk Gloves +1', -- 4
-        -- Ring1 = 'Blitz Ring', -- 1
-        Ring1 = 'Merman\'s Ring',
+        Ring1 = 'Blitz Ring', -- 1
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Boxer\'s Mantle',
         Waist = 'Sonic Belt', -- 6

@@ -648,8 +648,6 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_Soil)
     end
 
-    gcmelee.DoFenrirsEarring()
-
     if (action.Name == 'Spirits Within') then
         gFunc.EquipSet(sets.WS_Spirits)
     end
