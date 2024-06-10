@@ -2,9 +2,9 @@ local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set
 
-local ninSJNukeMaxMP = nil -- The Max MP you have when /nin in your nuking set
-local whmSJNukeMaxMP = nil -- The Max MP you have when /whm in your nuking set
-local rdmSJNukeMaxMP = nil -- The Max MP you have when /rdm in your nuking set
+local ninSJNukeMaxMP = 709 -- The Max MP you have when /nin in your nuking set
+local whmSJNukeMaxMP = 787 -- The Max MP you have when /whm in your nuking set
+local rdmSJNukeMaxMP = 768 -- The Max MP you have when /rdm in your nuking set
 
 local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false
@@ -30,7 +30,12 @@ local sets = {
         Feet = 'Herald\'s Gaiters',
     },
     IdleALT = {},
-    IdleMaxMP = {},
+    IdleMaxMP = {
+        Neck = 'Uggalepih Pendant',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Magnetic Earring',
+        Back = 'Merciful Cape',
+    },
     Resting = {
         Main = 'Pluto\'s Staff',
         Head = 'Hydra Beret',
@@ -61,18 +66,22 @@ local sets = {
         Main = 'Terra\'s Staff',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
+        Head = 'Genie Tiara',
         Body = 'Sorcerer\'s Coat',
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
+        Legs = 'Igqira Lappas',
         Back = 'Umbra Cape',
     },
     DTNight = {
         Main = 'Terra\'s Staff',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
+        Head = 'Genie Tiara',
         Body = 'Sorcerer\'s Coat',
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
+        Legs = 'Igqira Lappas',
         Back = 'Umbra Cape',
     },
     MDT = { -- Shell IV provides 23% MDT
@@ -84,6 +93,7 @@ local sets = {
         Body = 'Sorcerer\'s Coat',
         Ring1 = 'Merman\'s Ring', -- 4
         Ring2 = 'Sattva Ring', -- 5
+        Legs = 'Igqira Lappas',
         Back = 'Hexerei Cape', -- 3
     },
     FireRes = {
@@ -97,6 +107,7 @@ local sets = {
         Back = 'Hexerei Cape',
         Waist = 'Water Belt', -- 20
         Feet = 'Power Sandals', -- 7
+        Legs = 'Igqira Lappas',
     },
     IceRes = {
         Main = 'Vulcan\'s Staff', -- 20
@@ -108,6 +119,7 @@ local sets = {
         Ring2 = 'Malfrost Ring', -- 10
         Back = 'Aurora Mantle', -- 7
         Waist = 'Fire Belt', -- 20
+        Legs = 'Igqira Lappas',
     },
     LightningRes = {
         Main = 'Terra\'s Staff', -- 20
@@ -119,6 +131,7 @@ local sets = {
         Ring2 = 'Malflash Ring', -- 10
         Back = 'Hexerei Cape',
         Waist = 'Earth Belt', -- 20
+        Legs = 'Igqira Lappas',
     },
     EarthRes = {
         Main = 'Auster\'s Staff', -- 20
@@ -130,6 +143,7 @@ local sets = {
         Ring2 = 'Maldust Ring', -- 10
         Back = 'Hexerei Cape',
         Waist = 'Wind Belt', -- 20
+        Legs = 'Igqira Lappas',
     },
     WindRes = {
         Main = 'Aquilo\'s Staff', -- 20
@@ -142,6 +156,7 @@ local sets = {
         Ring2 = 'Malgust Ring', -- 10
         Back = 'Aurora Mantle', -- 7
         Waist = 'Ice Belt', -- 20
+        Legs = 'Igqira Lappas',
     },
     WaterRes = {
         Main = 'Jupiter\'s Staff', -- 20
@@ -153,6 +168,7 @@ local sets = {
         Ring2 = 'Malflood Ring', -- 10
         Back = 'Hexerei Cape',
         Waist = 'Lightning Belt', -- 20
+        Legs = 'Igqira Lappas',
     },
     Evasion = {},
 
