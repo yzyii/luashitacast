@@ -157,7 +157,11 @@ local sets = {
     Sing_Ballad_Small = {
         Range = 'Horn +1',
     },
-    Sing_PaeonMazurka = {
+    Sing_Paeon = {
+        Range = 'Ebony Harp +1',
+        Neck = 'String Torque',
+    },
+    Sing_Mazurka = {
         Range = 'Ebony Harp +1',
         Neck = 'String Torque',
     },
@@ -423,9 +427,12 @@ profile.HandleMidcast = function()
         elseif string.match(action.Name, 'Hymnus') then
             gFunc.EquipSet(sets.Sing_Buff)
             gFunc.EquipSet(sets.Sing_Hymnus)
-        elseif (action.Name == 'Chocobo Mazurka') or string.match(action.Name, 'Paeon') then
+        elseif (action.Name == 'Chocobo Mazurka') then
             gFunc.EquipSet(sets.Sing_Buff)
-            gFunc.EquipSet(sets.Sing_PaeonMazurka)
+            gFunc.EquipSet(sets.Sing_Mazurka)
+        elseif string.match(action.Name, 'Paeon') then
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_Paeon)
         end
     end
 end

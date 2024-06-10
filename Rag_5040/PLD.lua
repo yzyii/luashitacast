@@ -275,8 +275,8 @@ local sets = {
         Feet = 'Mountain Gaiters', -- 5
     },
     Haste = {
-        Main = 'Durandal',
-        Sub = 'Koenig Shield',
+        Main = 'Capricorn Staff', -- 5
+        Sub = 'remove',
         Head = 'Homam Zucchetto', -- 3
         Neck = 'Willpower Torque',
         Ear1 = 'Loquac. Earring', -- FC
