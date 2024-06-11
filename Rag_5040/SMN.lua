@@ -114,7 +114,7 @@ local sets = {
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
         Waist = 'Wind Belt', -- 20
-        Ring1 = 'Topaz Ring', -- 9
+        Ring1 = 'Robust Ring', -- 10
     },
     WindRes = {
         Ring2 = 'Malgust Ring', -- 10
