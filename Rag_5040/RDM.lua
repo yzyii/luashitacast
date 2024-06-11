@@ -187,7 +187,7 @@ local sets = {
         Ear2 = 'Robust Earring', -- 11
         Body = 'Gaia Doublet', -- 10
         Hands = 'Coral Fng. Gnt. +1',
-        Ring1 = 'Topaz Ring', -- 9
+        Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10
         Back = 'Beak Mantle +1', -- 7
         Waist = 'Wind Belt', -- 20
@@ -576,13 +576,14 @@ local sets = {
         Feet = 'Dusk Ledelsens', -- 2
     },
     TP_NIN = {
-        Main = 'Joyeuse',
-        Sub = 'Justice Sword',
-        -- Main = 'Enhancing Sword',
-        -- Sub = 'Joyeuse',
+        Main = 'Martial Knife',
+        Sub = 'Joyeuse',
+        -- Main = 'Justice Sword',
+        -- Sub = 'Justice Sword',
         -- Ear2 = 'Stealth Earring',
         Range = '',
-        Ammo = 'Virtue Stone',
+        Ammo = 'Tiphia Sting',
+        -- Ammo = 'Virtue Stone',
     },
     WS = {
         Head = 'Optical Hat',
@@ -590,8 +591,10 @@ local sets = {
         Body = 'Hydra Doublet',
         -- Body = 'Assault Jerkin',
         Hands = 'Tarasque Mitts +1',
+        Ring1 = 'Triumph Ring',
+        -- Ring2 = 'Flame Ring',
         Waist = 'Warwolf Belt',
-        Legs = 'Dls. Tights +1',
+        Legs = 'Feral Trousers',
         -- Legs = 'Dusk Trousers',
         -- Legs = 'Hydra Brais',
         Feet = 'Rutter Sabatons',
@@ -600,6 +603,18 @@ local sets = {
         Neck = 'Soil Gorget',
     },
     WS_Spirits = {},
+    WS_Energy = {
+        Ear1 = 'Cmn. Earring',
+        Ear2 = 'Cmn. Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = 'Dvt. Mitts +1',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        Back = 'Prism Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Mahatma Slops',
+        Feet = 'Mahatma Pigaches',
+    },
 
     LockSet1 = {},
     LockSet2 = {},
@@ -646,6 +661,10 @@ profile.HandleWeaponskill = function()
 
     if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') or (action.Name == 'Evisceration') then
         gFunc.EquipSet(sets.WS_Soil)
+    end
+
+    if (action.Name == 'Energy Drain') or (action.Name == 'Energy Steal') then
+        gFunc.EquipSet(sets.WS_Energy)
     end
 
     if (action.Name == 'Spirits Within') then

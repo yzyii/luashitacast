@@ -207,7 +207,7 @@ local sets = {
         Ear2 = 'Robust Earring', -- 11
         Body = 'Assault Brstplate', -- 15
         Hands = 'Coral Fng. Gnt. +1',
-        Ring1 = 'Topaz Ring', -- 9
+        Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10
         Back = 'Gaia Mantle', -- 10
         Waist = 'Wind Belt', -- 20
@@ -453,8 +453,7 @@ local sets = {
         Ear2 = 'Robust Earring',
         Body = 'Gaia Doublet',
         Hands = 'Kng. Handschuhs',
-        Ring1 = 'Topaz Ring',
-        -- Ring1 = 'Soil Ring',
+        Ring1 = 'Robust Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
