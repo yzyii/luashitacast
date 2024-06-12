@@ -142,3 +142,10 @@
 
 ### v1.3.9
 - Add StunACC set for RDM
+
+### v1.3.10
+- Fix bug on mage melee attempting to use fenrirs earring
+
+### v1.3.11
+- BRD - Split BRD Mazurka and Paeon sets
+- PLD - Add Cure 3 HP Up Set
