@@ -178,7 +178,7 @@ local sets = {
         Legs = 'Feral Trousers', -- 6
         Feet = 'Blood Greaves', -- 21
     },
-    LightningRes = { -- 149
+    LightningRes = { -- 151
         Main = 'Durandal',
         Sub = 'Nms. Shields +1', -- 15
         Range = 'Lightning Bow +1', -- 7
@@ -191,12 +191,12 @@ local sets = {
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Spinel Ring', -- 9
         Ring2 = 'Malflash Ring', -- 10
-        Back = 'Gaia Mantle', -- 10
+        Back = 'Gaia Mantle +1', -- 12
         Waist = 'Earth Belt', -- 20
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Dst. Leggings +1',
     },
-    EarthRes = { -- 154
+    EarthRes = { -- 156
         Main = 'Auster\'s Staff', -- 20
         Sub = '',
         Range = 'Rosenbogen',
@@ -209,7 +209,7 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10
-        Back = 'Gaia Mantle', -- 10
+        Back = 'Gaia Mantle +1', -- 10
         Waist = 'Wind Belt', -- 20
         Legs = 'Beak Trousers +1', -- 7
         Feet = 'Blood Greaves', -- 21
@@ -300,11 +300,10 @@ local sets = {
         -- Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hades Earring +1',
-        Ear2 = 'Loquac. Earring',
-        -- Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
+        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Body = 'Vlr. Surcoat +1',
         -- Body = { Name = 'Hydra Haubert', Priority = -100 },
-        Hands = 'Vlr. Gauntlets +1',
+        Hands = { Name = 'Hydra Moufles', Priority = -100 },
         Ring1 = 'Hercules\' Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
@@ -336,17 +335,38 @@ local sets = {
         Range = 'Lightning Bow +1',
         Ammo = '',
         Head = 'Darksteel Cap +1',
+        -- Head = 'Faerie Hairpin', -- Add w/ Hydra Haubert
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Magnetic Earring', -- 8
         Ear2 = 'Knightly Earring', -- 9
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
-        Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
+        -- Hands = 'Hydra Moufles', -- Add w/ Hydra Haubert
+        Ring1 = 'Ether Ring',
+        Ring2 = 'Serket Ring',
         Back = 'Boxer\'s Mantle',
         Waist = 'Silver Obi +1', -- 8
         Legs = 'Vlr. Breeches +1', -- 10
         Feet = 'Mountain Gaiters', -- 5
+    },
+    Cheat_C3HPUp = {
+        Main = 'Apollo\'s Staff',
+        Sub = '',
+        Range = 'Rosenbogen',
+        Ammo = '',
+        Head = 'Aegishjalmr',
+        Neck = 'Harmonia\'s Torque',
+        Ear1 = 'Hospitaler Earring',
+        Ear2 = 'Hades Earring +1',
+        Body = 'Vlr. Surcoat +1',
+        -- Body = { Name = 'Hydra Haubert', Priority = -100 },
+        Hands = { Name = 'Hydra Moufles', Priority = -100 },
+        Ring1 = 'Bomb Queen Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Valor Cape',
+        Waist = 'Warwolf Belt',
+        Legs = { Name = 'Hydra Brayettes', Priority = -100 },
+        Feet = 'Vlr. Leggings +1',
     },
     Cheat_C4HPDown = {
         Main = 'Durandal',
@@ -356,18 +376,20 @@ local sets = {
         Ammo = '',
         Head = 'Faerie Hairpin',
         Neck = 'Willpower Torque', -- 5
+        -- Neck = 'Star Necklace', -- Add w/ Hydra Haubert
         Ear1 = 'Magnetic Earring', -- 8
         Ear2 = 'Knightly Earring', -- 9
         Body = 'Dst. Harness +1',
-        Hands = 'Dst. Mittens +1',
+        -- Body = 'Hydra Haubert',
+        Hands = 'Hydra Moufles',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Settler\'s Cape', -- Remove w/ Hydra Body
+        Back = 'Settler\'s Cape', -- Remove w/ Hydra Haubert
         Waist = 'Silver Obi +1', -- 8
         Legs = 'Hydra Brayettes',
         Feet = 'Mountain Gaiters', -- 5
     },
-    Cheat_HPUp = {
+    Cheat_C4HPUp = {
         Main = 'Apollo\'s Staff',
         Sub = '',
         Range = 'Rosenbogen',
@@ -375,7 +397,7 @@ local sets = {
         Head = 'Aegishjalmr',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
-        Ear2 = 'Bloodbead Earring',
+        Ear2 = 'Hades Earring +1',
         Body = 'Vlr. Surcoat +1',
         Hands = 'Vlr. Gauntlets +1',
         Ring1 = 'Bomb Queen Ring',
@@ -623,10 +645,10 @@ profile.HandleMidcast = function()
     if (target.Name == me) then
         if (action.Name == 'Cure III') then
             gFunc.InterimEquipSet(sets.Cheat_C3HPDown)
-            gFunc.EquipSet(sets.Cheat_HPUp)
+            gFunc.EquipSet(sets.Cheat_C3HPUp)
         elseif (action.Name == 'Cure IV') then
             gFunc.InterimEquipSet(sets.Cheat_C4HPDown)
-            gFunc.EquipSet(sets.Cheat_HPUp)
+            gFunc.EquipSet(sets.Cheat_C4HPUp)
         end
     end
 end
