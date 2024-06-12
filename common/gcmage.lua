@@ -801,9 +801,15 @@ function gcmage.EquipDark(maxMP)
         end
     end
 
-    if (environment.DayElement == 'Dark') and diabolos_ring and player.MPP <= 85 and action.Name ~= 'Aspir' then
-        if (maxMP == 0 or player.MP < maxMP * 0.85) then
-            gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
+    if (environment.DayElement == 'Dark') and diabolos_ring then
+        if (player.MPP <= 85 and action.Name == 'Drain') then
+            if (maxMP == 0 or player.MP < maxMP * 0.85) then
+                gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
+            end
+        elseif (player.MPP <= 50 and action.Name == 'Aspir') then
+            if (maxMP == 0 or player.MP < maxMP * 0.50) then
+                gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
+            end
         end
     end
     if (DiabolosPoleSpells:contains(action.Name) and overlords_ring) then
