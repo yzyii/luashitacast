@@ -149,3 +149,8 @@
 ### v1.3.11
 - BRD - Split BRD Mazurka and Paeon sets
 - PLD - Add Cure 3 HP Up Set
+
+### v1.3.12
+- BST - Add Call Beast set
+- BRD - Update song spellcasting time
+- BLM - Fix Aspir and Diabolos Ring logic
