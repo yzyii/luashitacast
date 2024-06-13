@@ -1,7 +1,7 @@
 local profile = {}
 
-local fastCastValue = 0.04
-local fastCastValueSong = 0.41
+local fastCastValue = 0.04 -- Only include Fast Cast e.g. Loquacious Earring, Rostrum Pumps
+local fastCastValueSong = 0.37 -- Only include Song Spellcasting Time e.g. Minstrel's Ring, Sha'ir Manteel
 
 local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
@@ -363,7 +363,8 @@ profile.HandlePrecast = function()
     local action = gData.GetAction()
     if (action.Type == 'Bard Song') then
         gFunc.EquipSet(sets.Precast_Songs)
-        gcmage.DoPrecast(fastCastValueSong)
+        local totalFastCast = 1 - (1 - fastCastValueSong) * (1 - fastCastValue)
+        gcmage.DoPrecast(totalFastCast)
     else
         gcmage.DoPrecast(fastCastValue)
     end
