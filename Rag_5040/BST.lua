@@ -45,6 +45,7 @@ local sets = {
     Reward = {},
     Ready_Physical = {},
     Ready_Magic = {},
+    Call_Beast = {},
 }
 profile.Sets = sets
 
@@ -107,6 +108,7 @@ profile.HandleAbility = function()
             gFunc.Equip('Ammo', 'Pet Food Alpha')
         end
     elseif (action.Name == 'Call Beast') then
+        gFunc.EquipSet(sets.Call_Beast)
         local pet = gcdisplay.GetCycle('Pet')
         if (pet == 'Sheep') then
             if (player.MainJobSync >= 43) then
