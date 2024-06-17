@@ -154,3 +154,7 @@
 - BST - Add Call Beast set
 - BRD - Update song spellcasting time
 - BLM - Fix Aspir and Diabolos Ring logic
+
+### v1.3.13
+- Update HP thresholds on max mp sets
+- PLD - Add Arco de Velocidad logic
