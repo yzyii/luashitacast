@@ -11,6 +11,8 @@ local hercules_ring_slot = 'Ring1'
 local gallant_leggings = 'Glt. Leggings +1'
 local valor_leggings = 'Vlr. Leggings +1'
 
+local arco_de_velocidad = true
+
 local sets = {
     Idle = {
         Main = 'Durandal',
@@ -605,6 +607,13 @@ profile.HandleDefault = function()
     local cover = gData.GetBuffCount('Cover')
     if (cover >= 1) then
         gFunc.EquipSet(sets.Cover)
+    end
+
+    if (arco_de_velocidad) then
+        local environment = gData.GetEnvironment()
+        if (environment.Time >= 6 and environment.Time < 18) then
+            gFunc.Equip('Range', 'Arco de Velocidad')
+        end
     end
 
     gcmelee.DoDefaultOverride()

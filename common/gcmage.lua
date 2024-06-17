@@ -295,13 +295,13 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
             if (player.MP >= setMP + addMP - 50) then
                 equipMaxMP = true
             end
-        elseif (player.SubJob == "NIN") and ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP - 50 then
+        elseif (player.SubJob == "NIN") and ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP - 25 then
             equipMaxMP = true
-        elseif (player.SubJob == "WHM") and whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP - 50 then
+        elseif (player.SubJob == "WHM") and whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP - 25 then
             equipMaxMP = true
-        elseif (player.SubJob == "BLM") and blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP - 50 then
+        elseif (player.SubJob == "BLM") and blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP - 25 then
             equipMaxMP = true
-        elseif (player.SubJob == "RDM") and rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP - 50 then
+        elseif (player.SubJob == "RDM") and rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP - 25 then
             equipMaxMP = true
         end
     end
@@ -379,7 +379,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         if (player.SubJob == "BLM" and wizards_mantle) then
             gFunc.Equip('Back', 'Wizard\'s Mantle')
         end
-        if (player.MPP >= 99 or restingMaxMP) then
+        if (player.MPP >= 95 or restingMaxMP) then
             restingMaxMP = true
             gcinclude.DoDefaultIdle()
             gFunc.EquipSet('IdleMaxMP')
