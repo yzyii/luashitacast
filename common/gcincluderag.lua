@@ -278,7 +278,7 @@ function gcinclude.DoDefaultOverride(isMelee)
         if (isMelee) then
             gFunc.EquipSet('DT')
         else
-            if (environment.Time >= 6 and environment.Time <= 18) then
+            if (environment.Time >= 6 and environment.Time < 18) then
                 gFunc.EquipSet('DT')
             else
                 gFunc.EquipSet('DTNight')
