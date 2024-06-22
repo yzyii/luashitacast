@@ -158,3 +158,4 @@
 ### v1.3.13
 - Update HP thresholds on max mp sets
 - PLD - Add Arco de Velocidad logic
+- BLM - Remove flooring on Yellow set logic (i.e. makes it slightly more accurate)

@@ -412,8 +412,8 @@ local sets = {
 
     Enfeebling = {
         Head = 'Dls. Chapeau +1',
-        Neck = 'Enfeebling Torque',
-        Body = 'Wlk. Tabard +1',
+        Neck = 'Faith Torque',
+        Body = 'Mahatma Hpl.',
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
@@ -437,6 +437,8 @@ local sets = {
         Feet = 'Wise Pigaches',
     },
     EnfeeblingACC = {
+        Neck = 'Enfeebling Torque',
+        Body = 'Wlk. Tabard +1',
         Ear2 = 'Enfeebling Earring',
         Back = 'Altruistic Cape',
         Legs = 'Nashira Seraweels',
@@ -583,8 +585,9 @@ local sets = {
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
-        Waist = 'Swift Belt', -- 4
-        Legs = 'Nashira Seraweels', -- 2
+        Waist = 'Swift Belt',
+        Legs = 'Nashira Seraweels',
+        -- Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
     TP_NIN = {

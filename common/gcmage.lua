@@ -473,7 +473,7 @@ function gcmage.SetupMidcastDelay(fastCastValue)
             local function delayYellow()
                 gFunc.ForceEquipSet('Yellow')
             end
-            local yellowDelay = math.floor(castDelay - 1)
+            local yellowDelay = castDelay - 1
             if (yellowDelay <= 0) then
                 gFunc.EquipSet('Yellow')
             else
