@@ -53,7 +53,7 @@ local sets = {
     },
     Town = {
         Main = 'Terra\'s Staff',
-        Head = 'Sorcerer\'s Petas.',
+        Head = 'Src. Petasos +1',
         Body = 'Sorcerer\'s Coat',
         Legs = 'Src. Tonban +1',
         Feet = 'Herald\'s Gaiters',
@@ -373,7 +373,7 @@ local sets = {
         Feet = 'Src. Sabots +1',
     },
     NukeACC = {
-        Head = 'Sorcerer\'s Petas.',
+        Head = 'Src. Petasos +1',
         Neck = 'Elemental Torque',
         Hands = 'Wzd. Gloves +1',
         Back = 'Merciful Cape',

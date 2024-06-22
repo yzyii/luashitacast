@@ -26,9 +26,14 @@ These luas were designed to be used in HorizonXI and therefore features such as 
 - Edit Fenrir's Earring in gcmelee.lua if you are using these luas for melee jobs.
 - Edit Aketons and Dream gear etc. and turn on or off additional logging in gcincluderag.lua.
 - Make sure you fill out the fastcastValue correctly in your [JOB].lua if you are using any Fast Cast gear in the Precast set.
+- Make sure you fill out the maxMP values correctly in your [JOB].lua if you are using these luas for mage jobs.
 - The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the values in gcmage.lua (or gcmelee.lua for melee jobs).
 - If you define a specific mainhand in regular sets, it will still equip the correct staff if you have them listed in gcmage.lua
 - If you have followed all these instructions and are experiencing crashes when loading the game or changing jobs, check out the Troubleshooting Crashes section on the bottom of this page.
+
+# Note on Resting gear
+
+The Resting set is equipped after 16 seconds of starting resting. This is to allow maximum regen or refresh ticks to take place before hMP or hHP gear is equipped.
 
 # How to Update
 

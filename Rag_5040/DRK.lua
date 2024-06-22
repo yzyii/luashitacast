@@ -6,18 +6,17 @@ local fastCastValue = 0.00 -- 0% from gear
 
 local sets = {
     Idle = {
-        Main = 'Horror Voulge',
         Ammo = 'Orphic Egg',
         Head = 'Alumine Salade',
         Neck = 'Peacock Amulet',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Alumine Haubert',
-        Hands = 'Alumine Moufles',
+        Hands = 'Custom M Gloves',
         Ring1 = 'Sniper\'s Ring',
         Ring2 = 'Sniper\'s Ring',
         Back = 'Ram Mantle +1',
-        Waist = 'Tilt Belt',
+        Waist = 'Life Belt',
         Legs = 'Alumine Brayettes',
         Feet = 'Alumine Sollerets',
     },
@@ -48,32 +47,30 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
-        Main = 'Horror Voulge',
         Ammo = 'Orphic Egg',
         Head = 'Alumine Salade',
         Neck = 'Peacock Amulet',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Alumine Haubert',
-        Hands = 'Alumine Moufles',
+        Hands = 'Custom M Gloves',
         Ring1 = 'Sniper\'s Ring',
         Ring2 = 'Sniper\'s Ring',
         Back = 'Ram Mantle +1',
-        Waist = 'Tilt Belt',
+        Waist = 'Life Belt',
         Legs = 'Alumine Brayettes',
         Feet = 'Alumine Sollerets',
     },
     TP_HighAcc = {},
 
     WS = {
-        Main = 'Horror Voulge',
         Ammo = 'Orphic Egg',
         Head = 'Alumine Salade',
         Neck = 'Spike Necklace',
         Ear1 = 'Beetle Earring +1',
         Ear2 = 'Beetle Earring +1',
         Body = 'Alumine Haubert',
-        Hands = 'Alumine Moufles',
+        Hands = 'Custom M Gloves',
         Ring1 = 'Puissance Ring',
         Ring2 = 'Puissance Ring',
         Back = 'Ram Mantle +1',
@@ -96,7 +93,7 @@ local sets = {
 profile.Sets = sets
 
 profile.SetMacroBook = function()
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 4')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
 
