@@ -585,8 +585,8 @@ local sets = {
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
-        Waist = 'Sonic Belt', -- 6
-        Legs = 'Nashira Seraweels', -- 2
+        Waist = 'Sonic Belt',
+        Legs = 'Nashira Seraweels',
         -- Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
