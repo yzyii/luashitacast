@@ -619,8 +619,10 @@ local sets = {
     },
     WS_Spirits = {},
     WS_Energy = {
+        Head = 'Zenith Crown',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
+        Neck = 'Faith Torque',
         Body = 'Mahatma Hpl.',
         Hands = 'Dvt. Mitts +1',
         Ring1 = 'Aqua Ring',
