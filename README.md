@@ -200,4 +200,4 @@ All of the following toggles set what jug Call Beast will use.
 
 Feel free to DM me on Discord for if you encounter bugs or have feature requests or functionality is missing. I am easily found in the HorizonXI or Ashita Discords.
 
-Do NOT DM me if you have not bothered to read through this README and did not follow the instructions written. You will be ignored.
+Do NOT DM or /tell me in-game regarding your setup issues or if you have not bothered to read through this README and did not follow the instructions written. You will be ignored.
