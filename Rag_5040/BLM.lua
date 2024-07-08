@@ -212,7 +212,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Body = 'Nashira Manteel', -- 3
         Hands = 'Nashira Gages', -- 1
-        Waist = 'Swift Belt', -- 4
+        Waist = 'Sonic Belt', -- 4
         Legs = 'Nashira Seraweels', -- 2
         Feet = 'Nashira Crackows', -- 1
     },
@@ -337,7 +337,7 @@ local sets = {
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
         Back = 'Merciful Cape',
-        Waist = 'Swift Belt',
+        Waist = 'Sonic Belt',
         Legs = 'Nashira Seraweels',
         Feet = 'Nashira Crackows',
     },
@@ -362,7 +362,7 @@ local sets = {
         Head = 'Demon Helm +1',
         Neck = 'Prudence Torque',
         Ear1 = 'Novio Earring',
-        Ear2 = 'Moldavite Earring',
+        Ear2 = 'Novia Earring',
         Body = 'Mahatma Hpl.',
         Hands = 'Wzd. Gloves +1',
         Ring1 = 'Snow Ring',

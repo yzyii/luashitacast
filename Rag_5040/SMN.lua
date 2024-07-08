@@ -184,7 +184,7 @@ local sets = {
         Head = 'Nashira Turban',
         Ear1 = 'Loquac. Earring',
         Hands = 'Nashira Gages',
-        Waist = 'Swift Belt',
+        Waist = 'Sonic Belt',
         Legs = 'Nashira Seraweels',
         Feet = 'Nashira Crackows',
     },
