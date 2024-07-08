@@ -10,10 +10,6 @@ local koga_tekko_plus_one = true
 
 local uggalepih_pendant = true
 
-local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi' }
-local DrkDebuffs = T{ 'Bind', 'Sleep', 'Poison' }
-local NinElemental = T{ 'Hyoton: Ni', 'Katon: Ni', 'Huton: Ni', 'Doton: Ni', 'Raiton: Ni', 'Suiton: Ni' }
-
 -- Leave as '' if you do not have the staff.
 local fire_staff = 'Vulcan\'s Staff'
 local earth_staff = 'Terra\'s Staff'
@@ -21,15 +17,6 @@ local water_staff = 'Neptune\'s Staff'
 local wind_staff = 'Auster\'s Staff'
 local ice_staff = 'Aquilo\'s Staff'
 local thunder_staff = 'Jupiter\'s Staff'
-
-local ElementalStaffTable = {
-    ['Fire'] = fire_staff,
-    ['Earth'] = earth_staff,
-    ['Water'] = water_staff,
-    ['Wind'] = wind_staff,
-    ['Ice'] = ice_staff,
-    ['Thunder'] = thunder_staff,
-}
 
 local sets = {
     Idle = {},
@@ -79,6 +66,19 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi' }
+local DrkDebuffs = T{ 'Bind', 'Sleep', 'Poison' }
+local NinElemental = T{ 'Hyoton: Ni', 'Katon: Ni', 'Huton: Ni', 'Doton: Ni', 'Raiton: Ni', 'Suiton: Ni' }
+
+local ElementalStaffTable = {
+    ['Fire'] = fire_staff,
+    ['Earth'] = earth_staff,
+    ['Water'] = water_staff,
+    ['Wind'] = wind_staff,
+    ['Ice'] = ice_staff,
+    ['Thunder'] = thunder_staff,
+}
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 

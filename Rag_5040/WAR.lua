@@ -1,7 +1,3 @@
---[[
-    This is provided purely as an example template. Only very basic sanity testing has been done.
-]]
-
 local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
@@ -43,6 +39,9 @@ local sets = {
 
     DW = {
         Ear1 = 'Stealth Earring',
+    },
+    SAM = {
+        Ear1 = 'Attila\'s Earring',
     },
 }
 profile.Sets = sets
@@ -115,6 +114,9 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
 
     local player = gData.GetPlayer()
+    if (player.SubJob == 'SAM') then
+        gFunc.EquipSet(sets.SAM)
+    end
     if (gcdisplay.GetToggle('DW') and player.Status == 'Engaged') then
         gFunc.EquipSet(sets.DW)
     end

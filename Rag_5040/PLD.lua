@@ -611,7 +611,7 @@ profile.HandleDefault = function()
 
     if (arco_de_velocidad) then
         local environment = gData.GetEnvironment()
-        if (environment.Time >= 6 and environment.Time < 18) then
+        if (environment.Time >= 6 and environment.Time < 18 and player.HPP < 100) then
             gFunc.Equip('Range', 'Arco de Velocidad')
         end
     end
