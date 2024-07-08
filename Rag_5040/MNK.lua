@@ -6,12 +6,15 @@ local fastCastValue = 0.02 -- 2% from gear
 local temple_gaiters = 'Temple Gaiters'
 local temple_gloves = 'Temple Gloves'
 local temple_cyclas = 'Tpl. Cyclas +1'
-local temple_crown = 'Temple Crown'
+local temple_crown = 'Tpl. Crown +1'
 
 local melee_gaiters = 'Melee Gaiters'
 local melee_gloves = 'Mel. Gloves +1'
 
-local muscle_belt = 'Muscle Belt +1'
+local muscle_belt = ''
+local garden_bangles = ''
+local presidential_hairpin = true
+local dream_ribbon = false
 
 local kampfer_ring = true
 local kampfer_ring_slot = 'Ring2'
@@ -206,7 +209,7 @@ local sets = {
     },
 
     ChiBlast = {
-        Head = 'Temple Crown',
+        Head = 'Tpl. Crown +1',
         Neck = 'Faith Torque',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
@@ -351,13 +354,35 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.TP_Focus)
     end
 
+    if (player.Status == 'Idle') then
+        if (player.HPP < 50 and muscle_belt ~= '') then
+            gFunc.Equip('Waist', muscle_belt)
+        end
+        if (player.HPP < 100) then
+            local environment = gData.GetEnvironment()
+
+            if (muscle_belt ~= '') then
+                gFunc.Equip('Waist', muscle_belt)
+            end
+            if (garden_bangles ~= '' and environment.Time >= 6 and environment.Time < 18) then
+                gFunc.Equip('hands', garden_bangles);
+            end
+            if (presidential_hairpin and conquest:GetOutsideControl()) then
+                gFunc.Equip('Head', 'President. Hairpin')
+            end
+            if (dream_ribbon) then
+                gFunc.Equip('Head', 'Dream Ribbon')
+            end
+        end
+    end
+
     if (gcdisplay.IdleSet == 'DT') then
         if (player.HPP <= 75 and player.TP <= 1000) then
             if (kampfer_ring) then
                 gFunc.Equip(kampfer_ring_slot, 'Kampfer Ring')
             end
         end
-        if (player.HPP <= 50) then
+        if (player.HPP < 50) then
             if (muscle_belt ~= '') then
                 gFunc.Equip('Waist', muscle_belt)
             end

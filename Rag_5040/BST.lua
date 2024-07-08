@@ -214,7 +214,7 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
 
     local player = gData.GetPlayer()
-    if (player.HPP <= 50 and muscle_belt ~= '') then
+    if (player.Status == 'Idle' and player.HPP < 50 and muscle_belt ~= '') then
         gFunc.Equip('Waist', muscle_belt)
     end
     if (player.SubJob == 'NIN' and player.Status == 'Engaged') then

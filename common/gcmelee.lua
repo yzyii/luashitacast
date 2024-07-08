@@ -8,6 +8,7 @@ Everything below can be ignored.
 ]]
 
 gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
+conquest = gFunc.LoadFile('common\\conquest.lua')
 
 local gcmelee = {}
 
@@ -151,15 +152,15 @@ function gcmelee.SetupInterimEquipSet(sets)
 
     gFunc.InterimEquipSet(sets.DT)
 
+    if (SurvivalSpells:contains(action.Name)) then
+        gFunc.InterimEquipSet(sets.SIRD)
+    end
+
     if (gcdisplay.IdleSet == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end
     if (gcdisplay.IdleSet == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end
     if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end
     if (gcdisplay.IdleSet == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end
     if (gcdisplay.IdleSet == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end
-
-    if (SurvivalSpells:contains(action.Name)) then
-        gFunc.InterimEquipSet(sets.SIRD)
-    end
 end
 
 return gcmelee
