@@ -164,3 +164,7 @@
 - WAR - Add SAM set for Attila's Earring
 - NIN - Tidy up Tables
 - MNK - Add regen gear
+
+### v1.3.14
+- WAR - Adds Aggressor logic
+- BRD - Fixes the bug with BRD always using singing gear on all spells
