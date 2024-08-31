@@ -168,3 +168,7 @@
 ### v1.3.14
 - WAR - Adds Aggressor logic
 - BRD - Fixes the bug with BRD always using singing gear on all spells
+
+### v1.3.15
+- PLD - Add warlock cape handling if /rdm
+- NIN - Add elemental obis, basic ranged set, some additional night time evasion item handling

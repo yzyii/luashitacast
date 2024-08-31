@@ -10,6 +10,12 @@ local koga_tekko_plus_one = true
 
 local uggalepih_pendant = true
 
+local fenrirs_stone = true -- Used for Evasion at night
+
+-- Fill this out for which evasion pants to use at night / dusk to dawn
+local night_time_eva_pants = ''
+local dusk_to_dawn_eva_pants = 'Koga Hakama +1'
+
 -- Leave as '' if you do not have the staff.
 local fire_staff = 'Vulcan\'s Staff'
 local earth_staff = 'Terra\'s Staff'
@@ -17,6 +23,14 @@ local water_staff = 'Neptune\'s Staff'
 local wind_staff = 'Auster\'s Staff'
 local ice_staff = 'Aquilo\'s Staff'
 local thunder_staff = 'Jupiter\'s Staff'
+
+-- Set to true if you have the obi
+local karin_obi = true
+local dorin_obi = false
+local suirin_obi = false
+local furin_obi = false
+local hyorin_obi = true
+local rairin_obi = true
 
 local sets = {
     Idle = {},
@@ -53,6 +67,8 @@ local sets = {
     TP_LowAcc = {},
     TP_HighAcc = {},
     WS = {},
+
+    Ranged = {}, -- This won't work for automatically swapping shurikens, only other equipment
 }
 profile.Sets = sets
 
@@ -80,6 +96,35 @@ local ElementalStaffTable = {
     ['Thunder'] = thunder_staff,
 }
 
+local NukeObiTable = {
+    ['Fire'] = 'Karin Obi',
+    ['Earth'] = 'Dorin Obi',
+    ['Water'] = 'Suirin Obi',
+    ['Wind'] = 'Furin Obi',
+    ['Ice'] = 'Hyorin Obi',
+    ['Thunder'] = 'Rairin Obi',
+}
+
+local NukeObiOwnedTable = {
+    ['Fire'] = karin_obi,
+    ['Earth'] = dorin_obi,
+    ['Water'] = suirin_obi,
+    ['Wind'] = furin_obi,
+    ['Ice'] = hyorin_obi,
+    ['Thunder'] = rairin_obi,
+}
+
+local WeakElementTable = {
+    ['Fire'] = 'Water',
+    ['Earth'] = 'Wind',
+    ['Water'] = 'Thunder',
+    ['Wind'] = 'Ice',
+    ['Ice'] = 'Fire',
+    ['Thunder'] = 'Earth',
+    ['Light'] = 'Dark',
+    ['Dark'] = 'Light'
+}
+
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
@@ -95,7 +140,7 @@ profile.HandlePreshot = function()
 end
 
 profile.HandleMidshot = function()
-    -- You may add logic here
+    gFunc.EquipSet(sets.Ranged)
 end
 
 profile.HandleWeaponskill = function()
@@ -148,6 +193,19 @@ profile.HandleDefault = function()
     end
 
     gcmelee.DoDefaultOverride()
+
+    if (gcdisplay.IdleSet == 'Evasion') then
+        if (fenrirs_stone and (environment.Time < 6 or environment.Time >= 18)) then
+            gFunc.Equip('Ammo', 'Fenrir\'s Stone')
+        end
+        if (night_time_eva_pants ~= '' and (environment.Time < 6 or environment.Time >= 18)) then
+            gFunc.Equip('Legs', night_time_eva_pants)
+        end
+        if (dusk_to_dawn_eva_pants ~= '' and (environment.Time < 7 or environment.Time >= 17)) then
+            gFunc.Equip('Legs', dusk_to_dawn_eva_pants)
+        end
+    end
+
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
@@ -171,12 +229,33 @@ profile.HandleMidcast = function()
             if staff ~= '' then
                 gFunc.Equip('Main', staff)
             end
+
+            if (ObiCheck(action)) then
+                local obi = NukeObiTable[action.Element]
+                local obiOwned = NukeObiOwnedTable[action.Element]
+                if (obiOwned) then
+                    gFunc.Equip('Waist', obi)
+                end
+            end
+
         end
     elseif (action.Skill == 'Enfeebling Magic') then
         if (DrkDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.Hate)
         end
     end
+end
+
+function ObiCheck(action)
+    local element = action.Element
+    local environment = gData.GetEnvironment()
+    local weakElement = WeakElementTable[element]
+
+    if environment.WeatherElement == element then
+        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
+    end
+
+    return environment.DayElement == element and environment.WeatherElement ~= weakElement
 end
 
 return profile

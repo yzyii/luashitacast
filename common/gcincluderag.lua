@@ -86,7 +86,7 @@ local OverrideNameTable = {
     ['eva'] = 'Evasion'
 }
 
-local NoTPLockJobs = T{ 'RDM','BLM','WHM','SMN','BRD' }
+local NoTPLockJobs = T{ 'RDM','BLM','WHM','SMN','BRD','NIN' }
 
 local lastIdleSet = 'Normal'
 
