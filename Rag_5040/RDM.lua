@@ -440,7 +440,7 @@ local sets = {
     EnfeeblingINT = {
         Ammo = 'Phtm. Tathlum',
         Ear1 = 'Abyssal Earring',
-        Ear2 = 'Morion Earring +1',
+        Ear2 = 'Omn. Earring',
         Hands = 'Mahatma Cuffs',
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
@@ -508,7 +508,7 @@ local sets = {
     },
     NukeDOT = {
         Ear1 = 'Abyssal Earring',
-        Ear2 = 'Morion Earring +1',
+        Ear2 = 'Omn. Earring',
         Hands = 'Mahatma Cuffs',
         Back = 'Merciful Cape',
         Legs = 'Dls. Tights +1',

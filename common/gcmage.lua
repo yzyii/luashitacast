@@ -10,7 +10,7 @@ local light_staff = 'Apollo\'s Staff'
 local dark_staff = 'Pluto\'s Staff'
 
 -- Set to true if you have the obi
-local karin_obi = false
+local karin_obi = true
 local dorin_obi = false
 local suirin_obi = false
 local furin_obi = false
@@ -35,7 +35,7 @@ local diabolos_ring = true
 local diabolos_ring_slot = 'Ring2'
 local ice_ring = false
 local ice_ring_slot = 'Ring2'
-local water_ring = true
+local water_ring = false
 local water_ring_slot = 'Ring2'
 local overlords_ring = true
 local overlords_ring_slot = 'Ring1'

@@ -24,7 +24,7 @@ local kampfer_earring_slot = 'Ear2'
 local sets = {
     Idle = {
         Ammo = 'Tiphia Sting',
-        Head = 'Genbu\'s Kabuto',
+        Head = 'President. Hairpin',
         Neck = 'Evasion Torque',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -358,7 +358,7 @@ profile.HandleDefault = function()
         if (player.HPP < 50 and muscle_belt ~= '') then
             gFunc.Equip('Waist', muscle_belt)
         end
-        if (player.HPP < 100) then
+        if (player.HPP < 97) then
             local environment = gData.GetEnvironment()
 
             if (muscle_belt ~= '') then

@@ -13,6 +13,8 @@ local valor_leggings = 'Vlr. Leggings +1'
 
 local arco_de_velocidad = true
 
+local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
+
 local sets = {
     Idle = {
         Main = 'Durandal',
@@ -303,8 +305,7 @@ local sets = {
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hades Earring +1',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
-        Body = 'Vlr. Surcoat +1',
-        -- Body = { Name = 'Hydra Haubert', Priority = -100 },
+        Body = { Name = 'Hydra Haubert', Priority = -100 },
         Hands = { Name = 'Hydra Moufles', Priority = -100 },
         Ring1 = 'Hercules\' Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
@@ -320,8 +321,7 @@ local sets = {
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Hades Earring +1',
-        Body = 'Vlr. Surcoat +1',
-        -- Body = { Name = 'Hydra Haubert', Priority = -100 },
+        Body = { Name = 'Hydra Haubert', Priority = -100 },
         Hands = 'Dusk Gloves +1',
         Ring1 = 'Hercules\' Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
@@ -336,14 +336,12 @@ local sets = {
         Sub = 'Palmerin\'s Shield',
         Range = 'Lightning Bow +1',
         Ammo = '',
-        Head = 'Darksteel Cap +1',
-        -- Head = 'Faerie Hairpin', -- Add w/ Hydra Haubert
+        Head = 'Faerie Hairpin',
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Magnetic Earring', -- 8
         Ear2 = 'Knightly Earring', -- 9
-        Body = 'Dst. Harness +1',
-        Hands = 'Dst. Mittens +1',
-        -- Hands = 'Hydra Moufles', -- Add w/ Hydra Haubert
+        Body = 'Hydra Haubert',
+        Hands = 'Hydra Moufles',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
         Back = 'Boxer\'s Mantle',
@@ -357,11 +355,11 @@ local sets = {
         Range = 'Rosenbogen',
         Ammo = '',
         Head = 'Aegishjalmr',
+        -- Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
         Ear2 = 'Hades Earring +1',
-        Body = 'Vlr. Surcoat +1',
-        -- Body = { Name = 'Hydra Haubert', Priority = -100 },
+        Body = { Name = 'Hydra Haubert', Priority = -100 },
         Hands = { Name = 'Hydra Moufles', Priority = -100 },
         Ring1 = 'Bomb Queen Ring',
         Ring2 = 'Sattva Ring',
@@ -377,16 +375,14 @@ local sets = {
         Range = 'Lightning Bow +1',
         Ammo = '',
         Head = 'Faerie Hairpin',
-        Neck = 'Willpower Torque', -- 5
-        -- Neck = 'Star Necklace', -- Add w/ Hydra Haubert
+        Neck = 'Star Necklace',
         Ear1 = 'Magnetic Earring', -- 8
         Ear2 = 'Knightly Earring', -- 9
-        Body = 'Dst. Harness +1',
-        -- Body = 'Hydra Haubert',
+        Body = 'Hydra Haubert',
         Hands = 'Hydra Moufles',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Settler\'s Cape', -- Remove w/ Hydra Haubert
+        Back = 'Boxer\'s Mantle',
         Waist = 'Silver Obi +1', -- 8
         Legs = 'Hydra Brayettes',
         Feet = 'Mountain Gaiters', -- 5
@@ -488,6 +484,7 @@ local sets = {
         Ear2 = 'Knightly Earring',
         Hands = 'Vlr. Gauntlets +1',
     },
+	Enhancing = {},
 }
 profile.Sets = sets
 
@@ -621,7 +618,13 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmelee.DoPrecast(fastCastValue)
+    local player = gData.GetPlayer()
+    if (player.SubJob == "RDM" and warlocks_mantle) then
+        gcmelee.DoPrecast(fastCastValue + 0.02)
+        gFunc.Equip('Back', 'Warlock\'s Mantle')
+    else
+        gcmelee.DoPrecast(fastCastValue)
+    end
 end
 
 profile.HandleMidcast = function()
@@ -648,6 +651,8 @@ profile.HandleMidcast = function()
     else
         if (action.Name == 'Utusemi: Ichi') then
             gFunc.EquipSet(sets.Haste_Ichi)
+        elseif (action.Name == 'Stoneskin' or action.Name == 'Phalanx') then
+            gFunc.EquipSet(sets.Enhancing)
         end
     end
 
