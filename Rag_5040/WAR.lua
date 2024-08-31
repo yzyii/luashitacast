@@ -33,6 +33,8 @@ local sets = {
     TP_LowAcc = {},
     TP_HighAcc = {},
 
+    TP_Aggressor = {},
+
     WS = {},
     Warcry = {},
     Provoke = {},
@@ -119,6 +121,11 @@ profile.HandleDefault = function()
     end
     if (gcdisplay.GetToggle('DW') and player.Status == 'Engaged') then
         gFunc.EquipSet(sets.DW)
+    end
+
+    local aggressor = gData.GetBuffCount('Aggressor')
+    if (aggressor == 1 and gcdisplay.IdleSet == 'LowAcc') then
+        gFunc.EquipSet(sets.TP_Aggressor)
     end
 
     gcmelee.DoDefaultOverride()
