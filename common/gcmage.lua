@@ -426,6 +426,9 @@ function gcmage.DoPrecast(fastCastValue)
         if (action.Skill == 'Elemental Magic' and player.MainJob == 'BLM' and gcdisplay.GetToggle('Yellow') == true) then
             if (not ElementalDebuffs:contains(action.Name)) then
                 gFunc.EquipSet('Yellow')
+                if (gcdisplay.GetToggle('HNM') == true) then
+                    gFunc.EquipSet('YellowHNM')
+                end
             end
         end
     end
@@ -472,10 +475,16 @@ function gcmage.SetupMidcastDelay(fastCastValue)
         if (not ElementalDebuffs:contains(action.Name)) then
             local function delayYellow()
                 gFunc.ForceEquipSet('Yellow')
+                if (gcdisplay.GetToggle('HNM') == true) then
+                    gFunc.ForceEquipSet('YellowHNM')
+                end
             end
             local yellowDelay = castDelay - 1
             if (yellowDelay <= 0) then
                 gFunc.EquipSet('Yellow')
+                if (gcdisplay.GetToggle('HNM') == true) then
+                    gFunc.EquipSet('YellowHNM')
+                end
             else
                 delayYellow:once(yellowDelay)
             end

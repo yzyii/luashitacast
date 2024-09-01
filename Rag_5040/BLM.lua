@@ -210,7 +210,6 @@ local sets = {
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
         Head = 'Zenith Crown',
-        Neck = 'Checkered Scarf',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Merman\'s Earring',
         Hands = 'Zenith Mitts +1',
@@ -218,6 +217,9 @@ local sets = {
         Ring2 = 'Serket Ring',
         Waist = 'Penitent\'s Rope',
         Feet = 'Rostrum Pumps',
+    },
+    YellowHNM = {
+        Body = 'Black Cotehardie',
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Nashira Turban', -- 2
@@ -371,7 +373,7 @@ local sets = {
     },
     NukeHNM = {
         Ammo = 'Phtm. Tathlum',
-        Head = 'Demon Helm +1',
+        Head = 'Wzd. Petasos +1',
         Neck = 'Prudence Torque',
         Ear1 = 'Novio Earring',
         Ear2 = 'Novia Earring',

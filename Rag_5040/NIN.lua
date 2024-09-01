@@ -1,3 +1,6 @@
+-- NIN will lose TP on many actions when switching to Staff.
+-- Use "/lac disable Main" to prevent weapon swaps if this is not desired.
+
 local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
@@ -23,6 +26,7 @@ local water_staff = 'Neptune\'s Staff'
 local wind_staff = 'Auster\'s Staff'
 local ice_staff = 'Aquilo\'s Staff'
 local thunder_staff = 'Jupiter\'s Staff'
+local dark_staff = 'Dark Staff'
 
 -- Set to true if you have the obi
 local karin_obi = true
@@ -31,6 +35,7 @@ local suirin_obi = false
 local furin_obi = false
 local hyorin_obi = true
 local rairin_obi = true
+local anrin_obi = true
 
 local sets = {
     Idle = {},
@@ -59,6 +64,7 @@ local sets = {
     Hate = {},
     NinDebuff = {},
     NinElemental = {},
+    DrkDarkMagic = {},
 
     LockSet1 = {},
     LockSet2 = {},
@@ -67,6 +73,8 @@ local sets = {
     TP_LowAcc = {},
     TP_HighAcc = {},
     WS = {},
+    WS_BladeJin = {},
+    WS_BladeKu = {},
 
     Ranged = {}, -- This won't work for automatically swapping shurikens, only other equipment
 }
@@ -85,6 +93,7 @@ Everything below can be ignored.
 
 local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi' }
 local DrkDebuffs = T{ 'Bind', 'Sleep', 'Poison' }
+local DrkDarkMagic = T{ 'Stun', 'Aspir', 'Drain', 'Absorb-AGI', 'Absorb-VIT' }
 local NinElemental = T{ 'Hyoton: Ni', 'Katon: Ni', 'Huton: Ni', 'Doton: Ni', 'Raiton: Ni', 'Suiton: Ni' }
 
 local ElementalStaffTable = {
@@ -94,6 +103,7 @@ local ElementalStaffTable = {
     ['Wind'] = wind_staff,
     ['Ice'] = ice_staff,
     ['Thunder'] = thunder_staff,
+    ['Dark'] = dark_staff
 }
 
 local NukeObiTable = {
@@ -103,6 +113,7 @@ local NukeObiTable = {
     ['Wind'] = 'Furin Obi',
     ['Ice'] = 'Hyorin Obi',
     ['Thunder'] = 'Rairin Obi',
+    ['Dark'] = 'Anrin Obi'
 }
 
 local NukeObiOwnedTable = {
@@ -112,6 +123,7 @@ local NukeObiOwnedTable = {
     ['Wind'] = furin_obi,
     ['Ice'] = hyorin_obi,
     ['Thunder'] = rairin_obi,
+    ['Dark'] = anrin_obi
 }
 
 local WeakElementTable = {
@@ -145,6 +157,12 @@ end
 
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
+    local action = gData.GetAction()
+    if (action.Name == 'Blade: Jin') then
+        gFunc.EquipSet(sets.WS_BladeJin)
+    elseif (action.Name == 'Blade: Ku') then
+        gFunc.EquipSet(sets.WS_BladeKu)
+    end
 
     local environment = gData.GetEnvironment()
     if (koga_tekko and (environment.Time < 6 or environment.Time >= 18)) then
@@ -220,6 +238,11 @@ profile.HandleMidcast = function()
     if (action.Skill == 'Ninjutsu') then
         if (NinDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.NinDebuff)
+
+            local staff = ElementalStaffTable[action.Element]
+            if staff ~= '' then
+                gFunc.Equip('Main', staff)
+            end
         elseif (NinElemental:contains(action.Name)) then
             gFunc.EquipSet(sets.NinElemental)
             if (action.MppAftercast < 51) and uggalepih_pendant then
@@ -242,6 +265,28 @@ profile.HandleMidcast = function()
     elseif (action.Skill == 'Enfeebling Magic') then
         if (DrkDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.Hate)
+        end
+        local staff = ElementalStaffTable[action.Element]
+        if staff ~= '' then
+            gFunc.Equip('Main', staff)
+        end
+    elseif (action.Skill == 'Dark Magic') then
+        if (DrkDarkMagic:contains(action.Name)) then
+            gFunc.EquipSet(sets.DrkDarkMagic)
+        end
+        local staff = ElementalStaffTable[action.Element]
+        if staff ~= '' then
+            gFunc.Equip('Main', staff)
+        end
+
+        if (action.Element == 'Dark') then
+			if (ObiCheck(action)) then
+				local obi = NukeObiTable[action.Element]
+				local obiOwned = NukeObiOwnedTable[action.Element]
+				if (obiOwned) then
+					gFunc.Equip('Waist', obi)
+				end
+			end
         end
     end
 end
