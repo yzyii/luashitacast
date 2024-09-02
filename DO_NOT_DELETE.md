@@ -173,4 +173,7 @@
 - PLD - Add warlock cape handling if /rdm
 - NIN - Add elemental obis, basic ranged set, some additional night time evasion item handling
 - NIN - Added Dark Magic for NIN. Changes NIN to always swap to staves if possible.
-- BLM - Added YellowHNM set for BLM. 
+- BLM - Added YellowHNM set for BLM
+
+### v1.3.16
+- BRD - Fix fight disabling Range slot
