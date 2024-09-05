@@ -354,26 +354,10 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.TP_Focus)
     end
 
-    if (player.Status == 'Idle') then
-        if (player.HPP < 50 and muscle_belt ~= '') then
-            gFunc.Equip('Waist', muscle_belt)
-        end
-        if (player.HPP < 97) then
-            local environment = gData.GetEnvironment()
-
-            if (muscle_belt ~= '') then
-                gFunc.Equip('Waist', muscle_belt)
-            end
-            if (garden_bangles ~= '' and environment.Time >= 6 and environment.Time < 18) then
-                gFunc.Equip('hands', garden_bangles);
-            end
-            if (presidential_hairpin and conquest:GetOutsideControl()) then
-                gFunc.Equip('Head', 'President. Hairpin')
-            end
-            if (dream_ribbon) then
-                gFunc.Equip('Head', 'Dream Ribbon')
-            end
-        end
+    if (player.SubJob == 'DRG') then
+        gFunc.EquipSet(sets.SJ_DRG)
+    elseif (player.SubJob == 'THF') then
+        gFunc.EquipSet(sets.SJ_THF)
     end
 
     if (gcdisplay.IdleSet == 'DT') then
@@ -394,10 +378,26 @@ profile.HandleDefault = function()
         end
     end
 
-    if (player.SubJob == 'DRG') then
-        gFunc.EquipSet(sets.SJ_DRG)
-    elseif (player.SubJob == 'THF') then
-        gFunc.EquipSet(sets.SJ_THF)
+    if (player.Status == 'Idle') then
+        if (player.HPP < 50 and muscle_belt ~= '') then
+            gFunc.Equip('Waist', muscle_belt)
+        end
+        if (player.HPP < 97) then
+            local environment = gData.GetEnvironment()
+
+            if (muscle_belt ~= '') then
+                gFunc.Equip('Waist', muscle_belt)
+            end
+            if (garden_bangles ~= '' and environment.Time >= 6 and environment.Time < 18) then
+                gFunc.Equip('hands', garden_bangles);
+            end
+            if (presidential_hairpin and conquest:GetOutsideControl()) then
+                gFunc.Equip('Head', 'President. Hairpin')
+            end
+            if (dream_ribbon) then
+                gFunc.Equip('Head', 'Dream Ribbon')
+            end
+        end
     end
 
     gcmelee.DoDefaultOverride()
