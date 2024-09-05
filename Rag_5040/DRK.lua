@@ -125,11 +125,6 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_CrossReaper)
     end
 
-    -- Assumes you are using Evasion set as your zerg set.
-    if (gcdisplay.IdleSet == 'Evasion') then
-        gFunc.EquipSet(sets.Evasion)
-    end
-
     local souleater = gData.GetBuffCount('Souleater')
     if (souleater > 0) then
         gFunc.EquipSet(sets.SoulEater)
@@ -165,6 +160,11 @@ profile.HandleDefault = function()
     local souleater = gData.GetBuffCount('Souleater')
     if (souleater > 0 and player.Status == 'Engaged' and use_chaos_burgeonet_for_tp_during_souleater) then
         gFunc.EquipSet(sets.SoulEater)
+    end
+
+    -- Assumes you are using Evasion set as your zerg set.
+    if (gcdisplay.IdleSet == 'Evasion') then
+        gFunc.EquipSet(sets.Evasion)
     end
 
     gcmelee.DoDefaultOverride()
