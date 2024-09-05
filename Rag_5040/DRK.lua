@@ -162,12 +162,13 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.SoulEater)
     end
 
+    gcmelee.DoDefaultOverride()
+
     -- Assumes you are using Evasion set as your zerg set.
     if (gcdisplay.IdleSet == 'Evasion') then
         gFunc.EquipSet(sets.Evasion)
     end
 
-    gcmelee.DoDefaultOverride()
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
