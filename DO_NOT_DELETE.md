@@ -184,3 +184,4 @@
 - BLM - Remove elemental resist sets equipping opuntia ring
 - DRG - Use DT set when below Healing Breath HP threshold when /mage and fix pdt/mdt/resist set priority
 - DRK - Fix 2H Zerg set logic
+- MNK - Fix default gear priority logic
