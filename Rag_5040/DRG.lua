@@ -7,6 +7,9 @@ local ethereal_earring_slot = 'Ear2'
 
 local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
 
+local heal_hp_threshold_whm = 859
+local heal_hp_threshold_rdm = 869
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -139,17 +142,30 @@ end
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
+
+    local player = gData.GetPlayer()
+    local isWHM = player.SubJob == 'WHM'
+    local isRDM = player.SubJob == 'RDM'
+    local isMage = isWHM or isRDM
+    local weakened = gData.GetBuffCount('Weakness')
+
+    if (isWHM and player.HP <= heal_hp_threshold_whm and not weakened) then
+        gFunc.EquipSet(sets.DT)
+    end
+    if (isRDM and player.HP <= heal_hp_threshold_rdm and not weakened) then
+        gFunc.EquipSet(sets.DT)
+    end
+
+    if (ethereal_earring == true and isMage) then
+        gFunc.Equip(ethereal_earring_slot, 'Ethereal Earring')
+    end
+
     gcmelee.DoDefaultOverride()
 
     local petAction = gData.GetPetAction()
     if (petAction ~= nil) then
         gFunc.EquipSet(sets.BreathBonus)
         return
-    end
-
-    local player = gData.GetPlayer()
-    if (ethereal_earring == true and (player.SubJob == 'WHM' or player.SubJob == 'RDM')) then
-        gFunc.Equip(ethereal_earring_slot, 'Ethereal Earring')
     end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
