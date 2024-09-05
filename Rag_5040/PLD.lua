@@ -261,7 +261,7 @@ local sets = {
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Legs = 'Homam Cosciales',
     },
-    SIRD = { -- 102% to Cap
+    SIRD = {
         Main = 'Durandal',
         -- Sub = 'Master Shield',
         Sub = 'Palmerin\'s Shield',

@@ -37,7 +37,7 @@ local sets = {
     Evasion = {}, -- Use this set for your zerg set. See README.md
 
     Precast = {},
-    SIRD = { -- 102% to Cap
+    SIRD = {
     },
     Haste = { -- Used for Utsusemi and Stun cooldown
     },

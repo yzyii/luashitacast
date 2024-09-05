@@ -131,7 +131,7 @@ local sets = {
         Ring1 = 'Merman\'s Ring', -- 4
         Ring2 = 'Sattva Ring', -- 5
         Back = 'Hexerei Cape', -- 3
-        Waist = 'Warwolf Belt',
+        Waist = 'Penitent\'s Rope',
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
     },
@@ -262,7 +262,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
-    SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
         Main = 'Hermit\'s Wand', -- 25
         Sub = 'Hermit\'s Wand', -- 25
         Ammo = 'Hedgehog Bomb',
@@ -295,7 +295,7 @@ local sets = {
 
     Hate = { -- Switches to this set when casting Sleep, Blind, Dispel and Bind if /hate is toggled on
         Ammo = 'Phtm. Tathlum',
-        Head = 'Baron\'s Chapeau', -- 2
+        Head = 'Rival Ribbon', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
         Ear1 = 'Eris\' Earring', -- 2
         Ear2 = 'Hades Earring +1', -- 2
@@ -444,7 +444,7 @@ local sets = {
         Hands = 'Mahatma Cuffs',
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
-        Feet = 'Wise Pigaches',
+        Feet = 'Wise Pigaches +1',
     },
     EnfeeblingACC = {
         Neck = 'Enfeebling Torque',

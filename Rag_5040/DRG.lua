@@ -26,7 +26,7 @@ local sets = {
     Evasion = {},
 
     Precast = {},
-    SIRD = { -- 102% to Cap
+    SIRD = {
     },
     Haste = { -- Used for Utsusemi cooldown
     },

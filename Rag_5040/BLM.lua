@@ -198,7 +198,7 @@ local sets = {
         Waist = 'Druid\'s Rope', -- 10
         Feet = 'Wizard\'s Sabots', -- 20
     },
-    SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
         Main = 'Hermit\'s Wand', -- 25
         Sub = 'Hermit\'s Wand', -- 25
         Head = 'Nashira Turban', -- 10
@@ -382,7 +382,7 @@ local sets = {
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
         Back = 'Prism Cape',
-        Waist = 'Sorcerer\'s Belt',
+        Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
         Feet = 'Src. Sabots +1',
     },

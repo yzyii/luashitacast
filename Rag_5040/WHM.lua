@@ -29,7 +29,7 @@ local sets = {
     Precast = {},
     Casting = { -- Default Casting Equipment when using Idle sets
     },
-    SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
     },
