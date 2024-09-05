@@ -772,26 +772,31 @@ function gcmage.EquipEnfeebling()
         gFunc.EquipSet('EnfeeblingINT')
     elseif (EnfeebINTACCSpells:contains(action.Name)) then
         gFunc.EquipSet('EnfeeblingINT')
-        gFunc.EquipSet('EnfeeblingACC')
-        if (conquest:GetOutsideControl()) and master_casters_bracelets then
-            gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
-        end
+        gcmage.EquipEnfeeblingACC(action)
     elseif (EnfeebMNDACCSpells:contains(action.Name)) then
         gFunc.EquipSet('EnfeeblingMND')
-        gFunc.EquipSet('EnfeeblingACC')
-        if (conquest:GetOutsideControl()) and master_casters_bracelets then
-            gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
-        end
+        gcmage.EquipEnfeeblingACC(action)
     end
     if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
-        gFunc.EquipSet('EnfeeblingACC')
-        if (conquest:GetOutsideControl()) and master_casters_bracelets then
-            gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
-        end
+        gcmage.EquipEnfeeblingACC(action)
     end
     if (gcdisplay.GetToggle('Hate') == true) then
         if (HateSpells:contains(action.Name)) then
             gFunc.EquipSet('Hate')
+        end
+    end
+end
+
+function gcmage.EquipEnfeeblingACC(action)
+    gFunc.EquipSet('EnfeeblingACC')
+    if (conquest:GetOutsideControl()) and master_casters_bracelets then
+        gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+    end
+    if (ObiCheck(action)) then
+        local obi = NukeObiTable[action.Element]
+        local obiOwned = NukeObiOwnedTable[action.Element]
+        if (obiOwned) then
+            gFunc.Equip('Waist', obi)
         end
     end
 end
@@ -827,9 +832,12 @@ function gcmage.EquipDark(maxMP)
     if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_diabolos_earrings) then
         gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
     end
-    if (action.Element == environment.WeatherElement) or (action.Element == environment.DayElement) then
-        if (action.Element == 'Dark') and anrin_obi then
-            gFunc.Equip('Waist', 'Anrin Obi')
+
+    if (ObiCheck(action)) then
+        local obi = NukeObiTable[action.Element]
+        local obiOwned = NukeObiOwnedTable[action.Element]
+        if (obiOwned) then
+            gFunc.Equip('Waist', obi)
         end
     end
 end

@@ -238,29 +238,13 @@ profile.HandleMidcast = function()
     if (action.Skill == 'Ninjutsu') then
         if (NinDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.NinDebuff)
-
-            local staff = ElementalStaffTable[action.Element]
-            if staff ~= '' then
-                gFunc.Equip('Main', staff)
-            end
+            EquipStaffAndObi(action)
         elseif (NinElemental:contains(action.Name)) then
             gFunc.EquipSet(sets.NinElemental)
             if (action.MppAftercast < 51) and uggalepih_pendant then
                 gFunc.Equip('Neck', 'Uggalepih Pendant')
             end
-            local staff = ElementalStaffTable[action.Element]
-            if staff ~= '' then
-                gFunc.Equip('Main', staff)
-            end
-
-            if (ObiCheck(action)) then
-                local obi = NukeObiTable[action.Element]
-                local obiOwned = NukeObiOwnedTable[action.Element]
-                if (obiOwned) then
-                    gFunc.Equip('Waist', obi)
-                end
-            end
-
+            EquipStaffAndObi(action)
         end
     elseif (action.Skill == 'Enfeebling Magic') then
         if (DrkDebuffs:contains(action.Name)) then
@@ -274,19 +258,21 @@ profile.HandleMidcast = function()
         if (DrkDarkMagic:contains(action.Name)) then
             gFunc.EquipSet(sets.DrkDarkMagic)
         end
-        local staff = ElementalStaffTable[action.Element]
-        if staff ~= '' then
-            gFunc.Equip('Main', staff)
-        end
+        EquipStaffAndObi(action)
+    end
+end
 
-        if (action.Element == 'Dark') then
-			if (ObiCheck(action)) then
-				local obi = NukeObiTable[action.Element]
-				local obiOwned = NukeObiOwnedTable[action.Element]
-				if (obiOwned) then
-					gFunc.Equip('Waist', obi)
-				end
-			end
+function EquipStaffAndObi(action)
+    local staff = ElementalStaffTable[action.Element]
+    if staff ~= '' then
+        gFunc.Equip('Main', staff)
+    end
+
+    if (ObiCheck(action)) then
+        local obi = NukeObiTable[action.Element]
+        local obiOwned = NukeObiOwnedTable[action.Element]
+        if (obiOwned) then
+            gFunc.Equip('Waist', obi)
         end
     end
 end

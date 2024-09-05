@@ -172,8 +172,10 @@
 ### v1.3.15
 - PLD - Add warlock cape handling if /rdm
 - NIN - Add elemental obis, basic ranged set, some additional night time evasion item handling
-- NIN - Added Dark Magic for NIN. Changes NIN to always swap to staves if possible.
+- NIN - Added Dark Magic for NIN. Changes NIN to always swap to staves if possible
 - BLM - Added YellowHNM set for BLM
 
 ### v1.3.16
 - BRD - Fix fight disabling Range slot
+- Mages - Use obis when in accuracy mode when appropriate
+- NIN - Use obis for spells
