@@ -577,14 +577,6 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
 
     local player = gData.GetPlayer()
-    if (parade_gorget and player.HPP >= 85) then
-        gFunc.Equip('Neck', 'Parade Gorget')
-    end
-
-    if (hercules_ring and player.HPP <= 50) then
-        gFunc.Equip(hercules_ring_slot, 'Hercules\' Ring')
-    end
-
     if (player.SubJob == 'NIN') then
         local function GetShadowCount()
             for buffId, shadowCount in pairs(utsuBuffs) do
@@ -611,6 +603,14 @@ profile.HandleDefault = function()
         if (environment.Time >= 6 and environment.Time < 18 and player.HPP < 100) then
             gFunc.Equip('Range', 'Arco de Velocidad')
         end
+    end
+
+    if (parade_gorget and player.HPP >= 85) then
+        gFunc.Equip('Neck', 'Parade Gorget')
+    end
+
+    if (hercules_ring and player.HPP <= 50) then
+        gFunc.Equip(hercules_ring_slot, 'Hercules\' Ring')
     end
 
     gcmelee.DoDefaultOverride()
