@@ -491,7 +491,8 @@ profile.HandleDefault = function()
     gcmage.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, nil, rdmSJNukeMaxMP)
 
     local spikes = gData.GetBuffCount('Blaze Spikes') + gData.GetBuffCount('Shock Spikes') + gData.GetBuffCount('Ice Spikes')
-    if (opuntia_hoop and spikes > 0) then
+    local isPhysical = gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT'
+    if (opuntia_hoop and spikes > 0 and isPhysical) then
         gFunc.Equip(opuntia_hoop_slot, 'Opuntia Hoop')
     end
 
