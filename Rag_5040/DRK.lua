@@ -4,7 +4,7 @@ local use_chaos_burgeonet_for_tp_during_souleater = true
 
 local profile = {}
 
-local fastCastValue = 0.02 -- 2% from gear
+local fastCastValue = 0.07 -- 7% from gear
 
 local sets = {
     Idle = {
@@ -90,6 +90,7 @@ local sets = {
 
     Precast = {
         Ear1 = 'Loquac. Earring',
+        Legs = 'Homam Cosciales',
     },
     SIRD = {
         Neck = 'Willpower Torque', -- 5
