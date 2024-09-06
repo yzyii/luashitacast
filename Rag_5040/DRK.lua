@@ -8,8 +8,6 @@ local fastCastValue = 0.07 -- 7% from gear
 
 local sets = {
     Idle = {
-        Main = 'Tredecim Scythe',
-        Ammo = 'Bomb Core',
         Neck = 'Parade Gorget',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -49,22 +47,32 @@ local sets = {
     },
 
     DT = {
-        Main = 'Tredecim Scythe',
-        Ammo = 'Bomb Core',
-        Head = 'Darksteel Cap +1',
+        Head = 'Darksteel Cap +1', -- 2
         Neck = 'Evasion Torque',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Dst. Harness +1',
-        Hands = 'Dst. Mittens +1',
-        Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
+        Body = 'Dst. Harness +1', -- 4
+        Hands = 'Dst. Mittens +1', -- 2
+        Ring1 = 'Jelly Ring', -- 5
+        Ring2 = 'Sattva Ring', -- 5
         Back = 'Boxer\'s Mantle',
         Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1',
-        Feet = 'Dst. Leggings +1',
+        Legs = 'Dst. Subligar +1', -- 3
+        Feet = 'Dst. Leggings +1', -- 2
     },
     MDT = { -- Shell IV provides 23% MDT
+        Head = 'Darksteel Cap +1',
+        Neck = 'Jeweled Collar',
+        Ear1 = 'Merman\'s Earring', -- 2
+        Ear2 = 'Merman\'s Earring', -- 2
+        Body = 'Cor. Scale Mail +1', -- 4
+        Hands = 'Coral Fng. Gnt. +1', -- 2
+        Ring1 = 'Merman\'s Ring', -- 4
+        Ring2 = 'Sattva Ring', -- 5
+        Back = 'Boxer\'s Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Coral Cuisses +1', -- 3
+        Feet = 'Coral Greaves +1', -- 2
     },
     FireRes = {},
     IceRes = {},
@@ -128,7 +136,23 @@ local sets = {
         Legs = 'Homam Cosciales',
         Feet = 'Homam Gambieras',
     },
-    TP_HighAcc = {},
+    TP_HighAcc = {
+        Main = 'Tredecim Scythe',
+        Ammo = 'Bomb Core',
+        Head = 'Homam Zucchetto',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Abyssal Earring',
+        Body = 'Haubergeon',
+        Hands = 'Dusk Gloves +1',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        -- Back = 'Abyss Cape',
+        Waist = 'Sonic Belt',
+        Legs = 'Homam Cosciales',
+        Feet = 'Homam Gambieras',
+    },
 
     WS = {
         Main = 'Tredecim Scythe',
