@@ -160,8 +160,24 @@ local sets = {
     },
     Nuke = {},
     Enfeebling = {},
-    Drain = {},
-    Absorb = {},
+    Drain = {
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Chaos Burgeonet',
+        Neck = 'Dark Torque',
+        Ear1 = 'Dark Earring',
+        Ear2 = 'Abyssal Earring',
+        Body = 'Black Cotehardie',
+        Hands = 'Blood Fng. Gnt.',
+        Ring1 = 'Omniscient Ring',
+        Ring2 = 'Overlord\'s Ring',
+        Back = 'Merciful Cape',
+        Waist = 'Sonic Belt',
+        -- Legs = 'Abyss Flanchard +1',
+        Feet = 'Mountain Gaiters',
+    },
+    Absorb = {
+        Ring2 = 'Snow Ring',
+    },
 }
 profile.Sets = sets
 
@@ -177,6 +193,26 @@ Everything below can be ignored.
 ]]
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
+local NukeObiTable = {
+    ['Fire'] = 'Karin Obi',
+    ['Earth'] = 'Dorin Obi',
+    ['Water'] = 'Suirin Obi',
+    ['Wind'] = 'Furin Obi',
+    ['Ice'] = 'Hyorin Obi',
+    ['Thunder'] = 'Rairin Obi',
+    ['Dark'] = 'Anrin Obi'
+}
+
+local NukeObiOwnedTable = {
+    ['Fire'] = karin_obi,
+    ['Earth'] = dorin_obi,
+    ['Water'] = suirin_obi,
+    ['Wind'] = furin_obi,
+    ['Ice'] = hyorin_obi,
+    ['Thunder'] = rairin_obi,
+    ['Dark'] = anrin_obi
+}
 
 profile.HandleAbility = function()
     local action = gData.GetAction()
@@ -276,10 +312,32 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Drain)
         if (string.contains(action.Name, 'Absorb')) then
             gFunc.EquipSet(sets.Absorb)
-        elseif (string.contains(action.Name, 'Stun')) then
+        end
+
+        if (ObiCheck(action)) then
+            local obi = NukeObiTable[action.Element]
+            local obiOwned = NukeObiOwnedTable[action.Element]
+            if (obiOwned) then
+                gFunc.Equip('Waist', obi)
+            end
+        end
+
+        if (string.contains(action.Name, 'Stun')) then
             gFunc.EquipSet(sets.Haste)
         end
     end
+end
+
+function ObiCheck(action)
+    local element = action.Element
+    local environment = gData.GetEnvironment()
+    local weakElement = WeakElementTable[element]
+
+    if environment.WeatherElement == element then
+        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
+    end
+
+    return environment.DayElement == element and environment.WeatherElement ~= weakElement
 end
 
 return profile
