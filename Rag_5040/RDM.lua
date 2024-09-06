@@ -681,6 +681,7 @@ profile.HandleWeaponskill = function()
     local action = gData.GetAction()
 
     gFunc.EquipSet(sets.WS)
+    gcmage.DoFenrirsEarring()
 
     if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') or (action.Name == 'Evisceration') then
         gFunc.EquipSet(sets.WS_Soil)

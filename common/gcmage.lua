@@ -1,5 +1,5 @@
--- Defines Staves to equip. Will automatically equip the correct staff for a spell. Will work even if you don't have the staff.
--- Leave as '' if you do not have them.
+-- Defines Staves to equip
+-- Set as '' if you do not have them
 local fire_staff = 'Vulcan\'s Staff'
 local earth_staff = 'Terra\'s Staff'
 local water_staff = 'Neptune\'s Staff'
@@ -45,8 +45,6 @@ local healers_earring = false
 local healers_earring_slot = 'Ear2'
 
 -- RDM Specific
-local tp_diabolos_earring = false
-local tp_diabolos_earring_slot = 'Ear2'
 local tp_fencers_ring = false
 local tp_fencers_ring_slot = 'Ring1'
 
@@ -74,6 +72,12 @@ local medicine_ring_slot = 'Ring1'
 
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_diabolos_earrings = true
+
+-- For Meleeing on WHM, BRD or RDM. Fenrir's Earring will be prioritised over Diabolos's Earring if using the same slot
+local fenrirs_earring = true
+local fenrirs_earring_slot = 'Ear2'
+local tp_diabolos_earring = false
+local tp_diabolos_earring_slot = 'Ear2'
 
 -- Set to true if you want messages every time Mst.Cst. Bracelets are used.
 local log_conquest = false
@@ -283,6 +287,14 @@ function gcmage.DoCommands(args)
     end
 end
 
+function gcmage.DoFenrirsEarring()
+    local environment = gData.GetEnvironment()
+
+    if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
+        gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+    end
+end
+
 function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
@@ -330,11 +342,14 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         end
         if (gcdisplay.IdleSet == 'Fight') then
             gFunc.EquipSet('TP')
-            if (player.SubJob == 'NIN') then
-                gFunc.EquipSet('TP_NIN')
-            end
             if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
                 gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
+            end
+            if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
+                gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+            end
+            if (player.SubJob == 'NIN') then
+                gFunc.EquipSet('TP_NIN')
             end
             if (player.MainJob == 'RDM' and tp_fencers_ring and player.HPP <= 75 and player.TP <= 1000) then
                 gFunc.Equip(tp_fencers_ring_slot, 'Fencer\'s Ring')

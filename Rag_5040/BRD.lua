@@ -310,6 +310,7 @@ end
 
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
+    gcmage.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()

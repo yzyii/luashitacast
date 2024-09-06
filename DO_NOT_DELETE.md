@@ -186,3 +186,6 @@
 - DRK - Fix 2H Zerg set logic
 - MNK - Fix default gear priority logic
 - PLD - Fix Parade and Hercules Ring logic
+
+### v1.3.18
+- Mages - Add Fenrir's Earring to WHM, BRD and RDM
