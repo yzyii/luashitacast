@@ -1,31 +1,70 @@
-local use_chaos_burgeonet_for_tp_during_souleater = false
+-- TODO probably upon request, DRK tanking. Feel free to DM me.
+
+local use_chaos_burgeonet_for_tp_during_souleater = true
 
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear
+local fastCastValue = 0.02 -- 2% from gear
 
 local sets = {
     Idle = {
-        Ammo = 'Happy Egg',
+        Main = 'Tredecim Scythe',
+        Ammo = 'Bomb Core',
+        Neck = 'Parade Gorget',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Vampire Cloak',
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Merman\'s Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Boxer\'s Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Blood Cuisses',
+        Feet = 'Blood Greaves',
+    },
+    IdleALT = {},
+    Resting = {
+        Head = 'President. Hairpin',
+        Neck = 'Paisley Scarf',
+        Ear2 = 'Sanative Earring',
+    },
+    Town = {
+        Main = 'Tredecim Scythe',
+        Ammo = 'Bomb Core',
         Head = 'Homam Zucchetto',
-        Neck = 'Shield Pendant',
-        Ear1 = 'Wyvern Earring',
-        Ear2 = 'Bloodbead Earring',
-        Body = 'Gloom Breastplate',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Abyssal Earring',
+        Body = 'Haubergeon',
         Hands = 'Homam Manopolas',
         Ring1 = 'Blitz Ring',
-        Ring2 = 'Bomb Queen Ring',
-        Back = 'Gigant Mantle',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
         Waist = 'Sonic Belt',
         Legs = 'Blood Cuisses',
         Feet = 'Homam Gambieras',
     },
-    IdleALT = {},
-    Resting = {},
-    Town = {},
-    Movement = {},
+    Movement = {
+        Hands = 'Homam Manopolas',
+        Legs = 'Blood Cuisses',
+    },
 
-    DT = {},
+    DT = {
+        Main = 'Tredecim Scythe',
+        Ammo = 'Bomb Core',
+        Head = 'Darksteel Cap +1',
+        Neck = 'Evasion Torque',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Dst. Harness +1',
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Merman\'s Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Boxer\'s Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Dst. Leggings +1',
+    },
     MDT = { -- Shell IV provides 23% MDT
     },
     FireRes = {},
@@ -34,19 +73,7 @@ local sets = {
     EarthRes = {},
     WindRes = {},
     WaterRes = {},
-    Evasion = {}, -- Use this set for your zerg set. See README.md
-
-    Precast = {},
-    SIRD = {
-    },
-    Haste = { -- Used for Utsusemi and Stun cooldown
-    },
-
-    LockSet1 = {},
-    LockSet2 = {},
-    LockSet3 = {},
-
-    TP_LowAcc = {
+    Evasion = { -- Use this set for your zerg set. See README.md
         Ammo = 'Happy Egg',
         Head = 'Homam Zucchetto',
         Neck = 'Shield Pendant',
@@ -61,16 +88,77 @@ local sets = {
         Legs = 'Homam Cosciales',
         Feet = 'Homam Gambieras',
     },
+
+    Precast = {
+        Ear1 = 'Loquac. Earring',
+    },
+    SIRD = {
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Magnetic Earring', -- 8
+        Ear2 = 'Knightly Earring', -- 9
+        Waist = 'Silver Obi +1', -- 8
+        Feet = 'Mountain Gaiters', -- 5
+    },
+    Haste = { -- Used for Utsusemi and Stun cooldown
+        Head = 'Homam Zucchetto',
+        Hands = 'Dusk Gloves +1',
+        Ring1 = 'Blitz Ring',
+        Waist = 'Sonic Belt',
+        Legs = 'Homam Cosciales',
+        Feet = 'Homam Gambieras',
+    },
+
+    LockSet1 = {},
+    LockSet2 = {},
+    LockSet3 = {},
+
+    TP_LowAcc = {
+        Main = 'Tredecim Scythe',
+        Ammo = 'Bomb Core',
+        Head = 'Homam Zucchetto',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Abyssal Earring',
+        Body = 'Haubergeon',
+        Hands = 'Dusk Gloves +1',
+        Ring1 = 'Blitz Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Sonic Belt',
+        Legs = 'Homam Cosciales',
+        Feet = 'Homam Gambieras',
+    },
     TP_HighAcc = {},
 
-    WS = {},
+    WS = {
+        Main = 'Tredecim Scythe',
+        Ammo = 'Bomb Core',
+        Head = 'Chaos Burgeonet',
+        Neck = 'Snow Gorget',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Abyssal Earring',
+        Body = 'Haubergeon',
+        Hands = 'Chaos Gauntlets',
+        Ring1 = 'Triumph Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Black Cuisses',
+        Feet = 'Chaos Sollerets',
+    },
     WS_Guillotine = {},
     WS_SpinningSlash = {},
     WS_CrossReaper = {},
 
-    WeaponBash = {},
-    ArcaneCircle = {},
-    SoulEater = {},
+    WeaponBash = {
+        Hands = 'Chaos Gauntlets',
+    },
+    ArcaneCircle = {
+        Feet = 'Chaos Sollerets',
+    },
+    SoulEater = {
+        Head = 'Chaos Burgeonet',
+    },
     Nuke = {},
     Enfeebling = {},
     Drain = {},
