@@ -24,7 +24,6 @@ local sets = {
     },
     IdleALT = {},
     Resting = {
-        Head = 'President. Hairpin',
         Neck = 'Paisley Scarf',
         Ear2 = 'Sanative Earring',
     },
