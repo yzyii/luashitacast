@@ -172,7 +172,7 @@ local sets = {
         Ring2 = 'Overlord\'s Ring',
         Back = 'Merciful Cape',
         Waist = 'Sonic Belt',
-        -- Legs = 'Abyss Flanchard +1',
+        Legs = 'Abyss Flanchard',
         Feet = 'Mountain Gaiters',
     },
     Absorb = {
