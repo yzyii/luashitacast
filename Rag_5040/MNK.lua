@@ -52,18 +52,20 @@ local sets = {
     },
 
     DT = {
-        -- Main = 'Cross-Counters',
+        -- Main = 'Cross-Counters', -- 5
         -- Head = 'Arh. Jinpachi +1',
         Neck = 'Evasion Torque',
-        -- Ear1 = 'Avenger\'s Earring',
-        -- Ear2 = 'Avenger\'s Earring',
+        -- Neck = 'Peacock Amulet',
+        -- Ear1 = 'Avenger\'s Earring', -- 1
+        -- Ear2 = 'Avenger\'s Earring', -- 1
         -- Body = 'Arhat\'s Gi +1',
-        -- Hands = 'Rasetsu Tekko +1',
+        -- Hands = 'Rasetsu Tekko +1', -- 1
+        -- Hands = 'Noritsune Kote',
         Ring2 = 'Sattva Ring',
         Back = 'Boxer\'s Mantle',
-        Legs = 'Tpl. Hose +1',
+        Legs = 'Tpl. Hose +1', -- 3
         Feet = 'Melee Gaiters',
-        -- Feet = 'Rasetsu Sune-Ate +1',
+        -- Feet = 'Rasetsu Sune-Ate +1', -- 1
     },
     MDT = { -- Shell IV provides 23% MDT
     },

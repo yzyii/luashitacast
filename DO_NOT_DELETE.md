@@ -189,3 +189,6 @@
 
 ### v1.3.18
 - Mages - Add Fenrir's Earring to WHM, BRD and RDM
+
+### v1.3.19
+- BRD - Fix broken file that was broken in 1.3.18 due to merge
