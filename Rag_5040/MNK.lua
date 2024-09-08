@@ -47,7 +47,13 @@ local sets = {
         Back = 'Melee Cape',
         Feet = 'Dst. Leggings +1',
     },
-    Town = {},
+    Town = {
+        Head = 'Tpl. Crown +1',
+        Body = 'Kirin\'s Osode',
+        Hands = 'Mel. Gloves +1',
+        Legs = 'Byakko\'s Haidate',
+        Feet = 'Melee Gaiters',
+    },
     Movement = {
         Feet = 'Herald\'s Gaiters',
     },
