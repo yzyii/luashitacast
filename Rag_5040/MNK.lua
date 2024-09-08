@@ -1,5 +1,6 @@
 local profile = {}
 
+local max_hp_in_idle_with_regen_gear_equipped = 1632
 local fastCastValue = 0.02 -- 2% from gear
 
 -- Replace these with '' if you do not have them
@@ -24,7 +25,7 @@ local kampfer_earring_slot = 'Ear2'
 local sets = {
     Idle = {
         Ammo = 'Tiphia Sting',
-        Head = 'President. Hairpin',
+        Head = 'Genbu\'s Kabuto',
         Neck = 'Evasion Torque',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -356,10 +357,12 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.TP_Focus)
     end
 
-    if (player.SubJob == 'DRG') then
-        gFunc.EquipSet(sets.SJ_DRG)
-    elseif (player.SubJob == 'THF') then
-        gFunc.EquipSet(sets.SJ_THF)
+    if (player.Status == 'Engaged') then
+        if (player.SubJob == 'DRG') then
+            gFunc.EquipSet(sets.SJ_DRG)
+        elseif (player.SubJob == 'THF') then
+            gFunc.EquipSet(sets.SJ_THF)
+        end
     end
 
     if (gcdisplay.IdleSet == 'DT') then
@@ -384,7 +387,7 @@ profile.HandleDefault = function()
         if (player.HPP < 50 and muscle_belt ~= '') then
             gFunc.Equip('Waist', muscle_belt)
         end
-        if (player.HPP < 97) then
+        if (player.HP < max_hp_in_idle_with_regen_gear_equipped) then
             local environment = gData.GetEnvironment()
 
             if (muscle_belt ~= '') then
