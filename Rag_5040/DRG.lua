@@ -149,10 +149,10 @@ profile.HandleDefault = function()
     local isMage = isWHM or isRDM
     local weakened = gData.GetBuffCount('Weakness')
 
-    if (isWHM and player.HP <= heal_hp_threshold_whm and not weakened) then
+    if (isWHM and player.HP <= heal_hp_threshold_whm and weakened < 1) then
         gFunc.EquipSet(sets.DT)
     end
-    if (isRDM and player.HP <= heal_hp_threshold_rdm and not weakened) then
+    if (isRDM and player.HP <= heal_hp_threshold_rdm and weakened < 1) then
         gFunc.EquipSet(sets.DT)
     end
 
