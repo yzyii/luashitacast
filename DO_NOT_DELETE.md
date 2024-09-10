@@ -191,3 +191,6 @@
 - Mages - Add Fenrir's Earring to WHM, BRD and RDM
 - BRD - Fix broken file that was broken in 1.3.17 due to merge
 - MNK - Fix spam flickering between equips when using regen gear with +hp idle gear
+
+### v1.3.18
+- DRG - Fix weakened check on DRG DT
