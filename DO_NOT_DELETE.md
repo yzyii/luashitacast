@@ -194,3 +194,7 @@
 
 ### v1.3.19
 - DRG - Fix weakened check on DRG DT
+
+### v1.3.20
+- RDM - Add Evisceration WS set
+- Mages - Allow max mp sets to be used when in /fight mode if not engaged

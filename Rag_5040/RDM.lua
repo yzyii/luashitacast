@@ -628,6 +628,10 @@ local sets = {
     WS_Soil = {
         Neck = 'Soil Gorget',
     },
+    WS_Evisceration = {
+        Hands = 'Dusk Gloves +1',
+        -- Hands = 'Custom M Gloves',
+    },
     WS_Spirits = {},
     WS_Energy = {
         Head = 'Zenith Crown',
@@ -688,8 +692,13 @@ profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
     gcmage.DoFenrirsEarring()
 
-    if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') or (action.Name == 'Evisceration') then
+    if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') then
         gFunc.EquipSet(sets.WS_Soil)
+    end
+
+    if (action.Name == 'Evisceration') then
+        gFunc.EquipSet(sets.WS_Soil)
+        gFunc.EquipSet(sets.Evisceration)
     end
 
     if (action.Name == 'Energy Drain') or (action.Name == 'Energy Steal') then

@@ -328,31 +328,32 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
     end
 
     if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD') then
-        if (player.Status == 'Engaged' and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate')) then
-            lastIdleSetBeforeEngaged = gcdisplay.IdleSet
-            gcinclude.ToggleIdleSet('Fight')
-            gcinclude.LockWeapon:once(1)
+        if (player.Status == 'Engaged') then
+            if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
+                lastIdleSetBeforeEngaged = gcdisplay.IdleSet
+                gcinclude.ToggleIdleSet('Fight')
+                gcinclude.LockWeapon:once(1)
+            elseif (gcdisplay.IdleSet == 'Fight') then
+                gFunc.EquipSet('TP')
+                if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
+                    gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
+                end
+                if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
+                    gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+                end
+                if (player.SubJob == 'NIN') then
+                    gFunc.EquipSet('TP_NIN')
+                end
+                if (player.MainJob == 'RDM' and tp_fencers_ring and player.HPP <= 75 and player.TP <= 1000) then
+                    gFunc.Equip(tp_fencers_ring_slot, 'Fencer\'s Ring')
+                end
+            end
         end
         if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
             if (player.TP == 0) then
                 gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
                 lastIdleSetBeforeEngaged = ''
                 gcinclude.UnlockWeapon:once(1)
-            end
-        end
-        if (gcdisplay.IdleSet == 'Fight') then
-            gFunc.EquipSet('TP')
-            if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
-                gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
-            end
-            if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
-                gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
-            end
-            if (player.SubJob == 'NIN') then
-                gFunc.EquipSet('TP_NIN')
-            end
-            if (player.MainJob == 'RDM' and tp_fencers_ring and player.HPP <= 75 and player.TP <= 1000) then
-                gFunc.Equip(tp_fencers_ring_slot, 'Fencer\'s Ring')
             end
         end
     end
