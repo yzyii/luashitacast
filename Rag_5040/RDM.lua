@@ -344,7 +344,7 @@ local sets = {
     },
     Cheat_HPUp = {
         Ammo = 'Happy Egg',
-        Head = 'Baron\'s Chapeau', -- 2
+        Head = 'Rival Ribbon', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
         Ear1 = 'Eris\' Earring', -- 2
         Ear2 = 'Hades Earring +1', -- 2
@@ -456,7 +456,7 @@ local sets = {
 
     Divine = { -- Just using my Hate set here for Flash
         Ammo = 'Phtm. Tathlum',
-        Head = 'Baron\'s Chapeau', -- 2
+        Head = 'Rival Ribbon', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
         Ear1 = 'Eris\' Earring', -- 2
         Ear2 = 'Hades Earring +1', -- 2
