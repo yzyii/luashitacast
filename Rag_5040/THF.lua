@@ -87,6 +87,10 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Trick Attack') then
         taOverride = os.clock() + 2
     end
+
+    if (gcdisplay.GetToggle('TH')) then
+        gFunc.EquipSet(sets.TH)
+    end
 end
 
 profile.HandleItem = function()
@@ -169,10 +173,6 @@ profile.HandleDefault = function()
 
     gcmelee.DoDefaultOverride()
 
-    if (gcdisplay.GetToggle('TH')) then
-        gFunc.EquipSet(sets.TH)
-    end
-
     local sa = gData.GetBuffCount('Sneak Attack')
     local ta = gData.GetBuffCount('Trick Attack')
 
@@ -185,6 +185,10 @@ profile.HandleDefault = function()
     end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
+
+    if (player.Status == 'Engaged' and gcdisplay.GetToggle('TH')) then
+        gFunc.EquipSet(sets.TH)
+    end
 end
 
 profile.HandlePrecast = function()

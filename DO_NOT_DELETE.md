@@ -198,3 +198,6 @@
 ### v1.3.20
 - RDM - Add Evisceration WS set
 - Mages - Allow max mp sets to be used when in /fight mode if not engaged
+- Mages - Remove max mp buffer values (better accuracy on swapping to max mp gear)
+- Mages - Add Rep.Gold Medal to resting max mp logic
+- THF - Make TH only override while engaged. Make TH equip on ability use

@@ -422,7 +422,6 @@ local sets = {
 
     Enfeebling = {
         Head = 'Dls. Chapeau +1',
-        Neck = 'Faith Torque',
         Body = 'Mahatma Hpl.',
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
@@ -430,6 +429,7 @@ local sets = {
     },
     EnfeeblingMND = {
         Ammo = 'Hedgehog Bomb',
+        Neck = 'Faith Torque',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
         Hands = 'Dvt. Mitts +1',
@@ -439,6 +439,7 @@ local sets = {
     },
     EnfeeblingINT = {
         Ammo = 'Phtm. Tathlum',
+        Neck = 'Prudence Torque',
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Omn. Earring',
         Hands = 'Mahatma Cuffs',

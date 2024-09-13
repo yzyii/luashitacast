@@ -27,7 +27,7 @@ local sets = {
         Back = 'Umbra Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Igqira Lappas',
-        Feet = 'Herald\'s Gaiters',
+        Feet = 'Rostrum Pumps',
     },
     IdleALT = {},
     IdleMaxMP = {
@@ -57,6 +57,7 @@ local sets = {
         Main = 'Terra\'s Staff',
         Head = 'Src. Petasos +1',
         Body = 'Sorcerer\'s Coat',
+        Hands = 'Zenith Mitts +1',
         Legs = 'Src. Tonban +1',
         Feet = 'Herald\'s Gaiters',
     },

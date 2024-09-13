@@ -172,7 +172,7 @@ All of the following toggles set what jug Call Beast will use.
 ## Additional Commands for THF:
 ```
 /th - Forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
-      Will also force you to equip TH gear when using a ranged attack.
+      Will also force you to equip TH gear when using a ranged attack and ability.
 ```
 
 ## Additional Commands for PLD:
