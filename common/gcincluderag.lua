@@ -310,7 +310,7 @@ function gcinclude.DoDefaultOverride(isMelee)
         restTimestampRecorded = false
     end
 
-    if (player.IsMoving == true) and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT' or gcdisplay.IdleSet == 'Fight') then
+    if (player.IsMoving == true) and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT' or gcdisplay.IdleSet == 'Fight' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
         gFunc.EquipSet('Movement')
     elseif (gcdisplay.IdleSet == 'Fight' and player.Status ~= 'Engaged') then
         gFunc.EquipSet('DT')

@@ -6,7 +6,8 @@ local ninSJMaxMP = 535 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 613 -- The Max MP you have when /whm in your idle set
 local blmSJMaxMP = 632 -- The Max MP you have when /blm in your idle set
 
-local blue_cotehardie = true
+local blue_cotehardie = false
+local blue_cotehardie_plus_one = true
 local dilation_ring = true
 local dilation_ring_slot = 'Ring2'
 
@@ -523,7 +524,7 @@ local sets = {
         Neck = 'Uggalepih Pendant',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
-        Body = 'Blue Cotehardie',
+        Body = 'Blue Cotehard. +1',
         Hands = 'Zenith Mitts +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
@@ -619,7 +620,7 @@ local sets = {
     WS = {
         Head = 'Optical Hat',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Hydra Doublet',
+        Body = 'Assault Jerkin',
         Hands = 'Tarasque Mitts +1',
         Waist = 'Warwolf Belt',
         Legs = 'Feral Trousers',
@@ -734,6 +735,9 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer()
     if (blue_cotehardie and player.MP <= 40) then
         gFunc.Equip('Body', 'Blue Cotehardie')
+    end
+    if (blue_cotehardie_plus_one and player.MP <= 50) then
+        gFunc.Equip('Body', 'Blue Cotehard. +1')
     end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))

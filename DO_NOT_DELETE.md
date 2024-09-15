@@ -201,3 +201,8 @@
 - Mages - Remove max mp buffer values (better accuracy on swapping to max mp gear)
 - Mages - Add Rep.Gold Medal to resting max mp logic
 - THF - Make TH only override while engaged. Make TH equip on ability use
+
+### v1.3.21
+- Melee - Allow switching to Kite set when moving and engaged
+- DRK - Fix missing obi tables for spellcasting
+- RDM - Add HQ Blue Cotehardie behaviour

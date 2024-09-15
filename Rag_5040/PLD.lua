@@ -27,7 +27,7 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
-        Hands = 'Dst. Mittens +1',
+        Hands = 'Heavy Gauntlets',
         Ring1 = 'Merman\'s Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Boxer\'s Mantle',
@@ -45,7 +45,7 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Hands = 'Dst. Mittens +1',
+        Hands = 'Heavy Gauntlets',
         Ring1 = 'Merman\'s Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
@@ -64,7 +64,7 @@ local sets = {
         Neck = { Name = 'Shield Torque', Priority = 100 },
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
-        Hands = 'Dst. Mittens +1', -- 2
+        Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = 'Boxer\'s Mantle',
@@ -82,7 +82,7 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Hands = 'Dst. Mittens +1', -- 2
+        Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = { Name = 'Valor Cape', Priority = 100 },
@@ -119,7 +119,7 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
-        Hands = 'Dst. Mittens +1', -- 2
+        Hands = 'Heavy Gauntlets', -- 2
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = { Name = 'Valor Cape', Priority = 100 },
@@ -192,7 +192,7 @@ local sets = {
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
         Body = 'Assault Brstplate', -- 15
-        Hands = 'Dst. Mittens +1',
+        Hands = 'Heavy Gauntlets',
         Ring1 = 'Spinel Ring', -- 9
         Ring2 = 'Malflash Ring', -- 10
         Back = 'Gaia Mantle +1', -- 12
@@ -270,7 +270,7 @@ local sets = {
         Ear1 = 'Magnetic Earring', -- 8
         Ear2 = 'Knightly Earring', -- 9
         Body = 'Dst. Harness +1',
-        Hands = 'Dst. Mittens +1',
+        Hands = 'Heavy Gauntlets',
         Ring1 = 'Merman\'s Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Boxer\'s Mantle',

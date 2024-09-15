@@ -352,6 +352,37 @@ profile.HandleMidcast = function()
     end
 end
 
+local NukeObiTable = {
+    ['Fire'] = 'Karin Obi',
+    ['Earth'] = 'Dorin Obi',
+    ['Water'] = 'Suirin Obi',
+    ['Wind'] = 'Furin Obi',
+    ['Ice'] = 'Hyorin Obi',
+    ['Thunder'] = 'Rairin Obi',
+    ['Dark'] = 'Anrin Obi'
+}
+
+local NukeObiOwnedTable = {
+    ['Fire'] = karin_obi,
+    ['Earth'] = dorin_obi,
+    ['Water'] = suirin_obi,
+    ['Wind'] = furin_obi,
+    ['Ice'] = hyorin_obi,
+    ['Thunder'] = rairin_obi,
+    ['Dark'] = anrin_obi
+}
+
+local WeakElementTable = {
+    ['Fire'] = 'Water',
+    ['Earth'] = 'Wind',
+    ['Water'] = 'Thunder',
+    ['Wind'] = 'Ice',
+    ['Ice'] = 'Fire',
+    ['Thunder'] = 'Earth',
+    ['Light'] = 'Dark',
+    ['Dark'] = 'Light'
+}
+
 function ObiCheck(action)
     local element = action.Element
     local environment = gData.GetEnvironment()
