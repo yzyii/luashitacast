@@ -485,7 +485,7 @@ local sets = {
         Ear2 = 'Knightly Earring',
         Hands = 'Vlr. Gauntlets +1',
     },
-	Enhancing = {},
+    Enhancing = {},
 }
 profile.Sets = sets
 

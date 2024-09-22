@@ -377,7 +377,7 @@ profile.HandleMidcast = function()
     local action = gData.GetAction()
     if (action.Type == 'Bard Song') then
         gFunc.EquipSet(sets.Sing_Default)
-        
+
         if string.match(action.Name, 'Threnody') then
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_Threnody)

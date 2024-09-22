@@ -204,5 +204,7 @@
 
 ### v1.3.21
 - Melee - Allow switching to Kite set when moving and engaged
+- All Jobs - Allow switching to Kite set when moving and engaged with Evasion set
 - DRK - Fix missing obi tables for spellcasting
 - RDM - Add HQ Blue Cotehardie behaviour
+- Removes background from UI Display, Switches Font and Colour to better match HXUI

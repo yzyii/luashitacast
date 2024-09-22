@@ -439,7 +439,7 @@ function gcmage.DoPrecast(fastCastValue)
     else
         gFunc.EquipSet('Precast')
 
-        local weakened = gData.GetBuffCount('Weakened');
+        local weakened = gData.GetBuffCount('Weakened')
         if (weakened >= 1) then
             do return end
         end
@@ -487,7 +487,7 @@ function gcmage.SetupMidcastDelay(fastCastValue)
         gFunc.SetMidDelay(castDelay)
     end
 
-    local weakened = gData.GetBuffCount('Weakened');
+    local weakened = gData.GetBuffCount('Weakened')
     if (weakened >= 1) then
         do return end
     end

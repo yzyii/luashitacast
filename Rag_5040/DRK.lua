@@ -311,11 +311,6 @@ profile.HandleDefault = function()
 
     gcmelee.DoDefaultOverride()
 
-    -- Assumes you are using Evasion set as your zerg set.
-    if (gcdisplay.IdleSet == 'Evasion') then
-        gFunc.EquipSet(sets.Evasion)
-    end
-
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 

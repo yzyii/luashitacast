@@ -136,7 +136,7 @@ end
 function gcinclude.LockWeapon()
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main')
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub')
-	local player = gData.GetPlayer()
+    local player = gData.GetPlayer()
     if (player.MainJob ~= 'BRD') then
         AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
     end
@@ -310,7 +310,17 @@ function gcinclude.DoDefaultOverride(isMelee)
         restTimestampRecorded = false
     end
 
-    if (player.IsMoving == true) and (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT' or gcdisplay.IdleSet == 'Fight' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
+    if ((player.IsMoving == true)
+        and (
+            gcdisplay.IdleSet == 'Normal'
+            or gcdisplay.IdleSet == 'Alternate'
+            or gcdisplay.IdleSet == 'DT'
+            or gcdisplay.IdleSet == 'Fight'
+            or gcdisplay.IdleSet == 'LowAcc'
+            or gcdisplay.IdleSet == 'HighAcc'
+            or gcdisplay.IdleSet == 'Evasion'
+        )
+    ) then
         gFunc.EquipSet('Movement')
     elseif (gcdisplay.IdleSet == 'Fight' and player.Status ~= 'Engaged') then
         gFunc.EquipSet('DT')
@@ -344,7 +354,16 @@ function gcinclude.BuildLockableSet(equipment)
     for slot, item in pairs(equipment) do
         if (LockableEquipment[slot]:contains(item.Name)) then
             lockableSet[slot] = item
-            if (item.Name == 'Custom Gilet +1' or item.Name == 'Custom Top +1' or item.Name == 'Magna Gilet +1' or item.Name == 'Magna Top +1' or item.Name == 'Savage Top +1' or item.Name == 'Elder Gilet +1' or item.Name == 'Wonder Maillot +1' or item.Name == 'Wonder Top +1') then
+            if (
+                item.Name == 'Custom Gilet +1'
+                or item.Name == 'Custom Top +1'
+                or item.Name == 'Magna Gilet +1'
+                or item.Name == 'Magna Top +1'
+                or item.Name == 'Savage Top +1'
+                or item.Name == 'Elder Gilet +1'
+                or item.Name == 'Wonder Maillot +1'
+                or item.Name == 'Wonder Top +1'
+            ) then
                 lockableSet['Hands'] = 'Displaced'
             elseif (item.Name == 'Mandra. Suit') then
                 lockableSet['Legs'] = 'Displaced'

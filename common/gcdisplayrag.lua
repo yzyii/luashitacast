@@ -16,15 +16,17 @@ local gcdisplay = {
 
 local fontSettings = {
     visible = true,
-    font_family = 'Segoe UI',
+    font_family = 'Consolas',
     font_height = 12,
     color = 0xFFFFFFFF,
+    color_outline = 0xFF000000,
     position_x = 300,
     position_y = 0,
-    background = {
-        visible = true,
-        color = 0x66000000,
-    }
+    draw_flags = 0x10,
+    background =
+    T{
+        visible = false,
+    },
 }
 
 function gcdisplay.AdvanceCycle(name)
@@ -109,17 +111,17 @@ function gcdisplay.Load()
     ashita.events.register('d3d_present', 'gcdisplay_present_cb', function ()
         local display = '  ' .. Main
         for k, v in pairs(Toggles) do
-            display = display .. '   '
+            display = display .. ' '
             if (v == true) then
-                display = display .. '|cFF00EE00|' .. k .. '|r'
+                display = display .. '|cFF5FFF5F|' .. k .. '|r'
             else
                 display = display .. '|cFF989898|' .. k .. '|r'
             end
         end
         for key, value in pairs(Cycles) do
-            display = display .. '   ' .. key .. ': ' .. '|cFF00EE00|' .. value.Array[value.Index] .. '|r'
+            display = display .. '   ' .. key .. ': ' .. '|cFF5FFF5F|' .. value.Array[value.Index] .. '|r'
         end
-        display = display .. '   ' .. 'IdleSet' .. ': ' .. '|cFF00EE00|' .. gcdisplay.IdleSet .. '|r' .. '  '
+        display = display .. '   ' .. 'IdleSet' .. ': ' .. '|cFF5FFF5F|' .. gcdisplay.IdleSet .. '|r' .. ' '
         gcdisplay.FontObject.text = display
     end)
 end
