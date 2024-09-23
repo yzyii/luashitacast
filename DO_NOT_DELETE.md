@@ -209,3 +209,6 @@
 - RDM - Add HQ Blue Cotehardie behaviour
 - Removes background from UI Display, Switches Font and Colour to better match HXUI
 - RDM - Add a DRK SJ MP constant for convenience
+
+### v1.3.22
+- BRD Add a set for HP Down that equips before Precast for songs
