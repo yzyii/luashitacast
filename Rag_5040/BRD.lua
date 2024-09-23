@@ -350,7 +350,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP)
+    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP, nil)
 
     local player = gData.GetPlayer()
     if (minstrels_earring and player.HPP <= 25) then
@@ -372,7 +372,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP)
+    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP, nil)
 
     local action = gData.GetAction()
     if (action.Type == 'Bard Song') then

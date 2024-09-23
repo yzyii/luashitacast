@@ -208,3 +208,4 @@
 - DRK - Fix missing obi tables for spellcasting
 - RDM - Add HQ Blue Cotehardie behaviour
 - Removes background from UI Display, Switches Font and Colour to better match HXUI
+- RDM - Add a DRK SJ MP constant for convenience

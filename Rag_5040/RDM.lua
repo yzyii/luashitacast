@@ -5,6 +5,7 @@ local fastCastValue = 0.42 -- 20% from traits 22% from gear listed in Precast se
 local ninSJMaxMP = 535 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 613 -- The Max MP you have when /whm in your idle set
 local blmSJMaxMP = 632 -- The Max MP you have when /blm in your idle set
+local drkSJMaxMP = 556 -- The Max MP you have when /drk in your idle set
 
 local blue_cotehardie = false
 local blue_cotehardie_plus_one = true
@@ -731,7 +732,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil)
+    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil, drkSJMaxMP)
 
     local player = gData.GetPlayer()
     if (blue_cotehardie and player.MP <= 40) then
@@ -749,7 +750,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil)
+    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil, drkSJMaxMP)
 
     local action = gData.GetAction()
     if (dilation_ring) then -- Haste is technically MP inefficient but I prefer to just always use it anyway

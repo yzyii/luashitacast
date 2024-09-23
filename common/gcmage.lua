@@ -295,7 +295,7 @@ function gcmage.DoFenrirsEarring()
     end
 end
 
-function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
+function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
 
@@ -314,6 +314,8 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         elseif (player.SubJob == "BLM") and blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP then
             equipMaxMP = true
         elseif (player.SubJob == "RDM") and rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP then
+            equipMaxMP = true
+        elseif (player.SubJob == "DRK") and drkSJMMP ~= nil and player.MP >= drkSJMMP + addMP then
             equipMaxMP = true
         end
     end
@@ -514,7 +516,7 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
 end
 
-function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
+function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
     local action = gData.GetAction()
@@ -532,6 +534,8 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP)
         maxMP = blmSJMMP + addMP
     elseif (player.SubJob == "RDM" and rdmSJMMP ~= nil) then
         maxMP = rdmSJMMP + addMP
+    elseif (player.SubJob == "DRK" and drkSJMMP ~= nil) then
+        maxMP = drkSJMMP + addMP
     end
 
     if (gcmage.ShouldSkipCast(maxMP, isNoModSpell)) then
