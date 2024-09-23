@@ -79,6 +79,8 @@ local sets = {
     WaterRes = {},
     Evasion = {},
 
+    Precast_Songs_HPDown = { -- This set will equip even before precast for songs in case you require HP Down equipment to trigger Minstrel's Ring
+    },
     Precast = {
        Ear2 = 'Loquac. Earring',
        Feet = 'Rostrum Pumps',
@@ -363,6 +365,7 @@ end
 profile.HandlePrecast = function()
     local action = gData.GetAction()
     if (action.Type == 'Bard Song') then
+        gFunc.ForceEquipSet('Precast_Songs_HPDown')
         gFunc.EquipSet(sets.Precast_Songs)
         local totalFastCast = 1 - (1 - fastCastValueSong) * (1 - fastCastValue)
         gcmage.DoPrecast(totalFastCast)
