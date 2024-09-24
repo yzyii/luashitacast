@@ -92,7 +92,7 @@ local sets = {
     IceRes = {
         Main = 'Vulcan\'s Staff', -- 20
         Ear1 = 'Diamond Earring', -- 10
-        Ear2 = 'Diamond Earring', -- 10
+        Ear2 = 'Omn. Earring', -- 11
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Hands = 'Merman\'s Bangles',
@@ -133,7 +133,7 @@ local sets = {
         Back = 'Aurora Mantle', -- 7
         Hands = 'Mage\'s Cuffs', -- 5
         Ear1 = 'Diamond Earring', -- 10
-        Ear2 = 'Diamond Earring', -- 10
+        Ear2 = 'Omn. Earring', -- 11
         Waist = 'Ice Belt', -- 20
         Ring1 = 'Emerald Ring', -- 9
     },

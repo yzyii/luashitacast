@@ -211,4 +211,5 @@
 - RDM - Add a DRK SJ MP constant for convenience
 
 ### v1.3.22
-- BRD Add a set for HP Down that equips before Precast for songs
+- BRD - Add a set for HP Down that equips before Precast for songs
+- DRK - Add tanking logic

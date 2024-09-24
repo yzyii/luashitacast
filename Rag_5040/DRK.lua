@@ -15,7 +15,7 @@ local sets = {
         Body = 'Vampire Cloak',
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Boxer\'s Mantle',
         Waist = 'Warwolf Belt',
         Legs = 'Dst. Subligar +1',
@@ -72,7 +72,7 @@ local sets = {
         Body = 'Dst. Harness +1', -- 4
         Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
-        Ring2 = 'Sattva Ring', -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = 'Boxer\'s Mantle',
         Waist = 'Warwolf Belt',
         Legs = 'Dst. Subligar +1', -- 3
@@ -117,8 +117,8 @@ local sets = {
         Ammo = '',
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Ear1 = 'Omn. Earring', -- 11
-        Ear2 = 'Diamond Earring', -- 10
+        Ear1 = 'Diamond Earring', -- 10
+        Ear2 = 'Omn. Earring', -- 11
         Body = 'Assault Brstplate', -- 15
         Hands = 'Feral Gloves', -- 4
         Ring1 = 'Omniscient Ring', -- 10
@@ -171,8 +171,8 @@ local sets = {
         Ammo = '',
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
-        Ear1 = 'Omn. Earring', -- 11
-        Ear2 = 'Diamond Earring', -- 10
+        Ear1 = 'Diamond Earring', -- 10
+        Ear2 = 'Omn. Earring', -- 11
         Body = 'Assault Brstplate', -- 15
         Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Emerald Ring', -- 9
@@ -201,6 +201,8 @@ local sets = {
         Feet = 'Coral Greaves +1', -- 4
     },
     Evasion = { -- Use this set for your zerg set. See README.md
+        Main = 'Octave Club',
+        Sub = 'Wyvern Targe',
         Ammo = 'Happy Egg',
         Head = 'Homam Zucchetto',
         Neck = 'Shield Pendant',
@@ -377,6 +379,11 @@ local NukeObiOwnedTable = {
 
 profile.HandleAbility = function()
     local action = gData.GetAction()
+
+    if (gcdisplay.GetToggle('Hate')) then
+        gFunc.EquipSet(sets.Hate)
+    end
+
     if (action.Name == 'Weapon Bash') then
         gFunc.EquipSet(sets.WeaponBash)
     elseif (action.Name == 'Arcane Circle') then
@@ -386,15 +393,12 @@ end
 
 profile.HandleItem = function()
     gcinclude.DoItem()
-    -- You may add logic here
 end
 
 profile.HandlePreshot = function()
-    -- You may add logic here
 end
 
 profile.HandleMidshot = function()
-    -- You may add logic here
 end
 
 profile.HandleWeaponskill = function()
@@ -420,22 +424,38 @@ end
 profile.OnLoad = function()
     gcmelee.Load()
     profile.SetMacroBook()
-    -- You may add logic here
+
+    gcinclude.SetAlias(T{'hate'})
+    local function createToggle()
+        gcdisplay.CreateToggle('Hate', false)
+    end
+    createToggle:once(2)
 end
 
 profile.OnUnload = function()
     gcmelee.Unload()
-    -- You may add logic here
+    gcinclude.ClearAlias(T{'hate'})
 end
 
 profile.HandleCommand = function(args)
-    gcmelee.DoCommands(args)
+    if (args[1] == 'hate') then
+        gcdisplay.AdvanceToggle('Hate')
+        gcinclude.Message('Hate', gcdisplay.GetToggle('Hate'))
+    else
+        gcmelee.DoCommands(args)
+    end
 
     if (args[1] == 'horizonmode') then
         profile.HandleDefault()
     end
-    -- You may add logic here
 end
+
+local utsuBuffs = T{
+    [66] = 1,
+    [444] = 2,
+    [445] = 3,
+    [446] = 4,
+}
 
 profile.HandleDefault = function()
     gcmelee.DoDefault()
@@ -446,6 +466,36 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.SoulEater)
     end
 
+    if (player.Status == 'Idle') then
+        if (parade_gorget and player.HPP >= 85) then
+            gFunc.Equip('Neck', 'Parade Gorget')
+        end
+
+        if (gcdisplay.GetToggle('Hate')) then
+            if (player.SubJob == 'NIN') then
+                local function GetShadowCount()
+                    for buffId, shadowCount in pairs(utsuBuffs) do
+                        if (gData.GetBuffCount(buffId) > 0) then
+                            return shadowCount
+                        end
+                    end
+
+                    return 0
+                end
+                if (GetShadowCount() == 0) then
+                    gFunc.EquipSet('DT')
+                end
+            end
+
+            if (arco_de_velocidad) then
+                local environment = gData.GetEnvironment()
+                if (environment.Time >= 6 and environment.Time < 18 and player.HPP < 100) then
+                    gFunc.Equip('Range', 'Arco de Velocidad')
+                end
+            end
+        end
+    end
+
     gcmelee.DoDefaultOverride()
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
@@ -453,7 +503,6 @@ end
 
 profile.HandlePrecast = function()
     gcmelee.DoPrecast(fastCastValue)
-    -- You may add logic here
 end
 
 profile.HandleMidcast = function()
@@ -477,10 +526,14 @@ profile.HandleMidcast = function()
                 gFunc.Equip('Waist', obi)
             end
         end
+    end
 
-        if (string.contains(action.Name, 'Stun')) then
-            gFunc.EquipSet(sets.Haste)
-        end
+    if (action.Skill ~= 'Ninjutsu' and gcdisplay.GetToggle('Hate')) then
+        gFunc.EquipSet(sets.Hate)
+    end
+
+    if (string.contains(action.Name, 'Stun')) then
+        gFunc.EquipSet(sets.Haste)
     end
 end
 
