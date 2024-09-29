@@ -27,7 +27,7 @@ local dream_boots = true
 local dream_mittens = true
 local skulkers_cape = false
 local wizards_mantle = false
-local republic_gold_medal = true
+local republic_gold_medal = true -- Note: Disabled for BRD
 
 local diabolos_earring = false
 local diabolos_earring_slot = 'Ear2'
@@ -323,7 +323,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     if (equipMaxMP) then
         gFunc.EquipSet('IdleMaxMP')
         if (conquest:GetOutsideControl()) then
-            if (republic_gold_medal) then
+            if (republic_gold_medal and player.MainJob ~= 'BRD') then
                 gFunc.Equip('Neck', 'Rep.Gold Medal')
             end
         end

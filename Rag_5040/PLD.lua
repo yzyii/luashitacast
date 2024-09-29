@@ -30,7 +30,7 @@ local sets = {
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Merman\'s Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
         Legs = { Name = 'Dst. Subligar +1', Priority = 10 },
         Feet = 'Dst. Leggings +1',
@@ -67,7 +67,7 @@ local sets = {
         Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
         Legs = { Name = 'Dst. Subligar +1', Priority = 10 }, -- 3
         Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
@@ -273,7 +273,7 @@ local sets = {
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Merman\'s Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Silver Obi +1', -- 8
         Legs = 'Vlr. Breeches +1', -- 10
         Feet = 'Mountain Gaiters', -- 5
@@ -289,7 +289,7 @@ local sets = {
         Hands = 'Dusk Gloves +1', -- 4
         Ring1 = 'Blitz Ring', -- 1
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Sonic Belt', -- 6
         Legs = 'Homam Cosciales', -- 3
         Feet = 'Homam Gambieras', -- 3
@@ -344,7 +344,7 @@ local sets = {
         Hands = 'Hydra Moufles',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Silver Obi +1', -- 8
         Legs = 'Vlr. Breeches +1', -- 10
         Feet = 'Mountain Gaiters', -- 5
@@ -382,7 +382,7 @@ local sets = {
         Hands = 'Hydra Moufles',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Silver Obi +1', -- 8
         Legs = 'Hydra Brayettes',
         Feet = 'Mountain Gaiters', -- 5
