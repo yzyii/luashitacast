@@ -436,8 +436,8 @@ function gcmage.DoPrecast(fastCastValue)
             end
         end
     elseif (not lag) then
-        gcmage.SetupMidcastDelay(fastCastValue)
         gFunc.EquipSet('Precast')
+        gcmage.SetupMidcastDelay(fastCastValue)
     else
         gFunc.EquipSet('Precast')
 
