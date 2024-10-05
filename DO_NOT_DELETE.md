@@ -213,3 +213,5 @@
 ### v1.3.22
 - BRD - Add a set for HP Down that equips before Precast for songs
 - DRK - Add tanking logic
+- WHM - Fix order on precast to fix cure clogs
+- THF - Add TH set to magic
