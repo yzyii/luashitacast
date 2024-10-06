@@ -200,7 +200,7 @@ profile.HandleMidcast = function()
 
     if (action.Skill ~= 'Ninjutsu' and gcdisplay.GetToggle('TH')) then
         gFunc.EquipSet(sets.TH)
-    else
+    end
 end
 
 return profile
