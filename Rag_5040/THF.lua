@@ -198,6 +198,7 @@ end
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
 
+    local action = gData.GetAction()
     if (action.Skill ~= 'Ninjutsu' and gcdisplay.GetToggle('TH')) then
         gFunc.EquipSet(sets.TH)
     end
