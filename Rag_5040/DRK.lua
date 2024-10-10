@@ -9,6 +9,8 @@ local arco_de_velocidad = true
 
 local sets = {
     Idle = {
+        Main = 'Tredecim Scythe',
+        Ammo = 'Bomb Core',
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',

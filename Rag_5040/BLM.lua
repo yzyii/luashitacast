@@ -227,7 +227,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Body = 'Nashira Manteel', -- 3
         Hands = 'Nashira Gages', -- 1
-        Waist = 'Sonic Belt', -- 4
+        Waist = 'Swift Belt', -- 4
         Legs = 'Nashira Seraweels', -- 2
         Feet = 'Nashira Crackows', -- 1
     },
@@ -274,7 +274,20 @@ local sets = {
         Feet = 'Mahatma Pigaches',
     },
     Stoneskin = {
-        Neck = 'Stone Gorget',
+        Main = "Kirin's Pole",
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Nashira Turban',
+        Neck = "Stone Gorget",
+        Ear1 = "Loquac. Earring",
+        Ear2 = "Cmn. Earring",
+        Body = "Mahatma Hpl.",
+        Hands = 'Dvt. Mitts +1',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        Waist = 'Swift Belt',
+        Back = "Errant Cape",
+        Legs = 'Mahatma Slops',
+        Feet = 'Mahatma Pigaches',
     },
     Spikes = {
         Main = 'Kirin\'s Pole',
@@ -288,7 +301,6 @@ local sets = {
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
         Back = 'Merciful Cape',
-        Waist = 'Penitent\'s Rope',
         Waist = 'Sorcerer\'s Belt',
         Legs = 'Mahatma Slops',
         Feet = 'Src. Sabots +1',
@@ -337,7 +349,7 @@ local sets = {
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
         Back = 'Merciful Cape',
-        Waist = 'Sorcerer\'s Belt',
+        Waist = 'Swift Belt',
         Legs = 'Wzd. Tonban +1',
         Feet = 'Igqira Huaraches',
     },
@@ -352,7 +364,7 @@ local sets = {
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
         Back = 'Merciful Cape',
-        Waist = 'Sonic Belt',
+        Waist = 'Swift Belt',
         Legs = 'Nashira Seraweels',
         Feet = 'Nashira Crackows',
     },
