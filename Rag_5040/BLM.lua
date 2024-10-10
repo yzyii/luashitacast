@@ -2,9 +2,9 @@ local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set
 
-local ninSJNukeMaxMP = 709 -- The Max MP you have when /nin in your nuking set
-local whmSJNukeMaxMP = 787 -- The Max MP you have when /whm in your nuking set
-local rdmSJNukeMaxMP = 768 -- The Max MP you have when /rdm in your nuking set
+local ninSJNukeMaxMP = 688 -- The Max MP you have when /nin in your nuking set
+local whmSJNukeMaxMP = 766 -- The Max MP you have when /whm in your nuking set
+local rdmSJNukeMaxMP = 747 -- The Max MP you have when /rdm in your nuking set
 
 local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false
@@ -15,19 +15,19 @@ local opuntia_hoop_slot = 'Ring1'
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
-        Ammo = 'Hedgehog Bomb',
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
         Head = 'Genie Tiara',
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Sorcerer\'s Coat',
+        Body = { Name = 'Sorcerer\'s Coat', Priority = 100 },
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Merman\'s Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Igqira Lappas',
-        Feet = 'Rostrum Pumps',
+        Feet = { Name = 'Rostrum Pumps', Priority = 100 },
     },
     IdleALT = {},
     IdleMaxMP = {
@@ -71,7 +71,7 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Sorcerer\'s Coat',
+        Body = { Name = 'Sorcerer\'s Coat', Priority = 100 },
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
@@ -84,7 +84,7 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Sorcerer\'s Coat',
+        Body = { Name = 'Sorcerer\'s Coat', Priority = 100 },
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
@@ -97,11 +97,11 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring', -- 2
         Ear2 = 'Merman\'s Earring', -- 2
-        Body = 'Sorcerer\'s Coat',
+        Body = { Name = 'Sorcerer\'s Coat', Priority = 100 },
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Merman\'s Ring', -- 4
         Ring2 = 'Sattva Ring', -- 5
-        Back = 'Hexerei Cape', -- 3
+        Back = { Name = 'Hexerei Cape', Priority = 100 }, -- 3
         Legs = 'Igqira Lappas',
     },
     FireRes = {
@@ -274,20 +274,20 @@ local sets = {
         Feet = 'Mahatma Pigaches',
     },
     Stoneskin = {
-        Main = "Kirin's Pole",
+        Main = 'Kirin\'s Pole',
         Ammo = 'Hedgehog Bomb',
         Head = 'Nashira Turban',
-        Neck = "Stone Gorget",
-        Ear1 = "Loquac. Earring",
-        Ear2 = "Cmn. Earring",
-        Body = "Mahatma Hpl.",
+        Neck = 'Stone Gorget',
+        Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
+        Ear2 = 'Cmn. Earring',
+        Body = 'Mahatma Hpl.',
         Hands = 'Dvt. Mitts +1',
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
         Waist = 'Swift Belt',
-        Back = "Errant Cape",
+        Back = { Name = 'Errant Cape', Priority = 100 },
         Legs = 'Mahatma Slops',
-        Feet = 'Mahatma Pigaches',
+        Feet = { Name = 'Mahatma Pigaches', Priority = 100 },
     },
     Spikes = {
         Main = 'Kirin\'s Pole',
@@ -529,7 +529,7 @@ end
 
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
-    if (player.SubJob == "RDM" and warlocks_mantle) then
+    if (player.SubJob == 'RDM' and warlocks_mantle) then
         gcmage.DoPrecast(fastCastValue + 0.02)
         gFunc.Equip('Back', 'Warlock\'s Mantle')
     else
