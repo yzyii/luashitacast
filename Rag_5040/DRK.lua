@@ -5,7 +5,16 @@ local fastCastValue = 0.07 -- 7% from gear
 local use_chaos_burgeonet_for_tp_during_souleater = true
 
 local parade_gorget = true
-local arco_de_velocidad = true
+
+-- Set to true if you have the obi
+local karin_obi = true
+local dorin_obi = false
+local suirin_obi = false
+local furin_obi = false
+local hyorin_obi = true
+local rairin_obi = true
+local korin_obi = true
+local anrin_obi = true
 
 local sets = {
     Idle = {
@@ -40,6 +49,34 @@ local sets = {
         Waist = 'Warwolf Belt',
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
+    },
+    IdleDT = {
+        Head = 'Darksteel Cap +1', -- 2
+        Neck = 'Evasion Torque',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Dst. Harness +1', -- 4
+        Hands = 'Heavy Gauntlets', -- 3
+        Ring1 = 'Jelly Ring', -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
+        Back = 'Shadow Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Dst. Subligar +1', -- 3
+        Feet = 'Dst. Leggings +1', -- 2
+    },
+    IdleALTDT = {
+        Head = 'Darksteel Cap +1', -- 2
+        Neck = 'Evasion Torque',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Dst. Harness +1', -- 4
+        Hands = 'Heavy Gauntlets', -- 3
+        Ring1 = 'Jelly Ring', -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
+        Back = 'Shadow Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Dst. Subligar +1', -- 3
+        Feet = 'Dst. Leggings +1', -- 2
     },
     Resting = {
         Neck = 'Paisley Scarf',
@@ -348,6 +385,9 @@ profile.Sets = sets
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 4')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
+
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //weaponbash')
 end
 
 --[[
@@ -365,7 +405,8 @@ local NukeObiTable = {
     ['Wind'] = 'Furin Obi',
     ['Ice'] = 'Hyorin Obi',
     ['Thunder'] = 'Rairin Obi',
-    ['Dark'] = 'Anrin Obi'
+    ['Light'] = 'Korin Obi',
+    ['Dark'] = 'Anrin obi'
 }
 
 local NukeObiOwnedTable = {
@@ -375,6 +416,7 @@ local NukeObiOwnedTable = {
     ['Wind'] = furin_obi,
     ['Ice'] = hyorin_obi,
     ['Thunder'] = rairin_obi,
+    ['Light'] = korin_obi,
     ['Dark'] = anrin_obi
 }
 
@@ -447,13 +489,6 @@ profile.HandleCommand = function(args)
     end
 end
 
-local utsuBuffs = T{
-    [66] = 1,
-    [444] = 2,
-    [445] = 3,
-    [446] = 4,
-}
-
 profile.HandleDefault = function()
     gcmelee.DoDefault()
 
@@ -466,30 +501,6 @@ profile.HandleDefault = function()
     if (player.Status == 'Idle') then
         if (parade_gorget and player.HPP >= 85) then
             gFunc.Equip('Neck', 'Parade Gorget')
-        end
-
-        if (gcdisplay.GetToggle('Hate')) then
-            if (player.SubJob == 'NIN') then
-                local function GetShadowCount()
-                    for buffId, shadowCount in pairs(utsuBuffs) do
-                        if (gData.GetBuffCount(buffId) > 0) then
-                            return shadowCount
-                        end
-                    end
-
-                    return 0
-                end
-                if (GetShadowCount() == 0) then
-                    gFunc.EquipSet('DT')
-                end
-            end
-
-            if (arco_de_velocidad) then
-                local environment = gData.GetEnvironment()
-                if (environment.Time >= 6 and environment.Time < 18 and player.HPP < 100) then
-                    gFunc.Equip('Range', 'Arco de Velocidad')
-                end
-            end
         end
     end
 
@@ -541,16 +552,18 @@ local NukeObiTable = {
     ['Wind'] = 'Furin Obi',
     ['Ice'] = 'Hyorin Obi',
     ['Thunder'] = 'Rairin Obi',
+    ['Light'] = 'Korin Obi',
     ['Dark'] = 'Anrin Obi'
 }
 
 local NukeObiOwnedTable = {
-    ['Fire'] = karin_obi,
-    ['Earth'] = dorin_obi,
-    ['Water'] = suirin_obi,
-    ['Wind'] = furin_obi,
-    ['Ice'] = hyorin_obi,
+    ['Fire'] = nil,
+    ['Earth'] = nil,
+    ['Water'] = nil,
+    ['Wind'] = nil,
+    ['Ice'] = nil,
     ['Thunder'] = rairin_obi,
+    ['Light'] = nil,
     ['Dark'] = anrin_obi
 }
 

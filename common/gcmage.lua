@@ -71,7 +71,7 @@ local medicine_ring = false
 local medicine_ring_slot = 'Ring1'
 
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
-local dark_and_diabolos_earrings = true
+local dark_and_abyssal_earrings = true
 
 -- For Meleeing on WHM, BRD or RDM. Fenrir's Earring will be prioritised over Diabolos's Earring if using the same slot
 local fenrirs_earring = true
@@ -113,14 +113,14 @@ local NoMods = T{
     'Raise','Reraise','Reraise II','Reraise III',
     'Poisona','Paralyna','Silena','Blindna','Viruna','Erase',
     'Teleport-Holla','Teleport-Dem','Teleport-Mea',
-    'Dia','Dia II',
+    'Dia','Dia II','Dia III',
     'Utsusemi: Ichi','Utsusemi: Ni','Tonko: Ichi','Tonko: Ni','Monomi: Ichi'
 }
 
 local ElementalDebuffs = T{ 'Burn','Rasp','Drown','Choke','Frost','Shock' }
-local EnfeebMNDSpells = T{ 'Paralyze','Slow' }
+local EnfeebMNDSpells = T{ 'Paralyze','Slow','Paralyze II','Slow II' }
 local EnfeebMNDACCSpells = T{ 'Silence' }
-local EnfeebINTSpells = T{ 'Blind','Poison','Poison II','Poisonga' }
+local EnfeebINTSpells = T{ 'Blind','Poison','Poison II','Poisonga','Blind II' }
 local EnfeebINTACCSpells = T{ 'Gravity','Bind','Dispel','Sleep','Sleep II','Sleepga','Sleepga II' }
 local HateSpells = T{ 'Sleep','Sleep II','Blind','Dispel','Bind' }
 local DiabolosPoleSpells = T{ 'Aspir','Drain' }
@@ -146,6 +146,8 @@ local NukeObiTable = {
     ['Wind'] = 'Furin Obi',
     ['Ice'] = 'Hyorin Obi',
     ['Thunder'] = 'Rairin Obi',
+    ['Light'] = 'Korin Obi',
+    ['Dark'] = 'Anrin obi'
 }
 
 local NukeObiOwnedTable = {
@@ -155,6 +157,8 @@ local NukeObiOwnedTable = {
     ['Wind'] = furin_obi,
     ['Ice'] = hyorin_obi,
     ['Thunder'] = rairin_obi,
+    ['Light'] = korin_obi,
+    ['Dark'] = anrin_obi
 }
 
 local WeakElementTable = {
@@ -854,7 +858,7 @@ function gcmage.EquipDark(maxMP)
     if (DiabolosPoleSpells:contains(action.Name) and overlords_ring) then
         gFunc.Equip(overlords_ring_slot, 'Overlord\'s Ring')
     end
-    if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_diabolos_earrings) then
+    if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_abyssal_earrings) then
         gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
     end
 

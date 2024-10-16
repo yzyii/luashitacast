@@ -499,8 +499,8 @@ profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //shieldbash')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //holy')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //flash')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //shieldbash')
 end
 
 --[[
@@ -573,34 +573,12 @@ profile.HandleCommand = function(args)
     end
 end
 
-local utsuBuffs = T{
-    [66] = 1,
-    [444] = 2,
-    [445] = 3,
-    [446] = 4,
-}
-
 profile.HandleDefault = function()
     gcmelee.DoDefault()
 
     local player = gData.GetPlayer()
-    if (player.SubJob == 'NIN') then
-        local function GetShadowCount()
-            for buffId, shadowCount in pairs(utsuBuffs) do
-                if (gData.GetBuffCount(buffId) > 0) then
-                    return shadowCount
-                end
-            end
-
-            return 0
-        end
-        if (GetShadowCount() == 0) then
-            gFunc.EquipSet('IdleDT')
-            if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALTDT') end
-        end
-    end
-
     local cover = gData.GetBuffCount('Cover')
+
     if (cover >= 1) then
         gFunc.EquipSet(sets.Cover)
     end

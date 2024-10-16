@@ -215,3 +215,10 @@
 - DRK - Add tanking logic
 - WHM - Fix order on precast to fix cure clogs
 - THF - Add TH set to magic
+
+### v1.3.23
+- DRK - Fix Dark Magic Obi usage
+- Mages - Fix Dark and Light Obi usage
+- NIN - Re-Add tp lock to NIN (will still lock range and ammo slots)
+- Renamed dark_and_abyssal_earrings variable
+- Add Group 2 Merit Spells

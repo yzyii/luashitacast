@@ -30,6 +30,13 @@ local AliasList = T{
     'tpset','tp','mode','dps','lag',
 }
 
+local utsuBuffs = T{
+    [66] = 1,
+    [444] = 2,
+    [445] = 3,
+    [446] = 4,
+}
+
 function gcmelee.SetIsDPS(isDPSVal)
     isDPS = isDPSVal
 end
@@ -98,6 +105,24 @@ function gcmelee.DoDefault()
             end
         end
     end
+
+	if (player.MainJob == 'PLD' or player.MainJob ~= 'NIN' or gcdisplay.GetToggle('Hate')) then
+		if (player.SubJob == 'NIN') then
+			local function GetShadowCount()
+				for buffId, shadowCount in pairs(utsuBuffs) do
+					if (gData.GetBuffCount(buffId) > 0) then
+						return shadowCount
+					end
+				end
+
+				return 0
+			end
+			if (GetShadowCount() == 0) then
+                gFunc.EquipSet('IdleDT')
+                if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALTDT') end
+			end
+		end
+	end
 end
 
 function gcmelee.DoFenrirsEarring()

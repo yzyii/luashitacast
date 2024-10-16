@@ -86,7 +86,7 @@ local OverrideNameTable = {
     ['eva'] = 'Evasion'
 }
 
-local NoTPLockJobs = T{ 'RDM','BLM','WHM','SMN','BRD','NIN' }
+local isMage = T{ 'RDM','BLM','WHM','SMN','BRD' }
 
 local lastIdleSet = 'Normal'
 
@@ -99,7 +99,7 @@ function gcinclude.Load()
     gcdisplay.CreateToggle('Lock', false)
 
 	local player = gData.GetPlayer()
-	if (not NoTPLockJobs:contains(player.MainJob)) then
+	if (not isMage:contains(player.MainJob)) then
 		gcdisplay.CreateToggle('LockTP', false)
 	end
 
@@ -132,10 +132,7 @@ end
 function gcinclude.LockWeapon()
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main')
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub')
-    local player = gData.GetPlayer()
-    if (player.MainJob ~= 'BRD') then
-        AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
-    end
+	AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo')
 end
 

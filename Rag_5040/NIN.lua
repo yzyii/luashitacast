@@ -1,5 +1,6 @@
 -- NIN will lose TP on many actions when switching to Staff.
 -- Use "/lac disable Main" to prevent weapon swaps if this is not desired.
+-- /locktp can be used as well however will lock Range and Ammo slots.
 
 local profile = {}
 
@@ -26,7 +27,8 @@ local water_staff = 'Neptune\'s Staff'
 local wind_staff = 'Auster\'s Staff'
 local ice_staff = 'Aquilo\'s Staff'
 local thunder_staff = 'Jupiter\'s Staff'
-local dark_staff = 'Dark Staff'
+local light_staff = 'Apollo\'s Staff'
+local dark_staff = 'Pluto\'s Staff'
 
 -- Set to true if you have the obi
 local karin_obi = true
@@ -35,11 +37,14 @@ local suirin_obi = false
 local furin_obi = false
 local hyorin_obi = true
 local rairin_obi = true
+local korin_obi = true
 local anrin_obi = true
 
 local sets = {
     Idle = {},
     IdleALT = {},
+    IdleDT = {},
+    IdleALTDT = {},
     Resting = {},
     Town = {},
     Movement = {},
@@ -91,10 +96,13 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi' }
+local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi', 'Kurayami: Ichi', 'Hojo: Ichi' }
 local DrkDebuffs = T{ 'Bind', 'Sleep', 'Poison' }
 local DrkDarkMagic = T{ 'Stun', 'Aspir', 'Drain', 'Absorb-AGI', 'Absorb-VIT' }
-local NinElemental = T{ 'Hyoton: Ni', 'Katon: Ni', 'Huton: Ni', 'Doton: Ni', 'Raiton: Ni', 'Suiton: Ni' }
+local NinElemental = T{
+    'Hyoton: Ni', 'Katon: Ni', 'Huton: Ni', 'Doton: Ni', 'Raiton: Ni', 'Suiton: Ni', 
+    'Hyoton: Ichi', 'Katon: Ichi', 'Huton: Ichi', 'Doton: Ichi', 'Raiton: Ichi', 'Suiton: Ichi'
+}
 
 local ElementalStaffTable = {
     ['Fire'] = fire_staff,
@@ -103,6 +111,7 @@ local ElementalStaffTable = {
     ['Wind'] = wind_staff,
     ['Ice'] = ice_staff,
     ['Thunder'] = thunder_staff,
+    ['Light'] = light_staff,
     ['Dark'] = dark_staff
 }
 
@@ -113,7 +122,8 @@ local NukeObiTable = {
     ['Wind'] = 'Furin Obi',
     ['Ice'] = 'Hyorin Obi',
     ['Thunder'] = 'Rairin Obi',
-    ['Dark'] = 'Anrin Obi'
+    ['Light'] = 'Korin Obi',
+    ['Dark'] = 'Anrin obi'
 }
 
 local NukeObiOwnedTable = {
@@ -123,6 +133,7 @@ local NukeObiOwnedTable = {
     ['Wind'] = furin_obi,
     ['Ice'] = hyorin_obi,
     ['Thunder'] = rairin_obi,
+    ['Light'] = korin_obi,
     ['Dark'] = anrin_obi
 }
 
