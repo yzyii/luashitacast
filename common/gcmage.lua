@@ -177,7 +177,7 @@ local restingMaxMP = false
 local lag = false
 
 function gcmage.Load()
-    gcmage.SetVariables:once(2)
+    gcmage.SetVariables()
     gcinclude.SetAlias(AliasList)
     gcinclude.Load()
 end

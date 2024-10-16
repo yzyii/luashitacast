@@ -254,7 +254,13 @@ local sets = {
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Coral Greaves +1', -- 4
     },
-    Evasion = {},
+    Evasion = {
+        -- Head = 'Bahamut\'s Mask',
+        -- Hrotti
+        -- Crimson Scale Mail
+        Legs = 'Bahamut\'s Hose',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
+    },
 
     Precast = {
         Ear1 = 'Loquac. Earring',
@@ -287,7 +293,7 @@ local sets = {
         Ear2 = 'Magnetic Earring',
         Body = 'Dst. Harness +1',
         Hands = 'Dusk Gloves +1', -- 4
-        Ring1 = 'Blitz Ring', -- 1
+        Ring1 = 'Merman\'s Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Shadow Mantle',
         Waist = 'Sonic Belt', -- 6

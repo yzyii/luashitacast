@@ -289,7 +289,7 @@ local sets = {
         Hands = 'Dusk Gloves +1',
         Waist = 'Sonic Belt',
         Legs = 'Nashira Seraweels',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Dusk Ledelsens +1',
     },
     ConserveMP = {
         Ear2 = 'Magnetic Earring',
@@ -396,7 +396,7 @@ local sets = {
         Back = 'Merciful Cape',
         Waist = 'Sonic Belt',
         Legs = 'Warlock\'s Tights',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Dusk Ledelsens +1',
     },
     Stoneskin = {
         Neck = 'Stone Gorget',
@@ -565,7 +565,7 @@ local sets = {
         Back = 'Merciful Cape',
         Waist = 'Sonic Belt',
         Legs = 'Nashira Seraweels',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Dusk Ledelsens +1',
     },
     StunACC = { -- You can also type /csstun to equip this set and /lock your gear at the same time if you have a tinfoil hat.
         Main = 'Jupiter\'s Staff',
@@ -605,7 +605,7 @@ local sets = {
         -- Legs = 'Hydra Brais',
         Legs = 'Nashira Seraweels',
         Feet = 'Hydra Gaiters',
-        -- Feet = 'Dusk Ledelsens',
+        -- Feet = 'Dusk Ledelsens +1',
     },
     TP_NIN = {
         Main = 'Martial Knife',

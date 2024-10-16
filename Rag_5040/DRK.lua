@@ -54,7 +54,7 @@ local sets = {
         Ear2 = 'Abyssal Earring',
         Body = 'Haubergeon',
         Hands = 'Homam Manopolas',
-        Ring1 = 'Blitz Ring',
+        Ring2 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Sonic Belt',
@@ -234,7 +234,6 @@ local sets = {
     Haste = { -- Used for Utsusemi and Stun cooldown
         Head = 'Homam Zucchetto',
         Hands = 'Dusk Gloves +1',
-        Ring1 = 'Blitz Ring',
         Waist = 'Sonic Belt',
         Legs = 'Homam Cosciales',
         Feet = 'Homam Gambieras',
@@ -270,7 +269,7 @@ local sets = {
         Ear2 = 'Abyssal Earring',
         Body = 'Haubergeon',
         Hands = 'Dusk Gloves +1',
-        Ring1 = 'Blitz Ring',
+        Ring2 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Sonic Belt',
@@ -424,14 +423,10 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
+    gcinclude.SetAlias(T{'hate'})
+    gcdisplay.CreateToggle('Hate', false)
     gcmelee.Load()
     profile.SetMacroBook()
-
-    gcinclude.SetAlias(T{'hate'})
-    local function createToggle()
-        gcdisplay.CreateToggle('Hate', false)
-    end
-    createToggle:once(2)
 end
 
 profile.OnUnload = function()

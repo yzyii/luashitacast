@@ -315,16 +315,12 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
+    gcinclude.SetAlias(T{'sballad','shorde','srecast'})
+	gcdisplay.CreateToggle('SmallBallad', false)
+	gcdisplay.CreateToggle('SmallHorde', false)
+	gcdisplay.CreateToggle('SleepRecast', false)
     gcmage.Load()
     profile.SetMacroBook()
-
-    gcinclude.SetAlias(T{'sballad','shorde','srecast'})
-    local function createToggle()
-        gcdisplay.CreateToggle('SmallBallad', false)
-        gcdisplay.CreateToggle('SmallHorde', false)
-        gcdisplay.CreateToggle('SleepRecast', false)
-    end
-    createToggle:once(2)
 end
 
 profile.OnUnload = function()

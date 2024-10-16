@@ -98,21 +98,17 @@ function gcinclude.Load()
     gcdisplay.CreateToggle('Kite', false)
     gcdisplay.CreateToggle('Lock', false)
 
+	local player = gData.GetPlayer()
+	if (not NoTPLockJobs:contains(player.MainJob)) then
+		gcdisplay.CreateToggle('LockTP', false)
+	end
 
-    local function delayLoad()
-        local player = gData.GetPlayer()
-        if (not NoTPLockJobs:contains(player.MainJob)) then
-            gcdisplay.CreateToggle('LockTP', false)
-        end
+	gcdisplay.Load()
 
-        gcdisplay.Load()
-
-        if (load_stylist) then
-            AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
-            AshitaCore:GetChatManager():QueueCommand(-1, '/stylist load default')
-        end
-    end
-    delayLoad:once(3)
+	if (load_stylist) then
+		AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
+		AshitaCore:GetChatManager():QueueCommand(-1, '/stylist load default')
+	end
 end
 
 function gcinclude.Unload()

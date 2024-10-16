@@ -135,14 +135,10 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
+    gcinclude.SetAlias(T{'th'})
+	gcdisplay.CreateToggle('TH', false)
     gcmelee.Load()
     profile.SetMacroBook()
-
-    gcinclude.SetAlias(T{'th'})
-    local function createToggle()
-        gcdisplay.CreateToggle('TH', false)
-    end
-    createToggle:once(2)
 end
 
 profile.OnUnload = function()

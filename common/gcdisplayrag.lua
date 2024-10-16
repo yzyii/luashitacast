@@ -62,13 +62,6 @@ function gcdisplay.AdvanceToggle(name)
     end
 end
 
-function gcdisplay.Update()
-    local player = AshitaCore:GetMemoryManager():GetPlayer()
-
-    local MID = player:GetMainJob()
-    Main = AshitaCore:GetResourceManager():GetString("jobs.names_abbr", MID)
-end
-
 function gcdisplay.CreateToggle(name, default)
     Toggles[name] = default
 end
@@ -100,16 +93,27 @@ end
 
 function gcdisplay.Unload()
     if (gcdisplay.FontObject ~= nil) then
+        gcdisplay.FontObject:SetVisible(false)
         gcdisplay.FontObject:destroy()
+        gcdisplay.FontObject = nil
     end
     ashita.events.unregister('d3d_present', 'gcdisplay_present_cb')
 end
 
 function gcdisplay.Load()
-    gcdisplay.Update()
+    if (gcdisplay.FontObject ~= nil) then
+        gcdisplay.FontObject:SetVisible(false)
+        gcdisplay.FontObject:destroy()
+        gcdisplay.FontObject = nil
+    end
     gcdisplay.FontObject = fonts.new(fontSettings)
+
+    local player = AshitaCore:GetMemoryManager():GetPlayer()
+    local MID = player:GetMainJob()
+    local job = AshitaCore:GetResourceManager():GetString("jobs.names_abbr", MID)
+
     ashita.events.register('d3d_present', 'gcdisplay_present_cb', function ()
-        local display = '  ' .. Main
+        local display = '  ' .. job
         for k, v in pairs(Toggles) do
             display = display .. ' '
             if (v == true) then

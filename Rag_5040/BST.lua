@@ -8,7 +8,23 @@ local gaudy_harness = true
 local muscle_belt = 'Muscle Belt +1'
 
 local sets = {
-    Idle = {},
+    Idle = {
+        Main = 'Cmb.Cst. Axe',
+        Sub = 'Cmb.Cst. Axe',
+        Ammo = 'Meat Broth',
+        Head = 'Mrc.Cpt. Headgear',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Beetle Earring +1',
+        Ear2 = 'Beetle Earring +1',
+        Body = 'Ryl.Sqr. Chainmail',
+        Hands = 'Custom M Gloves',
+        Ring1 = 'Sniper\'s Ring',
+        Ring2 = 'Woodsman Ring',
+        Back = 'Warlock\'s Mantle',
+        Waist = 'Tilt Belt',
+        Legs = 'Republic Subligar',
+        Feet = 'Mountain Gaiters',
+    },
     IdleALT = {},
     Resting = {},
     Town = {},
@@ -35,11 +51,32 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP_LowAcc = {},
+    TP_LowAcc = {
+        Main = 'Cmb.Cst. Axe',
+        Sub = 'Cmb.Cst. Axe',
+        Ammo = 'Meat Broth',
+        Head = 'Mrc.Cpt. Headgear',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Beetle Earring +1',
+        Ear2 = 'Beetle Earring +1',
+        Body = 'Ryl.Sqr. Chainmail',
+        Hands = 'Custom M Gloves',
+        Ring1 = 'Sniper\'s Ring',
+        Ring2 = 'Woodsman Ring',
+        Back = 'Warlock\'s Mantle',
+        Waist = 'Tilt Belt',
+        Legs = 'Republic Subligar',
+        Feet = 'Mountain Gaiters',
+    },
     TP_HighAcc = {},
     TP_NIN = {},
 
-    WS = {},
+    WS = {
+        Neck = 'Spike Necklace',
+        Ring1 = 'Garnet Ring',
+        Ring2 = 'Garnet Ring',
+        Waist = 'Brave Belt',
+    },
 
     Charm = {},
     Reward = {},
@@ -182,14 +219,10 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
+    gcinclude.SetAlias(pets)
+    gcdisplay.CreateCycle('Pet', PetTable1)
     gcmelee.Load()
     profile.SetMacroBook()
-
-    gcinclude.SetAlias(pets)
-    local function createCycle()
-        gcdisplay.CreateCycle('Pet', PetTable1)
-    end
-    createCycle:once(2)
 end
 
 profile.OnUnload = function()
