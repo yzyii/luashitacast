@@ -220,5 +220,6 @@
 - DRK - Fix Dark Magic Obi usage
 - Mages - Fix Dark and Light Obi usage
 - NIN - Re-Add tp lock to NIN (will still lock range and ammo slots)
+- NIN - Add DT set behaviour to idle sets
 - Renamed dark_and_abyssal_earrings variable
 - Add Group 2 Merit Spells
