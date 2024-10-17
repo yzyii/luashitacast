@@ -195,11 +195,11 @@ function gcinclude.DoCommands(args)
                 gcinclude.UnlockNonWeapon()
             else
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
-                if (not NoTPLockJobs:contains(player.MainJob)) then gcdisplay.CreateToggle('LockTP', false) end
+                if (not isMage:contains(player.MainJob)) then gcdisplay.CreateToggle('LockTP', false) end
             end
         else
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
-            if (not NoTPLockJobs:contains(player.MainJob)) then gcdisplay.CreateToggle('LockTP', false) end
+            if (not isMage:contains(player.MainJob)) then gcdisplay.CreateToggle('LockTP', false) end
         end
     elseif (args[1] == 'locktp') then
         gcdisplay.AdvanceToggle('LockTP')
