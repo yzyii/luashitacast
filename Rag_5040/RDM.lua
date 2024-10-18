@@ -292,6 +292,7 @@ local sets = {
         Feet = 'Dusk Ledelsens +1',
     },
     ConserveMP = {
+        Ammo = 'Dream Sand',
         Ear2 = 'Magnetic Earring',
     },
 

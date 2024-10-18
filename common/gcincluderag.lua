@@ -98,17 +98,26 @@ function gcinclude.Load()
     gcdisplay.CreateToggle('Kite', false)
     gcdisplay.CreateToggle('Lock', false)
 
-	local player = gData.GetPlayer()
-	if (not isMage:contains(player.MainJob)) then
-		gcdisplay.CreateToggle('LockTP', false)
-	end
+    local function delayLoad()
+        local delayedPlayer = gData.GetPlayer()
+        if (not isMage:contains(delayedPlayer.MainJob)) then
+            gcdisplay.CreateToggle('LockTP', false)
+        end
 
-	gcdisplay.Load()
+        gcdisplay.Load()
 
-	if (load_stylist) then
-		AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
-		AshitaCore:GetChatManager():QueueCommand(-1, '/stylist load default')
-	end
+        if (load_stylist) then
+            AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
+            AshitaCore:GetChatManager():QueueCommand(-1, '/stylist load default')
+        end
+    end
+
+    local player = gData.GetPlayer()
+    if (player.MainJob ~= 'NON') then
+        delayLoad()
+    else
+        delayLoad:once(3)
+    end
 end
 
 function gcinclude.Unload()
@@ -132,7 +141,7 @@ end
 function gcinclude.LockWeapon()
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main')
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub')
-	AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo')
 end
 

@@ -232,6 +232,7 @@ local sets = {
         Feet = 'Nashira Crackows', -- 1
     },
     ConserveMP = {
+        Ammo = 'Dream Sand',
         Ear2 = 'Magnetic Earring',
         Body = 'Igqira Weskit',
         Feet = 'Src. Sabots +1',
@@ -423,7 +424,7 @@ local sets = {
         Feet = 'Src. Sabots +1',
     },
     MB = {
-        Hands = 'Src. Gloves +1',
+        Ammo = 'Dream Sand',
     },
 
     LockSet1 = { -- 40 Cap

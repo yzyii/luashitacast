@@ -181,7 +181,13 @@ local restingMaxMP = false
 local lag = false
 
 function gcmage.Load()
-    gcmage.SetVariables()
+    local player = gData.GetPlayer()
+    if (player.MainJob ~= 'NON') then
+        gcmage.SetVariables()
+    else
+        gcmage.SetVariables:once(2)
+    end
+
     gcinclude.SetAlias(AliasList)
     gcinclude.Load()
 end
@@ -603,6 +609,10 @@ function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
             skipCast_Spell = true
             gcmage.EquipStaff()
         end
+    end
+
+    if (action.Skill ~= 'Ninjutsu' and player.MPP <= 95) then
+        gFunc.EquipSet('ConserveMP')
     end
 
     return skipCast_MP and skipCast_Spell

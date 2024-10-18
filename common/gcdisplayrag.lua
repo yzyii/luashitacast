@@ -108,9 +108,8 @@ function gcdisplay.Load()
     end
     gcdisplay.FontObject = fonts.new(fontSettings)
 
-    local player = AshitaCore:GetMemoryManager():GetPlayer()
-    local MID = player:GetMainJob()
-    local job = AshitaCore:GetResourceManager():GetString("jobs.names_abbr", MID)
+    local player = gData.GetPlayer()
+    local job = player.MainJob
 
     ashita.events.register('d3d_present', 'gcdisplay_present_cb', function ()
         local display = '  ' .. job

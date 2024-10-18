@@ -223,3 +223,7 @@
 - NIN - Add DT set behaviour to idle sets
 - Renamed dark_and_abyssal_earrings variable
 - Add Group 2 Merit Spells
+
+### v1.3.24
+- Add Handling for Nil player.MainJob() on initial load
+- Mages - Add ConserveMP set usage to MaxMP sets when below 95% MP

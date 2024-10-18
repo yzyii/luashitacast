@@ -270,6 +270,7 @@ local sets = {
     },
     Haste = { -- Used for Utsusemi and Stun cooldown
         Head = 'Homam Zucchetto',
+        Body = 'Dst. Harness +1',
         Hands = 'Dusk Gloves +1',
         Waist = 'Sonic Belt',
         Legs = 'Homam Cosciales',
@@ -287,10 +288,10 @@ local sets = {
         Hands = { Name = 'Hydra Moufles', Priority = -100 }, -- 6
         Ring1 = 'Mermaid Ring', -- 2
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
-        Back = 'Toreador\'s Cape', -- 4
+        Back = { Name = 'Gigant Mantle', Priority = 100 },
         Waist = 'Warwolf Belt', -- 3
         Legs = { Name = 'Hydra Brayettes', Priority = -100 }, -- 6
-        Feet = 'Heroic Boots', -- 1
+        Legs = { Name = 'Hydra Sollerets', Priority = -100 }, -- 4
     },
 
     LockSet1 = {},
@@ -298,8 +299,6 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
-        Main = 'Tredecim Scythe',
-        Ammo = 'Bomb Core',
         Head = 'Homam Zucchetto',
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
@@ -314,8 +313,6 @@ local sets = {
         Feet = 'Homam Gambieras',
     },
     TP_HighAcc = {
-        Main = 'Tredecim Scythe',
-        Ammo = 'Bomb Core',
         Head = 'Homam Zucchetto',
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
@@ -331,8 +328,6 @@ local sets = {
     },
 
     WS = {
-        Main = 'Tredecim Scythe',
-        Ammo = 'Bomb Core',
         Head = 'Chs. Burgeonet +1',
         Neck = 'Snow Gorget',
         Ear1 = 'Brutal Earring',
@@ -363,12 +358,12 @@ local sets = {
     Enfeebling = {},
     Drain = {
         Ammo = 'Phtm. Tathlum',
-        Head = 'Chs. Burgeonet +1',
+        Head = { Name = 'Chs. Burgeonet +1', Priority = 100 },
         Neck = 'Dark Torque',
         Ear1 = 'Dark Earring',
         Ear2 = 'Abyssal Earring',
-        Body = 'Black Cotehardie',
-        Hands = 'Blood Fng. Gnt.',
+        Body = 'Dst. Harness +1',
+        Hands = { Name = 'Blood Fng. Gnt.', Priority = 100 },
         Ring1 = 'Omniscient Ring',
         Ring2 = 'Overlord\'s Ring',
         Back = 'Merciful Cape',

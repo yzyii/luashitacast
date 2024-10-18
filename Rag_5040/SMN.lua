@@ -199,6 +199,7 @@ local sets = {
         Feet = 'Nashira Crackows',
     },
     ConserveMP = {
+        Ammo = 'Dream Sand',
         Ear2 = 'Magnetic Earring',
     },
 
