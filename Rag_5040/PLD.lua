@@ -15,6 +15,8 @@ local arco_de_velocidad = true
 
 local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 
+local shadow_mantle = true
+
 local sets = {
     Idle = {
         Main = 'Durandal',
@@ -478,13 +480,13 @@ local sets = {
         Neck = 'Fortitude Torque',
         Ear1 = 'Robust Earring',
         Ear2 = 'Robust Earring',
-        Body = 'Gaia Doublet',
+        Body = 'Gallant Surcoat',
         Hands = 'Kng. Handschuhs',
         Ring1 = 'Robust Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
-        Legs = 'Beak Trousers +1',
+        Legs = 'Adaman Cuisses',
         Feet = 'Power Sandals',
     },
     ShieldBash = {
@@ -513,6 +515,7 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
     local action = gData.GetAction()
+
     if (action.Name == 'Chivalry') then
         return
     end
@@ -523,6 +526,10 @@ profile.HandleAbility = function()
         gFunc.Equip('Legs', gallant_leggings)
     elseif (action.Name == 'Rampart') then
         gFunc.EquipSet(sets.Rampart)
+        local environment = gData.GetEnvironment()
+        if (shadow_mantle and environment.DayElement == 'Dark') then
+            gFunc.Equip('Back', 'Shadow Mantle')
+        end
     elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
         gFunc.EquipSet(sets.ShieldBash)
     elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then

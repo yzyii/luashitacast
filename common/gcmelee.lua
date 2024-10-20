@@ -106,7 +106,7 @@ function gcmelee.DoDefault()
         end
     end
 
-	if (player.MainJob == 'PLD' or player.MainJob ~= 'NIN' or gcdisplay.GetToggle('Hate')) then
+	if (player.MainJob == 'PLD' or player.MainJob == 'NIN' or gcdisplay.GetToggle('Hate')) then
 		if (player.SubJob == 'NIN') then
 			local function GetShadowCount()
 				for buffId, shadowCount in pairs(utsuBuffs) do

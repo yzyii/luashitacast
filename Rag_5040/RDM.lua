@@ -390,7 +390,7 @@ local sets = {
         Neck = 'Enhancing Torque',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
-        Body = 'Mahatma Hpl.',
+        Body = 'Glamor Jupon',
         Hands = 'Dls. Gloves +1',
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
@@ -401,6 +401,7 @@ local sets = {
     },
     Stoneskin = {
         Neck = 'Stone Gorget',
+        Body = 'Mahatma Hpl.',
         Hands = 'Dusk Gloves +1',
         Back = 'Prism Cape',
         Ear1 = 'Cmn. Earring',

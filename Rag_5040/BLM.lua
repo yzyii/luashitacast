@@ -272,7 +272,7 @@ local sets = {
         Back = 'Merciful Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
-        Feet = 'Mahatma Pigaches',
+        Feet = 'Igqira Huaraches',
     },
     Stoneskin = {
         Main = 'Kirin\'s Pole',

@@ -227,3 +227,7 @@
 ### v1.3.24
 - Add Handling for Nil player.MainJob() on initial load
 - Mages - Add ConserveMP set usage to MaxMP sets when below 95% MP
+
+### v1.3.25
+- Fix Faulty Logic for IdleDT set for NIN that was causing spam on DD jobs
+- PLD - Add Shadow Mantle for Rampart
