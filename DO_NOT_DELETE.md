@@ -231,3 +231,6 @@
 ### v1.3.25
 - Fix Faulty Logic for IdleDT set for NIN that was causing spam on DD jobs
 - PLD - Add Shadow Mantle for Rampart
+
+### v1.3.26
+- PLD/RDM - Switch Cure Cheats to ForceEquipSet for marginally better performance
