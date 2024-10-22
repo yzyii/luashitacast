@@ -708,12 +708,12 @@ function gcmage.EquipHealing(maxMP, sets, chainspell)
         if (target.Name == me) then
             if (action.Name == 'Cure III') then
                 if (chainspell == 0) then
-                    gFunc.InterimEquipSet(sets.Cheat_C3HPDown)
+                    gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
                 end
                 gFunc.EquipSet('Cheat_HPUp')
             elseif (action.Name == 'Cure IV') then
                 if (chainspell == 0) then
-                    gFunc.InterimEquipSet(sets.Cheat_C4HPDown)
+                    gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
                 end
                 gFunc.EquipSet('Cheat_HPUp')
             end

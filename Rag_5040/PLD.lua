@@ -650,10 +650,10 @@ profile.HandleMidcast = function()
 
     if (target.Name == me) then
         if (action.Name == 'Cure III') then
-            gFunc.InterimEquipSet(sets.Cheat_C3HPDown)
+            gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
             gFunc.EquipSet(sets.Cheat_C3HPUp)
         elseif (action.Name == 'Cure IV') then
-            gFunc.InterimEquipSet(sets.Cheat_C4HPDown)
+            gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
             gFunc.EquipSet(sets.Cheat_C4HPUp)
         end
     end
