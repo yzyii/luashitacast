@@ -234,3 +234,4 @@
 
 ### v1.3.26
 - PLD/RDM - Switch Cure Cheats to ForceEquipSet for marginally better performance
+- RNG - Fix Unlimited Shot logic
