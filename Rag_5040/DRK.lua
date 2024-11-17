@@ -291,8 +291,9 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
+        Ammo = 'Bomb Core',
         Head = 'Homam Zucchetto',
-        Neck = 'Peacock Amulet',
+        Neck = 'Justice Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Abyssal Earring',
         Body = 'Haubergeon',
@@ -305,6 +306,7 @@ local sets = {
         Feet = 'Homam Gambieras',
     },
     TP_HighAcc = {
+        Ammo = 'Bomb Core',
         Head = 'Homam Zucchetto',
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
@@ -320,6 +322,7 @@ local sets = {
     },
 
     WS = {
+        Ammo = 'Bomb Core',
         Head = 'Chs. Burgeonet +1',
         Neck = 'Snow Gorget',
         Ear1 = 'Brutal Earring',

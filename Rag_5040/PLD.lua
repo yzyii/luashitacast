@@ -464,7 +464,7 @@ local sets = {
     WS_Spirits = {},
 
     Cover = {
-        Head = 'Gallant Coronet',
+        -- Head = 'Gallant Coronet', -- This doesn't work on ASB anyway...
         Body = 'Vlr. Surcoat +1',
     },
     Cure = {

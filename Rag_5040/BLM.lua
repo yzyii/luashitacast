@@ -27,7 +27,7 @@ local sets = {
         Back = 'Umbra Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Igqira Lappas',
-        Feet = { Name = 'Rostrum Pumps', Priority = 100 },
+        Feet = 'Herald\'s Gaiters',
     },
     IdleALT = {},
     IdleMaxMP = {
@@ -49,8 +49,7 @@ local sets = {
         Ring1 = 'Serket Ring',
         Back = 'Errant Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Baron\'s Slops',
-        -- Legs = 'Hydra Brais',
+        Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
     Town = {
@@ -250,8 +249,7 @@ local sets = {
         Ring2 = 'Communion Ring',
         Back = 'Errant Cape', -- 5
         Waist = 'Penitent\'s Rope', -- 3
-        Legs = 'Mahatma Slops', -- 4
-        -- Legs = 'Hydra Brais', -- 6
+        Legs = 'Hydra Brais', -- 6
         Feet = 'Hydra Gaiters', -- 3
     },
     Cursna = {

@@ -21,7 +21,7 @@ local sets = {
         Ring2 = 'Evoker\'s Ring',
         Back = 'Umbra Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Evoker\'s Spats',
+        Legs = 'Evk. Spats +1',
         Feet = 'Evk. Pigaches +1',
     },
     IdleALT = {},
@@ -34,10 +34,11 @@ local sets = {
         Ear2 = 'Relaxing Earring',
         Body = 'Mahatma Hpl.',
         Hands = 'Hydra Gloves',
-        Back = 'Summoner\'s Cape',
+        Ring1 = 'Bomb Queen Ring',
+        Ring2 = 'Ether Ring',
+        Back = 'Errant Cape',
         Waist = 'Hierarch Belt',
-        Legs = 'Baron\'s Slops',
-        -- Legs = 'Hydra Brais',
+        Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
     Town = {},
@@ -154,7 +155,7 @@ local sets = {
     Precast = {
         Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
-        Back = { Name = 'Summoner\'s Cape', Priority = 100 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
     },
     Casting = { -- Default Casting Equipment when using Idle sets
         Main = 'Hermit\'s Wand', -- 25
@@ -165,12 +166,12 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring', -- 8
         Body = 'Yinyang Robe',
-        Hands = 'Zenith Mitts +1',
+        Hands = 'Merman\'s Bangles',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
-        Back = { Name = 'Summoner\'s Cape', Priority = 100 },
+        Back = { Name = 'Errant Cape', Priority = 100 },
         Waist = 'Druid\'s Rope', -- 10
-        Legs = { Name = 'Summoner\'s Spats', Priority = 100 },
+        Legs = { Name = 'Evk. Spats +1', Priority = 100 },
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
     },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
@@ -182,12 +183,12 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring', -- 8
         Body = 'Yinyang Robe',
-        Hands = 'Zenith Mitts +1',
+        Hands = 'Merman\'s Bangles',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
-        Back = { Name = 'Summoner\'s Cape', Priority = 100 },
+        Back = { Name = 'Errant Cape', Priority = 100 },
         Waist = 'Druid\'s Rope', -- 10
-        Legs = { Name = 'Summoner\'s Spats', Priority = 100 },
+        Legs = { Name = 'Evk. Spats +1', Priority = 100 },
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
@@ -215,12 +216,11 @@ local sets = {
         Ring2 = 'Communion Ring',
         Back = { Name = 'Errant Cape', Priority = 100 }, -- 5
         Waist = 'Penitent\'s Rope', -- 3
-        Legs = 'Raven Hose', -- 6
-        -- Legs = 'Hydra Brais', -- 6
+        Legs = 'Hydra Brais', -- 6
         Feet = 'Hydra Gaiters', -- 5
     },
     Cursna = {
-        -- Back = 'Altruistic Cape',
+        Back = 'Altruistic Cape',
     },
 
     Enhancing = {
@@ -240,7 +240,8 @@ local sets = {
         Feet = 'Mahatma Pigaches',
     },
     Stoneskin = {
-        -- Neck = 'Stone Gorget',
+        Neck = 'Stone Gorget',
+        Back = 'Prism Cape',
     },
     Spikes = {},
 
@@ -281,11 +282,11 @@ local sets = {
     BP_Delay = {
         Head = 'Summoner\'s Horn',
         Legs = 'Summoner\'s Spats',
-        Ring1 = { Name = 'Merman\'s Ring', Priority = -1 },
         Ring2 = 'Evoker\'s Ring',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Novia Earring',
-        Back = 'Summoner\'s Cape',
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
+        Back = 'Errant Cape',
         Body = 'Yinyang Robe',
         Hands = { Name = 'Smn. Bracers +1', Priority = 100 },
         Feet = 'Summoner\'s Pgch.',
@@ -296,12 +297,12 @@ local sets = {
 
     BP = {
         Head = 'Evk. Horn +1',
-        Legs = 'Evoker\'s Spats',
+        Legs = 'Evk. Spats +1',
         Ring1 = { Name = 'Sattva Ring', Priority = 100 },
         Ring2 = 'Evoker\'s Ring',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
-        Back = 'Summoner\'s Cape',
+        Back = 'Astute Cape',
         Body = 'Smn. Doublet +1',
         Hands = 'Smn. Bracers +1',
         Feet = 'Nashira Crackows',

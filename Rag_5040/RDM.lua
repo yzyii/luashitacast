@@ -76,8 +76,7 @@ local sets = {
         Hands = 'Hydra Gloves',
         Back = 'Errant Cape',
         Waist = 'Duelist\'s Belt',
-        Legs = 'Baron\'s Slops',
-        -- Legs = 'Hydra Brais',
+        Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
     Town = {},
@@ -373,8 +372,7 @@ local sets = {
         Ring2 = 'Communion Ring',
         Back = 'Errant Cape', -- 5
         Waist = 'Penitent\'s Rope', -- 3
-        Legs = 'Raven Hose', -- 6
-        -- Legs = 'Hydra Brais', -- 6
+        Legs = 'Hydra Brais', -- 6
         Feet = 'Hydra Gaiters', -- 5
     },
     Cursna = {
@@ -404,8 +402,6 @@ local sets = {
         Body = 'Mahatma Hpl.',
         Hands = 'Dusk Gloves +1',
         Back = 'Prism Cape',
-        Ear1 = 'Cmn. Earring',
-        Ear2 = 'Cmn. Earring',
     },
     Spikes = {
         Main = 'Aquilo\'s Staff',
@@ -601,11 +597,12 @@ local sets = {
         -- Hands = 'Dusk Gloves +1',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
-        Back = 'Commander\'s Cape',
+        -- Back = 'Forager\'s Mantle',
+		Back = 'Commander\'s Cape',
         Waist = 'Life Belt',
         -- Waist = 'Sonic Belt',
-        -- Legs = 'Hydra Brais',
-        Legs = 'Nashira Seraweels',
+        Legs = 'Hydra Brais',
+        -- Legs = 'Nashira Seraweels',
         Feet = 'Hydra Gaiters',
         -- Feet = 'Dusk Ledelsens +1',
     },
@@ -627,8 +624,7 @@ local sets = {
         Body = 'Assault Jerkin',
         Hands = 'Tarasque Mitts +1',
         Waist = 'Warwolf Belt',
-        Legs = 'Feral Trousers',
-        -- Legs = 'Hydra Brais',
+        Legs = 'Hydra Brais',
         Feet = 'Rutter Sabatons',
     },
     WS_Soil = {
