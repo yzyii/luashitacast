@@ -631,8 +631,7 @@ local sets = {
         Neck = 'Soil Gorget',
     },
     WS_Evisceration = {
-        Hands = 'Dusk Gloves +1',
-        -- Hands = 'Custom M Gloves',
+        Hands = 'Custom M Gloves',
     },
     WS_Spirits = {},
     WS_Energy = {

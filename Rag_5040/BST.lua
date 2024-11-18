@@ -8,23 +8,7 @@ local gaudy_harness = true
 local muscle_belt = 'Muscle Belt +1'
 
 local sets = {
-    Idle = {
-        Main = 'Darksteel Axe +1',
-        Sub = 'Viking Axe',
-        Ammo = 'Tiphia Sting',
-        Head = 'Luisant Salade',
-        Neck = 'Peacock Amulet',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Haubergeon',
-        Hands = 'Custom M Gloves',
-        Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Toreador\'s Ring',
-        Back = 'Amemet Mantle +1',
-        Waist = 'Swift Belt',
-        Legs = 'Ryl.Kgt. Breeches',
-        Feet = 'Luisant Sollerets',
-    },
+    Idle = {},
     IdleALT = {},
     Resting = {},
     Town = {},
@@ -51,31 +35,11 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP_LowAcc = {
-        Main = 'Darksteel Axe +1',
-        Sub = 'Viking Axe',
-        Ammo = 'Tiphia Sting',
-        Head = 'Luisant Salade',
-        Neck = 'Peacock Amulet',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Haubergeon',
-        Hands = 'Custom M Gloves',
-        Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Toreador\'s Ring',
-        Back = 'Amemet Mantle +1',
-        Waist = 'Swift Belt',
-        Legs = 'Ryl.Kgt. Breeches',
-        Feet = 'Luisant Sollerets',
-    },
+    TP_LowAcc = {},
     TP_HighAcc = {},
     TP_NIN = {},
 
-    WS = {
-        Waist = 'Life Belt',
-        Ring1 = 'Victory Ring',
-        Ring2 = 'Victory Ring',
-    },
+    WS = {},
 
     Charm = {},
     Reward = {},
