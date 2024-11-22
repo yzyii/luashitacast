@@ -235,3 +235,7 @@
 ### v1.3.26
 - PLD/RDM - Switch Cure Cheats to ForceEquipSet for marginally better performance
 - RNG - Fix Unlimited Shot logic
+
+### v1.3.27
+- NIN - Fixes idle set usage
+- WHM - Prevents usage of Master Caster Brc. as WHM have relic hands

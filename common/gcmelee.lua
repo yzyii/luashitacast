@@ -106,23 +106,23 @@ function gcmelee.DoDefault()
         end
     end
 
-	if (player.MainJob == 'PLD' or player.MainJob == 'NIN' or gcdisplay.GetToggle('Hate')) then
-		if (player.SubJob == 'NIN' or player.MainJob == 'NIN') then
-			local function GetShadowCount()
-				for buffId, shadowCount in pairs(utsuBuffs) do
-					if (gData.GetBuffCount(buffId) > 0) then
-						return shadowCount
-					end
-				end
+    if (player.MainJob == 'PLD' or player.MainJob == 'NIN' or gcdisplay.GetToggle('Hate')) then
+        if (player.SubJob == 'NIN' or player.MainJob == 'NIN') then
+            local function GetShadowCount()
+                for buffId, shadowCount in pairs(utsuBuffs) do
+                    if (gData.GetBuffCount(buffId) > 0) then
+                        return shadowCount
+                    end
+                end
 
-				return 0
-			end
-			if (GetShadowCount() == 0) then
+                return 0
+            end
+            if (GetShadowCount() == 0) then
                 gFunc.EquipSet('IdleDT')
                 if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALTDT') end
-			end
-		end
-	end
+            end
+        end
+    end
 end
 
 function gcmelee.DoFenrirsEarring()

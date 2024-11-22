@@ -741,7 +741,7 @@ function gcmage.EquipElemental(maxMP)
     else
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
-            if (conquest:GetOutsideControl()) and (player.MainJob == 'RDM') and master_casters_bracelets then
+            if ((player.MainJob == 'RDM') and conquest:GetOutsideControl()) and master_casters_bracelets then
                 if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
                 gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
             end
@@ -796,9 +796,10 @@ end
 function gcmage.EquipEnfeebling()
     local environment = gData.GetEnvironment()
     local action = gData.GetAction()
+    local player = gData.GetPlayer()
 
     gFunc.EquipSet('Enfeebling')
-    if (conquest:GetOutsideControl()) and master_casters_bracelets then
+    if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
         if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
         gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
     end
@@ -827,8 +828,10 @@ function gcmage.EquipEnfeebling()
 end
 
 function gcmage.EquipEnfeeblingACC(action)
+    local player = gData.GetPlayer()
+
     gFunc.EquipSet('EnfeeblingACC')
-    if (conquest:GetOutsideControl()) and master_casters_bracelets then
+    if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
         gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
     end
     if (ObiCheck(action)) then
