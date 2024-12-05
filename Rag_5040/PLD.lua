@@ -611,12 +611,32 @@ end
 
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
+	local target = gData.GetActionTarget()
+	local action = gData.GetAction()
+	local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
+
+    local cheatDelay = 0
     if (player.SubJob == "RDM" and warlocks_mantle) then
-        gcmelee.DoPrecast(fastCastValue + 0.02)
+        cheatDelay = gcmelee.DoPrecast(fastCastValue + 0.02)
         gFunc.Equip('Back', 'Warlock\'s Mantle')
     else
-        gcmelee.DoPrecast(fastCastValue)
+        cheatDelay = gcmelee.DoPrecast(fastCastValue)
     end
+
+    if (cheatDelay < 0) then
+        cheatDelay = 0
+    end
+	local function delayCheat()
+		if (target.Name == me) then
+			if (action.Name == 'Cure III') then
+				gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
+			elseif (action.Name == 'Cure IV') then
+				gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
+			end
+		end
+	end
+
+	delayCheat:once(cheatDelay)
 end
 
 profile.HandleMidcast = function()
@@ -650,10 +670,8 @@ profile.HandleMidcast = function()
 
     if (target.Name == me) then
         if (action.Name == 'Cure III') then
-            gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
             gFunc.EquipSet(sets.Cheat_C3HPUp)
         elseif (action.Name == 'Cure IV') then
-            gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
             gFunc.EquipSet(sets.Cheat_C4HPUp)
         end
     end

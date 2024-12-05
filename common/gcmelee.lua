@@ -144,9 +144,11 @@ end
 
 function gcmelee.DoPrecast(fastCastValue)
     if (not lag) then
-        gcmelee.SetupMidcastDelay(fastCastValue)
+        return gcmelee.SetupMidcastDelay(fastCastValue)
     end
     gFunc.EquipSet('Precast')
+
+    return 0
 end
 
 function gcmelee.SetupMidcastDelay(fastCastValue)
@@ -163,6 +165,8 @@ function gcmelee.SetupMidcastDelay(fastCastValue)
     end
 
     -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
+
+    return castDelay - 1
 end
 
 function gcmelee.DoMidcast(sets)
