@@ -25,7 +25,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Body = 'Vampire Cloak',
         Hands = 'Heavy Gauntlets',
-        Ring1 = 'Merman\'s Ring',
+        Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
@@ -43,7 +43,7 @@ local sets = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Hands = 'Heavy Gauntlets',
-        Ring1 = 'Merman\'s Ring',
+        Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
@@ -116,7 +116,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring', -- 2
         Body = 'Cor. Scale Mail +1', -- 4
         Hands = 'Coral Fng. Gnt. +1', -- 2
-        Ring1 = 'Merman\'s Ring', -- 4
+        Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',

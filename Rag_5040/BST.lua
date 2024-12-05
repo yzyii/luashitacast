@@ -5,7 +5,7 @@ local fastCastValue = 0.00 -- 0% from gear
 local gaudy_harness = true
 
 -- Replace these with '' if you do not have them
-local muscle_belt = 'Muscle Belt +1'
+local muscle_belt = ''
 
 local sets = {
     Idle = {
@@ -21,7 +21,7 @@ local sets = {
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Amemet Mantle +1',
-        Waist = 'Sonic Belt',
+        Waist = 'Swift Belt',
         Legs = 'Ryl.Kgt. Breeches',
         Feet = 'Luisant Sollerets',
     },
@@ -64,7 +64,7 @@ local sets = {
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Amemet Mantle +1',
-        Waist = 'Sonic Belt',
+        Waist = 'Swift Belt',
         Legs = 'Ryl.Kgt. Breeches',
         Feet = 'Luisant Sollerets',
     },

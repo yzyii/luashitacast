@@ -72,8 +72,8 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring', -- 2
         Ear2 = 'Merman\'s Earring', -- 2
-        Hands = 'Merman\'s Bangles',
-        Ring1 = 'Merman\'s Ring', -- 4
+        Hands = 'Merman\'s Bangles', -- 3
+        Ring1 = 'Shadow Ring',
         Ring2 = 'Sattva Ring', -- 5
         Back = 'Hexerei Cape', -- 3
     },
