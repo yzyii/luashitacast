@@ -243,3 +243,4 @@
 ### v1.3.28
 - PLD - Adds a delay to cure cheating to minimize the cure window. This comes at the expense of 1 second of SIRD gear.
 - BLM - Fixes weakness check when nuking with yellow set and disables sorc ring automatically if weakened
+- WHM - Adds Barspell set for Cleric's Pantaloons etc.

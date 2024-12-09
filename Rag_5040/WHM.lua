@@ -40,6 +40,7 @@ local sets = {
     Regen = {
         Body = 'Cleric\'s Bliaut',
     },
+    Barspell = {},
     Cursna = {},
 
     Enhancing = {},
@@ -134,10 +135,13 @@ profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP, nil)
 
     local action = gData.GetAction()
-    if (string.match(action.Name, 'Regen')) then
-        gFunc.EquipSet('Regen')
-    end
-    if (string.match(action.Name, 'Banish')) then
+    if (action.Skill == 'Enhancing Magic') then
+        if (string.match(action.Name, 'Regen')) then
+            gFunc.EquipSet('Regen')
+        elseif (string.match(spell.Name, 'Bar')) then
+            gFunc.EquipSet('Barspell')
+        end
+    elseif (string.match(action.Name, 'Banish')) then
         gFunc.EquipSet('Banish')
     end
 end
