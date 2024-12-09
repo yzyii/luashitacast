@@ -138,7 +138,7 @@ profile.HandleMidcast = function()
     if (action.Skill == 'Enhancing Magic') then
         if (string.match(action.Name, 'Regen')) then
             gFunc.EquipSet('Regen')
-        elseif (string.match(spell.Name, 'Bar')) then
+        elseif (string.match(action.Name, 'Bar')) then
             gFunc.EquipSet('Barspell')
         end
     elseif (string.match(action.Name, 'Banish')) then
