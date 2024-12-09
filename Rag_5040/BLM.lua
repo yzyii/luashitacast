@@ -92,7 +92,7 @@ local sets = {
     },
     MDT = { -- Shell IV provides 23% MDT
         Main = 'Terra\'s Staff',
-        Head = 'Green Ribbon +1',
+        Head = 'Black Ribbon',
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring', -- 2
         Ear2 = 'Merman\'s Earring', -- 2
@@ -105,7 +105,7 @@ local sets = {
     },
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
-        Head = 'Green Ribbon +1', -- 10
+        Head = 'Black Ribbon', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
@@ -119,7 +119,7 @@ local sets = {
     },
     IceRes = {
         Main = 'Vulcan\'s Staff', -- 20
-        Head = 'Green Ribbon +1', -- 10
+        Head = 'Black Ribbon', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Diamond Earring', -- 10
         Ear2 = 'Omn. Earring', -- 11
@@ -132,7 +132,7 @@ local sets = {
     },
     LightningRes = {
         Main = 'Terra\'s Staff', -- 20
-        Head = 'Green Ribbon +1', -- 10
+        Head = 'Black Ribbon', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
@@ -145,7 +145,7 @@ local sets = {
     },
     EarthRes = {
         Main = 'Auster\'s Staff', -- 20
-        Head = 'Green Ribbon +1', -- 10
+        Head = 'Black Ribbon', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
@@ -158,7 +158,7 @@ local sets = {
     },
     WindRes = {
         Main = 'Aquilo\'s Staff', -- 20
-        Head = 'Green Ribbon +1', -- 10
+        Head = 'Black Ribbon', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Diamond Earring', -- 10
         Ear2 = 'Omn. Earring', -- 11
@@ -171,7 +171,7 @@ local sets = {
     },
     WaterRes = {
         Main = 'Jupiter\'s Staff', -- 20
-        Head = 'Green Ribbon +1', -- 10
+        Head = 'Black Ribbon', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
