@@ -43,6 +43,7 @@ local sets = {
 
     MaxHP = {},
     BreathBonus = {},
+    BreathBonus_NonMage = {},
     Stoneskin = {},
 
     ['Ancient Circle'] = {},
@@ -164,7 +165,11 @@ profile.HandleDefault = function()
 
     local petAction = gData.GetPetAction()
     if (petAction ~= nil) then
-        gFunc.EquipSet(sets.BreathBonus)
+        if (isMage) then
+            gFunc.EquipSet(sets.BreathBonus)
+        else
+            gFunc.EquipSet(sets.BreathBonus_NonMage)
+        end
         return
     end
 
