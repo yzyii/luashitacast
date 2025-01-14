@@ -316,9 +316,9 @@ end
 
 profile.OnLoad = function()
     gcinclude.SetAlias(T{'sballad','shorde','srecast'})
-	gcdisplay.CreateToggle('SmallBallad', false)
-	gcdisplay.CreateToggle('SmallHorde', false)
-	gcdisplay.CreateToggle('SleepRecast', false)
+    gcdisplay.CreateToggle('SmallBallad', false)
+    gcdisplay.CreateToggle('SmallHorde', false)
+    gcdisplay.CreateToggle('SleepRecast', false)
     gcmage.Load()
     profile.SetMacroBook()
 end

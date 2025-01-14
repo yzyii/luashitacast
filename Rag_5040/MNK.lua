@@ -131,7 +131,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
         Hands = 'Mel. Gloves +1',
-        Ring1 = 'Toreador\'s Ring',
+        Ring1 = 'Begrudging Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Black Belt',
@@ -179,6 +179,7 @@ local sets = {
         Neck = 'Faith Torque',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
+        Ring1 = 'Begrudging Ring',
     },
     WS_AsuranFists_HighAcc = {
         Ring1 = 'Toreador\'s Ring',

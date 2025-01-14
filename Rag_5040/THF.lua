@@ -136,7 +136,7 @@ end
 
 profile.OnLoad = function()
     gcinclude.SetAlias(T{'th'})
-	gcdisplay.CreateToggle('TH', false)
+    gcdisplay.CreateToggle('TH', false)
     gcmelee.Load()
     profile.SetMacroBook()
 end

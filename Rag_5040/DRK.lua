@@ -5,6 +5,7 @@ local fastCastValue = 0.07 -- 7% from gear
 local use_chaos_burgeonet_for_tp_during_souleater = true
 
 local parade_gorget = true
+local fenrirs_stone = true
 
 -- Set to true if you have the obi
 local karin_obi = true
@@ -494,7 +495,12 @@ profile.HandleDefault = function()
         end
     end
 
+    local environment = gData.GetEnvironment()
+
     gcmelee.DoDefaultOverride()
+    if (gcdisplay.IdleSet == 'Evasion' and fenrirs_stone and (environment.Time >= 6 and environment.Time < 18)) then
+        gFunc.Equip('Ammo', 'Fenrir\'s Stone')
+    end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end

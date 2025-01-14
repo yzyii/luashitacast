@@ -2,9 +2,9 @@ local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set
 
-local ninSJNukeMaxMP = 688 -- The Max MP you have when /nin in your nuking set
-local whmSJNukeMaxMP = 766 -- The Max MP you have when /whm in your nuking set
-local rdmSJNukeMaxMP = 747 -- The Max MP you have when /rdm in your nuking set
+local ninSJNukeMaxMP = 670 -- The Max MP you have when /nin in your nuking set
+local whmSJNukeMaxMP = 748 -- The Max MP you have when /whm in your nuking set
+local rdmSJNukeMaxMP = 729 -- The Max MP you have when /rdm in your nuking set
 
 local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false

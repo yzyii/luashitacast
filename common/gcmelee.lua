@@ -154,12 +154,20 @@ end
 function gcmelee.SetupMidcastDelay(fastCastValue)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
+
+    local hasso = gData.GetBuffCount('Hasso')
+    local seigan = gData.GetBuffCount('Seigan')
+    local castTimeMod = 1
+    if (hasso == 1 or seigan == 1) then
+        castTimeMod = 1.5
+    end
+
     if (player.SubJob == "RDM") then
          fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
     local minimumBuffer = 0.25 -- Can be lowered to 0.1 if you want
     local packetDelay = 0.25 -- Change this to 0.4 if you do not use PacketFlow
-    local castDelay = ((action.CastTime * (1 - fastCastValue)) / 1000) - minimumBuffer
+    local castDelay = ((action.CastTime * castTimeMod * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
     end
