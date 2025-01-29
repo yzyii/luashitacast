@@ -6,6 +6,8 @@ local ninSJMaxMP = 670 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 748 -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = 729 -- The Max MP you have when /rdm in your idle set
 
+local nukeExtraThreshold = 850 -- The minimum MP for which NukeExtra and StoneskinExtra set will be used instead of regular sets (to allow additional nukes using max mp sets)
+
 local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false
 
@@ -31,12 +33,13 @@ local sets = {
     },
     IdleALT = {},
     IdleMaxMP = {
-        Neck = 'Uggalepih Pendant',
-        Ear1 = 'Loquac. Earring',
-        Ear2 = 'Magnetic Earring',
-        Hands = 'Zenith Mitts +1',
-        Waist = 'Hierarch Belt',
-        Back = 'Merciful Cape',
+        Neck = { Name = 'Uggalepih Pendant', Priority = 100 },
+        Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
+        Hands = { Name = 'Zenith Mitts +1', Priority = 100 },
+        Waist = { Name = 'Hierarch Belt', Priority = 100 },
+        Legs = { Name = 'Src. Tonban +1', Priority = 100 },
+        Back = { Name = 'Merciful Cape', Priority = 100 },
     },
     Resting = {
         Main = 'Pluto\'s Staff',
@@ -290,6 +293,22 @@ local sets = {
         Legs = 'Mahatma Slops',
         Feet = { Name = 'Mahatma Pigaches', Priority = 100 },
     },
+    StoneskinExtra = {
+        Main = 'Kirin\'s Pole',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Zenith Crown +1',
+        Neck = 'Stone Gorget',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Cmn. Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = 'Dvt. Mitts +1',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        Back = 'Errant Cape',
+        Waist = 'Hierarch Belt',
+        Legs = 'Mahatma Slops',
+        Feet = 'Mahatma Pigaches',
+    },
     Spikes = {
         Main = 'Kirin\'s Pole',
         Ammo = 'Phtm. Tathlum',
@@ -423,6 +442,21 @@ local sets = {
         Legs = 'Mahatma Slops',
         Feet = 'Src. Sabots +1',
     },
+    NukeExtra = {
+        Ammo = 'Phtm. Tathlum',
+        Head = { Name = 'Zenith Crown +1', Priority = 100 },
+        Neck = 'Prudence Torque',
+        Ear1 = 'Novio Earring',
+        Ear2 = 'Magnetic Earring',
+        Body = 'Igqira Weskit',
+        Hands = { Name = 'Zenith Mitts +1', Priority = 100 },
+        Ring1 = 'Snow Ring',
+        Ring2 = { Name = 'Serket Ring', Priority = 100 },
+        Back = { Name = 'Merciful Cape', Priority = 100 },
+        Waist = 'Sorcerer\'s Belt',
+        Legs = 'Mahatma Slops',
+        Feet = 'Src. Sabots +1',
+    },
     MB = {
         Ammo = 'Dream Sand',
     },
@@ -485,16 +519,24 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
+    gcinclude.SetAlias(T{'extra'})
+    gcdisplay.CreateToggle('Extra', false)
     gcmage.Load()
     profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
     gcmage.Unload()
+    gcinclude.ClearAlias(T{'extra'})
 end
 
 profile.HandleCommand = function(args)
-    gcmage.DoCommands(args)
+    if (args[1] == 'extra') then
+        gcdisplay.AdvanceToggle('Extra')
+        gcinclude.Message('Extra', gcdisplay.GetToggle('Extra'))
+    else
+        gcmage.DoCommands(args)
+    end
 
     if (args[1] == 'horizonmode') then
         profile.HandleDefault()
@@ -526,11 +568,15 @@ end
 local ElementalDebuffs = T{ 'Burn','Rasp','Drown','Choke','Frost','Shock' }
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, nil, rdmSJMaxMP, nil)
+    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, nukeExtraThreshold, rdmSJMaxMP, nil)
 
+    local player = gData.GetPlayer()
     local action = gData.GetAction()
     if (republic_circlet == true) then
         if (action.Skill == 'Elemental Magic' and gcdisplay.GetCycle('Mode') == 'Potency') then
+            if (gcdisplay.GetToggle('Extra') and player.MP >= nukeExtraThreshold) then
+                do return end
+            end
             if (not ElementalDebuffs:contains(action.Name)) then
                 if (conquest:GetInsideControl()) then
                     print(chat.header('GCMage'):append(chat.message('In Region - Using Republic Circlet')))

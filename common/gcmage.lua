@@ -553,7 +553,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     end
 
     if (chainspell == 0 and not lag) then
-        gcmage.SetupInterimEquipSet(sets)
+        if not (player.MainJob == 'BLM' and gcdisplay.GetToggle('Extra') and player.MP >= blmSJMMP) then
+            gcmage.SetupInterimEquipSet(sets)
+        end
     end
 
     if (action.Skill == 'Enhancing Magic') then
@@ -561,7 +563,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     elseif (action.Skill == 'Healing Magic') then
         gcmage.EquipHealing(maxMP, sets, chainspell)
     elseif (action.Skill == 'Elemental Magic') then
-        gcmage.EquipElemental(maxMP)
+        gcmage.EquipElemental(maxMP, blmSJMMP)
     elseif (action.Skill == 'Enfeebling Magic') then
         gcmage.EquipEnfeebling()
     elseif (action.Skill == 'Dark Magic') then
@@ -724,7 +726,7 @@ function gcmage.EquipHealing(maxMP, sets, chainspell)
     end
 end
 
-function gcmage.EquipElemental(maxMP)
+function gcmage.EquipElemental(maxMP, blmNukeExtra)
     local action = gData.GetAction()
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
@@ -733,6 +735,10 @@ function gcmage.EquipElemental(maxMP)
     if (gcdisplay.GetToggle('HNM') == true) then
         gFunc.EquipSet('NukeHNM')
     end
+    if (player.MainJob == 'BLM' and gcdisplay.GetToggle('Extra') and player.MP >= blmNukeExtra) then
+        gFunc.EquipSet('NukeExtra')
+    end
+
     if (ElementalDebuffs:contains(action.Name)) then
         gFunc.EquipSet('NukeDOT')
         if (player.SubJob == "BLM" and wizards_earring) then

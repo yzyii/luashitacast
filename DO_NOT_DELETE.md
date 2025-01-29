@@ -249,3 +249,6 @@
 - DRG - Adds a non-mage breath set
 - Melee - Adds cast delay handling for Hasso and Seigan
 - DRK - Adds fenrir's stone
+
+### v1.3.30
+- BLM - Implements /extra command toggle, NukeExtra and StoneskinExtra sets to be able to nuke with a max mp-ish set.

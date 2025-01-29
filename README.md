@@ -141,6 +141,10 @@ These commands and sets were created before /lockset was implemented and do the 
 /yellow - equips gear to lower HP before finishing casts to trigger Sorcerer's Ring.
           This is on by default.
 /mb     - equips gear that gives bonuses to magic burst damage when casting nukes.
+/extra  - Uses NukeExtra and StoneskinExtra sets when above a given MP threshold.
+          Threshold is defined by the varable: "nukeExtraThreshold".
+          This is intended for nuking with a Max MP build.
+          Override sets such as MDT/PDT/FireRes etc. will not work with this enabled.
 ```
 
 ## Additional Commands for WHM
