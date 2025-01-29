@@ -2,9 +2,9 @@ local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set
 
-local ninSJNukeMaxMP = 670 -- The Max MP you have when /nin in your nuking set
-local whmSJNukeMaxMP = 748 -- The Max MP you have when /whm in your nuking set
-local rdmSJNukeMaxMP = 729 -- The Max MP you have when /rdm in your nuking set
+local ninSJMaxMP = 670 -- The Max MP you have when /nin in your idle set
+local whmSJMaxMP = 748 -- The Max MP you have when /whm in your idle set
+local rdmSJMaxMP = 729 -- The Max MP you have when /rdm in your idle set
 
 local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false
@@ -41,7 +41,7 @@ local sets = {
     Resting = {
         Main = 'Pluto\'s Staff',
         Head = 'Hydra Beret',
-        Neck = 'Checkered Scarf',
+        Neck = 'Pch. Collar',
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
         Body = 'Mahatma Hpl.',
@@ -209,17 +209,19 @@ local sets = {
         Feet = 'Wizard\'s Sabots', -- 20
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
-        Head = 'Zenith Crown',
+        Head = 'Zenith Crown +1',
+        Neck = 'Star Necklace',
         Ear1 = 'Loquac. Earring',
-        Ear2 = 'Merman\'s Earring',
+        Ear2 = 'Magnetic Earring',
         Hands = 'Zenith Mitts +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Waist = 'Penitent\'s Rope',
+        Waist = { Name = 'Penitent\'s Rope', Priority = -100 },
         Feet = 'Rostrum Pumps',
     },
     YellowHNM = {
         Body = 'Black Cotehardie',
+        Back = { Name = 'Prism Cape', Priority = 100 },
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Nashira Turban', -- 2
@@ -393,7 +395,7 @@ local sets = {
         Hands = 'Wzd. Gloves +1',
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
-        Back = 'Prism Cape',
+        Back = 'Errant Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
         Feet = 'Src. Sabots +1',
@@ -441,22 +443,7 @@ local sets = {
         Legs = 'Seer\'s Slacks',
         Feet = 'Mannequin Pumps',
     },
-    LockSet2 = { -- 60 Cap
-        Main = 'Terra\'s Staff',
-        Ammo = 'Morion Tathlum',
-        Head = 'Seer\'s Crown +1',
-        Neck = 'Checkered Scarf',
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Morion Earring',
-        Body = 'Black Cotehardie',
-        Hands = 'Seer\'s Mitts +1',
-        Ring1 = 'Wisdom Ring +1',
-        Ring2 = 'Wisdom Ring +1',
-        Back = 'Black Cape +1',
-        Waist = 'Penitent\'s Rope',
-        Legs = 'Seer\'s Slacks',
-        Feet = 'Mountain Gaiters',
-    },
+    LockSet2 = {},
     LockSet3 = {},
 }
 profile.Sets = sets
@@ -515,7 +502,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(ninSJNukeMaxMP, whmSJNukeMaxMP, nil, rdmSJNukeMaxMP, nil)
+    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, nil, rdmSJMaxMP, nil)
 
     local spikes = gData.GetBuffCount('Blaze Spikes') + gData.GetBuffCount('Shock Spikes') + gData.GetBuffCount('Ice Spikes')
     local isPhysical = gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT'
@@ -539,7 +526,7 @@ end
 local ElementalDebuffs = T{ 'Burn','Rasp','Drown','Choke','Frost','Shock' }
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, ninSJNukeMaxMP, whmSJNukeMaxMP, nil, rdmSJNukeMaxMP, nil)
+    gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, nil, rdmSJMaxMP, nil)
 
     local action = gData.GetAction()
     if (republic_circlet == true) then
