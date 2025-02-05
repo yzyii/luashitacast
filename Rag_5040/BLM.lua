@@ -2,9 +2,9 @@ local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set
 
-local ninSJMaxMP = 670 -- The Max MP you have when /nin in your idle set
-local whmSJMaxMP = 748 -- The Max MP you have when /whm in your idle set
-local rdmSJMaxMP = 729 -- The Max MP you have when /rdm in your idle set
+local ninSJMaxMP = 640 -- The Max MP you have when /nin in your idle set
+local whmSJMaxMP = 718 -- The Max MP you have when /whm in your idle set
+local rdmSJMaxMP = 699 -- The Max MP you have when /rdm in your idle set
 
 local nukeExtraThreshold = 850 -- The minimum MP for which NukeExtra and StoneskinExtra set will be used instead of regular sets (to allow additional nukes using max mp sets)
 
@@ -17,12 +17,12 @@ local opuntia_hoop_slot = 'Ring1'
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
-        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
+        Ammo = 'Tiphia Sting',
         Head = 'Genie Tiara',
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = { Name = 'Sorcerer\'s Coat', Priority = 100 },
+        Body = { Name = 'Src. Coat +1', Priority = 100 },
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
         Ring2 = 'Sattva Ring',
@@ -33,6 +33,7 @@ local sets = {
     },
     IdleALT = {},
     IdleMaxMP = {
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
         Neck = { Name = 'Uggalepih Pendant', Priority = 100 },
         Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
@@ -58,7 +59,7 @@ local sets = {
     Town = {
         Main = 'Terra\'s Staff',
         Head = 'Src. Petasos +1',
-        Body = 'Sorcerer\'s Coat',
+        Body = 'Src. Coat +1',
         Hands = 'Zenith Mitts +1',
         Legs = 'Src. Tonban +1',
         Feet = 'Herald\'s Gaiters',
@@ -73,12 +74,14 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = { Name = 'Sorcerer\'s Coat', Priority = 100 },
+        Body = { Name = 'Src. Coat +1', Priority = 100 },
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
+        Waist = 'Sorcerer\'s Belt',
         Legs = 'Igqira Lappas',
+        Feet = 'Mountain Gaiters',
     },
     DTNight = {
         Main = 'Terra\'s Staff',
@@ -86,12 +89,14 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = { Name = 'Sorcerer\'s Coat', Priority = 100 },
+        Body = { Name = 'Src. Coat +1', Priority = 100 },
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Jelly Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
+        Waist = 'Sorcerer\'s Belt',
         Legs = 'Igqira Lappas',
+        Feet = 'Mountain Gaiters',
     },
     MDT = { -- Shell IV provides 23% MDT
         Main = 'Terra\'s Staff',
@@ -99,12 +104,14 @@ local sets = {
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring', -- 2
         Ear2 = 'Merman\'s Earring', -- 2
-        Body = { Name = 'Sorcerer\'s Coat', Priority = 100 },
+        Body = { Name = 'Src. Coat +1', Priority = 100 },
         Hands = 'Merman\'s Bangles', -- 3
         Ring1 = 'Merman\'s Ring', -- 4 -- Using this over Shadow Ring for consistency
         Ring2 = 'Sattva Ring', -- 5
         Back = { Name = 'Hexerei Cape', Priority = 100 }, -- 3
+        Waist = 'Sorcerer\'s Belt',
         Legs = 'Igqira Lappas',
+        Feet = 'Mountain Gaiters',
     },
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
@@ -132,6 +139,7 @@ local sets = {
         Back = 'Aurora Mantle', -- 7
         Waist = 'Fire Belt', -- 20
         Legs = 'Igqira Lappas',
+        Feet = 'Mountain Gaiters',
     },
     LightningRes = {
         Main = 'Terra\'s Staff', -- 20
@@ -145,6 +153,7 @@ local sets = {
         Back = 'Hexerei Cape',
         Waist = 'Earth Belt', -- 20
         Legs = 'Igqira Lappas',
+        Feet = 'Mountain Gaiters',
     },
     EarthRes = {
         Main = 'Auster\'s Staff', -- 20
@@ -158,6 +167,7 @@ local sets = {
         Back = 'Hexerei Cape',
         Waist = 'Wind Belt', -- 20
         Legs = 'Igqira Lappas',
+        Feet = 'Mountain Gaiters',
     },
     WindRes = {
         Main = 'Aquilo\'s Staff', -- 20
@@ -171,6 +181,7 @@ local sets = {
         Back = 'Aurora Mantle', -- 7
         Waist = 'Ice Belt', -- 20
         Legs = 'Igqira Lappas',
+        Feet = 'Mountain Gaiters',
     },
     WaterRes = {
         Main = 'Jupiter\'s Staff', -- 20
@@ -184,6 +195,7 @@ local sets = {
         Back = 'Hexerei Cape',
         Waist = 'Lightning Belt', -- 20
         Legs = 'Igqira Lappas',
+        Feet = 'Mountain Gaiters',
     },
     Evasion = {},
 
@@ -213,9 +225,10 @@ local sets = {
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
         Head = 'Zenith Crown +1',
-        Neck = 'Star Necklace',
+        Ammo = 'Tiphia Sting',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
+        Body = { Name = 'Src. Coat +1', Priority = 100 },
         Hands = 'Zenith Mitts +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
@@ -223,8 +236,7 @@ local sets = {
         Feet = 'Rostrum Pumps',
     },
     YellowHNM = {
-        Body = 'Black Cotehardie',
-        Back = { Name = 'Prism Cape', Priority = 100 },
+        Neck = 'Star Necklace',
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Nashira Turban', -- 2
