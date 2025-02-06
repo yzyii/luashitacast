@@ -211,8 +211,9 @@ Do NOT DM or /tell me in-game regarding your setup issues or if you have not bot
 # TODO
 A list of things to do in the future but who knows when I'll get around to them:
 - THF - Automatic TH toggling via Will's isTargetTagged.lua lib
-- RNG - Implement Accuracy Modes for Ranged Attacks
+- RNG - Add Accuracy Modes for Ranged Attacks
 - PLD - Add Divine Skill set
 - DRG - Add different Jump Accuracy sets
+- NIN - Add Accuracy Modes for Nukes
 
 Feel free to submit PRs to implement these.
