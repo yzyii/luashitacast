@@ -6,6 +6,9 @@ local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
+local virology_ring = true
+local virology_ring_slot = 'Ring2'
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -143,6 +146,8 @@ profile.HandleMidcast = function()
         end
     elseif (string.match(action.Name, 'Banish')) then
         gFunc.EquipSet('Banish')
+    elseif virology_ring and (string.match(spell.Name, '.*na$') or (spell.Name == 'Erase')) then
+        gFunc.Equip(virology_ring_slot, 'Virology Ring')
     end
 end
 
