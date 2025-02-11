@@ -20,7 +20,6 @@ local shadow_mantle = true
 local sets = {
     Idle = {
         Main = 'Durandal',
-        -- Sub = 'Master Shield',
         Sub = 'Palmerin\'s Shield',
         Range = 'Rosenbogen',
         Ammo = '',
@@ -131,7 +130,6 @@ local sets = {
     },
     MDT = { -- Shell IV provides 23% MDT
         Main = 'Durandal',
-        -- Sub = 'Master Shield',
         Sub = 'Palmerin\'s Shield', -- 2
         Range = 'Rosenbogen',
         Ammo = '',
@@ -257,7 +255,7 @@ local sets = {
         Feet = 'Coral Greaves +1', -- 4
     },
     Evasion = {
-        -- Head = 'Bahamut\'s Mask',
+        Head = 'Bahamut\'s Mask',
         -- Hrotti
         -- Crimson Scale Mail
         Legs = 'Bahamut\'s Hose',
@@ -308,8 +306,7 @@ local sets = {
     Hate = {
         Main = 'Durandal',
         Sub = 'Koenig Shield',
-        Head = 'Aegishjalmr',
-        -- Head = 'Bahamut\'s Mask',
+        Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hades Earring +1',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
@@ -362,8 +359,7 @@ local sets = {
         Sub = '',
         Range = 'Rosenbogen',
         Ammo = '',
-        Head = 'Aegishjalmr',
-        -- Head = 'Bahamut\'s Mask',
+        Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
         Ear2 = 'Hades Earring +1',
