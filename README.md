@@ -215,5 +215,6 @@ A list of things to do in the future but who knows when I'll get around to them:
 - PLD - Add Divine Skill set
 - DRG - Add different Jump Accuracy sets
 - NIN - Add Accuracy Modes for Nukes
+- Micro-optimizations with job specific overrides for midcast and respecting max mp sets etc. e.g. WHM should not equip Virology ring when at 100% max mp.
 
 Feel free to submit PRs to implement these.

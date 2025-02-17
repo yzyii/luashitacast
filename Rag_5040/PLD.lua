@@ -320,8 +320,8 @@ local sets = {
         Feet = 'Vlr. Leggings +1',
     },
     Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
-        Main = 'Durandal',
-        Sub = 'Koenig Shield',
+        Main = 'Capricorn Staff',
+        Sub = 'remove',
         Head = 'Homam Zucchetto',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Loquac. Earring',
