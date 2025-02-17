@@ -252,3 +252,6 @@
 
 ### v1.3.30
 - BLM - Implements /extra command toggle, NukeExtra and StoneskinExtra sets to be able to nuke with a max mp-ish set.
+
+### v1.3.31
+- WHM - Add Virology Ring
