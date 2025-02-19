@@ -261,3 +261,8 @@
 - WHM - Implements Mjollnir / Asklepios
 - WHM/RDM/BRD - Implements TP LowAcc and HighAcc sets
 - All Jobs - Implements a Mjollnir Haste Buff set
+- RNG - Changes Ranged_ATK set to EagleEyeShot and actually implements Ranged_ATK as a toggle to change midshot equipment
+- NIN - Adds Nuke Accuracy modes
+- PLD - Add Divine Magic set
+- All Melee - Adds WS_HighAcc set
+- DRG - Implements accuracy modes for jumps

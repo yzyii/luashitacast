@@ -351,15 +351,12 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
-    -- You may add logic here
 end
 
 profile.HandleMidshot = function()
-    -- You may add logic here
 end
 
 profile.HandleWeaponskill = function()
-    -- You may add logic here
 end
 
 profile.OnLoad = function()

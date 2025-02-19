@@ -49,12 +49,16 @@ local sets = {
 
     ['Ancient Circle'] = {},
     ['Jump'] = {},
+    ['Jump Accuracy'] = {},
     ['High Jump'] = {},
+    ['High Jump Accuracy'] = {},
     ['Super Jump'] = {},
     ['Call Wyvern'] = {},
     ['Spirit Link'] = {},
 
     WS = {},
+    WS_HighAcc = {},
+
     ['Penta Thrust'] = {},
     ['Wheeling Thrust'] = {},
     ['Impulse Drive'] = {},
@@ -95,10 +99,18 @@ local WeaponSkills = T{
 
 profile.HandleAbility = function()
     local action = gData.GetAction()
-    if (action.Name == "Steady Wing") then
+    if (action.Name == 'Steady Wing') then
         gFunc.EquipSet(sets.BreathBonus)
     elseif (JobAbilities:contains(action.Name)) then
         gFunc.EquipSet(sets[action.Name])
+    end
+
+    if (gcmelee.GetAccuracyMode() == 'HighAcc') then
+        if (action.Name == 'Jump') then
+            gFunc.EquipSet('Jump Accuracy')
+        elseif (action.Name == 'High Jump') then
+            gFunc.EquipSet('High Jump Accuracy')
+        end
     end
 end
 
@@ -107,22 +119,18 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
-    -- You may add logic here
 end
 
 profile.HandleMidshot = function()
-    -- You may add logic here
 end
 
 profile.HandleWeaponskill = function()
-    gFunc.EquipSet(sets.WS)
+    gcmelee.DoWS()
 
     local action = gData.GetAction()
     if (WeaponSkills:contains(action.Name)) then
       gFunc.EquipSet(sets[action.Name])
     end
-
-    gcmelee.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()
@@ -179,7 +187,7 @@ end
 
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
-    if (player.SubJob == "RDM" and warlocks_mantle) then
+    if (player.SubJob == 'RDM' and warlocks_mantle) then
         gcmelee.DoPrecast(fastCastValue + 0.02)
         gFunc.Equip('Back', 'Warlock\'s Mantle')
     else

@@ -458,6 +458,8 @@ local sets = {
         Legs = 'Vlr. Breeches +1',
         Feet = 'Rutter Sabatons',
     },
+    WS_HighAcc = {},
+
     WS_Spirits = {},
 
     Cover = {
@@ -468,6 +470,7 @@ local sets = {
         Main = 'Apollo\'s Staff',
         Ear1 = 'Hospitaler Earring',
     },
+    Divine = {},
     Rampart = { -- Rampart gives VIT x2 damage shield in era
         Main = 'Durandal',
         Sub = 'Koenig Shield',
@@ -541,17 +544,13 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
-    -- You may add logic here
 end
 
 profile.HandleMidshot = function()
-    -- You may add logic here
 end
 
 profile.HandleWeaponskill = function()
-    gFunc.EquipSet(sets.WS)
-
-    gcmelee.DoFenrirsEarring()
+    gcmelee.DoWS()
 
     local action = gData.GetAction()
     if (action.Name == 'Spirits Within') then
@@ -656,6 +655,8 @@ profile.HandleMidcast = function()
 
         if (action.Skill == 'Healing Magic') then
             gFunc.EquipSet(sets.Cure)
+        elseif (action.Skill == 'Divine Magic') then
+            gFunc.EquipSet(sets.Divine)
         end
     else
         if (action.Name == 'Utusemi: Ichi') then

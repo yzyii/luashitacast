@@ -41,6 +41,8 @@ local sets = {
     Ranged_ACC = {},
     Ranged_ATK = {},
 
+    EagleEyeShot = {},
+
     EnmityDown = {},
 
     Barrage = {},
@@ -51,6 +53,8 @@ local sets = {
     UnlimitedShot = {},
 
     WS = {},
+    WS_HighAcc = {},
+
     WS_SlugShot = {},
     WS_Coronach = {},
 }
@@ -82,7 +86,7 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Sharpshot') then
         gFunc.EquipSet(sets.Sharpshot)
     elseif (action.Name == 'Eagle Eye Shot') then
-        gFunc.EquipSet(sets.Ranged_ATK)
+        gFunc.EquipSet(sets.EagleEyeShot)
 
         local equipment = gData.GetEquipment()
         local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
@@ -115,6 +119,9 @@ end
 
 profile.HandleMidshot = function()
     gFunc.EquipSet(sets.Ranged_ACC)
+    if (gcdisplay.GetCycle('Ranged') == 'Attack') then
+        gFunc.EquipSet(sets.Ranged_ATK)
+    end
 
     local barrage = gData.GetBuffCount('Barrage')
     if (barrage == 1) then
@@ -128,7 +135,7 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    gFunc.EquipSet(sets.WS)
+    gcmelee.DoWS()
 
     local equipment = gData.GetEquipment()
     local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
@@ -148,16 +155,24 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
+    gcinclude.SetAlias(T{'ranged'})
+    gcdisplay.CreateCycle('Ranged', {[1] = 'Accuracy', [2] = 'Attack',})
     gcmelee.Load()
     profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
     gcmelee.Unload()
+    gcinclude.ClearAlias(T{'ranged'})
 end
 
 profile.HandleCommand = function(args)
-    gcmelee.DoCommands(args)
+    if (args[1] == 'ranged') then
+        gcdisplay.AdvanceCycle('Ranged')
+        gcinclude.Message('Ranged', gcdisplay.GetCycle('Ranged'))
+    else
+        gcmelee.DoCommands(args)
+    end
 
     if (args[1] == 'horizonmode') then
         profile.HandleDefault()

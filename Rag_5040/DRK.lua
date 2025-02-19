@@ -338,6 +338,8 @@ local sets = {
         Legs = 'Onyx Cuisses',
         Feet = 'Chs. Sollerets +1',
     },
+    WS_HighAcc = {},
+
     WS_Guillotine = {},
     WS_SpinningSlash = {},
     WS_CrossReaper = {},
@@ -437,7 +439,7 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    gFunc.EquipSet(sets.WS)
+    gcmelee.DoWS()
 
     local action = gData.GetAction()
     if (action.Name == 'Guillotine') then
@@ -452,8 +454,6 @@ profile.HandleWeaponskill = function()
     if (souleater > 0) then
         gFunc.EquipSet(sets.SoulEater)
     end
-
-    gcmelee.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()
