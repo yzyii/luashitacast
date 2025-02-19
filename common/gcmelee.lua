@@ -93,6 +93,10 @@ function gcmelee.DoDefault()
                     gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
                 end
 
+                if gData.GetBuffCount(580) > 0 then -- Horizon Mjollnir Haste Buff
+                    gFunc.EquipSet('TP_Mjollnir_Haste')
+                end
+
                 if (player.MainJob ~= 'RNG') then
                     if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
                         gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')

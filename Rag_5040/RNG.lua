@@ -36,6 +36,7 @@ local sets = {
 
     TP_LowAcc = {},
     TP_HighAcc = {},
+    TP_Mjollnir_Haste = {},
 
     Ranged_ACC = {},
     Ranged_ATK = {},

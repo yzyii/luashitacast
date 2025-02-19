@@ -321,6 +321,7 @@ local sets = {
         Legs = 'Homam Cosciales',
         Feet = 'Homam Gambieras',
     },
+    TP_Mjollnir_Haste = {},
 
     WS = {
         Ammo = 'Bomb Core',

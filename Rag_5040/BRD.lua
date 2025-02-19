@@ -275,8 +275,11 @@ local sets = {
     LockSet3 = {},
 
     TP = {},
+    TP_HighAcc = {},
     TP_NIN = {},
+    TP_Mjollnir_Haste = {},
     WS = {},
+    WS_HighAcc = {},
 }
 profile.Sets = sets
 
@@ -311,6 +314,9 @@ end
 
 profile.HandleWeaponskill = function()
     gFunc.EquipSet(sets.WS)
+    if (gcdisplay.GetCycle('TP') == 'HighAcc') then
+        gFunc.EquipSet('WS_HighAcc')
+    end
     gcmage.DoFenrirsEarring()
 end
 

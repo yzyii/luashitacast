@@ -441,6 +441,7 @@ local sets = {
         Feet = 'Homam Gambieras',
     },
     TP_HighAcc = {},
+    TP_Mjollnir_Haste = {},
 
     WS = {
         Head = 'Optical Hat',

@@ -152,6 +152,7 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = 'Fuma Sune-Ate',
     },
+    TP_Mjollnir_Haste = {},
 
     TP_Focus = {
         Ring1 = 'Flame Ring',

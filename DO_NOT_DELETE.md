@@ -255,3 +255,9 @@
 
 ### v1.3.31
 - WHM - Add Virology Ring
+
+### v1.4.0
+- WHM - Implements a Yellow toggle for Medicine Ring
+- WHM - Implements Mjollnir / Asklepios
+- WHM/RDM/BRD - Implements TP LowAcc and HighAcc sets
+- All Jobs - Implements a Mjollnir Haste Buff set

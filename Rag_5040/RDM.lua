@@ -606,6 +606,7 @@ local sets = {
         Feet = 'Hydra Gaiters',
         -- Feet = 'Dusk Ledelsens +1',
     },
+    TP_HighAcc = {},
     TP_NIN = {
         Main = 'Martial Knife',
         -- Main = 'Joyeuse',
@@ -618,6 +619,7 @@ local sets = {
         Ammo = '',
         -- Ammo = 'Virtue Stone',
     },
+    TP_Mjollnir_Haste = {},
     WS = {
         Head = 'Optical Hat',
         Ear2 = 'Merman\'s Earring',
@@ -627,6 +629,7 @@ local sets = {
         Legs = 'Hydra Brais',
         Feet = 'Rutter Sabatons',
     },
+    WS_HighAcc = {},
     WS_Soil = {
         Neck = 'Soil Gorget',
     },
@@ -691,6 +694,9 @@ profile.HandleWeaponskill = function()
     local action = gData.GetAction()
 
     gFunc.EquipSet(sets.WS)
+    if (gcdisplay.GetCycle('TP') == 'HighAcc') then
+        gFunc.EquipSet('WS_HighAcc')
+    end
     gcmage.DoFenrirsEarring()
 
     if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') then

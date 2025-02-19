@@ -35,6 +35,7 @@ local sets = {
     TP_LowAcc = {},
     TP_HighAcc = {},
     TP_NIN = {},
+    TP_Mjollnir_Haste = {},
 
     WS = {},
     WS_Evisceration = {},

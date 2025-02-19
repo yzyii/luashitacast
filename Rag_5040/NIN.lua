@@ -128,6 +128,8 @@ local sets = {
         Feet = 'Fed. Kyahan',
     },
     TP_HighAcc = {},
+    TP_Mjollnir_Haste = {},
+
     WS = {},
     WS_BladeJin = {},
     WS_BladeKu = {},
