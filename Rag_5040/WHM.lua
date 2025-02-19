@@ -74,6 +74,7 @@ local sets = {
     TP_Mjollnir_Haste = {},
     WS = {},
     WS_HighAcc = {},
+    WS_Randgrith = {},
 }
 profile.Sets = sets
 
@@ -111,6 +112,12 @@ profile.HandleWeaponskill = function()
     if (gcdisplay.GetCycle('TP') == 'HighAcc') then
         gFunc.EquipSet('WS_HighAcc')
     end
+
+    local action = gData.GetAction()
+    if (action.Name == 'Randgrith') then
+        gFunc.EquipSet(sets.WS_Randgrith)
+    end
+
     gcmage.DoFenrirsEarring()
 end
 
