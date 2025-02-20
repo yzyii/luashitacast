@@ -157,7 +157,7 @@ profile.HandleMidcast = function()
         end
     elseif (string.match(action.Name, 'Banish')) then
         gFunc.EquipSet('Banish')
-    elseif virology_ring and (string.match(spell.Name, '.*na$') or (spell.Name == 'Erase')) then
+    elseif virology_ring and (string.match(action.Name, '.*na$') or (action.Name == 'Erase')) then
         gFunc.Equip(virology_ring_slot, 'Virology Ring')
     end
 end
