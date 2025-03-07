@@ -156,6 +156,11 @@ These commands and sets were created before /lockset was implemented and do the 
           or /hnm sets etc.
 ```
 
+## Additional Commands for WHM:
+```
+/yellow - equips gear to lower HP before finishing casts to trigger Medicine Ring.
+          This is off by default.
+```
 
 ## Additional Commands for BRD:
 ```
