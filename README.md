@@ -107,8 +107,15 @@ This will work 99% of the time unless you have added your own logic and therefor
                   /addmp will still work as per normal in conjunction with this.
                   type /setmp without a number to display the current value.
 /resetmp        - resets addmp and setmp values to 0
+
+[RDM / WHM / BLM]
 /mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and
                   Accuracy sets.
+
+[RDM / WHM / BRD]
+/fight          - used to turn off TP set.
+                  this is automatically used for you when disengaging if your TP is 0.
+/tp             - toggles TP set between a LowAcc and HighAcc set.
 ```
 
 ## Additional Commands for All Melee Jobs:
@@ -123,9 +130,6 @@ This will work 99% of the time unless you have added your own logic and therefor
 ```
 [Regular Toggles]
 /hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
-/fight  - used to turn off TP set.
-          this is automatically used for you when disengaging if your TP is 0.
-/tp     - toggles TP set between a LowAcc and HighAcc set.
 
 [Special Sets]
 These commands and sets were created before /lockset was implemented and do the same thing.
@@ -152,20 +156,16 @@ These commands and sets were created before /lockset was implemented and do the 
           or /hnm sets etc.
 ```
 
-## Additional Commands for WHM
+## Additional Commands for WHM:
 ```
-/fight  - used to turn off TP set.
-          this is automatically used for you when disengaging if your TP is 0.
-/tp     - toggles TP set between a LowAcc and HighAcc set.
+/yellow - equips gear to lower HP before finishing casts to trigger Medicine Ring.
+          This is off by default.
 ```
 
 ## Additional Commands for BRD:
 ```
 /shorde  - switches to using the default foe lullaby set to reduce AOE in favour of Acc.
 /sballad - switches to using a wind instrument over string to reduce AOE.
-/fight  - used to turn off TP set.
-          this is automatically used for you when disengaging if your TP is 0.
-/tp     - toggles TP set between a LowAcc and HighAcc set.
 ```
 
 ## Additional Commands for BST:

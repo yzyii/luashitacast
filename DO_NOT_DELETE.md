@@ -266,3 +266,10 @@
 - PLD - Add Divine Magic set
 - All Melee - Adds WS_HighAcc set
 - DRG - Implements accuracy modes for jumps
+
+### v1.4.1
+- WHM - Fixed Virology Ring typo
+
+### v1.4.2
+- BRD - Updated Preludes to 4000 because Horizon can't get their client DATs right still...
+- SMN - Remove pointless toggles from SMN

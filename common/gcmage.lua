@@ -97,10 +97,11 @@ local gcmage = {}
 
 local AliasList = T{
     'addmp','setmp','resetmp',
-    'mode', -- RDM / BLM
+    'mode', -- RDM / WHM / BLM
     'csstun','hate','vert', -- RDM
     'fight','tp', -- RDM / WHM / BRD
-    'yellow','mb','hnm', -- BLM
+    'yellow', -- BLM / WHM
+    'mb','hnm', -- BLM
     'lag',
 }
 
@@ -203,10 +204,10 @@ end
 function gcmage.SetVariables()
     local player = gData.GetPlayer()
 
-    if (player.MainJob ~= 'BRD') then
+    if (player.MainJob ~= 'BRD' and player.MainJob ~= 'SMN') then
         gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
     end
-    if (player.MainJob ~= 'BLM') then
+    if (player.MainJob ~= 'BLM' and player.MainJob ~= 'SMN') then
         gcdisplay.CreateCycle('TP', {[1] = 'LowAcc', [2] = 'HighAcc',})
     end
     if (player.MainJob == 'RDM') then
@@ -510,7 +511,7 @@ function gcmage.SetupMidcastDelay(fastCastValue)
         end
     end
     if (action.Type == 'Bard Song' and string.match(action.Name, 'Prelude')) then
-        castTime = 8000
+        castTime = 4000
     end
     if (action.Skill == 'Divine Magic' and action.Name == 'Banish III') then
         castTime = 3000
