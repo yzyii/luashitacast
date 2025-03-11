@@ -14,8 +14,8 @@ local melee_gloves = 'Mel. Gloves +1'
 
 local muscle_belt = ''
 local garden_bangles = ''
-local presidential_hairpin = true
-local dream_ribbon = false
+local presidential_hairpin = false
+local dream_ribbon = true
 
 local kampfer_ring = true
 local kampfer_ring_slot = 'Ring2'
