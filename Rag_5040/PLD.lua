@@ -642,7 +642,7 @@ profile.HandleMidcast = function()
     local action = gData.GetAction()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
-    if (action.Skill ~= 'Ninjutsu') then
+    if (action.Skill ~= 'Ninjutsu' and action.Skill ~= 'Enfeebling' and action.Skill ~= 'Enhancing') then
         local sentinel = gData.GetBuffCount('Sentinel')
         if (sentinel >= 1) then
             gFunc.EquipSet(sets.Haste)
