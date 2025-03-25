@@ -276,3 +276,6 @@
 
 ### v1.4.3
 - PLD - Make Enfeebling and Enhancing spells not equip enmity set
+
+### v1.4.4
+- THF - Implements auto TH tracking
