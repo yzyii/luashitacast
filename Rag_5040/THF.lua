@@ -209,32 +209,32 @@ profile.HandleMidcast = function()
 end
 
 profile.NeedTH = function()
-    local targetManager = AshitaCore:GetMemoryManager():GetTarget();
-    local isSubTargetActive = targetManager:GetIsSubTargetActive();
-    local targetId = targetManager:GetServerId(isSubTargetActive == 1 and 1 or 0);
-    if(gcdisplay.GetCycle('TH') == 'auto') then
+    if (gcdisplay.GetCycle('TH') == 'auto') then
+        local targetManager = AshitaCore:GetMemoryManager():GetTarget();
+        local isSubTargetActive = targetManager:GetIsSubTargetActive();
+        local targetId = targetManager:GetServerId(isSubTargetActive == 1 and 1 or 0);
         return taggedMobs[targetId] == nil;
     end
+
     return gcdisplay.GetCycle('TH') == 'on'
 end
 
 profile.WatchTreasureHunter = function()
     ashita.events.register('packet_in', 'watch_treasure_hunter', function(e)
-        local deathMes = T { 6, 20, 97, 113, 406, 605, 646 };
         local playerEntity = GetPlayerEntity();
-        if(not playerEntity) then
+        if (not playerEntity) then
             return
         end
+
         if (e.id == 0x28) then
             local type = T { 1, 2, 4, 6 };
             local packet = action:parse(e);
-            if(packet.UserId == playerEntity.ServerId) then
+            if (packet.UserId == playerEntity.ServerId) then
                 if (type:contains(packet.Type)) then
                     local reaction = T { 0, 8, 
                         9, -- melee/range attack missed, comment out for pedantic TH mode
                     }
                     for _, target in ipairs(packet.Targets) do
-
                         for i = 1, #target.Actions do
                             local action = target.Actions[1]
                             if bit.band(target.Id, 0xFF000000) ~= 0 then -- isMob, also triggers on NPC but it's benign
@@ -247,6 +247,7 @@ profile.WatchTreasureHunter = function()
                 end
             end
         elseif (e.id == 0x29) then
+            local deathMes = T { 6, 20, 97, 113, 406, 605, 646 };
             -- Mob died, clear from table
             local message = struct.unpack('i2', e.data, 0x18 + 1);
             if (deathMes:contains(message)) then
