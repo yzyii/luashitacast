@@ -72,8 +72,10 @@ Everything below can be ignored.
 
 local saOverride = 0
 local taOverride = 0
+local taggedMobs = {}
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+action = gFunc.LoadFile('common\\actionPacket.lua')
 
 profile.HandleAbility = function()
     local action = gData.GetAction()
@@ -91,7 +93,7 @@ profile.HandleAbility = function()
         taOverride = os.clock() + 2
     end
 
-    if (gcdisplay.GetToggle('TH')) then
+    if (profile.NeedTH()) then
         gFunc.EquipSet(sets.TH)
     end
 end
@@ -111,7 +113,7 @@ profile.HandleMidshot = function()
         gFunc.EquipSet(sets.Ranged_INT)
     end
 
-    if (gcdisplay.GetToggle('TH')) then
+    if (profile.NeedTH()) then
         gFunc.EquipSet(sets.TH)
     end
 end
@@ -132,24 +134,30 @@ profile.HandleWeaponskill = function()
             gFunc.Equip('Hands', 'Rogue\'s Armlets +1')
         end
     end
+
+    if (profile.NeedTH()) then
+        gFunc.EquipSet(sets.TH)
+    end
 end
 
 profile.OnLoad = function()
     gcinclude.SetAlias(T{'th'})
-    gcdisplay.CreateToggle('TH', false)
+    gcdisplay.CreateCycle('TH', {[1] = 'auto', [2] = 'on', [3] = 'off'})
     gcmelee.Load()
     profile.SetMacroBook()
+    profile.WatchTreasureHunter()
 end
 
 profile.OnUnload = function()
     gcmelee.Unload()
     gcinclude.ClearAlias(T{'th'})
+    ashita.events.unregister('packet_in', 'watch_treasure_hunter');
 end
 
 profile.HandleCommand = function(args)
     if (args[1] == 'th') then
-        gcdisplay.AdvanceToggle('TH')
-        gcinclude.Message('TH', gcdisplay.GetToggle('TH'))
+        gcdisplay.AdvanceCycle('TH')
+        gcinclude.Message('TH', gcdisplay.GetCycle('TH'))
     else
         gcmelee.DoCommands(args)
     end
@@ -182,7 +190,7 @@ profile.HandleDefault = function()
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 
-    if (player.Status == 'Engaged' and gcdisplay.GetToggle('TH')) then
+    if (player.Status == 'Engaged' and profile.NeedTH()) then
         gFunc.EquipSet(sets.TH)
     end
 end
@@ -195,9 +203,62 @@ profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
 
     local action = gData.GetAction()
-    if (action.Skill ~= 'Ninjutsu' and gcdisplay.GetToggle('TH')) then
+    if (action.Skill ~= 'Ninjutsu' and profile.NeedTH()) then
         gFunc.EquipSet(sets.TH)
     end
+end
+
+profile.NeedTH = function()
+    if (gcdisplay.GetCycle('TH') == 'auto') then
+        local targetManager = AshitaCore:GetMemoryManager():GetTarget();
+        local isSubTargetActive = targetManager:GetIsSubTargetActive();
+        local targetId = targetManager:GetServerId(isSubTargetActive == 1 and 1 or 0);
+        return taggedMobs[targetId] == nil;
+    end
+
+    return gcdisplay.GetCycle('TH') == 'on'
+end
+
+profile.WatchTreasureHunter = function()
+    ashita.events.register('packet_in', 'watch_treasure_hunter', function(e)
+        local playerEntity = GetPlayerEntity();
+        if (not playerEntity) then
+            return
+        end
+
+        if (e.id == 0x28) then
+            local type = T { 1, 2, 4, 6 };
+            local packet = action:parse(e);
+            if (packet.UserId == playerEntity.ServerId) then
+                if (type:contains(packet.Type)) then
+                    local reaction = T { 0, 8, 
+                        9, -- melee/range attack missed, comment out for pedantic TH mode
+                    }
+                    for _, target in ipairs(packet.Targets) do
+                        for i = 1, #target.Actions do
+                            local action = target.Actions[1]
+                            if bit.band(target.Id, 0xFF000000) ~= 0 then -- isMob, also triggers on NPC but it's benign
+                                if reaction:contains(action.Reaction) and target.Id then
+                                    taggedMobs[target.Id] = true;
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        elseif (e.id == 0x29) then
+            local deathMes = T { 6, 20, 97, 113, 406, 605, 646 };
+            -- Mob died, clear from table
+            local message = struct.unpack('i2', e.data, 0x18 + 1);
+            if (deathMes:contains(message)) then
+                local target = struct.unpack('i4', e.data, 0x08 + 1);
+                taggedMobs[target] = nil;
+            end
+        elseif (e.id == 0x0A or e.id == 0x0B) then
+            -- Changed zone, clear all TH
+            taggedMobs = {};
+        end
+    end)
 end
 
 return profile
