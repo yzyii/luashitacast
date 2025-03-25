@@ -222,6 +222,9 @@ profile.WatchTreasureHunter = function()
     ashita.events.register('packet_in', 'watch_treasure_hunter', function(e)
         local deathMes = T { 6, 20, 97, 113, 406, 605, 646 };
         local playerEntity = GetPlayerEntity();
+        if(not playerEntity) then
+            return
+        end
         if (e.id == 0x28) then
             local type = T { 1, 2, 4, 6 };
             local packet = action:parse(e);
