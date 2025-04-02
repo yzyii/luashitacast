@@ -147,10 +147,10 @@ function gcmelee.DoDefaultOverride()
 end
 
 function gcmelee.DoPrecast(fastCastValue)
+    gFunc.EquipSet('Precast')
     if (not lag) then
         return gcmelee.SetupMidcastDelay(fastCastValue)
     end
-    gFunc.EquipSet('Precast')
 
     return 0
 end
