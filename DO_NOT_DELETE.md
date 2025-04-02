@@ -279,3 +279,6 @@
 
 ### v1.4.4
 - THF - Implements auto TH tracking
+
+### v1.4.5
+- Melee - Fixed broken Precast
