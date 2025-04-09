@@ -112,7 +112,7 @@ This will work 99% of the time unless you have added your own logic and therefor
 /mode           - toggles Elemental & Enfeebling Magic between Potency (Normal) and
                   Accuracy sets.
 
-[RDM / WHM / BRD]
+[RDM / WHM / BRD / SMN]
 /fight          - used to turn off TP set.
                   this is automatically used for you when disengaging if your TP is 0.
 /tp             - toggles TP set between a LowAcc and HighAcc set.
@@ -213,9 +213,6 @@ Do NOT DM or /tell me in-game regarding your setup issues or if you have not bot
 
 # TODO
 A list of things to do in the future but who knows when I'll get around to them:
-- SMN dedicated perp set for Penance Robe
-- SMN add TP logic
-- NIN add Shinobi Ring to default midcast
 - Refactor everything back out to actual sets on the JOB.lua files so that level sync and Packer validate would potentially work properly.
 - Micro-optimizations with job specific overrides for midcast and respecting max mp sets etc. e.g. WHM should not equip Virology ring when at 100% max mp.
 
