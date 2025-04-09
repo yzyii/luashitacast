@@ -46,6 +46,9 @@ local sets = {
         Feet = 'Herald\'s Gaiters',
     },
 
+    Perpetuation = { -- There is no point in using this set over an Idle set except for equipping Penance Robe
+    },
+
     DT = {
         Main = 'Terra\'s Staff',
         Neck = 'Jeweled Collar +1',
@@ -158,8 +161,8 @@ local sets = {
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
     },
     Casting = { -- Default Casting Equipment when using Idle sets
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
+        Main = 'Eremite\'s Wand', -- 25
+        Sub = 'Eremite\'s Wand', -- 25
         Ammo = 'Hedgehog Bomb',
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
@@ -175,8 +178,8 @@ local sets = {
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
     },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
+        Main = 'Eremite\'s Wand', -- 25
+        Sub = 'Eremite\'s Wand', -- 25
         Ammo = 'Hedgehog Bomb',
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
@@ -205,7 +208,7 @@ local sets = {
     },
 
     Cure = {
-        Ammo = 'Hedgehog Bomb', -- 1
+        Ammo = 'Dream Sand',
         Head = 'Hydra Beret', -- 8
         Neck = 'Benign Necklace', -- 2
         Ear1 = 'Novia Earring', -- 7
@@ -316,6 +319,17 @@ local sets = {
     },
     BP_Hybrid = {
     },
+
+    TP = {
+        Ring1 = 'Jelly Ring',
+    },
+    TP_HighAcc = {
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
+    },
+    TP_NIN = {},
+    TP_Mjollnir_Haste = {},
+    WS = {},
+    WS_HighAcc = {},
 }
 profile.Sets = sets
 
@@ -357,6 +371,11 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
+    gFunc.EquipSet(sets.WS)
+    if (gcdisplay.GetCycle('TP') == 'HighAcc') then
+        gFunc.EquipSet('WS_HighAcc')
+    end
+    gcmage.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()

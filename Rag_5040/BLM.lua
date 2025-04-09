@@ -107,9 +107,9 @@ local sets = {
         Body = { Name = 'Src. Coat +1', Priority = 100 },
         Hands = 'Merman\'s Bangles', -- 3
         Ring1 = 'Merman\'s Ring', -- 4 -- Using this over Shadow Ring for consistency
-        Ring2 = 'Sattva Ring', -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = { Name = 'Hexerei Cape', Priority = 100 }, -- 3
-        Waist = 'Sorcerer\'s Belt',
+        Waist = { Name = 'Sorcerer\'s Belt', Priority = 100 },
         Legs = 'Igqira Lappas',
         Feet = 'Mountain Gaiters',
     },
@@ -204,8 +204,8 @@ local sets = {
         Feet = 'Rostrum Pumps',
     },
     Casting = {
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
+        Main = 'Eremite\'s Wand', -- 25
+        Sub = 'Eremite\'s Wand', -- 25
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
@@ -214,8 +214,8 @@ local sets = {
         Feet = 'Wizard\'s Sabots', -- 20
     },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
+        Main = 'Eremite\'s Wand', -- 25
+        Sub = 'Eremite\'s Wand', -- 25
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
@@ -255,7 +255,7 @@ local sets = {
     },
 
     Cure = {
-        Ammo = 'Hedgehog Bomb', -- 1
+        Ammo = 'Dream Sand',
         Head = 'Hydra Beret', -- 8
         Neck = 'Benign Necklace', -- 2
         Ear1 = 'Novia Earring', -- 7
@@ -267,7 +267,7 @@ local sets = {
         Back = 'Errant Cape', -- 5
         Waist = 'Penitent\'s Rope', -- 3
         Legs = 'Hydra Brais', -- 6
-        Feet = 'Hydra Gaiters', -- 3
+        Feet = 'Hydra Gaiters', -- 5
     },
     Cursna = {
         Back = 'Altruistic Cape',
@@ -408,13 +408,13 @@ local sets = {
         Ear1 = 'Novio Earring',
         Ear2 = 'Moldavite Earring',
         Body = 'Igqira Weskit',
-        Hands = 'Zenith Mitts +1',
+        Hands = { Name = 'Zenith Mitts +1', Priority = -100 },
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
         Back = 'Prism Cape',
         Waist = 'Sorcerer\'s Belt',
         Legs = 'Mahatma Slops',
-        Feet = 'Src. Sabots +1',
+        Feet = { Name = 'Src. Sabots +1', Priority = 1 },
     },
     NukeHNM = {
         Ammo = 'Phtm. Tathlum',

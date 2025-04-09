@@ -246,8 +246,8 @@ local sets = {
         Body = 'Dls. Tabard +1',
     },
     Casting = { -- Default Casting Equipment when using Idle sets
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
+        Main = 'Eremite\'s Wand', -- 25
+        Sub = 'Eremite\'s Wand', -- 25
         Ammo = 'Hedgehog Bomb',
         Ammo = '',
         Head = 'Nashira Turban', -- 10
@@ -264,8 +264,8 @@ local sets = {
         Feet = 'Mountain Gaiters', -- 5
     },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
+        Main = 'Eremite\'s Wand', -- 25
+        Sub = 'Eremite\'s Wand', -- 25
         Ammo = 'Hedgehog Bomb',
         Ammo = '',
         Head = 'Nashira Turban', -- 10
@@ -311,8 +311,8 @@ local sets = {
         Feet = 'Heroic Boots', -- 1
     },
     Cheat_C3HPDown = {
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
+        Main = 'Eremite\'s Wand', -- 25
+        Sub = 'Eremite\'s Wand', -- 25
         Ammo = 'Tiphia Sting',
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
@@ -328,8 +328,8 @@ local sets = {
         Feet = 'Mountain Gaiters', -- 5
     },
     Cheat_C4HPDown = {
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
+        Main = 'Eremite\'s Wand', -- 25
+        Sub = 'Eremite\'s Wand', -- 25
         Ammo = 'Tiphia Sting',
         Head = 'Zenith Crown +1',
         Neck = 'Willpower Torque', -- 5
@@ -361,7 +361,7 @@ local sets = {
     },
 
     Cure = {
-        Ammo = 'Hedgehog Bomb', -- 1
+        Ammo = 'Dream Sand',
         Head = 'Hydra Beret', -- 8
         Neck = 'Benign Necklace', -- 2
         Ear1 = 'Novia Earring', -- 7

@@ -17,28 +17,43 @@ local garden_bangles = ''
 local presidential_hairpin = false
 local dream_ribbon = true
 
-local kampfer_ring = true
+local kampfer_ring = false
 local kampfer_ring_slot = 'Ring2'
-local kampfer_earring = true
+local kampfer_earring = false
 local kampfer_earring_slot = 'Ear2'
 
 local sets = {
     Idle = {
         Ammo = 'Tiphia Sting',
         Head = 'Genbu\'s Kabuto',
-        Neck = 'Evasion Torque',
+        Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Mel. Cyclas +1',
         Hands = 'Dst. Mittens +1',
-        Ring1 = 'Merman\'s Ring',
+        Ring1 = 'Shadow Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
-        Legs = 'Byakko\'s Haidate',
+        Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    IdleALT = {},
+    IdleALT = {
+        Main = 'Destroyers',
+        Ammo = 'Tiphia Sting',
+        Head = 'Dream Ribbon',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Wyvern Earring',
+        Body = 'Kirin\'s Osode',
+        Hands = 'Mel. Gloves +1',
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Begrudging Ring',
+        Back = 'Shadow Mantle',
+        Waist = 'Black Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = 'Herald\'s Gaiters',
+    },
     Resting = {
         Neck = 'Paisley Scarf',
         Ear2 = 'Sanative Earring',
@@ -75,6 +90,10 @@ local sets = {
         -- Feet = 'Rasetsu Sune-Ate +1', -- 1
     },
     MDT = { -- Shell IV provides 23% MDT
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Sattva Ring',
     },
     FireRes = {},
     IceRes = {},

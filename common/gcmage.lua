@@ -45,7 +45,7 @@ local healers_earring = false
 local healers_earring_slot = 'Ear2'
 
 -- RDM Specific
-local tp_fencers_ring = false
+local tp_fencers_ring = true
 local tp_fencers_ring_slot = 'Ring1'
 
 -- BLM Specific
@@ -99,7 +99,7 @@ local AliasList = T{
     'addmp','setmp','resetmp',
     'mode', -- RDM / WHM / BLM
     'csstun','hate','vert', -- RDM
-    'fight','tp', -- RDM / WHM / BRD
+    'fight','tp', -- RDM / WHM / BRD / SMN
     'yellow', -- BLM / WHM
     'mb','hnm', -- BLM
     'lag',
@@ -207,7 +207,7 @@ function gcmage.SetVariables()
     if (player.MainJob ~= 'BRD' and player.MainJob ~= 'SMN') then
         gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
     end
-    if (player.MainJob ~= 'BLM' and player.MainJob ~= 'SMN') then
+    if (player.MainJob ~= 'BLM') then
         gcdisplay.CreateCycle('TP', {[1] = 'LowAcc', [2] = 'HighAcc',})
     end
     if (player.MainJob == 'RDM') then
@@ -283,7 +283,7 @@ function gcmage.DoCommands(args)
         end
     end
 
-    if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD') then
+    if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD' or player.MainJob == 'SMN') then
         if (args[1] == 'fight') then
             if (gcdisplay.IdleSet == 'Fight') then
                 gcinclude.UnlockWeapon:once(1)
@@ -356,7 +356,42 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
         end
     end
 
-    if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD') then
+    if (player.MainJob == 'SMN') then
+        if (lastSummoningElement ~= '' and gData.GetPet()) then
+            gFunc.EquipSet('Perpetuation')
+
+            local staff = ElementalStaffTable[lastSummoningElement]
+            if (bahamuts_staff) then
+                staff = 'Bahamut\'s Staff'
+            end
+            if staff ~= '' then
+                gFunc.Equip('Main', staff)
+            end
+            if (player.HPP <= 75 and player.TP < 1000) and conjurers_ring then
+                gFunc.Equip(conjurers_ring_slot, 'Conjurer\'s Ring')
+            end
+
+            if (gData.GetPet().Name == 'Carbuncle') then
+                if (carbuncle_mitts) then
+                    gFunc.Equip('Hands', 'Carbuncle Mitts')
+                end
+                if (yinyang_robe) then
+                    gFunc.Equip('Body', 'Yinyang Robe')
+                end
+            elseif (lastSummoningElement == environment.DayElement) then
+                if (summoners_doublet ~= '') then
+                    gFunc.Equip('Body', summoners_doublet)
+                end
+            end
+            if (lastSummoningElement == environment.WeatherElement) then
+                if (summoners_horn ~= '') then
+                    gFunc.Equip('Head', summoners_horn)
+                end
+            end
+        end
+    end
+
+    if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD' or player.MainJob == 'SMN') then
         if (player.Status == 'Engaged') then
             if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
                 lastIdleSetBeforeEngaged = gcdisplay.IdleSet
@@ -394,37 +429,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     end
 
     gcinclude.DoDefaultOverride(false)
-    if (player.MainJob == 'SMN') then
-        if (lastSummoningElement ~= '') then
-            local staff = ElementalStaffTable[lastSummoningElement]
-            if (bahamuts_staff) then
-                staff = 'Bahamut\'s Staff'
-            end
-            if staff ~= '' then
-                gFunc.Equip('Main', staff)
-            end
-            if (player.HPP <= 75 and player.TP < 1000) and conjurers_ring then
-                gFunc.Equip(conjurers_ring_slot, 'Conjurer\'s Ring')
-            end
-            if (lastSummoningElement == 'Light') then
-                if (carbuncle_mitts) then
-                    gFunc.Equip('Hands', 'Carbuncle Mitts') -- Who cares about Light Spirit anyway
-                end
-                if (yinyang_robe) then
-                    gFunc.Equip('Body', 'Yinyang Robe')
-                end
-            elseif (lastSummoningElement == environment.DayElement) then
-                if (summoners_doublet ~= '') then
-                    gFunc.Equip('Body', summoners_doublet)
-                end
-            end
-            if (lastSummoningElement == environment.WeatherElement) then
-                if (summoners_horn ~= '') then
-                    gFunc.Equip('Head', summoners_horn)
-                end
-            end
-        end
-    end
+
     if (player.Status == 'Resting') then
         lastSummoningElement = ''
         if (player.SubJob == "BLM" and wizards_mantle) then

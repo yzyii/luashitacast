@@ -282,3 +282,10 @@
 
 ### v1.4.5
 - Melee - Fixed broken Precast
+
+### v1.4.6
+- NIN - Add Warlock Mantle
+- NIN - Use Shinobi Ring on casts by default (primarily for Utsusemi)
+- SMN - Fix Light Spirit using carbuncle gear
+- SMN - Implements TP modes for SMN
+- SMN - Implements an optional Perpetuation set for Penance Robe

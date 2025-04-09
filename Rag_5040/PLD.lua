@@ -56,7 +56,6 @@ local sets = {
     },
     IdleDT = {
         Main = 'Durandal',
-        -- Sub = 'Master Shield',
         Sub = 'Palmerin\'s Shield',
         Range = 'Rosenbogen',
         Ammo = '',

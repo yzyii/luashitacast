@@ -75,7 +75,7 @@ local taOverride = 0
 local taggedMobs = {}
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
-action = gFunc.LoadFile('common\\actionPacket.lua')
+actionpacket = gFunc.LoadFile('common\\actionpacket.lua')
 
 profile.HandleAbility = function()
     local action = gData.GetAction()
@@ -228,7 +228,7 @@ profile.WatchTreasureHunter = function()
 
         if (e.id == 0x28) then
             local type = T { 1, 2, 4, 6 };
-            local packet = action:parse(e);
+            local packet = actionpacket:parse(e);
             if (packet.UserId == playerEntity.ServerId) then
                 if (type:contains(packet.Type)) then
                     local reaction = T { 0, 8, 
