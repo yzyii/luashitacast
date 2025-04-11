@@ -315,6 +315,7 @@ end
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
 
+    local player = gData.GetPlayer()
     if (shinobi_ring and player.HPP <= 75 and player.TP <= 1000) then
         gFunc.Equip(shinobi_ring_slot, 'Shinobi Ring')
     end
