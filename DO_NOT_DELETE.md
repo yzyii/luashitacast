@@ -292,3 +292,4 @@
 
 ### v1.4.7
 - BRD - Allow Ranged swaps for melee (Horizon+)
+- NIN - Add Koga Tekko +1 to utsusemi / default casting gear
