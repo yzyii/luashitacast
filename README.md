@@ -215,6 +215,5 @@ Do NOT DM or /tell me in-game regarding your setup issues or if you have not bot
 A list of things to do in the future but who knows when I'll get around to them:
 - Refactor everything back out to actual sets on the JOB.lua files so that level sync and Packer validate would potentially work properly.
 - Micro-optimizations with job specific overrides for midcast and respecting max mp sets etc. e.g. WHM should not equip Virology ring when at 100% max mp.
-- BRD - Don't lock Ranged?
 
 Feel free to submit PRs to implement these.
