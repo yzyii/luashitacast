@@ -319,6 +319,9 @@ profile.HandleMidcast = function()
     if (shinobi_ring and player.HPP <= 75 and player.TP <= 1000) then
         gFunc.Equip(shinobi_ring_slot, 'Shinobi Ring')
     end
+    if (koga_tekko_plus_one and (environment.Time < 7 or environment.Time >= 17)) then
+        gFunc.Equip('Hands', 'Kog. Tekko +1') -- You can comment this out if you have Dusk Gloves +1 and would prefer +22 HP over Ninja Tool Expertise.
+    end
 
     local action = gData.GetAction()
     if (action.Skill == 'Ninjutsu') then
