@@ -289,3 +289,6 @@
 - SMN - Fix Light Spirit using carbuncle gear
 - SMN - Implements TP modes for SMN
 - SMN - Implements an optional Perpetuation set for Penance Robe
+
+### v1.4.7
+- BRD - Allow Ranged swaps for melee (Horizon+)
