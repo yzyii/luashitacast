@@ -141,7 +141,10 @@ end
 function gcinclude.LockWeapon()
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main')
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
+    local player = gData.GetPlayer()
+    if (player.MainJob ~= 'BRD') then
+        AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
+    end
     AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo')
 end
 
