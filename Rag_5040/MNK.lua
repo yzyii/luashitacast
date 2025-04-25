@@ -414,11 +414,6 @@ profile.HandleDefault = function()
                 gFunc.Equip(kampfer_ring_slot, 'Kampfer Ring')
             end
         end
-        if (player.HPP < 50) then
-            if (muscle_belt ~= '') then
-                gFunc.Equip('Waist', muscle_belt)
-            end
-        end
         if (player.HPP <= 25 and player.TP <= 1000) then
             if (kampfer_earring) then
                 gFunc.Equip(kampfer_earring_slot, 'Kampfer Earring')
