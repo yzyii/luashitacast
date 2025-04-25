@@ -384,24 +384,6 @@ profile.HandleDefault = function()
         end
     end
 
-    if (gcdisplay.IdleSet == 'DT') then
-        if (player.HPP <= 75 and player.TP <= 1000) then
-            if (kampfer_ring) then
-                gFunc.Equip(kampfer_ring_slot, 'Kampfer Ring')
-            end
-        end
-        if (player.HPP < 50) then
-            if (muscle_belt ~= '') then
-                gFunc.Equip('Waist', muscle_belt)
-            end
-        end
-        if (player.HPP <= 25 and player.TP <= 1000) then
-            if (kampfer_earring) then
-                gFunc.Equip(kampfer_earring_slot, 'Kampfer Earring')
-            end
-        end
-    end
-
     if (player.Status == 'Idle') then
         if (player.HPP < 50 and muscle_belt ~= '') then
             gFunc.Equip('Waist', muscle_belt)
@@ -425,6 +407,25 @@ profile.HandleDefault = function()
     end
 
     gcmelee.DoDefaultOverride()
+
+    if (gcdisplay.IdleSet == 'DT') then
+        if (player.HPP <= 75 and player.TP <= 1000) then
+            if (kampfer_ring) then
+                gFunc.Equip(kampfer_ring_slot, 'Kampfer Ring')
+            end
+        end
+        if (player.HPP < 50) then
+            if (muscle_belt ~= '') then
+                gFunc.Equip('Waist', muscle_belt)
+            end
+        end
+        if (player.HPP <= 25 and player.TP <= 1000) then
+            if (kampfer_earring) then
+                gFunc.Equip(kampfer_earring_slot, 'Kampfer Earring')
+            end
+        end
+    end
+
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 

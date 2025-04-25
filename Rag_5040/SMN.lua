@@ -205,6 +205,7 @@ local sets = {
     ConserveMP = {
         Ammo = 'Dream Sand',
         Ear2 = 'Magnetic Earring',
+        Back = 'Maledictor\'s Shawl',
     },
 
     Cure = {

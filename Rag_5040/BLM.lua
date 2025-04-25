@@ -251,6 +251,7 @@ local sets = {
         Ammo = 'Dream Sand',
         Ear2 = 'Magnetic Earring',
         Body = 'Igqira Weskit',
+        Back = 'Maledictor\'s Shawl',
         Feet = 'Src. Sabots +1',
     },
 
@@ -471,6 +472,8 @@ local sets = {
     },
     MB = {
         Ammo = 'Dream Sand',
+        Hands = 'Src. Gloves +1',
+        Back = 'Maledictor\'s Shawl',
     },
 
     LockSet1 = { -- 40 Cap

@@ -293,6 +293,7 @@ local sets = {
     ConserveMP = {
         Ammo = 'Dream Sand',
         Ear2 = 'Magnetic Earring',
+        Back = 'Maledictor\'s Shawl',
     },
 
     Hate = { -- Switches to this set when casting Sleep, Blind, Dispel and Bind if /hate is toggled on
