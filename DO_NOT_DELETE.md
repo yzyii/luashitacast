@@ -294,3 +294,4 @@
 - BRD - Allow Ranged swaps for melee (Horizon+)
 - NIN - Add Koga Tekko +1 to utsusemi / default casting gear
 - SMN - Keep Carbuncle's Cuffs / Evoker's Boots equipped on midcast due to Horizon wonkiness with spirits
+- MNK - Fix Kampfer Ring / Earring usage from being overridden by DT set
