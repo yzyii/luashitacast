@@ -108,6 +108,9 @@ local sets = {
     NinElemental_Accuracy = {},
     DrkDarkMagic = {},
 
+    Enhancing = {},
+    Cure = {},
+
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
@@ -353,6 +356,10 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.DrkDarkMagic)
         end
         EquipStaffAndObi(action)
+    elseif (action.Skill == 'Enhancing Magic') then
+        gFunc.EquipSet(sets.Enhancing)
+    elseif (action.Skill == 'Enhancing Magic') then
+        gFunc.EquipSet(sets.Cure)
     end
 end
 

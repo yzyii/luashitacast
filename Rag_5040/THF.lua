@@ -108,8 +108,8 @@ end
 profile.HandleMidshot = function()
     gFunc.EquipSet(sets.Ranged)
 
-    local ammo = ((gData.GetEquipment())['Ammo'])['Name']
-    if (ammo == 'Bloody Bolt') then
+    local ammo = gData.GetEquipment().Ammo
+    if (ammo ~= nil and ammo.Name == 'Bloody Bolt') then
         gFunc.EquipSet(sets.Ranged_INT)
     end
 

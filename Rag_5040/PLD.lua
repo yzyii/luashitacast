@@ -119,7 +119,7 @@ local sets = {
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
-        Hands = 'Heavy Gauntlets', -- 2
+        Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
         Back = { Name = 'Valor Cape', Priority = 100 },
@@ -641,28 +641,27 @@ profile.HandleMidcast = function()
     local action = gData.GetAction()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
-    if (action.Skill ~= 'Ninjutsu' and action.Skill ~= 'Enfeebling' and action.Skill ~= 'Enhancing') then
-        local sentinel = gData.GetBuffCount('Sentinel')
-        if (sentinel >= 1) then
-            gFunc.EquipSet(sets.Haste)
-        else
-            gFunc.EquipSet(sets.Hate)
-            if (action.Name == 'Flash') then
+    if (action.Skill == 'Healing Magic') then
+        gFunc.EquipSet(sets.Cure)
+    elseif (action.Skill == 'Divine Magic') then
+        if (action.Name == 'Flash') then
+            local sentinel = gData.GetBuffCount('Sentinel')
+            if (sentinel >= 1) then
+                gFunc.EquipSet(sets.Haste)
+            else
+                gFunc.EquipSet(sets.Hate)
                 gFunc.EquipSet(sets.Hate_Flash)
             end
-        end
-
-        if (action.Skill == 'Healing Magic') then
-            gFunc.EquipSet(sets.Cure)
-        elseif (action.Skill == 'Divine Magic') then
+        else
             gFunc.EquipSet(sets.Divine)
         end
-    else
+    elseif (action.Skill == 'Ninjutsu') then
+        gFunc.EquipSet(sets.Haste)
         if (action.Name == 'Utusemi: Ichi') then
             gFunc.EquipSet(sets.Haste_Ichi)
-        elseif (action.Name == 'Stoneskin' or action.Name == 'Phalanx') then
-            gFunc.EquipSet(sets.Enhancing)
         end
+    elseif (action.Skill == 'Enhancing Magic') then
+        gFunc.EquipSet(sets.Enhancing)
     end
 
     if (target.Name == me) then
