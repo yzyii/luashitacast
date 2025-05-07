@@ -300,3 +300,6 @@
 - PLD - Fix Enhancing Magic set usage
 - NIN - Add Enhancing / Cure set
 - THF - Add nil check for /ra when not using bows / xbow
+
+### v1.4.9
+- WHM - Use Cure5 set for Curaga IV
