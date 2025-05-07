@@ -716,7 +716,7 @@ function gcmage.EquipHealing(maxMP, sets, chainspell)
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
     gFunc.EquipSet('Cure')
-    if (action.Name == 'Cure V') then
+    if (action.Name == 'Cure V' or action.Name == 'Curaga IV') then
         gFunc.EquipSet('Cure5')
     end
     if (player.SubJob == "WHM" and healers_earring) then
