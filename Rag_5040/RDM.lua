@@ -477,7 +477,6 @@ local sets = {
         Neck = 'Dark Torque',
         Ear1 = 'Abyssal Earring',
         Ear2 = 'Dark Earring',
-        Body = 'Mahatma Hpl.',
         Body = 'Nashira Manteel',
         Hands = 'Blood Fng. Gnt.',
         Ring1 = 'Snow Ring',
