@@ -303,3 +303,5 @@
 
 ### v1.4.9
 - WHM - Use Cure5 set for Curaga IV
+- THF - Fix behaviour of automatic TH tagging
+- Mages - Blink on Ability use with displayhead

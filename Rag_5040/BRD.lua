@@ -11,6 +11,8 @@ local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 local minstrels_earring = true
 local minstrels_earring_slot = 'Ear2'
 
+local displayheadOnAbility = true
+
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -297,6 +299,9 @@ Everything below can be ignored.
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.HandleAbility = function()
+    if (displayheadOnAbility) then
+        AshitaCore:GetChatManager():QueueCommand(-1, '/displayhead')
+    end
 end
 
 profile.HandleItem = function()

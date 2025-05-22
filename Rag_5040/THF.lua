@@ -210,10 +210,25 @@ end
 
 profile.NeedTH = function()
     if (gcdisplay.GetCycle('TH') == 'auto') then
-        local targetManager = AshitaCore:GetMemoryManager():GetTarget();
-        local isSubTargetActive = targetManager:GetIsSubTargetActive();
-        local targetId = targetManager:GetServerId(isSubTargetActive == 1 and 1 or 0);
-        return taggedMobs[targetId] == nil;
+        local targetId
+        local actionTarget = gData.GetActionTarget()
+
+        if (actionTarget ~= nil) then
+            targetId = actionTarget.Id
+        else
+            local targetIndex = gData.GetTargetIndex()
+            if (targetIndex == 0) then
+                return false
+            end
+
+            targetId = AshitaCore:GetMemoryManager():GetEntity():GetServerId(targetIndex)
+        end
+
+        if bit.band(targetId, 0xFF000000) ~= 0 then  --isMob
+            return taggedMobs[targetId] == nil
+        end
+
+        return false
     end
 
     return gcdisplay.GetCycle('TH') == 'on'
