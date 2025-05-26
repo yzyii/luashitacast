@@ -16,7 +16,7 @@ local sets = {
         Range = 'Mythic Harp +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-		Head = 'displaced',
+        Head = 'displaced',
         Body = 'Royal Cloak',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Merman\'s Ring',
@@ -25,7 +25,7 @@ local sets = {
         Waist = 'Scouter\'s Rope',
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
-        Neck = 'Jeweled Collar',		
+        Neck = 'Jeweled Collar',
     },
     IdleALT = {
         Main = 'Terra\'s Staff',
@@ -41,7 +41,7 @@ local sets = {
         Waist = 'Scouter\'s Rope',
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
-        Neck = 'Jeweled Collar',	
+        Neck = 'Jeweled Collar',
     },
     IdleMaxMP = {},
     Resting = {
@@ -51,24 +51,24 @@ local sets = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
         Body = 'Mahatma hpl.',
-        Hands = 'Hydra Gloves',	
+        Hands = 'Hydra Gloves',
         Back = 'Errant Cape',
         Legs = 'Hydra Brais',
-        Feet = 'Hydra Gaiters',				
+        Feet = 'Hydra Gaiters',
     },
     Town = {
         Range = 'Gjallarhorn',
-	},
+    },
     Movement = {},
 
     DT = {},
     DTNight = {},
     MDT = { -- Shell IV provides 23% MDT
-	    Main = 'Terra\'s Staff',
+        Main = 'Terra\'s Staff',
         Range = 'Mythic Harp +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-		Head = 'displaced',
+        Head = 'displaced',
         Body = 'Royal Cloak',
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Merman\'s Ring',
@@ -77,7 +77,7 @@ local sets = {
         Waist = 'Scouter\'s Rope',
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
-        Neck = 'Jeweled Collar',		
+        Neck = 'Jeweled Collar',
     },
     FireRes = {
         Main = 'Neptune\'s Staff',
@@ -137,12 +137,12 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
-		Neck = 'Willpower Torque',
-		Waist = 'Druid\'s Rope',
-		Feet = 'Mountain Gaiters',
+        Neck = 'Willpower Torque',
+        Waist = 'Druid\'s Rope',
+        Feet = 'Mountain Gaiters',
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
-		Range = 'Angel Lyre',
+        Range = 'Angel Lyre',
         Body = 'Sha\'ir Manteel',
         Ear1 = 'Magnetic Earring',
         Hands = 'Dusk Gloves +1',
@@ -179,7 +179,7 @@ local sets = {
     Sing_Ballad_Large = {
         Range = 'Gjallarhorn',
         Body = 'Sha\'ir Manteel',
-		Hands = 'Sheikh Gages',
+        Hands = 'Sheikh Gages',
         Waist = 'Swift Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens',
@@ -187,7 +187,7 @@ local sets = {
     Sing_Ballad_Small = {
         Range = 'Gjallarhorn',
         Body = 'Sha\'ir Manteel',
-		Hands = 'Sheikh Gages',
+        Hands = 'Sheikh Gages',
         Waist = 'Swift Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens',
@@ -227,7 +227,7 @@ local sets = {
         Main = 'Apollo\'s Staff',
     },
     Sing_SleepRecast = {
-		Hands = 'Sheikh Gages',
+        Hands = 'Sheikh Gages',
     },
     Sing_FinaleRequiem = {
         Range = 'Gjallarhorn',
@@ -250,7 +250,7 @@ local sets = {
     Sing_Hymnus = {
         Range = 'Angel Lyre',
         Neck = 'String Torque',
-		Hands = 'Sheikh Gages',
+        Hands = 'Sheikh Gages',
         Body = 'Sha\'ir Manteel',
         Waist = 'Swift Belt',
         Legs = 'Byakko\'s Haidate',
@@ -270,7 +270,7 @@ local sets = {
         Back = 'Errant Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Hydra Brais',
-        Feet = 'Hydra Gaiters',		
+        Feet = 'Hydra Gaiters',
     },
     Cursna = {},
 
