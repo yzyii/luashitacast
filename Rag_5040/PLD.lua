@@ -431,6 +431,7 @@ local sets = {
         Feet = 'Power Sandals',
     },
     ShieldBash = {
+        Sub = 'Aegis',
         Ear2 = 'Knightly Earring',
         Hands = 'Vlr. Gauntlets +1',
     },
@@ -442,8 +443,8 @@ profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //flash')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //shieldbash')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //shieldbash')
+    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //flash')
 end
 
 --[[
@@ -471,8 +472,7 @@ profile.HandleAbility = function()
         if (shadow_mantle and environment.DayElement == 'Dark') then
             gFunc.Equip('Back', 'Shadow Mantle')
         end
-    elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
-        AshitaCore:GetChatManager():QueueCommand(-1, '/locktp')
+    elseif (action.Name == 'Shield Bash') then
         gFunc.EquipSet(sets.ShieldBash)
     elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then
         gFunc.Equip('Legs', valor_leggings)
