@@ -305,3 +305,9 @@
 - WHM - Use Cure5 set for Curaga IV
 - THF - Fix behaviour of automatic TH tagging
 - Mages - Blink on Ability use with displayhead
+
+### v1.4.10
+- DRK - Fix Tanking Sets
+- PLD - Remove /lock calls out of Shield Bash
+- Increases interim set buffer times to 0.4s from 0.25s for higher consistency in lagged zones
+- BRD - Remove Minstrel's Earring
