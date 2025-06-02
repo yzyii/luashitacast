@@ -65,7 +65,7 @@ local sets = {
         Ear2 = 'Magnetic Earring',
     },
     Town = {
-        Main = 'Durandal',
+        Main = 'Octave Club',
         Sub = 'Aegis',
         Range = 'Arco de Velocidad',
         Head = 'Bahamut\'s Mask',
