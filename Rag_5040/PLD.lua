@@ -18,8 +18,8 @@ local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is S
 local shadow_mantle = true
 
 local sets = {
-    Idle = {
-        Main = 'Durandal',
+    Idle = { -- 1415
+        Main = 'Tutelary',
         Sub = 'Aegis',
         Range = 'Rosenbogen',
         Ammo = '',
@@ -34,12 +34,12 @@ local sets = {
         Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
         Legs = { Name = 'Dst. Subligar +1', Priority = 10 },
-        Feet = 'Dst. Leggings +1',
+        Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
     },
     IdleALT = {
     },
-    IdleDT = {
-        Main = 'Durandal',
+    IdleDT = { -- 1415
+        Main = 'Tutelary',
         Sub = 'Aegis',
         Range = 'Rosenbogen',
         Ammo = '',
@@ -47,7 +47,7 @@ local sets = {
         Body = 'Dst. Harness +1', -- 4
         Neck = { Name = 'Shield Torque', Priority = 100 },
         Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Bloodbead Earring', Priority = 25 },
+        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
         Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
@@ -77,8 +77,8 @@ local sets = {
         Legs = 'Blood Cuisses',
     },
 
-    DT = {
-        Main = 'Durandal',
+    DT = { -- 1415
+        Main = 'Tutelary',
         Sub = 'Aegis',
         Range = 'Rosenbogen',
         Ammo = '',
@@ -86,7 +86,7 @@ local sets = {
         Body = 'Dst. Harness +1', -- 4
         Neck = { Name = 'Shield Torque', Priority = 100 },
         Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Bloodbead Earring', Priority = 25 },
+        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
         Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
@@ -135,6 +135,7 @@ local sets = {
         Feet = 'Blood Greaves', -- 21
     },
     LightningRes = { -- 138
+        Sub = 'Nms. Shield +1', -- 15
         Range = 'Lightning Bow +1', -- 7
         Ammo = '',
         Head = 'Black Ribbon', -- 12
@@ -208,16 +209,15 @@ local sets = {
 
     Precast = {
         Ear1 = 'Loquac. Earring',
-        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Legs = { Name = 'Homam Cosciales', Priority = 120 },
     },
-    SIRD = {
-        Main = 'Durandal',
+    SIRD = { -- 1441
+        Main = 'Tutelary',
         Sub = 'Aegis',
         Head = { Name = 'Koenig Schaller', Priority = 30 },
         Neck = 'Willpower Torque', -- 5
         Ear1 = { Name = 'Magnetic Earring', Priority = 120 }, -- 8
-        Ear2 = 'Knightly Earring', -- 9
+        Ear2 = { Name = 'Knightly Earring', Priority = -50 }, -- 9
         Body = 'Dst. Harness +1',
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Shadow Ring',
@@ -225,10 +225,10 @@ local sets = {
         Back = 'Shadow Mantle',
         Waist = 'Silver Obi +1', -- 8
         Legs = { Name = 'Vlr. Breeches +1', Priority = 20 }, -- 10
-        Feet = 'Mountain Gaiters', -- 5
+        Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
     },
-    Haste = {
-        Main = 'Capricorn Staff', -- 5
+    Haste = { -- 1416
+        Main = { Name = 'Capricorn Staff', Priority = -1 }, -- 5
         Sub = 'remove',
         Head = { Name = 'Homam Zucchetto', Priority = -1 }, -- 3
         Neck = 'Willpower Torque',
@@ -244,17 +244,19 @@ local sets = {
         Feet = 'Homam Gambieras', -- 3
     },
     Haste_Ichi = { -- Optional, provided here only if you wish to mix in SIRD or other stats over max haste
+        Main = 'Tutelary',
+        Sub = 'Aegis',
     },
 
-    Hate = {
-        Main = 'Durandal',
+    Hate = { -- 1419
+        Main = 'Tutelary',
         Sub = 'Koenig Shield',
-        Head = { Name = 'Aegishjalmr', Priority = 100 },
+        Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hades Earring +1',
         Ear2 = { Name = 'Cassie Earring', Priority = 120 },
         Body = { Name = 'Hydra Haubert', Priority = -100 },
-        Hands = { Name = 'Hydra Moufles', Priority = -100 },
+        Hands = { Name = 'Vlr. Gauntlets +1', Priority = 80 },
         Ring1 = 'Hercules\' Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
@@ -263,7 +265,7 @@ local sets = {
         Feet = 'Vlr. Leggings +1',
     },
     Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
-        Main = 'Capricorn Staff',
+        Main = { Name = 'Capricorn Staff', Priority = -1 },
         Sub = 'remove',
         Head = 'Homam Zucchetto',
         Neck = 'Harmonia\'s Torque',
@@ -278,13 +280,13 @@ local sets = {
         Legs = 'Homam Cosciales',
         Feet = 'Homam Gambieras',
     },
-    Cheat_C3HPDown = { -- 1227
+    Cheat_C3HPDown = { -- 1207
         Main = 'Durandal',
         Sub = 'Aegis',
         Range = 'Lightning Bow +1',
         Ammo = '',
         Head = 'Darksteel Cap +1', -- 2
-        Body = 'Dst. Harness +1', -- 4
+        Body = 'Hydra Haubert',
         Neck = 'Willpower Torque', -- 5
         Ear1 = { Name = 'Magnetic Earring', Priority = 120 }, -- 8
         Ear2 = 'Knightly Earring', -- 9
@@ -296,12 +298,12 @@ local sets = {
         Legs = 'Vlr. Breeches +1', -- 10
         Feet = 'Mountain Gaiters', -- 5
     },
-    Cheat_C3HPUp = { -- 1455
+    Cheat_C3HPUp = { -- 1430 (223)
         Main = 'Apollo\'s Staff',
         Sub = '',
         Range = 'Rosenbogen',
         Ammo = '',
-        Head = 'Aegishjalmr',
+        Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
         Ear2 = 'Hades Earring +1',
@@ -332,7 +334,7 @@ local sets = {
         Legs = 'Hydra Brayettes',
         Feet = 'Hydra Sollerets',
     },
-    Cheat_C4HPUp = { -- 1514
+    Cheat_C4HPUp = { -- 1514 (441 +1)
         Main = 'Apollo\'s Staff',
         Sub = '',
         Range = 'Rosenbogen',
@@ -351,15 +353,7 @@ local sets = {
         Feet = 'Vlr. Leggings +1',
     },
 
-    LockSet1 = {
-        Main = 'Justice Sword',
-        Sub = 'Aegis',
-        Head = 'Darksteel Cap +1',
-        Body = 'Haubergeon',
-        Hands = 'Homam Manopolas',
-        Legs = 'Homam Cosciales',
-        Feet = 'Homam Gambieras',
-    },
+    LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
 
@@ -413,26 +407,26 @@ local sets = {
     },
     Divine = {},
     Rampart = { -- Rampart gives VIT x2 damage shield in era
-        Main = 'Durandal',
+        Main = { Name = 'Durandal', Priority = -1 },
         Sub = 'Koenig Shield',
         Range = 'Rosenbogen',
         Ammo = '',
         Head = 'Koenig Schaller',
         Neck = 'Fortitude Torque',
-        Ear1 = 'Robust Earring',
-        Ear2 = 'Robust Earring',
+        Ear1 = { Name = 'Robust Earring', Priority = -1 },
+        Ear2 = { Name = 'Robust Earring', Priority = -1 },
         Body = 'Gallant Surcoat',
         Hands = 'Kng. Handschuhs',
         Ring1 = 'Robust Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
-        Legs = 'Adaman Cuisses',
-        Feet = 'Power Sandals',
+        Legs = { Name = 'Adaman Cuisses', Priority = -1 },
+        Feet = { Name = 'Power Sandals', Priority = -1 },
     },
     ShieldBash = {
         Sub = 'Aegis',
-        Ear2 = 'Knightly Earring',
+        Ear1 = 'Knightly Earring',
         Hands = 'Vlr. Gauntlets +1',
     },
     Enhancing = {},
