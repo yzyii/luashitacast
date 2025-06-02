@@ -174,8 +174,8 @@ function gcmelee.SetupMidcastDelay(fastCastValue)
     if (player.SubJob == "RDM") then
          fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
-    local minimumBuffer = 0.25 -- Can be lowered to 0.1 if you want
-    local packetDelay = 0.25 -- Change this to 0.4 if you do not use PacketFlow
+    local minimumBuffer = 0.4 -- Can be lowered to 0.1 if you want
+    local packetDelay = 0.4 -- Change this to 0.4 if you do not use PacketFlow
     local castDelay = ((castTime * castTimeMod * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
