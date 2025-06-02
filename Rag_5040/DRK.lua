@@ -33,7 +33,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    IdleALT = {
+    IdleALT = { -- 1365
         Main = 'Terra\'s Staff',
         Sub = '',
         Range = 'Rosenbogen',
@@ -42,7 +42,7 @@ local sets = {
         Body = 'Vampire Cloak',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
+        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
@@ -65,11 +65,11 @@ local sets = {
         Legs = 'Dst. Subligar +1', -- 3
         Feet = 'Dst. Leggings +1', -- 2
     },
-    IdleALTDT = {
+    IdleALTDT = { -- 1365
         Head = 'Darksteel Cap +1', -- 2
         Neck = 'Evasion Torque',
         Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
+        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
         Body = 'Dst. Harness +1', -- 4
         Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
@@ -83,14 +83,7 @@ local sets = {
         Neck = 'Paisley Scarf',
         Ear2 = 'Sanative Earring',
     },
-    Town = {
-        Main = 'Tredecim Scythe',
-        Head = 'Homam Zucchetto',
-        Body = 'Haubergeon',
-        Hands = 'Homam Manopolas',
-        Legs = 'Blood Cuisses',
-        Feet = 'Homam Gambieras',
-    },
+    Town = {},
     Movement = {
         Hands = 'Homam Manopolas',
         Legs = 'Blood Cuisses',
@@ -100,7 +93,7 @@ local sets = {
         Head = 'Darksteel Cap +1', -- 2
         Neck = 'Evasion Torque',
         Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
+        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
         Body = 'Dst. Harness +1', -- 4
         Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
@@ -255,28 +248,29 @@ local sets = {
         Legs = 'Homam Cosciales',
     },
     SIRD = {
+        Head = { Name = 'Aegishjalmr', Priority = 100 },
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Magnetic Earring', -- 8
         Ear2 = 'Knightly Earring', -- 9
-        Waist = 'Silver Obi +1', -- 8
+        Legs = { Name = 'Homam Cosciales', Priority = 100 },
         Feet = 'Mountain Gaiters', -- 5
     },
     Haste = { -- Used for Utsusemi and Stun cooldown
-        Head = 'Homam Zucchetto',
+        Head = { Name = 'Homam Zucchetto', Priority = -1 },
         Body = 'Dst. Harness +1',
-        Hands = 'Dusk Gloves +1',
+        Hands = { Name = 'Dusk Gloves +1', Priority = 100 },
         Waist = 'Sonic Belt',
-        Legs = 'Homam Cosciales',
-        Feet = 'Homam Gambieras',
+        Legs = { Name = 'Homam Cosciales', Priority = 100 },
+        Feet = { Name = 'Homam Gambieras', Priority = 100 },
     },
 
     Hate = {
         Main = 'Octave Club', -- lul
         Sub = 'Koenig Shield', -- 3
-        Head = 'Bahamut\'s Mask',
+        Head = { Name = 'Aegishjalmr', Priority = 100 },
         Neck = 'Harmonia\'s Torque', -- 3
         Ear1 = 'Hades Earring +1', -- 2
-        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
+        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
         Body = { Name = 'Hydra Haubert', Priority = -100 }, -- 9
         Hands = { Name = 'Hydra Moufles', Priority = -100 }, -- 6
         Ring1 = 'Mermaid Ring', -- 2
@@ -284,7 +278,7 @@ local sets = {
         Back = { Name = 'Gigant Mantle', Priority = 100 },
         Waist = 'Warwolf Belt', -- 3
         Legs = { Name = 'Hydra Brayettes', Priority = -100 }, -- 6
-        Legs = { Name = 'Hydra Sollerets', Priority = -100 }, -- 4
+        Feet = { Name = 'Hydra Sollerets', Priority = -100 }, -- 4
     },
 
     LockSet1 = {},
