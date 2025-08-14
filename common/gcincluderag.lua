@@ -371,7 +371,9 @@ function gcinclude.BuildLockableSet(equipment)
             ) then
                 lockableSet['Hands'] = 'Displaced'
             elseif (item.Name == 'Mandra. Suit') then
+                lockableSet['Hands'] = 'Displaced'
                 lockableSet['Legs'] = 'Displaced'
+                lockableSet['Feet'] = 'Displaced'
             elseif (slot == 'Main') then
                 lockableSet['Sub'] = 'Displaced'
             end

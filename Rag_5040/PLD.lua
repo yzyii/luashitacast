@@ -211,7 +211,9 @@ local sets = {
         Head = 'Bahamut\'s Mask',
         -- Hrotti
         -- Crimson Scale Mail
+        Body = 'Dst. Harness +1',
         Legs = 'Bahamut\'s Hose',
+        Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
     },
 
