@@ -426,27 +426,21 @@ profile.HandlePrecast = function()
 
     local action = gData.GetAction()
     if (action.Skill == 'Summoning') then
-        if (carbuncles_cuffs) then
+        if (carbuncles_cuffs and evokers_boots and string.match(action.Name, 'Spirit')) then
             gFunc.Equip('Hands', 'Carbuncle\'s Cuffs')
-        end
-        if (evokers_boots) then
-            gFunc.Equip('Feet', 'Evoker\'s Boots')
+        else
+            if (carbuncles_cuffs) then
+                gFunc.Equip('Hands', 'Carbuncle\'s Cuffs')
+            end
+            if (evokers_boots) then
+                gFunc.Equip('Feet', 'Evoker\'s Boots')
+            end
         end
     end
 end
 
 profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, cureMP, cureMP, cureMP, cureMP)
-
-    local action = gData.GetAction()
-    if (string.match(action.Name, 'Spirit')) then
-        if (carbuncles_cuffs) then
-            gFunc.Equip('Hands', 'Carbuncle\'s Cuffs')
-        end
-        if (evokers_boots) then
-            gFunc.Equip('Feet', 'Evoker\'s Boots')
-        end
-    end
 end
 
 return profile

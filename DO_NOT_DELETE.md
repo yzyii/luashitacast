@@ -319,3 +319,6 @@
 - DRK / NIN / PLD - Fixed ordering on tanking sets vs /dps mode
 - PLD - Fixed /lag cure cheat timing
 - THF - Changed AutoTH toggles to have capitalization
+
+### v1.4.13
+- SMN - Only use carbuncle's mitts on spirits if both era+ items are owned
