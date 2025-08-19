@@ -82,6 +82,24 @@ function gcmelee.DoDefault()
 
     gcinclude.DoDefaultIdle()
 
+    if (player.MainJob == 'PLD' or player.MainJob == 'NIN' or player.MainJob == 'DRK' or gcdisplay.GetToggle('Hate')) then
+        if (player.SubJob == 'NIN' or player.MainJob == 'NIN') then
+            local function GetShadowCount()
+                for buffId, shadowCount in pairs(utsuBuffs) do
+                    if (gData.GetBuffCount(buffId) > 0) then
+                        return shadowCount
+                    end
+                end
+
+                return 0
+            end
+            if (GetShadowCount() == 0) then
+                gFunc.EquipSet('IdleDT')
+                if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALTDT') end
+            end
+        end
+    end
+
     if (isDPS) then
         if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
             if (player.Status == 'Engaged') then
@@ -106,24 +124,6 @@ function gcmelee.DoDefault()
             if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
                 gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
                 lastIdleSetBeforeEngaged = ''
-            end
-        end
-    end
-
-    if (player.MainJob == 'PLD' or player.MainJob == 'NIN' or player.MainJob == 'DRK' or gcdisplay.GetToggle('Hate')) then
-        if (player.SubJob == 'NIN' or player.MainJob == 'NIN') then
-            local function GetShadowCount()
-                for buffId, shadowCount in pairs(utsuBuffs) do
-                    if (gData.GetBuffCount(buffId) > 0) then
-                        return shadowCount
-                    end
-                end
-
-                return 0
-            end
-            if (GetShadowCount() == 0) then
-                gFunc.EquipSet('IdleDT')
-                if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALTDT') end
             end
         end
     end

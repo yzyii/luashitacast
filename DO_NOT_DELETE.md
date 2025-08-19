@@ -311,3 +311,11 @@
 - PLD - Remove /lock calls out of Shield Bash
 - Increases interim set buffer times to 0.4s from 0.25s for higher consistency in lagged zones
 - BRD - Remove Minstrel's Earring
+
+### v1.4.11
+- Fixed Mandragora Suit
+
+### v1.4.12
+- DRK / NIN / PLD - Fixed ordering on tanking sets vs /dps mode
+- PLD - Fixed /lag cure cheat timing
+- THF - Changed AutoTH toggles to have capitalization
