@@ -299,7 +299,7 @@ function gcinclude.DoDefaultOverride(isMelee)
             or gcdisplay.IdleSet == 'Evasion'
         )
     ) then
-        if (isMage and (gcdisplay.GetCycle('TP') ~= 'LowAcc' or gcdisplay.GetCycle('TP') ~= 'HighAcc')) then
+        if (isMage and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
             if (environment.Time >= 6 and environment.Time < 18) then
                 gFunc.EquipSet('DT')
             else
