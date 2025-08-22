@@ -14,7 +14,7 @@ local load_stylist = true -- set to true to just load stylist on game start. thi
 -- Add additional equipment here that you want to automatically lock when equipping
 local LockableEquipment = {
     ['Main'] = T{'Warp Cudgel', 'Rep. Signet Staff', 'Kgd. Signet Staff', 'Fed. Signet Staff', 'Treat Staff II', 'Trick Staff II'},
-    ['Sub'] = T{},
+    ['Sub'] = T{'Warp Cudgel'},
     ['Range'] = T{},
     ['Ammo'] = T{},
     ['Head'] = T{'Reraise Hairpin', 'Dream Hat +1'},
@@ -180,12 +180,8 @@ function gcinclude.DoCommands(args)
     local player = gData.GetPlayer()
 
     if (isOverride) then
-        if (gcdisplay.IdleSet == 'Fight') then
-            print(chat.header('Ashitacast'):append(chat.message('Overriding in Fight mode is currently unsupported. Type /fight to disable Fight mode.')))
-        else
-            gcinclude.ToggleIdleSet(OverrideNameTable[args[1]])
-            gcinclude.Message('IdleSet', gcdisplay.IdleSet)
-        end
+        gcinclude.ToggleIdleSet(OverrideNameTable[args[1]])
+        gcinclude.Message('IdleSet', gcdisplay.IdleSet)
     elseif (args[1] == 'kite') then
         gcdisplay.AdvanceToggle('Kite')
         gcinclude.Message('Kite', gcdisplay.GetToggle('Kite'))
@@ -203,7 +199,9 @@ function gcinclude.DoCommands(args)
         gcdisplay.AdvanceToggle('Lock')
         gcinclude.Message('Equip Lock', gcdisplay.GetToggle('Lock'))
         if (not gcdisplay.GetToggle('Lock')) then
-            if (gcdisplay.IdleSet == 'Fight' or gcdisplay.GetToggle('LockTP')) then
+            if (isMage and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
+                gcinclude.UnlockNonWeapon()
+            elseif (gcdisplay.GetToggle('LockTP')) then
                 gcinclude.UnlockNonWeapon()
             else
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
@@ -213,13 +211,11 @@ function gcinclude.DoCommands(args)
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
             if (not isMage:contains(player.MainJob)) then gcdisplay.CreateToggle('LockTP', false) end
         end
-    elseif (args[1] == 'locktp') then
+    elseif (args[1] == 'locktp' and not isMage) then
         gcdisplay.AdvanceToggle('LockTP')
         gcinclude.Message('Weapons Lock', gcdisplay.GetToggle('LockTP'))
         if (not gcdisplay.GetToggle('LockTP')) then
-            if (gcdisplay.IdleSet ~= 'Fight') then
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
-            end
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
             gcdisplay.CreateToggle('Lock', false)
         else
             gcdisplay.CreateToggle('Lock', false)
@@ -320,15 +316,9 @@ function gcinclude.DoDefaultOverride(isMelee)
             gcdisplay.IdleSet == 'Normal'
             or gcdisplay.IdleSet == 'Alternate'
             or gcdisplay.IdleSet == 'DT'
-            or gcdisplay.IdleSet == 'Fight'
-            or gcdisplay.IdleSet == 'LowAcc'
-            or gcdisplay.IdleSet == 'HighAcc'
             or gcdisplay.IdleSet == 'Evasion'
         )
     ) then
-        gFunc.EquipSet('Movement')
-    elseif (gcdisplay.IdleSet == 'Fight' and player.Status ~= 'Engaged') then
-        gFunc.EquipSet('DT')
         gFunc.EquipSet('Movement')
     end
 end

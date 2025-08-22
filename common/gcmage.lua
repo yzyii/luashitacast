@@ -16,7 +16,7 @@ local suirin_obi = false
 local furin_obi = false
 local hyorin_obi = true
 local rairin_obi = true
-local korin_obi = true
+local korin_obi = false
 local anrin_obi = true
 
 -- Set to true if you have the item, and specify which ring or earring slot it will override
@@ -178,7 +178,6 @@ local WeakElementTable = {
 
 local setMP = 0
 local addMP = 0
-local lastIdleSetBeforeEngaged = ''
 local lastSummoningElement = ''
 local restingMaxMP = false
 
@@ -208,7 +207,7 @@ function gcmage.SetVariables()
         gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
     end
     if (player.MainJob ~= 'BLM') then
-        gcdisplay.CreateCycle('TP', {[1] = 'LowAcc', [2] = 'HighAcc',})
+        gcdisplay.CreateCycle('TP', {[1] = 'Off', [2] = 'LowAcc', [3] = 'HighAcc', [4] = 'Disabled',})
     end
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false)
@@ -253,7 +252,11 @@ function gcmage.DoCommands(args)
         gcdisplay.AdvanceCycle('Mode')
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
     elseif (args[1] == 'tp') then
-        gcdisplay.AdvanceCycle('TP')
+        if (gcdisplay.GetCycle('TP') == 'LowAcc') then
+            gcdisplay.SetCycleIndex('TP', 3)
+        elseif (gcdisplay.GetCycle('TP') == 'HighAcc') then
+            gcdisplay.SetCycleIndex('TP', 2)
+        end
         gcinclude.Message('TP Mode', gcdisplay.GetCycle('TP'))
     elseif (args[1] == 'lag') then
         lag =  not lag
@@ -285,13 +288,17 @@ function gcmage.DoCommands(args)
 
     if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD' or player.MainJob == 'SMN') then
         if (args[1] == 'fight') then
-            if (gcdisplay.IdleSet == 'Fight') then
-                gcinclude.UnlockWeapon:once(1)
-                if (lastIdleSetBeforeEngaged ~= '') then
-                    gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
+            gcinclude.UnlockWeapon:once(1)
+
+            local player = gData.GetPlayer()
+            if (player.Status ~= 'Engaged' and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
+                gcdisplay.SetCycleIndex('TP', 1)
+            else
+                if (gcdisplay.GetCycle('TP') ~= 'Disabled') then
+                    gcdisplay.SetCycleIndex('TP', 4)
+                else
+                    gcdisplay.SetCycleIndex('TP', 1)
                 end
-                lastIdleSetBeforeEngaged = ''
-                gcinclude.Message('IdleSet', gcdisplay.IdleSet)
             end
         end
     end
@@ -393,11 +400,10 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
 
     if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD' or player.MainJob == 'SMN') then
         if (player.Status == 'Engaged') then
-            if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate') then
-                lastIdleSetBeforeEngaged = gcdisplay.IdleSet
-                gcinclude.ToggleIdleSet('Fight')
+            if (gcdisplay.GetCycle('TP') == 'Off') then
                 gcinclude.LockWeapon:once(1)
-            elseif (gcdisplay.IdleSet == 'Fight') then
+                gcdisplay.SetCycleIndex('TP', 2)
+            elseif (gcdisplay.GetCycle('TP') ~= 'Off' and gcdisplay.GetCycle('TP') ~= 'Disabled') then
                 gFunc.EquipSet('TP')
                 if (gcdisplay.GetCycle('TP') == 'HighAcc') then
                     gFunc.EquipSet('TP_HighAcc')
@@ -419,10 +425,9 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
                 end
             end
         end
-        if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
-            if (player.TP == 0) then
-                gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
-                lastIdleSetBeforeEngaged = ''
+        if (player.Status == 'Idle') then
+            if (player.TP == 0 and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
+                gcdisplay.SetCycleIndex('TP', 1)
                 gcinclude.UnlockWeapon:once(1)
             end
         end
