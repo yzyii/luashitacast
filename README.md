@@ -113,14 +113,14 @@ This will work 99% of the time unless you have added your own logic and therefor
                   Accuracy sets.
 
 [RDM / WHM / BRD / SMN]
-/fight          - used to turn off TP set.
-                  this is automatically used for you when disengaging if your TP is 0.
-/tp             - toggles TP set between a LowAcc and HighAcc set.
+/tp             - toggles TP set between being Off or a LowAcc and HighAcc set.
+                  Using TP modes will cause spells / songs to no longer use staves etc.
+                  as your weapons etc. will be locked to retain TP.
 ```
 
 ## Additional Commands for All Melee Jobs:
 ```
-/tpset /tp /mode - toggles TP set between a LowAcc and HighAcc set.
+/tp /tpset /mode - toggles TP set between a LowAcc and HighAcc set.
                    this will be overwritten if you have a DT or resistance set etc. enabled.
                    this is disabled for PLD in favour of using Idle sets by default.
 /locktp          - locks or unlocks Main, Sub, Ranged and Ammo slots.

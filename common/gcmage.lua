@@ -99,7 +99,7 @@ local AliasList = T{
     'addmp','setmp','resetmp',
     'mode', -- RDM / WHM / BLM
     'csstun','hate','vert', -- RDM
-    'fight','tp', -- RDM / WHM / BRD / SMN
+    'tp', -- RDM / WHM / BRD / SMN
     'yellow', -- BLM / WHM
     'mb','hnm', -- BLM
     'lag',
@@ -207,7 +207,7 @@ function gcmage.SetVariables()
         gcdisplay.CreateCycle('Mode', {[1] = 'Potency', [2] = 'Accuracy',})
     end
     if (player.MainJob ~= 'BLM') then
-        gcdisplay.CreateCycle('TP', {[1] = 'Off', [2] = 'LowAcc', [3] = 'HighAcc', [4] = 'Disabled',})
+        gcdisplay.CreateCycle('TP', {[1] = 'Off', [2] = 'LowAcc', [3] = 'HighAcc'})
     end
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false)
@@ -251,13 +251,15 @@ function gcmage.DoCommands(args)
     elseif (args[1] == 'mode') then
         gcdisplay.AdvanceCycle('Mode')
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
-    elseif (args[1] == 'tp') then
-        if (gcdisplay.GetCycle('TP') == 'LowAcc') then
-            gcdisplay.SetCycleIndex('TP', 3)
-        elseif (gcdisplay.GetCycle('TP') == 'HighAcc') then
-            gcdisplay.SetCycleIndex('TP', 2)
-        end
+    elseif (args[1] == 'tp' and player.MainJob ~= 'BLM') then
+        gcdisplay.AdvanceCycle('TP')
         gcinclude.Message('TP Mode', gcdisplay.GetCycle('TP'))
+
+        if (gcdisplay.GetCycle('TP') ~= 'Off') then
+            gcinclude.LockWeapon:once(1)
+        else
+            gcinclude.UnlockWeapon:once(1)
+        end
     elseif (args[1] == 'lag') then
         lag =  not lag
         gcinclude.Message('[Note: Midcast Delays are disabled if Lag is true] Lag', lag)
@@ -283,23 +285,6 @@ function gcmage.DoCommands(args)
         elseif (args[1] == 'hate') then
             gcdisplay.AdvanceToggle('Hate')
             gcinclude.Message('Hate', gcdisplay.GetToggle('Hate'))
-        end
-    end
-
-    if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD' or player.MainJob == 'SMN') then
-        if (args[1] == 'fight') then
-            gcinclude.UnlockWeapon:once(1)
-
-            local player = gData.GetPlayer()
-            if (player.Status ~= 'Engaged' and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
-                gcdisplay.SetCycleIndex('TP', 1)
-            else
-                if (gcdisplay.GetCycle('TP') ~= 'Disabled') then
-                    gcdisplay.SetCycleIndex('TP', 4)
-                else
-                    gcdisplay.SetCycleIndex('TP', 1)
-                end
-            end
         end
     end
 
@@ -399,36 +384,25 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     end
 
     if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD' or player.MainJob == 'SMN') then
-        if (player.Status == 'Engaged') then
-            if (gcdisplay.GetCycle('TP') == 'Off') then
-                gcinclude.LockWeapon:once(1)
-                gcdisplay.SetCycleIndex('TP', 2)
-            elseif (gcdisplay.GetCycle('TP') ~= 'Off' and gcdisplay.GetCycle('TP') ~= 'Disabled') then
-                gFunc.EquipSet('TP')
-                if (gcdisplay.GetCycle('TP') == 'HighAcc') then
-                    gFunc.EquipSet('TP_HighAcc')
-                end
-                if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
-                    gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
-                end
-                if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
-                    gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
-                end
-                if (player.SubJob == 'NIN') then
-                    gFunc.EquipSet('TP_NIN')
-                end
-                if gData.GetBuffCount(580) > 0 then -- Horizon Mjollnir Haste Buff
-                    gFunc.EquipSet('TP_Mjollnir_Haste')
-                end
-                if (player.MainJob == 'RDM' and tp_fencers_ring and player.HPP <= 75 and player.TP <= 1000) then
-                    gFunc.Equip(tp_fencers_ring_slot, 'Fencer\'s Ring')
-                end
+        if (gcdisplay.GetCycle('TP') ~= 'Off') then
+            gFunc.EquipSet('TP')
+            if (gcdisplay.GetCycle('TP') == 'HighAcc') then
+                gFunc.EquipSet('TP_HighAcc')
             end
-        end
-        if (player.Status == 'Idle') then
-            if (player.TP == 0 and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
-                gcdisplay.SetCycleIndex('TP', 1)
-                gcinclude.UnlockWeapon:once(1)
+            if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
+                gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
+            end
+            if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
+                gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+            end
+            if (player.SubJob == 'NIN') then
+                gFunc.EquipSet('TP_NIN')
+            end
+            if gData.GetBuffCount(580) > 0 then -- Horizon Mjollnir Haste Buff
+                gFunc.EquipSet('TP_Mjollnir_Haste')
+            end
+            if (player.MainJob == 'RDM' and tp_fencers_ring and player.HPP <= 75 and player.TP <= 1000) then
+                gFunc.Equip(tp_fencers_ring_slot, 'Fencer\'s Ring')
             end
         end
     end

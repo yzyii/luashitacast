@@ -322,3 +322,6 @@
 
 ### v1.4.13
 - SMN - Only use carbuncle's mitts on spirits if both era+ items are owned
+
+### v1.4.14
+- RDM/WHM/SMN/BRD - Updates how TP commands and mechanics works. See README or notes.

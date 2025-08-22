@@ -289,6 +289,26 @@ function gcinclude.DoDefaultOverride(isMelee)
             end
         end
     end
+    if (gcdisplay.IdleSet == 'Evasion') then gFunc.EquipSet('Evasion') end
+
+    if ((player.IsMoving == true)
+        and (
+            gcdisplay.IdleSet == 'Normal'
+            or gcdisplay.IdleSet == 'Alternate'
+            or gcdisplay.IdleSet == 'DT'
+            or gcdisplay.IdleSet == 'Evasion'
+        )
+    ) then
+        if (isMage and (gcdisplay.GetCycle('TP') ~= 'LowAcc' or gcdisplay.GetCycle('TP') ~= 'HighAcc')) then
+            if (environment.Time >= 6 and environment.Time < 18) then
+                gFunc.EquipSet('DT')
+            else
+                gFunc.EquipSet('DTNight')
+            end
+        end
+        gFunc.EquipSet('Movement')
+    end
+
     if (gcdisplay.IdleSet == 'MDT') then gFunc.EquipSet('MDT') end
     if (gcdisplay.IdleSet == 'FireRes') then gFunc.EquipSet('FireRes') end
     if (gcdisplay.IdleSet == 'IceRes') then gFunc.EquipSet('IceRes') end
@@ -296,7 +316,6 @@ function gcinclude.DoDefaultOverride(isMelee)
     if (gcdisplay.IdleSet == 'EarthRes') then gFunc.EquipSet('EarthRes') end
     if (gcdisplay.IdleSet == 'WindRes') then gFunc.EquipSet('WindRes') end
     if (gcdisplay.IdleSet == 'WaterRes') then gFunc.EquipSet('WaterRes') end
-    if (gcdisplay.IdleSet == 'Evasion') then gFunc.EquipSet('Evasion') end
     if (gcdisplay.GetToggle('Kite') == true) then gFunc.EquipSet('Movement') end
 
     if (player.Status == 'Resting') then
@@ -309,17 +328,6 @@ function gcinclude.DoDefaultOverride(isMelee)
         end
     else
         restTimestampRecorded = false
-    end
-
-    if ((player.IsMoving == true)
-        and (
-            gcdisplay.IdleSet == 'Normal'
-            or gcdisplay.IdleSet == 'Alternate'
-            or gcdisplay.IdleSet == 'DT'
-            or gcdisplay.IdleSet == 'Evasion'
-        )
-    ) then
-        gFunc.EquipSet('Movement')
     end
 end
 
