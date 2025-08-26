@@ -325,3 +325,6 @@
 
 ### v1.4.14
 - RDM/WHM/SMN/BRD - Updates how TP commands and mechanics works. See README or notes.
+
+### v1.4.15
+- Fixes broken /lock and /locktp logic in v1.4.14
