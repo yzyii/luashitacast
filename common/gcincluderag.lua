@@ -86,7 +86,7 @@ local OverrideNameTable = {
     ['eva'] = 'Evasion'
 }
 
-local isMage = T{ 'RDM','BLM','WHM','SMN','BRD' }
+local isMageJobs = T{ 'RDM','BLM','WHM','SMN','BRD' }
 
 local lastIdleSet = 'Normal'
 
@@ -100,7 +100,7 @@ function gcinclude.Load()
 
     local function delayLoad()
         local delayedPlayer = gData.GetPlayer()
-        if (not isMage:contains(delayedPlayer.MainJob)) then
+        if (not isMageJobs:contains(delayedPlayer.MainJob)) then
             gcdisplay.CreateToggle('LockTP', false)
         end
 
@@ -178,6 +178,7 @@ function gcinclude.DoCommands(args)
     end
 
     local player = gData.GetPlayer()
+    local isMage = isMageJobs:contains(player.MainJob)
 
     if (isOverride) then
         gcinclude.ToggleIdleSet(OverrideNameTable[args[1]])
@@ -205,11 +206,11 @@ function gcinclude.DoCommands(args)
                 gcinclude.UnlockNonWeapon()
             else
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
-                if (not isMage:contains(player.MainJob)) then gcdisplay.CreateToggle('LockTP', false) end
+                if (not isMage) then gcdisplay.CreateToggle('LockTP', false) end
             end
         else
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
-            if (not isMage:contains(player.MainJob)) then gcdisplay.CreateToggle('LockTP', false) end
+            if (not isMage) then gcdisplay.CreateToggle('LockTP', false) end
         end
     elseif (args[1] == 'locktp' and not isMage) then
         gcdisplay.AdvanceToggle('LockTP')
@@ -299,7 +300,7 @@ function gcinclude.DoDefaultOverride(isMelee)
             or gcdisplay.IdleSet == 'Evasion'
         )
     ) then
-        if (isMage and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
+        if (isMageJobs:contains(player.MainJob) and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
             if (environment.Time >= 6 and environment.Time < 18) then
                 gFunc.EquipSet('DT')
             else
