@@ -579,6 +579,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
         gcmage.EquipDark(maxMP)
     elseif (action.Skill == 'Divine Magic') then
         gFunc.EquipSet('Divine')
+        gcmage.EquipObi(action)
     elseif (action.Skill == 'Summoning') then
         lastSummoningElement = action.Element
     end
@@ -701,11 +702,7 @@ function gcmage.EquipHealing(maxMP, sets, chainspell)
     if (player.SubJob == "WHM" and healers_earring) then
         gFunc.Equip(healers_earring_slot, 'Healer\'s Earring')
     end
-    if (action.Element == environment.WeatherElement) or (action.Element == environment.DayElement) then
-        if (action.Element == 'Light') and korin_obi then
-            gFunc.Equip('Waist', 'Korin Obi')
-        end
-    end
+    gcmage.EquipObi(action)
     if (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
         if (maxMP == 0 or player.MP < maxMP * 0.85) then
             gFunc.Equip(water_ring_slot, 'Water Ring')
@@ -782,13 +779,7 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
         if (gcdisplay.GetToggle('MB') == true) then
             gFunc.EquipSet('MB')
         end
-        if (ObiCheck(action)) then
-            local obi = NukeObiTable[action.Element]
-            local obiOwned = NukeObiOwnedTable[action.Element]
-            if (obiOwned) then
-                gFunc.Equip('Waist', obi)
-            end
-        end
+        gcmage.EquipObi(action)
         if (action.Element == environment.DayElement) and sorcerers_tonban ~= '' and (player.MainJob == 'BLM') then
             gFunc.Equip('Legs', sorcerers_tonban)
         end
@@ -796,18 +787,6 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
             gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring')
         end
     end
-end
-
-function ObiCheck(action)
-    local element = action.Element
-    local environment = gData.GetEnvironment()
-    local weakElement = WeakElementTable[element]
-
-    if environment.WeatherElement == element then
-        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
-    end
-
-    return environment.DayElement == element and environment.WeatherElement ~= weakElement
 end
 
 function gcmage.EquipEnfeebling()
@@ -851,13 +830,7 @@ function gcmage.EquipEnfeeblingACC(action)
     if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
         gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
     end
-    if (ObiCheck(action)) then
-        local obi = NukeObiTable[action.Element]
-        local obiOwned = NukeObiOwnedTable[action.Element]
-        if (obiOwned) then
-            gFunc.Equip('Waist', obi)
-        end
-    end
+    gcmage.EquipObi(action)
 end
 
 function gcmage.EquipDark(maxMP)
@@ -892,13 +865,7 @@ function gcmage.EquipDark(maxMP)
         gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
     end
 
-    if (ObiCheck(action)) then
-        local obi = NukeObiTable[action.Element]
-        local obiOwned = NukeObiOwnedTable[action.Element]
-        if (obiOwned) then
-            gFunc.Equip('Waist', obi)
-        end
-    end
+    gcmage.EquipObi(action)
 end
 
 function gcmage.EquipStaff()
@@ -922,6 +889,28 @@ function gcmage.EquipStaff()
             end
         end
     end
+end
+
+function gcmage.EquipObi(action)
+    if (ObiCheck(action)) then
+        local obi = NukeObiTable[action.Element]
+        local obiOwned = NukeObiOwnedTable[action.Element]
+        if (obiOwned) then
+            gFunc.Equip('Waist', obi)
+        end
+    end
+end
+
+function ObiCheck(action)
+    local element = action.Element
+    local environment = gData.GetEnvironment()
+    local weakElement = WeakElementTable[element]
+
+    if environment.WeatherElement == element then
+        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
+    end
+
+    return environment.DayElement == element and environment.WeatherElement ~= weakElement
 end
 
 function gcmage.DoAbility()

@@ -328,3 +328,6 @@
 
 ### v1.4.15
 - Fixes broken /lock and /locktp logic in v1.4.14
+
+### v1.4.16
+- Adds obi usage to divine magic and fixes weather vs day checking for healing magic
