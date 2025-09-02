@@ -12,14 +12,14 @@ local temple_crown = 'Tpl. Crown +1'
 local melee_gaiters = 'Melee Gaiters'
 local melee_gloves = 'Mel. Gloves +1'
 
-local muscle_belt = ''
-local garden_bangles = ''
+local muscle_belt = 'Muscle Belt +1'
+local garden_bangles = 'Garden Bangles'
 local presidential_hairpin = false
 local dream_ribbon = true
 
-local kampfer_ring = false
+local kampfer_ring = true
 local kampfer_ring_slot = 'Ring2'
-local kampfer_earring = false
+local kampfer_earring = true
 local kampfer_earring_slot = 'Ear2'
 
 local sets = {
@@ -38,22 +38,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    IdleALT = {
-        Main = 'Destroyers',
-        Ammo = 'Tiphia Sting',
-        Head = 'Dream Ribbon',
-        Neck = 'Jeweled Collar +1',
-        Ear1 = 'Brutal Earring',
-        Ear2 = 'Wyvern Earring',
-        Body = 'Kirin\'s Osode',
-        Hands = 'Mel. Gloves +1',
-        Ring1 = 'Shadow Ring',
-        Ring2 = 'Begrudging Ring',
-        Back = 'Shadow Mantle',
-        Waist = 'Black Belt',
-        Legs = 'Byakko\'s Haidate',
-        Feet = 'Herald\'s Gaiters',
-    },
+    IdleALT = {},
     Resting = {
         Neck = 'Paisley Scarf',
         Ear2 = 'Sanative Earring',
@@ -73,21 +58,34 @@ local sets = {
         Feet = 'Herald\'s Gaiters',
     },
 
+    --[[
+    8% Base
+    5% Merits
+    45% Counterstance
+    5% Melee Gaiters
+    ]]
     DT = {
-        -- Main = 'Cross-Counters', -- 5
+        Main = 'Cross-Counters', -- 5
+        Ammo = 'Fenrir\'s Stone',
+        Head = 'Optical Hat',
         -- Head = 'Arh. Jinpachi +1',
-        Neck = 'Evasion Torque',
-        -- Neck = 'Peacock Amulet',
+        Neck = 'Faith Torque',
+        -- Neck = 'Evasion Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
         -- Ear1 = 'Avenger\'s Earring', -- 1
         -- Ear2 = 'Avenger\'s Earring', -- 1
+        Body = 'Kirin\'s Osode',
         -- Body = 'Arhat\'s Gi +1',
         -- Hands = 'Rasetsu Tekko +1', -- 1
         -- Hands = 'Noritsune Kote',
-        Ring2 = 'Sattva Ring',
+        Hands = 'Mel. Gloves +1',
+        Ring1 = 'Sattva Ring',
+        Ring2 = 'Toreador\'s Ring',
         Back = 'Shadow Mantle',
+        Waist = 'Black Belt',
         Legs = 'Tpl. Hose +1', -- 3
-        Feet = 'Melee Gaiters',
-        -- Feet = 'Rasetsu Sune-Ate +1', -- 1
+        Feet = 'Rst. Sune-Ate +1', -- 1
     },
     MDT = { -- Shell IV provides 23% MDT
         Ear1 = 'Merman\'s Earring',
@@ -150,6 +148,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Body = 'Kirin\'s Osode',
         Hands = 'Mel. Gloves +1',
+        -- Ring1 = 'Toreador\'s Ring',
         Ring1 = 'Begrudging Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
@@ -159,7 +158,7 @@ local sets = {
     },
     TP_HighAcc = {
         Head = 'Shr.Znr.Kabuto',
-        Neck = 'Peacock Amulet',
+        Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Shura Togi',
@@ -189,13 +188,18 @@ local sets = {
     WS = {
         Head = 'Shr.Znr.Kabuto',
         Neck = 'Thunder Gorget',
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Ring1 = 'Flame Ring',
         Ring2 = 'Triumph Ring',
         Legs = 'Shura Haidate',
         Feet = 'Shura Sune-Ate',
+        Hands = 'Mel. Gloves +1',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Black Belt',
     },
     WS_HighAcc = {
+        -- Ring1 = 'Toreador\'s Ring',
         Ring1 = 'Begrudging Ring',
         Ring2 = 'Toreador\'s Ring',
     },
@@ -391,9 +395,6 @@ profile.HandleDefault = function()
         if (player.HP < max_hp_in_idle_with_regen_gear_equipped) then
             local environment = gData.GetEnvironment()
 
-            if (muscle_belt ~= '') then
-                gFunc.Equip('Waist', muscle_belt)
-            end
             if (garden_bangles ~= '' and environment.Time >= 6 and environment.Time < 18) then
                 gFunc.Equip('hands', garden_bangles)
             end

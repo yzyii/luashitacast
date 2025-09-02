@@ -19,7 +19,7 @@ local displayheadOnAbility = true
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
-        Ammo = 'Tiphia Sting',
+        Ammo = 'Dream Sand',
         Head = 'Genie Tiara',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
@@ -27,9 +27,9 @@ local sets = {
         Body = { Name = 'Src. Coat +1', Priority = 100 },
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Umbra Cape',
-        Waist = 'Penitent\'s Rope',
+        Waist = { Name = 'Penitent\'s Rope', Priority = -100 },
         Legs = 'Igqira Lappas',
         Feet = 'Herald\'s Gaiters',
     },
@@ -207,30 +207,29 @@ local sets = {
     },
     Casting = {
         Main = 'Eremite\'s Wand', -- 25
-        Sub = 'Eremite\'s Wand', -- 25
+        Sub = 'Genbu\'s Shield',
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Magnetic Earring', -- 8
-        Waist = 'Druid\'s Rope', -- 10
+        Waist = 'Silver Obi +1', -- 8
         Feet = 'Wizard\'s Sabots', -- 20
     },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
         Main = 'Eremite\'s Wand', -- 25
-        Sub = 'Eremite\'s Wand', -- 25
+        Sub = 'Genbu\'s Shield',
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Magnetic Earring', -- 8
-        Waist = 'Druid\'s Rope', -- 10
+        Waist = 'Silver Obi +1', -- 8
         Feet = 'Wizard\'s Sabots', -- 20
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
         Head = 'Zenith Crown +1',
-        Ammo = 'Tiphia Sting',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
-        Body = { Name = 'Src. Coat +1', Priority = 100 },
+        Body = 'Mahatma Hpl.',
         Hands = 'Zenith Mitts +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
@@ -238,7 +237,9 @@ local sets = {
         Feet = 'Rostrum Pumps',
     },
     YellowHNM = {
+        Ammo = 'Tiphia Sting',
         Neck = 'Star Necklace',
+        Body = { Name = 'Src. Coat +1', Priority = 100 },
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Nashira Turban', -- 2
@@ -478,22 +479,7 @@ local sets = {
         -- Back = 'Maledictor\'s Shawl',
     },
 
-    LockSet1 = { -- 40 Cap
-        Main = 'Solid Wand',
-        Ammo = 'Morion Tathlum',
-        Head = 'Seer\'s Crown +1',
-        Neck = 'Black Neckerchief',
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Morion Earring',
-        Body = 'Ryl.Sqr. Robe',
-        Hands = 'Seer\'s Mitts +1',
-        Ring1 = 'Wisdom Ring +1',
-        Ring2 = 'Wisdom Ring +1',
-        Back = 'Black Cape +1',
-        Waist = 'Druid\'s Rope',
-        Legs = 'Seer\'s Slacks',
-        Feet = 'Mannequin Pumps',
-    },
+    LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
 }

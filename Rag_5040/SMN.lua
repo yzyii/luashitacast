@@ -162,7 +162,7 @@ local sets = {
     },
     Casting = { -- Default Casting Equipment when using Idle sets
         Main = 'Eremite\'s Wand', -- 25
-        Sub = 'Eremite\'s Wand', -- 25
+        Sub = 'Genbu\'s Shield',
         Ammo = 'Hedgehog Bomb',
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
@@ -173,13 +173,13 @@ local sets = {
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
         Back = { Name = 'Errant Cape', Priority = 100 },
-        Waist = 'Druid\'s Rope', -- 10
+        Waist = 'Silver Obi +1', -- 8
         Legs = { Name = 'Evk. Spats +1', Priority = 100 },
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
     },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
         Main = 'Eremite\'s Wand', -- 25
-        Sub = 'Eremite\'s Wand', -- 25
+        Sub = 'Genbu\'s Shield',
         Ammo = 'Hedgehog Bomb',
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
@@ -190,7 +190,7 @@ local sets = {
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
         Back = { Name = 'Errant Cape', Priority = 100 },
-        Waist = 'Druid\'s Rope', -- 10
+        Waist = 'Silver Obi +1', -- 8
         Legs = { Name = 'Evk. Spats +1', Priority = 100 },
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
     },
@@ -261,22 +261,7 @@ local sets = {
     NukeACC = {},
     NukeDOT = {},
 
-    LockSet1 = {
-        Main = 'Solid Wand',
-        Ammo = 'Morion Tathlum',
-        Head = 'Seer\'s Crown +1',
-        Neck = 'Black Neckerchief',
-        Ear1 = 'Enfeebling Earring',
-        Ear2 = 'Morion Earring',
-        Body = 'Ryl.Sqr. Robe',
-        Hands = 'Carbuncle Mitts',
-        Ring1 = 'Wisdom Ring +1',
-        Ring2 = 'Ether Ring',
-        Back = 'Black Cape +1',
-        Waist = 'Druid\'s Rope',
-        Legs = 'Seer\'s Slacks',
-        Feet = 'Mannequin Pumps',
-    },
+    LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
 

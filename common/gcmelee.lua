@@ -7,8 +7,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
-conquest = gFunc.LoadFile('common\\conquest.lua')
+gcinclude = gFunc.LoadFile('common\\gcinclude-rag.lua')
 
 local gcmelee = {}
 
@@ -175,7 +174,7 @@ function gcmelee.SetupMidcastDelay(fastCastValue)
          fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
     local minimumBuffer = 0.4 -- Can be lowered to 0.1 if you want
-    local packetDelay = 0.4 -- Change this to 0.4 if you do not use PacketFlow
+    local packetDelay = 0.25 -- Change this to 0.4 if you do not use PacketFlow
     local castDelay = ((castTime * castTimeMod * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
@@ -183,7 +182,7 @@ function gcmelee.SetupMidcastDelay(fastCastValue)
 
     -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))
 
-    return castDelay - 1
+    return castDelay - 0.4
 end
 
 function gcmelee.DoMidcast(sets)

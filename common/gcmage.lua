@@ -16,7 +16,7 @@ local suirin_obi = false
 local furin_obi = false
 local hyorin_obi = true
 local rairin_obi = true
-local korin_obi = false
+local korin_obi = true
 local anrin_obi = true
 
 -- Set to true if you have the item, and specify which ring or earring slot it will override
@@ -90,8 +90,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcinclude = gFunc.LoadFile('common\\gcincluderag.lua')
-conquest = gFunc.LoadFile('common\\conquest.lua')
+gcinclude = gFunc.LoadFile('common\\gcinclude-rag.lua')
 
 local gcmage = {}
 
@@ -437,7 +436,9 @@ function gcmage.DoPrecast(fastCastValue)
     local action = gData.GetAction()
     local player = gData.GetPlayer()
 
-    if (chainspell > 0) then
+    gFunc.EquipSet('Precast')
+
+    if (chainspell > 0 or lag) then
         if (gcdisplay.GetToggle('Hate') == true) then
             gFunc.EquipSet('Hate')
 
@@ -452,11 +453,6 @@ function gcmage.DoPrecast(fastCastValue)
                 end
             end
         end
-    elseif (not lag) then
-        gFunc.EquipSet('Precast')
-        gcmage.SetupMidcastDelay(fastCastValue)
-    else
-        gFunc.EquipSet('Precast')
 
         local weakened = gData.GetBuffCount('Weakness')
         if (weakened >= 1) then
@@ -472,12 +468,16 @@ function gcmage.DoPrecast(fastCastValue)
                 gFunc.EquipSet('YellowHNM')
             end
         end
+    else
+        gcmage.SetupMidcastDelay(fastCastValue)
     end
 end
 
 function gcmage.SetupMidcastDelay(fastCastValue)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
+    local target = gData.GetActionTarget()
+    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
     local castTime = action.CastTime
     if (player.SubJob == "RDM") then
         fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
@@ -501,10 +501,31 @@ function gcmage.SetupMidcastDelay(fastCastValue)
         castTime = 3000
     end
     local minimumBuffer = 0.4 -- Can be lowered to 0.1 if you want
-    local packetDelay = 0.4 -- Change this to 0.4 if you do not use PacketFlow
+    local packetDelay = 0.25 -- Change this to 0.4 if you do not use PacketFlow
     local castDelay = ((castTime * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
+    end
+
+    local function delayCheat()
+        if (gcdisplay.GetToggle('Hate') == true) then
+            if (target.Name == me) then
+                if (action.Name == 'Cure III') then
+                    gFunc.ForceEquipSet('Cheat_C3HPDown')
+                    gFunc.ForceEquipSet('Cheat_HPUp')
+                elseif (action.Name == 'Cure IV') then
+                    gFunc.ForceEquipSet('Cheat_C4HPDown')
+                    gFunc.ForceEquipSet('Cheat_HPUp')
+                end
+            end
+        end
+    end
+
+    local cheatDelay = castDelay - 0.4
+    if (cheatDelay <= 0) then
+        delayCheat()
+    else
+        delayCheat:once(cheatDelay)
     end
 
     local weakened = gData.GetBuffCount('Weakness')
@@ -522,7 +543,7 @@ function gcmage.SetupMidcastDelay(fastCastValue)
                 gFunc.ForceEquipSet('YellowHNM')
             end
         end
-        local yellowDelay = castDelay - 1
+        local yellowDelay = castDelay - 0.4
         if (yellowDelay <= 0) then
             gFunc.EquipSet('Yellow')
             if (gcdisplay.GetToggle('HNM') == true) then
@@ -570,7 +591,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     if (action.Skill == 'Enhancing Magic') then
         gcmage.EquipEnhancing()
     elseif (action.Skill == 'Healing Magic') then
-        gcmage.EquipHealing(maxMP, sets, chainspell)
+        gcmage.EquipHealing(maxMP)
     elseif (action.Skill == 'Elemental Magic') then
         gcmage.EquipElemental(maxMP, blmSJMMP)
     elseif (action.Skill == 'Enfeebling Magic') then
@@ -688,7 +709,7 @@ function gcmage.EquipEnhancing()
     end
 end
 
-function gcmage.EquipHealing(maxMP, sets, chainspell)
+function gcmage.EquipHealing(maxMP)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
     local environment = gData.GetEnvironment()
@@ -717,14 +738,8 @@ function gcmage.EquipHealing(maxMP, sets, chainspell)
         gFunc.EquipSet('Hate')
         if (target.Name == me) then
             if (action.Name == 'Cure III') then
-                if (chainspell == 0) then
-                    gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
-                end
                 gFunc.EquipSet('Cheat_HPUp')
             elseif (action.Name == 'Cure IV') then
-                if (chainspell == 0) then
-                    gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
-                end
                 gFunc.EquipSet('Cheat_HPUp')
             end
         end

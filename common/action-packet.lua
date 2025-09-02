@@ -1,5 +1,4 @@
 -- From github.com/thornyFFXI/tTimers
--- Parse an action packet
  local function ParseActionPacket(e)
     local bitData;
     local bitOffset;
