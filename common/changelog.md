@@ -331,3 +331,7 @@
 
 ### v1.4.16
 - Adds obi usage to divine magic and fixes weather vs day checking for healing magic
+
+### v1.5.0
+- Renames or moves some of the core common files: gcdisplayrag.lua, gcincluderag.lua, actionpacket.lua, changelog.
+- Shortens timers between forceEquips for Cure Cheats on RDM, PLD, and Yellow set equip on BLM. 
