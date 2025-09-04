@@ -793,6 +793,9 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
         end
         if (gcdisplay.GetToggle('MB') == true) then
             gFunc.EquipSet('MB')
+            if (gcdisplay.GetToggle('HNM') == true) then
+                gFunc.EquipSet('MBHNM')
+            end
         end
         gcmage.EquipObi(action)
         if (action.Element == environment.DayElement) and sorcerers_tonban ~= '' and (player.MainJob == 'BLM') then

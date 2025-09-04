@@ -335,3 +335,6 @@
 ### v1.5.0
 - Renames or moves some of the core common files: gcdisplayrag.lua, gcincluderag.lua, actionpacket.lua, changelog.
 - Shortens timers between forceEquips for Cure Cheats on RDM, PLD, and Yellow set equip on BLM. 
+
+### v1.5.1
+- BLM - Add MBHNM set for nuking with a choice of magic burst gear vs -enmity on HNMs.

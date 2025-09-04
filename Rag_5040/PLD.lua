@@ -143,7 +143,9 @@ local sets = {
         Feet = 'Blood Greaves', -- 21
     },
     LightningRes = { -- 138
-        Sub = 'Nms. Shield +1', -- 15
+        Main = 'Terra\'s Staff', -- 20
+        Sub = '',
+        -- Sub = 'Nms. Shield +1', -- 15
         Range = 'Lightning Bow +1', -- 7
         Ammo = '',
         Head = 'Black Ribbon', -- 12

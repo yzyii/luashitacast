@@ -475,8 +475,12 @@ local sets = {
     },
     MB = {
         Ammo = 'Dream Sand',
-        -- Hands = 'Src. Gloves +1',
-        -- Back = 'Maledictor\'s Shawl',
+        Hands = 'Src. Gloves +1',
+        Back = 'Maledictor\'s Shawl',
+    },
+    MBHNM = {
+        Hands = 'Wzd. Gloves +1',
+        Back = 'Errant Cape',
     },
 
     LockSet1 = {},
