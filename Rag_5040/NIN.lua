@@ -110,6 +110,7 @@ local sets = {
 
     Enhancing = {},
     Cure = {},
+    Flash = {}, -- Technically optional since Hate and Haste gear will be equipped by default
 
     LockSet1 = {},
     LockSet2 = {},
@@ -157,7 +158,7 @@ Everything below can be ignored.
 ]]
 
 local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi', 'Kurayami: Ichi', 'Hojo: Ichi' }
-local DrkDebuffs = T{ 'Bind', 'Sleep', 'Poison' }
+local HateDebuffs = T{ 'Bind', 'Sleep', 'Poison', 'Blind' }
 local DrkDarkMagic = T{ 'Stun', 'Aspir', 'Drain', 'Absorb-AGI', 'Absorb-VIT' }
 local NinElemental = T{
     'Hyoton: Ni', 'Katon: Ni', 'Huton: Ni', 'Doton: Ni', 'Raiton: Ni', 'Suiton: Ni',
@@ -344,7 +345,7 @@ profile.HandleMidcast = function()
             EquipStaffAndObi(action)
         end
     elseif (action.Skill == 'Enfeebling Magic') then
-        if (DrkDebuffs:contains(action.Name)) then
+        if (HateDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.Hate)
         end
         local staff = ElementalStaffTable[action.Element]
@@ -360,6 +361,10 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Enhancing)
     elseif (action.Skill == 'Healing Magic') then
         gFunc.EquipSet(sets.Cure)
+    elseif (action.Skill == 'Divine Magic') then
+        gFunc.EquipSet(sets.Hate)
+        gFunc.EquipSet(sets.Haste)
+        gFunc.EquipSet(sets.Flash)
     end
 end
 

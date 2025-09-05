@@ -276,7 +276,7 @@ local sets = {
         Legs = { Name = 'Hydra Brayettes', Priority = -100 },
         Feet = 'Vlr. Leggings +1',
     },
-    Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
+    Hate_Flash = { -- Technically optional since Hate and Haste gear will be equipped by default
         Main = { Name = 'Capricorn Staff', Priority = -1 },
         Sub = 'remove',
         Head = 'Homam Zucchetto',
@@ -594,13 +594,9 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Cure)
     elseif (action.Skill == 'Divine Magic') then
         if (action.Name == 'Flash') then
-            local sentinel = gData.GetBuffCount('Sentinel')
-            if (sentinel >= 1) then
-                gFunc.EquipSet(sets.Haste)
-            else
-                gFunc.EquipSet(sets.Hate)
-                gFunc.EquipSet(sets.Hate_Flash)
-            end
+            gFunc.EquipSet(sets.Hate)
+            gFunc.EquipSet(sets.Haste)
+            gFunc.EquipSet(sets.Hate_Flash)
         else
             gFunc.EquipSet(sets.Divine)
         end

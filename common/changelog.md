@@ -338,3 +338,5 @@
 
 ### v1.5.1
 - BLM - Add MBHNM set for nuking with a choice of magic burst gear vs -enmity on HNMs.
+- NIN - Add Flash for /PLD.
+- PLD - Force PLD to always just use Hate > Haste > Hate_Flash sets on Flash.
