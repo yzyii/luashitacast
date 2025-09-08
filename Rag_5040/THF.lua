@@ -3,6 +3,7 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear
 
 local ta_rogue_armlets = true
+local evasion_master_casters_bracelets - false
 
 local sets = {
     Idle = {},
@@ -176,6 +177,10 @@ profile.HandleDefault = function()
     end
 
     gcmelee.DoDefaultOverride()
+
+    if (conquest:GetOutsideControl() and evasion_master_casters_bracelets and gcdisplay.IdleSet == 'Evasion') then
+        gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+    end
 
     local sa = gData.GetBuffCount('Sneak Attack')
     local ta = gData.GetBuffCount('Trick Attack')

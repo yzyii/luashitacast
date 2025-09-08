@@ -238,8 +238,6 @@ local sets = {
     },
     YellowHNM = {
         Ammo = 'Tiphia Sting',
-        Neck = 'Star Necklace',
-        Body = { Name = 'Src. Coat +1', Priority = 100 },
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Nashira Turban', -- 2
