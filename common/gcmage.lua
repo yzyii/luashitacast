@@ -383,7 +383,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     end
 
     if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD' or player.MainJob == 'SMN') then
-        if (gcdisplay.GetCycle('TP') ~= 'Off') then
+        if (gcdisplay.GetCycle('TP') ~= 'Off' and player.Status == 'Engaged') then
             gFunc.EquipSet('TP')
             if (gcdisplay.GetCycle('TP') == 'HighAcc') then
                 gFunc.EquipSet('TP_HighAcc')

@@ -340,3 +340,7 @@
 - BLM - Add MBHNM set for nuking with a choice of magic burst gear vs -enmity on HNMs.
 - NIN - Add Flash for /PLD.
 - PLD - Force PLD to always just use Hate > Haste > Hate_Flash sets on Flash.
+
+### v1.5.2
+- THF - Add Mst.Cst. Bracelets for Evasion set.
+- RDM/WHM/SMN/BRD - Re-Add idling in Idle / IdleALT sets if not engaged but in TP modes.
