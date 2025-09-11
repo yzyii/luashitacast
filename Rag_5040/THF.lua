@@ -3,7 +3,7 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear
 
 local ta_rogue_armlets = true
-local evasion_master_casters_mitts - false
+local evasion_master_casters_mitts = false
 
 local sets = {
     Idle = {},
