@@ -199,11 +199,9 @@ All of the following toggles set what jug Call Beast will use.
 
  # Additional Notes
 
-- LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. Level Sync content is a joke anyway. Just throw on some garbage gear full time and clear it.
+- LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. It is highly suggested that you do not attempt to add Level Sync functionality to these luas as it will not work completely unless you know exactly what you're doing and will cause you to be unable to update to newer versions easily. Level Sync content is a joke anyway. Just throw on some garbage gear full time and clear it.
 
-- Horizon's rules on what is legal or not in LuAshitacast is poorly explained and will vary depending on what admin or GM you talk to anyway. This LuAshitacast attempts to abide by the spirit of their rules.
-
-- e.g. Some users have asked me if equipping movement speed gear to override Dusk gear if they move their character during content is legal. Given that you are pushing movement keys to move your character, I consider this to be legal within the vague guidelines given by HorizonXI. You may disagree. Short of explicit guidance from a GM, this will not be changed to cater for you.
+- Horizon's rules on what is legal or not in LuAshitacast is poorly explained and will vary depending on what admin or GM you talk to anyway. This LuAshitacast attempts to abide by the spirit of their rules. Short of any explicit guidance from a GM / Horizon Staff, functionality will not be changed to cater for you.
 
 # Contact Me
 
@@ -219,5 +217,6 @@ I will also as a rule ignore you as per https://nohello.net/ and https://dontask
 A list of things to do in the future but who knows when I'll get around to them:
 - Refactor everything back out to actual sets on the JOB.lua files so that level sync and Packer validate would potentially work properly.
 - Micro-optimizations with job specific overrides for midcast and respecting max mp sets etc. e.g. WHM should not equip Virology ring when at 100% max mp.
+- Gate all Horizon specific changes behind a setting.
 
 Feel free to submit PRs to implement these.
