@@ -381,7 +381,7 @@ profile.HandleCommand = function(args)
         gcdisplay.AdvanceToggle('SleepRecast')
         gcinclude.Message('SleepRecast', gcdisplay.GetToggle('SleepRecast'))
     else
-        gcmage.DoCommands(args)
+        gcmage.DoCommands(args, sets)
     end
 
     if (args[1] == 'horizonmode') then

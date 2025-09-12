@@ -221,7 +221,7 @@ function gcmage.SetVariables()
     end
 end
 
-function gcmage.DoCommands(args)
+function gcmage.DoCommands(args, sets)
     if not (AliasList:contains(args[1])) then
         gcinclude.DoCommands(args)
         do return end
@@ -255,9 +255,21 @@ function gcmage.DoCommands(args)
         gcinclude.Message('TP Mode', gcdisplay.GetCycle('TP'))
 
         if (gcdisplay.GetCycle('TP') ~= 'Off') then
-            gcinclude.LockWeapon:once(1)
+            local tpset = sets.TP
+            if (gcdisplay.GetCycle('TP') == 'HighAcc') then
+                tpset = gFunc.Combine(tpset, sets.TP_HighAcc)
+            end
+            if (player.SubJob == 'NIN') then
+                tpset = gFunc.Combine(tpset, sets.TP_NIN)
+            end
+            gcinclude.UnlockWeapon()
+            local function forcetpset()
+                gFunc.LockSet(tpset, 0.5)
+            end
+            forcetpset:once(0.5)
+            gcinclude.LockWeapon:once(0.8)
         else
-            gcinclude.UnlockWeapon:once(1)
+            gcinclude.UnlockWeapon()
         end
     elseif (args[1] == 'lag') then
         lag =  not lag

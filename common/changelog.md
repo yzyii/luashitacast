@@ -344,3 +344,6 @@
 ### v1.5.2
 - THF - Add Mst.Cst. Bracelets for Evasion set.
 - RDM/WHM/SMN/BRD - Re-Add idling in Idle / IdleALT sets if not engaged but in TP modes.
+
+### v1.5.3
+- RDM/WHM/SMN/BRD - Allow weapons to be equipped correctly for tp modes.

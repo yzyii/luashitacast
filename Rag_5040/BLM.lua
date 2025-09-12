@@ -345,6 +345,8 @@ local sets = {
         Neck = 'Enfeebling Torque',
         Body = 'Wzd. Coat +1',
         Legs = 'Igqira Lappas',
+        Hands = 'Nashira Gages',
+        Feet = 'Nashira Crackows',
     },
     EnfeeblingMND = {
         Ammo = 'Hedgehog Bomb',
@@ -536,7 +538,7 @@ profile.HandleCommand = function(args)
         gcdisplay.AdvanceToggle('Extra')
         gcinclude.Message('Extra', gcdisplay.GetToggle('Extra'))
     else
-        gcmage.DoCommands(args)
+        gcmage.DoCommands(args, sets)
     end
 
     if (args[1] == 'horizonmode') then
