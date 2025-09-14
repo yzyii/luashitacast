@@ -178,7 +178,7 @@ profile.HandleDefault = function()
 
     gcmelee.DoDefaultOverride()
 
-    if (conquest:GetOutsideControl() and evasion_master_casters_bracelets and gcdisplay.IdleSet == 'Evasion') then
+    if (conquest:GetOutsideControl() and evasion_master_casters_mitts and gcdisplay.IdleSet == 'Evasion') then
         gFunc.Equip('Hands', 'Mst.Cst. Mitts')
     end
 
