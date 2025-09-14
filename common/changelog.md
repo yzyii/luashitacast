@@ -347,3 +347,7 @@
 
 ### v1.5.3
 - RDM/WHM/SMN/BRD - Allow weapons to be equipped correctly for tp modes.
+
+### v1.5.4
+- THF - Fix Mst.Cst. Mitts usage on THF
+- Melee - Fix broken Movement set usage
