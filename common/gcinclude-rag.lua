@@ -299,6 +299,8 @@ function gcinclude.DoDefaultOverride(isMelee)
             or gcdisplay.IdleSet == 'Alternate'
             or gcdisplay.IdleSet == 'DT'
             or gcdisplay.IdleSet == 'Evasion'
+            or gcdisplay.IdleSet == 'LowAcc'
+            or gcdisplay.IdleSet == 'HighAcc'
         )
     ) then
         if (isMageJobs:contains(player.MainJob) and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
