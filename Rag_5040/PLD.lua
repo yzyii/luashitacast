@@ -401,7 +401,7 @@ local sets = {
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Forager\'s Mantle',
-        Waist = 'Sonic Belt',
+        Waist = 'Warwolf Belt',
         Legs = 'Vlr. Breeches +1',
         Feet = 'Rutter Sabatons',
     },
