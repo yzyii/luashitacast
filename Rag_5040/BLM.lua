@@ -422,18 +422,18 @@ local sets = {
     },
     NukeHNM = {
         Ammo = 'Phtm. Tathlum',
-        Head = 'Wzd. Petasos +1',
+        Head = 'Wzd. Petasos +1', -- 4
         Neck = 'Prudence Torque',
         Ear1 = 'Novio Earring',
-        Ear2 = 'Novia Earring',
-        Body = 'Mahatma Hpl.',
-        Hands = 'Wzd. Gloves +1',
+        Ear2 = 'Novia Earring', -- 7
+        Body = 'Mahatma Hpl.', -- 4
+        Hands = 'Wzd. Gloves +1', -- 2
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
-        Back = 'Errant Cape',
-        Waist = 'Penitent\'s Rope',
-        Legs = 'Mahatma Slops',
-        Feet = 'Src. Sabots +1',
+        Back = 'Errant Cape', -- 5
+        Waist = 'Penitent\'s Rope', -- 3
+        Legs = 'Mahatma Slops', -- 4
+        Feet = 'Src. Sabots +1', -- 3
     },
     NukeACC = {
         Head = 'Src. Petasos +1',

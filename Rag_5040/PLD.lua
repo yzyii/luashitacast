@@ -417,7 +417,20 @@ local sets = {
         Main = 'Apollo\'s Staff',
         Ear1 = 'Hospitaler Earring',
     },
-    Divine = {},
+    Divine = {
+        Head = 'Homam Zucchetto',
+        Neck = 'Faith Torque',
+        Ear1 = 'Novio Earring',
+        Ear2 = 'Moldavite Earring',
+        Body = 'Glt. Surcoat +1',
+        Hands = 'Dvt. Mitts +1',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        Back = 'Altruistic Cape',
+        Waist = 'Warwolf Belt',
+        Legs = { Name = 'Homam Cosciales', Priority = 120 },
+        Feet = 'Vlr. Leggings +1',
+    },
     Rampart = { -- Rampart gives VIT x2 damage shield in era
         Main = { Name = 'Durandal', Priority = -1 },
         Sub = 'Koenig Shield',
@@ -427,7 +440,7 @@ local sets = {
         Neck = 'Fortitude Torque',
         Ear1 = { Name = 'Robust Earring', Priority = -1 },
         Ear2 = { Name = 'Robust Earring', Priority = -1 },
-        Body = 'Gallant Surcoat',
+        Body = 'Glt. Surcoat +1',
         Hands = 'Kng. Handschuhs',
         Ring1 = 'Robust Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
@@ -441,7 +454,21 @@ local sets = {
         Ear1 = 'Knightly Earring',
         Hands = 'Vlr. Gauntlets +1',
     },
-    Enhancing = {},
+    Enhancing = {
+        Main = 'Kirin\'s Pole',
+        Head = 'Homam Zucchetto', --maats
+        Neck = 'Stone Gorget',
+        Ear1 = 'Cmn. Earring',
+        Ear2 = 'Cmn. Earring',
+        Body = 'Vlr. Surcoat +1',
+        Hands = 'Dvt. Mitts +1',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        Back = 'Merciful Cape',
+        Waist = 'Warwolf Belt',
+        Legs = 'Glt. Breeches +1',
+        Feet = 'Vlr. Leggings +1',
+    },
 }
 profile.Sets = sets
 
