@@ -372,8 +372,8 @@ local sets = {
     TP_LowAcc = {
         Main = 'Joyeuse',
         Sub = 'Aegis',
-        Range = '',
-        Ammo = 'Tiphia Sting',
+        Range = 'Lightning Bow +1',
+        Ammo = '',
         Head = 'Homam Zucchetto',
         Neck = 'Fortitude Torque',
         Ear1 = 'Brutal Earring',
@@ -387,8 +387,9 @@ local sets = {
         Legs = 'Homam Cosciales',
         Feet = 'Homam Gambieras',
     },
-    TP_HighAcc = {},
+    TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
+    TP_HighAcc = {},
 
     WS = {
         Head = 'Optical Hat',

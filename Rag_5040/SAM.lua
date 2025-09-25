@@ -35,8 +35,9 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {},
-    TP_HighAcc = {},
+    TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
+    TP_HighAcc = {},
 
     WS = {},
     WS_HighAcc = {},

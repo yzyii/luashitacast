@@ -214,6 +214,8 @@ local sets = {
         Ear2 = 'Magnetic Earring', -- 8
         Waist = 'Silver Obi +1', -- 8
         Feet = 'Wizard\'s Sabots', -- 20
+        Ammo = 'Tiphia Sting',
+        Back = 'Umbra Cape',
     },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
         Main = 'Eremite\'s Wand', -- 25
@@ -224,8 +226,11 @@ local sets = {
         Ear2 = 'Magnetic Earring', -- 8
         Waist = 'Silver Obi +1', -- 8
         Feet = 'Wizard\'s Sabots', -- 20
+        Ammo = 'Tiphia Sting',
+        Back = 'Umbra Cape',
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
+        Ammo = 'Dream Sand',
         Head = 'Zenith Crown +1',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',

@@ -39,11 +39,16 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {},
-    TP_HighAcc = {},
+    TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
+    TP_HighAcc = {},
 
-    MaxHP = {},
-    BreathBonus = {},
+    MaxHP = {
+        Head = 'Drachen Armet',
+    },
+    BreathBonus = {
+        Head = 'Wyrm Armet',
+    },
     BreathBonus_NonMage = {},
     Stoneskin = {},
 

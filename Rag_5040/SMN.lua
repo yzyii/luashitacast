@@ -309,11 +309,11 @@ local sets = {
     TP = {
         Ring1 = 'Jelly Ring',
     },
+    TP_Mjollnir_Haste = {},
     TP_HighAcc = {
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
     },
-    TP_NIN = {},
-    TP_Mjollnir_Haste = {},
+
     WS = {},
     WS_HighAcc = {},
 }

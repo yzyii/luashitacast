@@ -593,6 +593,7 @@ local sets = {
         Legs = 'Nashira Seraweels',
         Feet = 'Dusk Ledelsens +1',
     },
+    TP_Mjollnir_Haste = {},
     TP_HighAcc = {
         Range = 'Lightning Bow +1',
         Ammo = '',
@@ -615,7 +616,7 @@ local sets = {
         Ammo = '',
         -- Ammo = 'Virtue Stone',
     },
-    TP_Mjollnir_Haste = {},
+
     WS = {
         Head = 'Optical Hat',
         Ear2 = 'Merman\'s Earring',

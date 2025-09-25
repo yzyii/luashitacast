@@ -35,8 +35,9 @@ local sets = {
     Preshot = {},
 
     TP_LowAcc = {},
-    TP_HighAcc = {},
+    TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
+    TP_HighAcc = {},
 
     Ranged_ACC = {},
     Ranged_ATK = {},

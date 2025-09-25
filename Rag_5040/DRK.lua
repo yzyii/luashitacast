@@ -300,22 +300,12 @@ local sets = {
         Legs = 'Homam Cosciales',
         Feet = 'Homam Gambieras',
     },
-    TP_HighAcc = {
-        Ammo = 'Bomb Core',
-        Head = 'Homam Zucchetto',
-        Neck = 'Peacock Amulet',
-        Ear1 = 'Brutal Earring',
-        Ear2 = 'Abyssal Earring',
-        Body = 'Haubergeon +1',
-        Hands = 'Dusk Gloves +1',
-        Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Toreador\'s Ring',
-        Back = 'Abyss Cape',
-        Waist = 'Sonic Belt',
-        Legs = 'Homam Cosciales',
-        Feet = 'Homam Gambieras',
-    },
+    TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
+    TP_HighAcc = {
+        Neck = 'Peacock Amulet',
+        Back = 'Abyss Cape',
+    },
 
     WS = {
         Ammo = 'Bomb Core',

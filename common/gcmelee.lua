@@ -105,19 +105,24 @@ function gcmelee.DoDefault()
                 if (lastIdleSetBeforeEngaged == '') then
                     lastIdleSetBeforeEngaged = gcdisplay.IdleSet
                 end
-                gFunc.EquipSet('TP_' .. TpVariantTable[tp_variant])
                 if (gcdisplay.IdleSet ~= TpVariantTable[tp_variant]) then
                     gcinclude.ToggleIdleSet(TpVariantTable[tp_variant])
                 end
 
-                if gData.GetBuffCount(580) > 0 then -- Horizon Mjollnir Haste Buff
-                    gFunc.EquipSet('TP_Mjollnir_Haste')
-                end
-
+                gFunc.EquipSet('TP_LowAcc')
                 if (player.MainJob ~= 'RNG') then
                     if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
                         gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
                     end
+                end
+                if gData.GetBuffCount('Aftermath') > 0 then
+                    gFunc.EquipSet('TP_Aftermath')
+                end
+                if gData.GetBuffCount(580) > 0 then -- Horizon Mjollnir Haste Buff
+                    gFunc.EquipSet('TP_Mjollnir_Haste')
+                end
+                if (gcdisplay.IdleSet == 'HighAcc') then
+                    gFunc.EquipSet('TP_HighAcc')
                 end
             end
             if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
