@@ -351,3 +351,7 @@
 ### v1.5.4
 - THF - Fix Mst.Cst. Mitts usage on THF
 - Melee - Fix broken Movement set usage
+
+### v1.5.5
+- Melee - Add Aftermath set
+- Melee - Adjust TP set hierarchy to follow top down equipment evaluation
