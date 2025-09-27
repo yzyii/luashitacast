@@ -367,7 +367,7 @@ local sets = {
     },
     Cursna = {
         Body = 'Dls. Tabard +1',
-        Legs = 'Warlock\'s Tights',
+        Legs = 'Wlk. Tights +1',
         Back = 'Altruistic Cape',
     },
 
@@ -384,16 +384,17 @@ local sets = {
         Ring2 = 'Communion Ring',
         Back = { Name = 'Merciful Cape', Priority = 100 },
         Waist = 'Sonic Belt',
-        Legs = { Name = 'Warlock\'s Tights', Priority = 100 },
+        Legs = { Name = 'Wlk. Tights +1', Priority = 100 },
         Feet = 'Dusk Ledelsens +1',
     },
     Stoneskin = {
         Main = 'Eremite\'s Wand',
         Sub = 'Genbu\'s Shield',
+        Ammo = 'Dream Sand',
         Neck = 'Stone Gorget',
         Body = 'Mahatma Hpl.',
         Hands = 'Dusk Gloves +1',
-        Back = 'Prism Cape',
+        Back = 'Maledictor\'s Shawl',
     },
     Spikes = {
         Main = 'Aquilo\'s Staff',
@@ -408,7 +409,7 @@ local sets = {
         Ring2 = 'Omniscient Ring',
         Back = { Name = 'Merciful Cape', Priority = 100 },
         Waist = 'Penitent\'s Rope',
-        Legs = { Name = 'Warlock\'s Tights', Priority = 100 },
+        Legs = { Name = 'Wlk. Tights +1', Priority = 100 },
         Feet = { Name = 'Dls. Boots +1', Priority = 100 },
     },
 
