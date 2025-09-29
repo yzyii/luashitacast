@@ -355,3 +355,7 @@
 ### v1.5.5
 - Melee - Add Aftermath set
 - Melee - Adjust TP set hierarchy to follow top down equipment evaluation
+
+### v1.5.6
+- BST - Add /pet command to cycle through pets
+- THF - Add /ammo command to cycle through bolt types and /bolt commands to go immediately to a specific bolt

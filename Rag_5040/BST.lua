@@ -183,6 +183,7 @@ end
 
 profile.OnLoad = function()
     gcinclude.SetAlias(pets)
+    gcinclude.SetAlias(T{'pet'})
     gcdisplay.CreateCycle('Pet', PetTable1)
     gcmelee.Load()
     profile.SetMacroBook()
@@ -191,11 +192,15 @@ end
 profile.OnUnload = function()
     gcmelee.Unload()
     gcinclude.ClearAlias(pets)
+    gcinclude.ClearAlias(T{'pet'})
 end
 
 profile.HandleCommand = function(args)
     if (pets:contains(args[1])) then
         gcdisplay.SetCycleIndex('Pet', PetTable2[args[1]])
+        gcinclude.Message('Pet', gcdisplay.GetCycle('Pet'))
+    elseif (args[1] == 'pet') then
+        gcdisplay.AdvanceCycle('Pet')
         gcinclude.Message('Pet', gcdisplay.GetCycle('Pet'))
     else
         gcmelee.DoCommands(args)

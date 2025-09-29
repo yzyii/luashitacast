@@ -58,6 +58,22 @@ local sets = {
 
     Ranged = {},
     Ranged_INT = {},
+
+    Acid = {
+        Ammo = 'Acid Bolt',
+    },
+    Sleep = {
+        Ammo = 'Sleep Bolt',
+    },
+    Bloody = {
+        Ammo = 'Bloody Bolt',
+    },
+    Blind = {
+        Ammo = 'Blind Bolt',
+    },
+    Venom = {
+        Ammo = 'Venom Bolt',
+    },
 }
 profile.Sets = sets
 
@@ -71,6 +87,23 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+local ammo = T{'acid','sleep','bloody','blind','venom'}
+
+local AmmoTable1 = {
+    [1] = 'Acid',
+    [2] = 'Sleep',
+    [3] = 'Bloody',
+    [4] = 'Blind',
+    [5] = 'Venom',
+}
+local AmmoTable2 = {
+    ['acid'] = 1,
+    ['sleep'] = 2,
+    ['bloody'] = 3,
+    ['blind'] = 4,
+    ['venom'] = 5,
+}
 
 local saOverride = 0
 local taOverride = 0
@@ -105,6 +138,7 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+	gFunc.EquipSet(sets[gcdisplay.GetCycle('Ammo')]);
 end
 
 profile.HandleMidshot = function()
@@ -143,6 +177,9 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
+    gcinclude.SetAlias(ammo)
+    gcdisplay.CreateCycle('Ammo', AmmoTable1)
+    gcinclude.SetAlias(T{'ammo'})
     gcinclude.SetAlias(T{'th'})
     gcdisplay.CreateCycle('TH', {[1] = 'Auto', [2] = 'On', [3] = 'Off'})
     gcmelee.Load()
@@ -152,6 +189,8 @@ end
 
 profile.OnUnload = function()
     gcmelee.Unload()
+    gcinclude.ClearAlias(ammo)
+    gcinclude.ClearAlias(T{'ammo'})
     gcinclude.ClearAlias(T{'th'})
     ashita.events.unregister('packet_in', 'watch_treasure_hunter');
 end
@@ -160,6 +199,12 @@ profile.HandleCommand = function(args)
     if (args[1] == 'th') then
         gcdisplay.AdvanceCycle('TH')
         gcinclude.Message('TH', gcdisplay.GetCycle('TH'))
+    elseif (args[1] == 'ammo') then
+        gcdisplay.AdvanceCycle('Ammo')
+        gcinclude.Message('Ammo', gcdisplay.GetCycle('Ammo'))
+    elseif (ammo:contains(args[1])) then
+        gcdisplay.SetCycleIndex('Ammo', AmmoTable2[args[1]])
+        gcinclude.Message('Ammo', gcdisplay.GetCycle('Ammo'))
     else
         gcmelee.DoCommands(args)
     end
@@ -203,6 +248,7 @@ end
 
 profile.HandlePrecast = function()
     gcmelee.DoPrecast(fastCastValue)
+	gFunc.EquipSet(sets[gcdisplay.GetCycle('Ammo')]);
 end
 
 profile.HandleMidcast = function()

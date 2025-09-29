@@ -178,12 +178,23 @@ All of the following toggles set what jug Call Beast will use.
 /rabbit
 /mandy
 /flytrap
+
+Alternatively, use /pet to cycle through them.
 ```
 
 ## Additional Commands for THF:
 ```
 /th - Forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
       Will also force you to equip TH gear when using a ranged attack and ability.
+
+All of the following toggles set what bolt ammo will be used.
+/acid
+/sleep
+/bloody
+/blind
+/venom
+
+Alternatively, use /ammo to cycle through them.
 ```
 
 ## Additional Commands for PLD:
