@@ -218,5 +218,7 @@ A list of things to do in the future but who knows when I'll get around to them:
 - Refactor everything back out to actual sets on the JOB.lua files so that level sync and Packer validate would potentially work properly.
 - Micro-optimizations with job specific overrides for midcast and respecting max mp sets etc. e.g. WHM should not equip Virology ring when at 100% max mp.
 - Gate all Horizon specific changes behind a setting.
+- Add bolt types to THF
+- Add Virtue Stone Weapon checks (unneccessary until ToAU where mobs can strip gear)
 
 Feel free to submit PRs to implement these.
