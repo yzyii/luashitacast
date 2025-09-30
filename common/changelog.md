@@ -359,3 +359,6 @@
 ### v1.5.6
 - BST - Add /pet command to cycle through pets
 - THF - Add /ammo command to cycle through bolt types and /bolt commands to go immediately to a specific bolt
+
+### v1.5.7
+- THF - Prefixes bolt commands with 'a' as /sleep is used by ashita.

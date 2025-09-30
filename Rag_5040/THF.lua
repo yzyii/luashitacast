@@ -88,7 +88,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-local ammo = T{'acid','sleep','bloody','blind','venom'}
+local ammo = T{'aacid','asleep','abloody','ablind','avenom'}
 
 local AmmoTable1 = {
     [1] = 'Acid',
@@ -203,7 +203,7 @@ profile.HandleCommand = function(args)
         gcdisplay.AdvanceCycle('Ammo')
         gcinclude.Message('Ammo', gcdisplay.GetCycle('Ammo'))
     elseif (ammo:contains(args[1])) then
-        gcdisplay.SetCycleIndex('Ammo', AmmoTable2[args[1]])
+        gcdisplay.SetCycleIndex('Ammo', AmmoTable2[args[1]:sub(2)])
         gcinclude.Message('Ammo', gcdisplay.GetCycle('Ammo'))
     else
         gcmelee.DoCommands(args)

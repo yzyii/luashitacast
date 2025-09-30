@@ -188,11 +188,11 @@ Alternatively, use /pet to cycle through them.
       Will also force you to equip TH gear when using a ranged attack and ability.
 
 All of the following toggles set what bolt ammo will be used.
-/acid
-/sleep
-/bloody
-/blind
-/venom
+/aacid
+/asleep
+/abloody
+/ablind
+/avenom
 
 Alternatively, use /ammo to cycle through them.
 ```
