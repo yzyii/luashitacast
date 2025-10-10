@@ -112,7 +112,7 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1', -- 2
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
-        Back = 'Shadow Mantle',
+        Back = 'Resentment Cape',
         Waist = 'Warwolf Belt',
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
