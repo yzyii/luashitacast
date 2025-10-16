@@ -601,7 +601,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     end
 
     if (action.Skill == 'Enhancing Magic') then
-        gcmage.EquipEnhancing()
+        gcmage.EquipEnhancing(blmSJMMP)
     elseif (action.Skill == 'Healing Magic') then
         gcmage.EquipHealing(maxMP)
     elseif (action.Skill == 'Elemental Magic') then
@@ -710,14 +710,23 @@ function gcmage.SetupInterimEquipSet(sets)
     end
 end
 
-function gcmage.EquipEnhancing()
+function gcmage.EquipEnhancing(blmNukeExtra)
+    local player = gData.GetPlayer()
     local action = gData.GetAction()
 
     gFunc.EquipSet('Enhancing')
     if (action.Name == 'Stoneskin') then
         gFunc.EquipSet('Stoneskin')
+
+        if (player.MainJob == 'BLM' and gcdisplay.GetToggle('Extra') and player.MP >= blmNukeExtra) then
+            gFunc.EquipSet('StoneskinExtra')
+        end
     elseif (SpikeSpells:contains(action.Name)) then
         gFunc.EquipSet('Spikes')
+    elseif (action.Name == 'Phalanx') then
+        if (player.MainJob == 'BLM' and gcdisplay.GetToggle('Extra') and player.MP >= blmNukeExtra) then
+            gFunc.EquipSet('PhalanxExtra')
+        end
     end
 end
 

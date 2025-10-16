@@ -6,7 +6,7 @@ local ninSJMaxMP = 640 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 718 -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = 699 -- The Max MP you have when /rdm in your idle set
 
-local nukeExtraThreshold = 850 -- The minimum MP for which NukeExtra and StoneskinExtra set will be used instead of regular sets (to allow additional nukes using max mp sets)
+local nukeExtraThreshold = 850 -- The minimum MP for which NukeExtra StoneskinExtra, and PhalanxExtra set will be used instead of regular sets (to allow additional nukes using max mp sets)
 
 local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false
@@ -321,12 +321,29 @@ local sets = {
         Ear2 = 'Cmn. Earring',
         Body = 'Mahatma Hpl.',
         Hands = 'Dvt. Mitts +1',
-        Ring1 = 'Aqua Ring',
+        Ring1 = { Name = 'Serket Ring', Priority = 100 },
         Ring2 = 'Communion Ring',
         Back = { Name = 'Errant Cape', Priority = 100 },
         Waist = { Name = 'Hierarch Belt', Priority = 100 },
         Legs = 'Mahatma Slops',
         Feet = { Name = 'Mahatma Pigaches', Priority = 100 },
+    },
+    PhalanxExtra = {
+        Main = 'Eremite\'s Wand',
+        Sub = 'Genbu\'s Shield',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Zenith Crown +1',
+        Neck = 'Enhancing Torque',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Magnetic Earring',
+        Body = 'Hydra Doublet',
+        Hands = 'Src. Gloves +1',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        Back = 'Merciful Cape',
+        Waist = 'Hierarch Belt',
+        Legs = 'Src. Tonban +1',
+        Feet = 'Src. Sabots +1',
     },
     Spikes = {
         Main = 'Kirin\'s Pole',
