@@ -254,6 +254,12 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens',
     },
+    Sing_Etude = {
+        Range = 'Gjallarhorn',
+    },
+    Sing_Minne = {
+        Range = 'Gjallarhorn',
+    },
 
     Cure = {
         Main = 'Apollo\'s Staff',
@@ -472,6 +478,12 @@ profile.HandleMidcast = function()
         elseif string.match(action.Name, 'Paeon') then
             gFunc.EquipSet(sets.Sing_Buff)
             gFunc.EquipSet(sets.Sing_Paeon)
+        elseif string.match(action.Name, 'Etude') then
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_Etude)
+        elseif string.match(action.Name, 'Minne') then
+            gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Sing_Minne)
         end
     end
 end
