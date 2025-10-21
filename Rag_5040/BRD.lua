@@ -199,7 +199,7 @@ local sets = {
     Sing_Mazurka = {
         Range = 'Gjallarhorn',
     },
-     Sing_Minuet = {
+    Sing_Minuet = {
         Range = 'Gjallarhorn',
     },
     Sing_March = {
@@ -210,28 +210,26 @@ local sets = {
     },
     Sing_Elegy = {
         Range = 'Gjallarhorn',
-        Main = 'Terra\'s Staff',
     },
     Sing_Lullaby = {
         Range = 'Gjallarhorn',
-        Main = 'Apollo\'s Staff',
     },
     Sing_HordeLullaby_Large = {
         Range = 'Nursemaid\'s Harp',
-        Main = 'Apollo\'s Staff',
         Neck = 'String Torque',
         Legs = 'Mahatma Slops',
     },
     Sing_HordeLullaby_Small = {
         Range = 'Gjallarhorn',
-        Main = 'Apollo\'s Staff',
     },
     Sing_SleepRecast = {
         Hands = 'Sheikh Gages',
     },
-    Sing_FinaleRequiem = {
+    Sing_Finale = {
         Range = 'Gjallarhorn',
-        Main = 'Apollo\'s Staff',
+    },
+    Sing_Requiem = {
+        Range = 'Gjallarhorn',
     },
     Sing_Carol = {
         Range = 'Gjallarhorn',
@@ -360,7 +358,7 @@ profile.OnLoad = function()
     gcinclude.SetAlias(T{'sballad','shorde','srecast'})
     gcdisplay.CreateToggle('SmallBallad', false)
     gcdisplay.CreateToggle('SmallHorde', false)
-    gcdisplay.CreateToggle('SleepRecast', false)
+    gcdisplay.CreateToggle('SleepRecast', true)
     gcmage.Load()
     profile.SetMacroBook()
 end
@@ -435,9 +433,12 @@ profile.HandleMidcast = function()
             if (gcdisplay.GetToggle('SleepRecast')) then
                 gFunc.EquipSet(sets.Sing_SleepRecast)
             end
-        elseif (action.Name == 'Magic Finale') or string.match(action.Name, 'Requiem') then
+        elseif (action.Name == 'Magic Finale') then
             gFunc.EquipSet(sets.Sing_Debuff)
-            gFunc.EquipSet(sets.Sing_FinaleRequiem)
+            gFunc.EquipSet(sets.Sing_Finale)
+        elseif string.match(action.Name, 'Requiem') then
+            gFunc.EquipSet(sets.Sing_Debuff)
+            gFunc.EquipSet(sets.Sing_Requiem)
         elseif string.match(action.Name, 'Carol') then
             gFunc.EquipSet(sets.Sing_Buff)
             gFunc.EquipSet(sets.Sing_Carol)
