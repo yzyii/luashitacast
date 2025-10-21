@@ -362,3 +362,6 @@
 
 ### v1.5.7
 - THF - Prefixes bolt commands with 'a' as /sleep is used by ashita.
+
+### v1.5.8
+- BLM - Implements StoneskinExtra and PhalanxExtra logic that was meant to already have been added in v1.3.30.
