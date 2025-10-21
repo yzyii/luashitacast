@@ -365,3 +365,8 @@
 
 ### v1.5.8
 - BLM - Implements StoneskinExtra and PhalanxExtra logic that was meant to already have been added in v1.3.30.
+
+### v1.5.9
+- BRD - Default SleepRecast toggle on BRD to true.
+- BRD - Split out Requiem and Finale sets.
+- BRD - Add explicit Etude and Minne sets.
