@@ -123,7 +123,7 @@ local sets = {
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
     },
-    FireRes = { -- 145
+    FireRes = { -- 149
         Main = 'Neptune\'s Staff', -- 20
         Range = 'Arco de Velocidad',
         Ammo = '',
@@ -135,7 +135,7 @@ local sets = {
         Hands = 'Tarasque Mitts +1', -- 6
         Ring1 = 'Triumph Ring', -- 10
         Ring2 = 'Malflame Ring', -- 10
-        Back = 'Hexerei Cape',
+        Back = 'Dino Mantle', -- 4
         Waist = 'Water Belt', -- 20
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Power Sandals', -- 7

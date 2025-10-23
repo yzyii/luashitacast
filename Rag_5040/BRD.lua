@@ -13,85 +13,114 @@ local displayheadOnAbility = true
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
-        Range = 'Mythic Harp +1',
+        -- Range = 'Mythic Harp +1',
+        Ammo = 'Pebble',
+        Head = 'displaced',
+        Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Head = 'displaced',
         Body = 'Royal Cloak',
-        Hands = 'Dst. Mittens +1',
-        Ring1 = 'Merman\'s Ring',
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Shadow Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
-        Waist = 'Scouter\'s Rope',
+        Waist = { Name = 'Hierarch Belt', Priority = 100 },
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
-        Neck = 'Jeweled Collar',
     },
     IdleALT = {
         Main = 'Terra\'s Staff',
-        Range = 'Mythic Harp +1',
+        -- Range = 'Mythic Harp +1',
+        Ammo = 'Pebble',
+        Head = 'Dream Ribbon',
+        Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Head = 'Darksteel Cap +1',
         Body = 'Dst. Harness +1',
-        Hands = 'Dst. Mittens +1',
-        Ring1 = 'Merman\'s Ring',
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Shadow Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
-        Waist = 'Scouter\'s Rope',
+        Waist = { Name = 'Hierarch Belt', Priority = 100 },
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
-        Neck = 'Jeweled Collar',
     },
     IdleMaxMP = {},
     Resting = {
         Main = 'Pluto\'s Staff',
+        Ammo = 'Hedgehog Bomb',
         Head = 'Hydra Beret',
-        Neck = 'Checkered Scarf',
+        Neck = 'Pch. Collar',
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
-        Body = 'Mahatma hpl.',
+        Body = 'Mahatma Hpl.',
         Hands = 'Hydra Gloves',
+        Ring1 = "Shadow Ring",
+        Ring2 = "Merman's Ring",
         Back = 'Errant Cape',
+        Waist = { Name = 'Hierarch Belt', Priority = 100 },
         Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
-    Town = {
-        Range = 'Gjallarhorn',
-    },
+    Town = {},
     Movement = {},
 
-    DT = {},
+    DT = {
+		Main = 'Terra\'s Staff',
+        Head = 'Darksteel Cap +1',
+        Body = 'Dst. Harness +1',
+        Hands = 'Dst. Mittens +1',
+        Back = 'Umbra Cape',
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Dst. Leggings +1',
+    },
     DTNight = {},
     MDT = { -- Shell IV provides 23% MDT
         Main = 'Terra\'s Staff',
-        Range = 'Mythic Harp +1',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Head = 'displaced',
-        Body = 'Royal Cloak',
-        Hands = 'Merman\'s Bangles',
-        Ring1 = 'Merman\'s Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Hexerei Cape',
-        Waist = 'Scouter\'s Rope',
-        Legs = 'Dst. Subligar +1',
-        Feet = 'Dst. Leggings +1',
-        Neck = 'Jeweled Collar',
-    },
-    FireRes = {
-        Main = 'Neptune\'s Staff',
-        Head = 'Green Ribbon +1',
-        Neck = 'Enfeebling Torque',
-        Body = 'Dst. Harness +1',
-        Ear1 = 'Ruby Earring',
-        Ear2 = 'Ruby Earring',
-        Ring1 = 'Ruby Ring',
-        Ring2 = 'Malflame Ring',
+        Head = 'Black Ribbon',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Merman\'s Earring', -- 2
+        Ear2 = 'Merman\'s Earring', -- 2
+        Body = 'Mahatma Hpl.',
+        Hands = 'Merman\'s Bangles', -- 2
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Sattva Ring', -- 5
+        Back = 'Hexerei Cape', -- 3
+        Waist = { Name = 'Hierarch Belt', Priority = 100 },
+        Legs = 'Byakko\'s Haidate',
         Feet = 'Suzaku\'s Sune-ate',
     },
+    FireRes = {
+        Main = 'Neptune\'s Staff', -- 20
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Cmn. Earring', -- 11
+        Ear2 = 'Cmn. Earring', -- 11
+        Body = 'Mahatma Hpl.',
+        Hands = 'Tarasque Mitts +1', -- 6
+        Ring1 = 'Triumph Ring', -- 10
+        Ring2 = 'Malflame Ring', -- 10
+        Back = 'Dino Mantle', -- 4
+        Waist = 'Water Belt', -- 20
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Suzaku\'s Sune-ate', -- 50
+    },
     IceRes = {},
-    LightningRes = {},
+    LightningRes = {
+        Main = 'Terra\'s Staff', -- 20
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Robust Earring', -- 11
+        Ear2 = 'Robust Earring', -- 11
+        Body = 'Dst. Harness +1',
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Spinel Ring', -- 9
+        Ring2 = 'Malflash Ring', -- 10
+        Back = 'Lightning Mantle', -- 6
+        Waist = 'Earth Belt', -- 20
+        Legs = 'Byakko\'s Haidate', -- 50
+        Feet = 'Dst. Leggings +1',
+    },
     EarthRes = {},
     WindRes = {},
     WaterRes = {},
@@ -103,194 +132,214 @@ local sets = {
        Ear2 = 'Loquac. Earring',
        Feet = 'Rostrum Pumps',
     },
-    Precast_Songs = {
-        Main = 'Tutelary',
-        Sub = 'She-slime Shield',
+    Precast_Songs = { -- 395
+        Main = 'Tutelary', -- 30
+ 		Sub = 'Genbu\'s Shield',
         Ammo = 'Happy Egg',
-        Head = 'Genbu\'s Kabuto',
-        Neck = 'Bird Whistle',
-        Ear1 = 'Pigeon Earring',
-        Ear2 = 'Loquac. Earring',
+        Head = 'Genbu\'s Kabuto', -- 50
+        Neck = 'Pch. Collar', -- 10
+        Ear1 = 'Loquac. Earring',
+        Ear2 = { Name = 'Cassie Earring', Priority = -100 }, -- 50
         Body = 'Sha\'ir Manteel',
-        Hands = 'Seiryu\'s Kote',
+        Hands = 'Seiryu\'s Kote', -- 50
         Ring1 = 'Minstrel\'s Ring',
-        Ring2 = 'Bomb Queen Ring',
-        Back = 'Gigant Mantle',
-        Waist = 'Powerful Rope',
-        Legs = 'Dusk Trousers',
-        Feet = 'Rostrum Pumps',
+        Ring2 = 'Bomb Queen Ring', -- 75
+        Back = 'Gigant Mantle', -- 80
+        Waist = 'Ocean Sash', -- 45
+        Legs = 'Dusk Trousers', -- 35
+        Feet = 'Rostrum Pumps', -- -30
     },
     Casting = { -- Default Casting Equipment when using Idle sets
         Main = 'Terra\'s Staff',
-        Range = 'Mythic Harp +1',
-        Neck = 'Jeweled Collar',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Head = 'Darksteel Cap +1',
+        -- Range = 'Mythic Harp +1',
+        Ammo = 'Pebble',
+        Head = 'Dream Ribbon',
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 100 }, -- 8
         Body = 'Dst. Harness +1',
-        Hands = 'Dst. Mittens +1',
-        Ring1 = 'Merman\'s Ring',
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Shadow Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
-        Waist = 'Powerful Rope',
+        Waist = { Name = 'Silver Obi +1', Priority = -100 }, -- 8
         Legs = 'Dst. Subligar +1',
-        Feet = 'Dst. Leggings +1',
+        Feet = 'Mountain Gaiters', -- 5
     },
     SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
-        Neck = 'Willpower Torque',
-        Waist = 'Druid\'s Rope',
-        Feet = 'Mountain Gaiters',
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 100 }, -- 8
+        Waist = { Name = 'Silver Obi +1', Priority = -100 }, -- 8
+        Feet = 'Mountain Gaiters', -- 5
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
-        Range = 'Angel Lyre',
-        Body = 'Sha\'ir Manteel',
-        Ear1 = 'Magnetic Earring',
-        Hands = 'Dusk Gloves +1',
-        Waist = 'Swift Belt',
-        Legs = 'Byakko\'s Haidate',
-        Feet = 'Dusk Ledelsens',
+        Range = 'Angel Lyre', -- 2
+		-- Head = 'Sheikh Turban', -- 2
+        Body = { Name = 'Sha\'ir Manteel', Priority = 10 }, -- 2
+        Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
+        Hands = 'Dusk Gloves +1', -- 4
+        Waist = 'Sonic Belt', -- 6
+        Legs = 'Byakko\'s Haidate', -- 5
+        Feet = 'Dusk Ledelsens +1', -- 3
     },
     ConserveMP = {
+        Ammo = 'Dream Sand',
         Ear2 = 'Magnetic Earring',
     },
 
-    Sing_Default = {
-        Range = 'Gjallarhorn',
+    Sing_Default = { -- Primarily Wind / Debuff by Default
+        -- Range = 'Mythic Harp +1',
+        Range = 'Military Harp',
         Head = 'Brd. Roundlet +1',
         Neck = 'Wind Torque',
         Ear1 = 'Singing Earring',
         Ear2 = 'Musical Earring',
+        Body = { Name = 'Sha\'ir Manteel', Priority = 10 },
         Hands = 'Chl. Cuffs +1',
+        Ring1 = 'Heavens Ring',
+        Ring2 = 'Heavens Ring',
+        Back = { Name = 'Astute Cape', Priority = 100 },
+        Waist = 'Gleeman\'s Belt',
         Legs = 'Chl. Cannions +1',
-        Back = 'Astute Cape',
+        Feet = { Name = 'Sha\'ir Crackows', Priority = 10 },
     },
     Sing_Buff = {
         Main = 'Chanter\'s Staff',
         Body = 'Minstrel\'s Coat',
+        Waist = { Name = 'Hierarch Belt', Priority = 100 },
+        Feet = 'Dusk Ledelsens +1',
     },
     Sing_Debuff = {
         Body = 'Mahatma Hpl.',
-        Ring1 = 'Heavens Ring',
-        Ring2 = 'Heavens Ring',
-        Waist = 'Corsette +1',
-        Feet = 'Sha\'ir Crackows',
+    },
+
+    Sing_Recast = {
+        Hands = 'Sheikh Gages',
     },
 
     Sing_Ballad_Large = {
-        Range = 'Gjallarhorn',
-        Body = 'Sha\'ir Manteel',
-        Hands = 'Sheikh Gages',
-        Waist = 'Swift Belt',
-        Legs = 'Byakko\'s Haidate',
-        Feet = 'Dusk Ledelsens',
+        -- Range = 'Balladeer\'s Harp',
+        Range = 'Military Harp',
     },
     Sing_Ballad_Small = {
-        Range = 'Gjallarhorn',
-        Body = 'Sha\'ir Manteel',
-        Hands = 'Sheikh Gages',
-        Waist = 'Swift Belt',
-        Legs = 'Byakko\'s Haidate',
-        Feet = 'Dusk Ledelsens',
+        -- Range = 'Balladeer\'s Harp',
+        Range = 'Cornette +2',
     },
     Sing_Paeon = {
         Range = 'Ebony Harp +1',
-        Neck = 'String Torque',
     },
     Sing_Mazurka = {
-        Range = 'Gjallarhorn',
+        -- Range = 'Harlequin\'s Horn',
     },
     Sing_Minuet = {
         Range = 'Gjallarhorn',
     },
     Sing_March = {
-        Range = 'Gjallarhorn',
+        Range = 'Faerie Piccolo',
     },
     Sing_Madrigal = {
-        Range = 'Gjallarhorn',
+        Range = 'Traversiere +2',
     },
     Sing_Elegy = {
-        Range = 'Gjallarhorn',
+        Range = 'Horn +1',
     },
     Sing_Lullaby = {
-        Range = 'Gjallarhorn',
+        Range = 'Nursemaid\'s Harp',
+        Neck = 'String Torque',
+        Body = 'Chl. Jstcorps +1',
+        Legs = "Mahatma Slops",
     },
     Sing_HordeLullaby_Large = {
         Range = 'Nursemaid\'s Harp',
         Neck = 'String Torque',
-        Legs = 'Mahatma Slops',
+        Body = 'Chl. Jstcorps +1',
+        Legs = "Mahatma Slops",
     },
     Sing_HordeLullaby_Small = {
-        Range = 'Gjallarhorn',
-    },
-    Sing_SleepRecast = {
-        Hands = 'Sheikh Gages',
+        -- Range = 'Mary\'s Horn',
+        Range = 'Nursemaid\'s Harp',
+        Neck = 'String Torque',
+        Body = 'Chl. Jstcorps +1',
+        Legs = "Mahatma Slops",
     },
     Sing_Finale = {
-        Range = 'Gjallarhorn',
+        Range = 'Military Harp',
+        Neck = 'String Torque',
+        Body = 'Chl. Jstcorps +1',
+        Legs = "Mahatma Slops",
     },
     Sing_Requiem = {
         Range = 'Gjallarhorn',
     },
     Sing_Carol = {
-        Range = 'Gjallarhorn',
+        Range = 'Crumhorn +1',
     },
     Sing_Mambo = {
-        Range = 'Gjallarhorn',
+        -- Range = 'Gemshorn +1',
     },
     Sing_Prelude = {
-        Range = 'Gjallarhorn',
+        -- Range = 'Angel\'s Flute +1',
     },
     Sing_Threnody = {
         Range = 'Sorrowful Harp',
         Neck = 'String Torque',
-        Legs = 'Mahatma Slops',
+        Body = 'Chl. Jstcorps +1',
+        Legs = "Mahatma Slops",
     },
     Sing_Hymnus = {
         Range = 'Angel Lyre',
-        Neck = 'String Torque',
-        Hands = 'Sheikh Gages',
-        Body = 'Sha\'ir Manteel',
-        Waist = 'Swift Belt',
-        Legs = 'Byakko\'s Haidate',
-        Feet = 'Dusk Ledelsens',
     },
     Sing_Etude = {
-        Range = 'Gjallarhorn',
+        -- Range = 'Mythic Harp +1',
+        -- Neck = 'String Torque',
+        -- Body = 'Chl. Jstcorps +1',
     },
     Sing_Minne = {
-        Range = 'Gjallarhorn',
+        -- Range = 'Harp +1',
+        -- Neck = 'String Torque',
+        -- Body = 'Chl. Jstcorps +1',
     },
 
-    Cure = {
+    Cure = { -- TODO: Check Cure Caps
         Main = 'Apollo\'s Staff',
-        Head = 'Hydra Beret',
-        Neck = 'Justice Badge',
-        Ear1 = 'Magnetic Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Hydra Doublet',
-        Hands = 'Hydra Gloves',
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
+        Head = 'Hydra Beret', -- 8
+        -- Neck = 'Faith Torque',
+        Neck = 'Benign Necklace', -- 2
+        Ear1 = 'Novia Earring', -- 7
+        Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
+        --Body = 'Mahatma Hpl.', -- 4
+        Body = { Name = 'Hydra Doublet', Priority = 100 }, -- 9
+        Hands = 'Hydra Gloves', -- 5
         Ring1 = 'Aqua Ring',
-        Ring2 = 'Aqua Ring',
-        Back = 'Errant Cape',
-        Waist = 'Penitent\'s Rope',
-        Legs = 'Hydra Brais',
-        Feet = 'Hydra Gaiters',
+        Ring2 = 'Communion Ring',
+        Back = { Name = 'Errant Cape', Priority = 100 }, -- 5
+        Waist = 'Penitent\'s Rope', -- 3
+        -- Legs = 'Mahatma Slops', -- 4
+        Legs = 'Hydra Brais', -- 6
+        -- Feet = 'Suzaku\'s Sune-ate',
+        Feet = 'Hydra Gaiters', -- 5
     },
-    Cursna = {},
+    Cursna = {
+        Back = 'Altruistic Cape',
+    },
 
-    Enhancing = {
-        Ear1 = 'Magnetic Earring',
-    },
-    Stoneskin = {
+    Enhancing = {},
+    Stoneskin = { -- TODO: Check Stoneskin Caps
         Main = 'Chanter\'s Staff',
-        Head = 'Hydra Beret',
+		Ammo = "Dream Sand",
+        Head = 'Maat\'s Cap',
         Neck = 'Stone Gorget',
-        Ear1 = 'Magnetic Earring',
-        Ear2 = 'Geist Earring',
-        Body = 'Mahatma hpl.',
-        Hands = 'Devotee\'s Mitts',
+        -- Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
+        -- Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
+        Ear1 = 'Cmn. Earring',
+        Ear2 = 'Cmn. Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = { Name = 'Dvt. Mitts +1', Priority = 100 },
         Ring1 = 'Aqua Ring',
-        Ring2 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
         Back = 'Prism Cape',
         Waist = 'Penitent\'s Rope',
         Legs = 'Mahatma Slops',
@@ -428,7 +477,7 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_Lullaby)
             if (gcdisplay.GetToggle('SleepRecast')) then
-                gFunc.EquipSet(sets.Sing_SleepRecast)
+                gFunc.EquipSet(sets.Sing_Recast)
             end
         elseif string.match(action.Name, 'Horde Lullaby') then
             gFunc.EquipSet(sets.Sing_Debuff)
@@ -437,7 +486,7 @@ profile.HandleMidcast = function()
                 gFunc.EquipSet(sets.Sing_HordeLullaby_Small)
             end
             if (gcdisplay.GetToggle('SleepRecast')) then
-                gFunc.EquipSet(sets.Sing_SleepRecast)
+                gFunc.EquipSet(sets.Sing_Recast)
             end
         elseif (action.Name == 'Magic Finale') then
             gFunc.EquipSet(sets.Sing_Debuff)
@@ -450,6 +499,8 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.Sing_Carol)
         elseif string.match(action.Name, 'Ballad') then
             gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Haste)
+            gFunc.EquipSet(sets.Sing_Recast)
             gFunc.EquipSet(sets.Sing_Ballad_Large)
             if (gcdisplay.GetToggle('SmallBallad')) then
                 gFunc.EquipSet(sets.Sing_Ballad_Small)
@@ -471,6 +522,8 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.Sing_Prelude)
         elseif string.match(action.Name, 'Hymnus') then
             gFunc.EquipSet(sets.Sing_Buff)
+            gFunc.EquipSet(sets.Haste)
+            gFunc.EquipSet(sets.Sing_Recast)
             gFunc.EquipSet(sets.Sing_Hymnus)
         elseif (action.Name == 'Chocobo Mazurka') then
             gFunc.EquipSet(sets.Sing_Buff)

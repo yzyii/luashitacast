@@ -373,3 +373,5 @@
 
 ### v1.5.10
 - Mages - Only use Diabolos' Pole on BLM
+- BRD - Rename Sing_SleepRecast to Sing_Recast
+- BRD - Force usage of Haste and Sing_Recast sets on stat insensitive songs Ballad and Hymnus
