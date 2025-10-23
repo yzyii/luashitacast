@@ -1,4 +1,4 @@
-local fenrirs_earring = true -- Not used for RNG at all
+local fenrirs_earring = false -- Not used for RNG at all
 local fenrirs_earring_slot = 'Ear2'
 
 --[[

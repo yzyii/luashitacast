@@ -98,7 +98,7 @@ local sets = {
     WindRes = {},
     WaterRes = {},
     Evasion = { -- Currently using this as an override for BV2 Zergs
-        Head = 'Shr.Znr.Kabuto',
+        Head = 'Maat\'s Cap',
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
@@ -129,7 +129,7 @@ local sets = {
         Feet = 'Mountain Gaiters', -- 5
     },
     Haste = { -- Used for Utsusemi cooldown
-        Head = 'Panther mask +1',
+        Head = 'Panther Mask +1',
         Waist = 'Black Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Fuma Sune-Ate',
@@ -157,7 +157,7 @@ local sets = {
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {
-        Head = 'Shr.Znr.Kabuto',
+        Head = 'Maat\'s Cap',
         Body = 'Shura Togi',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
@@ -176,7 +176,7 @@ local sets = {
     },
 
     WS = {
-        Head = 'Shr.Znr.Kabuto',
+        Head = 'Maat\'s Cap',
         Neck = 'Thunder Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
@@ -203,7 +203,6 @@ local sets = {
         Feet = 'Dune Boots',
     },
     WS_HowlingFist = {
-        Head = 'Genbu\'s Kabuto',
     },
 
     Jump = {
@@ -246,7 +245,7 @@ local sets = {
     },
 
     HundredFists = {
-        Head = 'Shr.Znr.Kabuto',
+        Head = 'Maat\'s Cap',
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
