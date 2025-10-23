@@ -370,3 +370,6 @@
 - BRD - Default SleepRecast toggle on BRD to true.
 - BRD - Split out Requiem and Finale sets.
 - BRD - Add explicit Etude and Minne sets.
+
+### v1.5.10
+- Mages - Only use Diabolos' Pole on BLM

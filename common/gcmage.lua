@@ -918,7 +918,7 @@ function gcmage.EquipStaff()
             gFunc.Equip('Main', staff)
         end
 
-        if (DiabolosPoleSpells:contains(action.Name)) then
+        if (player.MainJob == 'BLM' and DiabolosPoleSpells:contains(action.Name)) then
             if (environment.WeatherElement == 'Dark' and diabolos_pole) then gFunc.Equip('Main', 'Diabolos\'s Pole') end
         end
         if (player.MainJob == 'WHM' and mjollnir and CureSpells:contains(action.Name)) then
