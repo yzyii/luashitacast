@@ -179,7 +179,7 @@ All of the following toggles set what jug Call Beast will use.
 /mandy
 /flytrap
 
-Alternatively, use /pet to cycle through them.
+Alternatively, use /nextpet to cycle through them.
 ```
 
 ## Additional Commands for THF:

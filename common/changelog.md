@@ -378,3 +378,6 @@
 
 ### v1.5.11
 - THF - Implements idealized WS for THF explicitly alongside gear examples
+
+### v1.5.12
+- BST - Change /pet command to /nextpet
