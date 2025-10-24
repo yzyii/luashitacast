@@ -2,7 +2,6 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
 
-local ta_rogue_armlets = true
 local evasion_master_casters_mitts = false
 
 local sets = {
@@ -39,15 +38,57 @@ local sets = {
     TP_HighAcc = {},
     TP_NIN = {},
 
-    WS = {},
-    WS_HighAcc = {},
-
-    WS_Evisceration = {},
-    WS_SharkBite = {},
-
+    -- Note that these sets are for naked SA/TA/SATAs without WS
     SA = {},
     TA = {},
     SATA = {},
+
+    -- The following demonstrates layering of WS sets that should cover all debatable major WS combinations.
+    WS = {
+		Head = 'Maat\'s Cap',
+		Neck = 'Love Torque',
+		Ear1 = 'Suppanomimi',
+		Ear2 = 'Brutal Earring',
+		Body = 'Dragon Harness +1',
+		Hands = { Name = 'Hct. Mittens +1', Priority = 1 },
+		Ring1 = 'Rajas Ring',
+		Ring2 = 'Adroit Ring',
+		Back = 'Forager\'s Mantle',
+		Waist = 'Warwolf Belt',
+		Legs = { Name = 'Dusk Trousers +1', Priority = 2 },
+		Feet = { Name = 'Hct. Leggings +1', Priority = 1 },
+    },
+    WS_HighAcc = {
+		Body = { Name = 'Hct. Harness +1', Priority = 2 },
+		Ring2 = { Name = 'Toreador\'s Ring', Priority = 2 },
+		Waist = 'Life Belt',
+    },
+
+    WS_Evisceration = {},
+    WS_SharkBite = {},
+    WS_DancingEdge = {},
+    WS_MercyStroke = {
+		Ear1 = 'Tmph. Earring +1',
+		Body = { Name = 'Hct. Harness +1', Priority = 2 },
+		Ring2 = 'Triumph Ring',
+		Waist = 'Warwolf Belt',
+    },
+
+    -- Applied only on TA WS and not SATA WS
+    WS_TA = {
+		Ear1 = 'Drone Earring',
+        Hands = 'Rogue\'s Armlets +1',
+    },
+    WS_TA_SharkBite = {
+		Ring2 = 'Breeze Ring',
+    },
+    WS_TA_MercyStroke = {
+		Hands = { Name = 'Hct. Mittens +1', Priority = 1 },
+    },
+
+    WS_SATA_SharkBite = {
+        Hands = 'Rogue\'s Armlets +1',
+    },
 
     Flee = {},
     Hide = {},
@@ -162,12 +203,25 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_Evisceration)
     elseif (action.Name == 'Shark Bite') then
         gFunc.EquipSet(sets.WS_SharkBite)
+    elseif (action.Name == 'Dancing Edge') then
+        gFunc.EquipSet(sets.WS_DancingEdge)
+    elseif (action.Name == 'Mercy Stroke') then
+        gFunc.EquipSet(sets.WS_MercyStroke)
     end
 
+    local sa = gData.GetBuffCount('Sneak Attack')
     local ta = gData.GetBuffCount('Trick Attack')
-    if (ta > 0) or (os.clock() < taOverride) then
-        if (ta_rogue_armlets) then
-            gFunc.Equip('Hands', 'Rogue\'s Armlets +1')
+
+    if (sa == 1 and ta == 1) or (os.clock() < saOverride and os.clock() < taOverride) then
+        if (action.Name == 'Shark Bite') then
+            gFunc.EquipSet(sets.WS_SATA_SharkBite)
+        end
+    elseif (ta == 1) or (os.clock() < taOverride) then
+        gFunc.EquipSet(sets.WS_TA)
+        if (action.Name == 'Shark Bite') then
+            gFunc.EquipSet(sets.WS_TA_SharkBite)
+        elseif (action.Name == 'Mercy Stroke') then
+            gFunc.EquipSet(sets.WS_TA_MercyStroke)
         end
     end
 

@@ -457,7 +457,7 @@ local sets = {
     },
     Enhancing = {
         Main = 'Kirin\'s Pole',
-        Head = 'Homam Zucchetto', --maats
+        Head = 'Maat\'s Cap',
         Neck = 'Stone Gorget',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
