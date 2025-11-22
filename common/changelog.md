@@ -381,3 +381,6 @@
 
 ### v1.5.12
 - BST - Change /pet command to /nextpet
+
+### v1.5.13
+- Conquest - Adds missing Boyahda Tree entry to region map
