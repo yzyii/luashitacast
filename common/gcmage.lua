@@ -48,6 +48,9 @@ local healers_earring_slot = 'Ear2'
 local tp_fencers_ring = true
 local tp_fencers_ring_slot = 'Ring1'
 
+-- BLM / SMN Specific
+local claustrum = false
+
 -- BLM Specific
 local sorcerers_ring = true
 local sorcerers_ring_slot = 'Ring1' -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
@@ -366,6 +369,9 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
             local staff = ElementalStaffTable[lastSummoningElement]
             if (bahamuts_staff) then
                 staff = 'Bahamut\'s Staff'
+            end
+            if (claustrum) then
+                staff = 'Claustrum'
             end
             if staff ~= '' then
                 gFunc.Equip('Main', staff)
@@ -914,6 +920,9 @@ function gcmage.EquipStaff()
 
     if (action.Skill ~= 'Enhancing Magic' and not ElementalDebuffs:contains(action.Name) and not string.match(action.Name, 'Utsusemi')) then
         local staff = ElementalStaffTable[action.Element]
+        if (claustrum and action.Skill ~= 'Healing Magic') then
+            staff = 'Claustrum'
+        end
         if staff ~= '' then
             gFunc.Equip('Main', staff)
         end
@@ -953,6 +962,7 @@ function ObiCheck(action)
 end
 
 function gcmage.DoAbility()
+    gcinclude.DoAbility()
     local action = gData.GetAction()
     if (action.Name == 'Release') then
         lastSummoningElement = ''

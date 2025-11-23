@@ -14,8 +14,6 @@ local republic_circlet = false
 local opuntia_hoop = true
 local opuntia_hoop_slot = 'Ring1'
 
-local displayheadOnAbility = true
-
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -525,9 +523,7 @@ Everything below can be ignored.
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.HandleAbility = function()
-    if (displayheadOnAbility) then
-        AshitaCore:GetChatManager():QueueCommand(-1, '/displayhead')
-    end
+    gcmage.DoAbility()
 end
 
 profile.HandleItem = function()

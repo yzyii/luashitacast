@@ -103,6 +103,8 @@ local WeaponSkills = T{
 }
 
 profile.HandleAbility = function()
+    gcmelee.DoAbility()
+
     local action = gData.GetAction()
     if (action.Name == 'Steady Wing') then
         gFunc.EquipSet(sets.BreathBonus)

@@ -11,6 +11,8 @@ local skulkers_cape = false
 
 local load_stylist = true -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work.
 
+local toggleDisplayHeadOnAbility = true
+
 -- Add additional equipment here that you want to automatically lock when equipping
 local LockableEquipment = {
     ['Main'] = T{'Warp Cudgel', 'Rep. Signet Staff', 'Kgd. Signet Staff', 'Fed. Signet Staff', 'Treat Staff II', 'Trick Staff II'},
@@ -352,6 +354,12 @@ function gcinclude.DoItem()
         if (skulkers_cape) then
             gFunc.Equip('Back', 'Skulker\'s Cape')
         end
+    end
+end
+
+function gcinclude.DoAbility()
+    if (toggleDisplayHeadOnAbility) then
+        AshitaCore:GetChatManager():QueueCommand(-1, '/displayhead')
     end
 end
 

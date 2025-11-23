@@ -8,8 +8,6 @@ local whmSJMaxMP = 188 -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
-local displayheadOnAbility = true
-
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -386,9 +384,7 @@ Everything below can be ignored.
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.HandleAbility = function()
-    if (displayheadOnAbility) then
-        AshitaCore:GetChatManager():QueueCommand(-1, '/displayhead')
-    end
+    gcmage.DoAbility()
 end
 
 profile.HandleItem = function()

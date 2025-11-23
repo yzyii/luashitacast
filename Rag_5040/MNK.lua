@@ -275,6 +275,8 @@ Everything below can be ignored.
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
+    gcmelee.DoAbility()
+
     local action = gData.GetAction()
 
     if string.match(action.Name, 'Jump') then

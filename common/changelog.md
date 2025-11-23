@@ -384,3 +384,7 @@
 
 ### v1.5.13
 - Conquest - Adds missing Boyahda Tree entry to region map
+
+### v1.5.14
+- BLM/SMN - Adds Claustrum to gcmage
+- All Jobs - Adds a var to gcinclude-rag to /displayhead on every job ability use

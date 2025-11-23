@@ -154,6 +154,8 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 actionpacket = gFunc.LoadFile('common\\actionpacket.lua')
 
 profile.HandleAbility = function()
+    gcmelee.DoAbility()
+
     local action = gData.GetAction()
     if (action.Name == 'Flee') then
         gFunc.EquipSet(sets.Flee)

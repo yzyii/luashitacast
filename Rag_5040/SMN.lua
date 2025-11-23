@@ -340,6 +340,7 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.HandleAbility = function()
     gcmage.DoAbility()
+
     gFunc.EquipSet('BP_Delay')
 end
 

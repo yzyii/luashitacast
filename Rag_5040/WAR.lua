@@ -59,6 +59,8 @@ end
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
+    gcmelee.DoAbility()
+
     local action = gData.GetAction()
     if (action.Name == 'Warcry') then
         gFunc.EquipSet(sets.Warcry)

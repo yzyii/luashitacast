@@ -60,6 +60,8 @@ Everything below can be ignored.
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
+    gcmelee.DoAbility()
+
     local action = gData.GetAction()
     if (action.Name == 'Meditate') then
         if (myochin_kabuto ~= '') then

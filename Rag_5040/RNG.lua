@@ -44,8 +44,6 @@ local sets = {
 
     EagleEyeShot = {},
 
-    EnmityDown = {},
-
     Barrage = {},
     Scavenge = {},
     Shadowbind = {},
@@ -75,7 +73,7 @@ Everything below can be ignored.
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
-    gFunc.EquipSet(sets.EnmityDown)
+    gcmelee.DoAbility()
 
     local action = gData.GetAction()
     if (action.Name == 'Scavenge') then

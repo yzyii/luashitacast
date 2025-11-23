@@ -396,6 +396,8 @@ local NukeObiOwnedTable = {
 }
 
 profile.HandleAbility = function()
+    gcmelee.DoAbility()
+
     local action = gData.GetAction()
 
     if (gcdisplay.GetToggle('Hate')) then

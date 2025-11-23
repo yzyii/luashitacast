@@ -226,4 +226,8 @@ function gcmelee.GetAccuracyMode()
     return TpVariantTable[tp_variant]
 end
 
+function gcmelee.DoAbility()
+    gcinclude.DoAbility()
+end
+
 return gcmelee
