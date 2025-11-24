@@ -920,8 +920,10 @@ function gcmage.EquipStaff()
 
     if (action.Skill ~= 'Enhancing Magic' and not ElementalDebuffs:contains(action.Name) and not string.match(action.Name, 'Utsusemi')) then
         local staff = ElementalStaffTable[action.Element]
-        if (claustrum and action.Skill ~= 'Healing Magic') then
-            staff = 'Claustrum'
+        if (player.MainJob == 'SMN' or player.MainJob == 'BLM') then
+            if (claustrum and action.Skill ~= 'Healing Magic') then
+                staff = 'Claustrum'
+            end
         end
         if staff ~= '' then
             gFunc.Equip('Main', staff)
