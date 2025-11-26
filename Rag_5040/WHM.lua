@@ -164,7 +164,7 @@ profile.HandleMidcast = function()
         or (string.match(action.Name, 'Cure') and gData.GetActionTarget().Type == 'Monster')
     ) then
         gFunc.EquipSet('Banish')
-        if (conquest:GetInsideControl()) then
+        if (republic_circlet == true and conquest:GetInsideControl()) then
             print(chat.header('LAC - WHM'):append(chat.message('In Region - Using Republic Circlet')))
             gFunc.Equip('Head', 'Republic Circlet')
         end
