@@ -392,3 +392,6 @@
 ### v1.5.15
 - WHM - Use Banish set when casting Cures on Mobs or Holy
 - WHM - Adds Republic Circlet
+
+### v1.5.16
+- RDM - Fix Evisceration set name typo

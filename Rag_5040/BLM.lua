@@ -228,7 +228,7 @@ local sets = {
         Back = 'Umbra Cape',
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
-        Ammo = 'Dream Sand',
+        Ammo = 'Tiphia Sting',
         Head = 'Zenith Crown +1',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
@@ -236,11 +236,12 @@ local sets = {
         Hands = 'Zenith Mitts +1',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
+        Back = { Name = 'Prism Cape', Priority = 100 },
         Waist = { Name = 'Penitent\'s Rope', Priority = -100 },
         Feet = 'Rostrum Pumps',
     },
     YellowHNM = {
-        Ammo = 'Tiphia Sting',
+        Back = 'Umbra Cape',
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Nashira Turban', -- 2
