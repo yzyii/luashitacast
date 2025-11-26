@@ -9,6 +9,8 @@ local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 local virology_ring = true
 local virology_ring_slot = 'Ring2'
 
+local republic_circlet = false
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -157,8 +159,15 @@ profile.HandleMidcast = function()
         elseif (string.match(action.Name, 'Bar')) then
             gFunc.EquipSet('Barspell')
         end
-    elseif (string.match(action.Name, 'Banish')) then
+    elseif (string.match(action.Name, 'Banish')
+        or string.match(action.Name, 'Holy')
+        or (string.match(action.Name, 'Cure') and gData.GetActionTarget().Type == 'Monster')
+    ) then
         gFunc.EquipSet('Banish')
+        if (conquest:GetInsideControl()) then
+            print(chat.header('LAC - WHM'):append(chat.message('In Region - Using Republic Circlet')))
+            gFunc.Equip('Head', 'Republic Circlet')
+        end
     elseif virology_ring and (string.match(action.Name, '.*na$') or (action.Name == 'Erase')) then
         gFunc.Equip(virology_ring_slot, 'Virology Ring')
     end
