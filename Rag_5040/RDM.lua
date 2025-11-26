@@ -701,7 +701,7 @@ profile.HandleWeaponskill = function()
 
     if (action.Name == 'Evisceration') then
         gFunc.EquipSet(sets.WS_Soil)
-        gFunc.EquipSet(sets.Evisceration)
+        gFunc.EquipSet(sets.WS_Evisceration)
     end
 
     if (action.Name == 'Energy Drain') or (action.Name == 'Energy Steal') then
