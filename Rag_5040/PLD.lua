@@ -109,6 +109,7 @@ local sets = {
         Ear2 = { Name = 'Cassie Earring', Priority = 100 },
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
+        Back = 'Resentment Cape',
     },
     FireRes = { -- 137
         Range = 'Rosenbogen',

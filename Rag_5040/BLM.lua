@@ -51,7 +51,7 @@ local sets = {
         Body = 'Mahatma Hpl.',
         Hands = 'Hydra Gloves',
         Ring1 = 'Serket Ring',
-        Back = 'Errant Cape',
+        Back = 'Mahatma Cape',
         Waist = 'Hierarch Belt',
         Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
@@ -270,7 +270,7 @@ local sets = {
         Hands = 'Hydra Gloves', -- 5
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
-        Back = 'Errant Cape', -- 5
+        Back = 'Mahatma Cape', -- 5
         Waist = 'Penitent\'s Rope', -- 3
         Legs = 'Hydra Brais', -- 6
         Feet = 'Hydra Gaiters', -- 5
@@ -307,7 +307,7 @@ local sets = {
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
         Waist = 'Swift Belt',
-        Back = { Name = 'Errant Cape', Priority = 100 },
+        Back = { Name = 'Mahatma Cape', Priority = 100 },
         Legs = 'Mahatma Slops',
         Feet = { Name = 'Mahatma Pigaches', Priority = 100 },
     },
@@ -322,7 +322,7 @@ local sets = {
         Hands = 'Dvt. Mitts +1',
         Ring1 = { Name = 'Serket Ring', Priority = 100 },
         Ring2 = 'Communion Ring',
-        Back = { Name = 'Errant Cape', Priority = 100 },
+        Back = { Name = 'Mahatma Cape', Priority = 100 },
         Waist = { Name = 'Hierarch Belt', Priority = 100 },
         Legs = 'Mahatma Slops',
         Feet = { Name = 'Mahatma Pigaches', Priority = 100 },
@@ -451,7 +451,7 @@ local sets = {
         Hands = 'Wzd. Gloves +1', -- 2
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
-        Back = 'Errant Cape', -- 5
+        Back = 'Mahatma Cape', -- 5
         Waist = 'Penitent\'s Rope', -- 3
         Legs = 'Mahatma Slops', -- 4
         Feet = 'Src. Sabots +1', -- 3
@@ -501,7 +501,7 @@ local sets = {
     },
     MBHNM = {
         Hands = 'Wzd. Gloves +1',
-        Back = 'Errant Cape',
+        Back = 'Mahatma Cape',
     },
 
     LockSet1 = {},

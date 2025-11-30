@@ -62,7 +62,7 @@ local sets = {
     8% Base
     5% Merits
     45% Counterstance
-    5% Melee Gaiters
+    10% Melee Gaiters
     ]]
     DT = {
         Main = 'Cross-Counters', -- 5
@@ -70,9 +70,7 @@ local sets = {
         Head = 'Optical Hat',
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Merman\'s Earring',
-        -- Ear1 = 'Avenger\'s Earring', -- 1
-        -- Ear2 = 'Avenger\'s Earring', -- 1
+        Ear2 = 'Avenger\'s Earring', -- 1
         Body = 'Scp. Harness +1',
         Hands = 'Mel. Gloves +1',
         -- Hands = 'Rasetsu Tekko +1', -- 1

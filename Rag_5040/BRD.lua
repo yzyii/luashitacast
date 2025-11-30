@@ -22,7 +22,7 @@ local sets = {
         Ring1 = 'Shadow Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
-        Waist = { Name = 'Hierarch Belt', Priority = 100 },
+        Waist = { Name = 'Ocean Rope', Priority = 100 },
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
@@ -39,7 +39,7 @@ local sets = {
         Ring1 = 'Shadow Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
-        Waist = { Name = 'Hierarch Belt', Priority = 100 },
+        Waist = { Name = 'Ocean Rope', Priority = 100 },
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
@@ -55,8 +55,8 @@ local sets = {
         Hands = 'Hydra Gloves',
         Ring1 = "Shadow Ring",
         Ring2 = "Merman's Ring",
-        Back = 'Errant Cape',
-        Waist = { Name = 'Hierarch Belt', Priority = 100 },
+        Back = 'Mahatma Cape',
+        Waist = { Name = 'Ocean Rope', Priority = 100 },
         Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
@@ -84,7 +84,7 @@ local sets = {
         Ring1 = 'Shadow Ring',
         Ring2 = 'Sattva Ring', -- 5
         Back = 'Hexerei Cape', -- 3
-        Waist = { Name = 'Hierarch Belt', Priority = 100 },
+        Waist = { Name = 'Ocean Rope', Priority = 100 },
         Legs = 'Byakko\'s Haidate',
         Feet = 'Suzaku\'s Sune-ate',
     },
@@ -206,7 +206,7 @@ local sets = {
     Sing_Buff = {
         Main = 'Chanter\'s Staff',
         Body = 'Minstrel\'s Coat',
-        Waist = { Name = 'Hierarch Belt', Priority = 100 },
+        Waist = { Name = 'Ocean Rope', Priority = 100 },
         Feet = 'Dusk Ledelsens +1',
     },
     Sing_Debuff = {
@@ -232,7 +232,7 @@ local sets = {
         -- Range = 'Harlequin\'s Horn',
     },
     Sing_Minuet = {
-        Range = 'Gjallarhorn',
+        Range = 'Cornette +2',
     },
     Sing_March = {
         Range = 'Faerie Piccolo',
@@ -269,7 +269,7 @@ local sets = {
         Legs = "Mahatma Slops",
     },
     Sing_Requiem = {
-        Range = 'Gjallarhorn',
+        Range = 'Hamelin Flute',
     },
     Sing_Carol = {
         Range = 'Crumhorn +1',
@@ -313,7 +313,7 @@ local sets = {
         Hands = 'Hydra Gloves', -- 5
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
-        Back = { Name = 'Errant Cape', Priority = 100 }, -- 5
+        Back = { Name = 'Mahatma Cape', Priority = 100 }, -- 5
         Waist = 'Penitent\'s Rope', -- 3
         -- Legs = 'Mahatma Slops', -- 4
         Legs = 'Hydra Brais', -- 6

@@ -36,7 +36,7 @@ local sets = {
         Hands = 'Hydra Gloves',
         Ring1 = 'Bomb Queen Ring',
         Ring2 = 'Ether Ring',
-        Back = 'Errant Cape',
+        Back = 'Mahatma Cape',
         Waist = 'Hierarch Belt',
         Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
@@ -172,7 +172,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
-        Back = { Name = 'Errant Cape', Priority = 100 },
+        Back = { Name = 'Mahatma Cape', Priority = 100 },
         Waist = 'Silver Obi +1', -- 8
         Legs = { Name = 'Evk. Spats +1', Priority = 100 },
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
@@ -189,7 +189,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
-        Back = { Name = 'Errant Cape', Priority = 100 },
+        Back = { Name = 'Mahatma Cape', Priority = 100 },
         Waist = 'Silver Obi +1', -- 8
         Legs = { Name = 'Evk. Spats +1', Priority = 100 },
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
@@ -218,7 +218,7 @@ local sets = {
         Hands = 'Hydra Gloves', -- 5
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
-        Back = { Name = 'Errant Cape', Priority = 100 }, -- 5
+        Back = { Name = 'Mahatma Cape', Priority = 100 }, -- 5
         Waist = 'Penitent\'s Rope', -- 3
         Legs = 'Hydra Brais', -- 6
         Feet = 'Hydra Gaiters', -- 5
@@ -275,7 +275,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Novia Earring',
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
-        Back = 'Errant Cape',
+        Back = 'Mahatma Cape',
         Body = 'Yinyang Robe',
         Hands = { Name = 'Smn. Bracers +1', Priority = 100 },
         Feet = 'Summoner\'s Pgch.',
