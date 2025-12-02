@@ -87,6 +87,7 @@ local sets = {
     WS_TA = {
 		Ear1 = 'Drone Earring',
         Hands = 'Rogue\'s Armlets +1',
+        Legs = 'Drn. Leggings +1',
     },
     WS_TA_SharkBite = {
 		Ring2 = 'Breeze Ring',
