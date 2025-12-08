@@ -395,3 +395,5 @@
 
 ### v1.5.16
 - RDM - Fix Evisceration set name typo
+- THF - Adds a WS_SA set
+- Updates / clarifies some set comments
