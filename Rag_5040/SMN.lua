@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.04 -- 4% from gear not including carbuncles cuffs or evokers boots
+local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including carbuncles cuffs or evokers boots
 
 local carbuncles_cuffs = false
 local evokers_boots = false
@@ -69,7 +69,7 @@ local sets = {
         Ring2 = 'Sattva Ring',
         Back = 'Umbra Cape',
     },
-    MDT = { -- Shell IV provides 23% MDT
+    MDT = {
         Main = 'Terra\'s Staff',
         Head = 'Black Ribbon',
         Neck = 'Jeweled Collar +1',
@@ -160,7 +160,7 @@ local sets = {
         Feet = 'Rostrum Pumps',
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
     },
-    Casting = { -- Default Casting Equipment when using Idle sets
+    Casting = { -- Default SIRD used for Idle sets
         Main = 'Eremite\'s Wand', -- 25
         Sub = 'Genbu\'s Shield',
         Ammo = 'Hedgehog Bomb',
@@ -177,7 +177,7 @@ local sets = {
         Legs = { Name = 'Evk. Spats +1', Priority = 100 },
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
         Main = 'Eremite\'s Wand', -- 25
         Sub = 'Genbu\'s Shield',
         Ammo = 'Hedgehog Bomb',

@@ -98,7 +98,7 @@ local sets = {
         Legs = 'Igqira Lappas',
         Feet = 'Mountain Gaiters',
     },
-    MDT = { -- Shell IV provides 23% MDT
+    MDT = {
         Main = 'Terra\'s Staff',
         Head = 'Black Ribbon',
         Neck = 'Jeweled Collar +1',
@@ -203,7 +203,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
     },
-    Casting = {
+    Casting = { -- Default SIRD used for Idle sets
         Main = 'Eremite\'s Wand', -- 25
         Sub = 'Genbu\'s Shield',
         Head = 'Nashira Turban', -- 10
@@ -215,7 +215,7 @@ local sets = {
         Ammo = 'Tiphia Sting',
         Back = 'Umbra Cape',
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
         Main = 'Eremite\'s Wand', -- 25
         Sub = 'Genbu\'s Shield',
         Head = 'Nashira Turban', -- 10

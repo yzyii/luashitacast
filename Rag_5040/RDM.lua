@@ -104,7 +104,7 @@ local sets = {
         Legs = 'Blood Cuisses',
         Feet = 'Dst. Leggings +1', -- 2
     },
-    MDT = { -- Shell IV provides 23% MDT
+    MDT = {
         Main = 'Terra\'s Staff',
         Range = 'Arco de Velocidad',
         Ammo = '',
@@ -230,7 +230,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Body = 'Dls. Tabard +1',
     },
-    Casting = { -- Default Casting Equipment when using Idle sets
+    Casting = { -- Default SIRD used for Idle sets
         Main = { Name = 'Eremite\'s Wand', Priority = 100 }, -- 25
         Sub = 'Genbu\'s Shield',
         Range = '',
@@ -248,7 +248,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
         Main = { Name = 'Eremite\'s Wand', Priority = 100 }, -- 25
         Sub = 'Genbu\'s Shield',
         Range = '',

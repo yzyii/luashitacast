@@ -21,8 +21,7 @@ local sets = {
 
     DT = {},
     DTNight = {},
-    MDT = { -- Shell IV provides 23% MDT
-    },
+    MDT = {},
     FireRes = {},
     IceRes = {},
     LightningRes = {},
@@ -32,9 +31,9 @@ local sets = {
     Evasion = {},
 
     Precast = {},
-    Casting = { -- Default Casting Equipment when using Idle sets
+    Casting = { -- Default SIRD used for Idle sets
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
     },

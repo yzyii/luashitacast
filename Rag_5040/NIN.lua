@@ -4,7 +4,7 @@
 
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear
+local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
 local shinobi_ring = true
 local shinobi_ring_slot = 'Ring2'
@@ -51,8 +51,7 @@ local sets = {
     Movement = {},
 
     DT = {},
-    MDT = { -- Shell IV provides 23% MDT
-    },
+    MDT = {},
     FireRes = {},
     IceRes = {},
     LightningRes = {},
@@ -62,7 +61,7 @@ local sets = {
     Evasion = {},
 
     Precast = {},
-    SIRD = {
+    SIRD = { -- Only used for Idle sets and not while Override sets are active
     },
     Haste = { -- Used for Utsusemi cooldown
     },
@@ -92,7 +91,7 @@ local sets = {
     WS_BladeJin = {},
     WS_BladeKu = {},
 
-    Ranged = {}, -- This won't work for automatically swapping shurikens, only other equipment
+    Ranged = {},
 }
 profile.Sets = sets
 
@@ -173,6 +172,7 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gFunc.EquipSet(sets.Ranged)
 end
 
 profile.HandleMidshot = function()

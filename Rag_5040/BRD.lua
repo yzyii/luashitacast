@@ -4,7 +4,7 @@ local fastCastValue = 0.04 -- Only include Fast Cast e.g. Loquacious Earring, Ro
 local fastCastValueSong = 0.37 -- Only include Song Spellcasting Time e.g. Minstrel's Ring, Sha'ir Manteel
 
 local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
-local whmSJMaxMP = 188 -- The Max MP you have when /whm in your idle set
+local whmSJMaxMP = 233 -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
@@ -73,7 +73,7 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     DTNight = {},
-    MDT = { -- Shell IV provides 23% MDT
+    MDT = {
         Main = 'Terra\'s Staff',
         Head = 'Black Ribbon',
         Neck = 'Jeweled Collar +1',
@@ -127,13 +127,13 @@ local sets = {
     Precast_Songs_HPDown = { -- This set will equip even before precast for songs in case you require HP Down equipment to trigger Minstrel's Ring
     },
     Precast = {
-       Ear2 = 'Loquac. Earring',
+       Ear1 = 'Loquac. Earring',
        Feet = 'Rostrum Pumps',
     },
     Precast_Songs = { -- 395
         Main = 'Tutelary', -- 30
  		Sub = 'Genbu\'s Shield',
-        Ammo = 'Happy Egg',
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
         Head = 'Genbu\'s Kabuto', -- 50
         Neck = 'Pch. Collar', -- 10
         Ear1 = 'Loquac. Earring',
@@ -147,11 +147,11 @@ local sets = {
         Legs = 'Dusk Trousers', -- 35
         Feet = 'Rostrum Pumps', -- -30
     },
-    Casting = { -- Default Casting Equipment when using Idle sets
+    Casting = { -- Default SIRD used for Idle sets
         Main = 'Terra\'s Staff',
         -- Range = 'Mythic Harp +1',
-        Ammo = 'Pebble',
-        Head = 'Dream Ribbon',
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
+        Head = 'Reraise Hairpin', -- +MP
         Neck = 'Willpower Torque', -- 5
         Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 100 }, -- 8
@@ -164,11 +164,21 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
-    SIRD = { -- 102% to Cap, used on Stoneskin, Blink, Aquaveil and Utsusemi casts
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
+        Main = 'Terra\'s Staff',
+        -- Range = 'Mythic Harp +1',
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
+        Head = 'Reraise Hairpin', -- +MP
         Neck = 'Willpower Torque', -- 5
         Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 100 }, -- 8
+        Body = 'Dst. Harness +1',
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Umbra Cape',
         Waist = { Name = 'Silver Obi +1', Priority = -100 }, -- 8
+        Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
@@ -298,24 +308,20 @@ local sets = {
         -- Body = 'Chl. Jstcorps +1',
     },
 
-    Cure = { -- TODO: Check Cure Caps
+    Cure = {
         Main = 'Apollo\'s Staff',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
         Head = 'Hydra Beret', -- 8
-        -- Neck = 'Faith Torque',
         Neck = 'Benign Necklace', -- 2
         Ear1 = 'Novia Earring', -- 7
         Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
-        --Body = 'Mahatma Hpl.', -- 4
         Body = { Name = 'Hydra Doublet', Priority = 100 }, -- 9
         Hands = 'Hydra Gloves', -- 5
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
         Back = { Name = 'Mahatma Cape', Priority = 100 }, -- 5
         Waist = 'Penitent\'s Rope', -- 3
-        -- Legs = 'Mahatma Slops', -- 4
         Legs = 'Hydra Brais', -- 6
-        -- Feet = 'Suzaku\'s Sune-ate',
         Feet = 'Hydra Gaiters', -- 5
     },
     Cursna = {
@@ -323,13 +329,11 @@ local sets = {
     },
 
     Enhancing = {},
-    Stoneskin = { -- TODO: Check Stoneskin Caps
+    Stoneskin = { -- 2 MND short for Hume
         Main = 'Chanter\'s Staff',
 		Ammo = "Dream Sand",
         Head = 'Maat\'s Cap',
         Neck = 'Stone Gorget',
-        -- Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
-        -- Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
         Body = 'Mahatma Hpl.',

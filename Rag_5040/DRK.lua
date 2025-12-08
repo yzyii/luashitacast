@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.07 -- 7% from gear
+local fastCastValue = 0.07 -- 7% from gear listed in Precast set
 
 local use_chaos_burgeonet_for_tp_during_souleater = true
 
@@ -103,7 +103,7 @@ local sets = {
         Legs = 'Dst. Subligar +1', -- 3
         Feet = 'Dst. Leggings +1', -- 2
     },
-    MDT = { -- Shell IV provides 23% MDT
+    MDT = {
         Head = 'Darksteel Cap +1',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring', -- 2
@@ -225,7 +225,7 @@ local sets = {
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Coral Greaves +1', -- 4
     },
-    Evasion = { -- Use this set for your zerg set. See README.md
+    Evasion = { -- Currently using this as a set for 2H Zergs. See README.md
         Main = 'Octave Club',
         Sub = 'Wyvern Targe',
         Ammo = 'Happy Egg',
@@ -247,7 +247,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Legs = 'Homam Cosciales',
     },
-    SIRD = {
+    SIRD = { -- Only used for Idle sets and not while Override sets are active
         Head = { Name = 'Aegishjalmr', Priority = 100 },
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Magnetic Earring', -- 8

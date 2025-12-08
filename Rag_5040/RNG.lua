@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear
+local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
 local special_ammo = "Carapace Bullet"
 
@@ -12,8 +12,7 @@ local sets = {
     Movement = {},
 
     DT = {},
-    MDT = { -- Shell IV provides 23% MDT
-    },
+    MDT = {},
     FireRes = {},
     IceRes = {},
     LightningRes = {},
@@ -23,7 +22,7 @@ local sets = {
     Evasion = {},
 
     Precast = {},
-    SIRD = {
+    SIRD = { -- Only used for Idle sets and not while Override sets are active
     },
     Haste = { -- Used for Utsusemi cooldown
     },

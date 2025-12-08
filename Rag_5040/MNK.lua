@@ -1,7 +1,7 @@
 local profile = {}
 
 local max_hp_in_idle_with_regen_gear_equipped = 1632
-local fastCastValue = 0.02 -- 2% from gear
+local fastCastValue = 0.02 -- 2% from gear listed in Precast set
 
 -- Replace these with '' if you do not have them
 local temple_gaiters = 'Temple Gaiters'
@@ -82,7 +82,7 @@ local sets = {
         Legs = 'Tpl. Hose +1', -- 3
         Feet = 'Rst. Sune-Ate +1', -- 1
     },
-    MDT = { -- Shell IV provides 23% MDT
+    MDT = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Ring1 = 'Shadow Ring',
@@ -95,7 +95,7 @@ local sets = {
     EarthRes = {},
     WindRes = {},
     WaterRes = {},
-    Evasion = { -- Currently using this as an override for BV2 Zergs
+    Evasion = { -- Currently using this as a set for 2H Zergs. See README.md
         Head = 'Maat\'s Cap',
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
@@ -113,7 +113,7 @@ local sets = {
     Precast = {
         Ear1 = 'Loquac. Earring',
     },
-    SIRD = { -- Combination of PDT and SIRD Gear equipped while casting Utsusemi
+    SIRD = { -- Only used for Idle sets and not while Override sets are active
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Magnetic Earring', -- 8

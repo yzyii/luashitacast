@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.07 -- 7% from gear
+local fastCastValue = 0.07 -- 7% from gear listed in Precast set
 
 local parade_gorget = true
 
@@ -103,7 +103,7 @@ local sets = {
         Legs = { Name = 'Dst. Subligar +1', Priority = 10 }, -- 3
         Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
     },
-    MDT = { -- Shell IV provides 23% MDT
+    MDT = {
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring', -- 2
         Ear2 = { Name = 'Cassie Earring', Priority = 100 },
@@ -210,7 +210,7 @@ local sets = {
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Coral Greaves +1', -- 4
     },
-    Evasion = {
+    Evasion = { -- Breath Damage Taken set
         Head = 'Bahamut\'s Mask',
         -- Hrotti
         -- Crimson Scale Mail
@@ -224,7 +224,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Legs = { Name = 'Homam Cosciales', Priority = 120 },
     },
-    SIRD = { -- 1441
+    SIRD = { -- 1441 -- Only used for Idle sets and not while Override sets are active
         Main = 'Tutelary',
         Sub = 'Aegis',
         Head = { Name = 'Koenig Schaller', Priority = 30 },
