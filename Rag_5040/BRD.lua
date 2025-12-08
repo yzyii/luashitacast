@@ -218,11 +218,9 @@ local sets = {
     },
 
     Sing_Ballad_Large = {
-        -- Range = 'Balladeer\'s Harp',
-        Range = 'Military Harp',
+        Range = 'Balladeer\'s Harp',
     },
     Sing_Ballad_Small = {
-        -- Range = 'Balladeer\'s Harp',
         Range = 'Cornette +2',
     },
     Sing_Paeon = {
@@ -257,7 +255,7 @@ local sets = {
     },
     Sing_HordeLullaby_Small = {
         -- Range = 'Mary\'s Horn',
-        Range = 'Nursemaid\'s Harp',
+        Range = 'Cornette +2',
         Neck = 'String Torque',
         Body = 'Chl. Jstcorps +1',
         Legs = "Mahatma Slops",
