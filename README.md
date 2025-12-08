@@ -197,9 +197,12 @@ All of the following toggles set what bolt ammo will be used.
 Alternatively, use /ammo to cycle through them.
 ```
 
-## Additional Commands for PLD:
+## Additional Commands for PLD / NIN / DRK:
 ```
-/dps - used for PLD to turn on DPS LowAcc / HighAcc TP set behaviour.
+/dps - used to turn on or off DPS LowAcc / HighAcc TP set behaviour.
+       i.e. forces you to act more like a tank or a dps.
+       By default PLD is set to false while DRK and NIN are set to true.
+       Technically can be used by all melee jobs in order to use Earth Staff etc.
 ```
 
 # Troubleshooting Crashes
