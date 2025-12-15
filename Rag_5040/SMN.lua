@@ -4,6 +4,7 @@ local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including c
 
 local carbuncles_cuffs = false
 local evokers_boots = false
+local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 
 local cureMP = 895 -- Cure set max MP
 
@@ -255,6 +256,7 @@ local sets = {
     EnfeeblingACC = {},
 
     Divine = {},
+    Banish = {},
     Dark = {},
 
     Nuke = {},
@@ -405,7 +407,13 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast(fastCastValue)
+    local player = gData.GetPlayer()
+    if (player.SubJob == 'RDM' and warlocks_mantle) then
+        gcmage.DoPrecast(fastCastValue + 0.02)
+        gFunc.Equip('Back', 'Warlock\'s Mantle')
+    else
+        gcmage.DoPrecast(fastCastValue)
+    end
 
     local action = gData.GetAction()
     if (action.Skill == 'Summoning') then

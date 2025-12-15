@@ -8,6 +8,8 @@ local whmSJMaxMP = 233 -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
+local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
+
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -353,6 +355,7 @@ local sets = {
     EnfeeblingACC = {},
 
     Divine = {},
+    Banish = {},
     Dark = {},
 
     Nuke = {},
@@ -447,14 +450,26 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
+    local player = gData.GetPlayer()
     local action = gData.GetAction()
+
+    local fcv = fastCastValue
+    if (player.SubJob == 'RDM' and warlocks_mantle) then
+       fcv = fastCastValue + 0.02
+    end
+
+    local totalfcv = fcv
     if (action.Type == 'Bard Song') then
         gFunc.ForceEquipSet('Precast_Songs_HPDown')
+        totalfcv = 1 - (1 - fastCastValueSong) * (1 - fcv)
+    end
+
+    gcmage.DoPrecast(totalfcv)
+    if (fcv ~= fastCastValue) then
+        gFunc.Equip('Back', 'Warlock\'s Mantle')
+    end
+    if (totalfcv ~= fcv) then
         gFunc.EquipSet(sets.Precast_Songs)
-        local totalFastCast = 1 - (1 - fastCastValueSong) * (1 - fastCastValue)
-        gcmage.DoPrecast(totalFastCast)
-    else
-        gcmage.DoPrecast(fastCastValue)
     end
 end
 

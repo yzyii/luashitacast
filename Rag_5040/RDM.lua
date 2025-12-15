@@ -463,6 +463,7 @@ local sets = {
         Legs = 'Nashira Seraweels',
         Feet = 'Heroic Boots', -- 1
     },
+    Banish = {},
     Dark = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Nashira Turban',

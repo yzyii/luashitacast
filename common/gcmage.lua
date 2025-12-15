@@ -617,8 +617,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     elseif (action.Skill == 'Dark Magic') then
         gcmage.EquipDark(maxMP)
     elseif (action.Skill == 'Divine Magic') then
-        gFunc.EquipSet('Divine')
-        gcmage.EquipObi(action)
+        gxmage.EquipDivine(maxMP)
     elseif (action.Skill == 'Summoning') then
         lastSummoningElement = action.Element
     end
@@ -774,6 +773,14 @@ function gcmage.EquipHealing(maxMP)
     if (action.Name == 'Cursna') then
         gFunc.EquipSet('Cursna')
     end
+    if ((string.match(action.Name, 'Cure') and gData.GetActionTarget().Type == 'Monster')) then
+        gFunc.EquipSet('Banish')
+        if (action.MppAftercast < 51) and uggalepih_pendant then
+            if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
+                gFunc.Equip('Neck', 'Uggalepih Pendant')
+            end
+        end
+    end
 end
 
 function gcmage.EquipElemental(maxMP, blmNukeExtra)
@@ -908,6 +915,22 @@ function gcmage.EquipDark(maxMP)
     end
     if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_abyssal_earrings) then
         gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
+    end
+
+    gcmage.EquipObi(action)
+end
+
+function gcmage.EquipDivine(maxMP)
+    local action = gData.GetAction()
+
+    gFunc.EquipSet('Divine')
+    if (string.match(action.Name, 'Banish') or action.Name == 'Holy') then
+        gFunc.EquipSet('Banish')
+        if (action.MppAftercast < 51) and uggalepih_pendant then
+            if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
+                gFunc.Equip('Neck', 'Uggalepih Pendant')
+            end
+        end
     end
 
     gcmage.EquipObi(action)

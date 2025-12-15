@@ -9,6 +9,7 @@ local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 local virology_ring = true
 local virology_ring_slot = 'Ring2'
 
+local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 local republic_circlet = false
 
 local sets = {
@@ -145,7 +146,13 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast(fastCastValue)
+    local player = gData.GetPlayer()
+    if (player.SubJob == 'RDM' and warlocks_mantle) then
+        gcmage.DoPrecast(fastCastValue + 0.02)
+        gFunc.Equip('Back', 'Warlock\'s Mantle')
+    else
+        gcmage.DoPrecast(fastCastValue)
+    end
 end
 
 profile.HandleMidcast = function()
@@ -162,7 +169,6 @@ profile.HandleMidcast = function()
         or string.match(action.Name, 'Holy')
         or (string.match(action.Name, 'Cure') and gData.GetActionTarget().Type == 'Monster')
     ) then
-        gFunc.EquipSet('Banish')
         if (republic_circlet == true and conquest:GetInsideControl()) then
             print(chat.header('LAC - WHM'):append(chat.message('In Region - Using Republic Circlet')))
             gFunc.Equip('Head', 'Republic Circlet')

@@ -395,6 +395,7 @@ local sets = {
     },
 
     Divine = {},
+    Banish = {},
     Dark = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Nashira Turban',
@@ -600,7 +601,7 @@ profile.HandleMidcast = function()
                 do return end
             end
             if (not ElementalDebuffs:contains(action.Name)) then
-                if (conquest:GetInsideControl()) then
+                if (conquest:GetInsideControl() and gcdisplay.GetToggle('HNM') == false and gcdisplay.GetCycle('Mode') ~= 'Accuracy') then
                     print(chat.header('LAC - BLM'):append(chat.message('In Region - Using Republic Circlet')))
                     gFunc.Equip('Head', 'Republic Circlet')
                 end

@@ -397,3 +397,10 @@
 - RDM - Fix Evisceration set name typo
 - THF - Adds a WS_SA set
 - Updates / clarifies some set comments
+
+### v1.5.17
+- BLM - Add Magic Accuracy Mode and HNM checks to Republic Circlet usage
+- All Mages - Add Uggalepih Pendant usage for Banish / Holy / Cure Nukes
+- All Mages - Adds a Banish set for use with Banish or Cure Nukes
+- All Mages - Adds Warlock's Mantle to everything
+- BRD - Fixes equip ordering of BRD Precast vs Precast_Songs set

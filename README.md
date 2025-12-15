@@ -226,12 +226,3 @@ Do NOT /tell me in game asking for help. You will be ignored.
 Do NOT DM me regarding setup issues or if you have not bothered to read through this README and did not follow the instructions written. You will be ignored.
 
 I will also as a rule ignore you as per https://nohello.net/ and https://dontasktoask.com/
-
-# TODO
-A list of things to do in the future but who knows when I'll get around to them:
-- Refactor everything back out to actual sets on the JOB.lua files so that level sync and Packer validate would potentially work properly.
-- Micro-optimizations with job specific overrides for midcast and respecting max mp sets etc. e.g. WHM should not equip Virology ring when at 100% max mp.
-- Gate all Horizon specific changes behind a setting.
-- Add Virtue Stone Weapon checks (unneccessary until ToAU where mobs can strip gear)
-
-Feel free to submit PRs to implement these.
