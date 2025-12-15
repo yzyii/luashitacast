@@ -219,10 +219,10 @@ Alternatively, use /ammo to cycle through them.
 
 # Contact Me
 
-Feel free to DM me on Discord for if you encounter bugs or have feature requests or functionality is missing. I am easily found in the HorizonXI or Ashita Discords.
+Do NOT /tell me in game asking for help. You will be ignored. I only respond to Discord Messages.
 
-Do NOT /tell me in game asking for help. You will be ignored.
-
-Do NOT DM me regarding setup issues or if you have not bothered to read through this README and did not follow the instructions written. You will be ignored.
+If it's clear you have not bothered to read through this README, you will be ignored.
 
 I will also as a rule ignore you as per https://nohello.net/ and https://dontasktoask.com/
+
+Bug Reports, Missing Functionality or Feature Requests are best done through GitHub's Issue Tracker though feel free to DM me on Discord to discuss these as well. I am easily found in the HorizonXI or Ashita Discords.
