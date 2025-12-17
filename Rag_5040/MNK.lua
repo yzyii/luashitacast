@@ -331,10 +331,6 @@ profile.HandleWeaponskill = function()
     elseif (action.Name == 'Howling Fist') then
         gFunc.EquipSet(sets.WS_HowlingFist)
     end
-
-    if (player.SubJob == 'THF') then
-        gFunc.EquipSet(sets.SJ_THF)
-    end
 end
 
 profile.OnLoad = function()
