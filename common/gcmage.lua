@@ -617,7 +617,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     elseif (action.Skill == 'Dark Magic') then
         gcmage.EquipDark(maxMP)
     elseif (action.Skill == 'Divine Magic') then
-        gxmage.EquipDivine(maxMP)
+        gcmage.EquipDivine(maxMP)
     elseif (action.Skill == 'Summoning') then
         lastSummoningElement = action.Element
     end
