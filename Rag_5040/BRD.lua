@@ -8,7 +8,10 @@ local whmSJMaxMP = 233 -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
-local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
+    Back = 'Warlock\'s Mantle',
+}
 
 local sets = {
     Idle = {
@@ -373,7 +376,6 @@ local sets = {
     WS = {},
     WS_HighAcc = {},
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -385,6 +387,9 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+sets.warlocks_mantle = warlocks_mantle
+profile.Sets = sets
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
@@ -454,7 +459,7 @@ profile.HandlePrecast = function()
     local action = gData.GetAction()
 
     local fcv = fastCastValue
-    if (player.SubJob == 'RDM' and warlocks_mantle) then
+    if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
        fcv = fastCastValue + 0.02
     end
 
@@ -466,7 +471,7 @@ profile.HandlePrecast = function()
 
     gcmage.DoPrecast(totalfcv)
     if (fcv ~= fastCastValue) then
-        gFunc.Equip('Back', 'Warlock\'s Mantle')
+        gFunc.EquipSet('warlocks_mantle')
     end
     if (totalfcv ~= fcv) then
         gFunc.EquipSet(sets.Precast_Songs)

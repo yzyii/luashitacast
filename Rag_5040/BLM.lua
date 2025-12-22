@@ -8,11 +8,16 @@ local rdmSJMaxMP = 699 -- The Max MP you have when /rdm in your idle set
 
 local nukeExtraThreshold = 850 -- The minimum MP for which NukeExtra StoneskinExtra, and PhalanxExtra set will be used instead of regular sets (to allow additional nukes using max mp sets)
 
-local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
-local republic_circlet = false
-
-local opuntia_hoop = true
-local opuntia_hoop_slot = 'Ring1'
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
+    Back = 'Warlock\'s Mantle',
+}
+local republic_circlet = {
+    -- Head = 'Republic Circlet',
+}
+local opuntia_hoop = {
+    Ring1 = 'Opuntia Hoop',
+}
 
 local sets = {
     Idle = {
@@ -509,7 +514,6 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -521,6 +525,10 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+sets.warlocks_mantle = warlocks_mantle
+sets.republic_circlet = republic_circlet
+sets.opuntia_hoop = opuntia_hoop
+profile.Sets = sets
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
@@ -571,8 +579,8 @@ profile.HandleDefault = function()
 
     local spikes = gData.GetBuffCount('Blaze Spikes') + gData.GetBuffCount('Shock Spikes') + gData.GetBuffCount('Ice Spikes')
     local isPhysical = gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT'
-    if (opuntia_hoop and spikes > 0 and isPhysical) then
-        gFunc.Equip(opuntia_hoop_slot, 'Opuntia Hoop')
+    if (spikes > 0 and isPhysical) then
+        gFunc.EquipSet('opuntia_hoop')
     end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
@@ -580,9 +588,9 @@ end
 
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
-    if (player.SubJob == 'RDM' and warlocks_mantle) then
+    if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
         gcmage.DoPrecast(fastCastValue + 0.02)
-        gFunc.Equip('Back', 'Warlock\'s Mantle')
+        gFunc.EquipSet('warlocks_mantle')
     else
         gcmage.DoPrecast(fastCastValue)
     end
@@ -595,7 +603,7 @@ profile.HandleMidcast = function()
 
     local player = gData.GetPlayer()
     local action = gData.GetAction()
-    if (republic_circlet == true) then
+    if (republic_circlet.Head) then
         if (action.Skill == 'Elemental Magic' and gcdisplay.GetCycle('Mode') == 'Potency') then
             if (gcdisplay.GetToggle('Extra') and player.MP >= nukeExtraThreshold) then
                 do return end
@@ -603,7 +611,7 @@ profile.HandleMidcast = function()
             if (not ElementalDebuffs:contains(action.Name)) then
                 if (conquest:GetInsideControl() and gcdisplay.GetToggle('HNM') == false and gcdisplay.GetCycle('Mode') ~= 'Accuracy') then
                     print(chat.header('LAC - BLM'):append(chat.message('In Region - Using Republic Circlet')))
-                    gFunc.Equip('Head', 'Republic Circlet')
+                    gFunc.EquipSet('republic_circlet')
                 end
             end
         end

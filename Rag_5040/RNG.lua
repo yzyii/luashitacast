@@ -56,7 +56,6 @@ local sets = {
     WS_SlugShot = {},
     WS_Coronach = {},
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -68,6 +67,8 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+profile.Sets = sets
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 

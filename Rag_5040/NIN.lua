@@ -6,22 +6,7 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
-local shinobi_ring = true
-local shinobi_ring_slot = 'Ring2'
-
-local koga_tekko = false
-local koga_tekko_plus_one = true
-
-local uggalepih_pendant = true
-local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
-
-local fenrirs_stone = true -- Used for Evasion at night
-
--- Fill this out for which evasion pants to use at night / dusk to dawn
-local night_time_eva_pants = ''
-local dusk_to_dawn_eva_pants = 'Koga Hakama +1'
-
--- Leave as '' if you do not have the staff.
+-- Set as '' if you do not have the staff
 local fire_staff = 'Vulcan\'s Staff'
 local earth_staff = 'Terra\'s Staff'
 local water_staff = 'Neptune\'s Staff'
@@ -40,6 +25,32 @@ local hyorin_obi = true
 local rairin_obi = true
 local korin_obi = true
 local anrin_obi = true
+
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local shinobi_ring = {
+    Ring2 = 'Shinobi Ring',
+}
+local koga_tekko = {
+    -- Hands = 'Koga Tekko',
+}
+local koga_tekko_plus_one = {
+    Hands = 'Kog. Tekko +1',
+}
+local uggalepih_pendant = {
+    Neck = 'Uggalepih Pendant',
+}
+local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
+    Back = 'Warlock\'s Mantle',
+}
+local fenrirs_stone = { -- Used for Evasion at night
+    Ammo = 'Fenrir\'s Stone',
+}
+local koga_hakama = {
+    -- Legs = 'Koga Hakama',
+}
+local koga_hakama_plus_one = {
+    Legs = 'Koga Hakama +1',
+}
 
 local sets = {
     Idle = {},
@@ -93,7 +104,6 @@ local sets = {
 
     Ranged = {},
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -105,6 +115,16 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+sets.shinobi_ring = shinobi_ring
+sets.koga_tekko = koga_tekko
+sets.koga_tekko_plus_one = koga_tekko_plus_one
+sets.uggalepih_pendant = uggalepih_pendant
+sets.warlocks_mantle = warlocks_mantle
+sets.fenrirs_stone = fenrirs_stone
+sets.koga_hakama = koga_hakama
+sets.koga_hakama_plus_one = koga_hakama_plus_one
+profile.Sets = sets
 
 local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi', 'Kurayami: Ichi', 'Hojo: Ichi' }
 local HateDebuffs = T{ 'Bind', 'Sleep', 'Poison', 'Blind' }
@@ -190,11 +210,11 @@ profile.HandleWeaponskill = function()
     end
 
     local environment = gData.GetEnvironment()
-    if (koga_tekko and (environment.Time < 6 or environment.Time >= 18)) then
-        gFunc.Equip('Hands', 'Koga Tekko')
+    if (environment.Time < 6 or environment.Time >= 18) then
+        gFunc.EquipSet('koga_tekko')
     end
-    if (koga_tekko_plus_one and (environment.Time < 7 or environment.Time >= 17)) then
-        gFunc.Equip('Hands', 'Kog. Tekko +1')
+    if (environment.Time < 7 or environment.Time >= 17) then
+        gFunc.EquipSet('koga_tekko_plus_one')
     end
 end
 
@@ -230,28 +250,28 @@ profile.HandleDefault = function()
     local environment = gData.GetEnvironment()
 
     if (player.Status == 'Engaged') then
-        if (shinobi_ring and player.HPP <= 75 and player.TP <= 1000) then
-            gFunc.Equip(shinobi_ring_slot, 'Shinobi Ring')
+        if (player.HPP <= 75 and player.TP <= 1000) then
+            gFunc.EquipSet('shinobi_ring')
         end
-        if (koga_tekko and (environment.Time < 6 or environment.Time >= 18)) then
-            gFunc.Equip('Hands', 'Koga Tekko')
+        if (environment.Time < 6 or environment.Time >= 18) then
+            gFunc.EquipSet('koga_tekko')
         end
-        if (koga_tekko_plus_one and (environment.Time < 7 or environment.Time >= 17)) then
-            gFunc.Equip('Hands', 'Kog. Tekko +1')
+        if (environment.Time < 7 or environment.Time >= 17) then
+            gFunc.EquipSet('koga_tekko_plus_one')
         end
     end
 
     gcmelee.DoDefaultOverride()
 
     if (gcdisplay.IdleSet == 'Evasion') then
-        if (fenrirs_stone and (environment.Time < 6 or environment.Time >= 18)) then
-            gFunc.Equip('Ammo', 'Fenrir\'s Stone')
+        if (environment.Time < 6 or environment.Time >= 18) then
+            gFunc.EquipSet('fenrirs_stone')
         end
-        if (night_time_eva_pants ~= '' and (environment.Time < 6 or environment.Time >= 18)) then
-            gFunc.Equip('Legs', night_time_eva_pants)
+        if (environment.Time < 6 or environment.Time >= 18) then
+            gFunc.EquipSet('koga_hakama')
         end
-        if (dusk_to_dawn_eva_pants ~= '' and (environment.Time < 7 or environment.Time >= 17)) then
-            gFunc.Equip('Legs', dusk_to_dawn_eva_pants)
+        if (environment.Time < 7 or environment.Time >= 17) then
+            gFunc.EquipSet('koga_hakama_plus_one')
         end
     end
 
@@ -260,9 +280,9 @@ end
 
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
-    if (player.SubJob == 'RDM' and warlocks_mantle) then
+    if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
         gcmelee.DoPrecast(fastCastValue + 0.02)
-        gFunc.Equip('Back', 'Warlock\'s Mantle')
+        gFunc.EquipSet('warlocks_mantle')
     else
         gcmelee.DoPrecast(fastCastValue)
     end
@@ -274,11 +294,14 @@ profile.HandleMidcast = function()
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
 
-    if (shinobi_ring and player.HPP <= 75 and player.TP <= 1000) then
-        gFunc.Equip(shinobi_ring_slot, 'Shinobi Ring')
+    if (player.HPP <= 75 and player.TP <= 1000) then
+        gFunc.EquipSet('shinobi_ring')
     end
-    if (koga_tekko_plus_one and (environment.Time < 7 or environment.Time >= 17)) then
-        gFunc.Equip('Hands', 'Kog. Tekko +1') -- You can comment this out if you have Dusk Gloves +1 and would prefer +22 HP over Ninja Tool Expertise.
+    if (environment.Time < 6 or environment.Time >= 18) then
+        gFunc.EquipSet('koga_tekko') -- You can comment this out if you have Dusk Gloves +1 and would prefer +22 HP
+    end
+    if (environment.Time < 7 or environment.Time >= 17) then
+        gFunc.EquipSet('koga_tekko_plus_one') -- You can comment this out if you have Dusk Gloves +1 and would prefer +22 HP
     end
 
     local action = gData.GetAction()
@@ -291,8 +314,8 @@ profile.HandleMidcast = function()
             if (gcdisplay.GetCycle('Nuke') == 'Accuracy') then
                 gFunc.EquipSet(sets.NinElemental_Accuracy)
             end
-            if (action.MppAftercast < 51) and uggalepih_pendant then
-                gFunc.Equip('Neck', 'Uggalepih Pendant')
+            if (action.MppAftercast < 51) then
+                gFunc.EquipSet('uggalepih_pendant')
             end
             EquipStaffAndObi(action)
         end

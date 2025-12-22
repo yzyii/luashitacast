@@ -2,11 +2,18 @@ local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including carbuncles cuffs or evokers boots
 
-local carbuncles_cuffs = false
-local evokers_boots = false
-local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
-
 local cureMP = 895 -- Cure set max MP
+
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local carbuncles_cuffs = {
+    Hands = 'Carbuncle\'s Cuffs',
+}
+local evokers_boots = {
+    Feet = 'Evoker\'s Boots',
+}
+local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
+    Back = 'Warlock\'s Mantle',
+}
 
 local sets = {
     Idle = {
@@ -319,7 +326,6 @@ local sets = {
     WS = {},
     WS_HighAcc = {},
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -331,6 +337,10 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+sets.carbuncles_cuffs = carbuncles_cuffs
+sets.evokers_boots = evokers_boots
+sets.warlocks_mantle = warlocks_mantle
+profile.Sets = sets
 
 local SmnSkill = T{'Shining Ruby','Glittering Ruby','Crimson Howl','Inferno Howl','Frost Armor','Crystal Blessing','Aerial Armor','Hastega II','Fleet Wind','Hastega','Earthen Ward','Earthen Armor','Rolling Thunder','Lightning Armor','Soothing Current','Ecliptic Growl','Heavenward Howl','Ecliptic Howl','Noctoshield','Dream Shroud','Altana\'s Favor','Reraise','Reraise II','Reraise III','Raise','Raise II','Raise III','Wind\'s Blessing'}
 local SmnHealing = T{'Healing Ruby','Healing Ruby II','Whispering Wind','Spring Water'}
@@ -408,24 +418,20 @@ end
 
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
-    if (player.SubJob == 'RDM' and warlocks_mantle) then
+    if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
         gcmage.DoPrecast(fastCastValue + 0.02)
-        gFunc.Equip('Back', 'Warlock\'s Mantle')
+        gFunc.EquipSet('warlocks_mantle')
     else
         gcmage.DoPrecast(fastCastValue)
     end
 
     local action = gData.GetAction()
     if (action.Skill == 'Summoning') then
-        if (carbuncles_cuffs and evokers_boots and string.match(action.Name, 'Spirit')) then
-            gFunc.Equip('Hands', 'Carbuncle\'s Cuffs')
+        if (carbuncles_cuffs.Hands and evokers_boots.Feet and string.match(action.Name, 'Spirit')) then -- Handling for bugged casting if you own both
+            gFunc.EquipSet('carbuncles_cuffs')
         else
-            if (carbuncles_cuffs) then
-                gFunc.Equip('Hands', 'Carbuncle\'s Cuffs')
-            end
-            if (evokers_boots) then
-                gFunc.Equip('Feet', 'Evoker\'s Boots')
-            end
+            gFunc.EquipSet('carbuncles_cuffs')
+            gFunc.EquipSet('evokers_boots')
         end
     end
 end

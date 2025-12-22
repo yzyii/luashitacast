@@ -2,10 +2,21 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
-local gaudy_harness = true
+local max_hp_in_idle_with_regen_gear_equipped = 1200
 
--- Replace these with '' if you do not have them
-local muscle_belt = ''
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local gaudy_harness = {
+    -- Body = 'Gaudy Harness',
+}
+local muscle_belt = {
+    Waist = 'Muscle Belt +1',
+}
+local presidential_hairpin = {
+    -- Head = 'President. Hairpin',
+}
+local dream_ribbon = {
+    Head = 'Dream Ribbon',
+}
 
 local sets = {
     Idle = {},
@@ -49,7 +60,6 @@ local sets = {
     Ready_Magic = {},
     Call_Beast = {},
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -61,6 +71,11 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+sets.gaudy_harness = gaudy_harness
+sets.muscle_belt = muscle_belt
+sets.presidential_hairpin = presidential_hairpin
+sets.dream_ribbon = dream_ribbon
+profile.Sets = sets
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
@@ -216,8 +231,16 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
 
     local player = gData.GetPlayer()
-    if (player.Status == 'Idle' and player.HPP < 50 and muscle_belt ~= '') then
-        gFunc.Equip('Waist', muscle_belt)
+    if (player.Status == 'Idle') then
+        if (player.HPP < 50) then
+            gFunc.EquipSet('muscle_belt')
+        end
+        if (player.HP < max_hp_in_idle_with_regen_gear_equipped) then
+            if (conquest:GetOutsideControl()) then
+                gFunc.EquipSet('presidential_hairpin')
+            end
+            gFunc.EquipSet('dream_ribbon')
+        end
     end
     if (player.SubJob == 'NIN' and player.Status == 'Engaged') then
         gFunc.EquipSet('TP_NIN')
@@ -226,9 +249,7 @@ profile.HandleDefault = function()
     gcmelee.DoDefaultOverride()
 
     if (player.MP < 50 and (player.SubJob == 'WHM' or player.SubJob == 'BLM' or player.SubJob == 'RDM')) then
-        if (gaudy_harness) then
-            gFunc.Equip('Body', 'Gaudy Harness')
-        end
+        gFunc.EquipSet('gaudy_harness')
     end
 
     local petAction = gData.GetPetAction()

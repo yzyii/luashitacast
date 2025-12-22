@@ -2,7 +2,10 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
-local evasion_master_casters_mitts = false
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local evasion_master_casters_mitts = {
+    -- Hands = 'Mst.Cst. Mitts',
+}
 
 local sets = {
     Idle = {},
@@ -125,7 +128,6 @@ local sets = {
         Ammo = 'Venom Bolt',
     },
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -137,6 +139,9 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+sets.evasion_master_casters_mitts = evasion_master_casters_mitts
+profile.Sets = sets
 
 local ammo = T{'aacid','asleep','abloody','ablind','avenom'}
 
@@ -293,8 +298,8 @@ profile.HandleDefault = function()
 
     gcmelee.DoDefaultOverride()
 
-    if (conquest:GetOutsideControl() and evasion_master_casters_mitts and gcdisplay.IdleSet == 'Evasion') then
-        gFunc.Equip('Hands', 'Mst.Cst. Mitts')
+    if (conquest:GetOutsideControl() and gcdisplay.IdleSet == 'Evasion') then
+        gFunc.EquipSet('evasion_master_casters_mitts')
     end
 
     local sa = gData.GetBuffCount('Sneak Attack')

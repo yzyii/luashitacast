@@ -7,10 +7,16 @@ local whmSJMaxMP = 661 -- The Max MP you have when /whm in your idle set
 local blmSJMaxMP = 680 -- The Max MP you have when /blm in your idle set
 local drkSJMaxMP = 604 -- The Max MP you have when /drk in your idle set
 
-local blue_cotehardie = false
-local blue_cotehardie_plus_one = true
-local dilation_ring = true
-local dilation_ring_slot = 'Ring2'
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local blue_cotehardie = {
+    -- Body = 'Blue Cotehardie',
+}
+local blue_cotehardie_plus_one = {
+    Body = 'Blue Cotehard. +1',
+}
+local dilation_ring = {
+    Ring2 = 'Dilation Ring',
+}
 
 local sets = {
     Idle = {
@@ -658,7 +664,6 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -670,6 +675,11 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+sets.blue_cotehardie = blue_cotehardie
+sets.blue_cotehardie_plus_one = blue_cotehardie_plus_one
+sets.dilation_ring = dilation_ring
+profile.Sets = sets
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
@@ -735,11 +745,11 @@ profile.HandleDefault = function()
     gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil, drkSJMaxMP)
 
     local player = gData.GetPlayer()
-    if (blue_cotehardie and player.MP <= 40) then
-        gFunc.Equip('Body', 'Blue Cotehardie')
+    if (player.MP <= 40) then
+        gFunc.EquipSet('blue_cotehardie')
     end
-    if (blue_cotehardie_plus_one and player.MP <= 50) then
-        gFunc.Equip('Body', 'Blue Cotehard. +1')
+    if (player.MP <= 50) then
+        gFunc.EquipSet('blue_cotehardie_plus_one')
     end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
@@ -753,10 +763,8 @@ profile.HandleMidcast = function()
     gcmage.DoMidcast(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil, drkSJMaxMP)
 
     local action = gData.GetAction()
-    if (dilation_ring) then -- Haste is technically MP inefficient but I prefer to just always use it anyway
-        if (action.Name == 'Haste' or action.Name == 'Refresh') then
-            gFunc.Equip(dilation_ring_slot, 'Dilation Ring')
-        end
+    if (action.Name == 'Haste' or action.Name == 'Refresh') then
+        gFunc.EquipSet('dilation_ring') -- Haste is technically MP inefficient but I prefer to just always use it anyway
     end
 end
 

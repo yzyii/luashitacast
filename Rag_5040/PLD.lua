@@ -2,20 +2,28 @@ local profile = {}
 
 local fastCastValue = 0.07 -- 7% from gear listed in Precast set
 
-local parade_gorget = true
-
-local hercules_ring = false
-local hercules_ring_slot = 'Ring1'
-
--- Replace these with '' if you do not have them
-local gallant_leggings = 'Glt. Leggings +1'
-local valor_leggings = 'Vlr. Leggings +1'
-
-local arco_de_velocidad = true
-
-local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
-
-local shadow_mantle = true
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local parade_gorget = {
+    Neck = 'Parade Gorget',
+}
+local hercules_ring = {
+    -- Ring1 = 'Hercules\' Ring',
+}
+local gallant_leggings = {
+    Legs = 'Glt. Leggings +1',
+}
+local valor_leggings = {
+    Legs = 'Vlr. Leggings +1',
+}
+local arco_de_velocidad = {
+    Range = 'Arco de Velocidad',
+}
+local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
+    Back = 'Warlock\'s Mantle',
+}
+local shadow_mantle = {
+    Back = 'Shadow Mantle',
+}
 
 local sets = {
     Idle = { -- 1415
@@ -472,7 +480,6 @@ local sets = {
         Feet = 'Vlr. Leggings +1',
     },
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -484,6 +491,15 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+sets.parade_gorget = parade_gorget
+sets.hercules_ring = hercules_ring
+sets.gallant_leggings = gallant_leggings
+sets.valor_leggings = valor_leggings
+sets.arco_de_velocidad = arco_de_velocidad
+sets.warlocks_mantle = warlocks_mantle
+sets.shadow_mantle = shadow_mantle
+profile.Sets = sets
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
@@ -498,18 +514,18 @@ profile.HandleAbility = function()
 
     gFunc.EquipSet(sets.Hate)
 
-    if (action.Name == 'Holy Circle' and gallant_leggings ~= '') then
-        gFunc.Equip('Legs', gallant_leggings)
+    if (action.Name == 'Holy Circle') then
+        gFunc.EquipSet(sets.gallant_leggings)
     elseif (action.Name == 'Rampart') then
         gFunc.EquipSet(sets.Rampart)
         local environment = gData.GetEnvironment()
-        if (shadow_mantle and environment.DayElement == 'Dark') then
-            gFunc.Equip('Back', 'Shadow Mantle')
+        if (environment.DayElement == 'Dark') then
+            gFunc.EquipSet('shadow_mantle')
         end
     elseif (action.Name == 'Shield Bash') then
         gFunc.EquipSet(sets.ShieldBash)
-    elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then
-        gFunc.Equip('Legs', valor_leggings)
+    elseif (action.Name == 'Sentinel') then
+        gFunc.EquipSet(sets.valor_leggings)
     elseif (action.Name == 'Cover') then
         gFunc.EquipSet(sets.Cover)
     end
@@ -562,19 +578,17 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.Cover)
     end
 
-    if (arco_de_velocidad) then
-        local environment = gData.GetEnvironment()
-        if (environment.Time >= 6 and environment.Time < 18 and player.HPP < 100) then
-            gFunc.Equip('Range', 'Arco de Velocidad')
-        end
+    local environment = gData.GetEnvironment()
+    if (environment.Time >= 6 and environment.Time < 18 and player.HPP < 100) then
+        gFunc.EquipSet('arco_de_velocidad')
     end
 
-    if (parade_gorget and player.HPP >= 85) then
-        gFunc.Equip('Neck', 'Parade Gorget')
+    if (player.HPP >= 85) then
+        gFunc.EquipSet('parade_gorget')
     end
 
-    if (hercules_ring and player.HPP <= 50) then
-        gFunc.Equip(hercules_ring_slot, 'Hercules\' Ring')
+    if (player.HPP <= 50) then
+        gFunc.EquipSet('hercules_ring')
     end
 
     gcmelee.DoDefaultOverride()
@@ -588,9 +602,9 @@ profile.HandlePrecast = function()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
     local cheatDelay = 0
-    if (player.SubJob == "RDM" and warlocks_mantle) then
+    if (player.SubJob == "RDM" and warlocks_mantle.Back) then
         cheatDelay = gcmelee.DoPrecast(fastCastValue + 0.02)
-        gFunc.Equip('Back', 'Warlock\'s Mantle')
+        gFunc.EquipSet('warlocks_mantle')
     else
         cheatDelay = gcmelee.DoPrecast(fastCastValue)
     end

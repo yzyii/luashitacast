@@ -4,9 +4,6 @@ local fastCastValue = 0.07 -- 7% from gear listed in Precast set
 
 local use_chaos_burgeonet_for_tp_during_souleater = true
 
-local parade_gorget = true
-local fenrirs_stone = true
-
 -- Set to true if you have the obi
 local karin_obi = true
 local dorin_obi = false
@@ -16,6 +13,14 @@ local hyorin_obi = true
 local rairin_obi = true
 local korin_obi = true
 local anrin_obi = true
+
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local parade_gorget = {
+    Neck = 'Parade Gorget',
+}
+local fenrirs_stone = {
+    Ammo = 'Fenrir\'s Stone',
+}
 
 local sets = {
     Idle = {
@@ -358,7 +363,6 @@ local sets = {
         Ring2 = 'Snow Ring',
     },
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -370,6 +374,10 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+sets.parade_gorget = parade_gorget
+sets.fenrirs_stone = fenrirs_stone
+profile.Sets = sets
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
@@ -474,16 +482,16 @@ profile.HandleDefault = function()
     end
 
     if (player.Status == 'Idle') then
-        if (parade_gorget and player.HPP >= 85) then
-            gFunc.Equip('Neck', 'Parade Gorget')
+        if (player.HPP >= 85) then
+            gFunc.EquipSet('parade_gorget')
         end
     end
 
     local environment = gData.GetEnvironment()
 
     gcmelee.DoDefaultOverride()
-    if (gcdisplay.IdleSet == 'Evasion' and fenrirs_stone and (environment.Time >= 6 and environment.Time < 18)) then
-        gFunc.Equip('Ammo', 'Fenrir\'s Stone')
+    if (gcdisplay.IdleSet == 'Evasion' and (environment.Time >= 6 and environment.Time < 18)) then
+        gFunc.EquipSet('fenrirs_stone')
     end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))

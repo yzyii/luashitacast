@@ -3,24 +3,43 @@ local profile = {}
 local max_hp_in_idle_with_regen_gear_equipped = 1632
 local fastCastValue = 0.02 -- 2% from gear listed in Precast set
 
--- Replace these with '' if you do not have them
-local temple_gaiters = 'Temple Gaiters'
-local temple_gloves = 'Temple Gloves'
-local temple_cyclas = 'Tpl. Cyclas +1'
-local temple_crown = 'Tpl. Crown +1'
-
-local melee_gaiters = 'Melee Gaiters'
-local melee_gloves = 'Mel. Gloves +1'
-
-local muscle_belt = 'Muscle Belt +1'
-local garden_bangles = 'Garden Bangles'
-local presidential_hairpin = false
-local dream_ribbon = true
-
-local kampfer_ring = true
-local kampfer_ring_slot = 'Ring2'
-local kampfer_earring = true
-local kampfer_earring_slot = 'Ear2'
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local temple_gaiters = {
+    Feet = 'Temple Gaiters',
+}
+local temple_gloves = {
+    Hands = 'Temple Gloves',
+}
+local temple_cyclas = {
+    Body = 'Tpl. Cyclas +1',
+}
+local temple_crown = {
+    Head = 'Tpl. Crown +1',
+}
+local melee_gaiters = {
+    Feet = 'Melee Gaiters',
+}
+local melee_gloves = {
+    Hands = 'Mel. Gloves +1',
+}
+local muscle_belt = {
+    Waist = 'Muscle Belt +1',
+}
+local garden_bangles = {
+    Hands = 'Garden Bangles',
+}
+local presidential_hairpin = {
+    -- Head = 'President. Hairpin',
+}
+local dream_ribbon = {
+    Head = 'Dream Ribbon',
+}
+local kampfer_ring = {
+    Ring2 = 'Kampfer Ring',
+}
+local kampfer_earring = {
+    Ear2 = 'Kampfer Earring',
+}
 
 local sets = {
     Idle = {
@@ -257,7 +276,6 @@ local sets = {
         Feet = 'Dune Boots',
     },
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -269,6 +287,20 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+sets.temple_gaiters = temple_gaiters
+sets.temple_gloves = temple_gloves
+sets.temple_cyclas = temple_cyclas
+sets.temple_crown = temple_crown
+sets.melee_gaiters = melee_gaiters
+sets.melee_gloves = melee_gloves
+sets.muscle_belt = muscle_belt
+sets.garden_bangles = garden_bangles
+sets.presidential_hairpin = presidential_hairpin
+sets.dream_ribbon = dream_ribbon
+sets.kampfer_ring = kampfer_ring
+sets.kampfer_earring = kampfer_earring
+profile.Sets = sets
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
@@ -283,28 +315,16 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.ChiBlast)
     elseif (action.Name == 'Chakra') then
         gFunc.EquipSet(sets.Chakra)
-        if (temple_cyclas ~= '') then
-            gFunc.Equip('Body', temple_cyclas)
-        end
-        if (melee_gloves ~= '') then
-            gFunc.Equip('Hands', melee_gloves)
-        end
+        gFunc.EquipSet('temple_cyclas')
+        gFunc.EquipSet('melee_gloves')
     elseif (action.Name == 'Dodge') then
-        if (temple_gaiters ~= '') then
-            gFunc.Equip('Feet', temple_gaiters)
-        end
+        gFunc.EquipSet('temple_gaiters')
     elseif (action.Name == 'Boost') then
-        if (temple_gloves ~= '') then
-            gFunc.Equip('Hands', temple_gloves)
-        end
+        gFunc.EquipSet('temple_gloves')
     elseif (action.Name == 'Focus') then
-        if (temple_crown ~= '') then
-            gFunc.Equip('Head', temple_crown)
-        end
+        gFunc.EquipSet('temple_crown')
     elseif (action.Name == 'Counterstance') then
-        if (melee_gaiters ~= '') then
-            gFunc.Equip('Feet', melee_gaiters)
-        end
+        gFunc.EquipSet('melee_gaiters')
     end
 end
 
@@ -374,21 +394,18 @@ profile.HandleDefault = function()
     end
 
     if (player.Status == 'Idle') then
-        if (player.HPP < 50 and muscle_belt ~= '') then
-            gFunc.Equip('Waist', muscle_belt)
+        if (player.HPP < 50) then
+            gFunc.EquipSet('muscle_belt')
         end
         if (player.HP < max_hp_in_idle_with_regen_gear_equipped) then
             local environment = gData.GetEnvironment()
-
-            if (garden_bangles ~= '' and environment.Time >= 6 and environment.Time < 18) then
-                gFunc.Equip('hands', garden_bangles)
+            if (environment.Time >= 6 and environment.Time < 18) then
+                gFunc.EquipSet('garden_bangles')
             end
-            if (presidential_hairpin and conquest:GetOutsideControl()) then
-                gFunc.Equip('Head', 'President. Hairpin')
+            if (conquest:GetOutsideControl()) then
+                gFunc.EquipSet('presidential_hairpin')
             end
-            if (dream_ribbon) then
-                gFunc.Equip('Head', 'Dream Ribbon')
-            end
+            gFunc.EquipSet('dream_ribbon')
         end
     end
 
@@ -396,14 +413,10 @@ profile.HandleDefault = function()
 
     if (gcdisplay.IdleSet == 'DT') then
         if (player.HPP <= 75 and player.TP <= 1000) then
-            if (kampfer_ring) then
-                gFunc.Equip(kampfer_ring_slot, 'Kampfer Ring')
-            end
+            gFunc.EquipSet('kampfer_ring')
         end
         if (player.HPP <= 25 and player.TP <= 1000) then
-            if (kampfer_earring) then
-                gFunc.Equip(kampfer_earring_slot, 'Kampfer Earring')
-            end
+            gFunc.EquipSet('kampfer_earring')
         end
     end
 

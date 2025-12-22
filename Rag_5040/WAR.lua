@@ -48,12 +48,19 @@ local sets = {
         Ear1 = 'Attila\'s Earring',
     },
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 end
+
+--[[
+--------------------------------
+Everything below can be ignored.
+--------------------------------
+]]
+
+profile.Sets = sets
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 

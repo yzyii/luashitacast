@@ -6,11 +6,16 @@ local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
-local virology_ring = true
-local virology_ring_slot = 'Ring2'
-
-local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
-local republic_circlet = false
+-- Comment out the equipment within these sets if you do not have them or wish to use them
+local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
+    Back = 'Warlock\'s Mantle',
+}
+local virology_ring = {
+    Ring2 = 'Virology Ring',
+}
+local republic_circlet = {
+    -- Head = 'Republic Circlet',
+}
 
 local sets = {
     Idle = {},
@@ -79,7 +84,6 @@ local sets = {
     WS_HighAcc = {},
     WS_Randgrith = {},
 }
-profile.Sets = sets
 
 profile.SetMacroBook = function()
     -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
@@ -91,6 +95,11 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+sets.warlocks_mantle = warlocks_mantle
+sets.virology_ring = virology_ring
+sets.republic_circlet = republic_circlet
+profile.Sets = sets
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
@@ -147,9 +156,9 @@ end
 
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
-    if (player.SubJob == 'RDM' and warlocks_mantle) then
+    if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
         gcmage.DoPrecast(fastCastValue + 0.02)
-        gFunc.Equip('Back', 'Warlock\'s Mantle')
+        gFunc.EquipSet('warlocks_mantle')
     else
         gcmage.DoPrecast(fastCastValue)
     end
@@ -169,12 +178,14 @@ profile.HandleMidcast = function()
         or string.match(action.Name, 'Holy')
         or (string.match(action.Name, 'Cure') and gData.GetActionTarget().Type == 'Monster')
     ) then
-        if (republic_circlet == true and conquest:GetInsideControl()) then
-            print(chat.header('LAC - WHM'):append(chat.message('In Region - Using Republic Circlet')))
-            gFunc.Equip('Head', 'Republic Circlet')
+        if (republic_circlet.Head) then
+            if (conquest:GetInsideControl()) then
+                print(chat.header('LAC - WHM'):append(chat.message('In Region - Using Republic Circlet')))
+                gFunc.EquipSet('republic_circlet')
+            end
         end
-    elseif virology_ring and (string.match(action.Name, '.*na$') or (action.Name == 'Erase')) then
-        gFunc.Equip(virology_ring_slot, 'Virology Ring')
+    elseif (string.match(action.Name, '.*na$') or (action.Name == 'Erase')) then
+        gFunc.EquipSet('virology_ring')
     end
 end
 
