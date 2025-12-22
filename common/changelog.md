@@ -405,5 +405,6 @@
 - All Mages - Adds Warlock's Mantle to everything
 - BRD - Fixes equip ordering of BRD Precast vs Precast_Songs set
 
-### v1.5.18
+### v2.0.0
 - MNK - Remove SJ_THF set usage from WS usage
+- DRK - Fix Obi usage

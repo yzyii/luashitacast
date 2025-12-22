@@ -18,17 +18,32 @@ local dark_staff = 'Pluto\'s Staff'
 local claustrum = false
 local bahamuts_staff = false
 
--- Set to true if you have the obi
-local karin_obi = true
-local dorin_obi = false
-local suirin_obi = false
-local furin_obi = false
-local hyorin_obi = true
-local rairin_obi = true
-local korin_obi = true
-local anrin_obi = true
-
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local karin_obi = {
+    Waist = 'Karin Obi',
+}
+local dorin_obi = {
+    -- Waist = 'Dorin Obi',
+}
+local suirin_obi = {
+    -- Waist = 'Suirin Obi',
+}
+local furin_obi = {
+    -- Waist = 'Furin Obi',
+}
+local hyorin_obi = {
+    Waist = 'Hyorin Obi',
+}
+local rairin_obi = {
+    Waist = 'Rairin Obi',
+}
+local korin_obi = {
+    Waist = 'Korin Obi',
+}
+local anrin_obi = {
+    Waist = 'Anrin obi',
+}
+
 local uggalepih_pendant = {
     Neck = 'Uggalepih Pendant',
 }
@@ -123,26 +138,15 @@ local ElementalStaffTable = {
     ['Dark'] = dark_staff
 }
 
-local NukeObiTable = {
-    ['Fire'] = 'Karin Obi',
-    ['Earth'] = 'Dorin Obi',
-    ['Water'] = 'Suirin Obi',
-    ['Wind'] = 'Furin Obi',
-    ['Ice'] = 'Hyorin Obi',
-    ['Thunder'] = 'Rairin Obi',
-    ['Light'] = 'Korin Obi',
-    ['Dark'] = 'Anrin obi'
-}
-
 local NukeObiOwnedTable = {
-    ['Fire'] = karin_obi,
-    ['Earth'] = dorin_obi,
-    ['Water'] = suirin_obi,
-    ['Wind'] = furin_obi,
-    ['Ice'] = hyorin_obi,
-    ['Thunder'] = rairin_obi,
-    ['Light'] = korin_obi,
-    ['Dark'] = anrin_obi
+    ['Fire'] = 'karin_obi',
+    ['Earth'] = 'dorin_obi',
+    ['Water'] = 'suirin_obi',
+    ['Wind'] = 'furin_obi',
+    ['Ice'] = 'hyorin_obi',
+    ['Thunder'] = 'rairin_obi',
+    ['Light'] = 'korin_obi',
+    ['Dark'] = 'anrin_obi'
 }
 
 local WeakElementTable = {
@@ -919,11 +923,8 @@ end
 
 function gcmage.EquipObi(action)
     if (ObiCheck(action)) then
-        local obi = NukeObiTable[action.Element]
         local obiOwned = NukeObiOwnedTable[action.Element]
-        if (obiOwned) then
-            gFunc.Equip('Waist', obi)
-        end
+        gFunc.EquipSet(obiOwned)
     end
 end
 
@@ -948,6 +949,15 @@ function gcmage.DoAbility()
 end
 
 function gcmage.AppendSets(sets)
+    sets.karin_obi = karin_obi
+    sets.dorin_obi = dorin_obi
+    sets.suirin_obi = suirin_obi
+    sets.furin_obi = furin_obi
+    sets.hyorin_obi = hyorin_obi
+    sets.rairin_obi = rairin_obi
+    sets.korin_obi = korin_obi
+    sets.anrin_obi = anrin_obi
+
     sets.uggalepih_pendant = uggalepih_pendant
     sets.master_casters_bracelets = master_casters_bracelets
     sets.wizards_mantle = wizards_mantle

@@ -4,17 +4,32 @@ local fastCastValue = 0.07 -- 7% from gear listed in Precast set
 
 local use_chaos_burgeonet_for_tp_during_souleater = true
 
--- Set to true if you have the obi
-local karin_obi = true
-local dorin_obi = false
-local suirin_obi = false
-local furin_obi = false
-local hyorin_obi = true
-local rairin_obi = true
-local korin_obi = true
-local anrin_obi = true
-
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local karin_obi = {
+    Waist = 'Karin Obi',
+}
+local dorin_obi = {
+    -- Waist = 'Dorin Obi',
+}
+local suirin_obi = {
+    -- Waist = 'Suirin Obi',
+}
+local furin_obi = {
+    -- Waist = 'Furin Obi',
+}
+local hyorin_obi = {
+    Waist = 'Hyorin Obi',
+}
+local rairin_obi = {
+    Waist = 'Rairin Obi',
+}
+local korin_obi = {
+    Waist = 'Korin Obi',
+}
+local anrin_obi = {
+    Waist = 'Anrin obi',
+}
+
 local parade_gorget = {
     Neck = 'Parade Gorget',
 }
@@ -377,30 +392,38 @@ Everything below can be ignored.
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
+sets.karin_obi = karin_obi
+sets.dorin_obi = dorin_obi
+sets.suirin_obi = suirin_obi
+sets.furin_obi = furin_obi
+sets.hyorin_obi = hyorin_obi
+sets.rairin_obi = rairin_obi
+sets.korin_obi = korin_obi
+sets.anrin_obi = anrin_obi
 sets.parade_gorget = parade_gorget
 sets.fenrirs_stone = fenrirs_stone
 profile.Sets = gcmelee.AppendSets(sets)
 
-local NukeObiTable = {
-    ['Fire'] = 'Karin Obi',
-    ['Earth'] = 'Dorin Obi',
-    ['Water'] = 'Suirin Obi',
-    ['Wind'] = 'Furin Obi',
-    ['Ice'] = 'Hyorin Obi',
-    ['Thunder'] = 'Rairin Obi',
-    ['Light'] = 'Korin Obi',
-    ['Dark'] = 'Anrin obi'
+local NukeObiOwnedTable = {
+    ['Fire'] = 'karin_obi',
+    ['Earth'] = 'dorin_obi',
+    ['Water'] = 'suirin_obi',
+    ['Wind'] = 'furin_obi',
+    ['Ice'] = 'hyorin_obi',
+    ['Thunder'] = 'rairin_obi',
+    ['Light'] = 'korin_obi',
+    ['Dark'] = 'anrin_obi'
 }
 
-local NukeObiOwnedTable = {
-    ['Fire'] = karin_obi,
-    ['Earth'] = dorin_obi,
-    ['Water'] = suirin_obi,
-    ['Wind'] = furin_obi,
-    ['Ice'] = hyorin_obi,
-    ['Thunder'] = rairin_obi,
-    ['Light'] = korin_obi,
-    ['Dark'] = anrin_obi
+local WeakElementTable = {
+    ['Fire'] = 'Water',
+    ['Earth'] = 'Wind',
+    ['Water'] = 'Thunder',
+    ['Wind'] = 'Ice',
+    ['Ice'] = 'Fire',
+    ['Thunder'] = 'Earth',
+    ['Light'] = 'Dark',
+    ['Dark'] = 'Light'
 }
 
 profile.HandleAbility = function()
@@ -514,14 +537,11 @@ profile.HandleMidcast = function()
         if (string.contains(action.Name, 'Absorb')) then
             gFunc.EquipSet(sets.Absorb)
         end
+    end
 
-        if (ObiCheck(action)) then
-            local obi = NukeObiTable[action.Element]
-            local obiOwned = NukeObiOwnedTable[action.Element]
-            if (obiOwned) then
-                gFunc.Equip('Waist', obi)
-            end
-        end
+    if (ObiCheck(action)) then
+        local obiOwned = NukeObiOwnedTable[action.Element]
+        gFunc.EquipSet(obiOwned)
     end
 
     if (action.Skill ~= 'Ninjutsu' and gcdisplay.GetToggle('Hate')) then
@@ -532,39 +552,6 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Haste)
     end
 end
-
-local NukeObiTable = {
-    ['Fire'] = 'Karin Obi',
-    ['Earth'] = 'Dorin Obi',
-    ['Water'] = 'Suirin Obi',
-    ['Wind'] = 'Furin Obi',
-    ['Ice'] = 'Hyorin Obi',
-    ['Thunder'] = 'Rairin Obi',
-    ['Light'] = 'Korin Obi',
-    ['Dark'] = 'Anrin Obi'
-}
-
-local NukeObiOwnedTable = {
-    ['Fire'] = nil,
-    ['Earth'] = nil,
-    ['Water'] = nil,
-    ['Wind'] = nil,
-    ['Ice'] = nil,
-    ['Thunder'] = rairin_obi,
-    ['Light'] = nil,
-    ['Dark'] = anrin_obi
-}
-
-local WeakElementTable = {
-    ['Fire'] = 'Water',
-    ['Earth'] = 'Wind',
-    ['Water'] = 'Thunder',
-    ['Wind'] = 'Ice',
-    ['Ice'] = 'Fire',
-    ['Thunder'] = 'Earth',
-    ['Light'] = 'Dark',
-    ['Dark'] = 'Light'
-}
 
 function ObiCheck(action)
     local element = action.Element
