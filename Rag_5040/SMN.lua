@@ -14,6 +14,21 @@ local evokers_boots = {
 local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
     Back = 'Warlock\'s Mantle',
 }
+local carbuncle_mitts = {
+    Hands = 'Carbuncle Mitts',
+}
+local yinyang_robe = {
+    Body = 'Yinyang Robe',
+}
+local summoners_doublet = {
+    Body = 'Smn. Doublet +1',
+}
+local summoners_horn = {
+    Head = 'Summoner\'s Horn',
+}
+local conjurers_ring = {
+    -- Ring1 = 'Conjurer\'s Ring',
+}
 
 local sets = {
     Idle = {
@@ -343,6 +358,11 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua')
 sets.carbuncles_cuffs = carbuncles_cuffs
 sets.evokers_boots = evokers_boots
 sets.warlocks_mantle = warlocks_mantle
+sets.carbuncle_mitts = carbuncle_mitts
+sets.yinyang_robe = yinyang_robe
+sets.summoners_doublet = summoners_doublet
+sets.summoners_horn = summoners_horn
+sets.conjurers_ring = conjurers_ring
 profile.Sets = gcmage.AppendSets(sets)
 
 local SmnSkill = T{'Shining Ruby','Glittering Ruby','Crimson Howl','Inferno Howl','Frost Armor','Crystal Blessing','Aerial Armor','Hastega II','Fleet Wind','Hastega','Earthen Ward','Earthen Armor','Rolling Thunder','Lightning Armor','Soothing Current','Ecliptic Growl','Heavenward Howl','Ecliptic Howl','Noctoshield','Dream Shroud','Altana\'s Favor','Reraise','Reraise II','Reraise III','Raise','Raise II','Raise III','Wind\'s Blessing'}

@@ -17,6 +17,9 @@ local blue_cotehardie_plus_one = {
 local dilation_ring = {
     Ring2 = 'Dilation Ring',
 }
+local tp_fencers_ring = {
+    -- Ring1 = 'Fencer\'s Ring',
+}
 
 local sets = {
     Idle = {
@@ -681,6 +684,7 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua')
 sets.blue_cotehardie = blue_cotehardie
 sets.blue_cotehardie_plus_one = blue_cotehardie_plus_one
 sets.dilation_ring = dilation_ring
+sets.tp_fencers_ring = tp_fencers_ring
 profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()

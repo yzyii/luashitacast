@@ -18,6 +18,15 @@ local republic_circlet = {
 local opuntia_hoop = {
     Ring1 = 'Opuntia Hoop',
 }
+local diabolos_pole = {
+    Main = 'Diabolos\'s Pole',
+}
+local sorcerers_ring = {
+    Ring1 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring to work as well in gcmage.lua
+}
+local sorcerers_tonban = {
+    Legs = 'Src. Tonban +1',
+}
 
 local sets = {
     Idle = {
@@ -531,6 +540,9 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua')
 sets.warlocks_mantle = warlocks_mantle
 sets.republic_circlet = republic_circlet
 sets.opuntia_hoop = opuntia_hoop
+sets.diabolos_pole = diabolos_pole
+sets.sorcerers_ring = sorcerers_ring
+sets.sorcerers_tonban = sorcerers_tonban
 profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()

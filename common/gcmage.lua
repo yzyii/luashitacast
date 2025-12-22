@@ -42,7 +42,7 @@ local dream_mittens = {
     Hands = 'Dream Mittens +1',
 }
 local skulkers_cape = {
-    Back = 'Skulker\'s Cape',
+    -- Back = 'Skulker\'s Cape',
 }
 local wizards_mantle = {
     -- Back = 'Wizard\'s Mantle',
@@ -66,59 +66,9 @@ local overlords_ring = {
     Ring1 = 'Overlord\'s Ring',
 }
 
--- BLM Specific
-local diabolos_pole = {
-    Main = 'Diabolos\'s Pole',
-}
-local sorcerers_ring = {
-    Ring1 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
-}
-local sorcerers_tonban = {
-    Legs = 'Src. Tonban +1',
-}
-
--- SMN Specific
-local carbuncle_mitts = {
-    Hands = 'Carbuncle Mitts',
-}
-local yinyang_robe = {
-    Body = 'Yinyang Robe',
-}
-local summoners_doublet = {
-    Body = 'Smn. Doublet +1',
-}
-local summoners_horn = {
-    Head = 'Summoner\'s Horn',
-}
-local conjurers_ring = {
-    -- Ring1 = 'Conjurer\'s Ring',
-}
-
--- WHM Specific
-local cure_clogs = {
-    -- Feet = 'Cure Clogs',
-}
-local ruckes_rung = {
-    -- Main = 'Rucke\'s Rung',
-}
-local medicine_ring = {
-    -- Ring1 = 'Medicine Ring',
-}
-local mjollnir = {
-    -- Main = 'Mjollnir',
-}
-local asklepios = { -- Used for Cures with Mjollnir when /NIN
-    -- Sub = 'Asklepios',
-}
-
--- RDM Specific
-local tp_fencers_ring = {
-    Ring1 = 'Fencer\'s Ring',
-}
-
 -- For Meleeing on WHM, BRD or RDM. Fenrir's Earring will be prioritised over Diabolos's Earring if using the same slot
 local tp_fenrirs_earring = {
-    Ear2 = 'Fenrir\'s Earring',
+    -- Ear2 = 'Fenrir\'s Earring',
 }
 local tp_diabolos_earring = {
     -- Ear2 = 'Diabolos\'s Earring',
@@ -1020,23 +970,6 @@ function gcmage.AppendSets(sets)
     sets.water_ring = water_ring
     sets.overlords_ring = overlords_ring
 
-    sets.diabolos_pole = diabolos_pole
-    sets.sorcerers_ring = sorcerers_ring
-    sets.sorcerers_tonban = sorcerers_tonban
-
-    sets.carbuncle_mitts = carbuncle_mitts
-    sets.yinyang_robe = yinyang_robe
-    sets.summoners_doublet = summoners_doublet
-    sets.summoners_horn = summoners_horn
-    sets.conjurers_ring = conjurers_ring
-
-    sets.cure_clogs = cure_clogs
-    sets.ruckes_rung = ruckes_rung
-    sets.medicine_ring = medicine_ring
-    sets.mjollnir = mjollnir
-    sets.asklepios = asklepios
-
-    sets.tp_fencers_ring = tp_fencers_ring
     sets.tp_fenrirs_earring = tp_fenrirs_earring
     sets.tp_diabolos_earring = tp_diabolos_earring
 

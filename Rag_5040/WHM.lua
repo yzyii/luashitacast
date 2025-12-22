@@ -16,6 +16,21 @@ local virology_ring = {
 local republic_circlet = {
     -- Head = 'Republic Circlet',
 }
+local cure_clogs = {
+    -- Feet = 'Cure Clogs',
+}
+local ruckes_rung = {
+    -- Main = 'Rucke\'s Rung',
+}
+local medicine_ring = {
+    -- Ring1 = 'Medicine Ring',
+}
+local mjollnir = {
+    -- Main = 'Mjollnir',
+}
+local asklepios = { -- Used for Cures with Mjollnir when /NIN
+    -- Sub = 'Asklepios',
+}
 
 local sets = {
     Idle = {},
@@ -101,6 +116,11 @@ gcmage = gFunc.LoadFile('common\\gcmage.lua')
 sets.warlocks_mantle = warlocks_mantle
 sets.virology_ring = virology_ring
 sets.republic_circlet = republic_circlet
+sets.cure_clogs = cure_clogs
+sets.ruckes_rung = ruckes_rung
+sets.medicine_ring = medicine_ring
+sets.mjollnir = mjollnir
+sets.asklepios = asklepios
 profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
