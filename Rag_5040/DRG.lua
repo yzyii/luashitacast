@@ -5,7 +5,7 @@ local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 local heal_hp_threshold_whm = 859
 local heal_hp_threshold_rdm = 869
 
--- Comment out the equipment within these sets if you do not have them or wish to use them
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local ethereal_earring = {
     Ear2 = 'Ethereal Earring',
 }

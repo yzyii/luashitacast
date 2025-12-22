@@ -1,5 +1,7 @@
-local fenrirs_earring = false -- Not used for RNG at all
-local fenrirs_earring_slot = 'Ear2'
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local fenrirs_earring = { -- Not used for RNG at all
+    Ear2 = 'Fenrir\'s Earring',
+}
 
 --[[
 --------------------------------
@@ -111,8 +113,8 @@ function gcmelee.DoDefault()
 
                 gFunc.EquipSet('TP_LowAcc')
                 if (player.MainJob ~= 'RNG') then
-                    if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
-                        gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+                    if (environment.Time >= 6 and environment.Time < 18) then
+                        gFunc.EquipSet('fenrirs_earring')
                     end
                 end
                 if gData.GetBuffCount('Aftermath') > 0 then
@@ -139,8 +141,8 @@ function gcmelee.DoFenrirsEarring()
 
     if (isDPS) then
         if (player.MainJob ~= 'RNG') then
-            if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
-                gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+            if (environment.Time >= 6 and environment.Time < 18) then
+                gFunc.EquipSet('fenrirs_earring')
             end
         end
     end
@@ -228,6 +230,11 @@ end
 
 function gcmelee.DoAbility()
     gcinclude.DoAbility()
+end
+
+function gcmelee.AppendSets(sets)
+
+    return sets
 end
 
 return gcmelee

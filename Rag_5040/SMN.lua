@@ -4,7 +4,7 @@ local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including c
 
 local cureMP = 895 -- Cure set max MP
 
--- Comment out the equipment within these sets if you do not have them or wish to use them
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local carbuncles_cuffs = {
     Hands = 'Carbuncle\'s Cuffs',
 }

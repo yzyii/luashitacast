@@ -14,7 +14,7 @@ local rairin_obi = true
 local korin_obi = true
 local anrin_obi = true
 
--- Comment out the equipment within these sets if you do not have them or wish to use them
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local parade_gorget = {
     Neck = 'Parade Gorget',
 }

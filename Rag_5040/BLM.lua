@@ -8,7 +8,7 @@ local rdmSJMaxMP = 699 -- The Max MP you have when /rdm in your idle set
 
 local nukeExtraThreshold = 850 -- The minimum MP for which NukeExtra StoneskinExtra, and PhalanxExtra set will be used instead of regular sets (to allow additional nukes using max mp sets)
 
--- Comment out the equipment within these sets if you do not have them or wish to use them
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
     Back = 'Warlock\'s Mantle',
 }

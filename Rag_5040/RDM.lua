@@ -7,7 +7,7 @@ local whmSJMaxMP = 661 -- The Max MP you have when /whm in your idle set
 local blmSJMaxMP = 680 -- The Max MP you have when /blm in your idle set
 local drkSJMaxMP = 604 -- The Max MP you have when /drk in your idle set
 
--- Comment out the equipment within these sets if you do not have them or wish to use them
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local blue_cotehardie = {
     -- Body = 'Blue Cotehardie',
 }

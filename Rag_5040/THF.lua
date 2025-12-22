@@ -2,7 +2,7 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
--- Comment out the equipment within these sets if you do not have them or wish to use them
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local evasion_master_casters_mitts = {
     -- Hands = 'Mst.Cst. Mitts',
 }

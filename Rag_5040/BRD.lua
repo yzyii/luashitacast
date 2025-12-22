@@ -8,7 +8,7 @@ local whmSJMaxMP = 233 -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
--- Comment out the equipment within these sets if you do not have them or wish to use them
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
     Back = 'Warlock\'s Mantle',
 }

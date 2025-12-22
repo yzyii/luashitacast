@@ -3,7 +3,7 @@ local profile = {}
 local max_hp_in_idle_with_regen_gear_equipped = 1632
 local fastCastValue = 0.02 -- 2% from gear listed in Precast set
 
--- Comment out the equipment within these sets if you do not have them or wish to use them
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local temple_gaiters = {
     Feet = 'Temple Gaiters',
 }
