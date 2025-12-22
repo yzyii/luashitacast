@@ -377,6 +377,12 @@ local sets = {
     Absorb = {
         Ring2 = 'Snow Ring',
     },
+
+    Weapon_Loadout_1 = {
+        Main = 'Tredecim Scythe',
+    },
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 
 profile.SetMacroBook = function()

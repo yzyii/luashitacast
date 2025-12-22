@@ -4,7 +4,6 @@ local load_stylist = true -- set to true to just load stylist on game start. thi
 
 local toggleDisplayHeadOnAbility = true
 
-
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local kingdom_aketon = {
     -- Body = 'Kingdom Aketon',

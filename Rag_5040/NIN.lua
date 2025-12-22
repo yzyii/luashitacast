@@ -1,7 +1,3 @@
--- NIN will lose TP on many actions when switching to Staff.
--- Use "/lac disable Main" to prevent weapon swaps if this is not desired.
--- /locktp can be used as well however will lock Range and Ammo slots.
-
 local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
@@ -133,6 +129,10 @@ local sets = {
     WS_BladeKu = {},
 
     Ranged = {},
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 
 profile.SetMacroBook = function()
@@ -256,6 +256,8 @@ end
 profile.OnLoad = function()
     gcinclude.SetAlias(T{'nuke'})
     gcdisplay.CreateCycle('Nuke', {[1] = 'Potency', [2] = 'Accuracy',})
+    gcinclude.SetAlias(T{'staff'})
+    gcdisplay.CreateCycle('Staff', {[1] = 'Enabled', [2] = 'Disabled',})
     gcmelee.Load()
     profile.SetMacroBook()
 end
@@ -263,12 +265,16 @@ end
 profile.OnUnload = function()
     gcmelee.Unload()
     gcinclude.ClearAlias(T{'nuke'})
+    gcinclude.ClearAlias(T{'staff'})
 end
 
 profile.HandleCommand = function(args)
     if (args[1] == 'nuke') then
         gcdisplay.AdvanceCycle('Nuke')
         gcinclude.Message('Nuke', gcdisplay.GetCycle('Nuke'))
+    elseif (args[1] == 'staff') then
+        gcdisplay.AdvanceCycle('Staff')
+        gcinclude.Message('Staff', gcdisplay.GetCycle('Staff'))
     else
         gcmelee.DoCommands(args)
     end
@@ -358,10 +364,7 @@ profile.HandleMidcast = function()
         if (HateDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.Hate)
         end
-        local staff = ElementalStaffTable[action.Element]
-        if staff ~= '' then
-            gFunc.Equip('Main', staff)
-        end
+        EquipStaff(action)
     elseif (action.Skill == 'Dark Magic') then
         if (DrkDarkMagic:contains(action.Name)) then
             gFunc.EquipSet(sets.DrkDarkMagic)
@@ -379,14 +382,18 @@ profile.HandleMidcast = function()
 end
 
 function EquipStaffAndObi(action)
-    local staff = ElementalStaffTable[action.Element]
-    if staff ~= '' then
-        gFunc.Equip('Main', staff)
-    end
+    EquipStaff(action)
 
     if (ObiCheck(action)) then
         local obiOwned = NukeObiOwnedTable[action.Element]
         gFunc.EquipSet(obiOwned)
+    end
+end
+
+function EquipStaff(action)
+    if (gcdisplay.GetCycle('Staff') == 'Enabled') then
+        local staff = ElementalStaffTable[action.Element]
+        gFunc.EquipSet(staff)
     end
 end
 

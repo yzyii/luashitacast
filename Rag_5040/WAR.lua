@@ -47,6 +47,10 @@ local sets = {
     SAM = {
         Ear1 = 'Attila\'s Earring',
     },
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 
 profile.SetMacroBook = function()

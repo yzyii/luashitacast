@@ -59,6 +59,10 @@ local sets = {
     Ready_Physical = {},
     Ready_Magic = {},
     Call_Beast = {},
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 
 profile.SetMacroBook = function()

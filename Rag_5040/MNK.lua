@@ -114,7 +114,7 @@ local sets = {
     EarthRes = {},
     WindRes = {},
     WaterRes = {},
-    Evasion = { -- Currently using this as a set for 2H Zergs. See README.md
+    Evasion = { -- Currently using this as an alternate HighAcc set for 2H Zergs. See README.md
         Head = 'Maat\'s Cap',
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
@@ -274,6 +274,17 @@ local sets = {
         Waist = 'Black Belt',
         Legs = 'Shura Haidate',
         Feet = 'Dune Boots',
+    },
+
+    Weapon_Loadout_1 = {
+        Main = 'Destroyers',
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Cross-Counters',
+    },
+    Weapon_Loadout_3 = {
+        Main = 'Faith Baghnakhs',
+        Ammo = 'Virtue Stone',
     },
 }
 

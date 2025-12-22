@@ -479,6 +479,10 @@ local sets = {
         Legs = 'Glt. Breeches +1',
         Feet = 'Vlr. Leggings +1',
     },
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 
 profile.SetMacroBook = function()

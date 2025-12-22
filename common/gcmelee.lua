@@ -23,19 +23,28 @@ local TpVariantTable = {
 
 local tp_variant = 1
 
+local WeaponOverrideTable = {
+    [1] = 'None',
+    [2] = '1',
+    [3] = '2',
+    [4] = '3',
+}
+
+local weapon_override = 1
+
 local lastIdleSetBeforeEngaged = ''
 
 local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
 
 local AliasList = T{
-    'tpset','tp','mode','dps','lag',
+    'tpset','tp','mode','dps','lag','weapon','wl'
 }
 
 local utsuBuffs = T{
     [66] = 1,
     [444] = 2,
     [445] = 3,
-    [446] = 4,
+    [446] = 4, 
 }
 
 function gcmelee.SetIsDPS(isDPSVal)
@@ -64,6 +73,12 @@ function gcmelee.DoCommands(args)
             tp_variant = 1
         end
         gcinclude.Message('TP Set', TpVariantTable[tp_variant])
+    elseif (args[1] == 'weapon' or args[1] == 'wl') then
+        weapon_override = weapon_override + 1
+        if (weapon_override > #WeaponOverrideTable) then
+            weapon_override = 1
+        end
+        gcinclude.Message('Weapon Loadout', WeaponOverrideTable[weapon_override])
     elseif (args[1] == 'dps') then
         isDPS = not isDPS
         gcinclude.Message('DPS Mode', isDPS)
@@ -149,6 +164,9 @@ function gcmelee.DoFenrirsEarring()
 end
 
 function gcmelee.DoDefaultOverride()
+    if (weapon_override > 1) then
+        gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
+    end
     gcinclude.DoDefaultOverride(true)
 end
 

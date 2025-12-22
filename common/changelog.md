@@ -408,3 +408,6 @@
 ### v2.0.0
 - MNK - Remove SJ_THF set usage from WS usage
 - DRK - Fix Obi usage
+- Melee - Adds Weapon Loadout functionality /weapon or /wl
+- NIN - Adds a toggle to prevent staff usage on spellcast /staff
+- Overhauls every single conditional item across all files to allow for easier Level Sync and Packer validate support
