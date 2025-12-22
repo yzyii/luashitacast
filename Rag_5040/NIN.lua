@@ -6,17 +6,32 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
--- Set as '' if you do not have the staff
-local fire_staff = 'Vulcan\'s Staff'
-local earth_staff = 'Terra\'s Staff'
-local water_staff = 'Neptune\'s Staff'
-local wind_staff = 'Auster\'s Staff'
-local ice_staff = 'Aquilo\'s Staff'
-local thunder_staff = 'Jupiter\'s Staff'
-local light_staff = 'Apollo\'s Staff'
-local dark_staff = 'Pluto\'s Staff'
-
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local fire_staff = {
+    Main = 'Vulcan\'s Staff',
+}
+local earth_staff = {
+    Main = 'Terra\'s Staff',
+}
+local water_staff = {
+    Main = 'Neptune\'s Staff',
+}
+local wind_staff = {
+    Main = 'Auster\'s Staff',
+}
+local ice_staff = {
+    Main = 'Aquilo\'s Staff',
+}
+local thunder_staff = {
+    Main = 'Jupiter\'s Staff',
+}
+local light_staff = {
+    Main = 'Apollo\'s Staff',
+}
+local dark_staff = {
+    Main = 'Pluto\'s Staff',
+}
+
 local karin_obi = {
     Waist = 'Karin Obi',
 }
@@ -133,6 +148,14 @@ Everything below can be ignored.
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
+sets.fire_staff = fire_staff
+sets.earth_staff = earth_staff
+sets.water_staff = water_staff
+sets.wind_staff = wind_staff
+sets.ice_staff = ice_staff
+sets.thunder_staff = thunder_staff
+sets.light_staff = light_staff
+sets.dark_staff = dark_staff
 sets.karin_obi = karin_obi
 sets.dorin_obi = dorin_obi
 sets.suirin_obi = suirin_obi
@@ -161,14 +184,14 @@ local NinElemental = T{
 }
 
 local ElementalStaffTable = {
-    ['Fire'] = fire_staff,
-    ['Earth'] = earth_staff,
-    ['Water'] = water_staff,
-    ['Wind'] = wind_staff,
-    ['Ice'] = ice_staff,
-    ['Thunder'] = thunder_staff,
-    ['Light'] = light_staff,
-    ['Dark'] = dark_staff
+    ['Fire'] = 'fire_staff',
+    ['Earth'] = 'earth_staff',
+    ['Water'] = 'water_staff',
+    ['Wind'] = 'wind_staff',
+    ['Ice'] = 'ice_staff',
+    ['Thunder'] = 'thunder_staff',
+    ['Light'] = 'light_staff',
+    ['Dark'] = 'dark_staff'
 }
 
 local NukeObiOwnedTable = {
