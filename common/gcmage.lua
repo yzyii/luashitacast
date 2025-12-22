@@ -35,15 +35,6 @@ local uggalepih_pendant = {
 local master_casters_bracelets = {
     Hands = 'Mst.Cst. Bracelets',
 }
-local dream_boots = {
-    Feet = 'Dream Boots +1',
-}
-local dream_mittens = {
-    Hands = 'Dream Mittens +1',
-}
-local skulkers_cape = {
-    -- Back = 'Skulker\'s Cape',
-}
 local wizards_mantle = {
     -- Back = 'Wizard\'s Mantle',
 }
@@ -959,9 +950,6 @@ end
 function gcmage.AppendSets(sets)
     sets.uggalepih_pendant = uggalepih_pendant
     sets.master_casters_bracelets = master_casters_bracelets
-    sets.dream_boots = dream_boots
-    sets.dream_mittens = dream_mittens
-    sets.skulkers_cape = skulkers_cape
     sets.wizards_mantle = wizards_mantle
     sets.republic_gold_medal = republic_gold_medal
     sets.diabolos_earring = diabolos_earring
@@ -973,7 +961,7 @@ function gcmage.AppendSets(sets)
     sets.tp_fenrirs_earring = tp_fenrirs_earring
     sets.tp_diabolos_earring = tp_diabolos_earring
 
-    return sets
+    return gcinclude.AppendSets(sets)
 end
 
 return gcmage

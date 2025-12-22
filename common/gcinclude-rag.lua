@@ -1,17 +1,32 @@
 local display_messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles
 
-local kingdom_aketon = false
-local republic_aketon = false
-local federation_aketon = false
-local ducal_aketon = false
-
-local dream_boots = true
-local dream_mittens = true
-local skulkers_cape = false
-
 local load_stylist = true -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work.
 
 local toggleDisplayHeadOnAbility = true
+
+
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local kingdom_aketon = {
+    -- Body = 'Kingdom Aketon',
+}
+local republic_aketon = {
+    -- Body = 'Republic Aketon',
+}
+local federation_aketon = {
+    -- Body = 'Federation Aketon',
+}
+local ducal_aketon = {
+    -- Body = 'Ducal Aketon',
+}
+local dream_boots = {
+    Feet = 'Dream Boots +1',
+}
+local dream_mittens = {
+    Hands = 'Dream Mittens +1',
+}
+local skulkers_cape = {
+    -- Back = 'Skulker\'s Cape',
+}
 
 -- Add additional equipment here that you want to automatically lock when equipping
 local LockableEquipment = {
@@ -274,13 +289,11 @@ function gcinclude.DoDefaultOverride(isMelee)
 
     if (environment.Area ~= nil) and (Towns:contains(environment.Area)) then
         gFunc.EquipSet('Town')
-        if (ducal_aketon == true) then
-            gFunc.Equip('Body', 'Ducal Aketon')
-        end
+        gFunc.EquipSet('ducal_aketon')
     end
-    if (environment.Area ~= nil) and (Sandy:contains(environment.Area) and kingdom_aketon == true) then gFunc.Equip('Body', 'Kingdom Aketon') end
-    if (environment.Area ~= nil) and (Bastok:contains(environment.Area) and republic_aketon == true) then gFunc.Equip('Body', 'Republic Aketon') end
-    if (environment.Area ~= nil) and (Windy:contains(environment.Area) and federation_aketon == true) then gFunc.Equip('Body', 'Federation Aketon') end
+    if (environment.Area ~= nil) and (Sandy:contains(environment.Area)) then gFunc.EquipSet('kingdom_aketon') end
+    if (environment.Area ~= nil) and (Bastok:contains(environment.Area)) then gFunc.EquipSet('republic_aketon') end
+    if (environment.Area ~= nil) and (Windy:contains(environment.Area)) then gFunc.EquipSet('federation_aketon') end
 
     if (gcdisplay.IdleSet == 'DT') then
         if (isMelee) then
@@ -341,19 +354,11 @@ function gcinclude.DoItem()
     local item = gData.GetAction()
 
     if (item.Name == 'Silent Oil') then
-        if (dream_boots) then
-            gFunc.Equip('Feet', 'Dream Boots +1')
-        end
-        if (skulkers_cape) then
-            gFunc.Equip('Back', 'Skulker\'s Cape')
-        end
+        gFunc.EquipSet('dream_boots')
+        gFunc.EquipSet('skulkers_cape')
     elseif (item.Name == 'Prism Powder') then
-        if (dream_mittens) then
-            gFunc.Equip('Hands', 'Dream Mittens +1')
-        end
-        if (skulkers_cape) then
-            gFunc.Equip('Back', 'Skulker\'s Cape')
-        end
+        gFunc.EquipSet('dream_mittens')
+        gFunc.EquipSet('skulkers_cape')
     end
 end
 
@@ -391,6 +396,18 @@ function gcinclude.BuildLockableSet(equipment)
     end
 
     return lockableSet
+end
+
+function gcinclude.AppendSets(sets)
+    sets.kingdom_aketon = kingdom_aketon
+    sets.republic_aketon = republic_aketon
+    sets.federation_aketon = federation_aketon
+    sets.ducal_aketon = ducal_aketon
+    sets.dream_boots = dream_boots
+    sets.dream_mittens = dream_mittens
+    sets.skulkers_cape = skulkers_cape
+
+    return sets
 end
 
 return gcinclude

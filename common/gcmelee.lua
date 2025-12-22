@@ -234,7 +234,7 @@ end
 
 function gcmelee.AppendSets(sets)
     sets.fenrirs_earring = fenrirs_earring
-    return sets
+    return gcinclude.AppendSets(sets)
 end
 
 return gcmelee
