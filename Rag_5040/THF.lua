@@ -140,8 +140,10 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 sets.evasion_master_casters_mitts = evasion_master_casters_mitts
-profile.Sets = sets
+profile.Sets = gcmelee.AppendSets(sets)
 
 local ammo = T{'aacid','asleep','abloody','ablind','avenom'}
 
@@ -164,7 +166,6 @@ local saOverride = 0
 local taOverride = 0
 local taggedMobs = {}
 
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 actionpacket = gFunc.LoadFile('common\\actionpacket.lua')
 
 profile.HandleAbility = function()

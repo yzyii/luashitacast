@@ -71,13 +71,14 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 sets.gaudy_harness = gaudy_harness
 sets.muscle_belt = muscle_belt
 sets.presidential_hairpin = presidential_hairpin
 sets.dream_ribbon = dream_ribbon
-profile.Sets = sets
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+profile.Sets = gcmelee.AppendSets(sets)
 
 local pets = T{'sheep','lizard','crab','tiger','rabbit','mandy','flytrap'}
 

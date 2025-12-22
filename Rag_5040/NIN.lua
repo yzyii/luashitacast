@@ -116,6 +116,8 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 sets.shinobi_ring = shinobi_ring
 sets.koga_tekko = koga_tekko
 sets.koga_tekko_plus_one = koga_tekko_plus_one
@@ -124,7 +126,7 @@ sets.warlocks_mantle = warlocks_mantle
 sets.fenrirs_stone = fenrirs_stone
 sets.koga_hakama = koga_hakama
 sets.koga_hakama_plus_one = koga_hakama_plus_one
-profile.Sets = sets
+profile.Sets = gcmelee.AppendSets(sets)
 
 local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi', 'Kurayami: Ichi', 'Hojo: Ichi' }
 local HateDebuffs = T{ 'Bind', 'Sleep', 'Poison', 'Blind' }
@@ -178,8 +180,6 @@ local WeakElementTable = {
     ['Light'] = 'Dark',
     ['Dark'] = 'Light'
 }
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
     gcmelee.DoAbility()

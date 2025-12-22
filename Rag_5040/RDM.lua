@@ -676,12 +676,12 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmage = gFunc.LoadFile('common\\gcmage.lua')
+
 sets.blue_cotehardie = blue_cotehardie
 sets.blue_cotehardie_plus_one = blue_cotehardie_plus_one
 sets.dilation_ring = dilation_ring
-profile.Sets = sets
-
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
+profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmage.DoAbility()

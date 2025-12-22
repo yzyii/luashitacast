@@ -525,12 +525,13 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+gcmage = gFunc.LoadFile('common\\gcmage.lua')
+
 sets.warlocks_mantle = warlocks_mantle
 sets.republic_circlet = republic_circlet
 sets.opuntia_hoop = opuntia_hoop
-profile.Sets = sets
-
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
+profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmage.DoAbility()

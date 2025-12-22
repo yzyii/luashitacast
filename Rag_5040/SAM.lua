@@ -59,11 +59,11 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 sets.myochin_kabuto = myochin_kabuto
 sets.saotome_kote = saotome_kote
-profile.Sets = sets
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmelee.DoAbility()

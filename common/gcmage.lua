@@ -1,3 +1,9 @@
+-- Set to true if you want messages every time Mst.Cst. Bracelets are used.
+local log_conquest = false
+
+-- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
+local dark_and_abyssal_earrings = true
+
 -- Set as '' if you do not have the staff
 local fire_staff = 'Vulcan\'s Staff'
 local earth_staff = 'Terra\'s Staff'
@@ -7,6 +13,10 @@ local ice_staff = 'Aquilo\'s Staff'
 local thunder_staff = 'Jupiter\'s Staff'
 local light_staff = 'Apollo\'s Staff'
 local dark_staff = 'Pluto\'s Staff'
+
+-- BLM / SMN Specific
+local claustrum = false
+local bahamuts_staff = false
 
 -- Set to true if you have the obi
 local karin_obi = true
@@ -18,73 +28,101 @@ local rairin_obi = true
 local korin_obi = true
 local anrin_obi = true
 
--- Set to true if you have the item, and specify which ring or earring slot it will override
-local diabolos_pole = true
-local uggalepih_pendant = true
-local master_casters_bracelets = true
-local dream_boots = true
-local dream_mittens = true
-local skulkers_cape = false
-local wizards_mantle = false
-local republic_gold_medal = true -- Note: Disabled for BRD
-
-local diabolos_earring = false
-local diabolos_earring_slot = 'Ear2'
-local diabolos_ring = true
-local diabolos_ring_slot = 'Ring2'
-local ice_ring = false
-local ice_ring_slot = 'Ring2'
-local water_ring = false
-local water_ring_slot = 'Ring2'
-local overlords_ring = true
-local overlords_ring_slot = 'Ring1'
-local wizards_earring = false
-local wizards_earring_slot = 'Ear2'
-local healers_earring = false
-local healers_earring_slot = 'Ear2'
-
--- RDM Specific
-local tp_fencers_ring = true
-local tp_fencers_ring_slot = 'Ring1'
-
--- BLM / SMN Specific
-local claustrum = false
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local uggalepih_pendant = {
+    Neck = 'Uggalepih Pendant',
+}
+local master_casters_bracelets = {
+    Hands = 'Mst.Cst. Bracelets',
+}
+local dream_boots = {
+    Feet = 'Dream Boots +1',
+}
+local dream_mittens = {
+    Hands = 'Dream Mittens +1',
+}
+local skulkers_cape = {
+    Back = 'Skulker\'s Cape',
+}
+local wizards_mantle = {
+    -- Back = 'Wizard\'s Mantle',
+}
+local republic_gold_medal = { -- Note: Disabled for BRD
+    Neck = 'Rep.Gold Medal',
+}
+local diabolos_earring = { -- Forces usage of this for NukeACC, EnfeebleACC, and Dark Magic
+    -- Ear2 = 'Diabolos\'s Earring',
+}
+local diabolos_ring = {
+    Ring2 = 'Diabolos\'s Ring',
+}
+local ice_ring = {
+    -- Ring2 = 'Ice Ring',
+}
+local water_ring = {
+    -- Ring2 = 'Water Ring',
+}
+local overlords_ring = {
+    Ring1 = 'Overlord\'s Ring',
+}
 
 -- BLM Specific
-local sorcerers_ring = true
-local sorcerers_ring_slot = 'Ring1' -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
--- Leave as '' if you do not have them.
-local sorcerers_tonban = 'Src. Tonban +1'
+local diabolos_pole = {
+    Main = 'Diabolos\'s Pole',
+}
+local sorcerers_ring = {
+    Ring1 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring override to work
+}
+local sorcerers_tonban = {
+    Legs = 'Src. Tonban +1',
+}
 
 -- SMN Specific
-local carbuncle_mitts = true
-local yinyang_robe = true
-local bahamuts_staff = false
--- Leave as '' if you do not have them.
-local summoners_doublet = 'Smn. Doublet +1'
-local summoners_horn = 'Summoner\'s Horn'
-local conjurers_ring = false
-local conjurers_ring_slot = 'Ring1'
+local carbuncle_mitts = {
+    Hands = 'Carbuncle Mitts',
+}
+local yinyang_robe = {
+    Body = 'Yinyang Robe',
+}
+local summoners_doublet = {
+    Body = 'Smn. Doublet +1',
+}
+local summoners_horn = {
+    Head = 'Summoner\'s Horn',
+}
+local conjurers_ring = {
+    -- Ring1 = 'Conjurer\'s Ring',
+}
 
 -- WHM Specific
-local cure_clogs = false
-local ruckes_rung = false
-local medicine_ring = false
-local medicine_ring_slot = 'Ring1'
-local mjollnir = false
-local asklepios = false -- used for cures with mjollnir when /nin
+local cure_clogs = {
+    -- Feet = 'Cure Clogs',
+}
+local ruckes_rung = {
+    -- Main = 'Rucke\'s Rung',
+}
+local medicine_ring = {
+    -- Ring1 = 'Medicine Ring',
+}
+local mjollnir = {
+    -- Main = 'Mjollnir',
+}
+local asklepios = { -- Used for Cures with Mjollnir when /NIN
+    -- Sub = 'Asklepios',
+}
 
--- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
-local dark_and_abyssal_earrings = true
+-- RDM Specific
+local tp_fencers_ring = {
+    Ring1 = 'Fencer\'s Ring',
+}
 
 -- For Meleeing on WHM, BRD or RDM. Fenrir's Earring will be prioritised over Diabolos's Earring if using the same slot
-local fenrirs_earring = true
-local fenrirs_earring_slot = 'Ear2'
-local tp_diabolos_earring = false
-local tp_diabolos_earring_slot = 'Ear2'
-
--- Set to true if you want messages every time Mst.Cst. Bracelets are used.
-local log_conquest = false
+local tp_fenrirs_earring = {
+    Ear2 = 'Fenrir\'s Earring',
+}
+local tp_diabolos_earring = {
+    -- Ear2 = 'Diabolos\'s Earring',
+}
 
 --[[
 --------------------------------
@@ -322,8 +360,8 @@ end
 function gcmage.DoFenrirsEarring()
     local environment = gData.GetEnvironment()
 
-    if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
-        gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+    if (environment.Time >= 6 and environment.Time < 18) then
+        gFunc.EquipSet('tp_fenrirs_earring')
     end
 end
 
@@ -339,15 +377,15 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
             if (player.MP >= setMP + addMP) then
                 equipMaxMP = true
             end
-        elseif (player.SubJob == "NIN") and ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP then
+        elseif (player.SubJob == 'NIN') and ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP then
             equipMaxMP = true
-        elseif (player.SubJob == "WHM") and whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP then
+        elseif (player.SubJob == 'WHM') and whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP then
             equipMaxMP = true
-        elseif (player.SubJob == "BLM") and blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP then
+        elseif (player.SubJob == 'BLM') and blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP then
             equipMaxMP = true
-        elseif (player.SubJob == "RDM") and rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP then
+        elseif (player.SubJob == 'RDM') and rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP then
             equipMaxMP = true
-        elseif (player.SubJob == "DRK") and drkSJMMP ~= nil and player.MP >= drkSJMMP + addMP then
+        elseif (player.SubJob == 'DRK') and drkSJMMP ~= nil and player.MP >= drkSJMMP + addMP then
             equipMaxMP = true
         end
     end
@@ -355,8 +393,8 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     if (equipMaxMP) then
         gFunc.EquipSet('IdleMaxMP')
         if (conquest:GetOutsideControl()) then
-            if (republic_gold_medal and player.MainJob ~= 'BRD') then
-                gFunc.Equip('Neck', 'Rep.Gold Medal')
+            if (player.MainJob ~= 'BRD') then
+                gFunc.EquipSet('republic_gold_medal')
             end
         end
     end
@@ -375,26 +413,18 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
             if staff ~= '' then
                 gFunc.Equip('Main', staff)
             end
-            if (player.HPP <= 75 and player.TP < 1000) and conjurers_ring then
-                gFunc.Equip(conjurers_ring_slot, 'Conjurer\'s Ring')
+            if (player.HPP <= 75 and player.TP < 1000) then
+                gFunc.EquipSet('conjurers_ring')
             end
 
             if (gData.GetPet().Name == 'Carbuncle') then
-                if (carbuncle_mitts) then
-                    gFunc.Equip('Hands', 'Carbuncle Mitts')
-                end
-                if (yinyang_robe) then
-                    gFunc.Equip('Body', 'Yinyang Robe')
-                end
+                gFunc.EquipSet('carbuncle_mitts')
+                gFunc.EquipSet('yinyang_robe')
             elseif (lastSummoningElement == environment.DayElement) then
-                if (summoners_doublet ~= '') then
-                    gFunc.Equip('Body', summoners_doublet)
-                end
+                gFunc.EquipSet('summoners_doublet')
             end
             if (lastSummoningElement == environment.WeatherElement) then
-                if (summoners_horn ~= '') then
-                    gFunc.Equip('Head', summoners_horn)
-                end
+                gFunc.EquipSet('summoners_horn')
             end
         end
     end
@@ -402,11 +432,11 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     if (player.MainJob == 'RDM' or player.MainJob == 'WHM' or player.MainJob == 'BRD' or player.MainJob == 'SMN') then
         if (gcdisplay.GetCycle('TP') ~= 'Off' and player.Status == 'Engaged') then
             gFunc.EquipSet('TP')
-            if (environment.WeatherElement ~= 'Dark') and tp_diabolos_earring then
-                gFunc.Equip(tp_diabolos_earring_slot, 'Diabolos\'s Earring')
+            if (environment.WeatherElement ~= 'Dark') then
+                gFunc.EquipSet('tp_diabolos_earring')
             end
-            if (fenrirs_earring and (environment.Time >= 6 and environment.Time < 18)) then
-                gFunc.Equip(fenrirs_earring_slot, 'Fenrir\'s Earring')
+            if (environment.Time >= 6 and environment.Time < 18) then
+                gFunc.EquipSet('tp_fenrirs_earring')
             end
             if gData.GetBuffCount(580) > 0 then -- Horizon Mjollnir Haste Buff
                 gFunc.EquipSet('TP_Mjollnir_Haste')
@@ -417,8 +447,8 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
             if (player.SubJob == 'NIN') then
                 gFunc.EquipSet('TP_NIN')
             end
-            if (player.MainJob == 'RDM' and tp_fencers_ring and player.HPP <= 75 and player.TP <= 1000) then
-                gFunc.Equip(tp_fencers_ring_slot, 'Fencer\'s Ring')
+            if (player.MainJob == 'RDM' and player.HPP <= 75 and player.TP <= 1000) then
+                gFunc.EquipSet('tp_fencers_ring')
             end
         end
     end
@@ -427,17 +457,15 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
 
     if (player.Status == 'Resting') then
         lastSummoningElement = ''
-        if (player.SubJob == "BLM" and wizards_mantle) then
-            gFunc.Equip('Back', 'Wizard\'s Mantle')
+        if (player.SubJob == 'BLM') then
+            gFunc.EquipSet('wizards_mantle')
         end
         if (player.MPP >= 95 or restingMaxMP) then
             restingMaxMP = true
             gcinclude.DoDefaultIdle()
             gFunc.EquipSet('IdleMaxMP')
             if (conquest:GetOutsideControl()) then
-                if (republic_gold_medal) then
-                    gFunc.Equip('Neck', 'Rep.Gold Medal')
-                end
+                gFunc.EquipSet('republic_gold_medal')
             end
             if (dark_staff ~= '') then
                 gFunc.Equip('Main', dark_staff)
@@ -496,18 +524,18 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     local target = gData.GetActionTarget()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
     local castTime = action.CastTime
-    if (player.SubJob == "RDM") then
+    if (player.SubJob == 'RDM') then
         fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
-    if (player.MainJob == "WHM") then
+    if (player.MainJob == 'WHM') then
         if (string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga')) then
-            if (cure_clogs) then
+            if (cure_clogs.Feet) then
                 fastCastValue = fastCastValue + 0.15 -- Note, this should actually be 0.13 if you own both Rostrum Pumps and Cure Clogs but whatever, close enough.
-                gFunc.Equip('Feet', 'Cure Clogs')
+                gFunc.EquipSet('cure_clogs')
             end
-            if (ruckes_rung) then
+            if (ruckes_rung.Main) then
                 fastCastValue = fastCastValue + 0.10
-                gFunc.Equip('Main', 'Rucke\'s Rung')
+                gFunc.EquipSet('ruckes_rung')
             end
         end
     end
@@ -583,15 +611,15 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     local maxMP = 0
     if (setMP > 0) then
         maxMP = setMP + addMP
-    elseif (player.SubJob == "NIN" and ninSJMMP ~= nil) then
+    elseif (player.SubJob == 'NIN' and ninSJMMP ~= nil) then
         maxMP = ninSJMMP + addMP
-    elseif (player.SubJob == "WHM" and whmSJMMP ~= nil) then
+    elseif (player.SubJob == 'WHM' and whmSJMMP ~= nil) then
         maxMP = whmSJMMP + addMP
-    elseif (player.SubJob == "BLM" and blmSJMMP ~= nil) then
+    elseif (player.SubJob == 'BLM' and blmSJMMP ~= nil) then
         maxMP = blmSJMMP + addMP
-    elseif (player.SubJob == "RDM" and rdmSJMMP ~= nil) then
+    elseif (player.SubJob == 'RDM' and rdmSJMMP ~= nil) then
         maxMP = rdmSJMMP + addMP
-    elseif (player.SubJob == "DRK" and drkSJMMP ~= nil) then
+    elseif (player.SubJob == 'DRK' and drkSJMMP ~= nil) then
         maxMP = drkSJMMP + addMP
     end
 
@@ -625,9 +653,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
         gFunc.EquipSet('Haste')
         if (action.Skill ~= 'Ninjutsu') then
             gFunc.EquipSet('ConserveMP')
-            if (environment.DayElement == 'Water') and water_ring and (player.MPP <= 85) then
+            if (environment.DayElement == 'Water') and (player.MPP <= 85) then
                 if (maxMP == 0 or player.MP < maxMP * 0.85) then
-                    gFunc.Equip(water_ring_slot, 'Water Ring')
+                    gFunc.EquipSet('water_ring')
                 end
             end
         end
@@ -674,19 +702,11 @@ function gcmage.EquipSneakInvisGear()
 
     if (target.Name == me) then
         if (action.Name == 'Sneak' or string.match(action.Name, 'Monomi')) then
-            if (dream_boots) then
-                gFunc.Equip('Feet', 'Dream Boots +1')
-            end
-            if (skulkers_cape) then
-                gFunc.Equip('Back', 'Skulker\'s Cape')
-            end
+            gFunc.EquipSet('dream_boots')
+            gFunc.EquipSet('skulkers_cape')
         elseif (action.Name == 'Invisible' or string.match(action.Name, 'Tonko')) then
-            if (dream_mittens) then
-                gFunc.Equip('Hands', 'Dream Mittens +1')
-            end
-            if (skulkers_cape) then
-                gFunc.Equip('Back', 'Skulker\'s Cape')
-            end
+            gFunc.EquipSet('dream_mittens')
+            gFunc.EquipSet('skulkers_cape')
         end
     end
 end
@@ -745,18 +765,15 @@ function gcmage.EquipHealing(maxMP)
     if (action.Name == 'Cure V' or action.Name == 'Curaga IV') then
         gFunc.EquipSet('Cure5')
     end
-    if (player.SubJob == "WHM" and healers_earring) then
-        gFunc.Equip(healers_earring_slot, 'Healer\'s Earring')
-    end
     gcmage.EquipObi(action)
-    if (environment.DayElement == 'Water') and water_ring and player.MPP <= 85 then
+    if (environment.DayElement == 'Water') and player.MPP <= 85 then
         if (maxMP == 0 or player.MP < maxMP * 0.85) then
-            gFunc.Equip(water_ring_slot, 'Water Ring')
+            gFunc.EquipSet('water_ring')
         end
     end
-    if (player.MainJob == 'WHM' and medicine_ring and CureSpells:contains(action.Name) and player.TP <= 1000) then
+    if (player.MainJob == 'WHM' and CureSpells:contains(action.Name) and player.TP <= 1000) then
         if (player.HPP <= 75 or gcdisplay.GetToggle('Yellow') == true) then
-            gFunc.Equip(medicine_ring_slot, 'Medicine Ring')
+            gFunc.EquipSet('medicine_ring')
         end
     end
     if (gcdisplay.GetToggle('Hate') == true) then
@@ -774,9 +791,9 @@ function gcmage.EquipHealing(maxMP)
     end
     if ((string.match(action.Name, 'Cure') and gData.GetActionTarget().Type == 'Monster')) then
         gFunc.EquipSet('Banish')
-        if (action.MppAftercast < 51) and uggalepih_pendant then
+        if (action.MppAftercast < 51) then
             if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
-                gFunc.Equip('Neck', 'Uggalepih Pendant')
+                gFunc.EquipSet('uggalepih_pendant')
             end
         end
     end
@@ -797,31 +814,25 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
 
     if (ElementalDebuffs:contains(action.Name)) then
         gFunc.EquipSet('NukeDOT')
-        if (player.SubJob == "BLM" and wizards_earring) then
-            gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring')
-        end
     else
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
-            if ((player.MainJob == 'RDM') and conquest:GetOutsideControl()) and master_casters_bracelets then
+            if ((player.MainJob == 'RDM') and conquest:GetOutsideControl()) then
                 if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
-                gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+                gFunc.EquipSet('master_casters_bracelets')
             end
-            if (environment.WeatherElement == 'Dark') and diabolos_earring then
-                gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
+            if (environment.WeatherElement == 'Dark') then
+                gFunc.EquipSet('diabolos_earring')
             end
-            if (player.SubJob == "BLM" and wizards_earring) then
-                gFunc.Equip(wizards_earring_slot, 'Wizard\'s Earring')
-            end
-            if (environment.DayElement == 'Ice') and ice_ring and player.MPP <= 85 then
+            if (environment.DayElement == 'Ice') and player.MPP <= 85 then
                 if (maxMP == 0 or player.MP < maxMP * 0.85) then
-                    gFunc.Equip(ice_ring_slot, 'Ice Ring')
+                    gFunc.EquipSet('ice_ring')
                 end
             end
         end
-        if (action.MppAftercast < 51) and uggalepih_pendant then
+        if (action.MppAftercast < 51) then
             if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
-                gFunc.Equip('Neck', 'Uggalepih Pendant')
+                gFunc.EquipSet('uggalepih_pendant')
             end
         end
         if (gcdisplay.GetToggle('MB') == true) then
@@ -831,27 +842,23 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
             end
         end
         gcmage.EquipObi(action)
-        if (action.Element == environment.DayElement) and sorcerers_tonban ~= '' and (player.MainJob == 'BLM') then
-            gFunc.Equip('Legs', sorcerers_tonban)
+        if (action.Element == environment.DayElement) and (player.MainJob == 'BLM') then
+            gFunc.EquipSet('sorcerers_tonban')
         end
-        if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and sorcerers_ring and (player.MainJob == 'BLM') then
-            gFunc.Equip(sorcerers_ring_slot, 'Sorcerer\'s Ring')
+        if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and (player.MainJob == 'BLM') then
+            gFunc.EquipSet('sorcerers_ring')
         end
     end
 end
 
 function gcmage.EquipEnfeebling()
-    local environment = gData.GetEnvironment()
     local action = gData.GetAction()
     local player = gData.GetPlayer()
 
     gFunc.EquipSet('Enfeebling')
-    if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
+    if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) then
         if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
-        gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
-    end
-    if (environment.WeatherElement == 'Dark') and diabolos_earring then
-        gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
+        gFunc.EquipSet('master_casters_bracelets')
     end
     if (EnfeebMNDSpells:contains(action.Name)) then
         gFunc.EquipSet('EnfeeblingMND')
@@ -876,10 +883,14 @@ end
 
 function gcmage.EquipEnfeeblingACC(action)
     local player = gData.GetPlayer()
+    local environment = gData.GetEnvironment()
 
     gFunc.EquipSet('EnfeeblingACC')
-    if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
-        gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+    if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) then
+        gFunc.EquipSet('master_casters_bracelets')
+    end
+    if (environment.WeatherElement == 'Dark') then
+        gFunc.EquipSet('diabolos_earring')
     end
     gcmage.EquipObi(action)
 end
@@ -898,22 +909,22 @@ function gcmage.EquipDark(maxMP)
         end
     end
 
-    if (environment.DayElement == 'Dark') and diabolos_ring then
+    if (environment.DayElement == 'Dark') then
         if (player.MPP <= 85 and action.Name == 'Drain') then
             if (maxMP == 0 or player.MP < maxMP * 0.85) then
-                gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
+                gFunc.EquipSet('diabolos_ring')
             end
         elseif (player.MPP <= 50 and action.Name == 'Aspir') then
             if (maxMP == 0 or player.MP < maxMP * 0.50) then
-                gFunc.Equip(diabolos_ring_slot, 'Diabolos\'s Ring')
+                gFunc.EquipSet('diabolos_ring')
             end
         end
     end
-    if (DiabolosPoleSpells:contains(action.Name) and overlords_ring) then
-        gFunc.Equip(overlords_ring_slot, 'Overlord\'s Ring')
+    if (DiabolosPoleSpells:contains(action.Name)) then
+        gFunc.EquipSet('overlords_ring')
     end
-    if (environment.WeatherElement == 'Dark') and diabolos_earring and (not dark_and_abyssal_earrings) then
-        gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
+    if (environment.WeatherElement == 'Dark') and (not dark_and_abyssal_earrings) then
+        gFunc.EquipSet('diabolos_earring')
     end
 
     gcmage.EquipObi(action)
@@ -925,9 +936,9 @@ function gcmage.EquipDivine(maxMP)
     gFunc.EquipSet('Divine')
     if (string.match(action.Name, 'Banish') or action.Name == 'Holy') then
         gFunc.EquipSet('Banish')
-        if (action.MppAftercast < 51) and uggalepih_pendant then
+        if (action.MppAftercast < 51) then
             if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
-                gFunc.Equip('Neck', 'Uggalepih Pendant')
+                gFunc.EquipSet('uggalepih_pendant')
             end
         end
     end
@@ -952,12 +963,14 @@ function gcmage.EquipStaff()
         end
 
         if (player.MainJob == 'BLM' and DiabolosPoleSpells:contains(action.Name)) then
-            if (environment.WeatherElement == 'Dark' and diabolos_pole) then gFunc.Equip('Main', 'Diabolos\'s Pole') end
+            if (environment.WeatherElement == 'Dark') then
+                gFunc.EquipSet('diabolos_pole')
+            end
         end
-        if (player.MainJob == 'WHM' and mjollnir and CureSpells:contains(action.Name)) then
-            gFunc.Equip('Main', 'Mjollnir')
-            if (player.SubJob == 'NIN' and asklepios) then
-                gFunc.Equip('Sub', 'Asklepios')
+        if (player.MainJob == 'WHM' and CureSpells:contains(action.Name)) then
+            gFunc.EquipSet('mjollnir')
+            if (player.SubJob == 'NIN') then
+                gFunc.EquipSet('asklepios')
             end
         end
     end
@@ -991,6 +1004,43 @@ function gcmage.DoAbility()
     if (action.Name == 'Release') then
         lastSummoningElement = ''
     end
+end
+
+function gcmage.AppendSets(sets)
+    sets.uggalepih_pendant = uggalepih_pendant
+    sets.master_casters_bracelets = master_casters_bracelets
+    sets.dream_boots = dream_boots
+    sets.dream_mittens = dream_mittens
+    sets.skulkers_cape = skulkers_cape
+    sets.wizards_mantle = wizards_mantle
+    sets.republic_gold_medal = republic_gold_medal
+    sets.diabolos_earring = diabolos_earring
+    sets.diabolos_ring = diabolos_ring
+    sets.ice_ring = ice_ring
+    sets.water_ring = water_ring
+    sets.overlords_ring = overlords_ring
+
+    sets.diabolos_pole = diabolos_pole
+    sets.sorcerers_ring = sorcerers_ring
+    sets.sorcerers_tonban = sorcerers_tonban
+
+    sets.carbuncle_mitts = carbuncle_mitts
+    sets.yinyang_robe = yinyang_robe
+    sets.summoners_doublet = summoners_doublet
+    sets.summoners_horn = summoners_horn
+    sets.conjurers_ring = conjurers_ring
+
+    sets.cure_clogs = cure_clogs
+    sets.ruckes_rung = ruckes_rung
+    sets.medicine_ring = medicine_ring
+    sets.mjollnir = mjollnir
+    sets.asklepios = asklepios
+
+    sets.tp_fencers_ring = tp_fencers_ring
+    sets.tp_fenrirs_earring = tp_fenrirs_earring
+    sets.tp_diabolos_earring = tp_diabolos_earring
+
+    return sets
 end
 
 return gcmage

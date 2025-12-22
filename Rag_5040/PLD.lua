@@ -492,6 +492,8 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 sets.parade_gorget = parade_gorget
 sets.hercules_ring = hercules_ring
 sets.gallant_leggings = gallant_leggings
@@ -499,9 +501,7 @@ sets.valor_leggings = valor_leggings
 sets.arco_de_velocidad = arco_de_velocidad
 sets.warlocks_mantle = warlocks_mantle
 sets.shadow_mantle = shadow_mantle
-profile.Sets = sets
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmelee.DoAbility()

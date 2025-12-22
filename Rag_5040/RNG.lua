@@ -68,9 +68,9 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-profile.Sets = sets
-
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmelee.DoAbility()

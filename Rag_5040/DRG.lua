@@ -84,11 +84,11 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 sets.ethereal_earring = ethereal_earring
 sets.warlocks_mantle = warlocks_mantle
-profile.Sets = sets
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+profile.Sets = gcmelee.AppendSets(sets)
 
 local JobAbilities = T{
     'Jump',

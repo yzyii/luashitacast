@@ -233,7 +233,7 @@ function gcmelee.DoAbility()
 end
 
 function gcmelee.AppendSets(sets)
-
+    sets.fenrirs_earring = fenrirs_earring
     return sets
 end
 

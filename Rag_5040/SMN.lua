@@ -337,18 +337,19 @@ end
 Everything below can be ignored.
 --------------------------------
 ]]
+
+gcmage = gFunc.LoadFile('common\\gcmage.lua')
+
 sets.carbuncles_cuffs = carbuncles_cuffs
 sets.evokers_boots = evokers_boots
 sets.warlocks_mantle = warlocks_mantle
-profile.Sets = sets
+profile.Sets = gcmage.AppendSets(sets)
 
 local SmnSkill = T{'Shining Ruby','Glittering Ruby','Crimson Howl','Inferno Howl','Frost Armor','Crystal Blessing','Aerial Armor','Hastega II','Fleet Wind','Hastega','Earthen Ward','Earthen Armor','Rolling Thunder','Lightning Armor','Soothing Current','Ecliptic Growl','Heavenward Howl','Ecliptic Howl','Noctoshield','Dream Shroud','Altana\'s Favor','Reraise','Reraise II','Reraise III','Raise','Raise II','Raise III','Wind\'s Blessing'}
 local SmnHealing = T{'Healing Ruby','Healing Ruby II','Whispering Wind','Spring Water'}
 local SmnMagical = T{'Searing Light','Meteorite','Holy Mist','Inferno','Fire II','Fire IV','Meteor Strike','Conflag Strike','Diamond Dust','Blizzard II','Blizzard IV','Heavenly Strike','Aerial Blast','Aero II','Aero IV','Wind Blade','Earthen Fury','Stone II','Stone IV','Geocrush','Judgement Bolt','Thunder II','Thunder IV','Thunderstorm','Thunderspark','Tidal Wave','Water II','Water IV','Grand Fall','Howling Moon','Lunar Bay','Ruinous Omen','Somnolence','Nether Blast','Night Terror','Level ? Holy'}
 local SmnEnfeebling = T{'Diamond Storm','Sleepga','Shock Squall','Slowga','Tidal Roar','Pavor Nocturnus','Ultimate Terror','Nightmare','Mewing Lullaby','Eerie Eye'}
 local SmnHybrid = T{'Flaming Crush','Burning Strike'}
-
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 profile.HandleAbility = function()
     gcmage.DoAbility()

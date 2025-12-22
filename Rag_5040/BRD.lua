@@ -388,10 +388,10 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-sets.warlocks_mantle = warlocks_mantle
-profile.Sets = sets
-
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
+
+sets.warlocks_mantle = warlocks_mantle
+profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmage.DoAbility()

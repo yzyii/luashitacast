@@ -375,11 +375,11 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 sets.parade_gorget = parade_gorget
 sets.fenrirs_stone = fenrirs_stone
-profile.Sets = sets
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+profile.Sets = gcmelee.AppendSets(sets)
 
 local NukeObiTable = {
     ['Fire'] = 'Karin Obi',

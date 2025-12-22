@@ -288,6 +288,8 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
 sets.temple_gaiters = temple_gaiters
 sets.temple_gloves = temple_gloves
 sets.temple_cyclas = temple_cyclas
@@ -300,9 +302,7 @@ sets.presidential_hairpin = presidential_hairpin
 sets.dream_ribbon = dream_ribbon
 sets.kampfer_ring = kampfer_ring
 sets.kampfer_earring = kampfer_earring
-profile.Sets = sets
-
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmelee.DoAbility()

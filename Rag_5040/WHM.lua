@@ -96,12 +96,12 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
+gcmage = gFunc.LoadFile('common\\gcmage.lua')
+
 sets.warlocks_mantle = warlocks_mantle
 sets.virology_ring = virology_ring
 sets.republic_circlet = republic_circlet
-profile.Sets = sets
-
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
+profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmage.DoAbility()
