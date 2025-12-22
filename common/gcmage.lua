@@ -4,11 +4,11 @@ local log_conquest = false
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_abyssal_earrings = true
 
--- BLM / SMN Specific
-local claustrum = false
-local bahamuts_staff = false
-
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local claustrum = {
+    -- Main = 'Claustrum',
+}
+
 local fire_staff = {
     Main = 'Vulcan\'s Staff',
 }
@@ -364,11 +364,11 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
             gFunc.EquipSet('Perpetuation')
 
             local staff = ElementalStaffTable[lastSummoningElement]
-            if (bahamuts_staff) then
-                staff = 'Bahamut\'s Staff'
+            if (bahamuts_staff.Main) then
+                staff = 'bahamuts_staff'
             end
-            if (claustrum) then
-                staff = 'Claustrum'
+            if (claustrum.Main) then
+                staff = 'claustrum'
             end
             gFunc.EquipSet(staff)
 
@@ -913,8 +913,8 @@ function gcmage.EquipStaff()
     if (action.Skill ~= 'Enhancing Magic' and not ElementalDebuffs:contains(action.Name) and not string.match(action.Name, 'Utsusemi')) then
         local staff = ElementalStaffTable[action.Element]
         if (player.MainJob == 'SMN' or player.MainJob == 'BLM') then
-            if (claustrum and action.Skill ~= 'Healing Magic') then
-                staff = 'Claustrum'
+            if (claustrum.Main and action.Skill ~= 'Healing Magic') then
+                staff = 'claustrum'
             end
         end
         gFunc.EquipSet(staff)
@@ -961,6 +961,8 @@ function gcmage.DoAbility()
 end
 
 function gcmage.AppendSets(sets)
+    sets.claustrum = claustrum
+
     sets.fire_staff = fire_staff
     sets.earth_staff = earth_staff
     sets.water_staff = water_staff

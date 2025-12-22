@@ -29,6 +29,9 @@ local summoners_horn = {
 local conjurers_ring = {
     -- Ring1 = 'Conjurer\'s Ring',
 }
+local bahamuts_staff = {
+    -- Main = 'Bahamut\'s Staff',
+}
 
 local sets = {
     Idle = {
@@ -363,6 +366,7 @@ sets.yinyang_robe = yinyang_robe
 sets.summoners_doublet = summoners_doublet
 sets.summoners_horn = summoners_horn
 sets.conjurers_ring = conjurers_ring
+sets.bahamuts_staff = bahamuts_staff
 profile.Sets = gcmage.AppendSets(sets)
 
 local SmnSkill = T{'Shining Ruby','Glittering Ruby','Crimson Howl','Inferno Howl','Frost Armor','Crystal Blessing','Aerial Armor','Hastega II','Fleet Wind','Hastega','Earthen Ward','Earthen Armor','Rolling Thunder','Lightning Armor','Soothing Current','Ecliptic Growl','Heavenward Howl','Ecliptic Howl','Noctoshield','Dream Shroud','Altana\'s Favor','Reraise','Reraise II','Reraise III','Raise','Raise II','Raise III','Wind\'s Blessing'}
