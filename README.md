@@ -123,6 +123,9 @@ This will work 99% of the time unless you have added your own logic and therefor
 /tp /tpset /mode - toggles TP set between a LowAcc and HighAcc set.
                    this will be overwritten if you have a DT or resistance set etc. enabled.
                    this is disabled for PLD in favour of using Idle sets by default.
+/weapon /wl      - toggles between using Weapon_Loadout sets or none of them (default)
+                   can be used to specify different weapon loadouts. e.g. virtue stones etc.
+                   there is no UI element for this.
 /locktp          - locks or unlocks Main, Sub, Ranged and Ammo slots.
 ```
 
@@ -203,6 +206,12 @@ Alternatively, use /ammo to cycle through them.
        i.e. forces you to act more like a tank or a dps.
        By default PLD is set to false while DRK and NIN are set to true.
        Technically can be used by all melee jobs in order to use Earth Staff etc.
+```
+
+## Additional Commands for NIN:
+```
+/nuke  - toggles between 2 different elemental accuracy sets for Ninjutsu nuking.
+/staff - toggles between always switching to staff for spells or not.
 ```
 
 # Troubleshooting Crashes
