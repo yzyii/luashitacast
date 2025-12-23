@@ -275,6 +275,13 @@ function gcmage.DoCommands(args, sets)
         gcinclude.Message('Weapon Loadout', WeaponOverrideTable[weapon_override])
     end
 
+    if (player.MainJob == 'RDM' or player.MainJob == 'WHM') then
+        if (args[1] == 'hate') then
+            gcdisplay.AdvanceToggle('Hate')
+            gcinclude.Message('Hate', gcdisplay.GetToggle('Hate'))
+        end
+    end
+
     if (player.MainJob == 'RDM') then
         if (args[1] == 'vert') then
             if (conquest:GetOutsideControl()) then
@@ -292,9 +299,6 @@ function gcmage.DoCommands(args, sets)
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
             gcdisplay.CreateToggle('Lock', true)
             gcinclude.Message('Equip Lock', gcdisplay.GetToggle('Lock'))
-        elseif (args[1] == 'hate') then
-            gcdisplay.AdvanceToggle('Hate')
-            gcinclude.Message('Hate', gcdisplay.GetToggle('Hate'))
         end
     end
 
