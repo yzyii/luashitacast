@@ -5,7 +5,7 @@ local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 -- Populate these correctly otherwise ammo protection will not work
 local yoichinoyumi = false
 local special_ammo = 'Pebble'
-local buffer_ranged_attack = 8 -- Time taken for ranged attacks in seconds. Suggested that 8? is used for guns and 6? for bows.
+local buffer_ranged_attack = 7 -- Time taken for ranged attacks in seconds. Suggested that 7 is used for guns and 6 for bows.
 local buffer_ja_ws = 2
 
 local sets = {
