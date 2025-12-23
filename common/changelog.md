@@ -422,3 +422,6 @@
 
 ### v2.0.3
 - DRK - Add TP_Aftermath_Mjollnir_Haste set to support scenarios where both haste buffs are active
+
+### v2.0.4
+- RNG - Add better support for Yoichi

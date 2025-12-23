@@ -2,10 +2,14 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
-local special_ammo = "Carapace Bullet"
+ -- Rudimentary protection for attempting to avoid losing arrows except if Unlimited Shot or Namas Arrow Aftermath is active
+local yoichinoyumi = false
+local special_ammo = 'Carapace Bullet'
 
 local sets = {
-    Idle = {},
+    Idle = {
+        Ammo = 'Silver Bullet',
+    },
     IdleALT = {},
     Resting = {},
     Town = {},
@@ -33,8 +37,10 @@ local sets = {
 
     Preshot = {},
 
-    TP_LowAcc = {},
-    TP_Aftermath = {},
+    TP_LowAcc = {
+        Ammo = 'Silver Bullet',
+    },
+    TP_Aftermath = {}, -- This can be ignored since the UnlimitedShot set will already equip for Aftermaths
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {},
 
@@ -48,7 +54,9 @@ local sets = {
     Shadowbind = {},
     Camouflage = {},
     Sharpshot = {},
-    UnlimitedShot = {},
+    UnlimitedShot = { -- Used for Namas Arrow Aftermath as well as Unlimited Shot
+        Ammo = special_ammo,
+    },
 
     WS = {},
     WS_HighAcc = {},
@@ -92,8 +100,10 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.EagleEyeShot)
 
         local equipment = gData.GetEquipment()
-        local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
-        if (unlimitedShot == 1) then
+        local unlimitedShot = gData.GetBuffCount('Unlimited Shot') > 0
+        local yoichiActive = yoichinoyumi and gData.GetBuffCount('Aftermath') > 0
+
+        if (unlimitedShot or yoichiActive) then
             gFunc.EquipSet(sets.UnlimitedShot)
         elseif (equipment.Ammo ~= nil and equipment.Ammo.Name == special_ammo) then
             print(chat.header('RNG'):append(chat.message('Action Canceled: Special Ammo Protection')))
@@ -110,8 +120,10 @@ profile.HandlePreshot = function()
     gFunc.EquipSet(sets.Preshot)
 
     local equipment = gData.GetEquipment()
-    local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
-    if (unlimitedShot == 1) then
+    local unlimitedShot = gData.GetBuffCount('Unlimited Shot') > 0
+    local yoichiActive = yoichinoyumi and gData.GetBuffCount('Aftermath') > 0
+
+    if (unlimitedShot or yoichiActive) then
         gFunc.EquipSet(sets.UnlimitedShot)
     end
     if (unlimitedShot == 0 and equipment.Ammo ~= nil and equipment.Ammo.Name == special_ammo) then
@@ -131,8 +143,10 @@ profile.HandleMidshot = function()
         gFunc.EquipSet(sets.Barrage)
     end
 
-    local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
-    if (unlimitedShot == 1) then
+    local unlimitedShot = gData.GetBuffCount('Unlimited Shot') > 0
+    local yoichiActive = yoichinoyumi and gData.GetBuffCount('Aftermath') > 0
+
+    if (unlimitedShot or yoichiActive) then
         gFunc.EquipSet(sets.UnlimitedShot)
     end
 end
@@ -141,8 +155,10 @@ profile.HandleWeaponskill = function()
     gcmelee.DoWS()
 
     local equipment = gData.GetEquipment()
-    local unlimitedShot = gData.GetBuffCount('Unlimited Shot')
-    if (unlimitedShot == 1) then
+    local unlimitedShot = gData.GetBuffCount('Unlimited Shot') > 0
+    local yoichiActive = yoichinoyumi and gData.GetBuffCount('Aftermath') > 0
+
+    if (unlimitedShot or yoichiActive) then
         gFunc.EquipSet(sets.UnlimitedShot)
     elseif (equipment.Ammo ~= nil and equipment.Ammo.Name == special_ammo) then
         print(chat.header('RNG'):append(chat.message('Action Canceled: Special Ammo Protection')))
