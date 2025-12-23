@@ -28,7 +28,7 @@ local sets = {
     Evasion = {},
 
     Precast = {},
-    SIRD = {{ -- Only used for Idle sets and not while Override sets are active
+    SIRD = { -- Only used for Idle sets and not while Override sets are active
     },
     Haste = { -- Used for Utsusemi cooldown
     },
