@@ -419,3 +419,6 @@
 - Mages - (Except for BLM) Implements Weapon Loadouts /weapon or /wl
 - All Jobs - Removes /locktp as this should no longer be required for any use case
 - WHM - Adds Hate toggle. C5 does not use Hate set.
+
+### v2.0.3
+- DRK - Add TP_Aftermath_Mjollnir_Haste set to support scenarios where both haste buffs are active

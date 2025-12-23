@@ -322,6 +322,7 @@ local sets = {
     },
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
+    TP_Aftermath_Mjollnir_Haste = {},
     TP_HighAcc = {
         Neck = 'Peacock Amulet',
         Back = 'Abyss Cape',

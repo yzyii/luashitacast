@@ -132,11 +132,18 @@ function gcmelee.DoDefault()
                         gFunc.EquipSet('fenrirs_earring')
                     end
                 end
-                if gData.GetBuffCount('Aftermath') > 0 then
+
+                local aftermath = gData.GetBuffCount('Aftermath') > 0
+                local mjollnirHaste = gData.GetBuffCount(580) > 0 -- Horizon Mjollnir Haste Buff
+
+                if aftermath then
                     gFunc.EquipSet('TP_Aftermath')
                 end
-                if gData.GetBuffCount(580) > 0 then -- Horizon Mjollnir Haste Buff
+                if mjollnirHaste then
                     gFunc.EquipSet('TP_Mjollnir_Haste')
+                end
+                if player.MainJob == 'DRK' and aftermath and mjollnirHaste then
+                    gFunc.EquipSet('TP_Aftermath_Mjollnir_Haste')
                 end
                 if (gcdisplay.IdleSet == 'HighAcc') then
                     gFunc.EquipSet('TP_HighAcc')
