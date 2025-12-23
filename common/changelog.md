@@ -425,3 +425,5 @@
 
 ### v2.0.4
 - RNG - Add better support for Yoichi
+- RNG - Add better special ammo protection
+- WHM - Fix broken Cure Clogs / Ruckes Rungs from 2.0.0.

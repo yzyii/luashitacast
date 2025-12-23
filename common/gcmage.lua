@@ -500,11 +500,11 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue)
     end
     if (player.MainJob == 'WHM') then
         if (string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga')) then
-            if (cure_clogs.Feet) then
+            if (sets.cure_clogs.Feet) then
                 fastCastValue = fastCastValue + 0.15 -- Note, this should actually be 0.13 if you own both Rostrum Pumps and Cure Clogs but whatever, close enough.
                 gFunc.EquipSet('cure_clogs')
             end
-            if (ruckes_rung.Main) then
+            if (sets.ruckes_rung.Main) then
                 fastCastValue = fastCastValue + 0.10
                 gFunc.EquipSet('ruckes_rung')
             end
