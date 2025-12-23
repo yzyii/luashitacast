@@ -290,7 +290,7 @@ local sets = {
         Back = 'Maledictor\'s Shawl',
     },
 
-    Hate = { -- Switches to this set when casting Sleep, Blind, Dispel and Bind if /hate is toggled on
+    Hate = { -- Switches to this set when casting Sleep, Blind, Dispel, Bind, Flash and Cures on other players if /hate is toggled on
         Ammo = 'Phtm. Tathlum',
         Head = 'Rival Ribbon', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
@@ -457,21 +457,7 @@ local sets = {
         Legs = 'Nashira Seraweels',
     },
 
-    Divine = { -- Just using my Hate set here for Flash
-        Ammo = 'Phtm. Tathlum',
-        Head = 'Rival Ribbon', -- 2
-        Neck = 'Harmonia\'s Torque', -- 3
-        Ear1 = 'Eris\' Earring', -- 2
-        Ear2 = 'Hades Earring +1', -- 2
-        Body = 'Dls. Tabard +1',
-        Hands = 'Dusk Gloves +1',
-        Ring1 = 'Mermaid Ring', -- 2
-        Ring2 = 'Sattva Ring', -- 5
-        Back = 'Toreador\'s Cape', -- 4
-        Waist = 'Warwolf Belt', -- 3
-        Legs = 'Nashira Seraweels',
-        Feet = 'Heroic Boots', -- 1
-    },
+    Divine = {},
     Banish = {},
     Dark = {
         Ammo = 'Phtm. Tathlum',

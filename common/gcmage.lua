@@ -108,7 +108,8 @@ local gcmage = {}
 local AliasList = T{
     'addmp','setmp','resetmp',
     'mode', -- RDM / WHM / BLM
-    'csstun','hate','vert', -- RDM
+    'csstun','vert', -- RDM
+    'hate', -- RDM / WHM
     'tp', -- RDM / WHM / BRD / SMN
     'yellow', -- BLM / WHM
     'mb','hnm', -- BLM
@@ -226,6 +227,7 @@ function gcmage.SetVariables()
         gcdisplay.CreateToggle('HNM', false)
     end
     if (player.MainJob == 'WHM') then
+        gcdisplay.CreateToggle('Hate', false)
         gcdisplay.CreateToggle('Yellow', false)
     end
 end
@@ -760,9 +762,12 @@ function gcmage.EquipHealing(maxMP)
     local target = gData.GetActionTarget()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
+    local c5 = false
+
     gFunc.EquipSet('Cure')
     if (action.Name == 'Cure V' or action.Name == 'Curaga IV') then
         gFunc.EquipSet('Cure5')
+        c5 = true
     end
     gcmage.EquipObi(action)
     if (environment.DayElement == 'Water') and player.MPP <= 85 then
@@ -775,7 +780,7 @@ function gcmage.EquipHealing(maxMP)
             gFunc.EquipSet('medicine_ring')
         end
     end
-    if (gcdisplay.GetToggle('Hate') == true) then
+    if (gcdisplay.GetToggle('Hate') == true and not c5) then
         gFunc.EquipSet('Hate')
         if (target.Name == me) then
             if (action.Name == 'Cure III') then
@@ -933,7 +938,12 @@ function gcmage.EquipDivine(maxMP)
     local action = gData.GetAction()
 
     gFunc.EquipSet('Divine')
+    if (gcdisplay.GetToggle('Hate') == true) then
+        gFunc.EquipSet('Hate')
+    end
+
     if (string.match(action.Name, 'Banish') or action.Name == 'Holy') then
+        gFunc.EquipSet('Divine')
         gFunc.EquipSet('Banish')
         if (action.MppAftercast < 51) then
             if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then

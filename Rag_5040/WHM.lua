@@ -61,6 +61,12 @@ local sets = {
     },
     ConserveMP = {},
 
+    Hate = { -- Switches to this set when casting Sleep, Blind, Dispel, Bind, Flash and Cures on other players if /hate is toggled on
+    },
+    Cheat_C3HPDown = {},
+    Cheat_C4HPDown = {},
+    Cheat_HPUp = {},
+
     Yellow = {},
     Cure = {},
     Cure5 = {},

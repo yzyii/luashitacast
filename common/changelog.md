@@ -414,3 +414,8 @@
 
 ### v2.0.1
 - Mages - Defaults SJ Idle Max MP values to /NIN for all other undefined jobs
+
+### v2.0.2
+- Mages - (Except for BLM) Implements Weapon Loadouts /weapon or /wl
+- All Jobs - Removes /locktp as this should no longer be required for any use case
+- WHM - Adds Hate toggle. C5 does not use Hate set.
