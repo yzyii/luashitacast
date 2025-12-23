@@ -437,7 +437,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
         restingMaxMP = false
     end
 
-    if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+    if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
         gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
     end
 end
@@ -483,7 +483,7 @@ function gcmage.DoPrecast(sets, fastCastValue)
         gcmage.SetupMidcastDelay(sets, fastCastValue)
     end
 
-    if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+    if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
         gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
     end
 end
@@ -528,7 +528,7 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue)
         local hpDownC4 = sets.Cheat_C4HPDown
         local hpUp = sets.Cheat_HPUp
 
-        if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+        if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
             local weapon = sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]]
             hpDownC3 = gFunc.Combine(hpDownC3, weapon)
             hpDownC4 = gFunc.Combine(hpDownC4, weapon)
@@ -568,7 +568,7 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue)
         local yellowHNM = sets.YellowHNM
 
         if (whmYellow) then
-            if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+            if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
                 local weapon = sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]]
                 yellow = gFunc.Combine(yellow, weapon)
                 yellowHNM = gFunc.Combine(yellowHNM, weapon)
@@ -657,7 +657,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
 
     gcmage.EquipStaff()
 
-    if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+    if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
         gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
     end
 end
@@ -732,7 +732,7 @@ function gcmage.SetupInterimEquipSet(sets)
         interimSet = sets.SIRD
     end
 
-    if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+    if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
         interimSet = gFunc.Combine(interimSet, sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]])
     end
 
