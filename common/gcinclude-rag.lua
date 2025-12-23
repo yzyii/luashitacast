@@ -59,7 +59,7 @@ conquest = gFunc.LoadFile('common\\conquest.lua')
 local gcinclude = {}
 
 local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','bres','lightningres','lres','tres','earthres','eres','sres','windres','wires','ares','waterres','wares','wres','evasion','eva' }
-local Commands = T{ 'kite','lock','locktp','lockset','warpme','horizonmode' }
+local Commands = T{ 'kite','lock','lockset','warpme','horizonmode' }
 
 local Towns = T{
     'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau',
@@ -116,11 +116,6 @@ function gcinclude.Load()
     gcdisplay.CreateToggle('Lock', false)
 
     local function delayLoad()
-        local delayedPlayer = gData.GetPlayer()
-        if (not isMageJobs:contains(delayedPlayer.MainJob)) then
-            gcdisplay.CreateToggle('LockTP', false)
-        end
-
         gcdisplay.Load()
 
         if (load_stylist) then
@@ -155,38 +150,6 @@ function gcinclude.ClearAlias(aliasList)
     end
 end
 
-function gcinclude.LockWeapon()
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Main')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Sub')
-    local player = gData.GetPlayer()
-    if (player.MainJob ~= 'BRD') then
-        AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Range')
-    end
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable Ammo')
-end
-
-function gcinclude.UnlockWeapon()
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Main')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Sub')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Range')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ammo')
-end
-
-function gcinclude.UnlockNonWeapon()
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Head')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Neck')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear1')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ear2')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Body')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Hands')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring1')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Ring2')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Back')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Waist')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Legs')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable Feet')
-end
-
 function gcinclude.DoCommands(args)
     local isOverride = Overrides:contains(args[1])
 
@@ -217,28 +180,9 @@ function gcinclude.DoCommands(args)
         gcdisplay.AdvanceToggle('Lock')
         gcinclude.Message('Equip Lock', gcdisplay.GetToggle('Lock'))
         if (not gcdisplay.GetToggle('Lock')) then
-            if (isMage and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
-                gcinclude.UnlockNonWeapon()
-            elseif (gcdisplay.GetToggle('LockTP')) then
-                gcinclude.UnlockNonWeapon()
-            else
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
-                if (not isMage) then gcdisplay.CreateToggle('LockTP', false) end
-            end
+            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
         else
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
-            if (not isMage) then gcdisplay.CreateToggle('LockTP', false) end
-        end
-    elseif (args[1] == 'locktp' and not isMage) then
-        gcdisplay.AdvanceToggle('LockTP')
-        gcinclude.Message('Weapons Lock', gcdisplay.GetToggle('LockTP'))
-        if (not gcdisplay.GetToggle('LockTP')) then
-            AshitaCore:GetChatManager():QueueCommand(-1, '/lac enable all')
-            gcdisplay.CreateToggle('Lock', false)
-        else
-            gcdisplay.CreateToggle('Lock', false)
-            gcinclude.LockWeapon()
-            gcinclude.UnlockNonWeapon()
         end
     end
 end
@@ -317,7 +261,7 @@ function gcinclude.DoDefaultOverride(isMelee)
             or gcdisplay.IdleSet == 'HighAcc'
         )
     ) then
-        if (isMageJobs:contains(player.MainJob) and (gcdisplay.GetCycle('TP') == 'LowAcc' or gcdisplay.GetCycle('TP') == 'HighAcc')) then
+        if (isMageJobs:contains(player.MainJob) and (gcdisplay.GetCycle('TP') ~= 'Off') and player.Status == 'Engaged') then
             if (environment.Time >= 6 and environment.Time < 18) then
                 gFunc.EquipSet('DT')
             else

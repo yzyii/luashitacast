@@ -99,6 +99,10 @@ local sets = {
     WS = {},
     WS_HighAcc = {},
     WS_Randgrith = {},
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 
 profile.SetMacroBook = function()
@@ -178,10 +182,10 @@ end
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
     if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
-        gcmage.DoPrecast(fastCastValue + 0.02)
+        gcmage.DoPrecast(sets, fastCastValue + 0.02)
         gFunc.EquipSet('warlocks_mantle')
     else
-        gcmage.DoPrecast(fastCastValue)
+        gcmage.DoPrecast(sets, fastCastValue)
     end
 end
 

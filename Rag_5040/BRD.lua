@@ -372,8 +372,13 @@ local sets = {
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {},
     TP_NIN = {},
+
     WS = {},
     WS_HighAcc = {},
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 
 profile.SetMacroBook = function()
@@ -468,7 +473,7 @@ profile.HandlePrecast = function()
         totalfcv = 1 - (1 - fastCastValueSong) * (1 - fcv)
     end
 
-    gcmage.DoPrecast(totalfcv)
+    gcmage.DoPrecast(sets, totalfcv)
     if (fcv ~= fastCastValue) then
         gFunc.EquipSet('warlocks_mantle')
     end

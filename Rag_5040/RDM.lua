@@ -585,10 +585,6 @@ local sets = {
     },
 
     TP = {
-        Main = 'Joyeuse',
-        Sub = 'Genbu\'s Shield',
-        Range = 'Lightning Bow +1',
-        Ammo = '',
         Head = 'Dls. Chapeau +1',
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
@@ -604,8 +600,6 @@ local sets = {
     },
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {
-        Range = 'Lightning Bow +1',
-        Ammo = '',
         Head = 'Optical Hat',
         Hands = 'Hydra Gloves',
         -- Back = 'Commander\'s Cape',
@@ -614,16 +608,8 @@ local sets = {
         Feet = 'Hydra Gaiters',
     },
     TP_NIN = {
-        Main = 'Martial Knife',
-        -- Main = 'Joyeuse',
-        -- Main = 'Justice Sword',
-        -- Main = 'Blau Dolch',
-        Sub = 'Octave Club',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Stealth Earring',
-        Range = 'Lightning Bow +1',
-        Ammo = '',
-        -- Ammo = 'Virtue Stone',
     },
 
     WS = {
@@ -666,6 +652,28 @@ local sets = {
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
+
+    Weapon_Loadout_1 = {
+        Main = 'Martial Knife',
+        Sub = 'Octave Club',
+        Range = 'Lightning Bow +1',
+        Ammo = '',
+    },
+    Weapon_Loadout_2 = {
+        -- Main = 'Blau Dolch',
+        Main = 'Joyeuse',
+        -- Main = 'Justice Sword',
+        Sub = 'Octave Club',
+        Range = 'Lightning Bow +1',
+        Ammo = '',
+        -- Ammo = 'Virtue Stone',
+    },
+    Weapon_Loadout_3 = {
+        Main = 'Joyeuse',
+        Sub = 'Genbu\'s Shield',
+        Range = 'Lightning Bow +1',
+        Ammo = '',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -760,7 +768,7 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast(fastCastValue)
+    gcmage.DoPrecast(sets, fastCastValue)
 end
 
 profile.HandleMidcast = function()

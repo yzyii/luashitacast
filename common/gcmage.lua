@@ -113,6 +113,7 @@ local AliasList = T{
     'yellow', -- BLM / WHM
     'mb','hnm', -- BLM
     'lag',
+    'weapon','wl', -- RDM / WHM / BRD / SMN
 }
 
 local NoMods = T{
@@ -181,6 +182,14 @@ local lastSummoningElement = ''
 local restingMaxMP = false
 
 local lag = false
+
+local WeaponOverrideTable = {
+    [1] = '1',
+    [2] = '2',
+    [3] = '3',
+}
+
+local weapon_override = 1
 
 function gcmage.Load()
     local player = gData.GetPlayer()
@@ -253,27 +262,15 @@ function gcmage.DoCommands(args, sets)
     elseif (args[1] == 'tp' and player.MainJob ~= 'BLM') then
         gcdisplay.AdvanceCycle('TP')
         gcinclude.Message('TP Mode', gcdisplay.GetCycle('TP'))
-
-        if (gcdisplay.GetCycle('TP') ~= 'Off') then
-            local tpset = sets.TP
-            if (gcdisplay.GetCycle('TP') == 'HighAcc') then
-                tpset = gFunc.Combine(tpset, sets.TP_HighAcc)
-            end
-            if (player.SubJob == 'NIN') then
-                tpset = gFunc.Combine(tpset, sets.TP_NIN)
-            end
-            gcinclude.UnlockWeapon()
-            local function forcetpset()
-                gFunc.LockSet(tpset, 0.5)
-            end
-            forcetpset:once(0.5)
-            gcinclude.LockWeapon:once(0.8)
-        else
-            gcinclude.UnlockWeapon()
-        end
     elseif (args[1] == 'lag') then
         lag =  not lag
         gcinclude.Message('[Note: Midcast Delays are disabled if Lag is true] Lag', lag)
+    elseif ((args[1] == 'weapon' or args[1] == 'wl') and player.MainJob ~= 'BLM') then
+        weapon_override = weapon_override + 1
+        if (weapon_override > #WeaponOverrideTable) then
+            weapon_override = 1
+        end
+        gcinclude.Message('Weapon Loadout', WeaponOverrideTable[weapon_override])
     end
 
     if (player.MainJob == 'RDM') then
@@ -433,9 +430,13 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     else
         restingMaxMP = false
     end
+
+    if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+        gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
+    end
 end
 
-function gcmage.DoPrecast(fastCastValue)
+function gcmage.DoPrecast(sets, fastCastValue)
     local chainspell = gData.GetBuffCount('Chainspell')
     local action = gData.GetAction()
     local player = gData.GetPlayer()
@@ -473,16 +474,21 @@ function gcmage.DoPrecast(fastCastValue)
             end
         end
     else
-        gcmage.SetupMidcastDelay(fastCastValue)
+        gcmage.SetupMidcastDelay(sets, fastCastValue)
+    end
+
+    if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+        gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
     end
 end
 
-function gcmage.SetupMidcastDelay(fastCastValue)
+function gcmage.SetupMidcastDelay(sets, fastCastValue)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
     local target = gData.GetActionTarget()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
     local castTime = action.CastTime
+
     if (player.SubJob == 'RDM') then
         fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
@@ -512,14 +518,25 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     end
 
     local function delayCheat()
+        local hpDownC3 = sets.Cheat_C3HPDown
+        local hpDownC4 = sets.Cheat_C4HPDown
+        local hpUp = sets.Cheat_HPUp
+
+        if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+            local weapon = sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]]
+            hpDownC3 = gFunc.Combine(hpDownC3, weapon)
+            hpDownC4 = gFunc.Combine(hpDownC4, weapon)
+            hpUp = gFunc.Combine(hpUp, weapon)
+        end
+
         if (gcdisplay.GetToggle('Hate') == true) then
             if (target.Name == me) then
                 if (action.Name == 'Cure III') then
-                    gFunc.ForceEquipSet('Cheat_C3HPDown')
-                    gFunc.ForceEquipSet('Cheat_HPUp')
+                    gFunc.ForceEquipSet(hpDownC3)
+                    gFunc.ForceEquipSet(hpUp)
                 elseif (action.Name == 'Cure IV') then
-                    gFunc.ForceEquipSet('Cheat_C4HPDown')
-                    gFunc.ForceEquipSet('Cheat_HPUp')
+                    gFunc.ForceEquipSet(hpDownC4)
+                    gFunc.ForceEquipSet(hpUp)
                 end
             end
         end
@@ -541,17 +558,28 @@ function gcmage.SetupMidcastDelay(fastCastValue)
     local whmYellow = action.Skill == 'Healing Magic' and player.MainJob == 'WHM' and gcdisplay.GetToggle('Yellow') == true and CureSpells:contains(action.Name)
 
     if (blmYellow or whmYellow) then
+        local yellow = sets.Yellow
+        local yellowHNM = sets.YellowHNM
+
+        if (whmYellow) then
+            if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+                local weapon = sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]]
+                yellow = gFunc.Combine(yellow, weapon)
+                yellowHNM = gFunc.Combine(yellowHNM, weapon)
+            end
+        end
+
         local function delayYellow()
-            gFunc.ForceEquipSet('Yellow')
+            gFunc.ForceEquipSet(yellow)
             if (gcdisplay.GetToggle('HNM') == true) then
-                gFunc.ForceEquipSet('YellowHNM')
+                gFunc.ForceEquipSet(yellowHNM)
             end
         end
         local yellowDelay = castDelay - 0.4
         if (yellowDelay <= 0) then
-            gFunc.EquipSet('Yellow')
+            gFunc.EquipSet(yellow)
             if (gcdisplay.GetToggle('HNM') == true) then
-                gFunc.EquipSet('YellowHNM')
+                gFunc.EquipSet(yellowHNM)
             end
         else
             delayYellow:once(yellowDelay)
@@ -622,6 +650,10 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     end
 
     gcmage.EquipStaff()
+
+    if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+        gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
+    end
 end
 
 function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
@@ -672,25 +704,33 @@ end
 
 function gcmage.SetupInterimEquipSet(sets)
     local environment = gData.GetEnvironment()
+    local player = gData.GetPlayer()
     local action = gData.GetAction()
 
-    gFunc.InterimEquipSet(sets.Casting)
+    local interimSet = sets.Casting
+
     if (gcdisplay.IdleSet == 'DT') then
         if (environment.Time >= 6 and environment.Time < 18) then
-            gFunc.InterimEquipSet(sets.DT)
+            interimSet = sets.DT
         else
-            gFunc.InterimEquipSet(sets.DTNight)
+            interimSet = sets.DTNight
         end
     end
-    if (gcdisplay.IdleSet == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end
-    if (gcdisplay.IdleSet == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end
-    if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end
-    if (gcdisplay.IdleSet == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end
-    if (gcdisplay.IdleSet == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end
+    if (gcdisplay.IdleSet == 'MDT') then interimSet = sets.MDT end
+    if (gcdisplay.IdleSet == 'FireRes') then interimSet = sets.FireRes end
+    if (gcdisplay.IdleSet == 'IceRes') then interimSet = sets.IceRes end
+    if (gcdisplay.IdleSet == 'LightningRes') then interimSet = sets.LightningRes end
+    if (gcdisplay.IdleSet == 'EarthRes') then interimSet = sets.EarthRes end
 
     if (SurvivalSpells:contains(action.Name)) then
-        gFunc.InterimEquipSet(sets.SIRD)
+        interimSet = sets.SIRD
     end
+
+    if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+        interimSet = gFunc.Combine(interimSet, sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]])
+    end
+
+    gFunc.InterimEquipSet(interimSet)
 end
 
 function gcmage.EquipEnhancing(blmNukeExtra)
