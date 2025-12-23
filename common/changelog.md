@@ -411,3 +411,6 @@
 - Melee - Adds Weapon Loadout functionality /weapon or /wl
 - NIN - Adds a toggle to prevent staff usage on spellcast /staff
 - Overhauls every single conditional item across all files to allow for easier Level Sync and Packer validate support
+
+### v2.0.1
+- Mages - Defaults SJ Idle Max MP values to /NIN for all other undefined jobs
