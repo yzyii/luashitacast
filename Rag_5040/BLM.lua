@@ -2,9 +2,9 @@ local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set
 
-local ninSJMaxMP = 640 -- The Max MP you have when /nin in your idle set
-local whmSJMaxMP = 718 -- The Max MP you have when /whm in your idle set
-local rdmSJMaxMP = 699 -- The Max MP you have when /rdm in your idle set
+local ninSJMaxMP = 650 -- The Max MP you have when /nin in your idle set
+local whmSJMaxMP = 728 -- The Max MP you have when /whm in your idle set
+local rdmSJMaxMP = 709 -- The Max MP you have when /rdm in your idle set
 
 local nukeExtraThreshold = 850 -- The minimum MP for which NukeExtra StoneskinExtra, and PhalanxExtra set will be used instead of regular sets (to allow additional nukes using max mp sets)
 

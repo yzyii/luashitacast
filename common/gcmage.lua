@@ -337,8 +337,6 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
             if (player.MP >= setMP + addMP) then
                 equipMaxMP = true
             end
-        elseif (player.SubJob == 'NIN') and ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP then
-            equipMaxMP = true
         elseif (player.SubJob == 'WHM') and whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP then
             equipMaxMP = true
         elseif (player.SubJob == 'BLM') and blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP then
@@ -346,6 +344,8 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
         elseif (player.SubJob == 'RDM') and rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP then
             equipMaxMP = true
         elseif (player.SubJob == 'DRK') and drkSJMMP ~= nil and player.MP >= drkSJMMP + addMP then
+            equipMaxMP = true
+        elseif ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP then
             equipMaxMP = true
         end
     end
@@ -570,8 +570,6 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     local maxMP = 0
     if (setMP > 0) then
         maxMP = setMP + addMP
-    elseif (player.SubJob == 'NIN' and ninSJMMP ~= nil) then
-        maxMP = ninSJMMP + addMP
     elseif (player.SubJob == 'WHM' and whmSJMMP ~= nil) then
         maxMP = whmSJMMP + addMP
     elseif (player.SubJob == 'BLM' and blmSJMMP ~= nil) then
@@ -580,6 +578,8 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
         maxMP = rdmSJMMP + addMP
     elseif (player.SubJob == 'DRK' and drkSJMMP ~= nil) then
         maxMP = drkSJMMP + addMP
+    elseif (ninSJMMP ~= nil) then
+        maxMP = ninSJMMP + addMP
     end
 
     if (gcmage.ShouldSkipCast(maxMP, isNoModSpell)) then
