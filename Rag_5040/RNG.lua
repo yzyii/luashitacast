@@ -4,13 +4,13 @@ local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
 -- Populate these correctly otherwise ammo protection will not work
 local yoichinoyumi = false
-local special_ammo = 'Pebble'
+local special_ammo = 'Carapace Bullet'
 local buffer_ranged_attack = 7 -- Time taken for ranged attacks in seconds. Suggested that 7 is used for guns and 6 for bows.
 local buffer_ja_ws = 2
 
 local sets = {
     Idle = {
-        Ammo = 'Happy Egg',
+        Ammo = 'Silver Bullet',
     },
     IdleALT = {},
     Resting = {},
@@ -40,7 +40,7 @@ local sets = {
     Preshot = {},
 
     TP_LowAcc = {
-        Ammo = 'Happy Egg',
+        Ammo = 'Silver Bullet',
     },
     TP_Aftermath = {}, -- This can be ignored since the UnlimitedShot set will already equip for Aftermaths
     TP_Mjollnir_Haste = {},
