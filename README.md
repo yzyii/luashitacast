@@ -14,6 +14,8 @@ Jobs use the corresponding templates to automatically implement functionality th
 
 These luas were designed to be used in HorizonXI and therefore features such as automatically using opo-opo necklace when asleep or automatically cancelling shadows for Utsusemi: Ichi are not included.
 
+These luas will still work on other 75-era private servers so long as Horizon custom equipment is appropriately commented out / disabled.
+
 # How to Use
 
 - Download the entire directory From Code > Download ZIP or from Releases to the right.
