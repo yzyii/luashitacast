@@ -6,10 +6,10 @@ local cureMP = 895 -- Cure set max MP
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local carbuncles_cuffs = {
-    Hands = 'Carbuncle\'s Cuffs',
+    -- Hands = 'Carbuncle\'s Cuffs',
 }
 local evokers_boots = {
-    Feet = 'Evoker\'s Boots',
+    -- Feet = 'Evoker\'s Boots',
 }
 local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
     Back = 'Warlock\'s Mantle',
@@ -440,7 +440,7 @@ profile.HandleDefault = function()
             gFunc.EquipSet(sets.BP_Physical)
         end
     else
-        gcmage.DoDefault(nil, nil, nil, nil)
+        gcmage.DoDefault(sets, nil, nil, nil, nil)
     end
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end

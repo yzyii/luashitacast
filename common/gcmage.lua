@@ -329,6 +329,10 @@ function gcmage.DoFenrirsEarring()
 end
 
 function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
+    gcmage.DoDefault(nil, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
+end
+
+function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
 
@@ -367,7 +371,7 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
             gFunc.EquipSet('Perpetuation')
 
             local staff = ElementalStaffTable[lastSummoningElement]
-            if (bahamuts_staff.Main) then
+            if (sets.bahamuts_staff.Main) then
                 staff = 'bahamuts_staff'
             end
             if (claustrum.Main) then
