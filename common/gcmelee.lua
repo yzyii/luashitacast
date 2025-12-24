@@ -170,7 +170,9 @@ function gcmelee.DoFenrirsEarring()
 end
 
 function gcmelee.DoDefaultOverride()
-    gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
+    if (isDPS) then
+        gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
+    end
     gcinclude.DoDefaultOverride(true)
 end
 
