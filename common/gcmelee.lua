@@ -1,6 +1,6 @@
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local fenrirs_earring = { -- Not used for RNG at all
-    -- Ear2 = 'Fenrir\'s Earring',
+    Ear2 = 'Fenrir\'s Earring',
 }
 
 --[[

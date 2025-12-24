@@ -202,8 +202,7 @@ local sets = {
     },
 
     Sing_Default = { -- Primarily Wind / Debuff by Default
-        -- Range = 'Mythic Harp +1',
-        Range = 'Military Harp',
+        Range = 'Hamelin Flute',
         Head = 'Brd. Roundlet +1',
         Neck = 'Wind Torque',
         Ear1 = 'Singing Earring',
@@ -241,6 +240,7 @@ local sets = {
         Range = 'Ebony Harp +2',
     },
     Sing_Mazurka = {
+        Range = 'Ebony Harp +2',
         -- Range = 'Harlequin\'s Horn',
     },
     Sing_Minuet = {
@@ -269,10 +269,7 @@ local sets = {
     },
     Sing_HordeLullaby_Small = {
         -- Range = 'Mary\'s Horn',
-        Range = 'Cornette +2',
-        Neck = 'String Torque',
-        Body = 'Chl. Jstcorps +1',
-        Legs = "Mahatma Slops",
+        Range = 'Hamelin Flute',
     },
     Sing_Finale = {
         Range = 'Military Harp',

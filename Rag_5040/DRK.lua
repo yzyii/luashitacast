@@ -306,7 +306,6 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
-        Ammo = 'Bomb Core',
         Head = 'Ace\'s Helm',
         Neck = 'Justice Torque',
         Ear1 = 'Brutal Earring',
@@ -329,7 +328,6 @@ local sets = {
     },
 
     WS = {
-        Ammo = 'Bomb Core',
         Head = 'Maat\'s Cap',
         Neck = 'Snow Gorget',
         Ear1 = 'Brutal Earring',
@@ -381,6 +379,7 @@ local sets = {
 
     Weapon_Loadout_1 = {
         Main = 'Tredecim Scythe',
+        Ammo = 'Bomb Core',
     },
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},

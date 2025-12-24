@@ -379,10 +379,6 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {
-        Main = 'Joyeuse',
-        Sub = 'Aegis',
-        Range = 'Lightning Bow +1',
-        Ammo = '',
         Head = 'Homam Zucchetto',
         Neck = 'Fortitude Torque',
         Ear1 = 'Brutal Earring',
@@ -406,7 +402,6 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Haubergeon +1',
-        -- Hands = 'Alkyoneus\'s Brc.',
         Hands = 'Tarasque Mitts +1',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
@@ -480,7 +475,12 @@ local sets = {
         Feet = 'Vlr. Leggings +1',
     },
 
-    Weapon_Loadout_1 = {},
+    Weapon_Loadout_1 = {
+        Main = 'Joyeuse',
+        Sub = 'Aegis',
+        Range = 'Lightning Bow +1',
+        Ammo = '',
+    },
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},
 }
