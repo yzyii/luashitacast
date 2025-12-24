@@ -1,8 +1,8 @@
-local horizon_safe_mode = true -- this disables some of the potentially more contentious automation to ensure this LAC is not breaking horizon server rules
+local horizon_safe_mode = true -- this disables some of the potentially more contentious automation to ensure LAC is not breaking horizon server rules
 
 local display_messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles
 
-local load_stylist = true -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work.
+local load_stylist = true -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work
 
 local toggleDisplayHeadOnAbility = true
 
