@@ -1,3 +1,5 @@
+local horizon_safe_mode = true -- this disables some of the potentially more contentious automation to ensure this LAC is not breaking horizon server rules
+
 local display_messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles
 
 local load_stylist = true -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work.
@@ -57,6 +59,8 @@ gcdisplay = gFunc.LoadFile('common\\gcdisplay-rag.lua')
 conquest = gFunc.LoadFile('common\\conquest.lua')
 
 local gcinclude = {}
+
+gcinclude.horizon_safe_mode = horizon_safe_mode
 
 local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','bres','lightningres','lres','tres','earthres','eres','sres','windres','wires','ares','waterres','wares','wres','evasion','eva' }
 local Commands = T{ 'kite','lock','lockset','warpme','horizonmode' }

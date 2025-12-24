@@ -7,6 +7,10 @@ local whmSJMaxMP = 661 -- The Max MP you have when /whm in your idle set
 local blmSJMaxMP = 680 -- The Max MP you have when /blm in your idle set
 local drkSJMaxMP = 604 -- The Max MP you have when /drk in your idle set
 
+-- Disabled on horizon_safe_mode
+local fencersRingForced = true
+local fencersRingMaxHP = 907
+
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local blue_cotehardie = {
     -- Body = 'Blue Cotehardie',
@@ -18,7 +22,7 @@ local dilation_ring = {
     Ring2 = 'Dilation Ring',
 }
 local tp_fencers_ring = {
-    -- Ring1 = 'Fencer\'s Ring',
+    Ring1 = 'Fencer\'s Ring',
 }
 
 local sets = {
@@ -660,6 +664,24 @@ local sets = {
         Range = 'Lightning Bow +1',
         Ammo = '',
     },
+
+    -- Disabled on horizon_safe_mode
+    FencersRingHPDown = { -- 899 - Set to force HP to or below fencersRingMaxHP
+        Range = 'Lightning Bow +1',
+        Head = 'Zenith Crown +1',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Hades Earring +1',
+        Body = 'Assault Jerkin',
+        -- Body = 'Dalmatica',
+        Hands = 'Zenith Mitts +1',
+        Ring1 = 'Serket Ring',
+        Ring2 = 'Ether Ring',
+        Back = 'Umbra Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Mahatma Pigaches',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -680,6 +702,8 @@ sets.blue_cotehardie_plus_one = blue_cotehardie_plus_one
 sets.dilation_ring = dilation_ring
 sets.tp_fencers_ring = tp_fencers_ring
 profile.Sets = gcmage.AppendSets(sets)
+
+local nextFencersRingCheck = 0
 
 profile.HandleAbility = function()
     gcmage.DoAbility()
@@ -740,9 +764,20 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
+    local player = gData.GetPlayer()
+    if (not gcinclude.horizon_safe_mode) then
+        if (fencersRingForced and gcdisplay.GetCycle('TP') ~= 'Off' and player.HP > fencersRingMaxHP and player.Status == 'Engaged') then
+            local time = os.clock()
+            if (time > nextFencersRingCheck) then
+                nextFencersRingCheck = time + 2 -- only recheck again after 2 seconds to prevent spam if set up incorrectly
+                gFunc.ForceEquipSet('FencersRingHPDown')
+                gFunc.ForceEquipSet('TP')
+            end
+        end
+    end
+
     gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil, drkSJMaxMP)
 
-    local player = gData.GetPlayer()
     if (player.MP <= 40) then
         gFunc.EquipSet('blue_cotehardie')
     end

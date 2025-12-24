@@ -430,3 +430,9 @@
 
 ### v2.0.5
 - Melee - removes the None weapon loadout in favour of just always using these as if they are unpopulated, it works the same way anyway.
+
+### v2.0.6
+- SMN - Fixes broken bahamut's staff errors
+- SMN - Implements automatic Conjurer's Ring usage
+- RDM - Implements automatic Fencer's Ring usage
+- All Jobs - Implements a horizon_safe_mode setting to disable potentially contentious automation

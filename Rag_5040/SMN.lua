@@ -4,6 +4,10 @@ local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including c
 
 local cureMP = 895 -- Cure set max MP
 
+-- Disabled on horizon_safe_mode
+local conjurersRingForced = true
+local conjurersRingMaxHP = 737
+
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local carbuncles_cuffs = {
     -- Hands = 'Carbuncle\'s Cuffs',
@@ -27,7 +31,7 @@ local summoners_horn = {
     Head = 'Summoner\'s Horn',
 }
 local conjurers_ring = {
-    -- Ring1 = 'Conjurer\'s Ring',
+    Ring1 = 'Conjurer\'s Ring',
 }
 local bahamuts_staff = {
     -- Main = 'Bahamut\'s Staff',
@@ -347,6 +351,24 @@ local sets = {
     Weapon_Loadout_1 = {},
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},
+
+    -- Disabled on horizon_safe_mode
+    ConjurersRingHPDown = { -- 730 - Set to force HP below conjurersRingMaxHP. Note that /WHM provides regen so this is preferably at least 10 or more below.
+        Main = 'Terra\'s Staff',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Zenith Crown +1',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Hades Earring +1',
+        Body = 'Yinyang Robe',
+        Hands = 'Zenith Mitts +1',
+        Ring1 = 'Serket Ring',
+        Ring2 = 'Ether Ring',
+        Back = 'Umbra Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Evk. Spats +1',
+        Feet = 'Rostrum Pumps',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -378,6 +400,8 @@ local SmnHealing = T{'Healing Ruby','Healing Ruby II','Whispering Wind','Spring 
 local SmnMagical = T{'Searing Light','Meteorite','Holy Mist','Inferno','Fire II','Fire IV','Meteor Strike','Conflag Strike','Diamond Dust','Blizzard II','Blizzard IV','Heavenly Strike','Aerial Blast','Aero II','Aero IV','Wind Blade','Earthen Fury','Stone II','Stone IV','Geocrush','Judgement Bolt','Thunder II','Thunder IV','Thunderstorm','Thunderspark','Tidal Wave','Water II','Water IV','Grand Fall','Howling Moon','Lunar Bay','Ruinous Omen','Somnolence','Nether Blast','Night Terror','Level ? Holy'}
 local SmnEnfeebling = T{'Diamond Storm','Sleepga','Shock Squall','Slowga','Tidal Roar','Pavor Nocturnus','Ultimate Terror','Nightmare','Mewing Lullaby','Eerie Eye'}
 local SmnHybrid = T{'Flaming Crush','Burning Strike'}
+
+local nextConjurersRingCheck = 0
 
 profile.HandleAbility = function()
     gcmage.DoAbility()
@@ -440,6 +464,18 @@ profile.HandleDefault = function()
             gFunc.EquipSet(sets.BP_Physical)
         end
     else
+        if (not gcinclude.horizon_safe_mode) then
+            local player = gData.GetPlayer()
+            if (conjurersRingForced and player.HP >= conjurersRingMaxHP) then
+                local time = os.clock()
+                if (time > nextConjurersRingCheck) then
+                    nextConjurersRingCheck = time + 10 -- only recheck again after 3 seconds to prevent spam
+                    gFunc.ForceEquipSet('ConjurersRingHPDown')
+                    gFunc.ForceEquipSet('Idle')
+                end
+            end
+        end
+
         gcmage.DoDefault(sets, nil, nil, nil, nil)
     end
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
