@@ -418,7 +418,7 @@
 ### v2.0.2
 - Mages - (Except for BLM) Implements Weapon Loadouts /weapon or /wl
 - All Jobs - Removes /locktp as this should no longer be required for any use case
-- WHM - Adds Hate toggle. C5 does not use Hate set.
+- WHM - Adds Hate toggle. C5 does not use Hate set
 
 ### v2.0.3
 - DRK - Add TP_Aftermath_Mjollnir_Haste set to support scenarios where both haste buffs are active
@@ -426,4 +426,7 @@
 ### v2.0.4
 - RNG - Add better support for Yoichi
 - RNG - Add better special ammo protection
-- WHM - Fix broken Cure Clogs / Ruckes Rungs from 2.0.0.
+- WHM - Fix broken Cure Clogs / Ruckes Rungs from 2.0.0
+
+### v2.0.5
+- Melee - removes the None weapon loadout in favour of just always using these as if they are unpopulated, it works the same way anyway.

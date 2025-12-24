@@ -24,10 +24,9 @@ local TpVariantTable = {
 local tp_variant = 1
 
 local WeaponOverrideTable = {
-    [1] = 'None',
-    [2] = '1',
-    [3] = '2',
-    [4] = '3',
+    [1] = '1',
+    [2] = '2',
+    [3] = '3',
 }
 
 local weapon_override = 1
@@ -171,9 +170,7 @@ function gcmelee.DoFenrirsEarring()
 end
 
 function gcmelee.DoDefaultOverride()
-    if (weapon_override > 1) then
-        gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
-    end
+    gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
     gcinclude.DoDefaultOverride(true)
 end
 
