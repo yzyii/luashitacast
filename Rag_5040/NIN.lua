@@ -75,7 +75,7 @@ local koga_hakama = {
     -- Legs = 'Koga Hakama',
 }
 local koga_hakama_plus_one = {
-    Legs = 'Koga Hakama +1',
+    Legs = 'Kog. Hakama +1',
 }
 
 local sets = {
