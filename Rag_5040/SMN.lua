@@ -469,7 +469,7 @@ profile.HandleDefault = function()
             if (conjurersRingForced and player.HP >= conjurersRingMaxHP) then
                 local time = os.clock()
                 if (time > nextConjurersRingCheck) then
-                    nextConjurersRingCheck = time + 10 -- only recheck again after 3 seconds to prevent spam
+                    nextConjurersRingCheck = time + 3 -- only recheck again after 3 seconds to prevent spam
                     gFunc.ForceEquipSet('ConjurersRingHPDown')
                     gFunc.ForceEquipSet('Idle')
                 end
