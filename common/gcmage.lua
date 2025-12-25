@@ -2,7 +2,7 @@
 local log_conquest = false
 
 -- This uses the BLM-advanced.lua to calculate more precise Yellow sets. Do not use this unless you know what you're doing.
-local blm_advanced = true
+local blm_advanced = false
 
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_abyssal_earrings = true
