@@ -593,7 +593,7 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue)
                 gFunc.ForceEquipSet(yellowHNM)
             end
         end
-        local yellowDelay = castDelay - 0.4
+        local yellowDelay = castDelay - (packetDelay * 2)
         if (yellowDelay <= 0) then
             gFunc.EquipSet(yellow)
             if (gcdisplay.GetToggle('HNM') == true) then
