@@ -203,7 +203,7 @@ function gcmelee.SetupMidcastDelay(fastCastValue)
         castTime = 3000
     end
 
-    if (player.SubJob == "RDM") then
+    if (player.SubJob == 'RDM') then
          fastCastValue = fastCastValue + 0.15 -- Fast Cast Trait
     end
     local minimumBuffer = 0.4 -- Can be lowered to 0.1 if you want

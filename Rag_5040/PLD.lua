@@ -30,7 +30,7 @@ local sets = {
         Main = 'Tutelary',
         Sub = 'Aegis',
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'displaced',
         Body = 'Royal Cloak',
         Neck = 'Jeweled Collar +1',
@@ -50,7 +50,7 @@ local sets = {
         Main = 'Tutelary',
         Sub = 'Aegis',
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Darksteel Cap +1', -- 2
         Body = 'Dst. Harness +1', -- 4
         Neck = { Name = 'Shield Torque', Priority = 100 },
@@ -97,7 +97,7 @@ local sets = {
         Main = 'Tutelary',
         Sub = 'Aegis',
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Darksteel Cap +1', -- 2
         Body = 'Dst. Harness +1', -- 4
         Neck = { Name = 'Shield Torque', Priority = 100 },
@@ -121,7 +121,7 @@ local sets = {
     },
     FireRes = { -- 137
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Cmn. Earring', -- 11
@@ -137,7 +137,7 @@ local sets = {
     },
     IceRes = { -- 135
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Diamond Earring', -- 10
@@ -153,10 +153,10 @@ local sets = {
     },
     LightningRes = { -- 138
         Main = 'Terra\'s Staff', -- 20
-        Sub = '',
+        Sub = 'displaced',
         -- Sub = 'Nms. Shield +1', -- 15
         Range = 'Lightning Bow +1', -- 7
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Robust Earring', -- 11
@@ -172,7 +172,7 @@ local sets = {
     },
     EarthRes = { -- 143
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Robust Earring', -- 11
@@ -188,7 +188,7 @@ local sets = {
     },
     WindRes = { -- 118
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Diamond Earring', -- 10
@@ -204,7 +204,7 @@ local sets = {
     },
     WaterRes = { -- 128
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Cmn. Earring', -- 11
@@ -305,7 +305,7 @@ local sets = {
         Main = 'Durandal',
         Sub = 'Aegis',
         Range = 'Lightning Bow +1',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Darksteel Cap +1', -- 2
         Body = 'Hydra Haubert',
         Neck = 'Willpower Torque', -- 5
@@ -321,9 +321,9 @@ local sets = {
     },
     Cheat_C3HPUp = { -- 1430 (223)
         Main = 'Apollo\'s Staff',
-        Sub = '',
+        Sub = 'displaced',
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
@@ -341,7 +341,7 @@ local sets = {
         Main = 'Durandal',
         Sub = 'Aegis',
         Range = 'Lightning Bow +1',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Faerie Hairpin',
         Neck = 'Willpower Torque',
         Ear1 = { Name = 'Magnetic Earring', Priority = 120 }, -- 8
@@ -357,9 +357,9 @@ local sets = {
     },
     Cheat_C4HPUp = { -- 1514 (441 +1)
         Main = 'Apollo\'s Staff',
-        Sub = '',
+        Sub = 'displaced',
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Bahamut\'s Mask',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
@@ -440,7 +440,7 @@ local sets = {
         Main = { Name = 'Durandal', Priority = -1 },
         Sub = 'Koenig Shield',
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Koenig Schaller',
         Neck = 'Fortitude Torque',
         Ear1 = { Name = 'Robust Earring', Priority = -1 },
@@ -479,7 +479,7 @@ local sets = {
         Main = 'Joyeuse',
         Sub = 'Aegis',
         Range = 'Lightning Bow +1',
-        Ammo = '',
+        Ammo = 'displaced',
     },
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},
@@ -606,7 +606,7 @@ profile.HandlePrecast = function()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
     local cheatDelay = 0
-    if (player.SubJob == "RDM" and warlocks_mantle.Back) then
+    if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
         cheatDelay = gcmelee.DoPrecast(fastCastValue + 0.02)
         gFunc.EquipSet('warlocks_mantle')
     else

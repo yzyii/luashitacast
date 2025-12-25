@@ -433,8 +433,8 @@ function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
             if (conquest:GetOutsideControl()) then
                 gFunc.EquipSet('republic_gold_medal')
             end
-            if (dark_staff ~= '') then
-                gFunc.Equip('Main', dark_staff)
+            if (dark_staff.Main) then
+                gFunc.EquipSet('dark_staff')
             end
         end
     else
@@ -452,6 +452,10 @@ function gcmage.DoPrecast(sets, fastCastValue)
     local player = gData.GetPlayer()
 
     gFunc.EquipSet('Precast')
+    if (player.MainJob == 'BRD' and action.Type == 'Bard Song') then
+        gFunc.ForceEquipSet('Precast_Songs_HPDown')
+        gFunc.EquipSet('Precast_Songs')
+    end
 
     if (chainspell > 0 or lag) then
         if (gcdisplay.GetToggle('Hate') == true) then
@@ -528,25 +532,29 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue)
     end
 
     local function delayCheat()
-        local hpDownC3 = sets.Cheat_C3HPDown
-        local hpDownC4 = sets.Cheat_C4HPDown
-        local hpUp = sets.Cheat_HPUp
-
-        if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-            local weapon = sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]]
-            hpDownC3 = gFunc.Combine(hpDownC3, weapon)
-            hpDownC4 = gFunc.Combine(hpDownC4, weapon)
-            hpUp = gFunc.Combine(hpUp, weapon)
-        end
-
         if (gcdisplay.GetToggle('Hate') == true) then
             if (target.Name == me) then
-                if (action.Name == 'Cure III') then
-                    gFunc.ForceEquipSet(hpDownC3)
-                    gFunc.ForceEquipSet(hpUp)
-                elseif (action.Name == 'Cure IV') then
-                    gFunc.ForceEquipSet(hpDownC4)
-                    gFunc.ForceEquipSet(hpUp)
+                local isC3 = action.Name == 'Cure III'
+                local isC4 = action.Name == 'Cure IV'
+                if (isC3 or isC4) then
+                    local hpDownC3 = sets.Cheat_C3HPDown
+                    local hpDownC4 = sets.Cheat_C4HPDown
+                    local hpUp = sets.Cheat_HPUp
+
+                    if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+                        local weapon = sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]]
+                        hpDownC3 = gFunc.Combine(hpDownC3, weapon)
+                        hpDownC4 = gFunc.Combine(hpDownC4, weapon)
+                        hpUp = gFunc.Combine(hpUp, weapon)
+                    end
+
+                    if (isC3) then
+                        gFunc.ForceEquipSet(hpDownC3)
+                        gFunc.ForceEquipSet(hpUp)
+                    elseif (isC4) then
+                        gFunc.ForceEquipSet(hpDownC4)
+                        gFunc.ForceEquipSet(hpUp)
+                    end
                 end
             end
         end

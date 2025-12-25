@@ -57,8 +57,8 @@ local sets = {
         Ear2 = 'Magnetic Earring',
         Body = 'Mahatma Hpl.',
         Hands = 'Hydra Gloves',
-        Ring1 = "Shadow Ring",
-        Ring2 = "Merman's Ring",
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Merman\'s Ring',
         Back = 'Mahatma Cape',
         Waist = { Name = 'Ocean Rope', Priority = 100 },
         Legs = 'Hydra Brais',
@@ -259,13 +259,13 @@ local sets = {
         Range = 'Nursemaid\'s Harp',
         Neck = 'String Torque',
         Body = 'Chl. Jstcorps +1',
-        Legs = "Mahatma Slops",
+        Legs = 'Mahatma Slops',
     },
     Sing_HordeLullaby_Large = {
         Range = 'Nursemaid\'s Harp',
         Neck = 'String Torque',
         Body = 'Chl. Jstcorps +1',
-        Legs = "Mahatma Slops",
+        Legs = 'Mahatma Slops',
     },
     Sing_HordeLullaby_Small = {
         -- Range = 'Mary\'s Horn',
@@ -275,7 +275,7 @@ local sets = {
         Range = 'Military Harp',
         Neck = 'String Torque',
         Body = 'Chl. Jstcorps +1',
-        Legs = "Mahatma Slops",
+        Legs = 'Mahatma Slops',
     },
     Sing_Requiem = {
         Range = 'Hamelin Flute',
@@ -293,7 +293,7 @@ local sets = {
         Range = 'Sorrowful Harp',
         Neck = 'String Torque',
         Body = 'Chl. Jstcorps +1',
-        Legs = "Mahatma Slops",
+        Legs = 'Mahatma Slops',
     },
     Sing_Hymnus = {
         Range = 'Angel Lyre',
@@ -332,7 +332,7 @@ local sets = {
     Enhancing = {},
     Stoneskin = { -- 2 MND short for Hume
         Main = 'Chanter\'s Staff',
-		Ammo = "Dream Sand",
+		Ammo = 'Dream Sand',
         Head = 'Maat\'s Cap',
         Neck = 'Stone Gorget',
         Ear1 = 'Cmn. Earring',
@@ -365,7 +365,9 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP = {},
+    TP = {
+        Range = 'Angel Lyre',
+    },
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {},
     TP_NIN = {},
@@ -373,7 +375,13 @@ local sets = {
     WS = {},
     WS_HighAcc = {},
 
-    Weapon_Loadout_1 = {},
+    Weapon_Loadout_1 = {
+		Main = 'Octave Club',
+        -- Main = 'Blau Dolch',
+		Sub = 'Genbu\'s Shield',
+        -- Do not place a Ranged weapon or Ammo in these slots or instrument switching will be disabled entirely
+        Ammo = 'displaced',
+    },
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},
 }
@@ -466,16 +474,12 @@ profile.HandlePrecast = function()
 
     local totalfcv = fcv
     if (action.Type == 'Bard Song') then
-        gFunc.ForceEquipSet('Precast_Songs_HPDown')
         totalfcv = 1 - (1 - fastCastValueSong) * (1 - fcv)
     end
 
     gcmage.DoPrecast(sets, totalfcv)
     if (fcv ~= fastCastValue) then
         gFunc.EquipSet('warlocks_mantle')
-    end
-    if (totalfcv ~= fcv) then
-        gFunc.EquipSet(sets.Precast_Songs)
     end
 end
 
