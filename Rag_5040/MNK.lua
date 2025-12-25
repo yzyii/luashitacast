@@ -170,7 +170,9 @@ local sets = {
         Feet = 'Fuma Sune-Ate',
     },
     TP_Aftermath = {},
-    TP_Mjollnir_Haste = {},
+    TP_Mjollnir_Haste = {
+        Head = 'Maat\'s Cap',
+    },
     TP_HighAcc = {
         Head = 'Maat\'s Cap',
         Body = 'Shura Togi',
@@ -183,8 +185,8 @@ local sets = {
     },
 
     SJ_DRG = {
+        Head = 'Maat\'s Cap',
         Ear2 = 'Wyvern Earring',
-        Feet = 'Dune Boots',
     },
     SJ_THF = {
         Ear2 = 'Pilferer\'s Earring',
@@ -215,7 +217,6 @@ local sets = {
     },
     WS_DragonKick = {
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Dune Boots',
     },
     WS_HowlingFist = {
     },
