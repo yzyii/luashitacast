@@ -2,7 +2,7 @@ local profile = {}
 
 local fastCastValue = 0.02 -- 2% from gear listed in Precast set
 
-local max_hp_in_idle_with_regen_gear_equipped = 1632 -- You could set this to 9999 if you do not wish to ever use regen gear
+local max_hp_in_idle_with_regen_gear_equipped = 1632 -- You could set this to 0 if you do not wish to ever use regen gear
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local temple_gaiters = {

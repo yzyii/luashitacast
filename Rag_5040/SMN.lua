@@ -476,7 +476,7 @@ profile.HandleDefault = function()
             end
         end
 
-        gcmage.DoDefault(sets, nil, nil, nil, nil)
+        gcmage.DoDefault(sets, nil, nil, nil, nil, nil)
     end
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
@@ -502,7 +502,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, cureMP, cureMP, cureMP, cureMP)
+    gcmage.DoMidcast(sets, cureMP, cureMP, cureMP, cureMP, cureMP)
 end
 
 return profile
