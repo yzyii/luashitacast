@@ -2,6 +2,8 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
+local max_hp_in_idle_with_regen_gear_equipped = 9999 -- You could set this to 9999 if you do not wish to ever use regen gear
+
 local heal_hp_threshold_whm = 859
 local heal_hp_threshold_rdm = 869
 
@@ -167,7 +169,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmelee.DoDefault()
+    gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
     local player = gData.GetPlayer()
     local isWHM = player.SubJob == 'WHM'

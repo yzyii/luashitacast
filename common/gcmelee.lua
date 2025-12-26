@@ -2,6 +2,21 @@
 local fenrirs_earring = { -- Not used for RNG at all
     Ear2 = 'Fenrir\'s Earring',
 }
+local muscle_belt = {
+    Waist = 'Muscle Belt +1',
+}
+local garden_bangles = {
+    Hands = 'Garden Bangles',
+}
+local presidential_hairpin = {
+    -- Head = 'President. Hairpin',
+}
+local dream_ribbon = {
+    Head = 'Dream Ribbon',
+}
+
+-- Set this to true to confirm that actually read the README.md and set up the equipment listed above correctly
+local i_can_read_and_follow_instructions_test = false
 
 --[[
 --------------------------------
@@ -12,6 +27,10 @@ Everything below can be ignored.
 gcinclude = gFunc.LoadFile('common\\gcinclude-rag.lua')
 
 local gcmelee = {}
+
+local MuscleBeltJobs = T{ 'WAR','MNK','THF','BST','NIN' }
+local GardenBanglesJobs = T{ 'MNK','THF','DRK','RNG' }
+local PresidentialHairpinJobs = T{  'MNK','THF','BST','NIN','DRG' }
 
 local isDPS = true
 local lag = false
@@ -91,7 +110,7 @@ function gcmelee.DoCommands(args)
     end
 end
 
-function gcmelee.DoDefault()
+function gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
 
@@ -116,6 +135,35 @@ function gcmelee.DoDefault()
             end
         end
     end
+
+    if (player.Status == 'Idle') then
+        if (player.HPP < 50) then
+            if (MuscleBeltJobs:contains(player.MainJob)) then gFunc.EquipSet('muscle_belt') end
+        end
+        if (player.HP < max_hp_in_idle_with_regen_gear_equipped) then
+            local environment = gData.GetEnvironment()
+            if (environment.Time >= 6 and environment.Time < 18) then
+                if (GardenBanglesJobs:contains(player.MainJob)) then gFunc.EquipSet('garden_bangles') end
+            end
+            if (conquest:GetOutsideControl()) then
+                if (PresidentialHairpinJobs:contains(player.MainJob)) then gFunc.EquipSet('presidential_hairpin') end
+            end
+            gFunc.EquipSet('dream_ribbon')
+        end
+    end
+
+    if (player.Status == 'Idle') then
+        if (player.HPP < 50) then
+            gFunc.EquipSet('muscle_belt')
+        end
+        if (player.HP < max_hp_in_idle_with_regen_gear_equipped) then
+            if (conquest:GetOutsideControl()) then
+                gFunc.EquipSet('presidential_hairpin')
+            end
+            gFunc.EquipSet('dream_ribbon')
+        end
+    end
+
 
     if (isDPS) then
         if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
@@ -179,6 +227,10 @@ function gcmelee.DoDefaultOverride()
 end
 
 function gcmelee.DoPrecast(fastCastValue)
+    if (not i_can_read_and_follow_instructions_test) then
+        print(chat.header('GCMelee'):append(chat.message('Failed to follow instructions. Read the README.md')))
+    end
+
     gFunc.EquipSet('Precast')
     if (not lag) then
         return gcmelee.SetupMidcastDelay(fastCastValue)
@@ -242,6 +294,10 @@ function gcmelee.SetupInterimEquipSet(sets)
 end
 
 function gcmelee.DoWS()
+    if (not i_can_read_and_follow_instructions_test) then
+        print(chat.header('GCMelee'):append(chat.message('Failed to follow instructions. Read the README.md')))
+    end
+
     gFunc.EquipSet('WS')
     if (TpVariantTable[tp_variant] == 'HighAcc') then
         gFunc.EquipSet('WS_HighAcc')
@@ -255,11 +311,20 @@ function gcmelee.GetAccuracyMode()
 end
 
 function gcmelee.DoAbility()
+    if (not i_can_read_and_follow_instructions_test) then
+        print(chat.header('GCMelee'):append(chat.message('Failed to follow instructions. Read the README.md')))
+    end
+
     gcinclude.DoAbility()
 end
 
 function gcmelee.AppendSets(sets)
     sets.fenrirs_earring = fenrirs_earring
+    sets.muscle_belt = muscle_belt
+    sets.garden_bangles = garden_bangles
+    sets.presidential_hairpin = presidential_hairpin
+    sets.dream_ribbon = dream_ribbon
+
     return gcinclude.AppendSets(sets)
 end
 

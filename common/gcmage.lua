@@ -98,6 +98,9 @@ local tp_diabolos_earring = {
     -- Ear2 = 'Diabolos\'s Earring',
 }
 
+-- Set this to true to confirm that actually read the README.md and set up the equipment listed above correctly
+local i_can_read_and_follow_instructions_test = false
+
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -290,7 +293,7 @@ function gcmage.DoCommands(args, sets)
     if (player.MainJob == 'RDM') then
         if (args[1] == 'vert') then
             if (conquest:GetOutsideControl()) then
-                print(chat.header('GCMage'):append(chat.message('Out of Region - using ConvertOOR set.')))
+                print(chat.header('Ashitacast'):append(chat.message('Out of Region - using ConvertOOR set.')))
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac set ConvertOOR')
                 AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
             else
@@ -452,6 +455,10 @@ function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
 end
 
 function gcmage.DoPrecast(sets, fastCastValue)
+    if (not i_can_read_and_follow_instructions_test) then
+        print(chat.header('GCMage'):append(chat.message('Failed to follow instructions. Read the README.md')))
+    end
+
     local chainspell = gData.GetBuffCount('Chainspell')
     local action = gData.GetAction()
     local player = gData.GetPlayer()
@@ -876,7 +883,7 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
             if ((player.MainJob == 'RDM') and conquest:GetOutsideControl()) then
-                if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
+                if (log_conquest) then print(chat.header('Ashitacast'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
                 gFunc.EquipSet('master_casters_bracelets')
             end
             if (environment.WeatherElement == 'Dark') then
@@ -915,7 +922,7 @@ function gcmage.EquipEnfeebling()
 
     gFunc.EquipSet('Enfeebling')
     if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) then
-        if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
+        if (log_conquest) then print(chat.header('Ashitacast'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
         gFunc.EquipSet('master_casters_bracelets')
     end
     if (EnfeebMNDSpells:contains(action.Name)) then
@@ -1057,6 +1064,10 @@ function ObiCheck(action)
 end
 
 function gcmage.DoAbility()
+    if (not i_can_read_and_follow_instructions_test) then
+        print(chat.header('GCMage'):append(chat.message('Failed to follow instructions. Read the README.md')))
+    end
+
     gcinclude.DoAbility()
     local action = gData.GetAction()
     if (action.Name == 'Release') then

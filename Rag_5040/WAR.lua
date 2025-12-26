@@ -2,6 +2,8 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 
+local max_hp_in_idle_with_regen_gear_equipped = 9999 -- You could set this to 9999 if you do not wish to ever use regen gear
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -119,7 +121,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmelee.DoDefault()
+    gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
     local aggressor = gData.GetBuffCount('Aggressor')
     if (aggressor == 1 and gcdisplay.IdleSet == 'LowAcc') then

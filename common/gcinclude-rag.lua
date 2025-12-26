@@ -1,4 +1,4 @@
-local horizon_safe_mode = true -- this disables some of the potentially more contentious automation to ensure LAC is not breaking horizon server rules
+local horizon_safe_mode = true -- this disables some of the potentially more contentious automation to ensure LAC is not breaking Horizon server rules
 
 local display_messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles
 
@@ -28,6 +28,9 @@ local dream_mittens = {
 local skulkers_cape = {
     -- Back = 'Skulker\'s Cape',
 }
+
+-- Set this to true to confirm that actually read the README.md and set up the equipment listed above correctly
+local i_can_read_and_follow_instructions_test = false
 
 -- Add additional equipment here that you want to automatically lock when equipping
 local LockableEquipment = {
@@ -298,6 +301,10 @@ function gcinclude.DoDefaultOverride(isMelee)
 end
 
 function gcinclude.DoItem()
+    if (not i_can_read_and_follow_instructions_test) then
+        print(chat.header('GCInclude'):append(chat.message('Failed to follow instructions. Read the README.md')))
+    end
+
     local item = gData.GetAction()
 
     if (item.Name == 'Silent Oil') then

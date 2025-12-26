@@ -440,3 +440,7 @@
 ### v2.0.7
 - BLM - Implements far more optimal Yellow set usage by removing the SIRD vulnerability if HP is already below threshold and more accurately selecting exact HP decrement amounts
 - WHM - Fixes /lag TP set and Yellow set interaction
+
+### v2.0.7
+- Melee - Adds regen gear support to all melee jobs
+- All Jobs - Adds a i_can_read_and_follow_instructions_test boolean setting to gcmage.lua, gcmelee.lua, and gcinclude-rag.lua. Set these to true to disable message spam
