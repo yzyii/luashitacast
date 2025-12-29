@@ -125,6 +125,7 @@ function gcdisplay.Load()
             display = display .. '   ' .. key .. ': ' .. '|cFF5FFF5F|' .. value.Array[value.Index] .. '|r'
         end
         display = display .. '   ' .. 'IdleSet' .. ': ' .. '|cFF5FFF5F|' .. gcdisplay.IdleSet .. '|r' .. ' '
+	display = display .. '   ' .. 'HorizonMode' .. ': ' .. '|cFF5FFF5F|' .. tostring(gcinclude.horizon_safe_mode) .. '|r' .. ' '
         gcdisplay.FontObject.text = display
     end)
 end
