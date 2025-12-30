@@ -128,7 +128,7 @@ This will work 99% of the time unless you have added your own logic and therefor
 /tp /tpset /mode - toggles TP set between a LowAcc and HighAcc set.
                    this will be overwritten if you have a DT or resistance set etc. enabled.
                    this is disabled for PLD in favour of using Idle sets by default.
-/weapon /wl      - toggles between using Weapon_Loadout sets or none of them (default)
+/weapon /wl      - toggles between using Weapon_Loadout sets.
                    can be used to specify different weapon loadouts. e.g. virtue stones etc.
                    there is no UI element for this.
 /locktp          - locks or unlocks Main, Sub, Ranged and Ammo slots.
