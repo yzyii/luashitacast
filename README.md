@@ -97,7 +97,8 @@ This will work 99% of the time unless you have added your own logic and therefor
 /horizonmode - if you wish to use Horizon Mode in LuAshitacast to be 100% horizon approved,
                you can then use this alias to manually trigger a handle default gear equip
                using a key press!
-               i.e. You could push this 4 times a second just to mimic exactly what LuAshitacast would do for you automatically.
+               i.e. You could push this 4 times a second just to mimic exactly what
+               LuAshitacast would do for you automatically.
 ```
 
 ## Additional Commands for All Mage Jobs:
