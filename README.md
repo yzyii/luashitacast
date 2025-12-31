@@ -64,6 +64,10 @@ This will work 99% of the time unless you have added your own logic and therefor
           it will equip the kite set instead of or on top of the fire resistance set.
           this allows you to gain 12% move speed while keeping most of your fire resistance.
 
+/weapon /wl - toggles between using Weapon_Loadout sets.
+              can be used to specify different weapon loadouts. e.g. virtue stones etc.
+              there is no UI element for this.
+
 [Idle Sets] (Changes your idle set to use these sets instead)
 /idle           - toggles between using 2 different idle sets
                   i.e. Normal and Alternate / Idle and IdleALT.
@@ -128,10 +132,6 @@ This will work 99% of the time unless you have added your own logic and therefor
 /tp /tpset /mode - toggles TP set between a LowAcc and HighAcc set.
                    this will be overwritten if you have a DT or resistance set etc. enabled.
                    this is disabled for PLD in favour of using Idle sets by default.
-/weapon /wl      - toggles between using Weapon_Loadout sets.
-                   can be used to specify different weapon loadouts. e.g. virtue stones etc.
-                   there is no UI element for this.
-/locktp          - locks or unlocks Main, Sub, Ranged and Ammo slots.
 ```
 
 ## Additional Commands for RDM:
