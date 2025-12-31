@@ -106,6 +106,7 @@ local sets = {
 
     Flee = {},
     Hide = {},
+	Steal_HPDown = {},
     Steal = {},
     Mug = {},
 
@@ -183,6 +184,7 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Hide') then
         gFunc.EquipSet(sets.Hide)
     elseif (action.Name == 'Steal') then
+		gFunc.ForceEquipSet(sets.Steal_HPDown)
         gFunc.EquipSet(sets.Steal)
     elseif (action.Name == 'Mug') then
         gFunc.EquipSet(sets.Mug)
