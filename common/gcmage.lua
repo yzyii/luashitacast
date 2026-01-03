@@ -348,14 +348,22 @@ function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
             if (player.MP >= setMP + addMP) then
                 equipMaxMP = true
             end
-        elseif (player.SubJob == 'WHM') and whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP then
-            equipMaxMP = true
-        elseif (player.SubJob == 'BLM') and blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP then
-            equipMaxMP = true
-        elseif (player.SubJob == 'RDM') and rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP then
-            equipMaxMP = true
-        elseif (player.SubJob == 'DRK') and drkSJMMP ~= nil and player.MP >= drkSJMMP + addMP then
-            equipMaxMP = true
+        elseif (player.SubJob == 'WHM') then
+            if (whmSJMMP ~= nil and player.MP >= whmSJMMP + addMP) then
+                equipMaxMP = true
+            end
+        elseif (player.SubJob == 'BLM') then
+            if (blmSJMMP ~= nil and player.MP >= blmSJMMP + addMP) then
+                equipMaxMP = true
+            end
+        elseif (player.SubJob == 'RDM') then
+            if (rdmSJMMP ~= nil and player.MP >= rdmSJMMP + addMP) then
+                equipMaxMP = true
+            end
+        elseif (player.SubJob == 'DRK') then
+            if (drkSJMMP ~= nil and player.MP >= drkSJMMP + addMP) then
+                equipMaxMP = true
+            end
         elseif ninSJMMP ~= nil and player.MP >= ninSJMMP + addMP then
             equipMaxMP = true
         end
@@ -657,14 +665,22 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     local maxMP = 0
     if (setMP > 0) then
         maxMP = setMP + addMP
-    elseif (player.SubJob == 'WHM' and whmSJMMP ~= nil) then
-        maxMP = whmSJMMP + addMP
-    elseif (player.SubJob == 'BLM' and blmSJMMP ~= nil) then
-        maxMP = blmSJMMP + addMP
-    elseif (player.SubJob == 'RDM' and rdmSJMMP ~= nil) then
-        maxMP = rdmSJMMP + addMP
-    elseif (player.SubJob == 'DRK' and drkSJMMP ~= nil) then
-        maxMP = drkSJMMP + addMP
+    elseif (player.SubJob == 'WHM') then
+        if (whmSJMMP ~= nil) then
+            maxMP = whmSJMMP + addMP
+        end
+    elseif (player.SubJob == 'BLM') then
+        if (blmSJMMP ~= nil) then
+            maxMP = blmSJMMP + addMP
+        end
+    elseif (player.SubJob == 'RDM') then
+        if (rdmSJMMP ~= nil) then
+            maxMP = rdmSJMMP + addMP
+        end
+    elseif (player.SubJob == 'DRK') then
+        if (drkSJMMP ~= nil) then
+            maxMP = drkSJMMP + addMP
+        end
     elseif (ninSJMMP ~= nil) then
         maxMP = ninSJMMP + addMP
     end
