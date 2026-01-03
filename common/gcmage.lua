@@ -336,10 +336,6 @@ function gcmage.DoFenrirsEarring()
     end
 end
 
-function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
-    gcmage.DoDefault(nil, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
-end
-
 function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
