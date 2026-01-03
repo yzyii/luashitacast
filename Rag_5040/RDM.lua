@@ -776,7 +776,7 @@ profile.HandleDefault = function()
         end
     end
 
-    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil, drkSJMaxMP)
+    gcmage.DoDefault(sets, ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, nil, drkSJMaxMP)
 
     if (player.MP <= 40) then
         gFunc.EquipSet('blue_cotehardie')
