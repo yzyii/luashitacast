@@ -448,3 +448,5 @@
 ### v2.0.9
 - THF - Add HP Down set for steal
 
+### v2.0.10
+- Mages - Use Enhancing set for sneak / invisible
