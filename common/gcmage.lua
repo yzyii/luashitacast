@@ -768,9 +768,11 @@ function gcmage.EquipSneakInvisGear()
 
     if (target.Name == me) then
         if (action.Name == 'Sneak' or string.match(action.Name, 'Monomi')) then
+            gFunc.EquipSet('Enhancing')
             gFunc.EquipSet('dream_boots')
             gFunc.EquipSet('skulkers_cape')
         elseif (action.Name == 'Invisible' or string.match(action.Name, 'Tonko')) then
+            gFunc.EquipSet('Enhancing')
             gFunc.EquipSet('dream_mittens')
             gFunc.EquipSet('skulkers_cape')
         end
