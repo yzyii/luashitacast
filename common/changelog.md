@@ -450,3 +450,6 @@
 
 ### v2.0.10
 - Mages - Use Enhancing set for sneak / invisible
+
+### v2.0.11
+- BLM - Implements BLM sorceror's earring logic
