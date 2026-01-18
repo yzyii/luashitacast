@@ -65,6 +65,7 @@ local sets = {
     Movement = {
         Feet = 'Herald\'s Gaiters',
     },
+    Movement_TP = {},
 
     --[[
     8% Base

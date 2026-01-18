@@ -66,6 +66,7 @@ local sets = {
     },
     Town = {},
     Movement = {},
+    Movement_TP = {},
 
     DT = {
 		Main = 'Terra\'s Staff',

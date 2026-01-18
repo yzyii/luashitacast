@@ -82,6 +82,10 @@ local sets = {
         Head = 'Dls. Chapeau +1',
         Legs = 'Blood Cuisses',
     },
+    Movement_TP = {
+        Hands = 'Dst. Mittens +1',
+        Feet = 'Dst. Leggings +1',
+    },
 
     DT = {
         Main = 'Terra\'s Staff', -- 20

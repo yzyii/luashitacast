@@ -453,3 +453,4 @@
 
 ### v2.0.11
 - BLM - Implements BLM sorceror's earring logic
+- All Jobs - Implements Movement_TP set

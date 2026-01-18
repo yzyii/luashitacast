@@ -99,6 +99,7 @@ local sets = {
     Movement = {
         Feet = 'Herald\'s Gaiters',
     },
+    Movement_TP = {},
 
     DT = {
         Main = 'Terra\'s Staff',

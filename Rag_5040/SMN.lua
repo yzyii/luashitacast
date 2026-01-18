@@ -75,6 +75,7 @@ local sets = {
     Movement = {
         Feet = 'Herald\'s Gaiters',
     },
+    Movement_TP = {},
 
     Perpetuation = { -- There is no point in using this set over an Idle set except for equipping Penance Robe
     },

@@ -258,24 +258,19 @@ function gcinclude.DoDefaultOverride(isMelee)
     end
     if (gcdisplay.IdleSet == 'Evasion') then gFunc.EquipSet('Evasion') end
 
-    if ((player.IsMoving == true)
-        and (
-            gcdisplay.IdleSet == 'Normal'
+    if (player.IsMoving == true) then
+        if (gcdisplay.IdleSet == 'Normal'
             or gcdisplay.IdleSet == 'Alternate'
             or gcdisplay.IdleSet == 'DT'
             or gcdisplay.IdleSet == 'Evasion'
-            or gcdisplay.IdleSet == 'LowAcc'
-            or gcdisplay.IdleSet == 'HighAcc'
-        )
-    ) then
-        if (isMageJobs:contains(player.MainJob) and (gcdisplay.GetCycle('TP') ~= 'Off') and player.Status == 'Engaged') then
-            if (environment.Time >= 6 and environment.Time < 18) then
-                gFunc.EquipSet('DT')
-            else
-                gFunc.EquipSet('DTNight')
-            end
+        ) then
+            gFunc.EquipSet('Movement')
         end
-        gFunc.EquipSet('Movement')
+
+        if (player.Status == 'Engaged') then
+            gFunc.EquipSet('Movement')
+            gFunc.EquipSet('Movement_TP')
+        end
     end
 
     if (gcdisplay.IdleSet == 'MDT') then gFunc.EquipSet('MDT') end
