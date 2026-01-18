@@ -118,7 +118,7 @@ local AliasList = T{
     'mode', -- RDM / WHM / BLM
     'csstun','vert', -- RDM
     'hate', -- RDM / WHM
-    'tp', -- RDM / WHM / BRD / SMN
+    'tp','tptoggle', -- RDM / WHM / BRD / SMN
     'yellow', -- BLM / WHM
     'mb','hnm', -- BLM
     'lag',
@@ -183,6 +183,14 @@ local WeakElementTable = {
     ['Thunder'] = 'Earth',
     ['Light'] = 'Dark',
     ['Dark'] = 'Light'
+}
+
+local tpCycleToggleIndex = 2
+
+local tpCycleToggleIndexTable = {
+    ['Off'] = 2, -- Default into toggling into LowAcc
+    ['LowAcc'] = 2,
+    ['HighAcc'] = 3,
 }
 
 local setMP = 0
@@ -271,6 +279,14 @@ function gcmage.DoCommands(args, sets)
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
     elseif (args[1] == 'tp' and player.MainJob ~= 'BLM') then
         gcdisplay.AdvanceCycle('TP')
+        gcinclude.Message('TP Mode', gcdisplay.GetCycle('TP'))
+        tpCycleToggleIndex = tpCycleToggleIndexTable[gcdisplay.GetCycle('TP')]
+    elseif (args[1] == 'tptoggle' and player.MainJob ~= 'BLM') then
+        if (gcdisplay.GetCycle('TP') == 'Off') then
+            gcdisplay.SetCycleIndex('TP', tpCycleToggleIndex)
+        else
+            gcdisplay.SetCycleIndex('TP', 1)
+        end
         gcinclude.Message('TP Mode', gcdisplay.GetCycle('TP'))
     elseif (args[1] == 'lag') then
         lag =  not lag

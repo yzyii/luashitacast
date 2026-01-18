@@ -122,9 +122,10 @@ This will work 99% of the time unless you have added your own logic and therefor
                   Accuracy sets.
 
 [RDM / WHM / BRD / SMN]
-/tp             - toggles TP set between being Off or a LowAcc and HighAcc set.
+/tp             - cycles TP set between being Off or a LowAcc and HighAcc set.
                   Using TP modes will cause spells / songs to no longer use staves etc.
                   as your weapons etc. will be locked to retain TP.
+/tptoggle       - toggles between the last used TP set and Off.
 ```
 
 ## Additional Commands for All Melee Jobs:
