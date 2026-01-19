@@ -455,3 +455,8 @@
 - BLM - Implements BLM sorceror's earring logic
 - All Jobs - Implements Movement_TP set to better differentiate movement sets when idle vs engaged
 - Mages - Implements /tptoggle command to allow single button toggling between last TP set and Off
+
+### v2.0.12
+- RNG - Implements fenrirs earring
+- RNG - Implements fire ring
+- RNG - Implements WS modifier sets for different accuracy levels on WS
