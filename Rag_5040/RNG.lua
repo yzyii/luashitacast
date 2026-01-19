@@ -76,14 +76,17 @@ local sets = {
     WS_HighAcc = { -- Note that this will only be used for Melee WS when HighAcc tp mode is being used.
     },
     
-    WS_Ranged_Accuracy = {},
-    WS_Ranged_Attack = {},
+    WS_Ranged_ACC = {},
+    WS_Ranged_ATK = {},
 
     WS_SlugShot = {},
     WS_Coronach = {},
     WS_Sidewinder = {},
     WS_NamasArrow = { -- Unable to verify myself on Horizon but Namas Arrow should not use your ammo on use and therefore your special_ammo should be included in this set.
         Ammo = special_ammo,
+    },
+
+    WS_SJ_SAM = { -- If Brutal or similar is required for Store TP on WS
     },
 
     Weapon_Loadout_1 = {},
@@ -230,6 +233,8 @@ profile.HandlePreshot = function()
 end
 
 profile.HandleMidshot = function()
+    local environment = gData.GetEnvironment()
+
     gFunc.EquipSet(sets.Ranged_ACC)
     if (gcdisplay.GetCycle('Ranged') == 'Attack') then
         gFunc.EquipSet(sets.Ranged_ATK)
@@ -255,12 +260,14 @@ end
 profile.HandleWeaponskill = function()
     gcmelee.DoWS()
 
+    local player = gData.GetPlayer()
     local action = gData.GetAction()
+    local environment = gData.GetEnvironment()
 
     if (DistanceWS:contains(action.Name)) then
-        gFunc.EquipSet(sets.WS_Ranged_Accuracy)
+        gFunc.EquipSet(sets.WS_Ranged_ACC)
         if (gcdisplay.GetCycle('Ranged') == 'Attack') then
-            gFunc.EquipSet(sets.WS_Ranged_Attack)
+            gFunc.EquipSet(sets.WS_Ranged_ATK)
         end
     end
 
@@ -291,6 +298,10 @@ profile.HandleWeaponskill = function()
     end
     if (environment.Time < 6 or environment.Time >= 18) then
         gFunc.EquipSet(sets.fenrirs_earring)
+    end
+
+    if (player.SubJob == 'SAM') then
+        gFunc.EquipSet(sets.WS_SJ_SAM)
     end
 end
 

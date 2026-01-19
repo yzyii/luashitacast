@@ -460,3 +460,4 @@
 - RNG - Implements fenrirs earring
 - RNG - Implements fire ring
 - RNG - Implements WS modifier sets for different accuracy levels on WS
+- RNG - Implements Sam SubJob set on WS for Store TP
