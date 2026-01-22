@@ -729,7 +729,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
 
     if (isNoModSpell) then
         gFunc.EquipSet('Haste')
-        if (action.Skill ~= 'Ninjutsu') then
+        if (action.Skill ~= 'Ninjutsu' and action.Skill ~= 'Singing') then
             gFunc.EquipSet('ConserveMP')
             if (environment.DayElement == 'Water') and (player.MPP <= 85) then
                 if (maxMP == 0 or player.MP < maxMP * 0.85) then
@@ -770,7 +770,7 @@ function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
         end
     end
 
-    if (action.Skill ~= 'Ninjutsu' and player.MPP <= 95) then
+    if (action.Skill ~= 'Ninjutsu' and action.Skill ~= 'Singing' and player.MPP <= 95) then
         gFunc.EquipSet('ConserveMP')
     end
 
