@@ -7,6 +7,9 @@ local blm_advanced = false
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_abyssal_earrings = true
 
+-- Set to true if you wish to always use elemental staves or claustrum for Elemental DoTs.
+local use_staves_for_elemental_debuffs = false
+
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local claustrum = {
     -- Main = 'Claustrum',
@@ -1051,24 +1054,26 @@ function gcmage.EquipStaff()
     local environment = gData.GetEnvironment()
     local player = gData.GetPlayer()
 
-    if (action.Skill ~= 'Enhancing Magic' and not ElementalDebuffs:contains(action.Name) and not string.match(action.Name, 'Utsusemi')) then
-        local staff = ElementalStaffTable[action.Element]
-        if (player.MainJob == 'SMN' or player.MainJob == 'BLM') then
-            if (claustrum.Main and action.Skill ~= 'Healing Magic') then
-                staff = 'claustrum'
+    if (action.Skill ~= 'Enhancing Magic' and not string.match(action.Name, 'Utsusemi')) then
+        if (use_staves_for_elemental_debuffs or not ElementalDebuffs:contains(action.Name)) then
+            local staff = ElementalStaffTable[action.Element]
+            if (player.MainJob == 'SMN' or player.MainJob == 'BLM') then
+                if (claustrum.Main and action.Skill ~= 'Healing Magic') then
+                    staff = 'claustrum'
+                end
             end
-        end
-        gFunc.EquipSet(staff)
-
-        if (player.MainJob == 'BLM' and DiabolosPoleSpells:contains(action.Name)) then
-            if (environment.WeatherElement == 'Dark') then
-                gFunc.EquipSet('diabolos_pole')
+            gFunc.EquipSet(staff)
+    
+            if (player.MainJob == 'BLM' and DiabolosPoleSpells:contains(action.Name)) then
+                if (environment.WeatherElement == 'Dark') then
+                    gFunc.EquipSet('diabolos_pole')
+                end
             end
-        end
-        if (player.MainJob == 'WHM' and CureSpells:contains(action.Name)) then
-            gFunc.EquipSet('mjollnir')
-            if (player.SubJob == 'NIN') then
-                gFunc.EquipSet('asklepios')
+            if (player.MainJob == 'WHM' and CureSpells:contains(action.Name)) then
+                gFunc.EquipSet('mjollnir')
+                if (player.SubJob == 'NIN') then
+                    gFunc.EquipSet('asklepios')
+                end
             end
         end
     end
