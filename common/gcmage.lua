@@ -477,7 +477,7 @@ function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     end
 end
 
-function gcmage.DoPrecast(sets, fastCastValue)
+function gcmage.DoPrecast(sets, fastCastValue, cureCastMeritValue)
     if (not i_can_read_and_follow_instructions_test) then
         print(chat.header('GCMage'):append(chat.message('Failed to follow instructions. Read the README.md')))
     end
@@ -543,7 +543,7 @@ function gcmage.DoPrecast(sets, fastCastValue)
             end
         end
     else
-        gcmage.SetupMidcastDelay(sets, fastCastValue)
+        gcmage.SetupMidcastDelay(sets, fastCastValue, cureCastMeritValue)
     end
 
     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
@@ -551,7 +551,7 @@ function gcmage.DoPrecast(sets, fastCastValue)
     end
 end
 
-function gcmage.SetupMidcastDelay(sets, fastCastValue)
+function gcmage.SetupMidcastDelay(sets, fastCastValue, cureCastMeritValue)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
     local target = gData.GetActionTarget()
@@ -563,6 +563,7 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue)
     end
     if (player.MainJob == 'WHM') then
         if (string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga')) then
+            fastCastValue = fastCastValue + cureCastMeritValue
             if (sets.cure_clogs.Feet) then
                 fastCastValue = fastCastValue + 0.15 -- Note, this should actually be 0.13 if you own both Rostrum Pumps and Cure Clogs but whatever, close enough.
                 gFunc.EquipSet('cure_clogs')

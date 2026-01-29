@@ -461,3 +461,11 @@
 - RNG - Implements fire ring
 - RNG - Implements WS modifier sets for different accuracy levels on WS
 - RNG - Implements Sam SubJob set on WS for Store TP
+
+### v2.0.13
+- Mages - Adds a variable (use_staves_for_elemental_debuffs) to allow staves or claustrum to be used for elemental debuffs (DoTs)
+- BRD - Prevents ConserveMP set from ever being used for Songs
+- WHM - Adds a Benediction set for max -enmity on usage
+- WHM - Adds a variable (cureCastMeritValue) for merits
+- SMN - Uses both Evokers Boots and Carbuncles Cuffs for spirits since Horizon's "rebase" should fix this
+- SMN - Only use BP_Delay on Blood Pact type job abilities

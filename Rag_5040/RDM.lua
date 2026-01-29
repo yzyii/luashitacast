@@ -793,7 +793,7 @@ profile.HandleDefault = function()
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast(sets, fastCastValue)
+    gcmage.DoPrecast(sets, fastCastValue, 0)
 end
 
 profile.HandleMidcast = function()

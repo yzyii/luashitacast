@@ -407,7 +407,10 @@ local nextConjurersRingCheck = 0
 profile.HandleAbility = function()
     gcmage.DoAbility()
 
-    gFunc.EquipSet('BP_Delay')
+    local action = gData.GetAction()
+    if (string.match(action.Type, 'Blood')) then
+        gFunc.EquipSet('BP_Delay')
+    end
 end
 
 profile.HandleItem = function()
@@ -485,20 +488,16 @@ end
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
     if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
-        gcmage.DoPrecast(sets, fastCastValue + 0.02)
+        gcmage.DoPrecast(sets, fastCastValue + 0.02, 0)
         gFunc.EquipSet('warlocks_mantle')
     else
-        gcmage.DoPrecast(sets, fastCastValue)
+        gcmage.DoPrecast(sets, fastCastValue, 0)
     end
 
     local action = gData.GetAction()
     if (action.Skill == 'Summoning') then
-        if (carbuncles_cuffs.Hands and evokers_boots.Feet and string.match(action.Name, 'Spirit')) then -- Handling for bugged casting if you own both
-            gFunc.EquipSet('carbuncles_cuffs')
-        else
-            gFunc.EquipSet('carbuncles_cuffs')
-            gFunc.EquipSet('evokers_boots')
-        end
+        gFunc.EquipSet('carbuncles_cuffs')
+        gFunc.EquipSet('evokers_boots')
     end
 end
 
