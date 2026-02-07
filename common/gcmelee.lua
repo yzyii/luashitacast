@@ -282,8 +282,6 @@ function gcmelee.SetupInterimEquipSet(sets)
 
     if (SurvivalSpells:contains(action.Name)) then
         gFunc.InterimEquipSet(sets.SIRD)
-    elseif (action.Skill ~= 'Ninjutsu') then
-        gFunc.InterimEquipSet(sets.DT)
     else
         local ignoreTP = {
             Main = 'ignore',
