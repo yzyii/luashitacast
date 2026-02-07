@@ -284,6 +284,15 @@ function gcmelee.SetupInterimEquipSet(sets)
         gFunc.InterimEquipSet(sets.SIRD)
     elseif (action.Skill ~= 'Ninjutsu') then
         gFunc.InterimEquipSet(sets.DT)
+    else
+        local ignoreTP = {
+            Main = 'ignore',
+            Sub = 'ignore',
+            Range = 'ignore',
+            Ammo = 'ignore',
+        }
+        local dtTP = gfunc.Combine(sets.DT, ignoreTP)
+        gFunc.InterimEquipSet(dtTP)
     end
 
     if (gcdisplay.IdleSet == 'DT') then gFunc.InterimEquipSet(sets.DT) end
