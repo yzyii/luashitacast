@@ -469,3 +469,6 @@
 - WHM - Adds a variable (cureCastMeritValue) for merits
 - SMN - Uses both Evokers Boots and Carbuncles Cuffs for spirits since Horizon's "rebase" should fix this
 - SMN - Only use BP_Delay on Blood Pact type job abilities
+
+### v2.0.14
+- Melee - Still uses the DT set for default interim casts of spells but strips any weapons etc. to prevent TP loss. Utsusemi casts etc. still use SIRD.
