@@ -280,12 +280,13 @@ end
 function gcmelee.SetupInterimEquipSet(sets)
     local action = gData.GetAction()
 
-    gFunc.InterimEquipSet(sets.DT)
-
     if (SurvivalSpells:contains(action.Name)) then
         gFunc.InterimEquipSet(sets.SIRD)
+    elseif (action.Skill ~= 'Ninjutsu') then
+        gFunc.InterimEquipSet(sets.DT)
     end
 
+    if (gcdisplay.IdleSet == 'DT') then gFunc.InterimEquipSet(sets.DT) end
     if (gcdisplay.IdleSet == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end
     if (gcdisplay.IdleSet == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end
     if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end
