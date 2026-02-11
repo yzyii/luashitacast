@@ -212,15 +212,18 @@ local WeaponOverrideTable = {
 local weapon_override = 1
 
 function gcmage.Load()
+    gcinclude.SetAlias(AliasList)
+    gcmage.RetryLoad()
+end
+
+function gcmage.RetryLoad()
     local player = gData.GetPlayer()
     if (player.MainJob ~= 'NON') then
         gcmage.SetVariables()
+        gcinclude.Load()
     else
-        gcmage.SetVariables:once(2)
+        gcmage.RetryLoad:once(1)
     end
-
-    gcinclude.SetAlias(AliasList)
-    gcinclude.Load()
 end
 
 function gcmage.Unload()

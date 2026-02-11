@@ -122,20 +122,20 @@ function gcinclude.Load()
     gcdisplay.CreateToggle('Kite', false)
     gcdisplay.CreateToggle('Lock', false)
 
-    local function delayLoad()
+    gcinclude.RetryLoad()
+end
+
+function gcinclude.RetryLoad()
+    local player = gData.GetPlayer()
+    if (player.MainJob ~= 'NON') then
         gcdisplay.Load()
 
         if (load_stylist) then
             AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
             AshitaCore:GetChatManager():QueueCommand(-1, '/stylist load default')
         end
-    end
-
-    local player = gData.GetPlayer()
-    if (player.MainJob ~= 'NON') then
-        delayLoad()
     else
-        delayLoad:once(3)
+        gcinclude.RetryLoad:once(1)
     end
 end
 
