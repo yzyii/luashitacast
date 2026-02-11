@@ -289,7 +289,7 @@ function gcmelee.SetupInterimEquipSet(sets)
             Range = 'ignore',
             Ammo = 'ignore',
         }
-        local dtTP = gfunc.Combine(sets.DT, ignoreTP)
+        local dtTP = gFunc.Combine(sets.DT, ignoreTP)
         gFunc.InterimEquipSet(dtTP)
     end
 
