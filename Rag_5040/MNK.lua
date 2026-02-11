@@ -25,9 +25,13 @@ local melee_gloves = {
 }
 local kampfer_ring = {
     Ring2 = 'Kampfer Ring',
+    Ear2 = 'Merman\'s Earring',
+    Feet = 'Fuma Sune-Ate',
 }
 local kampfer_earring = {
     Ear2 = 'Kampfer Earring',
+    Ring2 = 'Toreador\'s Ring',
+    Legs = 'Byakko\'s Haidate',
 }
 
 local sets = {
@@ -68,7 +72,7 @@ local sets = {
     Movement_TP = {},
 
     --[[
-    8% Base
+    10% Base
     5% Merits
     45% Counterstance
     10% Melee Gaiters
