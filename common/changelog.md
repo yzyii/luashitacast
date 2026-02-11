@@ -472,3 +472,4 @@
 
 ### v2.0.14
 - Melee - Still uses the DT set for default interim casts of spells but strips any weapons etc. to prevent TP loss. Utsusemi casts etc. still use SIRD.
+- Rebase client takes significantly longer to make job info available to luashitacast resulting in some toggles not being available on initial character log in. This update retries fetching job information until it succeeds to fix this.
