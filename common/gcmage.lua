@@ -1,3 +1,10 @@
+-- The period of time prior to midcast (spell) completion upon which equipment will swap. 
+-- 400 milliseconds is provided as a default conservative value which is typically sufficient worldwide but this value can be increased if your internet is completely and consistently shit.
+local minimumBuffer = 0.4
+
+-- Change this value to 0.4 if you do not use PacketFlow
+local packetDelay = 0.25
+
 -- Set to true if you want messages every time Mst.Cst. Bracelets are used.
 local log_conquest = false
 
@@ -583,8 +590,6 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue, cureCastMeritValue)
     if (action.Skill == 'Divine Magic' and action.Name == 'Banish III') then
         castTime = 3000
     end
-    local minimumBuffer = 0.4 -- Can be lowered to 0.1 if you want
-    local packetDelay = 0.25 -- Change this to 0.4 if you do not use PacketFlow
     local castDelay = ((castTime * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
