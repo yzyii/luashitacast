@@ -159,19 +159,6 @@ function gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
         end
     end
 
-    if (player.Status == 'Idle') then
-        if (player.HPP < 50) then
-            gFunc.EquipSet('muscle_belt')
-        end
-        if (player.HP < max_hp_in_idle_with_regen_gear_equipped) then
-            if (conquest:GetOutsideControl()) then
-                gFunc.EquipSet('presidential_hairpin')
-            end
-            gFunc.EquipSet('dream_ribbon')
-        end
-    end
-
-
     if (isDPS) then
         if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'LowAcc' or gcdisplay.IdleSet == 'HighAcc') then
             if (player.Status == 'Engaged') then
