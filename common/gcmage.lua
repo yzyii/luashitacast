@@ -534,16 +534,16 @@ function gcmage.DoPrecast(sets, fastCastValue, cureCastMeritValue)
         if (blmYellow or whmYellow) then
             local yellow = sets.Yellow
             local yellowHNM = sets.YellowHNM
+
             if (yellowAdvanced) then
                 yellow = yellowAdvanced
                 yellowHNM = yellowAdvanced
             end
 
             if (whmYellow) then
-                if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+                if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
                     local weapon = sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]]
                     yellow = gFunc.Combine(yellow, weapon)
-                    yellowHNM = gFunc.Combine(yellowHNM, weapon)
                 end
             end
 
