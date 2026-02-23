@@ -476,3 +476,6 @@
 
 ### v2.0.15
 - Melee - Fixes issues with muscle_belt, presidential hairpin, and dream ribbon implementation
+
+### v2.0.16
+- WHM - Fixes Yellow set behaviour (medicine ring) from throwing errors.
