@@ -485,3 +485,6 @@
 - WHM - Adds config options to enable correct usage of medicine ring when in max mp set.
 - BST, THF, WAR, Mages - Fixes TP_NIN set behaviour so that TP_NIN is only equipped if the offhand (Sub) is a 1h weapon. 
                        - In the case of WAR, removes DW entirely to automate this behaviour and renames the SAM set to TP_SAM for consistency.
+
+### v2.0.18
+- WHM - Fixes virology ring usage when at max Idle mp similar to medicine ring.

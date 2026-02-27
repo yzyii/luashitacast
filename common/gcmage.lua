@@ -17,8 +17,9 @@ local dark_and_abyssal_earrings = true
 -- Set to true if you wish to always use elemental staves or claustrum for Elemental DoTs.
 local use_staves_for_elemental_debuffs = false
 
--- Set to 0 to 50 depending on the mp lost when using medicine ring on IdleMaxMP set.
+-- Set to 0 to 50 depending on the mp lost when using medicine ring or virology ring on IdleMaxMP set.
 local medicine_ring_mp_deficit = 50
+local virology_ring_mp_deficit = 50
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local claustrum = {
@@ -757,6 +758,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
             end
         end
         gcmage.EquipSneakInvisGear()
+        if (player.MainJob == 'WHM' and (string.match(action.Name, '.*na$') or (action.Name == 'Erase'))) then
+            gFunc.EquipSet('virology_ring')
+        end
     end
 
     gcmage.EquipStaff()
@@ -781,8 +785,13 @@ function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
     if (isNoModSpell) then
         skipCast_Spell = true
         gcmage.EquipSneakInvisGear()
-    end
-    if (CureSpells:contains(action.Name)) then
+        if (player.MainJob == 'WHM' and (string.match(action.Name, '.*na$') or (action.Name == 'Erase'))) then
+            local mpDeficit = player.MaxMP - player.MP
+            if (mpDeficit <= virology_ring_mp_deficit) then
+                gFunc.EquipSet('virology_ring')
+            end
+        end
+    elseif (CureSpells:contains(action.Name)) then
         if (gcdisplay.GetToggle('Hate') == false) then
             skipCast_Spell = true
             if (player.MainJob == 'WHM' and player.TP <= 1000) then

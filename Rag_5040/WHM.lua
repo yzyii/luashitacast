@@ -223,8 +223,6 @@ profile.HandleMidcast = function()
                 gFunc.EquipSet('republic_circlet')
             end
         end
-    elseif (string.match(action.Name, '.*na$') or (action.Name == 'Erase')) then
-        gFunc.EquipSet('virology_ring')
     end
 end
 
