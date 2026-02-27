@@ -392,7 +392,7 @@ profile.WatchTreasureHunter = function()
             };
             local packet = actionpacket:parse(e);
             if (packet.UserId == playerEntity.ServerId) then
-                if (type:contains(packet.Type)) then
+                if (type[packet.Type]) then
                     local reaction = { 
                         [0] = true, -- Spell Hit / ???
                         [8] = true, -- Attack Hit/Miss
