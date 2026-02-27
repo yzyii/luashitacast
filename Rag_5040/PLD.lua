@@ -48,7 +48,7 @@ local sets = {
     },
     IdleALT = {
     },
-    IdleDT = { -- 1415
+    IdleDT = { -- Disabled on horizon_safe_mode -- 1415
         Main = 'Tutelary',
         Sub = 'Aegis',
         Range = 'Rosenbogen',
@@ -66,7 +66,7 @@ local sets = {
         Legs = { Name = 'Dst. Subligar +1', Priority = 10 }, -- 3
         Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
     },
-    IdleALTDT = {
+    IdleALTDT = { -- Disabled on horizon_safe_mode
     },
     Resting = {
         Main = 'Pluto\'s Staff',

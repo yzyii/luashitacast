@@ -28,6 +28,7 @@ local sorcerers_tonban = {
     Legs = 'Src. Tonban +1',
 }
 
+-- Disabled on horizon_safe_mode
 local sorcerers_earring_hp_threshold = 360 -- HP at which Sorcerer's Earring set is equipped
 local sorcerers_earring = { -- 1440
     Main = 'Terra\'s Staff',

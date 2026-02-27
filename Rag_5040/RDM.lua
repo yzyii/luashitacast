@@ -669,7 +669,6 @@ local sets = {
         Ammo = 'displaced',
     },
 
-    -- Disabled on horizon_safe_mode
     FencersRingHPDown = { -- 899 - Set to force HP to or below fencersRingMaxHP
         Range = 'Lightning Bow +1',
         Head = 'Zenith Crown +1',

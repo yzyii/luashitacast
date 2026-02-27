@@ -73,7 +73,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    IdleDT = {
+    IdleDT = { -- Disabled on horizon_safe_mode
         Head = 'Darksteel Cap +1', -- 2
         Neck = 'Evasion Torque',
         Ear1 = 'Merman\'s Earring',
@@ -87,7 +87,7 @@ local sets = {
         Legs = 'Dst. Subligar +1', -- 3
         Feet = 'Dst. Leggings +1', -- 2
     },
-    IdleALTDT = { -- 1365
+    IdleALTDT = { -- Disabled on horizon_safe_mode -- 1365
         Head = 'Darksteel Cap +1', -- 2
         Neck = 'Evasion Torque',
         Ear1 = 'Merman\'s Earring',

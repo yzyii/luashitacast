@@ -353,7 +353,6 @@ local sets = {
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},
 
-    -- Disabled on horizon_safe_mode
     ConjurersRingHPDown = { -- 730 - Set to force HP below conjurersRingMaxHP. Note that /WHM provides regen so this is preferably at least 10 or more below.
         Main = 'Terra\'s Staff',
         Ammo = 'Hedgehog Bomb',

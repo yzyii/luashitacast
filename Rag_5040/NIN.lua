@@ -79,12 +79,18 @@ local koga_hakama = {
 local koga_hakama_plus_one = {
     Legs = 'Kog. Hakama +1',
 }
+local bat_earrings = { -- Disabled on horizon_safe_mode
+    -- Ear1 = 'Bat Earring',
+    -- Ear2 = 'Bat Earring',
+}
 
 local sets = {
     Idle = {},
     IdleALT = {},
-    IdleDT = {},
-    IdleALTDT = {},
+    IdleDT = { -- Disabled on horizon_safe_mode
+    },
+    IdleALTDT = { -- Disabled on horizon_safe_mode
+    },
     Resting = {},
     Town = {},
     Movement = {},
@@ -316,6 +322,13 @@ profile.HandleDefault = function()
         end
         if (environment.Time < 7 or environment.Time >= 17) then
             gFunc.EquipSet('koga_hakama_plus_one')
+        end
+
+        if (not gcinclude.horizon_safe_mode) then
+            local blindness = gData.GetBuffCount('Blindness')
+            if (blindness == 1) then
+                gFunc.EquipSet('bat_earrings')
+            end
         end
     end
 
