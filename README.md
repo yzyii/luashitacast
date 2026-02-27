@@ -12,7 +12,7 @@ Jobs use the corresponding templates to automatically implement functionality th
 - e.g. All melee jobs are able to type /tp to switch between Low Accuracy and High Accuracy TP sets.
 - e.g. All mage jobs are able to type /mode to switch between Magic Potency vs Magic Accuracy sets.
 
-While these luas were originally designed for HorizonXI, these luas should still work on other 75-era private servers so long as Horizon custom equipment is appropriately commented out / disabled.
+While these luas were originally designed for HorizonXI, these luas should still work on other 75-era private servers so long as HorizonXI custom equipment is appropriately commented out / disabled.
 
 # How to Use
 
@@ -96,7 +96,7 @@ This will work 99% of the time unless you have added your own logic and therefor
        to give ashitacast the maximum chance of actually equipping the correct gear on cast.
        interim equip sets will no longer work when this is enabled.
 
-/horizonmode - if you wish to use Horizon Mode in LuAshitacast to be 100% horizon approved,
+/horizonmode - if you wish to use Horizon Mode in LuAshitacast to be 100% HorizonXI approved,
                you can then use this alias to manually trigger a handle default gear equip
                using a key press!
                i.e. You could push this 4 times a second just to mimic exactly what
@@ -228,7 +228,7 @@ Alternatively, use /ammo to cycle through them.
 
 - LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. It is suggested that you do not attempt to add Level Sync functionality to these luas as it will cause you to be unable to update to newer versions easily. Level Sync content is a joke anyway. Just throw on some garbage gear full time and clear it.
 
-- HorizonXI's rules on what is legal or not in LuAshitacast is poorly explained and will vary depending on what admin or GM you talk to anyway. This LuAshitacast attempts to abide by the spirit of their rules. Short of any explicit guidance from a GM / Horizon Staff, functionality will not be changed to cater for you.
+- HorizonXI's rules on what is legal or not in LuAshitacast is poorly explained and will vary depending on what admin or GM you talk to anyway. This LuAshitacast attempts to abide by the spirit of their rules. Short of any explicit guidance from a GM / HorizonXI Staff, functionality will not be changed to cater for you.
 
 # Contact Me
 
