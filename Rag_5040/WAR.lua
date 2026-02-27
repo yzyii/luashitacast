@@ -44,10 +44,10 @@ local sets = {
     Warcry = {},
     Provoke = {},
 
-    DW = {
-        Ear1 = 'Stealth Earring',
+    TP_NIN = {
+        Ear1 = 'Enfeebling Earring',
     },
-    SAM = {
+    TP_SAM = {
         Ear1 = 'Attila\'s Earring',
     },
 
@@ -97,24 +97,16 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
-    gcinclude.SetAlias(T{'dw'})
-    gcdisplay.CreateToggle('DW', false)
     gcmelee.Load()
     profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
     gcmelee.Unload()
-    gcinclude.ClearAlias(T{'dw'})
 end
 
 profile.HandleCommand = function(args)
-    if (args[1] == 'dw') then
-        gcdisplay.AdvanceToggle('DW')
-        gcinclude.Message('DW', gcdisplay.GetToggle('DW'))
-    else
-        gcmelee.DoCommands(args)
-    end
+    gcmelee.DoCommands(args)
 
     if (args[1] == 'horizonmode') then
         profile.HandleDefault()
@@ -130,11 +122,16 @@ profile.HandleDefault = function()
     end
 
     local player = gData.GetPlayer()
-    if (player.SubJob == 'SAM') then
-        gFunc.EquipSet(sets.SAM)
+    if (player.SubJob == 'SAM' and player.Status == 'Engaged') then
+        gFunc.EquipSet(sets.TP_SAM)
     end
-    if (gcdisplay.GetToggle('DW') and player.Status == 'Engaged') then
-        gFunc.EquipSet(sets.DW)
+    if (player.SubJob == 'NIN' and player.Status == 'Engaged') then
+        local sub = gData.GetEquipment().Sub
+        if (sub ~= nil) then
+            if (sub.Resource.Slots == 3) then -- if this is a 1h weapon
+                gFunc.EquipSet('TP_NIN')
+            end
+        end
     end
 
     gcmelee.DoDefaultOverride()

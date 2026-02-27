@@ -17,6 +17,9 @@ local dark_and_abyssal_earrings = true
 -- Set to true if you wish to always use elemental staves or claustrum for Elemental DoTs.
 local use_staves_for_elemental_debuffs = false
 
+-- Set to 0 to 50 depending on the mp lost when using medicine ring on IdleMaxMP set.
+local medicine_ring_mp_deficit = 50
+
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local claustrum = {
     -- Main = 'Claustrum',
@@ -452,7 +455,12 @@ function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
                 gFunc.EquipSet('TP_HighAcc')
             end
             if (player.SubJob == 'NIN') then
-                gFunc.EquipSet('TP_NIN')
+                local sub = gData.GetEquipment().Sub
+                if (sub ~= nil) then
+                    if (sub.Resource.Slots == 3) then -- if this is a 1h weapon
+                        gFunc.EquipSet('TP_NIN')
+                    end
+                end
             end
             if (player.MainJob == 'RDM' and player.HPP <= 75 and player.TP <= 1000) then
                 gFunc.EquipSet('tp_fencers_ring')
@@ -777,6 +785,14 @@ function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
     if (CureSpells:contains(action.Name)) then
         if (gcdisplay.GetToggle('Hate') == false) then
             skipCast_Spell = true
+            if (player.MainJob == 'WHM' and player.TP <= 1000) then
+                if (player.HPP <= 75 or gcdisplay.GetToggle('Yellow') == true) then
+                    local mpDeficit = player.MaxMP - player.MP
+                    if (mpDeficit <= medicine_ring_mp_deficit) then
+                        gFunc.EquipSet('medicine_ring')
+                    end
+                end
+            end
             gcmage.EquipStaff()
         end
     end

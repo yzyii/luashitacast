@@ -229,7 +229,12 @@ profile.HandleDefault = function()
 
     local player = gData.GetPlayer()
     if (player.SubJob == 'NIN' and player.Status == 'Engaged') then
-        gFunc.EquipSet('TP_NIN')
+        local sub = gData.GetEquipment().Sub
+        if (sub ~= nil) then
+            if (sub.Resource.Slots == 3) then -- if this is a 1h weapon
+                gFunc.EquipSet('TP_NIN')
+            end
+        end
     end
 
     gcmelee.DoDefaultOverride()

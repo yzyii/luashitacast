@@ -479,3 +479,9 @@
 
 ### v2.0.16
 - WHM - Fixes Yellow set behaviour (medicine ring) from throwing errors.
+
+### v2.0.17
+- SMN - Adds a BP_Healing set if -enmity desired for Healing Ruby etc.
+- WHM - Adds config options to enable correct usage of medicine ring when in max mp set.
+- BST, THF, WAR, Mages - Fixes TP_NIN set behaviour so that TP_NIN is only equipped if the offhand (Sub) is a 1h weapon. 
+                       - In the case of WAR, removes DW entirely to automate this behaviour and renames the SAM set to TP_SAM for consistency.
