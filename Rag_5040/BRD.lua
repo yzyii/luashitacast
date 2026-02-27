@@ -467,6 +467,7 @@ local MPJobs = T{ 'RDM','BLM','WHM','SMN' }
 profile.HandleDefault = function()
     gcmage.DoDefault(sets, nil, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP, nil)
 
+    local player = gData.GetPlayer()
     local isMPSJ = MPJobs:contains(player.SubJob)
     if (player.MP < 50 and isMPSJ) then
         gFunc.EquipSet('gaudy_harness')
