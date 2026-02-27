@@ -55,7 +55,8 @@ local sets = {
         Feet = 'Evk. Pigaches +1',
     },
     IdleALT = {},
-    IdleMaxMP = {},
+    IdleMaxMP = { -- Technically could still be used via /setmp etc...
+    },
     Resting = {
         Main = 'Pluto\'s Staff',
         Head = 'Hydra Beret',
@@ -479,6 +480,7 @@ profile.HandleDefault = function()
         end
 
         gcmage.DoDefault(sets, nil, nil, nil, nil, nil)
+        gcmage.DoDefaultOverride()
     end
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end

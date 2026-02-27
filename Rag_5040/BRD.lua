@@ -11,6 +11,9 @@ local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
     Back = 'Warlock\'s Mantle',
 }
+local gaudy_harness = {
+    -- Body = 'Gaudy Harness',
+}
 
 local sets = {
     Idle = {
@@ -401,6 +404,7 @@ Everything below can be ignored.
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
 sets.warlocks_mantle = warlocks_mantle
+sets.gaudy_harness = gaudy_harness
 profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
@@ -458,8 +462,17 @@ profile.HandleCommand = function(args)
     end
 end
 
+local MPJobs = T{ 'RDM','BLM','WHM','SMN' }
+
 profile.HandleDefault = function()
     gcmage.DoDefault(sets, nil, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP, nil)
+
+    local isMPSJ = MPJobs:contains(player.SubJob)
+    if (player.MP < 50 and isMPSJ) then
+        gFunc.EquipSet('gaudy_harness')
+    end
+
+    gcmage.DoDefaultOverride()
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end

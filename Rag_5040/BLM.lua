@@ -611,6 +611,8 @@ profile.HandleDefault = function()
         end
     end
 
+    gcmage.DoDefaultOverride()
+
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 

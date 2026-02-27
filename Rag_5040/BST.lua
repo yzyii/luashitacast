@@ -224,6 +224,8 @@ profile.HandleCommand = function(args)
     end
 end
 
+local MPJobs = T{ 'RDM','BLM','WHM','SMN' }
+
 profile.HandleDefault = function()
     gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
@@ -237,11 +239,12 @@ profile.HandleDefault = function()
         end
     end
 
-    gcmelee.DoDefaultOverride()
-
-    if (player.MP < 50 and (player.SubJob == 'WHM' or player.SubJob == 'BLM' or player.SubJob == 'RDM')) then
+    local isMPSJ = MPJobs:contains(player.SubJob)
+    if (player.MP < 50 and isMPSJ) then
         gFunc.EquipSet('gaudy_harness')
     end
+
+    gcmelee.DoDefaultOverride()
 
     local petAction = gData.GetPetAction()
     if (petAction ~= nil) then

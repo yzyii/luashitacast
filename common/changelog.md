@@ -488,3 +488,5 @@
 
 ### v2.0.18
 - WHM - Fixes virology ring usage when at max Idle mp similar to medicine ring.
+- Mages  / BST (Gaudy Harness) - Optimizes override sets e.g. FireRes etc. to take priority over similar to Melee jobs
+- BRD - Implements Gaudy Harness

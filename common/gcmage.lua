@@ -28,27 +28,35 @@ local claustrum = {
 
 local fire_staff = {
     Main = 'Vulcan\'s Staff',
+    Sub = 'displaced',
 }
 local earth_staff = {
     Main = 'Terra\'s Staff',
+    Sub = 'displaced',
 }
 local water_staff = {
     Main = 'Neptune\'s Staff',
+    Sub = 'displaced',
 }
 local wind_staff = {
     Main = 'Auster\'s Staff',
+    Sub = 'displaced',
 }
 local ice_staff = {
     Main = 'Aquilo\'s Staff',
+    Sub = 'displaced',
 }
 local thunder_staff = {
     Main = 'Jupiter\'s Staff',
+    Sub = 'displaced',
 }
 local light_staff = {
     Main = 'Apollo\'s Staff',
+    Sub = 'displaced',
 }
 local dark_staff = {
     Main = 'Pluto\'s Staff',
+    Sub = 'displaced',
 }
 
 local karin_obi = {
@@ -468,9 +476,12 @@ function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
             end
         end
     end
+end
 
+function gcmage.DoDefaultOverride()
     gcinclude.DoDefaultOverride(false)
 
+    local player = gData.GetPlayer()
     if (player.Status == 'Resting') then
         lastSummoningElement = ''
         if (player.SubJob == 'BLM') then

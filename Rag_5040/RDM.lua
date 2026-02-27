@@ -789,6 +789,8 @@ profile.HandleDefault = function()
         gFunc.EquipSet('blue_cotehardie_plus_one')
     end
 
+    gcmage.DoDefaultOverride()
+
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 

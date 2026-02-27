@@ -35,7 +35,7 @@ local anrin_obi = {
 local parade_gorget = {
     Neck = 'Parade Gorget',
 }
-local fenrirs_stone = {
+local fenrirs_stone = { -- Used on /evasion for Zergs. See Evasion set / README.md
     Ammo = 'Fenrir\'s Stone',
 }
 
