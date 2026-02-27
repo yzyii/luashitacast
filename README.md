@@ -1,6 +1,6 @@
 # Rag's LuAshitacast
 
-A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
+A combined LuAshitacast for Lvl 75 era that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
 All jobs are fully implemented.
 
@@ -12,9 +12,7 @@ Jobs use the corresponding templates to automatically implement functionality th
 - e.g. All melee jobs are able to type /tp to switch between Low Accuracy and High Accuracy TP sets.
 - e.g. All mage jobs are able to type /mode to switch between Magic Potency vs Magic Accuracy sets.
 
-These luas were designed to be used in HorizonXI and therefore features such as automatically using opo-opo necklace when asleep or automatically cancelling shadows for Utsusemi: Ichi are not included.
-
-These luas will still work on other 75-era private servers so long as Horizon custom equipment is appropriately commented out / disabled.
+While these luas were originally designed for HorizonXI, these luas should still work on other 75-era private servers so long as Horizon custom equipment is appropriately commented out / disabled.
 
 # How to Use
 
@@ -230,7 +228,7 @@ Alternatively, use /ammo to cycle through them.
 
 - LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. It is suggested that you do not attempt to add Level Sync functionality to these luas as it will cause you to be unable to update to newer versions easily. Level Sync content is a joke anyway. Just throw on some garbage gear full time and clear it.
 
-- Horizon's rules on what is legal or not in LuAshitacast is poorly explained and will vary depending on what admin or GM you talk to anyway. This LuAshitacast attempts to abide by the spirit of their rules. Short of any explicit guidance from a GM / Horizon Staff, functionality will not be changed to cater for you.
+- HorizonXI's rules on what is legal or not in LuAshitacast is poorly explained and will vary depending on what admin or GM you talk to anyway. This LuAshitacast attempts to abide by the spirit of their rules. Short of any explicit guidance from a GM / Horizon Staff, functionality will not be changed to cater for you.
 
 # Contact Me
 
@@ -240,4 +238,4 @@ If it's clear you have not bothered to read through this README, you will be ign
 
 I will also as a rule ignore you as per https://nohello.net/ and https://dontasktoask.com/
 
-Bug Reports, Missing Functionality or Feature Requests are best done through GitHub's Issue Tracker though feel free to DM me on Discord to discuss these as well. I am easily found in the HorizonXI or Ashita Discords.
+Bug Reports, Missing Functionality or Feature Requests are best done through GitHub's Issue Tracker though feel free to DM me on Discord to discuss these as well.
