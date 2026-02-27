@@ -383,18 +383,28 @@ profile.WatchTreasureHunter = function()
         end
 
         if (e.id == 0x28) then
-            local type = T { 1, 2, 4, 6 };
+            local type = { 
+                [1] = true, -- Attack
+                [2] = true, -- Ranged Attack
+                [3] = true, -- Ability 
+                [4] = true, 
+                [6] = true -- Also ability? (Provoke)
+            };
             local packet = actionpacket:parse(e);
             if (packet.UserId == playerEntity.ServerId) then
                 if (type:contains(packet.Type)) then
-                    local reaction = T { 0, 8, 
-                        9, -- melee/range attack missed, comment out for pedantic TH mode
+                    local reaction = { 
+                        [0] = true, -- Spell Hit / ???
+                        [8] = true, -- Attack Hit/Miss
+                        [9] = true, -- Legacy
+                        [16] = true, -- Range Attack Hit / Provoke ?
+                        [17] = true, -- Range Attack Miss
                     }
                     for _, target in ipairs(packet.Targets) do
                         for i = 1, #target.Actions do
                             local action = target.Actions[1]
                             if bit.band(target.Id, 0xFF000000) ~= 0 then -- isMob, also triggers on NPC but it's benign
-                                if reaction:contains(action.Reaction) and target.Id then
+                                if (packet.Type == 3 or reaction[action.Reaction]) and target.Id then
                                     taggedMobs[target.Id] = true;
                                 end
                             end

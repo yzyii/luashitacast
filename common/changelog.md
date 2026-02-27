@@ -491,3 +491,6 @@
 - Mages  / BST (Gaudy Harness) - Optimizes override sets e.g. FireRes etc. to take priority over similar to Melee jobs
 - BRD - Implements Gaudy Harness
 - NIN - Implements Bat Earrings (gated via horizon_safe_mode)
+
+### v2.0.19
+- THF - Fixes Auto-TH for abilities and ranged attacks after Horizon -> LSB rebase
