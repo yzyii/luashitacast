@@ -333,8 +333,9 @@ function gcmelee.SetupInterimEquipSet(sets)
     if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end
     if (gcdisplay.IdleSet == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end
     if (gcdisplay.IdleSet == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end
+    if (gcdisplay.IdleSet == 'WindRes') then gFunc.InterimEquipSet(sets.WindRes) end
+    if (gcdisplay.IdleSet == 'WaterRes') then gFunc.InterimEquipSet(sets.WaterRes) end
     if (gcdisplay.IdleSet == 'Evasion') then gFunc.InterimEquipSet(sets.Evasion) end
-
 end
 
 function gcmelee.DoWS()

@@ -901,6 +901,8 @@ function gcmage.SetupInterimEquipSet(sets)
     if (gcdisplay.IdleSet == 'IceRes') then interimSet = sets.IceRes end
     if (gcdisplay.IdleSet == 'LightningRes') then interimSet = sets.LightningRes end
     if (gcdisplay.IdleSet == 'EarthRes') then interimSet = sets.EarthRes end
+    if (gcdisplay.IdleSet == 'WindRes') then interimSet = sets.WindRes end
+    if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end
     if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
 
     if (SurvivalSpells:contains(action.Name)) then
