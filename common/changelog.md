@@ -497,3 +497,6 @@
 
 ### v2.0.20
 - THF - Adds a None ranged attack set for use where no xbow ranged attacks are expected to be used. e.g. Bomb Core
+
+### v2.1.0
+- All Jobs - Implements ranged attacks. A preshot set is provided as well but has no utility without access to Snapshot equipment ToAU+
