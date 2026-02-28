@@ -221,6 +221,46 @@ function gcmelee.DoDefaultOverride()
     end
 end
 
+function gcmelee.DoPreshot(preshotSet, rangedSet, snapShotValue)
+    gFunc.EquipSet(gFunc.Combine(rangedSet, preshotSet))
+
+    if (not lag) then
+        local rangedString = rangedSet.Range
+        if (rangedString == nil or rangedString == 'displaced' or rangedString == 'empty' or rangedString == 'remove'or rangedString == '') then
+            rangedString = rangedSet.Ammo
+        end
+
+        if (rangedString ~= nil) then
+            local item = AshitaCore:GetResourceManager():GetItemByName(rangedString, 0)
+            if (item ~= nil) then
+                local delay = item.Delay
+
+                -- print(chat.header('Ashitacast'):append(chat.message('Delay is ' .. tostring(delay))))
+
+                local player = gData.GetPlayer()
+                if (player.MainJob == 'RNG' or player.SubJob == "RNG") then
+                    return
+                end
+
+                local shotTime = (delay * 1000) / 120
+
+                local shotDelay = ((shotTime * (1 - snapShotValue)) / 1000) - minimumBuffer
+                if (shotDelay >= packetDelay) then
+                    gFunc.SetMidDelay(shotDelay)
+                end
+            end
+        end
+    end
+end
+
+function gcmelee.DoMidshot(sets, rangedSet)
+    gFunc.EquipSet(rangedSet)
+
+    if (not lag) then
+        gcmelee.SetupInterimEquipSet(sets)
+    end
+end
+
 function gcmelee.DoPrecast(fastCastValue)
     if (not i_can_read_and_follow_instructions_test) then
         print(chat.header('GCMelee'):append(chat.message('Failed to follow instructions. Read the README.md')))
@@ -293,6 +333,8 @@ function gcmelee.SetupInterimEquipSet(sets)
     if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end
     if (gcdisplay.IdleSet == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end
     if (gcdisplay.IdleSet == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end
+    if (gcdisplay.IdleSet == 'Evasion') then gFunc.InterimEquipSet(sets.Evasion) end
+
 end
 
 function gcmelee.DoWS()

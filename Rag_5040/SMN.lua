@@ -1,6 +1,7 @@
 local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including carbuncles cuffs or evokers boots
+local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local cureMP = 895 -- Cure set max MP
 
@@ -369,6 +370,11 @@ local sets = {
         Legs = 'Evk. Spats +1',
         Feet = 'Rostrum Pumps',
     },
+
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
+    Ranged = {
+        Ammo = 'Pebble',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -417,9 +423,11 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gcmage.DoPreshot(sets.Preshot, gFunc.Combine(sets.Preshot, sets.Ranged), snapShotValue)
 end
 
 profile.HandleMidshot = function()
+    gcmage.DoMidshot(sets, gFunc.Combine(sets.Preshot, sets.Ranged))
 end
 
 profile.HandleWeaponskill = function()

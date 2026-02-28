@@ -1,6 +1,7 @@
 local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
+local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
@@ -137,11 +138,12 @@ local sets = {
     WS_BladeJin = {},
     WS_BladeKu = {},
 
-    Ranged = {},
-
     Weapon_Loadout_1 = {},
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},
+
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
+    Ranged = {},
 }
 
 profile.SetMacroBook = function()
@@ -236,11 +238,11 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
-    gFunc.EquipSet(sets.Ranged)
+    gcmelee.DoPreshot(sets.Preshot, gFunc.Combine(sets.Preshot, sets.Ranged), snapShotValue)
 end
 
 profile.HandleMidshot = function()
-    gFunc.EquipSet(sets.Ranged)
+    gcmelee.DoMidshot(sets, gFunc.Combine(sets.Preshot, sets.Ranged))
 end
 
 profile.HandleWeaponskill = function()

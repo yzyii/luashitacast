@@ -1,6 +1,7 @@
 local profile = {}
 
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set
+local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local ninSJMaxMP = 650 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 728 -- The Max MP you have when /whm in your idle set
@@ -527,6 +528,11 @@ local sets = {
         Back = 'Mahatma Cape',
     },
 
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
+    Ranged = {
+        Ammo = 'Pebble',
+    },
+
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
@@ -563,9 +569,11 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gcmage.DoPreshot(sets.Preshot, gFunc.Combine(sets.Preshot, sets.Ranged), snapShotValue)
 end
 
 profile.HandleMidshot = function()
+    gcmage.DoMidshot(sets, gFunc.Combine(sets.Preshot, sets.Ranged))
 end
 
 profile.HandleWeaponskill = function()

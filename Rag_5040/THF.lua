@@ -1,6 +1,7 @@
 local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
+local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
@@ -48,7 +49,7 @@ local sets = {
     TA = {},
     SATA = {},
 
-    -- The following demonstrates layering of WS sets that should cover all debatable major WS combinations.
+    -- The following demonstrates layering of WS sets that should cover all debatable major WS combinations
     WS = {
 		Head = 'Maat\'s Cap',
 		Neck = 'Love Torque',
@@ -113,17 +114,18 @@ local sets = {
 
     TH = {},
 
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {},
     Ranged_INT = {},
 
     Acid = {
-        Ammo = 'pebble',
+        Ammo = 'Acid Bolt',
     },
     Sleep = {
-        Ammo = 'tiphia sting',
+        Ammo = 'Sleep Bolt',
     },
     Bloody = {
-        Ammo = 'pebble',
+        Ammo = 'Bloody Bolt',
     },
     Blind = {
         Ammo = 'Blind Bolt',
@@ -133,7 +135,7 @@ local sets = {
     },
     None = {
         Range = 'displaced',
-        Ammo = 'phtm. tathlum',
+        Ammo = 'Bomb Core',
     },
 
     Weapon_Loadout_1 = {},
@@ -210,16 +212,22 @@ profile.HandleItem = function()
     gcinclude.DoItem()
 end
 
+profile.getRangedSet = function()
+    local rangedSet = gFunc.Combine(sets.Preshot, sets.Ranged)
+
+    if (gcdisplay.GetCycle('Ammo') == 'Bloody') then
+        rangedSet = gFunc.Combine(rangedSet, sets.Ranged_INT)
+    end
+
+    return gFunc.Combine(rangedSet, sets[gcdisplay.GetCycle('Ammo')])
+end
+
 profile.HandlePreshot = function()
-    gFunc.EquipSet(sets.Ranged)
-	gFunc.EquipSet(sets[gcdisplay.GetCycle('Ammo')]);
+    gcmelee.DoPreshot(sets.Preshot, profile.getRangedSet(), snapShotValue)
 end
 
 profile.HandleMidshot = function()
-    gFunc.EquipSet(sets.Ranged)
-    if (gcdisplay.GetCycle('Ammo') == 'Bloody') then
-        gFunc.EquipSet(sets.Ranged_INT)
-    end
+    gcmelee.DoMidshot(sets, profile.getRangedSet())
     if (profile.NeedTH()) then
         gFunc.EquipSet(sets.TH)
     end
@@ -315,7 +323,7 @@ profile.HandleDefault = function()
         end
     end
 
-	gFunc.EquipSet(sets[gcdisplay.GetCycle('Ammo')]);
+    gFunc.EquipSet(profile.getRangedSet())
 
     gcmelee.DoDefaultOverride()
 

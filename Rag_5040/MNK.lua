@@ -1,6 +1,7 @@
 local profile = {}
 
 local fastCastValue = 0.02 -- 2% from gear listed in Precast set
+local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local max_hp_in_idle_with_regen_gear_equipped = 1632 -- You could set this to 0 if you do not wish to ever use regen gear
 
@@ -279,6 +280,11 @@ local sets = {
         Main = 'Faith Baghnakhs',
         Ammo = 'Virtue Stone',
     },
+
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
+    Ranged = {
+        Ammo = 'Pebble',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -334,9 +340,11 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gcmelee.DoPreshot(sets.Preshot, gFunc.Combine(sets.Preshot, sets.Ranged), snapShotValue)
 end
 
 profile.HandleMidshot = function()
+    gcmelee.DoMidshot(sets, gFunc.Combine(sets.Preshot, sets.Ranged))
 end
 
 profile.HandleWeaponskill = function()
