@@ -494,3 +494,6 @@
 
 ### v2.0.19
 - THF - Fixes Auto-TH for abilities and ranged attacks after Horizon -> LSB rebase
+
+### v2.0.20
+- THF - Adds a None ranged attack set for use where no xbow ranged attacks are expected to be used. e.g. Bomb Core

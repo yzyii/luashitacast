@@ -117,19 +117,23 @@ local sets = {
     Ranged_INT = {},
 
     Acid = {
-        Ammo = 'Acid Bolt',
+        Ammo = 'pebble',
     },
     Sleep = {
-        Ammo = 'Sleep Bolt',
+        Ammo = 'tiphia sting',
     },
     Bloody = {
-        Ammo = 'Bloody Bolt',
+        Ammo = 'pebble',
     },
     Blind = {
         Ammo = 'Blind Bolt',
     },
     Venom = {
         Ammo = 'Venom Bolt',
+    },
+    None = {
+        Range = 'displaced',
+        Ammo = 'phtm. tathlum',
     },
 
     Weapon_Loadout_1 = {},
@@ -153,7 +157,7 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 sets.evasion_master_casters_mitts = evasion_master_casters_mitts
 profile.Sets = gcmelee.AppendSets(sets)
 
-local ammo = T{'aacid','asleep','abloody','ablind','avenom'}
+local ammo = T{'aacid','asleep','abloody','ablind','avenom','anone'}
 
 local AmmoTable1 = {
     [1] = 'Acid',
@@ -161,6 +165,7 @@ local AmmoTable1 = {
     [3] = 'Bloody',
     [4] = 'Blind',
     [5] = 'Venom',
+    [6] = 'None',
 }
 local AmmoTable2 = {
     ['acid'] = 1,
@@ -168,6 +173,7 @@ local AmmoTable2 = {
     ['bloody'] = 3,
     ['blind'] = 4,
     ['venom'] = 5,
+    ['none'] = 6,
 }
 
 local saOverride = 0
@@ -205,17 +211,15 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gFunc.EquipSet(sets.Ranged)
 	gFunc.EquipSet(sets[gcdisplay.GetCycle('Ammo')]);
 end
 
 profile.HandleMidshot = function()
     gFunc.EquipSet(sets.Ranged)
-
-    local ammo = gData.GetEquipment().Ammo
-    if (ammo ~= nil and ammo.Name == 'Bloody Bolt') then
+    if (gcdisplay.GetCycle('Ammo') == 'Bloody') then
         gFunc.EquipSet(sets.Ranged_INT)
     end
-
     if (profile.NeedTH()) then
         gFunc.EquipSet(sets.TH)
     end
@@ -311,6 +315,8 @@ profile.HandleDefault = function()
         end
     end
 
+	gFunc.EquipSet(sets[gcdisplay.GetCycle('Ammo')]);
+
     gcmelee.DoDefaultOverride()
 
     if (conquest:GetOutsideControl() and gcdisplay.IdleSet == 'Evasion') then
@@ -337,7 +343,6 @@ end
 
 profile.HandlePrecast = function()
     gcmelee.DoPrecast(fastCastValue)
-	gFunc.EquipSet(sets[gcdisplay.GetCycle('Ammo')]);
 end
 
 profile.HandleMidcast = function()
