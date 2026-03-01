@@ -323,7 +323,7 @@ profile.HandleDefault = function()
         end
     end
 
-    gFunc.EquipSet(profile.getRangedSet())
+    gFunc.EquipSet(sets[gcdisplay.GetCycle('Ammo')])
 
     gcmelee.DoDefaultOverride()
 
