@@ -506,3 +506,4 @@
 - SMN - Fix Conjurer's Ring to not truncate HP when pet is not summoned
 - RDM - Implements /fring toggle for RDM Fencer's Ring. The previous fencersRingForced boolean value is used as the default starting value
 - SMN - Implements /cring toggle for SMN Conjurer's Ring. The previous conjurersRingForced boolean value is used as the default starting value
+- All Jobs - Implements a Vile Elixir set.

@@ -308,6 +308,8 @@ function gcinclude.DoItem()
     elseif (item.Name == 'Prism Powder') then
         gFunc.EquipSet('dream_mittens')
         gFunc.EquipSet('skulkers_cape')
+	elseif (item.Name:startswith("Vile Elixir")) then
+		gFunc.EquipSet('VileElixir')
     end
 end
 

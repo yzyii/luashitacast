@@ -285,6 +285,8 @@ local sets = {
     Ranged = {
         Ammo = 'Pebble',
     },
+
+    VileElixir = {},
 }
 
 profile.SetMacroBook = function()

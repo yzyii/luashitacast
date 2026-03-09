@@ -533,6 +533,8 @@ local sets = {
         Ammo = 'Pebble',
     },
 
+    VileElixir = {},
+
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},

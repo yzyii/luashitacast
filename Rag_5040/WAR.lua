@@ -58,6 +58,8 @@ local sets = {
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {},
+
+    VileElixir = {},
 }
 
 profile.SetMacroBook = function()
