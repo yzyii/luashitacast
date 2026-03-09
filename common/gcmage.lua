@@ -733,6 +733,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     end
 
     if (gcmage.ShouldSkipCast(maxMP, isNoModSpell)) then
+        if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
+            gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
+        end
         do return end
     end
 

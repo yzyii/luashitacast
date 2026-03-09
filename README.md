@@ -137,6 +137,7 @@ This will work 99% of the time unless you have added your own logic and therefor
 ```
 [Regular Toggles]
 /hate   - causes your cures, sleeps, blinds, dispels and binds to equip +enmity set on cast.
+/fring  - Toggles usage of Fencer's Ring.
 
 [Special Sets]
 These commands and sets were created before /lockset was implemented and do the same thing.
@@ -173,6 +174,11 @@ These commands and sets were created before /lockset was implemented and do the 
 ```
 /shorde  - switches to using the default foe lullaby set to reduce AOE in favour of Acc.
 /sballad - switches to using a wind instrument over string to reduce AOE.
+```
+
+## Additional Commands for SMN:
+```
+/cring  - Toggles usage of Conjurer's Ring.
 ```
 
 ## Additional Commands for BST:

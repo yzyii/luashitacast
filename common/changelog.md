@@ -500,3 +500,9 @@
 
 ### v2.1.0
 - All Jobs - Implements ranged attacks. A preshot set is provided as well but has no utility without access to Snapshot equipment ToAU+
+
+### v2.1.1
+- Mages - Fixes an issue with using staves in TP mode and losing TP when above max mp vals
+- SMN - Fix Conjurer's Ring to not truncate HP when pet is not summoned
+- RDM - Implements /fring toggle for RDM Fencer's Ring. The previous fencersRingForced boolean value is used as the default starting value
+- SMN - Implements /cring toggle for SMN Conjurer's Ring. The previous conjurersRingForced boolean value is used as the default starting value
