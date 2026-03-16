@@ -7,7 +7,7 @@ local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if 
 
 -- Disabled on horizon_safe_mode
 local shinobiRingForced = true -- Default /sring value
-local shinobiRingMaxHP = 1
+local shinobiRingMaxHP = 1000
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local fire_staff = {
