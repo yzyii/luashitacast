@@ -432,17 +432,6 @@ local NukeObiOwnedTable = {
     ['Dark'] = 'anrin_obi'
 }
 
-local WeakElementTable = {
-    ['Fire'] = 'Water',
-    ['Earth'] = 'Wind',
-    ['Water'] = 'Thunder',
-    ['Wind'] = 'Ice',
-    ['Ice'] = 'Fire',
-    ['Thunder'] = 'Earth',
-    ['Light'] = 'Dark',
-    ['Dark'] = 'Light'
-}
-
 profile.HandleAbility = function()
     gcmelee.DoAbility()
 
@@ -575,13 +564,8 @@ end
 function ObiCheck(action)
     local element = action.Element
     local environment = gData.GetEnvironment()
-    local weakElement = WeakElementTable[element]
 
-    if environment.WeatherElement == element then
-        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
-    end
-
-    return environment.DayElement == element and environment.WeatherElement ~= weakElement
+    return environment.WeatherElement == element or environment.DayElement == element
 end
 
 return profile

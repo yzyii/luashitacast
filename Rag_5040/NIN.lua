@@ -5,6 +5,10 @@ local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
+-- Disabled on horizon_safe_mode
+local shinobiRingForced = true -- Default /sring value
+local shinobiRingMaxHP = 1
+
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local fire_staff = {
     Main = 'Vulcan\'s Staff',
@@ -142,6 +146,9 @@ local sets = {
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},
 
+    ShinobiRingHPDown = { -- Set to force HP to or below shinobiRingMaxHP
+    },
+
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {},
 
@@ -187,6 +194,8 @@ sets.koga_hakama = koga_hakama
 sets.koga_hakama_plus_one = koga_hakama_plus_one
 profile.Sets = gcmelee.AppendSets(sets)
 
+local nextShinobiRingCheck = 0
+
 local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi', 'Kurayami: Ichi', 'Hojo: Ichi' }
 local HateDebuffs = T{ 'Bind', 'Sleep', 'Poison', 'Blind' }
 local DrkDarkMagic = T{ 'Stun', 'Aspir', 'Drain', 'Absorb-AGI', 'Absorb-VIT' }
@@ -216,17 +225,6 @@ local NukeObiOwnedTable = {
     ['Thunder'] = 'rairin_obi',
     ['Light'] = 'korin_obi',
     ['Dark'] = 'anrin_obi'
-}
-
-local WeakElementTable = {
-    ['Fire'] = 'Water',
-    ['Earth'] = 'Wind',
-    ['Water'] = 'Thunder',
-    ['Wind'] = 'Ice',
-    ['Ice'] = 'Fire',
-    ['Thunder'] = 'Earth',
-    ['Light'] = 'Dark',
-    ['Dark'] = 'Light'
 }
 
 profile.HandleAbility = function()
@@ -267,6 +265,11 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
+    if (not gcinclude.horizon_safe_mode) then
+        gcinclude.SetAlias(T{'sring'})
+        gcdisplay.CreateToggle('S-Ring', shinobiRingForced)
+    end
+
     gcinclude.SetAlias(T{'nuke'})
     gcdisplay.CreateCycle('Nuke', {[1] = 'Potency', [2] = 'Accuracy',})
     gcinclude.SetAlias(T{'staff'})
@@ -279,10 +282,17 @@ profile.OnUnload = function()
     gcmelee.Unload()
     gcinclude.ClearAlias(T{'nuke'})
     gcinclude.ClearAlias(T{'staff'})
+
+    if (not gcinclude.horizon_safe_mode) then
+        gcinclude.ClearAlias(T{'sring'})
+    end
 end
 
 profile.HandleCommand = function(args)
-    if (args[1] == 'nuke') then
+    if (args[1] == 'sring') then
+        gcdisplay.AdvanceToggle('S-Ring')
+        gcinclude.Message('Shinobi Ring', gcdisplay.GetToggle('S-Ring'))
+    elseif (args[1] == 'nuke') then
         gcdisplay.AdvanceCycle('Nuke')
         gcinclude.Message('Nuke', gcdisplay.GetCycle('Nuke'))
     elseif (args[1] == 'staff') then
@@ -298,10 +308,28 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
-
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
+
+    if (not gcinclude.horizon_safe_mode) then
+        if (gcdisplay.GetToggle('S-Ring') and player.HP > shinobiRingMaxHP and player.Status == 'Engaged') then
+            local time = os.clock()
+            if (time > nextShinobiRingCheck) then
+                nextShinobiRingCheck = time + 2 -- only recheck again after 2 seconds to prevent spam if set up incorrectly
+                gFunc.ForceEquipSet('ShinobiRingHPDown')
+                local ignoreTP = {
+                    Main = 'ignore',
+                    Sub = 'ignore',
+                    Range = 'ignore',
+                    Ammo = 'ignore',
+                }
+                local dtTP = gFunc.Combine(sets.DT, ignoreTP)
+                gFunc.ForceEquipSet(dtTP)
+            end
+        end
+    end
+
+    gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
     if (player.Status == 'Engaged') then
         if (player.HPP <= 75 and player.TP <= 1000) then
@@ -420,13 +448,8 @@ end
 function ObiCheck(action)
     local element = action.Element
     local environment = gData.GetEnvironment()
-    local weakElement = WeakElementTable[element]
 
-    if environment.WeatherElement == element then
-        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
-    end
-
-    return environment.DayElement == element and environment.WeatherElement ~= weakElement
+    return environment.WeatherElement == element or environment.DayElement == element
 end
 
 return profile

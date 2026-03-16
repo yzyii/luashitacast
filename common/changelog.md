@@ -507,3 +507,8 @@
 - RDM - Implements /fring toggle for RDM Fencer's Ring. The previous fencersRingForced boolean value is used as the default starting value
 - SMN - Implements /cring toggle for SMN Conjurer's Ring. The previous conjurersRingForced boolean value is used as the default starting value
 - All Jobs - Implements a Vile Elixir set.
+
+### v2.1.2
+- Mages - Removes checks on Elemental Obis for negative days / weather as these don't exist on LSB
+- BLM - Adds a check for Claustrum and Double Weather + Day for Sorcerer's Tonban
+- NIN - Adds Shinobi Ring functionality similar to Fencer's / Conjurer's Ring

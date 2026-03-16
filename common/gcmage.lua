@@ -196,17 +196,6 @@ local NukeObiOwnedTable = {
     ['Dark'] = 'anrin_obi'
 }
 
-local WeakElementTable = {
-    ['Fire'] = 'Water',
-    ['Earth'] = 'Wind',
-    ['Water'] = 'Thunder',
-    ['Wind'] = 'Ice',
-    ['Ice'] = 'Fire',
-    ['Thunder'] = 'Earth',
-    ['Light'] = 'Dark',
-    ['Dark'] = 'Light'
-}
-
 local tpCycleToggleIndex = 2
 
 local tpCycleToggleIndexTable = {
@@ -1031,7 +1020,9 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
         end
         gcmage.EquipObi(action)
         if (action.Element == environment.DayElement) and (player.MainJob == 'BLM') then
-            gFunc.EquipSet('sorcerers_tonban')
+            if not (environment.WeatherElement == element and environment.Weather:match('x2') and claustrum.Main) then
+                gFunc.EquipSet('sorcerers_tonban')
+            end
         end
         if (gcdisplay.GetToggle('Yellow') == true and player.TP < 1000) and (player.MainJob == 'BLM') then
             gFunc.EquipSet('sorcerers_ring')
@@ -1179,13 +1170,8 @@ end
 function ObiCheck(action)
     local element = action.Element
     local environment = gData.GetEnvironment()
-    local weakElement = WeakElementTable[element]
 
-    if environment.WeatherElement == element then
-        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
-    end
-
-    return environment.DayElement == element and environment.WeatherElement ~= weakElement
+    return environment.WeatherElement == element or environment.DayElement == element
 end
 
 function gcmage.DoAbility()
