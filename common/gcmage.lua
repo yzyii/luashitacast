@@ -204,6 +204,12 @@ local tpCycleToggleIndexTable = {
     ['HighAcc'] = 3,
 }
 
+local tpCycleIndexes = {
+    ['off'] = 1,
+    ['lowacc'] = 2,
+    ['highacc'] = 3,
+}
+
 local setMP = 0
 local addMP = 0
 local lastSummoningElement = ''
@@ -292,9 +298,21 @@ function gcmage.DoCommands(args, sets)
         gcdisplay.AdvanceCycle('Mode')
         gcinclude.Message('Magic Mode', gcdisplay.GetCycle('Mode'))
     elseif (args[1] == 'tp' and player.MainJob ~= 'BLM') then
-        gcdisplay.AdvanceCycle('TP')
-        gcinclude.Message('TP Mode', gcdisplay.GetCycle('TP'))
-        tpCycleToggleIndex = tpCycleToggleIndexTable[gcdisplay.GetCycle('TP')]
+        if (args[2] ~= nil) then
+            local cycleIndex = tpCycleIndexes[args[2]]
+            if (cycleIndex ~= nil) then
+                gcdisplay.SetCycleIndex('TP', cycleIndex)
+
+                gcinclude.Message('TP Mode', gcdisplay.GetCycle('TP'))
+                tpCycleToggleIndex = tpCycleToggleIndexTable[gcdisplay.GetCycle('TP')]
+            else
+                gcinclude.Message('Invalid argument given. TP Mode', gcdisplay.GetCycle('TP'))
+            end
+        else
+            gcdisplay.AdvanceCycle('TP')
+            gcinclude.Message('TP Mode', gcdisplay.GetCycle('TP'))
+            tpCycleToggleIndex = tpCycleToggleIndexTable[gcdisplay.GetCycle('TP')]
+        end
     elseif (args[1] == 'tptoggle' and player.MainJob ~= 'BLM') then
         if (gcdisplay.GetCycle('TP') == 'Off') then
             gcdisplay.SetCycleIndex('TP', tpCycleToggleIndex)

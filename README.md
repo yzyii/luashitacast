@@ -64,9 +64,13 @@ It is highly suggested that you do not attempt to add Level Sync functionality t
 
 # Set Composition
 
-To make full use of this lua, it is important to understand how set composition works conceptually within LuAshitacast. i.e. "Base Sets", gFunc.Combine() or however you wish to call it. See [Composition](Composition.md)
+To make full use of this lua, it is important to understand how set composition works conceptually within LuAshitacast. i.e. "Base Sets", gFunc.Combine() or however you wish to call it.
+
+See [Composition](Composition.md)
 
 # Commands:
+
+For a full list of all of the /commands available per Job:
 
 See [Commands](Commands.md)
 

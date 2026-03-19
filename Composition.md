@@ -72,6 +72,7 @@ The final composition of all these sets would result in the following set being 
 ```
 
 Note how the Waist from the TP_HighAcc set overwrites the Waist from the TP_LowAcc set.
+
 Note how the Ear2 from the TP_NIN set overwrites the Ear2 from TP_LowAcc set.
 
 Finally, also note how the Ear1 on the TP_NIN set overwrites the Ear1 from the TP_HighAcc set.
