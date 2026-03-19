@@ -512,3 +512,6 @@
 - Mages - Removes checks on Elemental Obis for negative days / weather as these don't exist on LSB
 - BLM - Adds a check for Claustrum and Double Weather + Day for Sorcerer's Tonban
 - NIN - Adds Shinobi Ring functionality similar to Fencer's / Conjurer's Ring
+
+### v2.1.3
+- Reverts v2.0.10 where the Enhancing set is used for sneak / invisible
