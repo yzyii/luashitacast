@@ -99,8 +99,8 @@ The following sets fix the issue pointed out previously:
 The final composition of all these sets would result in the following set being equipped when /NIN and if the HighAcc tp mode is being used:
 ```lua
     Final_Set = {
-        Ear1 = 'Brutal Earring',
         Ear1 = 'Diabolos\'s Earring',
+        Ear2 = 'Stealth Earring',
         Waist = 'Life Belt',
     },
 ```
