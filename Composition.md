@@ -111,12 +111,12 @@ The final composition of all these sets would result in the following set being 
     },
 ```
 
-Note how if HighACC tp mode were turned off, the final composition would still instead result in the following desired set for LowAcc tp mode:
+Note how if HighACC tp mode were turned off, the final composition would still instead result in the following desired set for LowAcc tp mode when /NIN:
 ```lua
     Final_Set = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Stealth Earring',
-        Waist = 'Life Belt',
+        Waist = 'Sonic Belt',
     },
 ```
 
