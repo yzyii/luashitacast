@@ -59,7 +59,7 @@ While TP-ing on a potentially dual wielding Job while /NIN. e.g. RDM, WAR, THF:
         Waist = 'Sonic Belt',
     },
     TP_HighAcc = {
-        Ear1 = 'Diabolos\'s Earring', -- Let's ignore that this is conditional and assume it always gives 3 ACC.
+        Ear1 = 'Hollow Earring',
         Waist = 'Life Belt',
     },
     TP_NIN = {
@@ -94,7 +94,7 @@ The following sets fix the issue pointed out previously:
         Waist = 'Sonic Belt',
     },
     TP_HighAcc = {
-        Ear1 = 'Diabolos\'s Earring', -- Let's ignore that this is conditional and assume it always gives 3 ACC.
+        Ear1 = 'Hollow Earring', -- Let's ignore that this is conditional and assume it always gives 3 ACC.
         Waist = 'Life Belt',
     },
     TP_NIN = {
@@ -105,7 +105,7 @@ The following sets fix the issue pointed out previously:
 The final composition of all these sets would result in the following set being equipped when /NIN and if the HighAcc tp mode is being used:
 ```lua
     Final_Set = {
-        Ear1 = 'Diabolos\'s Earring',
+        Ear1 = 'Hollow Earring',
         Ear2 = 'Stealth Earring',
         Waist = 'Life Belt',
     },
