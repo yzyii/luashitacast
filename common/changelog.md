@@ -517,3 +517,6 @@
 - Reverts v2.0.10 where the Enhancing set is used for sneak / invisible
 - Updates Documentation, particularly to include notes on correct set composition
 - Allows argument passing to /tp on mages to allow switching between tp modes while not dumping TP
+
+### v2.1.4
+- Fixed mage /ra implementation to ignore ranged slots while still using interim equip sets

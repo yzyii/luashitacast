@@ -748,7 +748,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
 
     if (chainspell == 0 and not lag) then
         if not (player.MainJob == 'BLM' and gcdisplay.GetToggle('Extra') and player.MP >= blmSJMMP) then
-            gcmage.SetupInterimEquipSet(sets)
+            gcmage.SetupInterimEquipSet(sets, false)
         end
     end
 
@@ -886,11 +886,11 @@ function gcmage.DoMidshot(sets, rangedSet)
     gFunc.EquipSet(rangedSet)
 
     if (not lag) then
-        gcmage.SetupInterimEquipSet(sets)
+        gcmage.SetupInterimEquipSet(sets, true)
     end
 end
 
-function gcmage.SetupInterimEquipSet(sets)
+function gcmage.SetupInterimEquipSet(sets, isRanged)
     local environment = gData.GetEnvironment()
     local player = gData.GetPlayer()
     local action = gData.GetAction()
@@ -919,6 +919,14 @@ function gcmage.SetupInterimEquipSet(sets)
 
     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
         interimSet = gFunc.Combine(interimSet, sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]])
+    end
+
+    if (isRanged) then
+        local ignoreRA = {
+            Range = 'ignore',
+            Ammo = 'ignore',
+        }
+        interimSet = gFunc.Combine(interimSet, ignoreRA)
     end
 
     gFunc.InterimEquipSet(interimSet)
