@@ -2,7 +2,7 @@
 
 A combined LuAshitacast for Lvl 75 era that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
-The intention for these luas is to comprehensively cover all required game mechanics for 75-era content as almost every other lua I have found either does not implement or poorly implements functionality such as pdt / mdt / resist sets, spell interruption rate down (SIRD) / midcast delay, or different set toggling.
+The intention for these luas is to comprehensively cover all required game mechanics for 75-era endgame content as almost every other lua I have found either does not implement or poorly implements functionality such as pdt / mdt / resist sets, spell interruption rate down (SIRD) / midcast delay, or different set toggling.
 
 Jobs use the corresponding templates to automatically implement functionality that is shared across all of them.
 
@@ -60,7 +60,7 @@ The Resting set is equipped after 16 seconds of starting resting. This is to all
 
 LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. 
 
-It is highly suggested that you do not attempt to add Level Sync functionality to these luas as it will cause you to be unable to update to newer versions easily.
+It is highly suggested that you do not attempt to add Level Sync functionality to these luas as it will cause you to be unable to update to newer versions easily among several other reasons.
 
 # Set Composition
 
