@@ -80,6 +80,7 @@ local sets = {
     Movement_TP = {},
 
     Perpetuation = { -- There is no point in using this set over an Idle set except for equipping Penance Robe
+        -- Body = 'Penance Robe',
     },
 
     DT = {
@@ -316,27 +317,40 @@ local sets = {
     },
 
     BP = {
+        Ammo = 'Hedgehog Bomb',
         Head = 'Evk. Horn +1',
-        Legs = 'Evk. Spats +1',
-        Ring1 = { Name = 'Sattva Ring', Priority = 100 },
-        Ring2 = 'Evoker\'s Ring',
+        Neck = 'Smn. Torque',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
-        Back = 'Astute Cape',
+		-- Ear2 = 'Smn. Earring',
         Body = 'Smn. Doublet +1',
+        -- Body = 'Shep. Doublet',
         Hands = 'Smn. Bracers +1',
-        Feet = 'Nashira Crackows',
-        Ammo = 'Hedgehog Bomb',
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
+        Ring2 = 'Evoker\'s Ring',
+        Back = 'Astute Cape',
         Waist = { Name = 'Hierarch Belt', Priority = 100 },
-        Neck = 'Smn. Torque',
+        Legs = 'Evk. Spats +1',
+        -- Legs = 'Penance Slops',
+        Feet = 'Nashira Crackows',
     },
     BP_Magical = {
+        -- Head = 'Buffalo Helm',
+    },
+    BP_Magical_Potency = {
+        -- Feet = 'Shep. Boots', -- Increases damage at the cost of accuracy
     },
     BP_Physical = {
+        Legs = 'Evk. Spats +1',
+        -- Feet = 'Summoner\'s Pgch.', -- Increases damage at the cost of accuracy
+    },
+    BP_Physical_Crit = {
+        Body = 'Smn. Doublet +1',
     },
     BP_Hybrid = {
+        -- Feet = 'Shep. Boots', -- Increases damage at the cost of accuracy
     },
-    BP_Healing = {
+    BP_Healing = { -- This set is pointless unless your server penalizes healing BPs by attributing amount healed enmity to you.
     },
 
     TP = {
@@ -403,11 +417,13 @@ sets.conjurers_ring = conjurers_ring
 sets.bahamuts_staff = bahamuts_staff
 profile.Sets = gcmage.AppendSets(sets)
 
-local SmnSkill = T{'Shining Ruby','Glittering Ruby','Crimson Howl','Inferno Howl','Frost Armor','Crystal Blessing','Aerial Armor','Hastega II','Fleet Wind','Hastega','Earthen Ward','Earthen Armor','Rolling Thunder','Lightning Armor','Soothing Current','Ecliptic Growl','Heavenward Howl','Ecliptic Howl','Noctoshield','Dream Shroud','Altana\'s Favor','Reraise','Reraise II','Reraise III','Raise','Raise II','Raise III','Wind\'s Blessing','Spring Water'}
+-- Includes Chaotic Strike and Shock Strike in SmnSkill to maximize stun chance
+local SmnSkill = T{'Shining Ruby','Glittering Ruby','Crimson Howl','Inferno Howl','Frost Armor','Crystal Blessing','Aerial Armor','Hastega II','Fleet Wind','Hastega','Earthen Ward','Earthen Armor','Rolling Thunder','Lightning Armor','Soothing Current','Ecliptic Growl','Heavenward Howl','Ecliptic Howl','Noctoshield','Dream Shroud','Altana\'s Favor','Reraise','Reraise II','Reraise III','Raise','Raise II','Raise III','Wind\'s Blessing','Spring Water','Shock Strike','Chaotic Strike'}
 local SmnHealing = T{'Healing Ruby','Healing Ruby II','Whispering Wind'}
 local SmnMagical = T{'Searing Light','Meteorite','Holy Mist','Inferno','Fire II','Fire IV','Meteor Strike','Conflag Strike','Diamond Dust','Blizzard II','Blizzard IV','Heavenly Strike','Aerial Blast','Aero II','Aero IV','Wind Blade','Earthen Fury','Stone II','Stone IV','Geocrush','Judgement Bolt','Thunder II','Thunder IV','Thunderstorm','Thunderspark','Tidal Wave','Water II','Water IV','Grand Fall','Howling Moon','Lunar Bay','Ruinous Omen','Somnolence','Nether Blast','Night Terror','Level ? Holy'}
 local SmnEnfeebling = T{'Diamond Storm','Sleepga','Shock Squall','Slowga','Tidal Roar','Pavor Nocturnus','Ultimate Terror','Nightmare','Mewing Lullaby','Eerie Eye'}
 local SmnHybrid = T{'Flaming Crush','Burning Strike'}
+local SmnCrit = T{'Predator Claws','Claw'}
 
 local nextConjurersRingCheck = 0
 
@@ -480,7 +496,9 @@ profile.HandleDefault = function()
             -- Do Nothing
         elseif (SmnMagical:contains(petAction.Name)) then
             gFunc.EquipSet(sets.BP_Magical)
+            gFunc.EquipSet(sets.BP_Magical_Potency)
         elseif (SmnHybrid:contains(petAction.Name)) then
+            gFunc.EquipSet(sets.BP_Physical)
             gFunc.EquipSet(sets.BP_Hybrid)
         elseif (SmnHealing:contains(petAction.Name)) then
             gFunc.EquipSet(sets.BP_Healing)
@@ -488,6 +506,9 @@ profile.HandleDefault = function()
             gFunc.EquipSet(sets.BP_Magical)
         else
             gFunc.EquipSet(sets.BP_Physical)
+            if (SmnCrit:contains(petAction.Name)) then
+                gFunc.EquipSet(sets.BP_Physical_Crit)
+            end
         end
     else
         if (not gcinclude.horizon_safe_mode) then

@@ -520,3 +520,7 @@
 
 ### v2.1.4
 - Fixed mage /ra implementation to ignore ranged slots while still using interim equip sets
+
+### v2.1.5
+- NIN - Adds a /bat toggle for bat earrings if using horizon_safe_mode
+- SMN - Improves BP set granularity for some Horizon-specific gear and Garuda

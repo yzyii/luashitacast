@@ -192,6 +192,7 @@ sets.warlocks_mantle = warlocks_mantle
 sets.fenrirs_stone = fenrirs_stone
 sets.koga_hakama = koga_hakama
 sets.koga_hakama_plus_one = koga_hakama_plus_one
+sets.bat_earrings = bat_earrings
 profile.Sets = gcmelee.AppendSets(sets)
 
 local nextShinobiRingCheck = 0
@@ -268,6 +269,9 @@ profile.OnLoad = function()
     if (not gcinclude.horizon_safe_mode) then
         gcinclude.SetAlias(T{'sring'})
         gcdisplay.CreateToggle('S-Ring', shinobiRingForced)
+    else
+        gcinclude.SetAlias(T{'bat'})
+        gcdisplay.CreateToggle('Bat', false)
     end
 
     gcinclude.SetAlias(T{'nuke'})
@@ -285,6 +289,8 @@ profile.OnUnload = function()
 
     if (not gcinclude.horizon_safe_mode) then
         gcinclude.ClearAlias(T{'sring'})
+    else
+        gcinclude.ClearAlias(T{'bat'})
     end
 end
 
@@ -292,6 +298,9 @@ profile.HandleCommand = function(args)
     if (args[1] == 'sring') then
         gcdisplay.AdvanceToggle('S-Ring')
         gcinclude.Message('Shinobi Ring', gcdisplay.GetToggle('S-Ring'))
+    elseif (args[1] == 'bat') then
+        gcdisplay.AdvanceToggle('Bat')
+        gcinclude.Message('Bat', gcdisplay.GetToggle('Bat'))
     elseif (args[1] == 'nuke') then
         gcdisplay.AdvanceCycle('Nuke')
         gcinclude.Message('Nuke', gcdisplay.GetCycle('Nuke'))
@@ -356,7 +365,9 @@ profile.HandleDefault = function()
             gFunc.EquipSet('koga_hakama_plus_one')
         end
 
-        if (not gcinclude.horizon_safe_mode) then
+        if (gcdisplay.GetToggle('Bat')) then
+            gFunc.EquipSet('bat_earrings')
+        elseif (not gcinclude.horizon_safe_mode) then
             local blindness = gData.GetBuffCount('Blindness')
             if (blindness == 1) then
                 gFunc.EquipSet('bat_earrings')
