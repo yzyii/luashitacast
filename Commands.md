@@ -155,6 +155,7 @@ All of the following toggles set what bolt ammo will be used.
 /abloody
 /ablind
 /avenom
+/anone
 
 Alternatively, use /ammo to cycle through them.
 ```
