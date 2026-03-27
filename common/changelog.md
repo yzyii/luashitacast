@@ -526,3 +526,7 @@
 - SMN - Improves BP set granularity for some Horizon-specific gear and Garuda
 - THF - Rearranges bolt cycle so that default is "None"
 - Melee - Fixes Ranged attacks so that override sets on interim will not disrupt ranged attacks
+
+### v2.1.6
+- NIN - Adds Ninja Kyahan purely for movement
+- NIN - Adds Blue Cotehardie for /RDM /WHM /DRK /PLD
