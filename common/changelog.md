@@ -524,7 +524,5 @@
 ### v2.1.5
 - NIN - Adds a /bat toggle for bat earrings if using horizon_safe_mode
 - SMN - Improves BP set granularity for some Horizon-specific gear and Garuda
-
-### v2.1.6
 - THF - Rearranges bolt cycle so that default is "None"
 - Melee - Fixes Ranged attacks so that override sets on interim will not disrupt ranged attacks
