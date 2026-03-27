@@ -222,15 +222,17 @@ function gcmelee.DoDefaultOverride()
 end
 
 function gcmelee.DoPreshot(preshotSet, rangedSet, snapShotValue)
-    gFunc.EquipSet(gFunc.Combine(rangedSet, preshotSet))
+    local fset = gFunc.Combine(rangedSet, preshotSet)
+
+    gFunc.EquipSet(fset)
 
     if (not lag) then
-        local rangedString = rangedSet.Range
+        local rangedString = fset.Range
         if (rangedString == nil or rangedString == 'displaced' or rangedString == 'empty' or rangedString == 'remove'or rangedString == '') then
-            rangedString = rangedSet.Ammo
+            rangedString = fset.Ammo
         end
 
-        if (rangedString ~= nil) then
+        if (rangedString ~= nil and rangedString ~= 'displaced' and rangedString ~= 'empty' and rangedString ~= 'remove'and rangedString ~= '') then
             local item = AshitaCore:GetResourceManager():GetItemByName(rangedString, 0)
             if (item ~= nil) then
                 local delay = item.Delay
@@ -257,7 +259,7 @@ function gcmelee.DoMidshot(sets, rangedSet)
     gFunc.EquipSet(rangedSet)
 
     if (not lag) then
-        gcmelee.SetupInterimEquipSet(sets)
+        gcmelee.SetupInterimEquipSet(sets, true)
     end
 end
 
@@ -306,36 +308,45 @@ end
 
 function gcmelee.DoMidcast(sets)
     if (not lag) then
-        gcmelee.SetupInterimEquipSet(sets)
+        gcmelee.SetupInterimEquipSet(sets, false)
     end
     gFunc.EquipSet('Haste')
 end
 
-function gcmelee.SetupInterimEquipSet(sets)
+function gcmelee.SetupInterimEquipSet(sets, isRanged)
     local action = gData.GetAction()
 
-    if (SurvivalSpells:contains(action.Name)) then
-        gFunc.InterimEquipSet(sets.SIRD)
-    else
+    local interimSet = sets.SIRD
+
+    if (not SurvivalSpells:contains(action.Name)) then
         local ignoreTP = {
             Main = 'ignore',
             Sub = 'ignore',
             Range = 'ignore',
             Ammo = 'ignore',
         }
-        local dtTP = gFunc.Combine(sets.DT, ignoreTP)
-        gFunc.InterimEquipSet(dtTP)
+        interimSet = gFunc.Combine(sets.DT, ignoreTP)
     end
 
-    if (gcdisplay.IdleSet == 'DT') then gFunc.InterimEquipSet(sets.DT) end
-    if (gcdisplay.IdleSet == 'MDT') then gFunc.InterimEquipSet(sets.MDT) end
-    if (gcdisplay.IdleSet == 'FireRes') then gFunc.InterimEquipSet(sets.FireRes) end
-    if (gcdisplay.IdleSet == 'IceRes') then gFunc.InterimEquipSet(sets.IceRes) end
-    if (gcdisplay.IdleSet == 'LightningRes') then gFunc.InterimEquipSet(sets.LightningRes) end
-    if (gcdisplay.IdleSet == 'EarthRes') then gFunc.InterimEquipSet(sets.EarthRes) end
-    if (gcdisplay.IdleSet == 'WindRes') then gFunc.InterimEquipSet(sets.WindRes) end
-    if (gcdisplay.IdleSet == 'WaterRes') then gFunc.InterimEquipSet(sets.WaterRes) end
-    if (gcdisplay.IdleSet == 'Evasion') then gFunc.InterimEquipSet(sets.Evasion) end
+    if (gcdisplay.IdleSet == 'DT') then interimSet = sets.DT end
+    if (gcdisplay.IdleSet == 'MDT') then interimSet = sets.MDT end
+    if (gcdisplay.IdleSet == 'FireRes') then interimSet = sets.FireRes end
+    if (gcdisplay.IdleSet == 'IceRes') then interimSet = sets.IceRes end
+    if (gcdisplay.IdleSet == 'LightningRes') then interimSet = sets.LightningRes end
+    if (gcdisplay.IdleSet == 'EarthRes') then interimSet = sets.EarthRes end
+    if (gcdisplay.IdleSet == 'WindRes') then interimSet = sets.WindRes end
+    if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end
+    if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
+
+    if (isRanged) then
+        local ignoreRA = {
+            Range = 'ignore',
+            Ammo = 'ignore',
+        }
+        interimSet = gFunc.Combine(interimSet, ignoreRA)
+    end
+
+    gFunc.InterimEquipSet(interimSet)
 end
 
 function gcmelee.DoWS()

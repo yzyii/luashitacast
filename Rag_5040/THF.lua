@@ -118,6 +118,14 @@ local sets = {
     Ranged = {},
     Ranged_INT = {},
 
+    None = { -- Default range / ammo equipment while idle
+        Range = 'displaced',
+        Ammo = 'Bomb Core',
+    },
+    None_RA = { -- Used for ranged attacks when None set is being used instead of the bolt sets defined below
+        Range = 'displaced',
+        Ammo = 'Pebble',
+    },
     Acid = {
         Ammo = 'Acid Bolt',
     },
@@ -132,10 +140,6 @@ local sets = {
     },
     Venom = {
         Ammo = 'Venom Bolt',
-    },
-    None = {
-        Range = 'displaced',
-        Ammo = 'Bomb Core',
     },
 
     Weapon_Loadout_1 = {},
@@ -164,20 +168,20 @@ profile.Sets = gcmelee.AppendSets(sets)
 local ammo = T{'aacid','asleep','abloody','ablind','avenom','anone'}
 
 local AmmoTable1 = {
-    [1] = 'Acid',
-    [2] = 'Sleep',
-    [3] = 'Bloody',
-    [4] = 'Blind',
-    [5] = 'Venom',
-    [6] = 'None',
+    [1] = 'None',
+    [2] = 'Acid',
+    [3] = 'Sleep',
+    [4] = 'Bloody',
+    [5] = 'Blind',
+    [6] = 'Venom',
 }
 local AmmoTable2 = {
-    ['acid'] = 1,
-    ['sleep'] = 2,
-    ['bloody'] = 3,
-    ['blind'] = 4,
-    ['venom'] = 5,
-    ['none'] = 6,
+    ['none'] = 1,
+    ['acid'] = 2,
+    ['sleep'] = 3,
+    ['bloody'] = 4,
+    ['blind'] = 5,
+    ['venom'] = 6,
 }
 
 local saOverride = 0
@@ -219,6 +223,8 @@ profile.getRangedSet = function()
 
     if (gcdisplay.GetCycle('Ammo') == 'Bloody') then
         rangedSet = gFunc.Combine(rangedSet, sets.Ranged_INT)
+    elseif (gcdisplay.GetCycle('Ammo') == 'None') then
+        return sets.None_RA
     end
 
     return gFunc.Combine(rangedSet, sets[gcdisplay.GetCycle('Ammo')])
