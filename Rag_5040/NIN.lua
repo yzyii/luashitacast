@@ -84,6 +84,12 @@ local koga_hakama = {
 local koga_hakama_plus_one = {
     Legs = 'Kog. Hakama +1',
 }
+local koga_kyahan = {
+    -- Feet = 'Koga Kyahan',
+}
+local koga_kyahan_plus_one = {
+    Feet = 'Kog. Kyahan +1',
+}
 local ninja_kyahan = {
     Feet = 'Ninja Kyahan',
 }
@@ -204,6 +210,8 @@ sets.warlocks_mantle = warlocks_mantle
 sets.fenrirs_stone = fenrirs_stone
 sets.koga_hakama = koga_hakama
 sets.koga_hakama_plus_one = koga_hakama_plus_one
+sets.koga_kyahan = koga_kyahan
+sets.koga_kyahan_plus_one = koga_kyahan_plus_one
 sets.ninja_kyahan = ninja_kyahan
 sets.ninja_kyahan_plus_one = ninja_kyahan_plus_one
 sets.blue_cotehardie = blue_cotehardie
@@ -275,9 +283,11 @@ profile.HandleWeaponskill = function()
     local environment = gData.GetEnvironment()
     if (environment.Time < 6 or environment.Time >= 18) then
         gFunc.EquipSet('koga_tekko')
+        gFunc.EquipSet('koga_kyahan')
     end
     if (environment.Time < 7 or environment.Time >= 17) then
         gFunc.EquipSet('koga_tekko_plus_one')
+        gFunc.EquipSet('koga_kyahan_plus_one')
     end
 end
 

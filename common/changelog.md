@@ -530,3 +530,6 @@
 ### v2.1.6
 - NIN - Adds Ninja Kyahan purely for movement
 - NIN - Adds Blue Cotehardie for /RDM /WHM /DRK /PLD
+
+### v2.1.7
+- NIN - Adds Koga Kyahan for WS
