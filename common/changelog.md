@@ -533,3 +533,6 @@
 
 ### v2.1.7
 - NIN - Adds Koga Kyahan for WS
+
+### v2.1.8
+- PLD / NIN / DRK - Tinkers with priority of IdleDT / IdleAltDT sets so that these will equip with highest priority. DRK will only equip it if the /hate toggle is enabled.

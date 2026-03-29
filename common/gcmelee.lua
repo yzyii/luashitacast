@@ -123,26 +123,6 @@ function gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
     gcinclude.DoDefaultIdle()
 
-    if (not gcinclude.horizon_safe_mode) then
-        if (player.MainJob == 'PLD' or player.MainJob == 'NIN' or player.MainJob == 'DRK') then
-            if (player.SubJob == 'NIN' or player.MainJob == 'NIN') then
-                local function GetShadowCount()
-                    for buffId, shadowCount in pairs(utsuBuffs) do
-                        if (gData.GetBuffCount(buffId) > 0) then
-                            return shadowCount
-                        end
-                    end
-
-                    return 0
-                end
-                if (GetShadowCount() == 0) then
-                    gFunc.EquipSet('IdleDT')
-                    if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALTDT') end
-                end
-            end
-        end
-    end
-
     if (player.Status == 'Idle') then
         if (player.HPP < 50) then
             if (MuscleBeltJobs:contains(player.MainJob)) then gFunc.EquipSet('muscle_belt') end
@@ -195,6 +175,26 @@ function gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
             if (player.Status == 'Idle' and lastIdleSetBeforeEngaged ~= '') then
                 gcinclude.ToggleIdleSet(lastIdleSetBeforeEngaged)
                 lastIdleSetBeforeEngaged = ''
+            end
+        end
+    end
+
+    if (not gcinclude.horizon_safe_mode) then
+        if (player.MainJob == 'PLD' or player.MainJob == 'NIN' or (player.MainJob == 'DRK' and gcdisplay.GetToggle('Hate'))) then
+            if (player.SubJob == 'NIN' or player.MainJob == 'NIN') then
+                local function GetShadowCount()
+                    for buffId, shadowCount in pairs(utsuBuffs) do
+                        if (gData.GetBuffCount(buffId) > 0) then
+                            return shadowCount
+                        end
+                    end
+
+                    return 0
+                end
+                if (GetShadowCount() == 0) then
+                    gFunc.EquipSet('IdleDT')
+                    if (gcdisplay.IdleSet == 'Alternate') then gFunc.EquipSet('IdleALTDT') end
+                end
             end
         end
     end
