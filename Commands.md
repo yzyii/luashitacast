@@ -177,6 +177,8 @@ Alternatively, use /ammo to cycle through them.
 ```
 /nuke  - toggles between 2 different elemental accuracy sets for Ninjutsu nuking.
 /staff - toggles between always switching to staff for spells or not.
+         This is typically used in conjunction with the /dps command to result in
+         staff tanking even while engaged.
 /sring - toggles usage of Shinobi Ring.
 /bat   - forces bat earring to equip if /evasion is already toggled on.
          this command is only available in horizon_safe_mode as this is already
