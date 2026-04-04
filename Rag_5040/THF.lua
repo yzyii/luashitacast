@@ -119,12 +119,12 @@ local sets = {
     Ranged_INT = {},
 
     None = { -- Default range / ammo equipment while idle
-        Range = 'displaced',
-        Ammo = 'Bomb Core',
+        -- Range = 'displaced',
+        -- Ammo = 'Bomb Core',
     },
     None_RA = { -- Used for ranged attacks when None set is being used instead of the bolt sets defined below
-        Range = 'displaced',
-        Ammo = 'Pebble',
+        -- Range = 'displaced',
+        -- Ammo = 'Pebble',
     },
     Acid = {
         Ammo = 'Acid Bolt',
