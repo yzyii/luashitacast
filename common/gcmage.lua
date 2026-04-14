@@ -14,7 +14,7 @@ local blm_advanced = false
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
 local dark_and_abyssal_earrings = true
 
--- Set to true if you wish to always use elemental staves or claustrum for Elemental DoTs.
+-- Set to true if you wish to always use elemental staves or claustrum for Elemental DoTs. This is only required for BLM.
 local use_staves_for_elemental_debuffs = false
 
 -- Set to 0 to 50 depending on the mp lost when using medicine ring or virology ring on IdleMaxMP set.
@@ -1160,7 +1160,7 @@ function gcmage.EquipStaff()
     local player = gData.GetPlayer()
 
     if (action.Skill ~= 'Enhancing Magic' and not string.match(action.Name, 'Utsusemi')) then
-        if (use_staves_for_elemental_debuffs or not ElementalDebuffs:contains(action.Name)) then
+        if (use_staves_for_elemental_debuffs or not ElementalDebuffs:contains(action.Name) or player.MainJob ~= 'BLM') then
             local staff = ElementalStaffTable[action.Element]
             if (player.MainJob == 'SMN' or player.MainJob == 'BLM') then
                 if (claustrum.Main and action.Skill ~= 'Healing Magic') then
