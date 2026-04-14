@@ -540,3 +540,5 @@
 
 ### v2.1.9
 - Mages - Uses staves for Elemental DOTs always unless BLM regardless of use_staves_for_elemental_debuffs
+- NIN - Adds Resentment Cape
+- NIN / THF - Adds Wind Ring

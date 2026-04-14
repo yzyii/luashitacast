@@ -6,6 +6,10 @@ local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local windRingMaxHP = 0
+local wind_ring = {
+    -- Ring2 = 'Wind Ring',
+}
 local evasion_master_casters_mitts = {
     -- Hands = 'Mst.Cst. Mitts',
 }
@@ -163,6 +167,7 @@ Everything below can be ignored.
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 sets.evasion_master_casters_mitts = evasion_master_casters_mitts
+sets.wind_ring = wind_ring
 profile.Sets = gcmelee.AppendSets(sets)
 
 local ammo = T{'aacid','asleep','abloody','ablind','avenom','anone'}
@@ -335,8 +340,14 @@ profile.HandleDefault = function()
 
     gcmelee.DoDefaultOverride()
 
-    if (conquest:GetOutsideControl() and gcdisplay.IdleSet == 'Evasion') then
-        gFunc.EquipSet('evasion_master_casters_mitts')
+    if (gcdisplay.IdleSet == 'Evasion') then
+        if (conquest:GetOutsideControl()) then
+            gFunc.EquipSet('evasion_master_casters_mitts')
+        end
+
+        if (environment.DayElement == 'Wind' and player.HP <= windRingMaxHP) then
+            gFunc.EquipSet(sets.wind_ring)
+        end
     end
 
     local sa = gData.GetBuffCount('Sneak Attack')
