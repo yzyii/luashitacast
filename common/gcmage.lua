@@ -430,12 +430,20 @@ function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
         if (lastSummoningElement ~= '' and gData.GetPet()) then
             gFunc.EquipSet('Perpetuation')
 
+            local isSpirit = string.match(gData.GetPet().Name, 'Spirit')
+            if (isSpirit) then
+                gFunc.EquipSet('Perpetuation_Spirits')
+            end
+
             local staff = ElementalStaffTable[lastSummoningElement]
             if (sets.bahamuts_staff.Main) then
                 staff = 'bahamuts_staff'
             end
             if (claustrum.Main) then
                 staff = 'claustrum'
+            end
+            if (isSpirit and sets.bahamuts_staff.Main) then
+                staff = 'bahamuts_staff'
             end
             gFunc.EquipSet(staff)
 

@@ -542,3 +542,6 @@
 - Mages - Uses staves for Elemental DOTs always unless BLM regardless of use_staves_for_elemental_debuffs
 - NIN - Adds Resentment Cape
 - NIN / THF - Adds Wind Ring
+
+### v2.1.10
+- SMN - Adds a set specifically for spirit perpetuation to allow skill maximisation while idle with spirits active

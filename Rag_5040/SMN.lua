@@ -82,6 +82,9 @@ local sets = {
     Perpetuation = { -- There is no point in using this set over an Idle set except for equipping Penance Robe
         -- Body = 'Penance Robe',
     },
+    Perpetuation_Spirits = { -- For maximizing summoning skill with spirits out if you wish
+
+    },
 
     DT = {
         Main = 'Terra\'s Staff',
