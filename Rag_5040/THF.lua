@@ -345,6 +345,7 @@ profile.HandleDefault = function()
             gFunc.EquipSet('evasion_master_casters_mitts')
         end
 
+        local environment = gData.GetEnvironment()
         if (environment.DayElement == 'Wind' and player.HP <= windRingMaxHP) then
             gFunc.EquipSet(sets.wind_ring)
         end
