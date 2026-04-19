@@ -31,8 +31,6 @@
                   as it will simply override your default idle / TP gear.
 
 [Special Commands]
-/warpme           - equips a warp cudgel and uses it after 30 seconds and locks equipment.
-                    use /lock to unlock again.
 /lockset [number] - equips the given lockset and locks equipment
                     use /lock to unlock again.
                     This is primarily provided as a shortcut way to define some VERY basic

@@ -32,24 +32,24 @@ local skulkers_cape = {
 -- Set this to true to confirm that you actually read the README.md and set up the equipment listed above correctly
 local i_can_read_and_follow_instructions_test = false
 
--- Add additional equipment here that you want to automatically lock when equipping
+-- Add additional equipment here that you want to automatically lock when equipping. Ignore's Maat's Cap, Dream Mittens +1, Dream Boots +1 as these will stick on idle.
 local LockableEquipment = {
     ['Main'] = T{'Warp Cudgel', 'Rep. Signet Staff', 'Kgd. Signet Staff', 'Fed. Signet Staff', 'Treat Staff II', 'Trick Staff II'},
     ['Sub'] = T{'Warp Cudgel'},
-    ['Range'] = T{},
-    ['Ammo'] = T{},
-    ['Head'] = T{'Reraise Hairpin', 'Dream Hat +1', 'Tinfoil Hat'},
-    ['Neck'] = T{'Opo-opo Necklace'},
+    ['Range'] = T{'Lu Shang\'s F. Rod', 'Ebisu Fishing Rod'},
+    ['Ammo'] = T{'Fly Lure', 'Shrimp Lure', 'Sinking Minnow', 'Meatball'},
+    ['Head'] = T{'Reraise Hairpin', 'Blink Band', 'Dream Hat +1', 'Tinfoil Hat'},
+    ['Neck'] = T{'Opo-opo Necklace', 'Reraise Gorget'},
     ['Ear1'] = T{'Reraise Earring', 'Republic Earring', 'Kingdom Earring', 'Federation Earring'},
     ['Ear2'] = T{'Reraise Earring', 'Republic Earring', 'Kingdom Earring', 'Federation Earring'},
-    ['Body'] = T{'Custom Gilet +1', 'Custom Top +1', 'Magna Gilet +1', 'Magna Top +1', 'Savage Top +1', 'Elder Gilet +1', 'Wonder Maillot +1', 'Wonder Top +1', 'Mandra. Suit'},
-    ['Hands'] = T{},
-    ['Ring1'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring'},
-    ['Ring2'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring'},
+    ['Body'] = T{'Custom Gilet +1', 'Custom Top +1', 'Magna Gilet +1', 'Magna Top +1', 'Savage Top +1', 'Elder Gilet +1', 'Wonder Maillot +1', 'Wonder Top +1', 'Mandra. Suit', 'Lord\'s Yukata', 'Field Tunica', 'Worker Tunica', 'Angler\'s Tunica', 'Fisherman\'s Apron'},
+    ['Hands'] = T{'Field Gloves', 'Worker Gloves', 'Angler\'s Gloves'},
+    ['Ring1'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Return Ring', 'Warp Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring', 'Albatross Ring'},
+    ['Ring2'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Return Ring', 'Warp Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring', 'Albatross Ring'},
     ['Back'] = T{},
     ['Waist'] = T{},
-    ['Legs'] = T{},
-    ['Feet'] = T{'Powder Boots'}
+    ['Legs'] = T{'Field Hose', 'Worker Hose', 'Angler\'s Hose'},
+    ['Feet'] = T{'Powder Boots', 'Field Boots', 'Worker Boots', 'Angler\'s Boots', 'Waders'}
 }
 
 --[[
@@ -66,7 +66,7 @@ local gcinclude = {}
 gcinclude.horizon_safe_mode = horizon_safe_mode
 
 local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','bres','lightningres','lres','tres','earthres','eres','sres','windres','wires','ares','waterres','wares','wres','evasion','eva' }
-local Commands = T{ 'kite','lock','lockset','warpme','horizonmode' }
+local Commands = T{ 'kite','lock','lockset','horizonmode' }
 
 local Towns = T{
     'Tavnazian Safehold','Al Zahbi','Aht Urhgan Whitegate','Nashmau',
@@ -173,8 +173,6 @@ function gcinclude.DoCommands(args)
     elseif (args[1] == 'kite') then
         gcdisplay.AdvanceToggle('Kite')
         gcinclude.Message('Kite', gcdisplay.GetToggle('Kite'))
-    elseif (args[1] == 'warpme') then
-        gcinclude.RunWarpCudgel()
     elseif (args[1] == 'lockset') then
         if (tonumber(args[2]) ~= nil) then
             AshitaCore:GetChatManager():QueueCommand(-1, '/lac set LockSet' .. args[2])
@@ -215,14 +213,6 @@ function gcinclude.ToggleIdleSet(idleSet)
             gcdisplay.IdleSet = idleSet
         end
     end
-end
-
-function gcinclude.RunWarpCudgel()
-    AshitaCore:GetChatManager():QueueCommand(-1, '/equip main "Warp Cudgel"')
-    local function usecudgel()
-        AshitaCore:GetChatManager():QueueCommand(-1, '/item "Warp Cudgel" <me>')
-    end
-    usecudgel:once(31)
 end
 
 function gcinclude.DoDefaultIdle()
@@ -319,11 +309,25 @@ function gcinclude.DoAbility()
     end
 end
 
+local timePointer = ashita.memory.find('FFXiMain.dll', 0, '8B0D????????8B410C8B49108D04808D04808D04808D04C1C3', 2, 0)
+function gcinclude.GetTimeUTC()
+	local ptr = ashita.memory.read_uint32(timePointer)
+	ptr = ashita.memory.read_uint32(ptr)
+	return ashita.memory.read_uint32(ptr + 0x0C)
+end
+
+local vanaOffset = 0x3C307D70
+function gcinclude.ItemEnchantmentIsReady(item)
+	local currentTime = gcinclude.GetTimeUTC()
+	local useTimeRemaining = (struct.unpack('L', item.Item.Extra, 5) + vanaOffset) - currentTime
+	return useTimeRemaining <= 0
+end
+
 function gcinclude.BuildLockableSet(equipment)
     local lockableSet = {}
 
     for slot, item in pairs(equipment) do
-        if (LockableEquipment[slot]:contains(item.Name)) then
+        if (LockableEquipment[slot]:contains(item.Name) and gcinclude.ItemEnchantmentIsReady(item)) then
             lockableSet[slot] = item
             if (
                 item.Name == 'Custom Gilet +1'
