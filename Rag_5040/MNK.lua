@@ -34,6 +34,9 @@ local kampfer_earring = {
     Ring2 = 'Toreador\'s Ring',
     Legs = 'Byakko\'s Haidate',
 }
+local shadow_mantle = {
+    Back = 'Shadow Mantle',
+}
 
 local sets = {
     Idle = {
@@ -308,9 +311,9 @@ sets.temple_cyclas = temple_cyclas
 sets.temple_crown = temple_crown
 sets.melee_gaiters = melee_gaiters
 sets.melee_gloves = melee_gloves
-
 sets.kampfer_ring = kampfer_ring
 sets.kampfer_earring = kampfer_earring
+sets.shadow_mantle = shadow_mantle
 profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
@@ -326,6 +329,11 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Chakra)
         gFunc.EquipSet('temple_cyclas')
         gFunc.EquipSet('melee_gloves')
+
+        local environment = gData.GetEnvironment()
+        if (environment.DayElement == 'Dark') then
+            gFunc.EquipSet('shadow_mantle')
+        end
     elseif (action.Name == 'Dodge') then
         gFunc.EquipSet('temple_gaiters')
     elseif (action.Name == 'Boost') then

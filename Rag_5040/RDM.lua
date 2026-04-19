@@ -10,7 +10,7 @@ local drkSJMaxMP = 604 -- The Max MP you have when /drk in your idle set
 
 -- Disabled on horizon_safe_mode
 local fencersRingForced = true -- Default /fring value
-local fencersRingMaxHP = 907
+local fencersRingMaxHP = 954
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local blue_cotehardie = {
@@ -597,7 +597,7 @@ local sets = {
     TP_HighAcc = {
         Head = 'Optical Hat',
         Hands = 'Hydra Gloves',
-        -- Back = 'Commander\'s Cape',
+        Back = 'Gigant Mantle',
         Waist = 'Life Belt',
         Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
