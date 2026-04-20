@@ -36,6 +36,25 @@ local asklepios = { -- Used for Cures with Mjollnir when /NIN
     -- Sub = 'Asklepios',
 }
 
+-- Disabled on horizon_safe_mode
+local medicine_earring_hp_threshold = 360 -- HP at which Medicine Earring set is equipped
+local medicine_earring = { -- 
+    Main = 'Terra\'s Staff',
+    Ammo = 'Hedgehog Bomb',
+    -- Head = 'Example',
+    Neck = 'Pch. Collar',
+    Ear1 = 'Cassie Earring',
+    Ear2 = 'Medicine Earring',
+    -- Body = 'Example',
+    Hands = 'Garden Bangles',
+    Ring1 = 'Bomb Queen Ring',
+    Ring2 = 'Sattva Ring',
+    Back = 'Gigant Mantle',
+    Waist = 'Ocean Sash',
+    -- Legs = 'Example',
+    Feet = 'Marine M Boots',
+}
+
 local sets = {
     Idle = {},
     IdleALT = {},
@@ -142,6 +161,7 @@ sets.ruckes_rung = ruckes_rung
 sets.medicine_ring = medicine_ring
 sets.mjollnir = mjollnir
 sets.asklepios = asklepios
+sets.medicine_earring = medicine_earring
 profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
@@ -198,6 +218,14 @@ end
 
 profile.HandleDefault = function()
     gcmage.DoDefault(sets, ninSJMaxMP, nil, blmSJMaxMP, rdmSJMaxMP, drkSJMaxMP)
+
+    local player = gData.GetPlayer()
+    if (not gcinclude.horizon_safe_mode) then
+        if (player.HP <= medicine_earring_hp_threshold) then
+            gFunc.EquipSet('medicine_earring')
+        end
+    end
+
     gcmage.DoDefaultOverride()
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end

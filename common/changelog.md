@@ -547,5 +547,7 @@
 - SMN - Adds a set specifically for spirit perpetuation to allow skill maximisation while idle with spirits active
 
 ### v2.1.11
-- Adds a few items to lockable / sticky equipment list as well as logic to prevent unusable items that are on cooldown from sticking
+- Adds a few items to lockable / sticky equipment list (Primarily HELM/Fishing) as well as logic to prevent unusable items that are on cooldown from sticking
 - Removes /warpme command to force people to actually do it correctly via /exec script and stop providing a bad example on how to accomplish this
+- MNK - Adds Shadow Mantle for Chakra
+- WHM/SMN - Adds Medicine / Conjurer's Earring set logic

@@ -38,6 +38,25 @@ local bahamuts_staff = {
     -- Main = 'Bahamut\'s Staff',
 }
 
+-- Disabled on horizon_safe_mode
+local conjurers_earring_hp_threshold = 360 -- HP at which Conjurer's Earring set is equipped
+local conjurers_earring = { -- 
+    Main = 'Terra\'s Staff',
+    Ammo = 'Hedgehog Bomb',
+    -- Head = 'Example',
+    Neck = 'Pch. Collar',
+    Ear1 = 'Cassie Earring',
+    Ear2 = 'Conjurer\'s Earring',
+    -- Body = 'Example',
+    Hands = 'Garden Bangles',
+    Ring1 = 'Bomb Queen Ring',
+    Ring2 = 'Sattva Ring',
+    Back = 'Gigant Mantle',
+    Waist = 'Ocean Sash',
+    -- Legs = 'Example',
+    Feet = 'Marine M Boots',
+}
+
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -418,6 +437,7 @@ sets.summoners_doublet = summoners_doublet
 sets.summoners_horn = summoners_horn
 sets.conjurers_ring = conjurers_ring
 sets.bahamuts_staff = bahamuts_staff
+sets.conjurers_earring = conjurers_earring
 profile.Sets = gcmage.AppendSets(sets)
 
 -- Includes Chaotic Strike and Shock Strike in SmnSkill to maximize stun chance
@@ -491,7 +511,9 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
+    local player = gData.GetPlayer()
     local petAction = gData.GetPetAction()
+
     if (petAction ~= nil) then
         gFunc.EquipSet('BP')
 
@@ -515,7 +537,6 @@ profile.HandleDefault = function()
         end
     else
         if (not gcinclude.horizon_safe_mode) then
-            local player = gData.GetPlayer()
             if (gcdisplay.GetToggle('C-Ring') and player.HP >= conjurersRingMaxHP and gData.GetPet()) then
                 local time = os.clock()
                 if (time > nextConjurersRingCheck) then
@@ -527,6 +548,13 @@ profile.HandleDefault = function()
         end
 
         gcmage.DoDefault(sets, nil, nil, nil, nil, nil)
+
+        if (not gcinclude.horizon_safe_mode) then
+            if (player.HP <= conjurers_earring_hp_threshold) then
+                gFunc.EquipSet('conjurers_earring')
+            end
+        end
+
         gcmage.DoDefaultOverride()
     end
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
