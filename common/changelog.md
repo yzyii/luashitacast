@@ -550,5 +550,5 @@
 - MNK - Adds Shadow Mantle for Chakra
 - WHM/SMN - Adds Medicine / Conjurer's Earring set logic
 
-### v2.1.12
+### v2.1.11
 - WHM - Fix Ruckes Rung swapping due to Regen set on TP modes on WHM
