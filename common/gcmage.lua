@@ -517,9 +517,7 @@ function gcmage.DoDefaultOverride()
         restingMaxMP = false
     end
 
-    if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-        gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
-    end
+    gcmage.EquipWeaponLoadout()
 end
 
 function gcmage.DoPrecast(sets, fastCastValue, cureCastMeritValue)
@@ -591,9 +589,7 @@ function gcmage.DoPrecast(sets, fastCastValue, cureCastMeritValue)
         gcmage.SetupMidcastDelay(sets, fastCastValue, cureCastMeritValue)
     end
 
-    if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-        gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
-    end
+    gcmage.EquipWeaponLoadout()
 end
 
 function gcmage.SetupMidcastDelay(sets, fastCastValue, cureCastMeritValue)
@@ -748,9 +744,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     end
 
     if (gcmage.ShouldSkipCast(maxMP, isNoModSpell)) then
-        if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-            gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
-        end
+        gcmage.EquipWeaponLoadout()
         do return end
     end
 
@@ -793,7 +787,11 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     end
 
     gcmage.EquipStaff()
+    gcmage.EquipWeaponLoadout()
+end
 
+function gcmage.EquipWeaponLoadout()
+    local player = gData.GetPlayer()
     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
         gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
     end

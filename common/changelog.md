@@ -549,3 +549,6 @@
 - Removes /warpme command to force people to actually do it correctly via /exec script and stop providing a bad example on how to accomplish this
 - MNK - Adds Shadow Mantle for Chakra
 - WHM/SMN - Adds Medicine / Conjurer's Earring set logic
+
+### v2.1.12
+- WHM - Fix Ruckes Rung swapping due to Regen set on TP modes on WHM

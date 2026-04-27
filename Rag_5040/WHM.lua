@@ -261,6 +261,8 @@ profile.HandleMidcast = function()
             end
         end
     end
+
+    gcmage.EquipWeaponLoadout()
 end
 
 return profile
