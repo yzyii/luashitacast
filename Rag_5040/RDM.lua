@@ -300,6 +300,7 @@ local sets = {
     },
 
     Hate = { -- Switches to this set when casting Sleep, Blind, Dispel, Bind, Flash and Cures on other players if /hate is toggled on
+        Main = 'Terra\'s Staff',
         Ammo = 'Phtm. Tathlum',
         Head = 'Rival Ribbon', -- 2
         Neck = 'Harmonia\'s Torque', -- 3
@@ -349,7 +350,7 @@ local sets = {
         Feet = 'Mahatma Pigaches',
     },
     Cheat_HPUp = {
-        Main = 'Apollo\'s Staff',
+        Main = 'Apollo\'s Staff', -- Technically unnecessary, will be equipped automatically anyway
         Sub = 'remove',
         Ammo = 'Happy Egg',
         Head = 'Rival Ribbon', -- 2

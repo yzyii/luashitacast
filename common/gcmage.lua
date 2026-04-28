@@ -786,7 +786,9 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
         end
     end
 
-    gcmage.EquipStaff()
+    if (gcdisplay.GetToggle('Hate') == false or CureSpells:contains(action.Name) or not HateSpells:contains(action.Name)) then
+        gcmage.EquipStaff()
+    end
     gcmage.EquipWeaponLoadout()
 end
 

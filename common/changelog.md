@@ -552,3 +552,4 @@
 
 ### v2.1.11
 - WHM - Fix Ruckes Rung swapping due to Regen set on TP modes on WHM
+- All Mages - Causes Hate toggle to not equip correct staves for Hate spells in lieu of just equipping whatever is defined in the Hate set
