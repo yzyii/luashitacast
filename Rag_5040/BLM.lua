@@ -74,7 +74,7 @@ local sets = {
         Hands = { Name = 'Zenith Mitts +1', Priority = 100 },
         Waist = { Name = 'Hierarch Belt', Priority = 100 },
         Legs = { Name = 'Src. Tonban +1', Priority = 100 },
-        Back = { Name = 'Merciful Cape', Priority = 100 },
+        Back = { Name = 'Mahatma Cape', Priority = 100 },
     },
     Resting = {
         Main = 'Pluto\'s Staff',
@@ -533,7 +533,22 @@ local sets = {
         Ammo = 'Pebble',
     },
 
-    VileElixir = {},
+    VileElixir = {
+        Main = 'Terra\'s Staff',
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
+        Head = 'Faerie Hairpin',
+        Neck = { Name = 'Uggalepih Pendant', Priority = 100 },
+        Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
+        Body = 'Hydra Doublet',
+        Hands = { Name = 'Zenith Mitts +1', Priority = 100 },
+        Ring1 = 'Ether Ring',
+        Ring2 = 'Serket Ring',
+        Back = 'Mahatma Cape',
+        Waist = { Name = 'Hierarch Belt', Priority = 100 },
+        Legs = 'Igqira Lappas',
+        Feet = 'Herald\'s Gaiters',
+    },
 
     LockSet1 = {},
     LockSet2 = {},

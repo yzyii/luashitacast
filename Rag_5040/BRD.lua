@@ -396,7 +396,23 @@ local sets = {
         Ammo = 'Pebble',
     },
 
-    VileElixir = {},
+    VileElixir = {
+        Main = 'Tutelary',
+ 		Sub = 'Genbu\'s Shield',
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
+        Head = 'Genbu\'s Kabuto',
+        Neck = 'Pch. Collar',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = { Name = 'Cassie Earring', Priority = -100 },
+        Body = 'Minstrel\'s Coat',
+        Hands = 'Seiryu\'s Kote',
+        Ring1 = 'Sattva Ring',
+        Ring2 = 'Bomb Queen Ring',
+        Back = 'Gigant Mantle',
+        Waist = 'Ocean Sash',
+        Legs = 'Dusk Trousers',
+        Feet = 'Rostrum Pumps',
+    },
 }
 
 profile.SetMacroBook = function()

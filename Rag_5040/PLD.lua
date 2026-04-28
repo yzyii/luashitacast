@@ -491,7 +491,24 @@ local sets = {
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {},
 
-    VileElixir = {},
+    VileElixir = {
+        Main = 'Tutelary',
+        Sub = 'Aegis',
+        Range = 'Rosenbogen',
+        Ammo = '',
+        Head = 'Homam Zucchetto',
+        Neck = 'Uggalepih Pendant',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
+        Body = 'Vlr. Surcoat +1',
+        Hands = 'Homam Manopolas',
+        Ring1 = 'Bomb Queen Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Valor Cape',
+        Waist = 'Hierarch Belt',
+        Legs = 'Blood Cuisses',
+        Feet = 'Homam Gambieras',
+    },
 }
 
 profile.SetMacroBook = function()

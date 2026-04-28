@@ -604,7 +604,6 @@ local sets = {
         Feet = 'Hydra Gaiters',
     },
     TP_NIN = {
-        Ear1 = 'Brutal Earring',
         Ear2 = 'Stealth Earring',
     },
 
@@ -691,7 +690,22 @@ local sets = {
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {},
 
-    VileElixir = {},
+    VileElixir = {
+        Main = 'Terra\'s Staff',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Faerie Hairpin',
+        Neck = 'Uggalepih Pendant',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Magnetic Earring',
+        Body = 'Hydra Doublet',
+        Hands = 'Zenith Mitts +1',
+        Ring1 = 'Ether Ring',
+        Ring2 = 'Serket Ring',
+        Back = 'Mahatma Cape',
+        Waist = 'Hierarch Belt',
+        Legs = 'Blood Cuisses',
+        Feet = 'Blood Greaves',
+    },
 }
 
 profile.SetMacroBook = function()

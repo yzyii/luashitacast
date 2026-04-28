@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear listed in Precast set
+local fastCastValue = 0.02 -- 0% from gear listed in Precast set
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
@@ -11,12 +11,35 @@ local gaudy_harness = {
 }
 
 local sets = {
-    Idle = {},
+    Idle = {
+        Head = 'Darksteel Cap +1',
+        Neck = 'Jeweled Collar',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Dst. Harness +1',
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Shadow Mantle',
+        Waist = 'Ocean Rope',
+        Legs = { Name = 'Dst. Subligar +1', Priority = 10 },
+        Feet = 'Dst. Leggings +1',
+    },
     IdleALT = {},
-    Resting = {},
+    Resting = {
+        Neck = 'Paisley Scarf',
+        Ear1 = 'Relaxing Earring',
+        Ear2 = 'Sanative Earring',
+        -- Hands = 'Shep. Bracers',
+        Legs = 'Mst. Trousers +1',
+        -- Feet = 'Shep. Boots',
+    },
     Town = {},
     Movement = {},
-    Movement_TP = {},
+    Movement_TP = {
+        Hands = 'Dst. Mittens +1',
+        Feet = 'Dst. Leggings +1',
+    },
 
     DT = {},
     MDT = {},
@@ -28,37 +51,140 @@ local sets = {
     WaterRes = {},
     Evasion = {},
 
-    Precast = {},
+    Precast = {
+        Ear1 = 'Loquac. Earring',
+    },
     SIRD = { -- Only used for Idle sets and not while Override sets are active
+        Neck = 'Willpower Torque',
+        Ear2 = 'Magnetic Earring',
+        Feet = 'Mountain Gaiters',
     },
     Haste = { -- Used for Utsusemi cooldown
+        Head = 'Panther Mask +1',
+        Ear1 = 'Loquac. Earring',
+        Hands = 'Dusk Gloves +1',
+        Waist = 'Sonic Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = 'Dusk Ledelsens +1',
     },
 
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
 
-    TP_LowAcc = {},
+    TP_LowAcc = {
+        Head = 'Panther Mask +1',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Haubergeon +1',
+        Hands = 'Dusk Gloves +1',
+        -- Ring1 = 'Toreador\'s Ring',
+        Ring1 = 'Begrudging Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Sonic Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = 'Dusk Ledelsens +1',
+    },
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
-    TP_HighAcc = {},
-    TP_NIN = {},
+    TP_HighAcc = {
+        Head = 'Maat\'s Cap',
+        Ring1 = 'Toreador\'s Ring',
+        Waist = 'Life Belt',
+    },
+    TP_NIN = {
+        Ear2 = 'Stealth Earring',
+    },
 
-    WS = {},
-    WS_HighAcc = {},
+    WS = {
+        Head = 'Maat\'s Cap',
+        -- Neck = 'Breeze Gorget',
+        -- Neck = 'Temp. Torque',
+        Neck = 'Justice Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Hecatomb Harness',
+        -- Hands = 'Alkyoneus\'s Brc.',
+        Hands = 'Hecatomb Mittens',
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Warwolf Belt',
+        -- Legs = 'Bst. Trousers +1',
+        Legs = 'Dusk Trousers',
+        Feet = 'Hct. Leggings',
+    },
+    WS_HighAcc = {
+        Neck = 'Peacock Amulet',
+        Hands = 'Hecatomb Mittens',
+        -- Ring1 = 'Toreador\'s Ring',
+        Ring1 = 'Begrudging Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Waist = 'Life Belt',
+        Legs = 'Byakko\'s Haidate',
+    },
 
-    Charm = {},
-    Reward = {},
-    Ready_Physical = {},
-    Ready_Magic = {},
-    Call_Beast = {},
+    Charm = {
+        Head = 'Monster Helm',
+        -- Neck = 'Temp. Torque',
+        Body = 'Monster Jackcoat +1',
+		Hands = 'Monster Gloves',
+        Ring1 = 'Heavens Ring',
+        Ring2 = 'Heavens Ring',
+        Waist = 'Ryl.Kgt. Belt',
+        -- Legs = 'Bst. Trousers +1',
+        Feet = 'Monster Gaiters',
+    },
+    Reward = {
+        -- Head = 'Bison Warbonnet',
+        Neck = 'Faith Torque',
+        Ear1 = 'Cmn. Earring',
+        Ear2 = 'Cmn. Earring',
+        Body = 'Monster Jackcoat +1',
+        Hands = 'Ogre Gloves +1',
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        -- Back = 'Ryl. Army Mantle',
+        Waist = 'Ryl.Kgt. Belt',
+        Legs = 'Magic Cuisses',
+        Feet = 'Monster Gaiters',
+    },
+    Ready_Physical = {
+        -- Head = 'Shep. Bonnet',
+        -- Body = 'Shep. Doublet',
+        -- Feet = 'Shep. Boots',
+    },
+    Ready_Magic = {
+        Head = 'Buffalo Helm',
+        -- Body = 'Shep. Doublet',
+        -- Feet = 'Shep. Boots',
+    },
+    Call_Beast = {
+		Hands = 'Monster Gloves',
+    },
 
-    Weapon_Loadout_1 = {},
-    Weapon_Loadout_2 = {},
-    Weapon_Loadout_3 = {},
+    Weapon_Loadout_1 = {
+		Main = 'Martial Axe',
+		Sub = 'Maneater',
+        Ammo = 'Tiphia Sting',
+    },
+    Weapon_Loadout_2 = {
+		Main = 'Maneater',
+		-- Sub = 'Temperance Axe',
+        Ammo = 'Virtue Stone',
+    },
+    Weapon_Loadout_3 = {
+		Main = 'Maneater',
+		-- Sub = 'Tatami Shield',
+        Ammo = 'Tiphia Sting',
+    },
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
-    Ranged = {},
+    Ranged = {
+        Ammo = 'Pebble',
+    },
 
     VileElixir = {},
 }

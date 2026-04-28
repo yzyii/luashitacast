@@ -393,7 +393,20 @@ local sets = {
         Ammo = 'Pebble',
     },
 
-    VileElixir = {},
+    VileElixir = {
+        Head = 'Aegishjalmr',
+        Neck = 'Shield Pendant',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Cassie Earring',
+        Body = 'Dst. Harness +1',
+        Hands = 'Dusk Gloves +1',
+        Ring1 = 'Bomb Queen Ring',
+        Ring2 = 'Sattva Ring',
+        Back = 'Gigant Mantle',
+        Waist = 'Ocean Sash',
+        Legs = 'Blood Cuisses',
+        Feet = 'Homam Gambieras',
+    },
 }
 
 profile.SetMacroBook = function()

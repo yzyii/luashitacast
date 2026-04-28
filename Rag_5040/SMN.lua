@@ -412,7 +412,22 @@ local sets = {
         Ammo = 'Pebble',
     },
 
-    VileElixir = {},
+    VileElixir = {
+        Main = 'Terra\'s Staff',
+        Ear1 = 'Loquac. Earring',
+        Ear2 = 'Magnetic Earring',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Faerie Hairpin',
+        Neck = 'Uggalepih Pendant',
+        Body = 'Hydra Doublet',
+        Hands = { Name = 'Zenith Mitts +1', Priority = 100 },
+        Ring1 = 'Ether Ring',
+        Ring2 = 'Serket Ring',
+        Back = 'Mahatma Cape',
+        Waist = 'Hierarch Belt',
+        Legs = 'Evk. Spats +1',
+        Feet = 'Evk. Pigaches +1',
+    },
 }
 
 profile.SetMacroBook = function()
