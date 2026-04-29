@@ -553,3 +553,7 @@
 ### v2.1.11
 - WHM - Fix Ruckes Rung swapping due to Regen set on TP modes on WHM
 - All Mages - Causes Hate toggle to not equip correct staves for Hate spells in lieu of just equipping whatever is defined in the Hate set
+
+### v2.1.12
+- All Mages - Removes the fairly redundant / duplicated Casting set to just use SIRD for both purposes.
+- All Mages - Adds a SIRD_NIN set for dual Hermit's / Eremite's Wand usage while /NIN

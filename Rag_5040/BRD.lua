@@ -157,23 +157,6 @@ local sets = {
         Legs = 'Dusk Trousers', -- 35
         Feet = 'Rostrum Pumps', -- -30
     },
-    Casting = { -- Default SIRD used for Idle sets
-        Main = 'Terra\'s Staff',
-        -- Range = 'Mythic Harp +1',
-        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
-        Head = 'Reraise Hairpin', -- +MP
-        Neck = 'Willpower Torque', -- 5
-        Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
-        Ear2 = { Name = 'Magnetic Earring', Priority = 100 }, -- 8
-        Body = 'Dst. Harness +1',
-        Hands = 'Merman\'s Bangles',
-        Ring1 = 'Shadow Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Umbra Cape',
-        Waist = { Name = 'Silver Obi +1', Priority = -100 }, -- 8
-        Legs = 'Dst. Subligar +1',
-        Feet = 'Mountain Gaiters', -- 5
-    },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
         Main = 'Terra\'s Staff',
         -- Range = 'Mythic Harp +1',

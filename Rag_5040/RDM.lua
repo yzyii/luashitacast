@@ -248,24 +248,6 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Body = 'Dls. Tabard +1',
     },
-    Casting = { -- Default SIRD used for Idle sets
-        Main = { Name = 'Eremite\'s Wand', Priority = 100 }, -- 25
-        Sub = 'Genbu\'s Shield',
-        Range = 'displaced',
-        Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
-        Head = 'Nashira Turban', -- 10
-        Neck = 'Willpower Torque', -- 5
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Magnetic Earring', Priority = 100 }, -- 8
-        Body = { Name = 'Wlk. Tabard +1', Priority = 90 }, -- 12
-        Hands = 'Dst. Mittens +1',
-        Ring1 = 'Jelly Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Umbra Cape',
-        Waist = 'Silver Obi +1', -- 8
-        Legs = 'Dst. Subligar +1',
-        Feet = 'Mountain Gaiters', -- 5
-    },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
         Main = { Name = 'Eremite\'s Wand', Priority = 100 }, -- 25
         Sub = 'Genbu\'s Shield',
@@ -283,6 +265,9 @@ local sets = {
         Waist = 'Silver Obi +1', -- 8
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
+    },
+    SIRD_NIN = {
+        -- Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Wlk. Chapeau +1',

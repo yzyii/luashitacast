@@ -216,23 +216,6 @@ local sets = {
         Feet = 'Rostrum Pumps',
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
     },
-    Casting = { -- Default SIRD used for Idle sets
-        Main = 'Eremite\'s Wand', -- 25
-        Sub = 'Genbu\'s Shield',
-        Ammo = 'Hedgehog Bomb',
-        Head = 'Nashira Turban', -- 10
-        Neck = 'Willpower Torque', -- 5
-        Ear1 = 'Loquac. Earring',
-        Ear2 = 'Magnetic Earring', -- 8
-        Body = 'Yinyang Robe',
-        Hands = 'Merman\'s Bangles',
-        Ring1 = 'Sattva Ring',
-        Ring2 = 'Evoker\'s Ring',
-        Back = { Name = 'Mahatma Cape', Priority = 100 },
-        Waist = 'Silver Obi +1', -- 8
-        Legs = { Name = 'Evk. Spats +1', Priority = 100 },
-        Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
-    },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
         Main = 'Eremite\'s Wand', -- 25
         Sub = 'Genbu\'s Shield',
@@ -249,6 +232,9 @@ local sets = {
         Waist = 'Silver Obi +1', -- 8
         Legs = { Name = 'Evk. Spats +1', Priority = 100 },
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
+    },
+    SIRD_NIN = {
+        -- Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Nashira Turban',

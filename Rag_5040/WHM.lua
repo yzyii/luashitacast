@@ -76,9 +76,10 @@ local sets = {
     Evasion = {},
 
     Precast = {},
-    Casting = { -- Default SIRD used for Idle sets
-    },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
+    },
+    SIRD_NIN = {
+        -- Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
     },

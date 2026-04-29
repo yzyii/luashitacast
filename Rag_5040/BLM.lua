@@ -238,18 +238,6 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
     },
-    Casting = { -- Default SIRD used for Idle sets
-        Main = 'Eremite\'s Wand', -- 25
-        Sub = 'Genbu\'s Shield',
-        Head = 'Nashira Turban', -- 10
-        Neck = 'Willpower Torque', -- 5
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Magnetic Earring', -- 8
-        Waist = 'Silver Obi +1', -- 8
-        Feet = 'Wizard\'s Sabots', -- 20
-        Ammo = 'Tiphia Sting',
-        Back = 'Umbra Cape',
-    },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
         Main = 'Eremite\'s Wand', -- 25
         Sub = 'Genbu\'s Shield',
@@ -261,6 +249,9 @@ local sets = {
         Feet = 'Wizard\'s Sabots', -- 20
         Ammo = 'Tiphia Sting',
         Back = 'Umbra Cape',
+    },
+    SIRD_NIN = {
+        -- Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
     },

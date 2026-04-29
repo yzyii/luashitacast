@@ -903,26 +903,27 @@ function gcmage.SetupInterimEquipSet(sets, isRanged)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
 
-    local interimSet = sets.Casting
-
-    if (gcdisplay.IdleSet == 'DT') then
-        if (environment.Time >= 6 and environment.Time < 18) then
-            interimSet = sets.DT
-        else
-            interimSet = sets.DTNight
-        end
+    local interimSet = sets.SIRD
+    if (player.MainJob ~= 'BRD' and player.SubJob == 'NIN') then
+        interimSet = gFunc.Combine(interimSet, sets.SIRD_NIN)
     end
-    if (gcdisplay.IdleSet == 'MDT') then interimSet = sets.MDT end
-    if (gcdisplay.IdleSet == 'FireRes') then interimSet = sets.FireRes end
-    if (gcdisplay.IdleSet == 'IceRes') then interimSet = sets.IceRes end
-    if (gcdisplay.IdleSet == 'LightningRes') then interimSet = sets.LightningRes end
-    if (gcdisplay.IdleSet == 'EarthRes') then interimSet = sets.EarthRes end
-    if (gcdisplay.IdleSet == 'WindRes') then interimSet = sets.WindRes end
-    if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end
-    if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
 
-    if (SurvivalSpells:contains(action.Name)) then
-        interimSet = sets.SIRD
+    if (not SurvivalSpells:contains(action.Name)) then
+        if (gcdisplay.IdleSet == 'DT') then
+            if (environment.Time >= 6 and environment.Time < 18) then
+                interimSet = sets.DT
+            else
+                interimSet = sets.DTNight
+            end
+        end
+        if (gcdisplay.IdleSet == 'MDT') then interimSet = sets.MDT end
+        if (gcdisplay.IdleSet == 'FireRes') then interimSet = sets.FireRes end
+        if (gcdisplay.IdleSet == 'IceRes') then interimSet = sets.IceRes end
+        if (gcdisplay.IdleSet == 'LightningRes') then interimSet = sets.LightningRes end
+        if (gcdisplay.IdleSet == 'EarthRes') then interimSet = sets.EarthRes end
+        if (gcdisplay.IdleSet == 'WindRes') then interimSet = sets.WindRes end
+        if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end
+        if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
     end
 
     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
