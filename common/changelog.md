@@ -557,3 +557,7 @@
 ### v2.1.12
 - All Mages - Removes the fairly redundant / duplicated Casting set to just use SIRD for both purposes.
 - All Mages - Adds a SIRD_NIN set for dual Hermit's / Eremite's Wand usage while /NIN
+
+### v2.1.13
+- BST - Adds Reward_Status sets for KO vs AF/Relic optimization
+- Adds a setting to default stylist to allowing blinks on self

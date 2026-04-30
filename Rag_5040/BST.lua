@@ -101,8 +101,7 @@ local sets = {
     WS = {
         Head = 'Maat\'s Cap',
         -- Neck = 'Breeze Gorget',
-        -- Neck = 'Temp. Torque',
-        Neck = 'Justice Torque',
+        Neck = 'Temp. Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Hecatomb Harness',
@@ -128,7 +127,7 @@ local sets = {
 
     Charm = {
         Head = 'Monster Helm',
-        -- Neck = 'Temp. Torque',
+        Neck = 'Temp. Torque',
         Body = 'Monster Jackcoat +1',
 		Hands = 'Monster Gloves',
         Ring1 = 'Heavens Ring',
@@ -142,7 +141,7 @@ local sets = {
         Neck = 'Faith Torque',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
-        Body = 'Monster Jackcoat +1',
+        Body = 'Kirin\'s Osode',
         Hands = 'Ogre Gloves +1',
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
@@ -151,13 +150,19 @@ local sets = {
         Legs = 'Magic Cuisses',
         Feet = 'Monster Gaiters',
     },
+    Reward_Status_1 = { -- Paralyze, Poison, Blind
+        Body = 'Monster Jackcoat +1',
+    },
+    Reward_Status_2 = { -- Weight, Slow, Silence
+        Body = 'Monster Jackcoat +1',
+    },
     Ready_Physical = {
         -- Head = 'Shep. Bonnet',
         -- Body = 'Shep. Doublet',
         -- Feet = 'Shep. Boots',
     },
     Ready_Magic = {
-        Head = 'Buffalo Helm',
+        Head = 'Beast Helm +1',
         -- Body = 'Shep. Doublet',
         -- Feet = 'Shep. Boots',
     },
@@ -172,7 +177,7 @@ local sets = {
     },
     Weapon_Loadout_2 = {
 		Main = 'Maneater',
-		-- Sub = 'Temperance Axe',
+		Sub = 'Temperance Axe',
         Ammo = 'Virtue Stone',
     },
     Weapon_Loadout_3 = {
@@ -242,6 +247,16 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Charm)
     elseif (action.Name == 'Reward') then
         gFunc.EquipSet(sets.Reward)
+
+        local hasStatus1 = gData.GetBuffCount('Paralyze') > 0 or gData.GetBuffCount('Poison') > 0 or gData.GetBuffCount('Blind') > 0
+        if (hasStatus1) then
+            gFunc.EquipSet(sets.Reward_Status_1)
+        end
+        local hasStatus2 = gData.GetBuffCount('Weight') > 0 or gData.GetBuffCount('Slow') > 0 or gData.GetBuffCount('Silence') > 0
+        if (hasStatus2) then
+            gFunc.EquipSet(sets.Reward_Status_2)
+        end
+
         if (player.MainJobSync >= 72) then
             gFunc.Equip('Ammo', 'Pet Food Zeta')
         elseif (player.MainJobSync >= 60) then

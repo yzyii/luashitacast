@@ -22,7 +22,7 @@ local dream_ribbon = {
     Head = 'Dream Ribbon',
 }
 
--- Set this to true to confirm that you actually read the README.md and set up the equipment listed above correctly
+-- Set this to true to confirm that you actually read the README.md and set up the equipment and settings listed above correctly
 local i_can_read_and_follow_instructions_test = false
 
 --[[

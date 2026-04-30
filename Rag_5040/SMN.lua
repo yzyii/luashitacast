@@ -6,7 +6,7 @@ local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 local cureMP = 895 -- Cure set max MP
 
 -- Disabled on horizon_safe_mode
-local conjurersRingForced = true -- Default /cring value
+local conjurersRingForced = false -- Default /cring value
 local conjurersRingMaxHP = 737
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
@@ -170,7 +170,7 @@ local sets = {
         Ear2 = 'Robust Earring', -- 11
         Hands = 'Merman\'s Bangles',
         Waist = 'Earth Belt', -- 20
-        Ring1 = 'Spinel Ring', -- 9
+        Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
     },
     EarthRes = {
@@ -234,7 +234,7 @@ local sets = {
         Feet = { Name = 'Mountain Gaiters', Priority = 100 }, -- 5
     },
     SIRD_NIN = {
-        -- Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
+        Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Nashira Turban',

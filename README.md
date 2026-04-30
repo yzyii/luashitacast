@@ -20,13 +20,13 @@ While these luas were originally designed for HorizonXI, these luas should still
 - Rename the Rag_5040 folder to [Your_Character_Name]_[Your_Character_ID]
 - [Your_Character_ID] may be obtained from another plugin such as MobDB or by creating a blank lua using /lac newlua and then replacing the created folder.
 - Edit Equipment Sets in [JOB].lua.
-- Edit Elemental Staves (NQ vs HQ), Obis and other conditional gear in ..\\common\\gcmage.lua if you are using these luas for mage jobs.
-- Edit Fenrir's Earring in ..\\common\\gcmelee.lua if you are using these luas for melee jobs.
+- Edit Elemental Staves (NQ vs HQ), Obis and other conditional mage gear in ..\\common\\gcmage.lua if you are using these luas for mage jobs.
+- Edit Fenrir's Earring, Dream Ribbon and other conditional melee gear in ..\\common\\gcmelee.lua if you are using these luas for melee jobs.
 - Edit Aketons and Dream gear etc. and turn on or off additional logging and other settings in ..\\common\\gcinclude-rag.lua.
 - Set the i_can_read_and_follow_instructions_test boolean settings to true within gcmage.lua, gcmelee.lua, and gcinclude-rag.lua to confirm you actually read this and didn't waste other people's time.
 - Make sure you fill out the fastcastValue etc. correctly in your [JOB].lua if you are using any Fast Cast gear etc. in the Precast set.
 - Make sure you fill out the maxMP values correctly in your [JOB].lua if you are using these luas for mage jobs.
-- The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the values in gcmage.lua (or gcmelee.lua for melee jobs).
+- The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, you MUST adjust the values in gcmage.lua and/or gcmelee.lua.
 - If you define a specific mainhand in regular sets, it will still equip the correct staff if you have them listed in gcmage.lua
 - If you have followed all these instructions and are experiencing crashes when loading the game or changing jobs, check out the Troubleshooting Crashes section below.
 
@@ -48,15 +48,13 @@ This will work 99% of the time unless you have added your own logic and therefor
 
 # Troubleshooting Crashes
 
-- Make sure you are using the latest version of LuAshitacast: https://github.com/ThornyFFXI/LuAshitacast
+- If your game is crashing (especially while switching jobs or zoning), turn off alias messages. You can change aliases.silent to 1 within the boot config to suppress them. The file is located at: ..\\Game\\config\\boot\\ashita.ini. It can also be turned off from the in game /ashita menu.
 
-- If your game is crashing (especially while switching jobs or zoning), turn off alias messages. You can change aliases.silent to 1 within the boot config to suppress them. The file is located at: ..\\Game\\config\\boot\\ashita.ini
-
-# Note on Resting gear
+# Resting gear
 
 The Resting set is equipped after 16 seconds of starting resting. This is to allow maximum regen or refresh ticks to take place before hMP or hHP gear is equipped.
 
- # Note on Level Sync
+ # Level Sync
 
 LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. 
 

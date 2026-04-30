@@ -183,7 +183,7 @@ local sets = {
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
         Hands = 'Merman\'s Bangles',
-        Ring1 = 'Spinel Ring', -- 9
+        Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
         Back = 'Hexerei Cape',
         Waist = 'Earth Belt', -- 20
@@ -251,7 +251,7 @@ local sets = {
         Back = 'Umbra Cape',
     },
     SIRD_NIN = {
-        -- Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
+        Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
     },
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
     },

@@ -1,10 +1,12 @@
-local horizon_safe_mode = true -- this disables some of the potentially more contentious automation to ensure LAC is not breaking Horizon server rules
+local horizon_safe_mode = true -- This disables some of the potentially more contentious automation to ensure LAC is not breaking Horizon server rules
 
-local display_messages = true -- set to true if you want chat log messages to appear on any /gc command used such as DT, or KITE gear toggles
+local display_messages = true -- Set to true if you want chat log messages to appear on any /gc command used such as DT, or kite gear toggles
 
-local load_stylist = true -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work
+local load_stylist = true -- Set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work
 
-local toggleDisplayHeadOnAbility = true
+-- The following 2 settings force your character model to blink on every spell cast or ability usage for the purposes of animation cancelling.
+local setStylistToBlinkSelf = true -- Forces blinks on visible equipment changes.
+local toggleDisplayHeadOnAbility = true -- Forces blinks on JA usage.
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local kingdom_aketon = {
@@ -29,7 +31,7 @@ local skulkers_cape = {
     -- Back = 'Skulker\'s Cape',
 }
 
--- Set this to true to confirm that you actually read the README.md and set up the equipment listed above correctly
+-- Set this to true to confirm that you actually read the README.md and set up the equipment and settings listed above correctly
 local i_can_read_and_follow_instructions_test = false
 
 -- Add additional equipment here that you want to automatically lock when equipping. Ignore's Maat's Cap, Dream Mittens +1, Dream Boots +1 as these will stick on idle.
@@ -133,6 +135,9 @@ function gcinclude.RetryLoad()
         if (load_stylist) then
             AshitaCore:GetChatManager():QueueCommand(-1, '/load Stylist')
             AshitaCore:GetChatManager():QueueCommand(-1, '/stylist load default')
+            if (setStylistToBlinkSelf) then
+                AshitaCore:GetChatManager():QueueCommand(-1, '/stylist self off')
+            end
         end
     else
         gcinclude.RetryLoad:once(1)

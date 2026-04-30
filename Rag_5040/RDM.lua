@@ -10,7 +10,7 @@ local drkSJMaxMP = 604 -- The Max MP you have when /drk in your idle set
 
 -- Disabled on horizon_safe_mode
 local fencersRingForced = true -- Default /fring value
-local fencersRingMaxHP = 954
+local fencersRingMaxHP = 924
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local blue_cotehardie = {
@@ -139,7 +139,7 @@ local sets = {
         Legs = 'Coral Cuisses +1', -- 3
         Feet = 'Coral Greaves +1', -- 2
     },
-    FireRes = { -- 149
+    FireRes = { -- 151
         Main = 'Neptune\'s Staff', -- 20
         Range = 'Arco de Velocidad',
         Ammo = 'displaced',
@@ -156,7 +156,7 @@ local sets = {
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Power Sandals', -- 7
     },
-    IceRes = { -- 145
+    IceRes = { -- 148
         Main = 'Vulcan\'s Staff', -- 20
         Range = 'Arco de Velocidad',
         Ammo = 'displaced',
@@ -173,7 +173,7 @@ local sets = {
         Legs = 'Feral Trousers', -- 6
         Feet = 'Blood Greaves', -- 21
     },
-    LightningRes = { -- 133
+    LightningRes = { -- 138
         Main = 'Terra\'s Staff', -- 20
         Range = 'Lightning Bow +1', -- 7
         Ammo = 'displaced',
@@ -183,14 +183,14 @@ local sets = {
         Ear2 = 'Robust Earring', -- 11
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
-        Ring1 = 'Spinel Ring', -- 9
+        Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
         Back = 'Lightning Mantle', -- 6
         Waist = 'Earth Belt', -- 20
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Dst. Leggings +1',
     },
-    EarthRes = { -- 144
+    EarthRes = { -- 149
         Main = 'Auster\'s Staff', -- 20
         Range = 'Arco de Velocidad',
         Ammo = 'displaced',
@@ -207,7 +207,7 @@ local sets = {
         Legs = 'Beak Trousers +1', -- 7
         Feet = 'Blood Greaves', -- 21
     },
-    WindRes = { -- 139
+    WindRes = { -- 142
         Main = 'Aquilo\'s Staff', -- 20
         Range = 'Arco de Velocidad',
         Ammo = 'displaced',
@@ -224,7 +224,7 @@ local sets = {
         Legs = 'Coral Cuisses +1',
         Feet = 'Blood Greaves', -- 21
     },
-    WaterRes = { -- 137
+    WaterRes = { -- 139
         Main = 'Jupiter\'s Staff', -- 20
         Range = 'Arco de Velocidad',
         Ammo = 'displaced',
@@ -267,7 +267,7 @@ local sets = {
         Feet = 'Mountain Gaiters', -- 5
     },
     SIRD_NIN = {
-        -- Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
+        Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
     },
     Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
         Head = 'Wlk. Chapeau +1',
@@ -582,8 +582,7 @@ local sets = {
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {
         Head = 'Optical Hat',
-        Hands = 'Hydra Gloves',
-        Back = 'Gigant Mantle',
+        -- Hands = 'Hydra Gloves', -- Fencer's Ring Hack
         Waist = 'Life Belt',
         Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
@@ -593,25 +592,49 @@ local sets = {
     },
 
     WS = {
-        Head = 'Optical Hat',
+        Head = 'Maat\'s Cap',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Assault Jerkin',
         Hands = 'Tarasque Mitts +1',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
         Waist = 'Warwolf Belt',
-        Legs = 'Hydra Brais',
+        Legs = 'Dusk Trousers',
         Feet = 'Rutter Sabatons',
     },
     WS_HighAcc = {
         Body = 'Hydra Doublet',
         Hands = 'Hydra Gloves',
         Waist = 'Life Belt',
+        Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
     WS_Soil = {
         Neck = 'Soil Gorget',
     },
     WS_Evisceration = {
+        -- Neck = 'Love Torque',
         Hands = 'Custom M Gloves',
+        Ring2 = 'Adroit Ring',
+        Legs = 'Dls. Tights +1',
+        Feet = 'Blood Greaves',
+    },
+    WS_Cyclone = {
+        Head = { Name = 'Wlk. Chapeau +1', Priority = 100 },
+        Neck = 'Uggalepih Pendant',
+        Ear1 = 'Novio Earring',
+        Ear2 = 'Moldavite Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = { Name = 'Zenith Mitts +1', Priority = 100 },
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Omniscient Ring',
+        Back = { Name = 'Prism Cape', Priority = 100 },
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Mahatma Slops',
+        Feet = { Name = 'Dls. Boots +1', Priority = 100 },
     },
     WS_Spirits = {},
     WS_Energy = {
@@ -640,8 +663,8 @@ local sets = {
         Ammo = 'displaced',
     },
     Weapon_Loadout_2 = {
-        -- Main = 'Blau Dolch',
-        Main = 'Joyeuse',
+        Main = 'Blau Dolch',
+        -- Main = 'Joyeuse',
         -- Main = 'Justice Sword',
         Sub = 'Octave Club',
         Range = 'Lightning Bow +1',
@@ -655,10 +678,9 @@ local sets = {
         Ammo = 'displaced',
     },
 
-    FencersRingHPDown = { -- 899 - Set to force HP to or below fencersRingMaxHP
-        Range = 'Lightning Bow +1',
+    FencersRingHPDown = { -- 924 - Set to force HP to or below fencersRingMaxHP
         Head = 'Zenith Crown +1',
-        Neck = 'Jeweled Collar +1',
+        Neck = 'Star Necklace',
         Ear1 = 'Novia Earring',
         Ear2 = 'Hades Earring +1',
         Body = 'Assault Jerkin',
@@ -741,18 +763,14 @@ profile.HandleWeaponskill = function()
 
     if (action.Name == 'Savage Blade') or (action.Name == 'Vorpal Blade') or (action.Name == 'Swift Blade') then
         gFunc.EquipSet(sets.WS_Soil)
-    end
-
-    if (action.Name == 'Evisceration') then
+    elseif (action.Name == 'Evisceration') then
         gFunc.EquipSet(sets.WS_Soil)
         gFunc.EquipSet(sets.WS_Evisceration)
-    end
-
-    if (action.Name == 'Energy Drain') or (action.Name == 'Energy Steal') then
+    elseif (action.Name == 'Cyclone') then
+        gFunc.EquipSet(sets.WS_Cyclone)
+    elseif (action.Name == 'Energy Drain') or (action.Name == 'Energy Steal') then
         gFunc.EquipSet(sets.WS_Energy)
-    end
-
-    if (action.Name == 'Spirits Within') then
+    elseif (action.Name == 'Spirits Within') then
         gFunc.EquipSet(sets.WS_Spirits)
     end
 end

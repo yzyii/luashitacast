@@ -155,7 +155,7 @@ local sets = {
         Legs = 'Feral Trousers', -- 6
         Feet = 'Blood Greaves', -- 21
     },
-    LightningRes = { -- 138
+    LightningRes = { -- 159
         Main = 'Terra\'s Staff', -- 20
         Sub = '',
         -- Sub = 'Nms. Shield +1', -- 15
@@ -167,14 +167,14 @@ local sets = {
         Ear2 = 'Robust Earring', -- 11
         Body = 'Assault Brstplate', -- 15
         Hands = 'Heavy Gauntlets',
-        Ring1 = 'Spinel Ring', -- 9
+        Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
         Back = 'Gaia Mantle +1', -- 12
         Waist = 'Earth Belt', -- 20
         Legs = 'Blood Cuisses', -- 21
         Feet = 'Dst. Leggings +1',
     },
-    EarthRes = { -- 143
+    EarthRes = { -- 137
         Range = 'Rosenbogen',
         Ammo = '',
         Head = 'Black Ribbon', -- 12

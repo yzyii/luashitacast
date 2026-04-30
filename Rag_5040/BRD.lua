@@ -122,7 +122,7 @@ local sets = {
         Ear2 = 'Robust Earring', -- 11
         Body = 'Dst. Harness +1',
         Hands = 'Merman\'s Bangles',
-        Ring1 = 'Spinel Ring', -- 9
+        Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
         Back = 'Lightning Mantle', -- 6
         Waist = 'Earth Belt', -- 20
@@ -220,7 +220,7 @@ local sets = {
     },
 
     Sing_Ballad_Large = {
-        Range = 'Balladeer\'s Harp',
+        Range = 'Balladier\'s Harp',
     },
     Sing_Ballad_Small = {
         Range = 'Cornette +2',
@@ -261,7 +261,8 @@ local sets = {
         Range = 'Hamelin Flute',
     },
     Sing_Finale = {
-        Range = 'Military Harp',
+        -- Range = 'Military Harp',
+        Range = 'Cyt. Anglica +1',
         Neck = 'String Torque',
         Body = 'Chl. Jstcorps +1',
         Legs = 'Mahatma Slops',
@@ -296,6 +297,12 @@ local sets = {
         -- Range = 'Harp +1',
         -- Neck = 'String Torque',
         -- Body = 'Chl. Jstcorps +1',
+    },
+    Sing_Virelai = {
+        Range = 'Cyt. Anglica +1',
+        Neck = 'String Torque',
+        Body = 'Chl. Jstcorps +1',
+        Legs = 'Mahatma Slops',
     },
 
     Cure = {
@@ -585,6 +592,9 @@ profile.HandleMidcast = function()
         elseif string.match(action.Name, 'Minne') then
             gFunc.EquipSet(sets.Sing_Buff)
             gFunc.EquipSet(sets.Sing_Minne)
+        elseif string.match(action.Name, 'Virelai') then
+            gFunc.EquipSet(sets.Sing_Debuff)
+            gFunc.EquipSet(sets.Sing_Virelai)
         end
     end
 end
