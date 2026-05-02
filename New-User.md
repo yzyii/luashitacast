@@ -1,6 +1,6 @@
 # New User Guide
 
-If you have never used LuAshitacast before, read the following, then go back to the [README](README.md) and re-read and follow the instructions there.
+If you have never used LuAshitacast before, read the following, then go back to the [README](README.md) and continue following the instructions there.
 
 ## Syntax Highlighting
 
@@ -83,7 +83,7 @@ The following is incorrect.
         Body = 'Darksteel Harness +1',
 ```
 
-Note that the line **begins** with the slot name and an equals sign and that the line **ends** with a comma.
+Note that the line **ends** with a comma.
 
 ## Entering Items into Sets (cont.)
 
@@ -93,7 +93,7 @@ If you wish to populate sets directly from the game rather than typing them out 
 /lac addset <setname>
 ```
 
-If using this to populate your profiles, it is highly suggested that you delete the contents of the Idle set, and populate all other sets first before populating the Idle set.
+If using this to populate your profiles, it is suggested that you delete the contents of the Idle set, and populate all other sets first before populating the Idle set.
 
 Alternatively, use the "/lock" command or "/lac disable all" to prevent equipment swaps while you populate sets.
 
@@ -136,7 +136,7 @@ Either of the following two examples are correct:
     },
 ```
 
-The Following is incorrect:
+The following is incorrect:
 ```lua
     Movement = {
         Head = 'Dls. Chapeau +1',
@@ -148,9 +148,15 @@ The Following is incorrect:
 
 Some items pre-filled out for you contain Syntax regarding "Priority". This dictates the equip order of items where items with a higher priority are equipped first. By default, all items have a priority of 0.
 
-This is generally not required except for power users that know what they are doing and are attempting to optimize preserving HP and MP totals across equipment swaps.
+e.g. The Dls. Chapeau +1 in this example has a priority of 30 while the Jeweled Collar +1 has a priprity of 0. Since 30 > 0, the Chapeau will be equipped first.
+```lua
+        Head = { Name = 'Dls. Chapeau +1', Priority = 100 },
+        Neck = 'Jeweled Collar +1',
+```
 
-If you are not a power user, you may ignore the following.
+This functionality is generally not required except for power users that know what they are doing and are attempting to optimize preserving HP and MP totals across equipment swaps.
+
+If you are not a power user, you may ignore it as well as the rest of this file and return back to the original README.md
 
 The default Schema for equipment swaps that have been pre-filled out within these profiles is as follows:
 - if it has +HP and +MP, priority +30
