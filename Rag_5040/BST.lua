@@ -31,7 +31,7 @@ local sets = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Sanative Earring',
         -- Hands = 'Shep. Bracers',
-        Legs = 'Mst. Trousers +1',
+        Legs = 'Mst. Trousers',
         -- Feet = 'Shep. Boots',
     },
     Town = {},

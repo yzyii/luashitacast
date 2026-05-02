@@ -26,11 +26,13 @@ local melee_gloves = {
 }
 local kampfer_ring = {
     Ring2 = 'Kampfer Ring',
-    Ear2 = 'Merman\'s Earring',
-    Feet = 'Fuma Sune-Ate',
+    Hands = 'Rasetsu Tekko +1',
+    Legs = 'Byakko\'s Haidate',
 }
 local kampfer_earring = {
+    Ear1 = 'Brutal Earring',
     Ear2 = 'Kampfer Earring',
+    Hands = 'Mel. Gloves +1',
     Ring2 = 'Toreador\'s Ring',
     Legs = 'Byakko\'s Haidate',
 }
@@ -40,7 +42,6 @@ local shadow_mantle = {
 
 local sets = {
     Idle = {
-        Ammo = 'Tiphia Sting',
         Head = 'Genbu\'s Kabuto',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
@@ -75,27 +76,19 @@ local sets = {
     },
     Movement_TP = {},
 
-    --[[
-    10% Base
-    5% Merits
-    45% Counterstance
-    10% Melee Gaiters
-    ]]
-    DT = {
-        Main = 'Cross-Counters', -- 5
-        Ammo = 'Fenrir\'s Stone',
-        Head = 'Optical Hat',
+    DT = { -- Counter set
+        Head = 'Panther Mask +1',
         Neck = 'Faith Torque',
-        Ear1 = 'Brutal Earring',
+        Ear1 = 'Avenger\'s Earring', -- 1
         Ear2 = 'Avenger\'s Earring', -- 1
-        Body = 'Scp. Harness +1',
+        Body = 'Shura Togi',
         Hands = 'Mel. Gloves +1',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Toreador\'s Ring',
         Back = 'Shadow Mantle',
         Waist = 'Black Belt',
         Legs = 'Tpl. Hose +1', -- 3
-        Feet = 'Rst. Sune-Ate +1', -- 1
+        Feet = 'Fuma Sune-Ate',
     },
     MDT = {
         Ear1 = 'Merman\'s Earring',
@@ -110,19 +103,19 @@ local sets = {
     EarthRes = {},
     WindRes = {},
     WaterRes = {},
-    Evasion = { -- Currently using this as an alternate HighAcc set for 2H Zergs. See README.md
-        Head = 'Maat\'s Cap',
+    Evasion = { -- An alternate Counter set that adds additional survivability at the cost of haste / damage
+        Head = 'Optical Hat',
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Shura Togi',
+        Ear2 = 'Avenger\'s Earring', -- 1
+        Body = 'Scp. Harness +1',
         Hands = 'Mel. Gloves +1',
-        Ring1 = 'Flame Ring',
-        Ring2 = 'Triumph Ring',
-        Back = 'Forager\'s Mantle',
+        Ring1 = 'Sattva Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Shadow Mantle',
         Waist = 'Black Belt',
-        Legs = 'Shura Haidate',
-        Feet = 'Dune Boots',
+        Legs = 'Tpl. Hose +1', -- 3
+        Feet = 'Rst. Sune-Ate +1', -- 1
     },
 
     Precast = {
@@ -148,7 +141,20 @@ local sets = {
         Feet = 'Fuma Sune-Ate',
     },
 
-    LockSet1 = {},
+    LockSet1 = { -- 2H Zerg set
+        Head = 'Maat\'s Cap',
+        Neck = 'Faith Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Shura Togi',
+        Hands = 'Mel. Gloves +1',
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Black Belt',
+        Legs = 'Shura Haidate',
+        Feet = 'Dune Boots',
+    },
     LockSet2 = {},
     LockSet3 = {},
 
@@ -275,9 +281,11 @@ local sets = {
 
     Weapon_Loadout_1 = {
         Main = 'Destroyers',
+        Ammo = 'Tiphia Sting',
     },
     Weapon_Loadout_2 = {
         Main = 'Cross-Counters',
+        Ammo = 'Tiphia Sting',
     },
     Weapon_Loadout_3 = {
         Main = 'Faith Baghnakhs',

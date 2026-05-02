@@ -2,7 +2,7 @@ local horizon_safe_mode = true -- This disables some of the potentially more con
 
 local display_messages = true -- Set to true if you want chat log messages to appear on any /gc command used such as DT, or kite gear toggles
 
-local load_stylist = true -- Set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work
+local load_stylist = true -- Set to true to just load stylist on game start.
 
 -- The following 2 settings force your character model to blink on every spell cast or ability usage for the purposes of animation cancelling.
 local setStylistToBlinkSelf = true -- Forces blinks on visible equipment changes.
