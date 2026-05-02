@@ -154,7 +154,7 @@ e.g. The Dls. Chapeau +1 in this example has a priority of 30 while the Jeweled 
 
 This functionality is generally not required except for power users that know what they are doing and are attempting to optimize preserving HP and MP totals across equipment swaps.
 
-If you are not a power user, you may ignore it as well as the rest of this file and return back to the original README.md
+If you are not a power user, you may ignore it as well as the rest of this file and return back to the original [README](README.md).
 
 ### Following is not accurate yet but will be at some point
 
