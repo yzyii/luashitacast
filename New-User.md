@@ -61,11 +61,9 @@ Ignore the fact that one set has local at the front. This is Lua syntax that you
 
 While setting up these profiles:
 - Do NOT change the names of these sets.
-- Do NOT create new sets (unless you know what you are doing in which case you would not be reading this anyway).
-
-It is not necessary to create new sets as these profiles should already contain all functionality that is required to play the game.
-
-It is highly recommended that you do not make changes or edits to these profiles unless you have very good reason to (you don't).
+- Do NOT create new sets. These profiles already contain all functionality that is required to play the game.
+- Do NOT make changes or edits to these profiles at all unless you have very good reason to (you probably don't).
+- If functionality is missing, the correct thing to do is raise an issue as per the [README](README.md)
 
 ## Entering Items into Sets
 
@@ -166,4 +164,4 @@ The default Schema for equipment swaps that have been pre-filled out within thes
 - if it has +MP, priority +10
 - if it has -HP or -MP, priority -5. 
 - if the value of it's -HP/MP is lower than the value of it's +HP/MP, priority +3
-- Special cases are +2 or -2. e.g. If a set had a -HP item equipped and the current set that would be swapped to after would remove that penalty, +2, or -2 for the opposite scenario.
+- This results in valid values of -5, 5, 8, 10, 15, 18, 20, 25, 28 and 30. Special cases may exist outside of these priorities.
