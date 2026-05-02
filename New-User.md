@@ -150,13 +150,15 @@ Some items pre-filled out for you contain Syntax regarding "Priority". This dict
 
 e.g. The Dls. Chapeau +1 in this example has a priority of 30 while the Jeweled Collar +1 has a priprity of 0. Since 30 > 0, the Chapeau will be equipped first.
 ```lua
-        Head = { Name = 'Dls. Chapeau +1', Priority = 100 },
+        Head = { Name = 'Dls. Chapeau +1', Priority = 30 },
         Neck = 'Jeweled Collar +1',
 ```
 
 This functionality is generally not required except for power users that know what they are doing and are attempting to optimize preserving HP and MP totals across equipment swaps.
 
 If you are not a power user, you may ignore it as well as the rest of this file and return back to the original README.md
+
+### Following is not accurate yet but will be at some point
 
 The default Schema for equipment swaps that have been pre-filled out within these profiles is as follows:
 - if it has +HP and +MP, priority +30
