@@ -37,6 +37,12 @@ local sets = {
     WindRes = {},
     WaterRes = {},
     Evasion = {},
+    Override = { -- Toggled with either /override or /or. Overrides idle set. Used for sets such as crafting, HELM, fishing, virtue stone, and more.
+        Body = 'Field Tunica',
+        Hands = 'Field Gloves',
+        Legs = 'Field Hose',
+        Feet = 'Field Boots'
+    },
 
     Precast = {},
     SIRD = { -- Only used for Idle sets and not while Override sets are active

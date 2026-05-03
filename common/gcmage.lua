@@ -924,6 +924,7 @@ function gcmage.SetupInterimEquipSet(sets, isRanged)
         if (gcdisplay.IdleSet == 'WindRes') then interimSet = sets.WindRes end
         if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end
         if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
+        if (gcdisplay.IdleSet == 'Override') then interimSet = sets.Override end
     end
 
     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then

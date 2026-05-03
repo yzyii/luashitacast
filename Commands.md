@@ -26,9 +26,13 @@
 /lightningres /lres /tres - toggles Lightning Resistance set on/off.
 
 /evasion /eva   - toggles Evasion set on/off.
+
+/override /or   - toggles Override set on/off.
                   you could also use this set for special sets
-                  such as a MNK Counter set, a DRK Zerg set, Virtue Stone sets etc.
-                  as it will simply override your default idle / TP gear.
+                  such as a MNK Counter set, a DRK Zerg set, Virtue Stone sets,
+                  HELM/Fishing/Crafting sets, as it will simply override your
+                  default idle / TP gear.
+                  
 
 [Special Commands]
 /lockset [number] - equips the given lockset and locks equipment

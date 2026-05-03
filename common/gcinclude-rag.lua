@@ -38,20 +38,20 @@ local i_can_read_and_follow_instructions_test = false
 local LockableEquipment = {
     ['Main'] = T{'Warp Cudgel', 'Rep. Signet Staff', 'Kgd. Signet Staff', 'Fed. Signet Staff', 'Treat Staff II', 'Trick Staff II'},
     ['Sub'] = T{'Warp Cudgel'},
-    ['Range'] = T{'Lu Shang\'s F. Rod', 'Ebisu Fishing Rod'},
-    ['Ammo'] = T{'Fly Lure', 'Shrimp Lure', 'Sinking Minnow', 'Meatball'},
+    ['Range'] = T{},
+    ['Ammo'] = T{},
     ['Head'] = T{'Reraise Hairpin', 'Blink Band', 'Dream Hat +1', 'Tinfoil Hat'},
     ['Neck'] = T{'Opo-opo Necklace', 'Reraise Gorget'},
     ['Ear1'] = T{'Reraise Earring', 'Republic Earring', 'Kingdom Earring', 'Federation Earring'},
     ['Ear2'] = T{'Reraise Earring', 'Republic Earring', 'Kingdom Earring', 'Federation Earring'},
-    ['Body'] = T{'Custom Gilet +1', 'Custom Top +1', 'Magna Gilet +1', 'Magna Top +1', 'Savage Top +1', 'Elder Gilet +1', 'Wonder Maillot +1', 'Wonder Top +1', 'Mandra. Suit', 'Lord\'s Yukata', 'Field Tunica', 'Worker Tunica', 'Angler\'s Tunica', 'Fisherman\'s Apron'},
-    ['Hands'] = T{'Field Gloves', 'Worker Gloves', 'Angler\'s Gloves'},
+    ['Body'] = T{'Custom Gilet +1', 'Custom Top +1', 'Magna Gilet +1', 'Magna Top +1', 'Savage Top +1', 'Elder Gilet +1', 'Wonder Maillot +1', 'Wonder Top +1', 'Mandra. Suit', 'Lord\'s Yukata'},
+    ['Hands'] = T{},
     ['Ring1'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Return Ring', 'Warp Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring', 'Albatross Ring'},
     ['Ring2'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Return Ring', 'Warp Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring', 'Albatross Ring'},
     ['Back'] = T{},
     ['Waist'] = T{},
-    ['Legs'] = T{'Field Hose', 'Worker Hose', 'Angler\'s Hose'},
-    ['Feet'] = T{'Powder Boots', 'Field Boots', 'Worker Boots', 'Angler\'s Boots', 'Waders'}
+    ['Legs'] = T{},
+    ['Feet'] = T{'Powder Boots'}
 }
 
 --[[
@@ -67,7 +67,7 @@ local gcinclude = {}
 
 gcinclude.horizon_safe_mode = horizon_safe_mode
 
-local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','bres','lightningres','lres','tres','earthres','eres','sres','windres','wires','ares','waterres','wares','wres','evasion','eva' }
+local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','bres','lightningres','lres','tres','earthres','eres','sres','windres','wires','ares','waterres','wares','wres','evasion','eva','override','or' }
 local Commands = T{ 'kite','lock','lockset','horizonmode' }
 
 local Towns = T{
@@ -109,7 +109,9 @@ local OverrideNameTable = {
     ['wres'] = 'WaterRes',
     ['wares'] = 'WaterRes',
     ['evasion'] = 'Evasion',
-    ['eva'] = 'Evasion'
+    ['eva'] = 'Evasion',
+    ['or'] = 'Override',
+    ['override'] = 'Override'
 }
 
 local isMageJobs = T{ 'RDM','BLM','WHM','SMN','BRD' }
@@ -252,12 +254,14 @@ function gcinclude.DoDefaultOverride(isMelee)
         end
     end
     if (gcdisplay.IdleSet == 'Evasion') then gFunc.EquipSet('Evasion') end
+    if (gcdisplay.IdleSet == 'Override') then gFunc.EquipSet('Override') end
 
     if (player.IsMoving == true) then
         if (gcdisplay.IdleSet == 'Normal'
             or gcdisplay.IdleSet == 'Alternate'
             or gcdisplay.IdleSet == 'DT'
             or gcdisplay.IdleSet == 'Evasion'
+            or gcdisplay.IdleSet == 'Override'
         ) then
             gFunc.EquipSet('Movement')
         end
