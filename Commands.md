@@ -32,7 +32,7 @@
                   such as a MNK Counter set, a DRK Zerg set, Virtue Stone sets,
                   HELM/Fishing/Crafting sets, as it will simply override your
                   default idle / TP gear.
-                  
+                  Note that any unused resistance set or evasion set can be used similarly.
 
 [Special Commands]
 /lockset [number] - equips the given lockset and locks equipment

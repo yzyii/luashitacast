@@ -117,7 +117,7 @@ local sets = {
         Legs = 'Tpl. Hose +1', -- 3
         Feet = 'Rst. Sune-Ate +1', -- 1
     },
-    Override = { -- Toggled with either /override or /or. Overrides idle set. Used for sets such as crafting, HELM, fishing, virtue stone, and more.
+    Override = { -- An additional override set explicitly to be used for sets such as crafting, HELM, fishing, or any other special sets such as DRK 2HR, MNK Counter etc. n.b. Any unused Resist or Evasion set can be used similarly.
         Body = 'Field Tunica',
         Hands = 'Field Gloves',
         Legs = 'Field Hose',
