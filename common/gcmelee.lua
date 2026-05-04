@@ -337,6 +337,7 @@ function gcmelee.SetupInterimEquipSet(sets, isRanged)
     if (gcdisplay.IdleSet == 'WindRes') then interimSet = sets.WindRes end
     if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end
     if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
+    if (gcdisplay.IdleSet == 'Override') then interimSet = sets.Override end
 
     if (isRanged) then
         local ignoreRA = {

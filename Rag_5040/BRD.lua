@@ -133,6 +133,12 @@ local sets = {
     WindRes = {},
     WaterRes = {},
     Evasion = {},
+    Override = { -- Toggled with either /override or /or. Overrides idle set. Used for sets such as crafting, HELM, fishing, virtue stone, and more.
+        Body = 'Field Tunica',
+        Hands = 'Field Gloves',
+        Legs = 'Field Hose',
+        Feet = 'Field Boots'
+    },
 
     Precast_Songs_HPDown = { -- This set will equip even before precast for songs in case you require HP Down equipment to trigger Minstrel's Ring
     },

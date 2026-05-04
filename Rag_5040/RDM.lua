@@ -242,6 +242,12 @@ local sets = {
         Feet = 'Coral Greaves +1', -- 4
     },
     Evasion = {},
+    Override = { -- Toggled with either /override or /or. Overrides idle set. Used for sets such as crafting, HELM, fishing, virtue stone, and more.
+        Body = 'Field Tunica',
+        Hands = 'Field Gloves',
+        Legs = 'Field Hose',
+        Feet = 'Field Boots'
+    },
 
     Precast = {
         Head = 'Wlk. Chapeau +1',
