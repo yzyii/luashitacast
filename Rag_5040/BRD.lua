@@ -163,7 +163,7 @@ local sets = {
         Legs = 'Dusk Trousers', -- 35
         Feet = 'Rostrum Pumps', -- -30
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts. Override sets (Resistance / Evasion) take precedence if in use.
         Main = 'Terra\'s Staff',
         -- Range = 'Mythic Harp +1',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },

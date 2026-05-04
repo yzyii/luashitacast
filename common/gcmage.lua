@@ -170,7 +170,6 @@ local EnfeebINTSpells = T{ 'Blind','Blind II' }
 local EnfeebINTACCSpells = T{ 'Gravity','Bind','Dispel','Sleep','Sleep II','Sleepga','Sleepga II','Poison','Poison II','Poisonga' }
 local HateSpells = T{ 'Sleep','Sleep II','Blind','Dispel','Bind' }
 local DiabolosPoleSpells = T{ 'Aspir','Drain' }
-local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
 local SpikeSpells = T{ 'Blaze Spikes','Shock Spikes','Ice Spikes' }
 local CureSpells = T{ 'Cure','Cure II','Cure III','Cure IV','Cure V','Curaga','Curaga II','Curaga III','Curaga IV' }
 
@@ -908,24 +907,22 @@ function gcmage.SetupInterimEquipSet(sets, isRanged)
         interimSet = gFunc.Combine(interimSet, sets.SIRD_NIN)
     end
 
-    if (not SurvivalSpells:contains(action.Name)) then
-        if (gcdisplay.IdleSet == 'DT') then
-            if (environment.Time >= 6 and environment.Time < 18) then
-                interimSet = sets.DT
-            else
-                interimSet = sets.DTNight
-            end
+    if (gcdisplay.IdleSet == 'DT') then
+        if (environment.Time >= 6 and environment.Time < 18) then
+            interimSet = sets.DT
+        else
+            interimSet = sets.DTNight
         end
-        if (gcdisplay.IdleSet == 'MDT') then interimSet = sets.MDT end
-        if (gcdisplay.IdleSet == 'FireRes') then interimSet = sets.FireRes end
-        if (gcdisplay.IdleSet == 'IceRes') then interimSet = sets.IceRes end
-        if (gcdisplay.IdleSet == 'LightningRes') then interimSet = sets.LightningRes end
-        if (gcdisplay.IdleSet == 'EarthRes') then interimSet = sets.EarthRes end
-        if (gcdisplay.IdleSet == 'WindRes') then interimSet = sets.WindRes end
-        if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end
-        if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
-        if (gcdisplay.IdleSet == 'Override') then interimSet = sets.Override end
     end
+    if (gcdisplay.IdleSet == 'MDT') then interimSet = sets.MDT end
+    if (gcdisplay.IdleSet == 'FireRes') then interimSet = sets.FireRes end
+    if (gcdisplay.IdleSet == 'IceRes') then interimSet = sets.IceRes end
+    if (gcdisplay.IdleSet == 'LightningRes') then interimSet = sets.LightningRes end
+    if (gcdisplay.IdleSet == 'EarthRes') then interimSet = sets.EarthRes end
+    if (gcdisplay.IdleSet == 'WindRes') then interimSet = sets.WindRes end
+    if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end
+    if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
+    if (gcdisplay.IdleSet == 'Override') then interimSet = sets.Override end
 
     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
         interimSet = gFunc.Combine(interimSet, sets['Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]])

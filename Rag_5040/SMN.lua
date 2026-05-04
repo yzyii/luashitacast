@@ -222,7 +222,7 @@ local sets = {
         Feet = 'Rostrum Pumps',
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts. Override sets (Resistance / Evasion) take precedence if in use.
         Main = 'Eremite\'s Wand', -- 25
         Sub = 'Genbu\'s Shield',
         Ammo = 'Hedgehog Bomb',

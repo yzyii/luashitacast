@@ -148,7 +148,7 @@ local sets = {
         Ear1 = { Name = 'Loquac. Earring', Priority = 10 },
         Feet = { Name = 'Rostrum Pumps', Priority = 5 },
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts. Override sets (Resistance / Evasion) take precedence if in use.
         Main = { Name = 'Eremite\'s Wand +1', Priority = 10 }, -- 25
         Sub = 'Genbu\'s Shield',
         Head = 'Nashira Turban', -- 10

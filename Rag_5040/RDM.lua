@@ -254,7 +254,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Body = 'Dls. Tabard +1',
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts regardless of Override set. If you wish to remain in FireRes etc. during casts, leave empty.
+    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts. Override sets (Resistance / Evasion) take precedence if in use.
         Main = { Name = 'Eremite\'s Wand', Priority = 100 }, -- 25
         Sub = 'Genbu\'s Shield',
         Range = 'displaced',
