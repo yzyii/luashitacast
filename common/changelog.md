@@ -559,3 +559,7 @@
 - All Mages - Adds a SIRD_NIN set for dual Hermit's / Eremite's Wand usage while /NIN
 - BST - Adds Reward_Status sets for KO vs AF/Relic optimization
 - Adds a setting to default stylist to allowing blinks on self
+
+### v2.1.13
+- Adds an additional override side for the purposes of any special sets such as a MNK Counter set, a DRK Zerg set, Virtue Stone sets, HELM/Fishing/Crafting sets, as it will simply override your default idle / TP gear.
+- Note that any unused resistance set or evasion set can be used similarly and this functions identically.
