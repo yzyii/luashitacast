@@ -61,59 +61,103 @@ local sets = {
 
     -- The following demonstrates layering of WS sets that should cover all debatable major WS combinations
     WS = {
-		Head = 'Maat\'s Cap',
-		Neck = 'Love Torque',
-		Ear1 = 'Suppanomimi',
-		Ear2 = 'Brutal Earring',
-		Body = 'Dragon Harness +1',
-		Hands = { Name = 'Hct. Mittens +1', Priority = 1 },
-		Ring1 = 'Rajas Ring',
-		Ring2 = 'Adroit Ring',
-		Back = 'Forager\'s Mantle',
-		Waist = 'Warwolf Belt',
-		Legs = { Name = 'Dusk Trousers +1', Priority = 2 },
-		Feet = { Name = 'Hct. Leggings +1', Priority = 1 },
+        Head = 'Maat\'s Cap',
+        Neck = 'Love Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Dragon Harness +1',
+        Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
+        Ring1 = 'Thunder Ring',
+        Ring2 = 'Adroit Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = { Name = 'Hct. Subligar +1', Priority = 20 },
+        Feet = { Name = 'Hct. Leggings +1', Priority = 20 },
     },
     WS_HighAcc = {
-		Body = { Name = 'Hct. Harness +1', Priority = 2 },
-		Ring2 = { Name = 'Toreador\'s Ring', Priority = 2 },
-		Waist = 'Life Belt',
+        Body = { Name = 'Hct. Harness +1', Priority = 20 },
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Waist = 'Life Belt',
     },
 
-    WS_Evisceration = {
-		Feet = { Name = 'Asn. Poulaines +1', Priority = 1 },
+    WS_Evisceration = {},
+    WS_DancingEdge = {},
+    WS_SharkBite = {
+        Feet = 'Drn. Leggings +1',
     },
-    WS_DancingEdge = {
-		Feet = { Name = 'Asn. Poulaines +1', Priority = 1 },
-    },
-    WS_SharkBite = {},
     WS_MercyStroke = {
-		Ear1 = 'Tmph. Earring +1',
-		Body = { Name = 'Hct. Harness +1', Priority = 2 },
-		Ring2 = 'Triumph Ring',
-		Waist = 'Warwolf Belt',
+        Head = { Name = 'Hecatomb Cap +1', Priority = 20 },
+        Ear2 = 'Triumph Earring',
+        Body = { Name = 'Hct. Harness +1', Priority = 20 },
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
+        Waist = 'Warwolf Belt',
+    },
+    WS_EnergyDrain = {
+        Head = { Name = 'Hecatomb Cap +1', Priority = 20 },
+        Ear2 = 'Triumph Earring',
+        Body = { Name = 'Hct. Harness +1', Priority = 20 },
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
+        Waist = 'Warwolf Belt',
     },
 
-    -- Applied on SA WS and SATA WS
+    -- The following are applied on both SA WS and SATA WS
+    -- The following are applied on both SA WS and SATA WS
     WS_SA = {
-		Feet = { Name = 'Hct. Leggings +1', Priority = 1 },
+        Feet = { Name = 'Hct. Leggings +1', Priority = 20 },
     },
-
-    -- Applied only on TA WS but NOT SATA WS
-    WS_TA = {
-		Ear1 = 'Drone Earring',
-        Hands = 'Rogue\'s Armlets +1',
-        Legs = 'Drn. Leggings +1',
+    WS_SA_SharkBite = {
+        Ear2 = 'Pixie Earring',
+        Feet = 'Drn. Leggings +1',
     },
-    WS_TA_SharkBite = {
-		Ring2 = 'Breeze Ring',
+    WS_SA_MercyStroke = {
+        Ear2 = 'Pixie Earring',
     },
-    WS_TA_MercyStroke = {
-		Hands = { Name = 'Hct. Mittens +1', Priority = 1 },
+    WS_SA_EnergyDrain = {
+        Ear2 = 'Pixie Earring',
+        Ring1 = 'Thunder Ring',
+        Ring2 = 'Adroit Ring',
     },
 
     WS_SATA_SharkBite = {
-        Hands = 'Rogue\'s Armlets +1',
+        Hands = { Name = 'Rogue\'s Armlets +1', Priority = 20 },
+    },
+
+    -- The following are only applied on TA WS and are NOT applied on SATA WS
+    WS_TA = {
+        Feet = 'Drn. Leggings +1',
+    },
+    WS_TA_SharkBite = {
+        Ear2 = 'Drone Earring',
+        Hands = { Name = 'Rogue\'s Armlets +1', Priority = 20 },
+        Ring1 = 'Breeze Ring',
+        Ring2 = 'Nimble Ring',
+        Waist = { Name = 'Scouter\'s Rope', Priority = -5 },
+    },
+    WS_TA_MercyStroke = {
+        Ear2 = 'Drone Earring',
+    },
+    WS_TA_EnergyDrain = {
+        Ear2 = 'Drone Earring',
+        Ring1 = 'Breeze Ring',
+        Ring2 = 'Nimble Ring',
+    },
+
+    WS_Cyclone = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Prudence Torque',
+        Ear1 = 'Novio Earring',
+        Ear2 = 'Moldavite Earring',
+        Body = 'Blue Cotehard. +1',
+        Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Omniscient Ring',
+        Back = 'Assassin\'s Cape',
+        Waist = 'Ryl.Kgt. Belt',
+        Legs = { Name = 'Hct. Subligar +1', Priority = 20 },
+        Feet = { Name = 'Hct. Leggings +1', Priority = 20 },
     },
 
     Flee = {},
@@ -152,7 +196,19 @@ local sets = {
         Ammo = 'Venom Bolt',
     },
 
-    Weapon_Loadout_1 = {},
+    Weapon_Loadout_1 = { -- Slug Shot THF 2H Zerg
+        Head = { Name = 'Hecatomb Cap +1', Priority = 20 },
+        Ear1 = 'Triumph Earring',
+        Ear2 = 'Drone Earring',
+        Body = { Name = 'Hct. Harness +1', Priority = 20 },
+        Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
+        Ring1 = 'Triumph Ring',
+        Ring2 = 'Nimble Ring',
+        Back = 'Amemet Mantle +1',
+        Waist = 'Warwolf Belt',
+        Legs = 'Republic Subligar',
+        Feet = { Name = 'Hct. Leggings +1', Priority = 20 },
+    },
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},
 
@@ -264,6 +320,8 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_DancingEdge)
     elseif (action.Name == 'Mercy Stroke') then
         gFunc.EquipSet(sets.WS_MercyStroke)
+    elseif (action.Name == 'Energy Drain') then
+        gFunc.EquipSet(sets.WS_EnergyDrain)
     end
 
     local sa = gData.GetBuffCount('Sneak Attack')
@@ -271,6 +329,13 @@ profile.HandleWeaponskill = function()
 
     if (sa == 1) or (os.clock() < saOverride) then
         gFunc.EquipSet(sets.WS_SA)
+        if (action.Name == 'Shark Bite') then
+            gFunc.EquipSet(sets.WS_SA_SharkBite)
+        elseif (action.Name == 'Mercy Stroke') then
+            gFunc.EquipSet(sets.WS_SA_MercyStroke)
+        elseif (action.Name == 'Energy Drain') then
+            gFunc.EquipSet(sets.WS_SA_EnergyDrain)
+        end
     end
 
     if (sa == 1 and ta == 1) or (os.clock() < saOverride and os.clock() < taOverride) then
@@ -283,7 +348,13 @@ profile.HandleWeaponskill = function()
             gFunc.EquipSet(sets.WS_TA_SharkBite)
         elseif (action.Name == 'Mercy Stroke') then
             gFunc.EquipSet(sets.WS_TA_MercyStroke)
+        elseif (action.Name == 'Energy Drain') then
+            gFunc.EquipSet(sets.WS_TA_EnergyDrain)
         end
+    end
+
+    if (action.Name == 'Cyclone') then
+        gFunc.EquipSet(sets.WS_Cyclone)
     end
 
     if (profile.NeedTH()) then

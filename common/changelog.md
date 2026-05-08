@@ -563,3 +563,6 @@
 ### v2.1.13
 - Adds an additional override side for the purposes of any special sets such as a MNK Counter set, a DRK Zerg set, Virtue Stone sets, HELM/Fishing/Crafting sets, as it will simply override your default idle / TP gear.
 - Note that any unused resistance set or evasion set can be used similarly and this functions identically.
+
+### v2.2.0
+- THF - Adds Cyclone and additional SA/TA WS handling
