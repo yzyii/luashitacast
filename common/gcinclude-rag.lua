@@ -243,12 +243,9 @@ function gcinclude.DoDefaultOverride(isMelee)
     if (environment.Area ~= nil) and (Windy:contains(environment.Area)) then gFunc.EquipSet('federation_aketon') end
 
     if (gcdisplay.IdleSet == 'DT') then
-        if (isMelee) then
-            gFunc.EquipSet('DT')
-        else
-            if (environment.Time >= 6 and environment.Time < 18) then
-                gFunc.EquipSet('DT')
-            else
+        gFunc.EquipSet('DT')
+        if (not isMelee) then
+            if (environment.Time < 6 and environment.Time >= 18) then
                 gFunc.EquipSet('DTNight')
             end
         end

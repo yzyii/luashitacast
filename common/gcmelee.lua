@@ -314,18 +314,11 @@ function gcmelee.DoMidcast(sets)
 end
 
 function gcmelee.SetupInterimEquipSet(sets, isRanged)
-    local action = gData.GetAction()
-
     local interimSet = sets.SIRD
 
+    local action = gData.GetAction()
     if (not SurvivalSpells:contains(action.Name)) then
-        local ignoreTP = {
-            Main = 'ignore',
-            Sub = 'ignore',
-            Range = 'ignore',
-            Ammo = 'ignore',
-        }
-        interimSet = gFunc.Combine(sets.DT, ignoreTP)
+        interimSet = sets.DT
     end
 
     if (gcdisplay.IdleSet == 'DT') then interimSet = sets.DT end
@@ -338,6 +331,9 @@ function gcmelee.SetupInterimEquipSet(sets, isRanged)
     if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end
     if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
     if (gcdisplay.IdleSet == 'Override') then interimSet = sets.Override end
+
+    local wlString = 'Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]
+    interimSet = gFunc.Combine(interimSet, wlString)
 
     if (isRanged) then
         local ignoreRA = {

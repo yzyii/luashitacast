@@ -395,18 +395,23 @@ local sets = {
         Ammo = 'Dart',
     },
     Acid = {
+        Range = 'Ziska\'s Crossbow',
         Ammo = 'Acid Bolt',
     },
     Sleep = {
+        Range = 'Ziska\'s Crossbow',
         Ammo = 'Sleep Bolt',
     },
     Bloody = {
+        Range = 'Ziska\'s Crossbow',
         Ammo = 'Bloody Bolt',
     },
     Blind = {
+        Range = 'Ziska\'s Crossbow',
         Ammo = 'Blind Bolt',
     },
     Venom = {
+        Range = 'Ziska\'s Crossbow',
         Ammo = 'Venom Bolt',
     },
 
