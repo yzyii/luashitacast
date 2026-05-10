@@ -125,7 +125,7 @@ local sets = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = { Name = 'Dalmatica', Priority = 5 },
-        Hands = 'Merman\'s Bangles', 
+        Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 20 },
         Back = 'Hexerei Cape',
@@ -165,7 +165,7 @@ local sets = {
     },
     LightningRes = {
         Main = 'Terra\'s Staff', -- 20
-        Head = 'Black Ribbon', -- 12 
+        Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
@@ -282,7 +282,7 @@ local sets = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 10 },
         Body = { Name = 'Clr. Bliaut +1', Priority = 10 },
-        Hands = 'Merman\'s Bangles', 
+        Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 20 },
         Back = 'Shadow Mantle',
@@ -320,7 +320,7 @@ local sets = {
     },
 
     Yellow = {
-        Ammo = 'Tiphia Sting',
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
         Head = 'Nashira Turban',
         Neck = 'Willpower Torque',
         Ear1 = { Name = 'Loquac. Earring', Priority = 10 },
@@ -403,13 +403,13 @@ local sets = {
         Feet = { Name = 'Clr. Duckbills +1', Priority = 10 },
     },
     Stoneskin = {
-        Head = 'Nashira Turban', 
+        Head = 'Nashira Turban',
         Neck = 'Stone Gorget',
         Ear1 = { Name = 'Loquac. Earring', Priority = 10 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 10 },
         Body = 'Mahatma Hpl.',
         Hands = { Name = 'Blessed Mitts +1', Priority = 10 },
-        Ring1 = 'Aqua Ring', 
+        Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
         Back = 'Shadow Mantle',
         Waist = 'Druid\'s Rope',
@@ -539,17 +539,70 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    TP = {},
-    TP_Mjollnir_Haste = {},
-    TP_HighAcc = {},
-    TP_NIN = {},
+    TP = {
+        Head = 'Nashira Turban', -- 2
+        Neck = 'Prudence Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Nashira Manteel', -- 3
+        Hands = { Name = 'Blessed Mitts +1', Priority = 10 }, -- 6
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Back = { Name = 'Bellicose Mantle', Priority = -5 },
+        Waist = 'Swift Belt', -- 4
+        Legs = { Name = 'Bls. Trousers +1', Priority = 10 }, -- 4
+        Feet = { Name = 'Blessed Pumps +1', Priority = 10 }, -- 3
+    },
+    TP_Mjollnir_Haste = {
+        Head = 'Optical Hat'
+    },
+    TP_HighAcc = {
+        Head = 'Optical Hat',
+        Body = { Name = 'Hydra Doublet', Priority = 10 },
+        Legs = 'Hydra Brais',
+        Feet = 'Hydra Gaiters',
+    },
+    TP_NIN = {
+        Ear1 = 'Stealth Earring',
+    },
 
-    WS = {},
-    WS_HighAcc = {},
-    WS_Randgrith = {},
+    WS = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Prudence Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = { Name = 'Flora Cotehardie', Priority = 5 },
+        Hands = { Name = 'Hlr. Mitts +1', Priority = 10 },
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
+        Back = 'Ryl. Army Mantle',
+        Waist = 'Life Belt',
+        Legs = { Name = 'Bls. Trousers +1', Priority = 10 },
+        Feet = { Name = 'Clr. Duckbills +1', Priority = 10 },
+    },
+    WS_HighAcc = {
+        Head = 'Optical Hat',
+        Body = { Name = 'Hydra Doublet', Priority = 10 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Legs = 'Hydra Brais',
+    },
+    WS_Randgrith = {
+        Neck = 'Breeze Gorget',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Triumph Earring',
+        Ring2 = 'Triumph Ring',
+    },
 
-    Weapon_Loadout_1 = {},
-    Weapon_Loadout_2 = {},
+    Weapon_Loadout_1 = {
+        Main = 'Purgatory Mace',
+        Sub = 'Octave Club',
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Purgatory Mace',
+        Sub = 'Viking Shield',
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
+    },
     Weapon_Loadout_3 = {},
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
