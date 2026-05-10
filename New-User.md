@@ -148,7 +148,7 @@ The luas have been filled out with BiS gear for CoP era. (This is a Work In Prog
 
 The restrictions and assumptions made while doing so are as follows:
 
-- For the purposes of HP and MP considerations, We assume the player is a Hume with 8/8 HP merits.
+- For the purposes of HP and MP considerations, the player is assumed to be a Hume with 8/8 HP merits.
 - No Divine Might earrings.
 - CoP ring is assumed to be Sattva unless Rajas is required for Store TP requirements. Some jobs may still use Sattva even if a Store TP build exists.
 - Apoc Nigh earring is be assumed to be Magnetic except for Ethereal on DRG.
@@ -159,7 +159,7 @@ The restrictions and assumptions made while doing so are as follows:
 
 ## Priority
 
-Some items pre-filled out for you contain Syntax regarding "Priority". This dictates the equip order of items where items with a higher priority are equipped first. By default, all items have a priority of 0.
+Some items pre-filled out for you contain syntax regarding "Priority". This dictates the equip order of items where items with a higher priority are equipped first. By default, all items have a priority of 0.
 
 e.g. The Dls. Chapeau +1 in this example has a priority of 30 while the Jeweled Collar +1 has a priprity of 0. Since 30 > 0, the Chapeau will be equipped first.
 ```lua
