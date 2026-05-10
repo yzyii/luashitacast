@@ -197,7 +197,7 @@ local sets = {
         Main = 'Aquilo\'s Staff', -- 20
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Diamond Earring', -- 10
+        Ear1 = 'Omn. Earring', -- 11
         Ear2 = 'Omn. Earring', -- 11
         Body = { Name = 'Dalmatica', Priority = 5 },
         Hands = 'Mage\'s Cuffs', -- 5
