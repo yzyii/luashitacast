@@ -242,7 +242,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Legs = { Name = 'Homam Cosciales', Priority = 120 },
     },
-    SIRD = { -- 1441 -- Only used for Idle sets and not while Override sets are active
+    SIRD = { -- 1441 -- Override sets (Resistance / Evasion) take precedence if in use.
         Main = 'Tutelary',
         Sub = 'Aegis',
         Head = { Name = 'Koenig Schaller', Priority = 30 },

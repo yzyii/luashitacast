@@ -254,7 +254,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Body = 'Dls. Tabard +1',
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts. Override sets (Resistance / Evasion) take precedence if in use.
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Main = { Name = 'Eremite\'s Wand', Priority = 100 }, -- 25
         Sub = 'Genbu\'s Shield',
         Range = 'displaced',
@@ -275,7 +275,7 @@ local sets = {
     SIRD_NIN = {
         Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
     },
-    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
+    Haste = {
         Head = 'Wlk. Chapeau +1',
         Ear1 = 'Loquac. Earring',
         Body = { Name = 'Dls. Tabard +1', Priority = -1 },

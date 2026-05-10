@@ -127,7 +127,7 @@ local sets = {
     Precast = {
         Ear1 = 'Loquac. Earring',
     },
-    SIRD = { -- Only used for Idle sets and not while Override sets are active
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Magnetic Earring', -- 8
@@ -140,7 +140,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
-    Haste = { -- Used for Utsusemi cooldown
+    Haste = {
         Head = 'Panther Mask +1',
         Waist = 'Black Belt',
         Legs = 'Byakko\'s Haidate',

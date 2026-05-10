@@ -277,7 +277,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Legs = 'Homam Cosciales',
     },
-    SIRD = { -- Only used for Idle sets and not while Override sets are active
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Head = { Name = 'Aegishjalmr', Priority = 100 },
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Magnetic Earring', -- 8
@@ -285,7 +285,7 @@ local sets = {
         Legs = { Name = 'Homam Cosciales', Priority = 100 },
         Feet = 'Mountain Gaiters', -- 5
     },
-    Haste = { -- Used for Utsusemi and Stun cooldown
+    Haste = {
         Head = { Name = 'Ace\'s Helm', Priority = -1 },
         Body = 'Dst. Harness +1',
         Hands = { Name = 'Dusk Gloves +1', Priority = 100 },

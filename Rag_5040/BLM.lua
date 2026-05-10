@@ -244,7 +244,7 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts. Override sets (Resistance / Evasion) take precedence if in use.
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Main = 'Eremite\'s Wand', -- 25
         Sub = 'Genbu\'s Shield',
         Head = 'Nashira Turban', -- 10
@@ -263,7 +263,7 @@ local sets = {
     },
     YellowHNM = {
     },
-    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
+    Haste = {
         Head = 'Nashira Turban', -- 2
         Ear1 = 'Loquac. Earring',
         Body = 'Nashira Manteel', -- 3

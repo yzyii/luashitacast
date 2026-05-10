@@ -222,7 +222,7 @@ local sets = {
         Feet = 'Rostrum Pumps',
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts. Override sets (Resistance / Evasion) take precedence if in use.
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Main = 'Eremite\'s Wand', -- 25
         Sub = 'Genbu\'s Shield',
         Ammo = 'Hedgehog Bomb',
@@ -242,7 +242,7 @@ local sets = {
     SIRD_NIN = {
         Sub = { Name = 'Eremite\'s Wand', Priority = 100 },
     },
-    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
+    Haste = {
         Head = 'Nashira Turban',
         Ear1 = 'Loquac. Earring',
         Hands = 'Nashira Gages',

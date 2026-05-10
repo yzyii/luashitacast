@@ -41,9 +41,9 @@ local sets = {
     },
 
     Precast = {},
-    SIRD = { -- Only used for Idle sets and not while Override sets are active
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
     },
-    Haste = { -- Used for Utsusemi cooldown
+    Haste = {
     },
 
     LockSet1 = {},

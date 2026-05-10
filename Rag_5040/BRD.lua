@@ -163,7 +163,7 @@ local sets = {
         Legs = 'Dusk Trousers', -- 35
         Feet = 'Rostrum Pumps', -- -30
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts. Override sets (Resistance / Evasion) take precedence if in use.
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Main = 'Terra\'s Staff',
         -- Range = 'Mythic Harp +1',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 100 },
@@ -180,7 +180,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
-    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
+    Haste = {
         Range = 'Angel Lyre', -- 2
 		-- Head = 'Sheikh Turban', -- 2
         Body = { Name = 'Sha\'ir Manteel', Priority = 10 }, -- 2
