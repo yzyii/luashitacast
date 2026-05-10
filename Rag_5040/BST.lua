@@ -100,7 +100,7 @@ local sets = {
         Ring1 = 'Toreador\'s Ring',
         Waist = 'Life Belt',
     },
-    TP_NIN = {
+    TP_NIN = { -- Equips iff using 1h weapon in Sub
         Ear2 = 'Stealth Earring',
     },
 

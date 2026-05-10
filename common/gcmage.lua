@@ -783,6 +783,12 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
         if (player.MainJob == 'WHM' and (string.match(action.Name, '.*na$') or (action.Name == 'Erase'))) then
             gFunc.EquipSet('virology_ring')
         end
+        if (action.Name == 'Aquaveil') then
+            gFunc.EquipSet('SIRD')
+            if (player.MainJob ~= 'BRD' and player.SubJob == 'NIN') then
+                 gFunc.EquipSet('SIRD_NIN')
+            end
+        end
     end
 
     if (gcdisplay.GetToggle('Hate') == false or CureSpells:contains(action.Name) or not HateSpells:contains(action.Name)) then

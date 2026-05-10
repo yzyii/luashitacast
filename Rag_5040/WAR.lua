@@ -51,11 +51,11 @@ local sets = {
     Warcry = {},
     Provoke = {},
 
-    TP_NIN = {
-        Ear1 = 'Enfeebling Earring',
+    TP_NIN = { -- Equips iff using 1h weapon in Sub
+        Ear2 = 'Stealth Earring',
     },
     TP_SAM = {
-        Ear1 = 'Attila\'s Earring',
+        Ear2 = 'Attila\'s Earring',
     },
 
     Weapon_Loadout_1 = {},

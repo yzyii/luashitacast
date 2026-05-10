@@ -566,3 +566,5 @@
 
 ### v2.2.0
 - THF - Adds Cyclone and additional SA/TA WS handling
+- Mages - Equips SIRD set on Aquaveil casts instead of Haste / ConserveMP
+- SAM - Adds missing WS sets. Adds 2H WS set handling.

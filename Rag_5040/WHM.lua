@@ -588,7 +588,6 @@ local sets = {
     },
     WS_Randgrith = {
         Neck = 'Breeze Gorget',
-        Ear1 = 'Brutal Earring',
         Ear2 = 'Triumph Earring',
         Ring2 = 'Triumph Ring',
     },
