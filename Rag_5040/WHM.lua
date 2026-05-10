@@ -37,8 +37,8 @@ local asklepios = { -- Used for Cures with Mjollnir when /NIN
 }
 
 -- Disabled on horizon_safe_mode
-local medicine_earring_hp_threshold = 360 -- HP at which Medicine Earring set is equipped
-local medicine_earring = { -- 1440
+local medicine_earring_hp_threshold = 442 -- HP at which Medicine Earring set is equipped
+local medicine_earring = { -- 1474
     Ammo = { Name = 'Hedgehog Bomb', Priority = 10 },
     Head = 'Dream Ribbon',
     Neck = { Name = 'Shield Pendant', Priority = 15 },
@@ -97,6 +97,8 @@ local sets = {
         Ear2 = { Name = 'Magnetic Earring', Priority = 10 },
         Body = 'Mahatma Hpl.',
         Hands = 'Hydra Gloves',
+        Ring1 = { Name = 'Serene Ring', Priority = 5 },
+        Ring2 = { Name = 'Serene Ring', Priority = 5 },
         Back = 'Mahatma Cape',
         Waist = 'Cleric\'s Belt',
         Legs = 'Hydra Brais',
@@ -128,14 +130,99 @@ local sets = {
         Ring2 = { Name = 'Sattva Ring', Priority = 20 },
         Back = 'Hexerei Cape',
         Waist = { Name = 'Powerful Rope', Priority = 30 },
+        Legs = { Name = 'Silk Slacks +1', Priority = 20 },
         Feet = { Name = 'Root Sabots', Priority = 20 },
     },
-    FireRes = {},
-    IceRes = {},
-    LightningRes = {},
-    EarthRes = {},
-    WindRes = {},
-    WaterRes = {},
+    FireRes = {
+        Main = 'Neptune\'s Staff', -- 20
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Cmn. Earring', -- 11
+        Ear2 = 'Cmn. Earring', -- 11
+        Body = { Name = 'Dalmatica', Priority = 5 },
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Triumph Ring', -- 10
+        Ring2 = 'Malflame Ring', -- 10
+        Back = 'Hexerei Cape',
+        Waist = 'Water Belt', -- 20
+        Legs = { Name = 'Silk Slacks +1', Priority = 20 },
+        Feet = 'Power Sandals', -- 7
+    },
+    IceRes = {
+        Main = 'Vulcan\'s Staff', -- 20
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Omn. Earring', -- 11
+        Ear2 = 'Omn. Earring', -- 11
+        Body = { Name = 'Dalmatica', Priority = 5 },
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Omniscient Ring', -- 10
+        Ring2 = 'Malfrost Ring', -- 10
+        Back = { Name = 'Aurora Mantle +1', Priority = 10 }, -- 8
+        Waist = 'Fire Belt', -- 20
+        Legs = { Name = 'Silk Slacks +1', Priority = 20 },
+        Feet = 'T.M. Pigaches +2', -- 10
+    },
+    LightningRes = {
+        Main = 'Terra\'s Staff', -- 20
+        Head = 'Black Ribbon', -- 12 
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Robust Earring', -- 11
+        Ear2 = 'Robust Earring', -- 11
+        Body = { Name = 'Dalmatica', Priority = 5 },
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Adroit Ring', -- 10
+        Ring2 = 'Malflash Ring', -- 10
+        Back = 'Hexerei Cape',
+        Waist = 'Earth Belt', -- 20
+        Legs = { Name = 'Silk Slacks +1', Priority = 20 },
+        Feet = { Name = 'Root Sabots', Priority = 20 },
+    },
+    EarthRes = {
+        Main = 'Auster\'s Staff', -- 20
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Robust Earring', -- 11
+        Ear2 = 'Robust Earring', -- 11
+        Body = { Name = 'Dalmatica', Priority = 5 },
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Robust Ring', -- 10
+        Ring2 = 'Maldust Ring', -- 10
+        Back = 'Hexerei Cape',
+        Waist = 'Wind Belt', -- 20
+        Legs = { Name = 'Silk Slacks +1', Priority = 20 },
+        Feet = 'Cmb.Cst. Shoes', -- 4
+    },
+    WindRes = {
+        Main = 'Aquilo\'s Staff', -- 20
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Diamond Earring', -- 10
+        Ear2 = 'Omn. Earring', -- 11
+        Body = { Name = 'Dalmatica', Priority = 5 },
+        Hands = 'Mage\'s Cuffs', -- 5
+        Ring1 = 'Nimble Ring', -- 10
+        Ring2 = 'Malgust Ring', -- 10
+        Back = { Name = 'Aurora Mantle +1', Priority = 10 }, -- 8
+        Waist = 'Ice Belt', -- 20
+        Legs = { Name = 'Silk Slacks +1', Priority = 20 },
+        Feet = 'Air Solea +1', -- 4
+    },
+    WaterRes = {
+        Main = 'Jupiter\'s Staff', -- 20
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Cmn. Earring', -- 11
+        Ear2 = 'Cmn. Earring', -- 11
+        Body = { Name = 'Dalmatica', Priority = 5 },
+        Hands = 'Silk Cuffs +1', -- 7
+        Ring1 = 'Communion Ring', -- 10
+        Ring2 = 'Malflood Ring', -- 10
+        Back = 'Blue Cape +1', -- 7
+        Waist = 'Lightning Belt', -- 20
+        Legs = 'Frog Trousers', -- 7
+        Feet = { Name = 'Root Sabots', Priority = 20 },
+    },
     Evasion = {},
     Override = { -- An additional override set explicitly to be used for sets such as crafting, HELM, fishing, or any other special sets such as DRK 2HR, MNK Counter etc. n.b. Any unused Resist or Evasion set can be used similarly.
         Body = 'Field Tunica',
@@ -148,7 +235,7 @@ local sets = {
         Ear1 = { Name = 'Loquac. Earring', Priority = 10 },
         Feet = { Name = 'Rostrum Pumps', Priority = 5 },
     },
-    SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts. Override sets (Resistance / Evasion) take precedence if in use.
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Main = { Name = 'Eremite\'s Wand +1', Priority = 10 }, -- 25
         Sub = 'Genbu\'s Shield',
         Head = 'Nashira Turban', -- 10
@@ -160,7 +247,7 @@ local sets = {
     SIRD_NIN = {
         Sub = { Name = 'Eremite\'s Wand +1', Priority = 10 },
     },
-    Haste = { -- Used only on Haste, Refresh, Blink and Utsusemi casts
+    Haste = {
         Head = 'Nashira Turban',
         Body = 'Nashira Manteel',
         Hands = { Name = 'Blessed Mitts +1', Priority = 10 },
@@ -204,7 +291,6 @@ local sets = {
         Feet = { Name = 'Hlr. Duckbills +1', Priority = 10 },
     },
     Cheat_C4HPDown = {
-        Ammo = 'Tiphia Sting',
         Head = 'Nashira Turban',
         Neck = 'Willpower Torque',
         Ear1 = { Name = 'Loquac. Earring', Priority = 10 },
@@ -224,7 +310,7 @@ local sets = {
         Ear1 = 'Eris\' Earring +1', -- 3
         Ear2 = 'Eris\' Earring +1', -- 3
         Body = { Name = 'Aristocrat\'s Coat', Priority = 10 },
-        Hands = 'Merman\'s Bangles',
+        Hands = { Name = 'Feronia\'s Bangles', Priority = 20 },
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 20 },
         Ring2 = { Name = 'Sattva Ring', Priority = 20 }, -- 5
         Back = { Name = 'Gigant Mantle', Priority = 20 },
@@ -233,7 +319,20 @@ local sets = {
         Feet = { Name = 'Root Sabots', Priority = 20 },
     },
 
-    Yellow = {},
+    Yellow = {
+        Ammo = 'Tiphia Sting',
+        Head = 'Nashira Turban',
+        Neck = 'Willpower Torque',
+        Ear1 = { Name = 'Loquac. Earring', Priority = 10 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 10 },
+        Body = { Name = 'Dalmatica', Priority = 5 },
+        Hands = { Name = 'Zenith Mitts +1', Priority = 5 },
+        Ring1 = { Name = 'Serket Ring', Priority = 5 },
+        Ring2 = { Name = 'Vivian Ring', Priority = 5 },
+        Back = 'Shadow Mantle',
+        Waist = 'Druid\'s Rope',
+        Feet = { Name = 'Hlr. Duckbills +1', Priority = 10 },
+    },
     Cure = {
         Ammo = 'Dream Sand',
         Head = 'Hydra Beret', -- 8
@@ -251,18 +350,11 @@ local sets = {
     },
     Cure5 = {
         Ammo = { Name = 'Hedgehog Bomb', Priority = 10 }, -- 1
-        Head = 'Hydra Beret', -- 8
         Neck = 'Ajari Necklace',
-        Ear1 = 'Novia Earring', -- 7
         Ear2 = 'Cmn. Earring',
-        Body = { Name = 'Aristocrat\'s Coat', Priority = 10 },
         Hands = { Name = 'Hlr. Mitts +1', Priority = 10 }, -- 4
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
-        Back = { Name = 'Mahatma Cape', Priority = 10 }, -- 6
-        Waist = { Name = 'Penitent\'s Rope', Priority = -5 }, -- 3
-        Legs = { Name = 'Bls. Trousers +1', Priority = 10 }, -- 6
-        Feet = { Name = 'Blessed Pumps +1', Priority = 10 }, -- 5
     },
     Benediction = {
         Ammo = { Name = 'Hedgehog Bomb', Priority = 10 }, -- 1
@@ -311,16 +403,32 @@ local sets = {
         Feet = { Name = 'Clr. Duckbills +1', Priority = 10 },
     },
     Stoneskin = {
+        Head = 'Nashira Turban', 
         Neck = 'Stone Gorget',
-            Ear1 = { Name = 'Loquac. Earring', Priority = 10 },
-            Ear1 = 'Cmn. Earring',
-            Body = 'Mahatma Hpl.',
+        Ear1 = { Name = 'Loquac. Earring', Priority = 10 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 10 },
+        Body = 'Mahatma Hpl.',
+        Hands = { Name = 'Blessed Mitts +1', Priority = 10 },
+        Ring1 = 'Aqua Ring', 
+        Ring2 = 'Communion Ring',
         Back = 'Shadow Mantle',
-            Ring1 = 'Aqua Ring',
-            Ring2 = 'Communion Ring',
-            Feet = { Name = 'Hlr. Duckbills +1', Priority = 10 },
+        Waist = 'Druid\'s Rope',
+        Legs = { Name = 'Bls. Trousers +1', Priority = 10 },
+        Feet = { Name = 'Hlr. Duckbills +1', Priority = 10 },
     },
-    Spikes = {},
+    Spikes = {
+        Main = 'Kirin\'s Pole',
+        Ammo = { Name = 'Phtm. Tathlum', Priority = 10 },
+        Head = 'Maat\'s Cap',
+        Ear1 = 'Novio Earring',
+        Ear2 = 'Moldavite Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = { Name = 'Zenith Mitts +1', Priority = 5 },
+        Ring1 = 'Snow Ring',
+        Ring2 = 'Omniscient Ring',
+        Waist = { Name = 'Penitent\'s Rope', Priority = -5 },
+        Legs = 'Mahatma Slops',
+    },
     Barspell = {
         Body = { Name = 'Blessed Bliaut', Priority = 10 },
         Legs = { Name = 'Clr. Pantaln. +1', Priority = 10 },
@@ -362,26 +470,34 @@ local sets = {
     },
 
     Divine = {
-        Ammo = { Name = 'Holy Ampulla', Priority = 10 },
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 10 },
         Head = 'Nashira Turban',
-        Neck = 'Divine Torque',
-        Ear1 = 'Divine Earring',
-        Ear2 = 'Cmn. Earring',
+        Neck = 'Benign Necklace',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Magnetic Earring',
         Body = 'Nashira Manteel',
         Hands = { Name = 'Blessed Mitts +1', Priority = 10 },
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        Back = { Name = 'Altruistic Cape', Priority = 10 },
+        Waist = 'Swift Belt',
+        Legs = { Name = 'Bls. Trousers +1', Priority = 10 },
+        Feet = { Name = 'Blessed Pumps +1', Priority = 10 },
+    },
+    Banish = {
+        Ammo = { Name = 'Holy Ampulla', Priority = 10 },
+        Head = 'Nashira Turban',
+        Neck = 'Ajari Necklace',
+        Ear1 = 'Moldavite Earring',
+        Ear2 = 'Novio Earring',
+        Body = 'Mahatma Hpl.',
+        Hands = { Name = 'Zenith Mitts +1', Priority = 5 },
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
         Back = { Name = 'Altruistic Cape', Priority = 10 },
         Waist = { Name = 'Cleric\'s Belt', Priority = 10 },
         Legs = 'Mahatma Slops',
         Feet = { Name = 'Clr. Duckbills +1', Priority = 10 },
-    },
-    Banish = {
-        Neck = 'Ajari Necklace',
-        Ear1 = 'Moldavite Earring',
-        Ear2 = 'Novio Earring',
-        Body = 'Mahatma Hpl.',
-        Hands = { Name = 'Zenith Mitts +1', Priority = 5 },
     },
     Dark = {
         Ammo = { Name = 'Phtm. Tathlum', Priority = 10 },

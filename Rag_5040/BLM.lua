@@ -30,7 +30,7 @@ local sorcerers_tonban = {
 }
 
 -- Disabled on horizon_safe_mode
-local sorcerers_earring_hp_threshold = 360 -- HP at which Sorcerer's Earring set is equipped
+local sorcerers_earring_hp_threshold = 432 -- HP at which Sorcerer's Earring set is equipped
 local sorcerers_earring = { -- 1440
     Main = 'Terra\'s Staff',
     Ammo = 'Hedgehog Bomb',
