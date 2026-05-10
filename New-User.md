@@ -142,6 +142,21 @@ The following is incorrect:
     },
 ```
 
+## Example Gear
+
+The luas have been filled out with BiS gear for CoP era. (This is a Work In Progress.)
+
+The restrictions and assumptions made while doing so are as follows:
+
+- For the purposes of HP and MP considerations, We assume the player is a Hume with 8/8 HP merits.
+- No Divine Might earrings.
+- CoP ring is assumed to be Sattva unless Rajas is required for Store TP requirements. Some jobs may still use Sattva even if a Store TP build exists.
+- Apoc Nigh earring is be assumed to be Magnetic except for Ethereal on DRG.
+- No Relic Weapons, Defending Ring, Ancient Adamantoise Egg, Ridill
+- No HQ+1 Resistance Earrings / Rings
+- Some NQ items instead of HQ e.g. Dalmatica.
+- No RSE items.
+
 ## Priority
 
 Some items pre-filled out for you contain Syntax regarding "Priority". This dictates the equip order of items where items with a higher priority are equipped first. By default, all items have a priority of 0.
