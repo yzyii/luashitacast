@@ -157,6 +157,8 @@ local sets = {
 
     Enhancing = {},
     Cure = {},
+    Cheat_C3HPDown = {},
+    Cheat_C3HPUp = {},
     Flash = {}, -- Technically optional since Hate and Haste gear will be equipped by default
 
     LockSet1 = {},
@@ -455,11 +457,31 @@ end
 
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
+    local target = gData.GetActionTarget()
+    local action = gData.GetAction()
+    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
+
+    local cheatDelay = 0
     if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
-        gcmelee.DoPrecast(fastCastValue + 0.02)
+        cheatDelay = gcmelee.DoPrecast(fastCastValue + 0.02)
         gFunc.EquipSet('warlocks_mantle')
     else
-        gcmelee.DoPrecast(fastCastValue)
+        cheatDelay = gcmelee.DoPrecast(fastCastValue)
+    end
+
+    local function delayCheat()
+        if (target.Name == me) then
+            if (action.Name == 'Cure III') then
+                gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
+                gFunc.ForceEquipSet(sets.Cheat_C3HPUp)
+            end
+        end
+    end
+
+    if (cheatDelay <= 0) then
+        delayCheat()
+    else
+        delayCheat:once(cheatDelay)
     end
 end
 
@@ -479,7 +501,10 @@ profile.HandleMidcast = function()
         gFunc.EquipSet('koga_tekko_plus_one') -- You can comment this out if you have Dusk Gloves +1 and would prefer +22 HP
     end
 
+    local target = gData.GetActionTarget()
     local action = gData.GetAction()
+    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
+
     if (action.Skill == 'Ninjutsu') then
         if (NinDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.NinDebuff)
@@ -508,6 +533,12 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Enhancing)
     elseif (action.Skill == 'Healing Magic') then
         gFunc.EquipSet(sets.Cure)
+
+        if (target.Name == me) then
+            if (action.Name == 'Cure III') then
+                gFunc.EquipSet(sets.Cheat_C3HPUp)
+            end
+        end
     elseif (action.Skill == 'Divine Magic') then
         gFunc.EquipSet(sets.Hate)
         gFunc.EquipSet(sets.Haste)

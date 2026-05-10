@@ -675,6 +675,14 @@ profile.HandleMidcast = function()
 
     if (action.Skill == 'Healing Magic') then
         gFunc.EquipSet(sets.Cure)
+
+        if (target.Name == me) then
+            if (action.Name == 'Cure III') then
+                gFunc.EquipSet(sets.Cheat_C3HPUp)
+            elseif (action.Name == 'Cure IV') then
+                gFunc.EquipSet(sets.Cheat_C4HPUp)
+            end
+        end
     elseif (action.Skill == 'Divine Magic') then
         if (action.Name == 'Flash') then
             gFunc.EquipSet(sets.Hate)
@@ -690,14 +698,6 @@ profile.HandleMidcast = function()
         end
     elseif (action.Skill == 'Enhancing Magic') then
         gFunc.EquipSet(sets.Enhancing)
-    end
-
-    if (target.Name == me) then
-        if (action.Name == 'Cure III') then
-            gFunc.EquipSet(sets.Cheat_C3HPUp)
-        elseif (action.Name == 'Cure IV') then
-            gFunc.EquipSet(sets.Cheat_C4HPUp)
-        end
     end
 end
 

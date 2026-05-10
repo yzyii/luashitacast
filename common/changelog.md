@@ -570,3 +570,4 @@
 - SAM - Adds missing WS sets. Adds 2H WS set handling.
 - Mages - Fix DTNight to compose over DT
 - Melee - Fix interim sets to respect weapon loadouts
+- NIN - Add Cure 3 cheat sets
