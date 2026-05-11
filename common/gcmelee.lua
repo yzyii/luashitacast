@@ -333,7 +333,7 @@ function gcmelee.SetupInterimEquipSet(sets, isRanged)
     if (gcdisplay.IdleSet == 'Override') then interimSet = sets.Override end
 
     local wlString = 'Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]
-    interimSet = gFunc.Combine(interimSet, wlString)
+    interimSet = gFunc.Combine(interimSet, sets[wlString])
 
     if (isRanged) then
         local ignoreRA = {
