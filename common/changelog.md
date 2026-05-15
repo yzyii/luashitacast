@@ -571,3 +571,4 @@
 - Mages - Fix DTNight to compose over DT
 - Melee - Fix interim sets to respect weapon loadouts
 - NIN - Add Cure 3 cheat sets
+- THF - Adds exclusion to Fight for auto-TH when /BST

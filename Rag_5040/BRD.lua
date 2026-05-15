@@ -235,8 +235,7 @@ local sets = {
         Range = 'Ebony Harp +2',
     },
     Sing_Mazurka = {
-        Range = 'Ebony Harp +2',
-        -- Range = 'Harlequin\'s Horn',
+        Range = 'Harlequin\'s Horn',
     },
     Sing_Minuet = {
         Range = 'Cornette +2',

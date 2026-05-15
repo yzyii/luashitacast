@@ -18,8 +18,8 @@ local sets = {
     Idle = {
         Head = { Name = 'Rog. Bonnet +1', Priority = 20 },
         Neck = 'Jeweled Collar +1',
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Novia Earring',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Musical Earring',
         Body = { Name = 'Scp. Harness +1', Priority = 20 },
         Hands = { Name = 'War Gloves +1', Priority = 20 },
         Ring1 = 'Shadow Ring',
@@ -33,8 +33,8 @@ local sets = {
         Main = 'Terra\'s Staff',
         Head = { Name = 'Rog. Bonnet +1', Priority = 20 },
         Neck = 'Jeweled Collar +1',
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Novia Earring',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Musical Earring',
         Body = { Name = 'Scp. Harness +1', Priority = 20 },
         Hands = { Name = 'War Gloves +1', Priority = 20 },
         Ring1 = 'Shadow Ring',
@@ -94,8 +94,8 @@ local sets = {
     Evasion = {
         Head = 'Optical Hat',
         Neck = 'Evasion Torque',
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Novia Earring',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Musical Earring',
         Body = { Name = 'Scp. Harness +1', Priority = 20 },
         Hands = { Name = 'War Gloves +1', Priority = 20 },
         Ring1 = 'Breeze Ring',
@@ -119,8 +119,8 @@ local sets = {
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Head = 'Optical Hat',
         Neck = 'Evasion Torque',
-        Ear1 = 'Musical Earring',
-        Ear2 = 'Novia Earring',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Musical Earring',
         Body = { Name = 'Scp. Harness +1', Priority = 20 },
         Hands = { Name = 'War Gloves +1', Priority = 20 },
         Ring1 = 'Breeze Ring',
@@ -132,7 +132,7 @@ local sets = {
     },
     Haste = {
         Head = { Name = 'Homam Zucchetto', Priority = 30 },
-        Ear1 = { Name = 'Loquac. Earring', Priority = 10 },
+        Ear2 = { Name = 'Loquac. Earring', Priority = 10 },
         Body = 'Rapparee Harness',
         Hands = { Name = 'Dusk Gloves +1', Priority = 20 },
         Waist = 'Sonic Belt',
@@ -282,6 +282,7 @@ local sets = {
         Feet = 'Drn. Leggings +1',
     },
     WS_TA_SharkBite = {
+        Neck = 'Hope Torque',
         Ear2 = 'Drone Earring',
         Hands = { Name = 'Rogue\'s Armlets +1', Priority = 20 },
         Ring1 = 'Breeze Ring',
@@ -741,9 +742,9 @@ profile.WatchTreasureHunter = function()
             local type = {
                 [1] = true, -- Attack
                 [2] = true, -- Ranged Attack
-                [3] = true, -- Ability
-                [4] = true,
-                [6] = true -- Also ability? (Provoke)
+                [3] = true, -- WS
+                [4] = true, -- Spell
+                [6] = true -- JA
             };
             local packet = actionpacket:parse(e);
             if (packet.UserId == playerEntity.ServerId) then
@@ -752,14 +753,16 @@ profile.WatchTreasureHunter = function()
                         [0] = true, -- Spell Hit / ???
                         [8] = true, -- Attack Hit/Miss
                         [9] = true, -- Legacy
-                        [16] = true, -- Range Attack Hit / Provoke ?
+                        [16] = true, -- Range Attack Hit / JA
                         [17] = true, -- Range Attack Miss
                     }
                     for _, target in ipairs(packet.Targets) do
                         for i = 1, #target.Actions do
                             local action = target.Actions[1]
-                            if bit.band(target.Id, 0xFF000000) ~= 0 then -- isMob, also triggers on NPC but it's benign
-                                if (packet.Type == 3 or reaction[action.Reaction]) and target.Id then
+                            if bit.band(target.Id, 0xFF000000) ~= 0 then -- isMob, also triggers on NPC but it's 
+                                if (packet.Type == 6 and packet.Id == 69) then
+                                    -- Skip Fight when /BST. Screw /SMN.
+                                elseif (packet.Type == 3 or reaction[action.Reaction]) and target.Id then
                                     taggedMobs[target.Id] = true;
                                 end
                             end
