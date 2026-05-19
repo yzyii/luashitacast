@@ -438,24 +438,20 @@ local sets = {
     Cheat_C3HPUp = {}, -- Defaults to Hate
     Flash = {}, -- Defaults to Haste
 
-    LockSet1 = {},
-    LockSet2 = {},
-    LockSet3 = {},
-
     TP_LowAcc = {},
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {},
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 
     WS = {},
     WS_HighAcc = {},
 
     WS_BladeJin = {},
     WS_BladeKu = {},
-
-    Weapon_Loadout_1 = {},
-    Weapon_Loadout_2 = {},
-    Weapon_Loadout_3 = {},
 
     ShinobiRingHPDown = { -- Set to force HP to or below shinobiRingMaxHP
         Ammo = { Name = 'Tiphia Sting', Priority = -5 },
@@ -475,6 +471,10 @@ local sets = {
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {},
+
+    LockSet1 = {},
+    LockSet2 = {},
+    LockSet3 = {},
 
     VileElixir = {},
 }

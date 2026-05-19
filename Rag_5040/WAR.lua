@@ -102,20 +102,6 @@ local sets = {
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
     },
 
-    Weapon_Loadout_1 = {
-        Main = 'Martial Bhuj',
-        Ammo = 'Bomb Core'
-    },
-    Weapon_Loadout_2 = {
-        Main = 'Byakko\'s Axe',
-        Ammo = 'Bomb Core'
-    },
-    Weapon_Loadout_3 = {
-        Main = 'Martial Axe',
-        Sub = 'Maneater',
-        Ammo = 'Bomb Core'
-    },
-
     TP_LowAcc = {
         Head = 'Panther Mask +1',
         Neck = 'Fortitude Torque',
@@ -153,6 +139,20 @@ local sets = {
         Ear2 = 'Attila\'s Earring',
     },
 
+    Weapon_Loadout_1 = {
+        Main = 'Martial Bhuj',
+        Ammo = 'Bomb Core'
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Byakko\'s Axe',
+        Ammo = 'Bomb Core'
+    },
+    Weapon_Loadout_3 = {
+        Main = 'Martial Axe',
+        Sub = 'Maneater',
+        Ammo = 'Bomb Core'
+    },
+
     WS = {
         Head = { Name = 'Hecatomb Cap +1', Priority = 20 },
         Neck = 'Fortitude Torque',
@@ -187,6 +187,9 @@ local sets = {
     },
     WS_FullBreak = {
         Neck = 'Snow Gorget',
+    },
+    WS_MetatronTorment = {
+        Neck = 'Thunder Gorget',
     },
     WS_Rampage = {
         Neck = 'Temp. Torque',
@@ -300,6 +303,8 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_ArmorBreak)
     elseif (action.Name == 'Full Break') then
         gFunc.EquipSet(sets.WS_FullBreak)
+    elseif (action.Name == 'Metatron Torment') then
+        gFunc.EquipSet(sets.WS_MetatronTorment)
     elseif (action.Name == 'Rampage') then
         gFunc.EquipSet(sets.WS_Rampage)
     elseif (action.Name == 'Decimation') then

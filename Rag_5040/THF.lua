@@ -140,19 +140,6 @@ local sets = {
         Feet = { Name = 'Homam Gambieras', Priority = 30 },
     },
 
-    Weapon_Loadout_1 = {
-        Main = 'Blau Dolch',
-        Sub = 'X\'s Knife',
-    },
-    Weapon_Loadout_2 = {
-        Main = 'Blau Dolch',
-        Sub = 'Sirocco Kukri',
-    },
-    Weapon_Loadout_3 = {
-        Main = 'Blau Dolch',
-        Sub = 'Viking Shield',
-    },
-
     TP_LowAcc = {
         Head = { Name = 'Homam Zucchetto', Priority = 30 },
         Neck = 'Love Torque',
@@ -179,6 +166,19 @@ local sets = {
     },
     TP_NIN = {
         Ear2 = 'Stealth Earring',
+    },
+
+    Weapon_Loadout_1 = {
+        Main = 'Blau Dolch',
+        Sub = 'X\'s Knife',
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Blau Dolch',
+        Sub = 'Sirocco Kukri',
+    },
+    Weapon_Loadout_3 = {
+        Main = 'Blau Dolch',
+        Sub = 'Viking Shield',
     },
 
     -- Note that these sets are for naked SA/TA/SATAs without WS

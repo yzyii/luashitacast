@@ -519,26 +519,6 @@ local sets = {
     NukeACC = {},
     NukeDOT = {},
 
-    LockSet1 = { -- Devotion
-        Main = { Name = 'Rsv.Cpt. Mace', Priority = 20 },
-        Sub = { Name = 'Ptr.Prt. Shield', Priority = 15 },
-        Ammo = { Name = 'Happy Egg', Priority = 20 },
-        Head = 'Hydra Beret',
-        Neck = { Name = 'Shield Pendant', Priority = 15 },
-        Ear1 = { Name = 'Cassie Earring', Priority = 15 },
-        Ear2 = { Name = 'Pigeon Earring +1', Priority = 20 },
-        Body = { Name = 'Justaucorps +1', Priority = 20 },
-        Hands = { Name = 'Feronia\'s Bangles', Priority = 20 },
-        Ring1 = { Name = 'Bomb Queen Ring', Priority = 20 },
-        Ring2 = { Name = 'Bloodbead Ring', Priority = 18 },
-        Back = { Name = 'Gigant Mantle', Priority = 20 },
-        Waist = { Name = 'Powerful Rope', Priority = 30 },
-        Legs = { Name = 'Bls. Trousers +1', Priority = 10 },
-        Feet = { Name = 'Root Sabots', Priority = 20 },
-    },
-    LockSet2 = {},
-    LockSet3 = {},
-
     TP = {
         Head = 'Nashira Turban',
         Neck = 'Prudence Torque',
@@ -566,6 +546,18 @@ local sets = {
         Ear1 = 'Stealth Earring',
     },
 
+    Weapon_Loadout_1 = {
+        Main = 'Purgatory Mace',
+        Sub = 'Octave Club',
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Purgatory Mace',
+        Sub = 'Viking Shield',
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
+    },
+    Weapon_Loadout_3 = {},
+
     WS = {
         Head = 'Maat\'s Cap',
         Neck = 'Prudence Torque',
@@ -592,22 +584,30 @@ local sets = {
         Ring2 = 'Triumph Ring',
     },
 
-    Weapon_Loadout_1 = {
-        Main = 'Purgatory Mace',
-        Sub = 'Octave Club',
-        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
-    },
-    Weapon_Loadout_2 = {
-        Main = 'Purgatory Mace',
-        Sub = 'Viking Shield',
-        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
-    },
-    Weapon_Loadout_3 = {},
-
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {
         Ammo = 'Pebble',
     },
+
+    LockSet1 = { -- Devotion
+        Main = { Name = 'Rsv.Cpt. Mace', Priority = 20 },
+        Sub = { Name = 'Ptr.Prt. Shield', Priority = 15 },
+        Ammo = { Name = 'Happy Egg', Priority = 20 },
+        Head = 'Hydra Beret',
+        Neck = { Name = 'Shield Pendant', Priority = 15 },
+        Ear1 = { Name = 'Cassie Earring', Priority = 15 },
+        Ear2 = { Name = 'Pigeon Earring +1', Priority = 20 },
+        Body = { Name = 'Justaucorps +1', Priority = 20 },
+        Hands = { Name = 'Feronia\'s Bangles', Priority = 20 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 20 },
+        Ring2 = { Name = 'Bloodbead Ring', Priority = 18 },
+        Back = { Name = 'Gigant Mantle', Priority = 20 },
+        Waist = { Name = 'Powerful Rope', Priority = 30 },
+        Legs = { Name = 'Bls. Trousers +1', Priority = 10 },
+        Feet = { Name = 'Root Sabots', Priority = 20 },
+    },
+    LockSet2 = {},
+    LockSet3 = {},
 
     VileElixir = {
         Ammo = { Name = 'Hedgehog Bomb', Priority = 10 },

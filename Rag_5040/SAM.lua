@@ -104,20 +104,6 @@ local sets = {
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
     },
 
-    Weapon_Loadout_1 = {
-        Main = 'Onimaru',
-        Range = 'Ifrit\'s Bow',
-        Ammo  = 'Kabura Arrow',
-    },
-    Weapon_Loadout_2 = {
-        Main = 'Leviathan\'s Couse',
-        Range = 'displaced',
-        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
-        Neck = 'Love Torque',
-        Hands = 'Hachiman Kote +1',
-    },
-    Weapon_Loadout_3 = {},
-
     TP_LowAcc = {
         Head = 'Ace\'s Helm',
         Neck = 'Justice Torque',
@@ -142,14 +128,26 @@ local sets = {
         Waist = 'Life Belt',
         Feet = { Name = 'Shr. Sune-Ate +1', Priority = -5 },
     },
-
-    SJ_DRG = {
+    TP_DRG = {
         Head = 'Maat\'s Cap',
         Ear2 = 'Wyvern Earring',
     },
-    SJ_THF = {
+    TP_THF = {
         Ear2 = 'Pilferer\'s Earring',
     },
+
+    Weapon_Loadout_1 = {
+        Main = 'Onimaru',
+        Range = 'Ifrit\'s Bow',
+        Ammo  = 'Kabura Arrow',
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Leviathan\'s Couse',
+        Range = 'displaced',
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
+        Neck = 'Love Torque',
+    },
+    Weapon_Loadout_3 = {},
 
     WS = {
         Head = 'Maat\'s Cap',
@@ -448,9 +446,9 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer()
     if (player.Status == 'Engaged') then
         if (player.SubJob == 'DRG') then
-            gFunc.EquipSet(sets.SJ_DRG)
+            gFunc.EquipSet(sets.TP_DRG)
         elseif (player.SubJob == 'THF') then
-            gFunc.EquipSet(sets.SJ_THF)
+            gFunc.EquipSet(sets.TP_THF)
         end
     end
 
