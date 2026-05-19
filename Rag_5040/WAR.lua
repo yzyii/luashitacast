@@ -5,16 +5,64 @@ local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local unicorn_leggings = {
+    Feet = { Name = 'Ucn. Leggings +1', Priority = 20 },
+}
+
 local sets = {
-    Idle = {},
+    Idle = {
+        Head = 'Darksteel Cap +1',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Dst. Harness +1',
+        Hands = 'Heavy Gauntlets',
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Merman\'s Ring',
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Powerful Rope', Priority = 30 },
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Dst. Leggings +1',
+    },
     IdleALT = {},
-    Resting = {},
+    Resting = {
+        Body = 'Nomad\'s Tunica',
+        Neck = { Name = 'Paisley Scarf', Priority = 20 },
+        Ear1 = 'Sanative Earring',
+        Hands = 'Nomad\'s Gloves',
+        Legs = 'Nomad\'s Hose',
+        Feet = 'Nomad\'s Boots',
+    },
     Town = {},
     Movement = {},
-    Movement_TP = {},
+    Movement_TP = {
+        Hands = 'Armada Mufflers',
+        Feet = 'Armada Sollerets',
+    },
 
-    DT = {},
-    MDT = {},
+    DT = {
+        Head = 'Darksteel Cap +1',
+        Body = 'Dst. Harness +1',
+        Hands = 'Heavy Gauntlets',
+        Ring2 = 'Jelly Ring',
+        Back = 'Shadow Mantle',
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Dst. Leggings +1',
+    },
+    MDT = {
+        Head = 'Coral Visor +1',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Cor. Scale Mail +1',
+        Hands = 'Coral Fng. Gnt. +1',
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Merman\'s Ring',
+        Back = 'Resentment Cape',
+        Legs = 'Coral Cuisses +1',
+        Feet = 'Coral Greaves +1',
+    },
     FireRes = {},
     IceRes = {},
     LightningRes = {},
@@ -29,43 +77,169 @@ local sets = {
         Feet = 'Field Boots'
     },
 
-    Precast = {},
+    Precast = {
+        Ear2 = { Name = 'Loquac. Earring', Priority = 10 },
+    },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
+        Head = 'Darksteel Cap +1',
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = { Name = 'Magnetic Earring', Priority = 10 }, -- 8
+        Body = 'Dst. Harness +1',
+        Hands = 'Heavy Gauntlets',
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Merman\'s Ring',
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Powerful Rope', Priority = 30 },
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Mountain Gaiters', -- 5
     },
     Haste = {
+        Head = 'Panther Mask +1',
+        Hands = { Name = 'Dusk Gloves +1', Priority = 20 },
+        Waist = 'Sonic Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
     },
+
+    Weapon_Loadout_1 = {
+        Main = 'Martial Bhuj',
+        Ammo = 'Bomb Core'
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Byakko\'s Axe',
+        Ammo = 'Bomb Core'
+    },
+    Weapon_Loadout_3 = {
+        Main = 'Martial Axe',
+        Sub = 'Maneater',
+        Ammo = 'Bomb Core'
+    },
+
+    TP_LowAcc = {
+        Head = 'Panther Mask +1',
+        Neck = 'Fortitude Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Assault Earring',
+        Body = 'Armada Hauberk',
+        Hands = { Name = 'Dusk Gloves +1', Priority = 20 },
+        Ring1 = 'Rajas Ring',
+        Ring2 = 'Blitz Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Sonic Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
+    },
+    TP_Aftermath = {},
+    TP_Mjollnir_Haste = {
+        Head = 'Maat\'s Cap',
+    },
+    TP_HighAcc = {
+        Head = 'Optical Hat',
+        Neck = 'Peacock Amulet',
+        Hands = 'Armada Mufflers',
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Back = 'Settler\'s Cape',
+        Waist = 'Life Belt',
+        Feet = 'Armada Sollerets',
+    },
+    TP_Aggressor = {
+        Ear2 = 'Merman\'s Earring',
+    },
+    TP_NIN = { -- Equips iff using 1h weapon in Sub
+        Ear2 = 'Stealth Earring',
+    },
+    TP_SAM = { -- Equips iff not using Raging Rush
+        Ear2 = 'Attila\'s Earring',
+    },
+
+    WS = {
+        Head = { Name = 'Hecatomb Cap +1', Priority = 20 },
+        Neck = 'Fortitude Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Triumph Earring',
+        Body = { Name = 'Kirin\'s Osode', Priority = 10 }
+        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 20 },
+        Ring1 = 'Rajas Ring',
+        Ring2 = 'Triumph Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'War. Cuisses +1',
+        Feet = { Name = 'Hct. Leggings +1', Priority = 20 },
+    },
+    WS_HighAcc = {},
+
+    WS_RagingRush = {
+        Neck = 'Snow Gorget',
+        Ear2 = 'Assault Earring',
+        Body = 'Armada Hauberk',
+        Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
+        Legs = 'Byakko\'s Haidate',
+    },
+    WS_SteelCyclone = {
+        Neck = 'Snow Gorget',
+    },
+    WS_ShieldBreak = {
+        Neck = 'Snow Gorget',
+    },
+    WS_ArmorBreak = {
+        Neck = 'Thunder Gorget',
+    },
+    WS_FullBreak = {
+        Neck = 'Snow Gorget',
+    },
+    WS_Rampage = {
+        Neck = 'Temp. Torque',
+        Ear2 = 'Assault Earring',
+        Body = 'Armada Hauberk',
+        Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
+        Legs = 'Byakko\'s Haidate',
+    },
+    WS_Decimation = {
+        Neck = 'Temp. Torque',
+        Ear2 = 'Assault Earring',
+        Body = 'Armada Hauberk',
+        Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
+        Waist = 'Warrior\'s Stone',
+    },
+
+    WS_2H = {
+        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 20 },
+        Legs = 'War. Cuisses +1',
+    },
+    WS_2H_RagingRush = {
+        Waist = 'Warrior\'s Stone',
+    }
+    WS_2H_Rampage = {
+        Waist = 'Warrior\'s Stone',
+    }
+
+    Warcry = {
+        Head = 'Warrior\'s Mask ',
+    },
+    Provoke = {},
+
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
+    Ranged = {},
 
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
 
-    TP_LowAcc = {},
-    TP_Aftermath = {},
-    TP_Mjollnir_Haste = {},
-    TP_HighAcc = {},
-    TP_Aggressor = {},
-
-    WS = {},
-    WS_HighAcc = {},
-
-    Warcry = {},
-    Provoke = {},
-
-    TP_NIN = { -- Equips iff using 1h weapon in Sub
-        Ear2 = 'Stealth Earring',
+    VileElixir = {
+        Head = { Name = 'Genbu\'s Kabuto', Priority = 20 },
+        Neck = { Name = 'Shield Pendant', Priority = 15 },
+        Ear1 = { Name = 'Pigeon Earring +1', Priority = 20 },
+        Ear2 = { Name = 'Pigeon Earring +1', Priority = 20 },
+        Body = { Name = 'Kaiser Cuirass', Priority = 20 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 20 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 20 },
+        Ring2 = { Name = 'Bloodbead Ring' Priority = 20 },
+        Back = { Name = 'Gigant Mantle', Priority = 20 },
+        Waist = { Name = 'Powerful Rope', Priority = 20 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = 20 },
+        Feet = { Name = 'Ucn. Leggings +1', Priority = 20 },
     },
-    TP_SAM = {
-        Ear2 = 'Attila\'s Earring',
-    },
-
-    Weapon_Loadout_1 = {},
-    Weapon_Loadout_2 = {},
-    Weapon_Loadout_3 = {},
-
-    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
-    Ranged = {},
-
-    VileElixir = {},
 }
 
 profile.SetMacroBook = function()
@@ -81,7 +255,10 @@ Everything below can be ignored.
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
+sets.unicorn_leggings = unicorn_leggings
 profile.Sets = gcmelee.AppendSets(sets)
+
+local usedRagingRush = false
 
 profile.HandleAbility = function()
     gcmelee.DoAbility()
@@ -108,6 +285,36 @@ end
 
 profile.HandleWeaponskill = function()
     gcmelee.DoWS()
+
+    usedRagingRush = false
+
+    local action = gData.GetAction()
+    if (action.Name == 'Raging Rush') then
+        gFunc.EquipSet(sets.WS_RagingRush)
+        usedRagingRush = true
+    elseif (action.Name == 'Steel Cyclone') then
+        gFunc.EquipSet(sets.WS_SteelCyclone)
+    elseif (action.Name == 'Shield Break') then
+        gFunc.EquipSet(sets.WS_ShieldBreak)
+    elseif (action.Name == 'Armor Break') then
+        gFunc.EquipSet(sets.WS_ArmorBreak)
+    elseif (action.Name == 'Full Break') then
+        gFunc.EquipSet(sets.WS_FullBreak)
+    elseif (action.Name == 'Rampage') then
+        gFunc.EquipSet(sets.WS_Rampage)
+    elseif (action.Name == 'Decimation') then
+        gFunc.EquipSet(sets.WS_Decimation)
+    end
+
+    local mightyStrikes = gData.GetBuffCount('Mighty Strikes')
+    if (mightyStrikes > 0) then
+        gFunc.EquipSet(sets.WS_2H)
+        if (action.Name == 'Raging Rush') then
+            gFunc.EquipSet(sets.WS_2H_RagingRush)
+        elseif (action.Name == 'Rampage') then
+            gFunc.EquipSet(sets.WS_2H_Rampage)
+        end
+    end
 end
 
 profile.OnLoad = function()
@@ -130,21 +337,26 @@ end
 profile.HandleDefault = function()
     gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
-    local aggressor = gData.GetBuffCount('Aggressor')
-    if (aggressor == 1 and gcdisplay.IdleSet == 'LowAcc') then
-        gFunc.EquipSet(sets.TP_Aggressor)
-    end
-
     local player = gData.GetPlayer()
-    if (player.SubJob == 'SAM' and player.Status == 'Engaged') then
-        gFunc.EquipSet(sets.TP_SAM)
-    end
-    if (player.SubJob == 'NIN' and player.Status == 'Engaged') then
-        local sub = gData.GetEquipment().Sub
-        if (sub ~= nil) then
-            if (sub.Resource.Slots == 3) then -- if this is a 1h weapon
-                gFunc.EquipSet('TP_NIN')
+    if (player.Status == 'Engaged') then
+        local aggressor = gData.GetBuffCount('Aggressor')
+        if (aggressor == 1 and gcdisplay.IdleSet == 'LowAcc') then
+            gFunc.EquipSet(sets.TP_Aggressor)
+        end
+
+        if (player.SubJob == 'SAM' and not usedRagingRush) then
+            gFunc.EquipSet(sets.TP_SAM)
+        elseif (player.SubJob == 'NIN') then
+            local sub = gData.GetEquipment().Sub
+            if (sub ~= nil) then
+                if (sub.Resource.Slots == 3) then -- if this is a 1h weapon
+                    gFunc.EquipSet(sets.TP_NIN)
+                end
             end
+        end
+
+        if (player.HPP > 75) then
+            gFunc.EquipSet(sets.unicorn_leggings)
         end
     end
 
@@ -158,6 +370,11 @@ end
 
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
+
+    local player = gData.GetPlayer()
+    if (player.HPP > 75) then
+        gFunc.EquipSet(sets.unicorn_leggings)
+    end
 end
 
 return profile

@@ -13,12 +13,12 @@ local using_both_amano_and_yoichi_special_arrow = {
 
 local sets = {
     Idle = {
-        Head = 'Dream Ribbon',
+        Head = 'Arh. Jinpachi +1',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Arhat\'s Gi +1',
-        Hands = 'Gavial Fng.Gnt. +1',
+        Hands = 'Dst. Mittens +1',
         Ring1 = 'Shadow Ring',
         Ring2 = 'Merman\'s Ring',
         Back = 'Shadow Mantle',
@@ -104,9 +104,19 @@ local sets = {
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
     },
 
-    LockSet1 = {},
-    LockSet2 = {},
-    LockSet3 = {},
+    Weapon_Loadout_1 = {
+        Main = 'Onimaru',
+        Range = 'Ifrit\'s Bow',
+        Ammo  = 'Kabura Arrow',
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Leviathan\'s Couse',
+        Range = 'displaced',
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
+        Neck = 'Love Torque',
+        Hands = 'Hachiman Kote +1',
+    },
+    Weapon_Loadout_3 = {},
 
     TP_LowAcc = {
         Head = 'Ace\'s Helm',
@@ -124,7 +134,14 @@ local sets = {
     },
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
-    TP_HighAcc = {},
+    TP_HighAcc = {
+        Head = { Name = 'Sao. Kabuto +1', Priority = 20 },
+        Neck = 'Peacock Amulet',
+        Hands = 'Noritsune Kote',
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Waist = 'Life Belt',
+        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -5 },
+    },
 
     SJ_DRG = {
         Head = 'Maat\'s Cap',
@@ -149,6 +166,7 @@ local sets = {
         Feet = 'Hmn. Sune-Ate +1',
     },
     WS_HighAcc = {},
+
     WS_Yukikaze = {
         Neck = 'Snow Gorget',
         Body = 'Hmn. Domaru +1',
@@ -213,20 +231,6 @@ local sets = {
         Hands = { Name = 'Seiryu\'s Kote', Priority = 20 },
     },
 
-    Weapon_Loadout_1 = {
-        Main = 'Onimaru',
-        Range = 'Ifrit\'s Bow',
-        Ammo  = 'Kabura Arrow',
-    },
-    Weapon_Loadout_2 = {
-        Main = 'Leviathan\'s Couse',
-        Range = 'displaced',
-        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
-        Neck = 'Love Torque',
-        Hands = 'Hachiman Kote +1',
-    },
-    Weapon_Loadout_3 = {},
-
     Meditate = {
         Head = { Name = 'Myochin Kabuto', Priority = 20 },
         Hands = { Name = 'Sao. Kote +1', Priority = 20 },
@@ -255,6 +259,10 @@ local sets = {
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {},
+
+    LockSet1 = {},
+    LockSet2 = {},
+    LockSet3 = {},
 
     VileElixir = {
         Head = { Name = 'Genbu\'s Kabuto', Priority = 20 },

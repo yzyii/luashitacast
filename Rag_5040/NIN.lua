@@ -70,7 +70,7 @@ local koga_tekko_plus_one = {
     Hands = 'Kog. Tekko +1',
 }
 local uggalepih_pendant = {
-    Neck = 'Uggalepih Pendant',
+    Neck = { Name = 'Uggalepih Pendant', Priority = 10 },
 }
 local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
     Back = 'Warlock\'s Mantle',
@@ -79,10 +79,10 @@ local fenrirs_stone = { -- Used for Evasion at night
     Ammo = 'Fenrir\'s Stone',
 }
 local koga_hakama = {
-    -- Legs = 'Koga Hakama',
+    -- Legs = { Name = 'Koga Hakama', Priority = 20 },
 }
 local koga_hakama_plus_one = {
-    Legs = 'Kog. Hakama +1',
+    Legs = { Name = 'Kog. Hakama +1', Priority = 20 },
 }
 local koga_kyahan = {
     -- Feet = 'Koga Kyahan',
@@ -91,16 +91,16 @@ local koga_kyahan_plus_one = {
     Feet = 'Kog. Kyahan +1',
 }
 local ninja_kyahan = {
-    -- Feet = 'Ninja Kyahan',
+    -- Feet = { Name = 'Ninja Kyahan', Priority = 20 },
 }
 local ninja_kyahan_plus_one = {
-    Feet = 'Nin. Kyahan +1',
+    Feet = { Name = 'Nin. Kyahan +1', Priority = 20 },
 }
 local blue_cotehardie = {
-    -- Body = 'Blue Cotehardie',
+    -- Body = { Name = 'Blue Cotehardie', Priority = 5 },
 }
 local blue_cotehardie_plus_one = {
-    Body = 'Blue Cotehard. +1',
+    Body = { Name = 'Blue Cotehard. +1', Priority = 5 },
 }
 local resentment_cape = {
     Back = 'Resentment Cape',
@@ -187,34 +187,34 @@ local sets = {
     },
 
     DT = {
-        Main = 'Terra\'s Staff', -- 20
+        Main = 'Terra\'s Staff',
         Sub = 'displaced',
-        Head = 'Arhat\'s Jinpachi +1', -- 6
-        Body = 'Arhat\'s Gi +1', -- 9
-        Hands = 'Dst. Mittens +1', -- 2
-        Ring1 = 'Jelly Ring',  -- 5
-        Ring2 = { Name = 'Sattva Ring', Priority = 20 }, -- 5
+        Head = 'Arhat\'s Jinpachi +1',
+        Body = 'Arhat\'s Gi +1',
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Jelly Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 },
         Back = 'Shadow Mantle',
-        Legs = 'Dst. Subligar +1', -- 3
+        Legs = 'Dst. Subligar +1',
         Feet = { Name = 'Nin. Kyahan +1', Priority = 20 },
     },
     MDT = {
-        Main = 'Terra\'s Staff', -- 20
+        Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = 'displaced',
         Ammo = 'Phtm. Tathlum',
-        Head = 'Arhat\'s Jinpachi +1', -- 6
+        Head = 'Arhat\'s Jinpachi +1',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Arhat\'s Gi +1', -- 9
-        Hands = 'Dst. Mittens +1', -- 2
+        Body = 'Arhat\'s Gi +1',
+        Hands = 'Dst. Mittens +1',
         Ring1 = 'Shadow Ring',
-        Ring2 = { Name = 'Sattva Ring', Priority = 20 }, -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 },
         Back = 'Gramary Cape',
         Waist = 'Ryl.Kgt. Belt',
-        Legs = 'Dst. Subligar +1', -- 3
-        Feet = 'Dst. Leggings +1', -- 2
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Dst. Leggings +1',
     },
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
@@ -394,6 +394,7 @@ local sets = {
     NinElemental = {},
     NinElemental_Accuracy = {},
     DrkDarkMagic = {},
+    DrkDarkMagic_DrainAspir = {},
 
     Enhancing = {
         Neck = 'Enhancing Torque',
@@ -420,7 +421,7 @@ local sets = {
     Cheat_C3HPDown = {
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
-        Ammo = { Name = 'Tiphia Sting', Priority = -5 }, -- 25
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
         Head = 'Arhat\'s Jinpachi +1',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Novia Earring',
@@ -428,11 +429,11 @@ local sets = {
         Body = 'Arhat\'s Gi +1',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Shadow Ring',
-        Ring2 = { Name = 'Serket Ring', Priority = 5 }, -- 50
+        Ring2 = { Name = 'Serket Ring', Priority = 5 },
         Back = 'Shadow Mantle',
-        Waist = { Name = 'Scouter\'s Rope', Priority = -5 }, -- 40
+        Waist = { Name = 'Scouter\'s Rope', Priority = -5 },
         Legs = 'Dst. Subligar +1',
-        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -5 }, -- 25
+        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -5 },
     },
     Cheat_C3HPUp = {}, -- Defaults to Hate
     Flash = {}, -- Defaults to Haste
@@ -457,19 +458,19 @@ local sets = {
     Weapon_Loadout_3 = {},
 
     ShinobiRingHPDown = { -- Set to force HP to or below shinobiRingMaxHP
-        Ammo = { Name = 'Tiphia Sting', Priority = -5 }, -- 25
-        Head = { Name = 'Shr.Znr.Kabuto', Priority = -5 }, -- 25
-        Neck = { Name = 'Star Necklace', Priority = 5 }, -- 15
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
+        Head = { Name = 'Shr.Znr.Kabuto', Priority = -5 },
+        Neck = { Name = 'Star Necklace', Priority = 5 },
         Ear1 = 'Novia Earring',
         Ear2 = 'Triton Earring',
-        Body = { Name = 'Flora Cotehardie', Priority = 5 }, -- 30
+        Body = { Name = 'Flora Cotehardie', Priority = 5 },
         Hands = 'Dst. Mittens +1',
-        Ring1 = { Name = 'Ether Ring', Priority = 5 }, -- 30
-        Ring2 = { Name = 'Serket Ring', Priority = 5 }, -- 50
+        Ring1 = { Name = 'Ether Ring', Priority = 5 },
+        Ring2 = { Name = 'Serket Ring', Priority = 5 },
         Back = 'Shadow Mantle',
-        Waist = { Name = 'Scouter\'s Rope', Priority = -5 }, -- 40
-        Legs = { Name = 'Shura Haidate', Priority = -5 }, -- 35
-        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -5 }, -- 25
+        Waist = { Name = 'Scouter\'s Rope', Priority = -5 },
+        Legs = { Name = 'Shura Haidate', Priority = -5 },
+        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -5 },
     },
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
@@ -530,7 +531,6 @@ local nextShinobiRingCheck = 0
 
 local NinDebuffs = T{ 'Kurayami: Ni', 'Hojo: Ni', 'Jubaku: Ichi', 'Dokumori: Ichi', 'Kurayami: Ichi', 'Hojo: Ichi' }
 local HateDebuffs = T{ 'Bind', 'Sleep', 'Poison', 'Blind' }
-local DrkDarkMagic = T{ 'Stun', 'Aspir', 'Drain', 'Absorb-AGI', 'Absorb-VIT' }
 local NinElemental = T{
     'Hyoton: Ni', 'Katon: Ni', 'Huton: Ni', 'Doton: Ni', 'Raiton: Ni', 'Suiton: Ni',
     'Hyoton: Ichi', 'Katon: Ichi', 'Huton: Ichi', 'Doton: Ichi', 'Raiton: Ichi', 'Suiton: Ichi',
@@ -815,9 +815,10 @@ profile.HandleMidcast = function()
         end
         EquipStaff(action)
     elseif (action.Skill == 'Dark Magic') then
-        if (DrkDarkMagic:contains(action.Name)) then
-            gFunc.EquipSet(sets.Hate)
-            gFunc.EquipSet(sets.DrkDarkMagic)
+        gFunc.EquipSet(sets.Hate)
+        gFunc.EquipSet(sets.DrkDarkMagic)
+        if (action.Name == 'Drain' or action.Name == 'Aspir') then
+            gFunc.EquipSet(sets.DrkDarkMagic_DrainAspir)
         end
         EquipStaffAndObi(action)
     elseif (action.Skill == 'Enhancing Magic') then

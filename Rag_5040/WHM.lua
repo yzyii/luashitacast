@@ -264,17 +264,17 @@ local sets = {
 
     Hate = { -- Switches to this set when casting Sleep, Blind, Dispel, Bind, Flash and Cures on other players if /hate is toggled on
         Ammo = { Name = 'Fortune Egg', Priority = 10 },
-        Head = { Name = 'Rival Ribbon', Priority = 10 }, -- 2
-        Neck = 'Harmonia\'s Torque', -- 3
-        Ear1 = 'Eris\' Earring +1', -- 3
-        Ear2 = 'Eris\' Earring +1', -- 3
+        Head = { Name = 'Rival Ribbon', Priority = 10 },
+        Neck = 'Harmonia\'s Torque',
+        Ear1 = 'Eris\' Earring +1',
+        Ear2 = 'Eris\' Earring +1',
         Hands = 'Merman\'s Bangles',
         Body = 'Nashira Manteel',
-        Ring1 = { Name = 'Sattva Ring', Priority = 20 }, -- 5
-        Ring2 = 'Mermaid Ring', -- 2
+        Ring1 = { Name = 'Sattva Ring', Priority = 20 },
+        Ring2 = 'Mermaid Ring',
         Legs = 'Nashira Seraweels',
         Feet = 'Nashira Crackows',
-        Back = 'Toreador\'s Cape', -- 4
+        Back = 'Toreador\'s Cape',
     },
     Cheat_C3HPDown = {
         Head = 'Nashira Turban',
@@ -286,7 +286,7 @@ local sets = {
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 20 },
         Back = 'Shadow Mantle',
-        Waist = 'Druid\'s Rope', -- 10
+        Waist = 'Druid\'s Rope',
         Legs = { Name = 'Bls. Trousers +1', Priority = 10 },
         Feet = { Name = 'Hlr. Duckbills +1', Priority = 10 },
     },
@@ -305,14 +305,14 @@ local sets = {
     },
     Cheat_HPUp = {
         Ammo = { Name = 'Happy Egg', Priority = 20 },
-        Head = { Name = 'Rival Ribbon', Priority = 10 }, -- 2
-        Neck = 'Harmonia\'s Torque', -- 3
-        Ear1 = 'Eris\' Earring +1', -- 3
-        Ear2 = 'Eris\' Earring +1', -- 3
+        Head = { Name = 'Rival Ribbon', Priority = 10 },
+        Neck = 'Harmonia\'s Torque',
+        Ear1 = 'Eris\' Earring +1',
+        Ear2 = 'Eris\' Earring +1',
         Body = { Name = 'Aristocrat\'s Coat', Priority = 10 },
         Hands = { Name = 'Feronia\'s Bangles', Priority = 20 },
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 20 },
-        Ring2 = { Name = 'Sattva Ring', Priority = 20 }, -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 },
         Back = { Name = 'Gigant Mantle', Priority = 20 },
         Waist = { Name = 'Powerful Rope', Priority = 30 },
         Legs = 'Nashira Seraweels',
@@ -540,18 +540,18 @@ local sets = {
     LockSet3 = {},
 
     TP = {
-        Head = 'Nashira Turban', -- 2
+        Head = 'Nashira Turban',
         Neck = 'Prudence Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Nashira Manteel', -- 3
-        Hands = { Name = 'Blessed Mitts +1', Priority = 10 }, -- 6
+        Body = 'Nashira Manteel',
+        Hands = { Name = 'Blessed Mitts +1', Priority = 10 },
         Ring1 = { Name = 'Toreador\'s Ring', Priority = 20 },
         Ring2 = { Name = 'Toreador\'s Ring', Priority = 20 },
         Back = { Name = 'Bellicose Mantle', Priority = -5 },
-        Waist = 'Swift Belt', -- 4
-        Legs = { Name = 'Bls. Trousers +1', Priority = 10 }, -- 4
-        Feet = { Name = 'Blessed Pumps +1', Priority = 10 }, -- 3
+        Waist = 'Swift Belt',
+        Legs = { Name = 'Bls. Trousers +1', Priority = 10 },
+        Feet = { Name = 'Blessed Pumps +1', Priority = 10 },
     },
     TP_Mjollnir_Haste = {
         Head = 'Optical Hat'

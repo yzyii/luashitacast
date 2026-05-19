@@ -140,6 +140,19 @@ local sets = {
         Feet = { Name = 'Homam Gambieras', Priority = 30 },
     },
 
+    Weapon_Loadout_1 = {
+        Main = 'Blau Dolch',
+        Sub = 'X\'s Knife',
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Blau Dolch',
+        Sub = 'Sirocco Kukri',
+    },
+    Weapon_Loadout_3 = {
+        Main = 'Blau Dolch',
+        Sub = 'Viking Shield',
+    },
+
     TP_LowAcc = {
         Head = { Name = 'Homam Zucchetto', Priority = 30 },
         Neck = 'Love Torque',
@@ -342,7 +355,7 @@ local sets = {
         Legs = 'Raven Hose',
         Feet = 'Dance Shoes +1',
     },
-    Steal = { -- 1225 + 55 + 326 -> 1280 -> 1204 / 1606
+    Steal = {
         Head = { Name = 'Rog. Bonnet +1', Priority = 20 },
         Neck = 'Rabbit Charm',
         Ear1 = { Name = 'Cassie Earring', Priority = 15 },
@@ -431,19 +444,6 @@ local sets = {
     },
     LockSet2 = {},
     LockSet3 = {},
-
-    Weapon_Loadout_1 = {
-        Main = 'Blau Dolch',
-        Sub = 'X\'s Knife',
-    },
-    Weapon_Loadout_2 = {
-        Main = 'Blau Dolch',
-        Sub = 'Sirocco Kukri',
-    },
-    Weapon_Loadout_3 = {
-        Main = 'Blau Dolch',
-        Sub = 'Viking Shield',
-    },
 
     VileElixir = {
         Head = { Name = 'Homam Zucchetto', Priority = 30 },
@@ -721,7 +721,7 @@ profile.NeedTH = function()
             targetId = AshitaCore:GetMemoryManager():GetEntity():GetServerId(targetIndex)
         end
 
-        if bit.band(targetId, 0xFF000000) ~= 0 then  --isMob
+        if bit.band(targetId, 0xFF000000) ~= 0 then  -- isMob
             return taggedMobs[targetId] == nil
         end
 

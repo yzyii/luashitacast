@@ -577,3 +577,7 @@
 - SAM - Rename Meditate and Warding Circle functionality
 - SAM - Add Jump sets
 - NIN - Tweaks some default base sets to use Hate. e.g. Cure
+- NIN - Add Drain and Aspir set
+- WAR - Adds WS sets
+- WAR - Adds rudimentary tracking for Raging Rush + Atilla's Earring when /SAM with Rajas
+- WAR - Adds Unicorn Legging handling
