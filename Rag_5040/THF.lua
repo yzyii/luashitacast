@@ -46,7 +46,7 @@ local sets = {
     },
     Resting = {
         Body = 'Nomad\'s Tunica',
-        Neck = 'Paisley Scarf',
+        Neck = { Name = 'Paisley Scarf', Priority = 20 },
         Ear1 = 'Sanative Earring',
         Hands = 'Nomad\'s Gloves',
         Legs = 'Nomad\'s Hose',
@@ -304,7 +304,7 @@ local sets = {
         Neck = 'Prudence Torque',
         Ear1 = 'Novio Earring',
         Ear2 = 'Moldavite Earring',
-        Body = 'Blue Cotehard. +1',
+        Body = { Name = 'Blue Cotehard. +1', Priority = 5 },
         Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',

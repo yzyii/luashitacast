@@ -1,13 +1,13 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear listed in Precast set
+local fastCastValue = 0.02 -- 0% from gear listed in Precast set
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
 -- Disabled on horizon_safe_mode
 local shinobiRingForced = true -- Default /sring value
-local shinobiRingMaxHP = 1000
+local shinobiRingMaxHP = 983
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local fire_staff = {
@@ -91,10 +91,10 @@ local koga_kyahan_plus_one = {
     Feet = 'Kog. Kyahan +1',
 }
 local ninja_kyahan = {
-    Feet = 'Ninja Kyahan',
+    -- Feet = 'Ninja Kyahan',
 }
 local ninja_kyahan_plus_one = {
-    -- Feet = 'Nin. Kyahan +1',
+    Feet = 'Nin. Kyahan +1',
 }
 local blue_cotehardie = {
     -- Body = 'Blue Cotehardie',
@@ -111,31 +111,234 @@ local wind_ring = {
     -- Ring2 = 'Wind Ring',
 }
 local bat_earrings = { -- Disabled on horizon_safe_mode
-    -- Ear1 = 'Bat Earring',
-    -- Ear2 = 'Bat Earring',
+    Ear1 = 'Bat Earring',
+    Ear2 = 'Bat Earring',
 }
 
 local sets = {
-    Idle = {},
-    IdleALT = {},
-    IdleDT = { -- Disabled on horizon_safe_mode
+    Idle = {
+        Main = 'Auster\'s Staff',
+        Sub = 'displaced',
+        Range = { Name = 'Ungur Boomerang', Priority = 20 },
+        Ammo = 'displaced',
+        Head = { Name = 'Nin. Hatsuburi +1', Priority = 20 },
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Triton Earring',
+        Body = { Name = 'Scp. Harness +1', Priority = 20 },
+        Hands = 'Rasetsu Tekko +1',
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 },
+        Back = 'Boxer\'s Mantle',
+        Waist = { Name = 'Scouter\'s Rope', Priority = -5 },
+        Legs = 'Arhat\'s Hakama +1',
+        Feet = 'Dance Shoes +1',
     },
-    IdleALTDT = { -- Disabled on horizon_safe_mode
+    IdleALT = {
+        Main = 'Auster\'s Staff',
+        Sub = 'displaced',
+        Range = { Name = 'Ungur Boomerang', Priority = 20 },
+        Ammo = 'displaced',
+        Head = { Name = 'Nin. Hatsuburi +1', Priority = 20 },
+        Neck = 'Evasion Torque',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Triton Earring',
+        Body = { Name = 'Scp. Harness +1', Priority = 20 },
+        Hands = 'Rasetsu Tekko +1',
+        Ring1 = 'Nimble Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 },
+        Back = 'Boxer\'s Mantle',
+        Waist = { Name = 'Scouter\'s Rope', Priority = -5 },
+        Legs = 'Arhat\'s Hakama +1',
+        Feet = 'Dance Shoes +1',
     },
-    Resting = {},
+    IdleDT = {
+        Main = 'Terra\'s Staff',
+        Head = 'Arhat\'s Jinpachi +1',
+        Body = 'Arhat\'s Gi +1',
+        Hands = 'Dst. Mittens +1',
+        Back = 'Shadow Mantle',
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Dst. Leggings +1',
+    },
+    IdleALTDT = {
+        Main = 'Terra\'s Staff',
+        Head = 'Arhat\'s Jinpachi +1',
+        Body = 'Arhat\'s Gi +1',
+        Ring1 = 'Jelly Ring',
+        Back = 'Shadow Mantle',
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Dst. Leggings +1',
+    },
+    Resting = {
+        Body = 'Nomad\'s Tunica',
+        Neck = { Name = 'Paisley Scarf', Priority = 20 },
+        Ear1 = 'Sanative Earring',
+        Ear2 = 'Relaxing Earring',
+        Hands = 'Nomad\'s Gloves',
+        Legs = 'Nomad\'s Hose',
+        Feet = 'Nomad\'s Boots',
+    },
     Town = {},
     Movement = {},
-    Movement_TP = {},
+    Movement_TP = {
+        Hands = { Name = 'Ninja Tekko +1', Priority = 20 },
+        Feet = { Name = 'Fuma Sune-Ate', Priority = 20 },
+    },
 
-    DT = {},
-    MDT = {},
-    FireRes = {},
-    IceRes = {},
-    LightningRes = {},
-    EarthRes = {},
-    WindRes = {},
-    WaterRes = {},
-    Evasion = {},
+    DT = {
+        Main = 'Terra\'s Staff', -- 20
+        Sub = 'displaced',
+        Head = 'Arhat\'s Jinpachi +1', -- 6
+        Body = 'Arhat\'s Gi +1', -- 9
+        Hands = 'Dst. Mittens +1', -- 2
+        Ring1 = 'Jelly Ring',  -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 }, -- 5
+        Back = 'Shadow Mantle',
+        Legs = 'Dst. Subligar +1', -- 3
+        Feet = { Name = 'Nin. Kyahan +1', Priority = 20 },
+    },
+    MDT = {
+        Main = 'Terra\'s Staff', -- 20
+        Sub = 'displaced',
+        Range = 'displaced',
+        Ammo = 'Phtm. Tathlum',
+        Head = 'Arhat\'s Jinpachi +1', -- 6
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Arhat\'s Gi +1', -- 9
+        Hands = 'Dst. Mittens +1', -- 2
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 }, -- 5
+        Back = 'Gramary Cape',
+        Waist = 'Ryl.Kgt. Belt',
+        Legs = 'Dst. Subligar +1', -- 3
+        Feet = 'Dst. Leggings +1', -- 2
+    },
+    FireRes = {
+        Main = 'Neptune\'s Staff', -- 20
+        Sub = 'displaced',
+        Ammo = { Name = 'Phtm. Tathlum', Priority = 10 },
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Triumph Earring', -- 11
+        Ear2 = 'Triumph Earring', -- 11
+        Body = { Name = 'Republic Harness', Priority = 20 }, -- 5
+        Hands = 'Tarasque Mitts +1', -- 6
+        Ring1 = 'Triumph Ring', -- 10
+        Ring2 = 'Malflame Ring', -- 10
+        Back = 'Dino Mantle', -- 4
+        Waist = 'Water Belt', -- 20
+        Legs = 'Dino Trousers', -- 4
+        Feet = 'Suzaku\'s Sune-Ate', -- 50
+    },
+    IceRes = {
+        Main = 'Vulcan\'s Staff', -- 20
+        Sub = 'displaced',
+        Ammo = { Name = 'Phtm. Tathlum', Priority = 10 },
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Omn. Earring', -- 11
+        Ear2 = 'Omn. Earring', -- 11
+        Body = 'Tundra Jerkin', -- 7
+        Hands = 'Hailst. Tekko +1', -- 12
+        Ring1 = 'Omniscient Ring', -- 10
+        Ring2 = 'Malfrost Ring', -- 10
+        Back = 'Aurora Mantle +1', -- 8
+        Waist = 'Fire Belt', -- 20
+        Legs = 'Feral Trousers', -- 6
+        Feet = 'Feral Ledelsens', -- 4
+    },
+    LightningRes = {
+        Main = 'Terra\'s Staff', -- 20
+        Sub = 'displaced',
+        Range = 'Lightning Bow +1', -- 7
+        Ammo = 'displaced',
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Robust Earring', -- 11
+        Ear2 = 'Robust Earring', -- 11
+        Body = { Name = 'Flora Cotehardie', Priority = 5 }, -- 5
+        Hands = 'Soil Tekko +1', -- 2
+        Ring1 = 'Adroit Ring', -- 10
+        Ring2 = 'Malflash Ring', -- 10
+        Back = 'Lightning Mantle', -- 6
+        Waist = 'Earth Belt', -- 20
+        Legs = 'Byakko\'s Haidate', -- 50
+        Feet = 'Soil Kyahan +1' -- 2
+    },
+    EarthRes = {
+        Main = 'Auster\'s Staff', -- 20
+        Sub = 'displaced',
+        Ammo = { Name = 'Phtm. Tathlum', Priority = 10 },
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Robust Earring', -- 11
+        Ear2 = 'Robust Earring', -- 11
+        Body = 'Beak Jerkin +1', -- 7
+        Hands = 'Beak Gloves +1', -- 4
+        Ring1 = 'Robust Ring', -- 10
+        Ring2 = 'Maldust Ring', -- 10
+        Back = 'Beak Mantle +1', -- 7
+        Waist = 'Wind Belt', -- 20
+        Legs = 'Beak Trousers +1', -- 7
+        Feet = 'Fed. Kyahan', -- 6
+    },
+    WindRes = {
+        Main = 'Aquilo\'s Staff', -- 20
+        Sub = 'displaced',
+        Range = { Name = 'Ungur Boomerang', Priority = 30 }, -- 8
+        Ammo = 'displaced',
+        Head = 'Black Ribbon', -- 12
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Omn. Earring', -- 11
+        Ear2 = 'Omn. Earring', -- 11
+        Body = 'Tundra Jerkin', -- 7
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 20 },
+        Ring1 = 'Nimble Ring', -- 10
+        Ring2 = 'Malgust Ring', -- 10
+        Back = 'Aurora Mantle +1', -- 8
+        Waist = 'Ice Belt', -- 20
+        Legs = { Name = 'Yasha Hakama +1', Priority = 20 },
+        Feet = { Name = 'Republic Leggings', Priority = 30 }, -- 3
+    },
+    WaterRes = {
+        Main = 'Jupiter\'s Staff', -- 20
+        Sub = 'displaced',
+        Range = 'Pirate\'s Gun +1', -- 9
+        Ammo = 'displaced',
+        Head = { Name = 'Genbu\'s Kabuto', Priority = 20 }, -- 50
+        Neck = 'Jeweled Collar +1', -- 10
+        Ear1 = 'Cmn. Earring', -- 11
+        Ear2 = 'Cmn. Earring', -- 11
+        Body = { Name = 'Scp. Harness +1', Priority = 20 }, -- 20
+        Hands = { Name = 'Scp. Mittens +1', Priority = 20 }, -- 7
+        Ring1 = 'Communion Ring', -- 10
+        Ring2 = 'Malflood Ring', -- 10
+        Back = 'Wolf Mantle +1', -- 3
+        Waist = 'Lightning Belt', -- 20
+        Legs = { Name = 'Scp. Subligar +1', Priority = 20 }, -- 7
+        Feet = { Name = 'Scp. Leggings +1', Priority = 20 }, -- 7
+    },
+    Evasion = {
+        Main = 'Auster\'s Staff',
+        Sub = 'displaced',
+        Range = { Name = 'Ungur Boomerang', Priority = 20 },
+        Ammo = 'displaced',
+        Head = { Name = 'Nin. Hatsuburi +1', Priority = 20 },
+        Neck = 'Evasion Torque',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Triton Earring',
+        Body = { Name = 'Scp. Harness +1', Priority = 20 },
+        Hands = 'Rasetsu Tekko +1',
+        Ring1 = 'Nimble Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 },
+        Back = 'Boxer\'s Mantle',
+        Waist = { Name = 'Scouter\'s Rope', Priority = -5 },
+        Legs = 'Arhat\'s Hakama +1',
+        Feet = 'Dance Shoes +1',
+    },
     Override = { -- An additional override set explicitly to be used for sets such as crafting, HELM, fishing, or any other special sets such as DRK 2HR, MNK Counter etc. n.b. Any unused Resist or Evasion set can be used similarly.
         Body = 'Field Tunica',
         Hands = 'Field Gloves',
@@ -143,23 +346,96 @@ local sets = {
         Feet = 'Field Boots'
     },
 
-    Precast = {},
+    Precast = {
+        Ear2 = { Name = 'Loquac. Earring', Priority = 10 },
+    },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
+        Main = 'Nikkariaoe', -- 25
+        Sub = 'Republic Dagger',
+        Head = 'Yasha Jinpachi +1', -- 5
+        Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Novia Earring',
+        Ear2 = { Name = 'Magnetic Earring', Priority = 10 }, -- 8
+        Body = 'Yasha Samue +1', -- 11
+        Hands = 'Yasha Tekko +1', -- 4
+        Ring1 = 'Nimble Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 },
+        Back = 'Shadow Mantle',
+        Waist = 'Druid\'s Rope', -- 10
+        Legs = { Name = 'Yasha Hakama +1', Priority = 20 }, -- 3
+        Feet = { Name = 'Yasha Sune-Ate +1', Priority = 20 }, -- 6
     },
     Haste = {
+        Head = 'Panther Mask +1',
+        Ear2 = 'Loquac. Earring',
+        Hands = { Name = 'Dusk Gloves +1', Priority = 20 },
+        Back = 'Shadow Mantle',
+        Waist = 'Sonic Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 }
     },
 
-    Hate = {},
+    Hate = {
+        Ammo = 'Nokizaru Shuriken',
+        Head = 'Yasha Jinpachi +1',
+        Neck = 'Harmonia\'s Torque',
+        Ear1 = 'Eris\' Earring +1',
+        Ear2 = 'Eris\' Earring +1',
+        Body = 'Yasha Samue +1',
+        Hands = 'Yasha Tekko +1',
+        Ring1 = 'Mermaid Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 20 },
+        Back = 'Toreador\'s Cape',
+        Waist = 'Warwolf Belt',
+        Legs = { Name = 'Yasha Hakama +1', Priority = 20 },
+        Feet = { Name = 'Yasha Sune-Ate +1', Priority = 20 },
+    },
     NinDebuff = {},
     NinElemental = {},
     NinElemental_Accuracy = {},
     DrkDarkMagic = {},
 
-    Enhancing = {},
-    Cure = {},
-    Cheat_C3HPDown = {},
-    Cheat_C3HPUp = {},
-    Flash = {}, -- Technically optional since Hate and Haste gear will be equipped by default
+    Enhancing = {
+        Neck = 'Enhancing Torque',
+        Back = { Name = 'Merciful Cape', Priority = 10 },
+    },
+    Stoneskin = {
+        Main = 'Faith Baghnakhs',
+        Sub = 'displaced',
+        Ammo = 'Nokizaru Shuriken',
+        Head = 'Maat\'s Cap',
+        Neck = 'Stone Gorget',
+        Ear1 = 'Cmn. Earring',
+        Ear2 = 'Cmn. Earring',
+        Body = { Name = 'Kirin\'s Osode', Priority = 10 },
+        Hands = { Name = 'Dusk Gloves +1', Priority = 20 },
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        Back = 'Ryl. Army Mantle',
+        Waist = 'Ryl.Kgt. Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = 'Suzaku\'s Sune-Ate',
+    },
+    Cure = {}, -- Defaults to Hate
+    Cheat_C3HPDown = {
+        Main = 'Terra\'s Staff',
+        Sub = 'displaced',
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 }, -- 25
+        Head = 'Arhat\'s Jinpachi +1',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Triton Earring',
+        Body = 'Arhat\'s Gi +1',
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Serket Ring', Priority = 5 }, -- 50
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Scouter\'s Rope', Priority = -5 }, -- 40
+        Legs = 'Dst. Subligar +1',
+        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -5 }, -- 25
+    },
+    Cheat_C3HPUp = {}, -- Defaults to Hate
+    Flash = {}, -- Defaults to Haste
 
     LockSet1 = {},
     LockSet2 = {},
@@ -181,6 +457,19 @@ local sets = {
     Weapon_Loadout_3 = {},
 
     ShinobiRingHPDown = { -- Set to force HP to or below shinobiRingMaxHP
+        Ammo = { Name = 'Tiphia Sting', Priority = -5 }, -- 25
+        Head = { Name = 'Shr.Znr.Kabuto', Priority = -5 }, -- 25
+        Neck = { Name = 'Star Necklace', Priority = 5 }, -- 15
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Triton Earring',
+        Body = { Name = 'Flora Cotehardie', Priority = 5 }, -- 30
+        Hands = 'Dst. Mittens +1',
+        Ring1 = { Name = 'Ether Ring', Priority = 5 }, -- 30
+        Ring2 = { Name = 'Serket Ring', Priority = 5 }, -- 50
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Scouter\'s Rope', Priority = -5 }, -- 40
+        Legs = { Name = 'Shura Haidate', Priority = -5 }, -- 35
+        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -5 }, -- 25
     },
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
@@ -507,6 +796,7 @@ profile.HandleMidcast = function()
 
     if (action.Skill == 'Ninjutsu') then
         if (NinDebuffs:contains(action.Name)) then
+            gFunc.EquipSet(sets.Hate)
             gFunc.EquipSet(sets.NinDebuff)
             EquipStaffAndObi(action)
         elseif (NinElemental:contains(action.Name)) then
@@ -526,12 +816,17 @@ profile.HandleMidcast = function()
         EquipStaff(action)
     elseif (action.Skill == 'Dark Magic') then
         if (DrkDarkMagic:contains(action.Name)) then
+            gFunc.EquipSet(sets.Hate)
             gFunc.EquipSet(sets.DrkDarkMagic)
         end
         EquipStaffAndObi(action)
     elseif (action.Skill == 'Enhancing Magic') then
         gFunc.EquipSet(sets.Enhancing)
+        if (action.Name == 'Stoneskin') then
+            gFunc.EquipSet(sets.Stoneskin)
+        end
     elseif (action.Skill == 'Healing Magic') then
+        gFunc.EquipSet(sets.Hate)
         gFunc.EquipSet(sets.Cure)
 
         if (target.Name == me) then
@@ -539,10 +834,12 @@ profile.HandleMidcast = function()
                 gFunc.EquipSet(sets.Cheat_C3HPUp)
             end
         end
+        EquipStaffAndObi(action)
     elseif (action.Skill == 'Divine Magic') then
         gFunc.EquipSet(sets.Hate)
         gFunc.EquipSet(sets.Haste)
         gFunc.EquipSet(sets.Flash)
+        EquipStaff(action)
     end
 end
 

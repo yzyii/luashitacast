@@ -484,6 +484,8 @@ local sets = {
         Legs = 'Glt. Breeches +1',
         Feet = 'Vlr. Leggings +1',
     },
+    Stoneskin = {
+    },
 
     Weapon_Loadout_1 = {
         Main = 'Joyeuse',
@@ -698,6 +700,9 @@ profile.HandleMidcast = function()
         end
     elseif (action.Skill == 'Enhancing Magic') then
         gFunc.EquipSet(sets.Enhancing)
+        if (action.Name == 'Stoneskin') then
+            gFunc.EquipSet(sets.Stoneskin)
+        end
     end
 end
 

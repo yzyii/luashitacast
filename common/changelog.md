@@ -572,3 +572,8 @@
 - Melee - Fix interim sets to respect weapon loadouts
 - NIN - Add Cure 3 cheat sets
 - THF - Adds exclusion to Fight for auto-TH when /BST
+- NIN / PLD - Adds Stoneskin set
+- SAM - Adds a rudimentary Namas Arrow ammo prevention implementation if Yoichi is used with Amano
+- SAM - Rename Meditate and Warding Circle functionality
+- SAM - Add Jump sets
+- NIN - Tweaks some default base sets to use Hate. e.g. Cure
