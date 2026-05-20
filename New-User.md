@@ -144,7 +144,7 @@ The following is incorrect:
 
 ## Example Gear
 
-The luas have been filled out with BiS gear for CoP era. (This is a Work In Progress.)
+The luas have been filled out with BiS gear for CoP era.
 
 The restrictions and assumptions made while doing so are as follows:
 
@@ -157,13 +157,15 @@ The restrictions and assumptions made while doing so are as follows:
 - Some NQ items instead of HQ e.g. Dalmatica.
 - No RSE items.
 
+While a fair amount of effort has been made to ensure this is accurate, reporting any discrepancies would be appreciated.
+
 ## Priority
 
 Some items pre-filled out for you contain syntax regarding "Priority". This dictates the equip order of items where items with a higher priority are equipped first. By default, all items have a priority of 0.
 
-e.g. The Dls. Chapeau +1 in this example has a priority of 30 while the Jeweled Collar +1 has a priprity of 0. Since 30 > 0, the Chapeau will be equipped first.
+e.g. The Dls. Chapeau +1 in this example has a priority of 30 while the Jeweled Collar +1 has a priprity of 0. Since 70 > 0, the Chapeau will be equipped first.
 ```lua
-        Head = { Name = 'Dls. Chapeau +1', Priority = 30 },
+        Head = { Name = 'Dls. Chapeau +1', Priority = 70 },
         Neck = 'Jeweled Collar +1',
 ```
 
@@ -174,9 +176,15 @@ If you are not a power user, you may ignore it as well as the rest of this file 
 ### Following is not accurate yet but will be at some point
 
 The default Schema for equipment swaps that have been pre-filled out within these profiles is as follows:
-- if it has +HP and +MP, priority +30
-- if it has +HP, priority +20
-- if it has +MP, priority +10
-- if it has -HP or -MP, priority -5. 
-- if the value of it's -HP/MP is lower than the value of it's +HP/MP, priority +3
-- This results in valid values of -5, 5, 8, 10, 15, 18, 20, 25, 28 and 30. Special cases may exist outside of these priorities.
+- if it has +HP and +MP, priority = 70
+- if it has +HP, priority = 60
+- if it has +MP, priority = 50
+- if it has +HP and -MP and the value of the HP is more than the MP, priority = 40
+- if it has +MP and -HP and the value of the MP is more than the HP, priority = 30
+- if it has Convert MP to HP, priority = 20
+- if it has Convert HP to MP, priority = 10
+- if it has -MP, priority = -10
+- if it has -HP, priority = -20
+- Special cases will be marked as priority = 100 or -100. e.g. going from a -HP item in Precast to an item with no HP or MP at all.
+
+Not all special cases will have been identified. Reporting of any discrepancies would be appreciated.

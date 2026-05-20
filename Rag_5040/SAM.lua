@@ -22,14 +22,14 @@ local sets = {
         Ring1 = 'Shadow Ring',
         Ring2 = 'Merman\'s Ring',
         Back = 'Shadow Mantle',
-        Waist = { Name = 'Powerful Rope', Priority = 30 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = 'Gavial Cuisses +1',
         Feet = 'Gavial Greaves +1',
     },
     IdleALT = {},
     Resting = {
         Body = 'Nomad\'s Tunica',
-        Neck = { Name = 'Paisley Scarf', Priority = 20 },
+        Neck = { Name = 'Paisley Scarf', Priority = 60 },
         Ear1 = 'Sanative Earring',
         Hands = 'Nomad\'s Gloves',
         Legs = 'Nomad\'s Hose',
@@ -38,8 +38,8 @@ local sets = {
     Town = {},
     Movement = {},
     Movement_TP = {
-        Hands = { Name = 'Bandomusha Kote', Priority = 20 },
-        Feet  = { Name = 'Fuma Sune-Ate', Priority = 20 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
+        Feet  = { Name = 'Fuma Sune-Ate', Priority = 60 },
     },
 
     DT = {
@@ -79,29 +79,30 @@ local sets = {
     },
 
     Precast = {
-        Ear2 = { Name = 'Loquac. Earring', Priority = 10 },
+        Ear2 = { Name = 'Loquac. Earring', Priority = 50 },
     },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Head = 'Arh. Jinpachi +1',
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Magnetic Earring', Priority = 10 }, -- 8
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 }, -- 8
         Body = 'Arhat\'s Gi +1',
         Hands = 'Gavial Fng.Gnt. +1',
         Ring1 = 'Shadow Ring',
         Ring2 = 'Merman\'s Ring',
         Back = 'Shadow Mantle',
-        Waist = { Name = 'Powerful Rope', Priority = 30 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = 'Gavial Cuisses +1',
         Feet = 'Mountain Gaiters', -- 5
     },
     Haste = {
         Head = 'Ace\'s Helm',
-        Ear2 = { Name = 'Loquac. Earring', Priority = 10 },
-        Hands = { Name = 'Dusk Gloves +1', Priority = 20 },
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
+        Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
+        Back = 'Shadow Mantle',
         Waist = 'Sonic Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
 
     TP_LowAcc = {
@@ -110,23 +111,23 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Haubergeon +1',
-        Hands = { Name = 'Dusk Gloves +1', Priority = 20 },
+        Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
         Ring1 = 'Rajas Ring',
-        Ring2 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Back = 'Forager\'s Mantle',
         Waist = 'Sonic Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {
-        Head = { Name = 'Sao. Kabuto +1', Priority = 20 },
+        Head = { Name = 'Sao. Kabuto +1', Priority = 60 },
         Neck = 'Peacock Amulet',
         Hands = 'Noritsune Kote',
-        Ring1 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Waist = 'Life Belt',
-        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -5 },
+        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -20 },
     },
     TP_DRG = {
         Head = 'Maat\'s Cap',
@@ -144,8 +145,9 @@ local sets = {
     Weapon_Loadout_2 = {
         Main = 'Leviathan\'s Couse',
         Range = 'displaced',
-        Ammo = { Name = 'Tiphia Sting', Priority = -5 },
+        Ammo = { Name = 'Tiphia Sting', Priority = -20 },
         Neck = 'Love Torque',
+        Hands = 'Hachiman Kote +1',
     },
     Weapon_Loadout_3 = {},
 
@@ -154,13 +156,13 @@ local sets = {
         Neck = 'Justice Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Triumph Earring',
-        Body = { Name = 'Kirin\'s Osode', Priority = 10 }
-        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 20 },
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 }
+        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 60 },
         Ring1 = 'Rajas Ring',
         Ring2 = 'Triumph Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Warwolf Belt',
-        Legs = { Name = 'Shura Haidate +1', Priority = -5 },
+        Legs = { Name = 'Shura Haidate +1', Priority = -20 },
         Feet = 'Hmn. Sune-Ate +1',
     },
     WS_HighAcc = {},
@@ -181,60 +183,60 @@ local sets = {
         Hands = 'Hachiman Kote +1',
     },
     WS_Kaiten = {
-        Body = { Name = 'Byrnie +1', Priority = 20 },
+        Body = { Name = 'Byrnie +1', Priority = 60 },
         Hands = 'Hachiman Kote +1',
     },
     WS_Jinpu = {
         Neck = 'Soil Gorget',
         Ear2 = 'Novio Earring',
         Body = 'Haubergeon +1',
-        Hands = { Name = 'Bandomusha Kote', Priority = 20 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
     },
     WS_PentaThrust = {
-        Head = { Name = 'Sao. Kabuto +1', Priority = 20 },
+        Head = { Name = 'Sao. Kabuto +1', Priority = 60 },
         Neck = 'Love Torque',
         Ear2 = 'Merman\'s Earring',
         Body = 'Haubergeon +1',
-        Hands = { Name = 'Bandomusha Kote', Priority = 20 },
-        Ring2 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Waist = 'Sao. Koshi-ate',
         Legs = 'Byakko\'s Haidate',
-        Feet = { Name = 'Sao. Sune-ate +1', Priority = 20 },
+        Feet = { Name = 'Sao. Sune-ate +1', Priority = 60 },
     },
     WS_NamasArrow = {
         Neck  = 'Light Gorget',
         Ear1  = 'Triumph Earring',
-        Hands = { Name = 'Seiryu\'s Kote', Priority = 20 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
         Back  = 'Amemet Mantle +1',
     },
 
     WS_2H = {
-        Body = { Name = 'Kirin\'s Osode', Priority = 10 }
-        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 20 },
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 }
+        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 60 },
         Feet = 'Rutter Sabatons',
     },
     WS_2H_Kaiten = {
-        Body = { Name = 'Byrnie +1', Priority = 20 },
+        Body = { Name = 'Byrnie +1', Priority = 60 },
     },
     WS_2H_Jinpu = {
         Body = 'Haubergeon +1',
-        Hands = { Name = 'Bandomusha Kote', Priority = 20 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
     },
     WS_2H_PentaThrust = {
         Body = 'Haubergeon +1',
-        Hands = { Name = 'Bandomusha Kote', Priority = 20 },
-        Feet = { Name = 'Sao. Sune-ate +1', Priority = 20 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
+        Feet = { Name = 'Sao. Sune-ate +1', Priority = 60 },
     },
     WS_2H_NamasArrow = {
-        Hands = { Name = 'Seiryu\'s Kote', Priority = 20 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
     },
 
     Meditate = {
-        Head = { Name = 'Myochin Kabuto', Priority = 20 },
-        Hands = { Name = 'Sao. Kote +1', Priority = 20 },
+        Head = { Name = 'Myochin Kabuto', Priority = 60 },
+        Hands = { Name = 'Sao. Kote +1', Priority = 60 },
     },
     WardingCircle = {
-        Head = { Name = 'Myochin Kabuto', Priority = 20 },
+        Head = { Name = 'Myochin Kabuto', Priority = 60 },
     },
 
     Jump = {
@@ -242,13 +244,13 @@ local sets = {
         Neck = 'Justice Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = { Name = 'Kirin\'s Osode', Priority = 10 },
-        Hands = { Name = 'Bandomusha Kote', Priority = 20 },
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
         Ring1 = 'Rajas Ring',
-        Ring2 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Back = 'Forager\'s Mantle',
         Waist = 'Warwolf Belt',
-        Legs = { Name = 'Shura Haidate +1', Priority = -5 },
+        Legs = { Name = 'Shura Haidate +1', Priority = -20 },
         Feet = 'Rutter Sabatons',
     },
     HighJump = {
@@ -263,18 +265,18 @@ local sets = {
     LockSet3 = {},
 
     VileElixir = {
-        Head = { Name = 'Genbu\'s Kabuto', Priority = 20 },
-        Neck = { Name = 'Shield Pendant', Priority = 15 },
-        Ear1 = { Name = 'Pigeon Earring +1', Priority = 20 },
-        Ear2 = { Name = 'Pigeon Earring +1', Priority = 20 },
-        Body = { Name = 'Saotome Domaru', Priority = 20 },
-        Hands = { Name = 'Seiryu\'s Kote', Priority = 20 },
-        Ring1 = { Name = 'Bomb Queen Ring', Priority = 20 },
-        Ring2 = { Name = 'Bloodbead Ring' Priority = 20 },
-        Back = { Name = 'Gigant Mantle', Priority = 20 },
-        Waist = { Name = 'Powerful Rope', Priority = 20 },
-        Legs = { Name = 'Dusk Trousers +1', Priority = 20 },
-        Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
+        Head = { Name = 'Genbu\'s Kabuto', Priority = 60 },
+        Neck = { Name = 'Shield Pendant', Priority = 20 },
+        Ear1 = { Name = 'Pigeon Earring +1', Priority = 60 },
+        Ear2 = { Name = 'Pigeon Earring +1', Priority = 60 },
+        Body = { Name = 'Saotome Domaru', Priority = 60 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
+        Ring2 = { Name = 'Bloodbead Ring' Priority = 40 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
+        Waist = { Name = 'Powerful Rope', Priority = 60 },
+        Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
 }
 

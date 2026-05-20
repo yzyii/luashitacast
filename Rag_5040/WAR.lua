@@ -7,7 +7,7 @@ local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if 
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local unicorn_leggings = {
-    Feet = { Name = 'Ucn. Leggings +1', Priority = 20 },
+    Feet = { Name = 'Ucn. Leggings +1', Priority = 60 },
 }
 
 local sets = {
@@ -21,14 +21,14 @@ local sets = {
         Ring1 = 'Shadow Ring',
         Ring2 = 'Merman\'s Ring',
         Back = 'Shadow Mantle',
-        Waist = { Name = 'Powerful Rope', Priority = 30 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
     IdleALT = {},
     Resting = {
         Body = 'Nomad\'s Tunica',
-        Neck = { Name = 'Paisley Scarf', Priority = 20 },
+        Neck = { Name = 'Paisley Scarf', Priority = 60 },
         Ear1 = 'Sanative Earring',
         Hands = 'Nomad\'s Gloves',
         Legs = 'Nomad\'s Hose',
@@ -78,28 +78,30 @@ local sets = {
     },
 
     Precast = {
-        Ear2 = { Name = 'Loquac. Earring', Priority = 10 },
+        Ear2 = { Name = 'Loquac. Earring', Priority = 50 },
     },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Head = 'Darksteel Cap +1',
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Magnetic Earring', Priority = 10 }, -- 8
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 }, -- 8
         Body = 'Dst. Harness +1',
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Shadow Ring',
         Ring2 = 'Merman\'s Ring',
         Back = 'Shadow Mantle',
-        Waist = { Name = 'Powerful Rope', Priority = 30 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
     Haste = {
         Head = 'Panther Mask +1',
-        Hands = { Name = 'Dusk Gloves +1', Priority = 20 },
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
+        Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
+        Back = 'Shadow Mantle',
         Waist = 'Sonic Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
 
     TP_LowAcc = {
@@ -108,13 +110,13 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Assault Earring',
         Body = 'Armada Hauberk',
-        Hands = { Name = 'Dusk Gloves +1', Priority = 20 },
+        Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
         Ring1 = 'Rajas Ring',
         Ring2 = 'Blitz Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Sonic Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = { Name = 'Dusk Ledelsens +1', Priority = 20 },
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {
@@ -124,7 +126,7 @@ local sets = {
         Head = 'Optical Hat',
         Neck = 'Peacock Amulet',
         Hands = 'Armada Mufflers',
-        Ring1 = { Name = 'Toreador\'s Ring', Priority = 20 },
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Back = 'Settler\'s Cape',
         Waist = 'Life Belt',
         Feet = 'Armada Sollerets',
@@ -137,6 +139,13 @@ local sets = {
     },
     TP_SAM = { -- Equips iff not using Raging Rush
         Ear2 = 'Attila\'s Earring',
+    },
+    TP_DRG = {
+        Head = 'Maat\'s Cap',
+        Ear2 = 'Wyvern Earring',
+    },
+    TP_THF = {
+        Ear2 = 'Pilferer\'s Earring',
     },
 
     Weapon_Loadout_1 = {
@@ -154,18 +163,18 @@ local sets = {
     },
 
     WS = {
-        Head = { Name = 'Hecatomb Cap +1', Priority = 20 },
+        Head = { Name = 'Hecatomb Cap +1', Priority = 60 },
         Neck = 'Fortitude Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Triumph Earring',
-        Body = { Name = 'Kirin\'s Osode', Priority = 10 }
-        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 20 },
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 }
+        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 60 },
         Ring1 = 'Rajas Ring',
         Ring2 = 'Triumph Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Warwolf Belt',
         Legs = 'War. Cuisses +1',
-        Feet = { Name = 'Hct. Leggings +1', Priority = 20 },
+        Feet = { Name = 'Hct. Leggings +1', Priority = 60 },
     },
     WS_HighAcc = {},
 
@@ -173,7 +182,7 @@ local sets = {
         Neck = 'Snow Gorget',
         Ear2 = 'Assault Earring',
         Body = 'Armada Hauberk',
-        Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
+        Hands = { Name = 'Hct. Mittens +1', Priority = 60 },
         Legs = 'Byakko\'s Haidate',
     },
     WS_SteelCyclone = {
@@ -195,19 +204,19 @@ local sets = {
         Neck = 'Temp. Torque',
         Ear2 = 'Assault Earring',
         Body = 'Armada Hauberk',
-        Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
+        Hands = { Name = 'Hct. Mittens +1', Priority = 60 },
         Legs = 'Byakko\'s Haidate',
     },
     WS_Decimation = {
         Neck = 'Temp. Torque',
         Ear2 = 'Assault Earring',
         Body = 'Armada Hauberk',
-        Hands = { Name = 'Hct. Mittens +1', Priority = 20 },
+        Hands = { Name = 'Hct. Mittens +1', Priority = 60 },
         Waist = 'Warrior\'s Stone',
     },
 
     WS_2H = {
-        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 20 },
+        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 60 },
         Legs = 'War. Cuisses +1',
     },
     WS_2H_RagingRush = {
@@ -230,18 +239,18 @@ local sets = {
     LockSet3 = {},
 
     VileElixir = {
-        Head = { Name = 'Genbu\'s Kabuto', Priority = 20 },
-        Neck = { Name = 'Shield Pendant', Priority = 15 },
-        Ear1 = { Name = 'Pigeon Earring +1', Priority = 20 },
-        Ear2 = { Name = 'Pigeon Earring +1', Priority = 20 },
-        Body = { Name = 'Kaiser Cuirass', Priority = 20 },
-        Hands = { Name = 'Seiryu\'s Kote', Priority = 20 },
-        Ring1 = { Name = 'Bomb Queen Ring', Priority = 20 },
-        Ring2 = { Name = 'Bloodbead Ring' Priority = 20 },
-        Back = { Name = 'Gigant Mantle', Priority = 20 },
-        Waist = { Name = 'Powerful Rope', Priority = 20 },
-        Legs = { Name = 'Kaiser Diechlings', Priority = 20 },
-        Feet = { Name = 'Ucn. Leggings +1', Priority = 20 },
+        Head = { Name = 'Genbu\'s Kabuto', Priority = 60 },
+        Neck = { Name = 'Shield Pendant', Priority = 20 },
+        Ear1 = { Name = 'Pigeon Earring +1', Priority = 60 },
+        Ear2 = { Name = 'Pigeon Earring +1', Priority = 60 },
+        Body = { Name = 'Kaiser Cuirass', Priority = 60 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
+        Ring2 = { Name = 'Bloodbead Ring' Priority = 40 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
+        Waist = { Name = 'Powerful Rope', Priority = 60 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
+        Feet = { Name = 'Ucn. Leggings +1', Priority = 60 },
     },
 }
 
@@ -358,6 +367,10 @@ profile.HandleDefault = function()
                     gFunc.EquipSet(sets.TP_NIN)
                 end
             end
+        elseif (player.SubJob == 'DRG') then
+            gFunc.EquipSet(sets.TP_DRG)
+        elseif (player.SubJob == 'THF') then
+            gFunc.EquipSet(sets.TP_THF)
         end
 
         if (player.HPP > 75) then
