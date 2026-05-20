@@ -156,7 +156,7 @@ local sets = {
         Neck = 'Justice Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Triumph Earring',
-        Body = { Name = 'Kirin\'s Osode', Priority = 50 }
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
         Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 60 },
         Ring1 = 'Rajas Ring',
         Ring2 = 'Triumph Ring',
@@ -211,7 +211,7 @@ local sets = {
     },
 
     WS_2H = {
-        Body = { Name = 'Kirin\'s Osode', Priority = 50 }
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
         Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 60 },
         Feet = 'Rutter Sabatons',
     },
@@ -272,7 +272,7 @@ local sets = {
         Body = { Name = 'Saotome Domaru', Priority = 60 },
         Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
-        Ring2 = { Name = 'Bloodbead Ring' Priority = 40 },
+        Ring2 = { Name = 'Bloodbead Ring', Priority = 40 },
         Back = { Name = 'Gigant Mantle', Priority = 60 },
         Waist = { Name = 'Powerful Rope', Priority = 60 },
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },

@@ -159,7 +159,8 @@ local sets = {
     Weapon_Loadout_3 = {
         Main = 'Martial Axe',
         Sub = 'Maneater',
-        Ammo = 'Bomb Core'
+        Ammo = 'Bomb Core',
+        Neck = 'Temp. Torque',
     },
 
     WS = {
@@ -167,7 +168,7 @@ local sets = {
         Neck = 'Fortitude Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Triumph Earring',
-        Body = { Name = 'Kirin\'s Osode', Priority = 50 }
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
         Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 60 },
         Ring1 = 'Rajas Ring',
         Ring2 = 'Triumph Ring',
@@ -221,10 +222,10 @@ local sets = {
     },
     WS_2H_RagingRush = {
         Waist = 'Warrior\'s Stone',
-    }
+    },
     WS_2H_Rampage = {
         Waist = 'Warrior\'s Stone',
-    }
+    },
 
     Warcry = {
         Head = 'Warrior\'s Mask ',
@@ -246,7 +247,7 @@ local sets = {
         Body = { Name = 'Kaiser Cuirass', Priority = 60 },
         Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
-        Ring2 = { Name = 'Bloodbead Ring' Priority = 40 },
+        Ring2 = { Name = 'Bloodbead Ring', Priority = 40 },
         Back = { Name = 'Gigant Mantle', Priority = 60 },
         Waist = { Name = 'Powerful Rope', Priority = 60 },
         Legs = { Name = 'Kaiser Diechlings', Priority = 60 },

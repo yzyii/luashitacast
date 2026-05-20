@@ -455,7 +455,7 @@ local sets = {
         Body = { Name = 'Homam Corazza', Priority = 70 },
         Hands = { Name = 'Feronia\'s Bangles', Priority = 60 },
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
-        Ring2 = { Name = 'Bloodbead Ring' Priority = 40 },
+        Ring2 = { Name = 'Bloodbead Ring', Priority = 40 },
         Back = { Name = 'Gigant Mantle', Priority = 60 },
         Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
