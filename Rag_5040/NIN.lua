@@ -63,12 +63,6 @@ local anrin_obi = {
 local shinobi_ring = {
     Ring2 = 'Shinobi Ring',
 }
-local koga_tekko = {
-    -- Hands = 'Koga Tekko',
-}
-local koga_tekko_plus_one = {
-    Hands = 'Kog. Tekko +1',
-}
 local uggalepih_pendant = {
     Neck = { Name = 'Uggalepih Pendant', Priority = 50 },
 }
@@ -78,6 +72,12 @@ local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ 
 local fenrirs_stone = { -- Used for Evasion at night
     Range = 'displaced',
     Ammo = 'Fenrir\'s Stone',
+}
+local koga_tekko = {
+    -- Hands = 'Koga Tekko',
+}
+local koga_tekko_plus_one = {
+    Hands = 'Kog. Tekko +1',
 }
 local koga_hakama = {
     -- Legs = { Name = 'Koga Hakama', Priority = 60 },
@@ -89,7 +89,7 @@ local koga_kyahan = {
     -- Feet = 'Koga Kyahan',
 }
 local koga_kyahan_plus_one = {
-    Feet = 'Kog. Kyahan +1',
+    -- Feet = 'Kog. Kyahan +1',
 }
 local ninja_kyahan = {
     -- Feet = { Name = 'Ninja Kyahan', Priority = 60 },
@@ -506,20 +506,61 @@ local sets = {
     Cheat_C3HPUp = {}, -- Defaults to Hate
     Flash = {}, -- Defaults to Haste
 
-    TP_LowAcc = {},
+    TP_LowAcc = {
+        Head = 'Panther Mask +1',
+        Neck = 'Hope Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Stealth Earring',
+        Body = { Name = 'Nin. Chainmail +1', Priority = 60 },
+        Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Back = 'Forager\'s Mantle',
+        Waist = 'Sonic Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
+    },
     TP_Aftermath = {},
-    TP_Mjollnir_Haste = {},
-    TP_HighAcc = {},
+    TP_Mjollnir_Haste = {
+        Legs = { Name = 'Kog. Hakama +1', Priority = 60 },
+    },
+    TP_HighAcc = {
+        Body = 'Haubergeon +1',
+    },
 
-    Weapon_Loadout_1 = {},
-    Weapon_Loadout_2 = {},
+    Weapon_Loadout_1 = {
+        Main = 'Senjuinrikio',
+        Sub = 'Unji',
+        Range = 'displaced'
+        Ammo = 'Bomb Core',
+    },
+    Weapon_Loadout_2 = {}, -- Empty sets can be used for engaged staff tanking
     Weapon_Loadout_3 = {},
 
-    WS = {},
-    WS_HighAcc = {},
+    WS = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Hope Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -20 },
+    },
+    WS_HighAcc = {
+        Body = 'Haubergeon +1',
+    },
 
-    WS_BladeJin = {},
-    WS_BladeKu = {},
+    WS_Jin = {},
+    WS_Ku = {},
+    WS_Metsu = {
+        Ring1 = 'Thunder Ring',
+        Ring2 = 'Adroit Ring',
+    }
 
     ShinobiRingHPDown = { -- Set to force HP to or below shinobiRingMaxHP
         Ammo = { Name = 'Tiphia Sting', Priority = -20 },
@@ -650,9 +691,11 @@ profile.HandleWeaponskill = function()
 
     local action = gData.GetAction()
     if (action.Name == 'Blade: Jin') then
-        gFunc.EquipSet(sets.WS_BladeJin)
+        gFunc.EquipSet(sets.WS_Jin)
     elseif (action.Name == 'Blade: Ku') then
-        gFunc.EquipSet(sets.WS_BladeKu)
+        gFunc.EquipSet(sets.WS_Ku)
+    elseif (action.Name == 'Blade: Metsu') then
+        gFunc.EquipSet(sets.WS_Metsu)
     end
 
     local environment = gData.GetEnvironment()
