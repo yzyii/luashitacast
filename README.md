@@ -84,7 +84,7 @@ It is highly suggested that you do not attempt to add Level Sync functionality t
 
 ### Multiple Characters
 
-If you have multiple characters, move a copy of the you may move the common folder into each profile folder to edit different character's available items.
+If you have multiple characters,  you may move the common folder into each profile folder to edit different character's available items.
 
 # Contact Me
 
