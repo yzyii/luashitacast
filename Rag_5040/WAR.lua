@@ -27,9 +27,9 @@ local sets = {
     },
     IdleALT = {},
     Resting = {
-        Body = 'Nomad\'s Tunica',
         Neck = { Name = 'Paisley Scarf', Priority = 60 },
         Ear1 = 'Sanative Earring',
+        Body = 'Nomad\'s Tunica',
         Hands = 'Nomad\'s Gloves',
         Legs = 'Nomad\'s Hose',
         Feet = 'Nomad\'s Boots',

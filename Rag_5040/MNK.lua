@@ -6,24 +6,6 @@ local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 local max_hp_in_idle_with_regen_gear_equipped = 1632 -- You could set this to 0 if you do not wish to ever use regen gear
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
-local temple_gaiters = {
-    Feet = 'Temple Gaiters',
-}
-local temple_gloves = {
-    Hands = 'Temple Gloves',
-}
-local temple_cyclas = {
-    Body = 'Tpl. Cyclas +1',
-}
-local temple_crown = {
-    Head = 'Tpl. Crown +1',
-}
-local melee_gaiters = {
-    Feet = 'Melee Gaiters',
-}
-local melee_gloves = {
-    Hands = 'Mel. Gloves +1',
-}
 local kampfer_ring = {
     Ring2 = 'Kampfer Ring',
     Hands = 'Rasetsu Tekko +1',
@@ -32,8 +14,8 @@ local kampfer_ring = {
 local kampfer_earring = {
     Ear1 = 'Brutal Earring',
     Ear2 = 'Kampfer Earring',
-    Hands = 'Mel. Gloves +1',
-    Ring2 = 'Toreador\'s Ring',
+    Hands = { Name = 'Mel. Gloves +1', Priority = 60 },
+    Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
     Legs = 'Byakko\'s Haidate',
 }
 local shadow_mantle = {
@@ -42,59 +24,69 @@ local shadow_mantle = {
 
 local sets = {
     Idle = {
-        Head = 'Genbu\'s Kabuto',
+        Head = 'Arh. Jinpachi +1',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Mel. Cyclas +1',
+        Body = 'Arhat\'s Gi +1',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Shadow Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
+        Waist = 'Black Belt',
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    IdleALT = {},
-    Resting = {
-        Neck = 'Paisley Scarf',
-        Ear2 = 'Sanative Earring',
-        Body = 'Mel. Cyclas +1',
+    IdleALT = {
+        Head = 'Arh. Jinpachi +1',
+        Neck = 'Evasion Torque',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Triton Earring',
+        Body = 'Arhat\'s Gi +1',
         Hands = 'Dst. Mittens +1',
-        Back = 'Melee Cape',
+        Ring1 = 'Jelly Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = 'Shadow Mantle',
+        Waist = 'Black Belt',
+        Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    Town = {
-        Head = 'Tpl. Crown +1',
-        Body = 'Kirin\'s Osode',
-        Hands = 'Mel. Gloves +1',
-        Legs = 'Byakko\'s Haidate',
-        Feet = 'Melee Gaiters',
+    Resting = {
+        Neck = { Name = 'Paisley Scarf', Priority = 60 },
+        Ear2 = 'Sanative Earring',
+        Body = { Name = 'Mel. Cyclas +1', Priority = 60 },
+        Hands = 'Nomad\'s Gloves',
+        Back = 'Melee Cape',
+        Legs = 'Nomad\'s Hose',
+        Feet = 'Nomad\'s Boots',
     },
+    Town = {},
     Movement = {
-        Feet = 'Herald\'s Gaiters',
+        Feet = { Name = 'Herald\'s Gaiters', Priority = 50 },
     },
     Movement_TP = {},
 
     DT = { -- Counter set
         Head = 'Panther Mask +1',
         Neck = 'Faith Torque',
-        Ear1 = 'Avenger\'s Earring', -- 1
-        Ear2 = 'Avenger\'s Earring', -- 1
-        Body = 'Shura Togi',
-        Hands = 'Mel. Gloves +1',
-        Ring1 = 'Sattva Ring',
-        Ring2 = 'Toreador\'s Ring',
+        Ear1 = 'Avenger\'s Earring',
+        Ear2 = 'Avenger\'s Earring',
+        Body = { Name = 'Shura Togi +1', Priority = -20 },
+        Hands = { Name = 'Mel. Gloves +1', Priority = 60 },
+        Ring1 = { Name = 'Sattva Ring', Priority = 60 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Back = 'Shadow Mantle',
         Waist = 'Black Belt',
-        Legs = 'Tpl. Hose +1', -- 3
-        Feet = 'Fuma Sune-Ate',
+        Legs = { Name = 'Tpl. Hose +1', Priority = 60 },
+        Feet = { Name = 'Fuma Sune-Ate', Priority = 60 },
     },
     MDT = {
+        Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
+        Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Resentment Cape',
     },
     FireRes = {},
@@ -107,15 +99,15 @@ local sets = {
         Head = 'Optical Hat',
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Avenger\'s Earring', -- 1
-        Body = 'Scp. Harness +1',
-        Hands = 'Mel. Gloves +1',
-        Ring1 = 'Sattva Ring',
-        Ring2 = 'Toreador\'s Ring',
+        Ear2 = 'Avenger\'s Earring',
+        Body = { Name = 'Scp. Harness +1', Priority = 60 },
+        Hands = { Name = 'Mel. Gloves +1', Priority = 60 },
+        Ring1 = { Name = 'Sattva Ring', Priority = 60 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Back = 'Shadow Mantle',
         Waist = 'Black Belt',
-        Legs = 'Tpl. Hose +1', -- 3
-        Feet = 'Rst. Sune-Ate +1', -- 1
+        Legs = { Name = 'Tpl. Hose +1', Priority = 60 },
+        Feet = 'Rst. Sune-Ate +1',
     },
     Override = { -- An additional override set explicitly to be used for sets such as crafting, HELM, fishing, or any other special sets such as DRK 2HR, MNK Counter etc. n.b. Any unused Resist or Evasion set can be used similarly.
         Body = 'Field Tunica',
@@ -125,26 +117,19 @@ local sets = {
     },
 
     Precast = {
-        Ear1 = 'Loquac. Earring',
+        Ear2 = { Name = 'Loquac. Earring', Priority = 50 },
     },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Neck = 'Willpower Torque', -- 5
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Magnetic Earring', -- 8
-        Body = 'Dst. Harness +1',
-        Hands = 'Dst. Mittens +1',
-        Ring1 = 'Jelly Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Shadow Mantle',
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 }, -- 8
         Waist = 'Silver Obi +1', -- 8
-        Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters', -- 5
     },
     Haste = {
         Head = 'Panther Mask +1',
         Waist = 'Black Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Fuma Sune-Ate',
+        Feet = { Name = 'Fuma Sune-Ate', Priority = 60 },
     },
 
     LockSet1 = { -- 2H Zerg set
@@ -193,13 +178,25 @@ local sets = {
         Ring1 = 'Flame Ring',
         Ring2 = 'Triumph Ring',
     },
-
-    SJ_DRG = {
+    TP_DRG = {
         Head = 'Maat\'s Cap',
         Ear2 = 'Wyvern Earring',
     },
-    SJ_THF = {
+    TP_THF = {
         Ear2 = 'Pilferer\'s Earring',
+    },
+
+    Weapon_Loadout_1 = {
+        Main = 'Destroyers',
+        Ammo = 'Tiphia Sting',
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Cross-Counters',
+        Ammo = 'Tiphia Sting',
+    },
+    Weapon_Loadout_3 = {
+        Main = 'Faith Baghnakhs',
+        Ammo = 'Virtue Stone',
     },
 
     WS = {
@@ -248,6 +245,7 @@ local sets = {
         Ear1 = 'Robust Earring',
         Ear2 = 'Robust Earring',
         Body = 'Tpl. Cyclas +1',
+        Hands = 'Mel. Gloves +1',
         Ring1 = 'Robust Ring',
         Ring2 = 'Sattva Ring',
         Back = 'Melee Cape',
@@ -255,7 +253,6 @@ local sets = {
         Legs = 'Mst. Sitabaki +1',
         Feet = 'Power sandals',
     },
-
     ChiBlast = {
         Head = 'Tpl. Crown +1',
         Neck = 'Faith Torque',
@@ -268,6 +265,18 @@ local sets = {
         Legs = 'Tpl. Hose +1',
         Waist = 'Reverend Sash',
         Feet = 'Suzaku\'s Sune-Ate',
+    },
+    Dodge = {
+        Feet = 'Tpl. Gaiters +1',
+    },
+    Boost = {
+        Hands = 'Temple Gloves',
+    },
+    Focus = {
+        Head = 'Tpl. Crown +1',
+    },
+    Counterstance = {
+        Feet = 'Melee Gaiters',
     },
 
     HundredFists = {
@@ -283,19 +292,6 @@ local sets = {
         Waist = 'Black Belt',
         Legs = 'Shura Haidate',
         Feet = 'Dune Boots',
-    },
-
-    Weapon_Loadout_1 = {
-        Main = 'Destroyers',
-        Ammo = 'Tiphia Sting',
-    },
-    Weapon_Loadout_2 = {
-        Main = 'Cross-Counters',
-        Ammo = 'Tiphia Sting',
-    },
-    Weapon_Loadout_3 = {
-        Main = 'Faith Baghnakhs',
-        Ammo = 'Virtue Stone',
     },
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
@@ -319,12 +315,6 @@ Everything below can be ignored.
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
-sets.temple_gaiters = temple_gaiters
-sets.temple_gloves = temple_gloves
-sets.temple_cyclas = temple_cyclas
-sets.temple_crown = temple_crown
-sets.melee_gaiters = melee_gaiters
-sets.melee_gloves = melee_gloves
 sets.kampfer_ring = kampfer_ring
 sets.kampfer_earring = kampfer_earring
 sets.shadow_mantle = shadow_mantle
@@ -341,21 +331,18 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.ChiBlast)
     elseif (action.Name == 'Chakra') then
         gFunc.EquipSet(sets.Chakra)
-        gFunc.EquipSet('temple_cyclas')
-        gFunc.EquipSet('melee_gloves')
-
         local environment = gData.GetEnvironment()
         if (environment.DayElement == 'Dark') then
             gFunc.EquipSet('shadow_mantle')
         end
     elseif (action.Name == 'Dodge') then
-        gFunc.EquipSet('temple_gaiters')
+        gFunc.EquipSet(sets.Dodge)
     elseif (action.Name == 'Boost') then
-        gFunc.EquipSet('temple_gloves')
+        gFunc.EquipSet(sets.Boost)
     elseif (action.Name == 'Focus') then
-        gFunc.EquipSet('temple_crown')
+        gFunc.EquipSet(sets.Focus)
     elseif (action.Name == 'Counterstance') then
-        gFunc.EquipSet('melee_gaiters')
+        gFunc.EquipSet(sets.Counterstance)
     end
 end
 
@@ -420,9 +407,9 @@ profile.HandleDefault = function()
 
     if (player.Status == 'Engaged') then
         if (player.SubJob == 'DRG') then
-            gFunc.EquipSet(sets.SJ_DRG)
+            gFunc.EquipSet(sets.TP_DRG)
         elseif (player.SubJob == 'THF') then
-            gFunc.EquipSet(sets.SJ_THF)
+            gFunc.EquipSet(sets.TP_THF)
         end
     end
 

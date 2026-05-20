@@ -172,10 +172,10 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     Resting = {
-        Body = 'Nomad\'s Tunica',
         Neck = { Name = 'Paisley Scarf', Priority = 60 },
         Ear1 = 'Sanative Earring',
         Ear2 = 'Relaxing Earring',
+        Body = 'Nomad\'s Tunica',
         Hands = 'Nomad\'s Gloves',
         Legs = 'Nomad\'s Hose',
         Feet = 'Nomad\'s Boots',
@@ -520,7 +520,10 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
-    TP_Aftermath = {},
+    TP_Aftermath = {
+        Ammo = 'Nokizaru Shuriken',
+        Back = 'Amemet Mantle +1',
+    },
     TP_Mjollnir_Haste = {
         Legs = { Name = 'Kog. Hakama +1', Priority = 60 },
     },
@@ -528,13 +531,13 @@ local sets = {
         Body = 'Haubergeon +1',
     },
 
-    Weapon_Loadout_1 = {
+    Weapon_Loadout_1 = {}, -- Empty set for staff tanking
+    Weapon_Loadout_2 = {
         Main = 'Senjuinrikio',
         Sub = 'Unji',
         Range = 'displaced'
         Ammo = 'Bomb Core',
     },
-    Weapon_Loadout_2 = {}, -- Empty sets can be used for engaged staff tanking
     Weapon_Loadout_3 = {},
 
     WS = {
@@ -862,6 +865,14 @@ profile.HandleDefault = function()
             if (blindness == 1) then
                 gFunc.EquipSet('bat_earrings')
             end
+        end
+    end
+
+    -- Repply aftermath set just for NIN
+    if (player.Status == 'Engaged') then
+        local aftermath = gData.GetBuffCount('Aftermath') > 0
+        if aftermath then
+            gFunc.EquipSet('TP_Aftermath')
         end
     end
 

@@ -587,3 +587,4 @@
 - Adds support for debuff and opo-opo necklace gated by a boolean to prevent usage on servers that do not allow them
 - THF - Adds a set for Bully for god knows what reason. Potentially claiming with +enmity items.
 - NIN - Use koga hakama on idle for evasion
+- MNK - Refactor equipment into JAs for clarity
