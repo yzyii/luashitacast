@@ -438,7 +438,7 @@ local sets = {
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Eris\' Earring +1',
         Ear2 = 'Eris\' Earring +1',
-        Body = 'Yasha Samue',
+        Body = 'Yasha Samue +1',
         Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
         Ring1 = 'Mermaid Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
@@ -585,7 +585,20 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    VileElixir = {},
+    VileElixir = {
+        Head = { Name = 'Genbu\'s Kabuto', Priority = 60 },
+        Neck = { Name = 'Shield Pendant', Priority = 20 },
+        Ear1 = { Name = 'Pigeon Earring +1', Priority = 60 },
+        Ear2 = { Name = 'Pigeon Earring +1', Priority = 60 },
+        Body = { Name = 'Scp. Harness +1', Priority = 60 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
+        Waist = { Name = 'Powerful Rope', Priority = 60 },
+        Legs = { Name = 'Kog. Hakama +1', Priority = 60 },
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
+    },
 }
 
 profile.SetMacroBook = function()
