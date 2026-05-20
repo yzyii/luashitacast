@@ -82,6 +82,10 @@ LuAshitacast provides functionality to automatically equip Level Sync gear. This
 
 It is highly suggested that you do not attempt to add Level Sync functionality to these luas as it will cause you to be unable to update to newer versions easily among several other reasons.
 
+### Multiple Characters
+
+If you have multiple characters, move a copy of the you may move the common folder into each profile folder to edit different character's available items.
+
 # Contact Me
 
 Do NOT /tell me in game asking for help. You will be ignored. I only respond to Discord Messages.
