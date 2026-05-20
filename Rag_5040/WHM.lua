@@ -99,8 +99,8 @@ local sets = {
         Hands = 'Hydra Gloves',
         Ring1 = { Name = 'Serene Ring', Priority = 10 },
         Ring2 = { Name = 'Serene Ring', Priority = 10 },
-        Back = 'Mahatma Cape',
-        Waist = 'Cleric\'s Belt',
+        Back = { Name = 'Mahatma Cape', Priority = 50 },
+        Waist = { Name = 'Cleric\'s Belt', Priority = 50 },
         Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },
@@ -188,7 +188,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10
-        Back = 'Hexerei Cape',
+        Back = 'Blue Cape +1', -- 7
         Waist = 'Wind Belt', -- 20
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = 'Cmb.Cst. Shoes', -- 4
@@ -241,6 +241,7 @@ local sets = {
         Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 }, -- 8
+        Back = 'Shadow Mantle',
         Waist = 'Druid\'s Rope', -- 10
         Feet = { Name = 'Hlr. Duckbills +1', Priority = 50 }, -- 25
     },
@@ -249,8 +250,8 @@ local sets = {
     },
     Haste = {
         Head = 'Nashira Turban',
-        Body = 'Nashira Manteel',
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
+        Body = 'Nashira Manteel',
         Hands = { Name = 'Blessed Mitts +1', Priority = 50 },
         Back = 'Shadow Mantle',
         Waist = 'Swift Belt',
@@ -335,7 +336,7 @@ local sets = {
         Feet = { Name = 'Hlr. Duckbills +1', Priority = 50 },
     },
     Cure = {
-        Ammo = 'Dream Sand',
+        Ammo = { Name = 'Dream Sand', Priority = 50 },
         Head = 'Hydra Beret', -- 8
         Neck = 'Benign Necklace', -- 2
         Ear1 = 'Novia Earring', -- 7
@@ -392,7 +393,7 @@ local sets = {
         Ammo = { Name = 'Dream Sand', Priority = 50 },
         Head = 'Nashira Turban',
         Neck = 'Enhancing Torque',
-        Ear1 = 'Augmenting Earring',
+        Ear1 = 'Augment. Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = 'Nashira Manteel',
         Hands = { Name = 'Blessed Mitts +1', Priority = 50 },
@@ -467,8 +468,7 @@ local sets = {
         Legs = 'Mahatma Slops',
         Feet = { Name = 'Hlr. Duckbills +1', Priority = 50 },
     },
-    EnfeeblingACC = {
-    },
+    EnfeeblingACC = {},
 
     Divine = {
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
@@ -514,6 +514,12 @@ local sets = {
         Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
         Legs = 'Mahatma Slops',
         Feet = { Name = 'Hlr. Duckbills +1', Priority = 50 },
+    },
+    Stun = {
+        Hands = { Name = 'Blessed Mitts +1', Priority = 50 },
+        Waist = 'Swift Belt',
+        Legs = { Name = 'Bls. Trousers +1', Priority = 50 },
+        Feet = { Name = 'Blessed Pumps +1', Priority = 50 },
     },
 
     Nuke = {},

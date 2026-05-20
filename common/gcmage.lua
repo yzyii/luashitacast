@@ -623,6 +623,7 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue, cureCastMeritValue)
     local castDelay = ((castTime * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
+        gcinclude.DoCancel(action, castDelay - minimumBuffer)
     end
 
     local function delayCheat()
@@ -914,12 +915,12 @@ function gcmage.SetupInterimEquipSet(sets, isRanged)
     end
 
     if (gcdisplay.IdleSet == 'DT') then
-        if (environment.Time >= 6 and environment.Time < 18) then
-            interimSet = sets.DT
-        else
-            interimSet = sets.DTNight
+        interimSet = sets.DT
+        if (environment.Time < 6 and environment.Time >= 18) then
+            interimSet = gFunc.Combine(sets.DT, sets.DTNight)
         end
     end
+
     if (gcdisplay.IdleSet == 'MDT') then interimSet = sets.MDT end
     if (gcdisplay.IdleSet == 'FireRes') then interimSet = sets.FireRes end
     if (gcdisplay.IdleSet == 'IceRes') then interimSet = sets.IceRes end
@@ -1022,13 +1023,14 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
     if (gcdisplay.GetToggle('HNM') == true) then
         gFunc.EquipSet('NukeHNM')
     end
-    if (player.MainJob == 'BLM' and gcdisplay.GetToggle('Extra') and player.MP >= blmNukeExtra) then
-        gFunc.EquipSet('NukeExtra')
-    end
 
     if (ElementalDebuffs:contains(action.Name)) then
         gFunc.EquipSet('NukeDOT')
     else
+        if (player.MainJob == 'BLM' and gcdisplay.GetToggle('Extra') and player.MP >= blmNukeExtra) then
+            gFunc.EquipSet('NukeExtra')
+            do return end
+        end
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
             if ((player.MainJob == 'RDM') and conquest:GetOutsideControl()) then
@@ -1117,7 +1119,7 @@ function gcmage.EquipDark(maxMP)
     local action = gData.GetAction()
 
     gFunc.EquipSet('Dark')
-    if (player.MainJob == 'BLM' or player.MainJob == 'RDM') and (action.Name == 'Stun') then
+    if (action.Name == 'Stun') then
         gFunc.EquipSet('Stun')
         local chainspell = gData.GetBuffCount('Chainspell')
         if (chainspell > 0) then

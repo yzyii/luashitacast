@@ -157,6 +157,8 @@ local fixedControl = T{
     [241] = controllerNames[4], --Windurst Woods
     [242] = controllerNames[4], --Heavens Tower
 
+    [37] = controllerNames[4], --Temenos
+    [38] = controllerNames[4], --Apollyon
 }
 
 --This data should not be changed unless it is found to be inaccurate or custom regions are added.

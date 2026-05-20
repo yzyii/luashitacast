@@ -299,6 +299,7 @@ function gcmelee.SetupMidcastDelay(fastCastValue)
     local castDelay = ((castTime * castTimeMod * (1 - fastCastValue)) / 1000) - minimumBuffer
     if (castDelay >= packetDelay) then
         gFunc.SetMidDelay(castDelay)
+        gcinclude.DoCancel(action, castDelay - minimumBuffer)
     end
 
     -- print(chat.header('DEBUG'):append(chat.message('Cast delay is ' .. castDelay)))

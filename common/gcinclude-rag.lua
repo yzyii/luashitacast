@@ -1,4 +1,5 @@
-local horizon_safe_mode = true -- This disables some of the potentially more contentious automation to ensure LAC is not breaking Horizon server rules
+local horizon_safe_mode = true -- this disables some of the potentially more contentious automation to ensure this LAC profile is not breaking Horizon server rules
+local horizon_legal_mode = true -- this disables functionality that is illegal on horizon
 
 local display_messages = true -- Set to true if you want chat log messages to appear on any /gc command used such as DT, or kite gear toggles
 
@@ -29,6 +30,11 @@ local dream_mittens = {
 }
 local skulkers_cape = {
     -- Back = 'Skulker\'s Cape',
+}
+
+-- Disabled on horizon_legal_mode
+local opo_opo_necklace = {
+    -- Neck = 'Opo-opo Necklace',
 }
 
 -- Set this to true to confirm that you actually read the README.md and set up the equipment and settings listed above correctly
@@ -66,6 +72,7 @@ conquest = gFunc.LoadFile('common\\conquest.lua')
 local gcinclude = {}
 
 gcinclude.horizon_safe_mode = horizon_safe_mode
+gcinclude.horizon_legal_mode = horizon_legal_mode
 
 local Overrides = T{ 'idle','dt','pdt','mdt','fireres','fres','iceres','ires','bres','lightningres','lres','tres','earthres','eres','sres','windres','wires','ares','waterres','wares','wres','evasion','eva','override','or' }
 local Commands = T{ 'kite','lock','lockset','horizonmode' }
@@ -143,6 +150,43 @@ function gcinclude.RetryLoad()
         end
     else
         gcinclude.RetryLoad:once(1)
+    end
+end
+
+function gcinclude.DoCancel(spell, delay)
+    if (not horizon_legal_mode) then
+        local index = spell.Resource.Index
+        local recast = AshitaCore:GetMemoryManager():GetRecast():GetSpellTimer(index)
+
+        if (recast == 0) then
+            if (spell.Name == 'Utsusemi: Ichi') then
+                local function delayUtsusemiCancel()
+                    if (gData.GetBuffCount(66) == 1) then
+                        AshitaCore:GetChatManager():QueueCommand(-1, '/cancel 66')
+                    elseif (gData.GetBuffCount(444) == 1) then
+                        AshitaCore:GetChatManager():QueueCommand(-1, '/cancel 444')
+                    end
+                end
+
+                delayUtsusemiCancel:once(delay)
+            elseif (spell.Name == 'Stoneskin') then
+                local function delayStoneskinCancel()
+                    if (gData.GetBuffCount('Stoneskin') == 1) then
+                        AshitaCore:GetChatManager():QueueCommand(-1, '/cancel Stoneskin')
+                    end
+                end
+
+                delayStoneskinCancel:once(delay)
+            elseif (spell.Name == 'Sneak') then
+                local function delaySneakCancel()
+                    if (gData.GetBuffCount('Sneak') == 1) then
+                        AshitaCore:GetChatManager():QueueCommand(-1, '/cancel Sneak')
+                    end
+                end
+
+                delaySneakCancel:once(delay - 0.4)
+            end
+        end
     end
 end
 
@@ -289,6 +333,12 @@ function gcinclude.DoDefaultOverride(isMelee)
     else
         restTimestampRecorded = false
     end
+
+    if (gData.GetBuffCount('Sleep') > 0 and not horizon_legal_mode) then
+        if (isMelee or (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off')) then
+            gFunc.EquipSet('opo_opo_necklace')
+        end
+    end
 end
 
 function gcinclude.DoItem()
@@ -367,6 +417,7 @@ function gcinclude.AppendSets(sets)
     sets.dream_boots = dream_boots
     sets.dream_mittens = dream_mittens
     sets.skulkers_cape = skulkers_cape
+    sets.opo_opo_necklace = opo_opo_necklace
 
     return sets
 end

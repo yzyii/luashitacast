@@ -581,3 +581,7 @@
 - WAR - Adds WS sets
 - WAR - Adds rudimentary tracking for Raging Rush + Atilla's Earring when /SAM with Rajas
 - WAR - Adds Unicorn Legging handling
+- Conquest - Adds Temenos and Apollyon to beastman zones so OOR equipment works
+- Mages - Adds a stun set to every mage
+- BLM - Causes an early exit on NukeExtra for reliability. i.e. does not use Sorc Ring etc.
+- Adds support for debuff and opo-opo necklace gated by a boolean to prevent usage on servers that do not allow them

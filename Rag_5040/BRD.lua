@@ -357,6 +357,7 @@ local sets = {
     Divine = {},
     Banish = {},
     Dark = {},
+    Stun = {},
 
     Nuke = {},
     NukeACC = {},
