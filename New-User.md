@@ -142,7 +142,7 @@ The following is incorrect:
     },
 ```
 
-## Example Gear
+## Example Gear (WIP)
 
 The luas have been filled out with BiS gear for CoP era.
 
@@ -152,7 +152,7 @@ The restrictions and assumptions made while doing so are as follows:
 - No Divine Might earrings.
 - CoP ring is assumed to be Sattva unless Rajas is required for Store TP requirements. Some jobs may still use Sattva even if a Store TP build exists.
 - Apoc Nigh earring is be assumed to be Magnetic except for Ethereal on DRG.
-- No Relic Weapons, Defending Ring, Ancient Adamantoise Egg, Ridill
+- No Relic Weapons, Defending Ring, Ancient Adamantoise Egg, Ridill, though some Relic WS sets are filled out as an example.
 - No HQ+1 Resistance Earrings / Rings
 - Some NQ items instead of HQ e.g. Dalmatica.
 - No RSE items.
@@ -173,8 +173,6 @@ This functionality is generally not required except for power users that know wh
 
 If you are not a power user, you may ignore it as well as the rest of this file and return back to the original [README](README.md).
 
-### Following is not accurate yet but will be at some point
-
 The default Schema for equipment swaps that have been pre-filled out within these profiles is as follows:
 - if it has +HP and +MP, priority = 70
 - if it has +HP, priority = 60
@@ -185,6 +183,6 @@ The default Schema for equipment swaps that have been pre-filled out within thes
 - if it has Convert HP to MP, priority = 10
 - if it has -MP, priority = -10
 - if it has -HP, priority = -20
-- Special cases will be marked as priority = 100 or -100. e.g. going from a -HP item in Precast to an item with no HP or MP at all.
+- Special cases should be marked as priority = 100 or -100. e.g. going from a -HP item in Precast to an item with no HP or MP at all.
 
-Not all special cases will have been identified. Reporting of any discrepancies would be appreciated.
+Barely any special cases will have been identified for you. Reporting of any would be appreciated.
