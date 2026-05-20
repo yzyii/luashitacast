@@ -585,3 +585,5 @@
 - Mages - Adds a stun set to every mage
 - BLM - Causes an early exit on NukeExtra for reliability. i.e. does not use Sorc Ring etc.
 - Adds support for debuff and opo-opo necklace gated by a boolean to prevent usage on servers that do not allow them
+- THF - Adds a set for Bully for god knows what reason. Potentially claiming with +enmity items.
+- NIN - Use koga hakama on idle for evasion

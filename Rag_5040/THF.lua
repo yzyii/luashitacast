@@ -339,6 +339,7 @@ local sets = {
         Hands = 'Andvaranauts',
         Legs = { Name = 'Asn. Culottes +1', Priority = 60 },
     },
+    Bully = {},
     TH = {
         Neck = 'Nanaa\'s Charm',
         Hands = { Name = 'Asn. Armlets +1', Priority = 60 },
@@ -518,6 +519,8 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Steal)
     elseif (action.Name == 'Mug') then
         gFunc.EquipSet(sets.Mug)
+    elseif (action.Name == 'Bully') then
+        gFunc.EquipSet(sets.Bully)
     elseif (action.Name == 'Sneak Attack') then
         saOverride = os.clock() + 2
     elseif (action.Name == 'Trick Attack') then
