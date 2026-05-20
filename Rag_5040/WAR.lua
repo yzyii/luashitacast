@@ -232,6 +232,26 @@ local sets = {
     },
     Provoke = {},
 
+    Jump = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Fortitude Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Robust Earring',
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+        Hands = { Name = 'Hct. Mittens +1', Priority = 60 },
+        Ring1 = 'Rajas Ring',
+        Ring2 = 'Robust Ring',
+        Back = 'Wyvern Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'War. Cuisses +1',
+        Feet = { Name = 'Hct. Leggings +1', Priority = 60 },
+    },
+    HighJump = {
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Haubergeon +1',
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
+    },
+
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {},
 
@@ -281,6 +301,11 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Warcry)
     elseif (action.Name == 'Provoke') then
         gFunc.EquipSet(sets.Provoke)
+    elseif (action.Name == 'Jump') then
+        gFunc.EquipSet(sets.Jump)
+    elseif (action.Name == 'High Jump') then
+        gFunc.EquipSet(sets.Jump)
+        gFunc.EquipSet(sets.HighJump)
     end
 end
 

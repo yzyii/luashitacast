@@ -589,3 +589,5 @@
 - NIN - Use conditional evasion gear on idle
 - MNK - Refactor equipment into JAs for clarity
 - NIN - Allow TP_Aftermath to re-apply to work with how weapon loadouts are intended to be used
+- MNK - Add a focus set modifier for hundred fists used if in LowAcc mode
+- WAR - Add Jump for /DRG

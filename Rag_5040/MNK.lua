@@ -3,7 +3,7 @@ local profile = {}
 local fastCastValue = 0.02 -- 2% from gear listed in Precast set
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
-local max_hp_in_idle_with_regen_gear_equipped = 1632 -- You could set this to 0 if you do not wish to ever use regen gear
+local max_hp_in_idle_with_regen_gear_equipped = 1706 -- You could set this to 0 if you do not wish to ever use regen gear
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local kampfer_ring = {
@@ -52,6 +52,7 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     Resting = {
+        Head = { Name = 'Tpl. Crown +1', Priority = 60 },
         Neck = { Name = 'Paisley Scarf', Priority = 60 },
         Ear2 = 'Sanative Earring',
         Body = { Name = 'Mel. Cyclas +1', Priority = 60 },
@@ -132,47 +133,30 @@ local sets = {
         Feet = { Name = 'Fuma Sune-Ate', Priority = 60 },
     },
 
-    LockSet1 = { -- 2H Zerg set
-        Head = 'Maat\'s Cap',
-        Neck = 'Faith Torque',
-        Ear1 = 'Brutal Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Shura Togi',
-        Hands = 'Mel. Gloves +1',
-        Ring1 = 'Flame Ring',
-        Ring2 = 'Triumph Ring',
-        Back = 'Forager\'s Mantle',
-        Waist = 'Black Belt',
-        Legs = 'Shura Haidate',
-        Feet = 'Dune Boots',
-    },
-    LockSet2 = {},
-    LockSet3 = {},
-
     TP_LowAcc = {
         Head = 'Panther Mask +1',
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Kirin\'s Osode',
-        Hands = 'Mel. Gloves +1',
-        -- Ring1 = 'Toreador\'s Ring',
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
         Ring1 = 'Begrudging Ring',
-        Ring2 = 'Toreador\'s Ring',
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Back = 'Forager\'s Mantle',
         Waist = 'Black Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Fuma Sune-Ate',
+        Feet = { Name = 'Fuma Sune-Ate', Priority = 60 },
     },
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {
         Head = 'Maat\'s Cap',
     },
     TP_HighAcc = {
-        Head = 'Maat\'s Cap',
-        Body = 'Shura Togi',
-        Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Toreador\'s Ring',
+        Head = 'Optical Hat',
+        Neck = 'Peacock Amulet',
+        Body = { Name = 'Shura Togi +1', Priority = -20 },
+        Hands = 'Noritsune Kote',
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
     },
     TP_Focus = {
         Ring1 = 'Flame Ring',
@@ -204,79 +188,91 @@ local sets = {
         Neck = 'Thunder Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
         Ring1 = 'Flame Ring',
         Ring2 = 'Triumph Ring',
-        Legs = 'Shura Haidate',
-        Feet = 'Shura Sune-Ate',
-        Hands = 'Mel. Gloves +1',
         Back = 'Forager\'s Mantle',
         Waist = 'Black Belt',
+        Legs = { Name = 'Shura Haidate +1', Priority = -20 },
+        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -20 },
     },
     WS_HighAcc = {
-        -- Ring1 = 'Toreador\'s Ring',
-        Ring1 = 'Begrudging Ring',
-        Ring2 = 'Toreador\'s Ring',
+        Body = { Name = 'Shura Togi +1', Priority = -20 },
+        Hands = 'Noritsune Kote',
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
     },
 
     WS_AsuranFists = {
         Neck = 'Faith Torque',
         Ear1 = 'Merman\'s Earring',
     },
-    WS_DragonKick = {
-        Legs = 'Byakko\'s Haidate',
-    },
-    WS_HowlingFist = {
-    },
+    WS_DragonKick = {},
+    WS_HowlingFist = {},
+    WS_RagingFists = {},
+    WS_FinalHeaven = {},
 
     Jump = {
-        Head = 'Genbu\'s Kabuto',
+        Head = 'Maat\'s Cap',
+        Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Robust Earring',
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
         Ring1 = 'Robust Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Wyvern Mantle',
-        Legs = 'Shura Haidate',
+        Waist = 'Warwolf Belt',
+        Legs = { Name = 'Shura Haidate +1', Priority = -20 },
         Feet = 'Dune Boots',
     },
+    HighJump = {
+        Ear2 = 'Merman\'s Earring',
+        Body = { Name = 'Shura Togi +1', Priority = -20 },
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Waist = 'Black Belt',
+    },
     Chakra = {
-        Ammo = 'Happy Egg',
-        Head = 'Genbu\'s Kabuto',
+        Ammo = { Name = 'Happy Egg', Priority = 60 },
+        Head = { Name = 'Genbu\'s Kabuto', Priority = 60 },
         Neck = 'Fortitude Torque',
         Ear1 = 'Robust Earring',
         Ear2 = 'Robust Earring',
-        Body = 'Tpl. Cyclas +1',
-        Hands = 'Mel. Gloves +1',
+        Body = { Name = 'Tpl. Cyclas +1', Priority = 60 },
+        Hands = { Name = 'Mel. Gloves +1', Priority = 60 },
         Ring1 = 'Robust Ring',
-        Ring2 = 'Sattva Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Melee Cape',
         Waist = 'Warwolf Belt',
         Legs = 'Mst. Sitabaki +1',
         Feet = 'Power sandals',
     },
     ChiBlast = {
-        Head = 'Tpl. Crown +1',
+        Head = { Name = 'Tpl. Crown +1', Priority = 60 },
         Neck = 'Faith Torque',
         Ear1 = 'Cmn. Earring',
         Ear2 = 'Cmn. Earring',
-        Hands = 'Dvt. Mitts +1',
+        Hands = { Name = 'Dvt. Mitts +1', Priority = 50 },
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
         Back = 'Melee Cape',
-        Legs = 'Tpl. Hose +1',
+        Legs = { Name = 'Tpl. Hose +1', Priority = 60 },
         Waist = 'Reverend Sash',
         Feet = 'Suzaku\'s Sune-Ate',
     },
     Dodge = {
-        Feet = 'Tpl. Gaiters +1',
+        Feet = { Name = 'Tpl. Gaiters +1', Priority = 60 },
     },
     Boost = {
-        Hands = 'Temple Gloves',
+        Hands = { Name = 'Temple Gloves', Priority = 60 },
     },
     Focus = {
-        Head = 'Tpl. Crown +1',
+        Head = { Name = 'Tpl. Crown +1', Priority = 60 },
     },
     Counterstance = {
-        Feet = 'Melee Gaiters',
+        Feet = { Name = 'Melee Gaiters', Priority = 60 },
     },
 
     HundredFists = {
@@ -284,14 +280,18 @@ local sets = {
         Neck = 'Faith Torque',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
-        Body = 'Shura Togi',
-        Hands = 'Mel. Gloves +1',
-        Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Toreador\'s Ring',
+        Body = { Name = 'Shura Togi +1', Priority = -20 },
+        Hands = { Name = 'Bandomusha Kote', Priority = 60 },
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Back = 'Forager\'s Mantle',
         Waist = 'Black Belt',
-        Legs = 'Shura Haidate',
+        Legs = { Name = 'Shura Haidate +1', Priority = -20 },
         Feet = 'Dune Boots',
+    },
+    HundredFists_Focus = {
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
     },
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
@@ -299,7 +299,24 @@ local sets = {
         Ammo = 'Pebble',
     },
 
-    VileElixir = {},
+    LockSet1 = {},
+    LockSet2 = {},
+    LockSet3 = {},
+
+    VileElixir = {
+        Head = { Name = 'Genbu\'s Kabuto', Priority = 60 },
+        Neck = { Name = 'Shield Pendant', Priority = 20 },
+        Ear1 = { Name = 'Pigeon Earring +1', Priority = 60 },
+        Ear2 = { Name = 'Pigeon Earring +1', Priority = 60 },
+        Body = { Name = 'Mel. Cyclas +1', Priority = 60 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
+        Ring2 = { Name = 'Bloodbead Ring', Priority = 40 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
+        Waist = { Name = 'Powerful Rope', Priority = 60 },
+        Legs = { Name = 'Tpl. Hose +1', Priority = 60 },
+        Feet = { Name = 'Melee Gaiters', Priority = 60 },
+    },
 }
 
 profile.SetMacroBook = function()
@@ -325,9 +342,7 @@ profile.HandleAbility = function()
 
     local action = gData.GetAction()
 
-    if string.match(action.Name, 'Jump') then
-        gFunc.EquipSet(sets.Jump)
-    elseif (action.Name == 'Chi Blast') then
+    if (action.Name == 'Chi Blast') then
         gFunc.EquipSet(sets.ChiBlast)
     elseif (action.Name == 'Chakra') then
         gFunc.EquipSet(sets.Chakra)
@@ -343,6 +358,11 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Focus)
     elseif (action.Name == 'Counterstance') then
         gFunc.EquipSet(sets.Counterstance)
+    elseif (action.Name == 'Jump') then
+        gFunc.EquipSet(sets.Jump)
+    elseif (action.Name == 'High Jump') then
+        gFunc.EquipSet(sets.Jump)
+        gFunc.EquipSet(sets.HighJump)
     end
 end
 
@@ -370,6 +390,10 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_DragonKick)
     elseif (action.Name == 'Howling Fist') then
         gFunc.EquipSet(sets.WS_HowlingFist)
+    elseif (action.Name == 'Raging Fists') then
+        gFunc.EquipSet(sets.WS_RagingFists)
+    elseif (action.Name == 'Final Heaven') then
+        gFunc.EquipSet(sets.WS_FinalHeaven)
     end
 end
 
@@ -397,10 +421,6 @@ profile.HandleDefault = function()
     local focus = gData.GetBuffCount('Focus')
     local hundredFists = gData.GetBuffCount('Hundred Fists')
 
-    if (hundredFists == 1) then
-        gFunc.EquipSet(sets.HundredFists)
-    end
-
     if (focus == 1 and gcdisplay.IdleSet == 'LowAcc') then
         gFunc.EquipSet(sets.TP_Focus)
     end
@@ -410,6 +430,13 @@ profile.HandleDefault = function()
             gFunc.EquipSet(sets.TP_DRG)
         elseif (player.SubJob == 'THF') then
             gFunc.EquipSet(sets.TP_THF)
+        end
+    end
+
+    if (hundredFists == 1) then
+        gFunc.EquipSet(sets.HundredFists)
+        if (focus == 1 and gcdisplay.IdleSet == 'LowAcc') then
+            gFunc.EquipSet(sets.HundredFists_Focus)
         end
     end
 

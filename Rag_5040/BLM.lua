@@ -473,6 +473,10 @@ local sets = {
         Ammo = 'Pebble',
     },
 
+    LockSet1 = {},
+    LockSet2 = {},
+    LockSet3 = {},
+
     VileElixir = {
         Main = 'Terra\'s Staff',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
@@ -489,10 +493,6 @@ local sets = {
         Legs = { Name = 'Src. Tonban +1', Priority = 50 },
         Feet = { Name = 'Herald\'s Gaiters', Priority = 50 },
     },
-
-    LockSet1 = {},
-    LockSet2 = {},
-    LockSet3 = {},
 }
 
 profile.SetMacroBook = function()

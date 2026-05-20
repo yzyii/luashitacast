@@ -243,18 +243,20 @@ local sets = {
         Head = 'Maat\'s Cap',
         Neck = 'Justice Torque',
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Merman\'s Earring',
+        Ear2 = 'Robust Earring',
         Body = { Name = 'Kirin\'s Osode', Priority = 50 },
         Hands = { Name = 'Bandomusha Kote', Priority = 60 },
         Ring1 = 'Rajas Ring',
-        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
-        Back = 'Forager\'s Mantle',
+        Ring2 = 'Robust Ring',
+        Back = 'Wyvern Mantle',
         Waist = 'Warwolf Belt',
         Legs = { Name = 'Shura Haidate +1', Priority = -20 },
         Feet = 'Rutter Sabatons',
     },
     HighJump = {
+        Ear2 = 'Merman\'s Earring',
         Body = 'Haubergeon +1',
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
     },
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
