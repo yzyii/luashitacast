@@ -123,15 +123,6 @@ function gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
     gcinclude.DoDefaultIdle()
 
-    if (player.MainJob == 'NIN') then
-        if (environment.Time < 6 or environment.Time >= 18) then
-            gFunc.EquipSet('koga_hakama')
-        end
-        if (environment.Time < 7 or environment.Time >= 17) then
-            gFunc.EquipSet('koga_hakama_plus_one')
-        end
-    end
-
     if (player.Status == 'Idle') then
         if (player.HPP < 50) then
             if (MuscleBeltJobs:contains(player.MainJob)) then gFunc.EquipSet('muscle_belt') end

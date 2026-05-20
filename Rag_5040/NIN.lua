@@ -843,7 +843,7 @@ profile.HandleDefault = function()
         end
     end
 
-    if (gcdisplay.IdleSet == 'Evasion') then
+    if (gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'Evasion') then
         if (environment.Time < 6 or environment.Time >= 18) then
             gFunc.EquipSet('fenrirs_stone')
         end
