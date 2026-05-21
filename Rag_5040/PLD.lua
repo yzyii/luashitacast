@@ -29,7 +29,7 @@ local shadow_mantle = {
 }
 
 local sets = {
-    Idle = { -- 1415
+    Idle = { -- 1437
         Main = 'Tutelary',
         Sub = 'Aegis',
         Range = 'Rosenbogen',
@@ -44,8 +44,8 @@ local sets = {
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
-        Legs = { Name = 'Dst. Subligar +1', Priority = 10 },
-        Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = 10 },
+        Feet = 'Dst. Leggings +1',
     },
     IdleALT = {
     },
@@ -451,18 +451,18 @@ local sets = {
         Sub = 'Koenig Shield',
         Range = 'Rosenbogen',
         Ammo = '',
-        Head = 'Koenig Schaller',
+        Head = 'Kaiser Schaller',
         Neck = 'Fortitude Torque',
         Ear1 = { Name = 'Robust Earring', Priority = -1 },
         Ear2 = { Name = 'Robust Earring', Priority = -1 },
-        Body = 'Glt. Surcoat +1',
-        Hands = 'Kng. Handschuhs',
+        Body = 'Kaiser Cuirass',
+        Hands = 'Kaiser Handschuhs',
         Ring1 = 'Robust Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Valor Cape', Priority = 100 },
         Waist = 'Warwolf Belt',
-        Legs = { Name = 'Adaman Cuisses', Priority = -1 },
-        Feet = { Name = 'Power Sandals', Priority = -1 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = -1 },
+        Feet = { Name = 'Kaiser Schuhs', Priority = -1 },
     },
     ShieldBash = {
         Sub = 'Aegis',
