@@ -7,19 +7,16 @@ local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if 
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local parade_gorget = {
-    Neck = 'Parade Gorget',
+    Neck = { Name = 'Parade Gorget', Priority = 50 },
 }
 local hercules_ring = {
     -- Ring1 = 'Hercules\' Ring',
 }
-local gallant_leggings = {
-    Legs = 'Glt. Leggings +1',
-}
 local valor_leggings = {
-    Legs = 'Vlr. Leggings +1',
+    Legs = { Name = 'Vlr. Leggings +1', Priority = 60 },
 }
 local arco_de_velocidad = {
-    Range = 'Arco de Velocidad',
+    Range = { Name = 'Arco de Velocidad', Priority = 60 },
 }
 local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
     Back = 'Warlock\'s Mantle',
@@ -29,93 +26,115 @@ local shadow_mantle = {
 }
 
 local sets = {
-    Idle = { -- 1437
-        Main = 'Tutelary',
-        Sub = 'Aegis',
-        Range = 'Rosenbogen',
-        Ammo = '',
-        Head = '',
-        Body = 'Royal Cloak',
+    Idle = { -- 1457
+        Main = 'Terra\'s Staff',
+        Sub = 'displaced',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
+        Ammo = 'displaced',
+        Head = 'displaced',
+        Body = { Name = 'Royal Cloak', Priority = 50 },
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Shadow Ring',
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
-        Legs = { Name = 'Kaiser Diechlings', Priority = 10 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
         Feet = 'Dst. Leggings +1',
     },
-    IdleALT = {
-    },
-    IdleDT = { -- Disabled on horizon_safe_mode -- 1415
-        Main = 'Tutelary',
-        Sub = 'Aegis',
-        Range = 'Rosenbogen',
-        Ammo = '',
-        Head = 'Darksteel Cap +1', -- 2
-        Body = 'Dst. Harness +1', -- 4
-        Neck = { Name = 'Shield Torque', Priority = 100 },
+    IdleALT = { -- 1427
+        Main = { Name = 'Tutelary', Priority = 60 },
+        Sub = 'Palmerin\'s Shield',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
+        Ammo = 'displaced',
+        Head = 'displaced',
+        Body = { Name = 'Royal Cloak', Priority = 50 },
+        Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
-        Hands = 'Heavy Gauntlets', -- 3
-        Ring1 = 'Jelly Ring', -- 5
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Hands = 'Heavy Gauntlets',
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
-        Legs = { Name = 'Dst. Subligar +1', Priority = 10 }, -- 3
-        Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
+        Feet = 'Dst. Leggings +1',
+    },
+    IdleDT = { -- Disabled on horizon_safe_mode -- 1457
+        Main = 'Terra\'s Staff',
+        Sub = 'displaced',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
+        Ammo = 'displaced',
+        Head = 'Darksteel Cap +1',
+        Body = 'Dst. Harness +1',
+        Neck = { Name = 'Shield Torque', Priority = 60 },
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Hands = 'Heavy Gauntlets',
+        Ring1 = 'Jelly Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
+        Feet = 'Dst. Leggings +1',
     },
     IdleALTDT = { -- Disabled on horizon_safe_mode
+        Main = 'Tutelary',
+        Sub = 'Palmerin\'s Shield',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
+        Ammo = 'displaced',
+        Head = 'Darksteel Cap +1',
+        Body = 'Dst. Harness +1',
+        Neck = { Name = 'Shield Torque', Priority = 60 },
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Hands = 'Heavy Gauntlets',
+        Ring1 = 'Jelly Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
+        Feet = 'Dst. Leggings +1',
     },
     Resting = {
         Main = 'Pluto\'s Staff',
-        Sub = 'remove',
+        Sub = 'displaced',
+        Neck = { Name = 'Pch. Collar', Priority = 60 },
         Ear1 = 'Relaxing Earring',
-        Ear2 = 'Magnetic Earring',
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
+        Body = 'Nomad\'s Tunica',
+        Hands = 'Nomad\'s Gloves',
+        Legs = 'Nomad\'s Hose',
+        Feet = 'Nomad\'s Boots',
     },
-    Town = {
-        Main = 'Octave Club',
-        Sub = 'Aegis',
-        Range = 'Arco de Velocidad',
-        Head = 'Bahamut\'s Mask',
-        Neck = 'Jeweled Collar +1',
-        Ear1 = 'Knightly Earring',
-        Ear2 = 'Cassie Earring',
-        Body = 'Hydra Haubert',
-        Hands = 'Homam Manopolas',
-        Ring1 = 'Shadow Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Shadow Mantle',
-        Waist = 'Sonic Belt',
-        Legs = 'Blood Cuisses',
-        Feet = 'Homam Gambieras',
-    },
+    Town = {},
     Movement = {
-        Legs = 'Blood Cuisses',
+        Legs = { Name = 'Blood Cuisses', Priority = 60 },
     },
     Movement_TP = {},
 
     DT = { -- 1415
-        Main = 'Tutelary',
-        Sub = 'Aegis',
+        Main = 'Terra\'s Staff', -- 20
+        Sub = 'displaced',
         Range = 'Rosenbogen',
-        Ammo = '',
+        Ammo = 'displaced',
         Head = 'Darksteel Cap +1', -- 2
         Body = 'Dst. Harness +1', -- 4
-        Neck = { Name = 'Shield Torque', Priority = 100 },
+        Neck = { Name = 'Shield Torque', Priority = 60 },
         Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
         Hands = 'Heavy Gauntlets', -- 3
         Ring1 = 'Jelly Ring', -- 5
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 }, -- 5
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
-        Legs = { Name = 'Dst. Subligar +1', Priority = 10 }, -- 3
-        Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
+        Feet = 'Dst. Leggings +1', -- 2
     },
     MDT = {
+        Head = 'Dream Ribbon',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring', -- 2
         Ear2 = { Name = 'Cassie Earring', Priority = 100 },
@@ -469,6 +488,10 @@ local sets = {
         Ear1 = 'Knightly Earring',
         Hands = 'Vlr. Gauntlets +1',
     },
+    HolyCircle = {
+        Legs = 'Glt. Leggings +1',
+    },
+
     Enhancing = {
         Main = 'Kirin\'s Pole',
         Head = 'Maat\'s Cap',
@@ -534,7 +557,6 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 sets.parade_gorget = parade_gorget
 sets.hercules_ring = hercules_ring
-sets.gallant_leggings = gallant_leggings
 sets.valor_leggings = valor_leggings
 sets.arco_de_velocidad = arco_de_velocidad
 sets.warlocks_mantle = warlocks_mantle
@@ -553,7 +575,7 @@ profile.HandleAbility = function()
     gFunc.EquipSet(sets.Hate)
 
     if (action.Name == 'Holy Circle') then
-        gFunc.EquipSet(sets.gallant_leggings)
+        gFunc.EquipSet(sets.HolyCircle)
     elseif (action.Name == 'Rampart') then
         gFunc.EquipSet(sets.Rampart)
         local environment = gData.GetEnvironment()
