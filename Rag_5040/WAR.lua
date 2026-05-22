@@ -59,7 +59,6 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Shadow Ring',
         Ring2 = 'Merman\'s Ring',
-        Back = 'Resentment Cape',
         Legs = 'Coral Cuisses +1',
         Feet = 'Coral Greaves +1',
     },

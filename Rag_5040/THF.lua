@@ -80,7 +80,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
-        Back = 'Resentment Cape',
+        Back = 'Shadow Mantle',
         Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = { Name = 'Merman\'s Subligar', Priority = 20 },
         Feet = { Name = 'Mmn. Leggings', Priority = 20 },

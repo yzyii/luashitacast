@@ -103,9 +103,6 @@ local blue_cotehardie = {
 local blue_cotehardie_plus_one = {
     Body = { Name = 'Blue Cotehard. +1', Priority = 10 },
 }
-local resentment_cape = {
-    Back = 'Resentment Cape',
-}
 
 local windRingMaxHP = 0
 local wind_ring = {
@@ -647,7 +644,6 @@ sets.ninja_kyahan = ninja_kyahan
 sets.ninja_kyahan_plus_one = ninja_kyahan_plus_one
 sets.blue_cotehardie = blue_cotehardie
 sets.blue_cotehardie_plus_one = blue_cotehardie_plus_one
-sets.resentment_cape = resentment_cape
 sets.wind_ring = wind_ring
 sets.bat_earrings = bat_earrings
 profile.Sets = gcmelee.AppendSets(sets)
@@ -822,10 +818,6 @@ profile.HandleDefault = function()
     end
 
     gcmelee.DoDefaultOverride()
-
-    if (gcdisplay.IdleSet == 'MDT' and conquest:GetOutsideControl()) then
-        gFunc.EquipSet('resentment_cape')
-    end
 
     if (player.IsMoving == true) then
         if (gcdisplay.IdleSet == 'Normal'

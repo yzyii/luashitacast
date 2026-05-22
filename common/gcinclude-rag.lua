@@ -10,6 +10,10 @@ local setStylistToBlinkSelf = true -- Forces blinks on visible equipment changes
 local toggleDisplayHeadOnAbility = true -- Forces blinks on JA usage.
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local resentment_cape = {
+    Back = 'Resentment Cape',
+}
+
 local kingdom_aketon = {
     -- Body = 'Kingdom Aketon',
 }
@@ -120,6 +124,8 @@ local OverrideNameTable = {
     ['or'] = 'Override',
     ['override'] = 'Override'
 }
+
+local notResentmentCapeJobs = T{ 'WHM', 'BLM', 'SMN', 'SCH', 'PUP' }
 
 local isMageJobs = T{ 'RDM','BLM','WHM','SMN','BRD' }
 
@@ -313,7 +319,12 @@ function gcinclude.DoDefaultOverride(isMelee)
         end
     end
 
-    if (gcdisplay.IdleSet == 'MDT') then gFunc.EquipSet('MDT') end
+    if (gcdisplay.IdleSet == 'MDT')
+        then gFunc.EquipSet('MDT')
+        if (conquest:GetOutsideControl() and not notResentmentCapeJobs:contains(player.MainJob)) then
+            gFunc.EquipSet('resentment_cape')
+        end
+    end
     if (gcdisplay.IdleSet == 'FireRes') then gFunc.EquipSet('FireRes') end
     if (gcdisplay.IdleSet == 'IceRes') then gFunc.EquipSet('IceRes') end
     if (gcdisplay.IdleSet == 'LightningRes') then gFunc.EquipSet('LightningRes') end
@@ -410,6 +421,7 @@ function gcinclude.BuildLockableSet(equipment)
 end
 
 function gcinclude.AppendSets(sets)
+    sets.resentment_cape = resentment_cape
     sets.kingdom_aketon = kingdom_aketon
     sets.republic_aketon = republic_aketon
     sets.federation_aketon = federation_aketon

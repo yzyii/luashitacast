@@ -88,7 +88,6 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
-        Back = 'Resentment Cape',
     },
     FireRes = {},
     IceRes = {},

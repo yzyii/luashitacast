@@ -24,6 +24,9 @@ local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ 
 local shadow_mantle = {
     Back = 'Shadow Mantle',
 }
+local resentment_cape_override = { -- An additional override if resentment cape is active
+    Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+}
 
 local sets = {
     Idle = { -- 1457
@@ -116,31 +119,36 @@ local sets = {
     Movement_TP = {},
 
     DT = { -- 1415
-        Main = 'Terra\'s Staff', -- 20
+        Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = 'Rosenbogen',
         Ammo = 'displaced',
-        Head = 'Darksteel Cap +1', -- 2
-        Body = 'Dst. Harness +1', -- 4
+        Head = 'Darksteel Cap +1',
+        Body = 'Dst. Harness +1',
         Neck = { Name = 'Shield Torque', Priority = 60 },
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Cassie Earring', Priority = 20 },
-        Hands = 'Heavy Gauntlets', -- 3
-        Ring1 = 'Jelly Ring', -- 5
-        Ring2 = { Name = 'Sattva Ring', Priority = 60 }, -- 5
+        Hands = 'Heavy Gauntlets',
+        Ring1 = 'Jelly Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Shadow Mantle',
         Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
-        Feet = 'Dst. Leggings +1', -- 2
+        Feet = 'Dst. Leggings +1',
     },
     MDT = {
-        Head = 'Dream Ribbon',
+        Head = 'Coral Visor +1',
         Neck = 'Jeweled Collar +1',
-        Ear1 = 'Merman\'s Earring', -- 2
-        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Cor. Scale Mail +1',
+        Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Shadow Ring',
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
-        Back = 'Resentment Cape',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = 'Coral Cuisses +1',
+        Feet = 'Coral Greaves +1',
     },
     FireRes = { -- 137
         Range = 'Rosenbogen',
@@ -561,6 +569,7 @@ sets.valor_leggings = valor_leggings
 sets.arco_de_velocidad = arco_de_velocidad
 sets.warlocks_mantle = warlocks_mantle
 sets.shadow_mantle = shadow_mantle
+sets.resentment_cape_override = resentment_cape_override
 profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
@@ -654,6 +663,11 @@ profile.HandleDefault = function()
     end
 
     gcmelee.DoDefaultOverride()
+
+    if (gcdisplay.IdleSet == 'MDT' and conquest:GetOutsideControl()) then
+        gFunc.EquipSet('resentment_cape_override')
+    end
+
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
