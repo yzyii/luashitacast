@@ -29,7 +29,7 @@ local resentment_cape_override = { -- An additional override if resentment cape 
 }
 
 local sets = {
-    Idle = { -- 1407
+    Idle = { -- 1427
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
@@ -48,7 +48,7 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     IdleALT = {},
-    IdleDT = { -- Disabled on horizon_safe_mode -- 1414
+    IdleDT = { -- Disabled on horizon_safe_mode -- 1434
         Head = 'Darksteel Cap +1',
         Neck = { Name = 'Shield Torque', Priority = 60 },
         Body = 'Dst. Harness +1',
