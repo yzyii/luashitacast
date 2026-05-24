@@ -29,7 +29,7 @@ local resentment_cape_override = { -- An additional override if resentment cape 
 }
 
 local sets = {
-    Idle = { -- 1457
+    Idle = {
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
@@ -48,7 +48,7 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     IdleALT = {},
-    IdleDT = { -- Disabled on horizon_safe_mode -- 1457
+    IdleDT = { -- Disabled on horizon_safe_mode
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
@@ -105,7 +105,7 @@ local sets = {
         Feet = { Name = 'Homam Gambieras', Priority = 70 },
     },
 
-    DT = { -- 1415
+    DT = {
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Head = 'Darksteel Cap +1',
@@ -121,7 +121,7 @@ local sets = {
         Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
         Feet = 'Dst. Leggings +1',
     },
-    MDT = { -- ???
+    MDT = {
         Main = { Name = 'Tutelary', Priority = 60 },
         Sub = 'Palmerin\'s Shield',
         Head = 'Coral Visor +1',
@@ -254,7 +254,7 @@ local sets = {
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
         Legs = { Name = 'Homam Cosciales', Priority = 70 },
     },
-    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use. -- 1441
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Main = { Name = 'Tutelary', Priority = 60 },
         Sub = 'Light Buckler',
         Head = { Name = 'Kaiser Schaller', Priority = 60 },
@@ -270,7 +270,7 @@ local sets = {
         Legs = { Name = 'Vlr. Breeches +1', Priority = 1 }, -- 10
         Feet = 'Mountain Gaiters',
     },
-    Haste = { -- 1416
+    Haste = {
         Main = { Name = 'Capricorn Staff', Priority = -100 },
         Sub = 'displaced',
         Head = { Name = 'Homam Zucchetto', Priority = 1 },
@@ -298,7 +298,7 @@ local sets = {
         Back = { Name = 'Valor Cape', Priority = 60 },
     },
 
-    Hate = { -- 1419
+    Hate = {
         Main = { Name = 'Tutelary', Priority = 60 },
         Sub = 'Kaiser Shield',
         Head = 'Bahamut\'s Mask',
@@ -320,17 +320,17 @@ local sets = {
         Ear1 = 'Hospitaler Earring',
     },
 
-    Cheat_C3HPDown = { -- 1207
+    Cheat_C3HPDown = { -- 1245
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = 'Lightning Bow +1',
         Ammo = 'displaced',
         Head = 'Darksteel Cap +1',
-        Body = { Name = 'Hydra Haubert', Priority = 20 },
+        Body = 'Dst. Harness +1',
         Neck = 'Willpower Torque',
         Ear1 = 'Knightly Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
-        Hands = { Name = 'Hydra Moufles', Priority = 20 },
+        Hands = 'Heavy Gauntlets',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Serket Ring', Priority = 20 },
         Back = 'Shadow Mantle',
@@ -338,7 +338,7 @@ local sets = {
         Legs = { Name = 'Vlr. Breeches +1', Priority = 60 },
         Feet = 'Mountain Gaiters',
     },
-    Cheat_C3HPUp = { -- 1430 (223)
+    Cheat_C3HPUp = { -- 1464 (223)
         Main = 'Apollo\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
@@ -348,7 +348,7 @@ local sets = {
         Ear1 = 'Hospitaler Earring',
         Ear2 = { Name = 'Hades Earring +1', Priority = 50 },
         Body = { Name = 'Hydra Haubert', Priority = 20 },
-        Hands = { Name = 'Hydra Moufles', Priority = 20 },
+        Hands = { Name = 'Vlr. Gauntlets +1', Priority = 60 },
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = { Name = 'Valor Cape', Priority = 60 },
@@ -374,7 +374,7 @@ local sets = {
         Legs = { Name = 'Hydra Brayettes', Priority = 20 },
         Feet = { Name = 'Hydra Sollerets', Priority = 20 },
     },
-    Cheat_C4HPUp = { -- 1514 (441 +1)
+    Cheat_C4HPUp = { -- 1514 (442)
         Main = 'Apollo\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
@@ -418,13 +418,12 @@ local sets = {
 
     Enhancing = {
         Neck = 'Enhancing Torque',
-        Ear1 = 'Augment. Earring',
         Back = { Name = 'Merciful Cape', Priority = 50 },
         Legs = { Name = 'Glt. Breeches +1', Priority = 60 },
     },
     Stoneskin = {
-        Main = 'Kirin\'s Pole',
-        Sub = 'displaced',
+        Main = { Name = 'Tutelary', Priority = 60 },
+        Sub = 'Light Buckler',
         Head = 'Maat\'s Cap',
         Neck = 'Stone Gorget',
         Ear1 = 'Cmn. Earring',
@@ -433,9 +432,9 @@ local sets = {
         Hands = { Name = 'Dvt. Mitts +1', Priority = 50 },
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
-        Back = 'Ryl. Army Mantle',
-        Waist = 'Ryl.Kgt. Belt',
-        Legs = 'Magic Cuisses',
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
         Feet = { Name = 'Vlr. Leggings +1', Priority = 60 },
     },
 
