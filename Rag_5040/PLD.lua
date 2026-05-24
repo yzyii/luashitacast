@@ -294,23 +294,24 @@ local sets = {
         Legs = { Name = 'Vlr. Breeches +1', Priority = 1 },
         Feet = { Name = 'Vlr. Leggings +1', Priority = 60 },
     },
-    Cure = {
+    Cure = { -- 1349
         Main = 'Apollo\'s Staff',
         Sub = 'displaced',
         Ear1 = 'Hospitaler Earring',
+        Hands = { Name = 'Vlr. Gauntlets +1', Priority = 60 },
     },
 
-    Cheat_C3HPDown = { -- 1245
+    Cheat_C3HPDown = { -- 1207
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = 'Lightning Bow +1',
         Ammo = 'displaced',
         Head = 'Darksteel Cap +1',
-        Body = 'Dst. Harness +1',
+        Body = { Name = 'Hydra Haubert', Priority = 20 },
         Neck = 'Willpower Torque',
         Ear1 = 'Knightly Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
-        Hands = 'Heavy Gauntlets',
+        Hands = { Name = 'Hydra Moufles', Priority = 20 },
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Serket Ring', Priority = 20 },
         Back = 'Shadow Mantle',
@@ -318,7 +319,7 @@ local sets = {
         Legs = { Name = 'Vlr. Breeches +1', Priority = 60 },
         Feet = 'Mountain Gaiters',
     },
-    Cheat_C3HPUp = { -- 1464 (223) -- n.b. slightly upoptimized for staff users for the purposes of accomodating tutelary / aegis in idle.
+    Cheat_C3HPUp = { -- 1430 (223)
         Main = 'Apollo\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
@@ -328,7 +329,7 @@ local sets = {
         Ear1 = 'Hospitaler Earring',
         Ear2 = { Name = 'Hades Earring +1', Priority = 50 },
         Body = { Name = 'Hydra Haubert', Priority = 20 },
-        Hands = { Name = 'Vlr. Gauntlets +1', Priority = 60 },
+        Hands = { Name = 'Hydra Moufles', Priority = 20 },
         Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = { Name = 'Valor Cape', Priority = 60 },
@@ -519,7 +520,7 @@ local sets = {
         Hands = { Name = 'Vlr. Gauntlets +1', Priority = 60 },
     },
     HolyCircle = {
-        Legs = { Name = 'Glt. Leggings +1', Priority = 60 },
+        Feet = { Name = 'Glt. Leggings +1', Priority = 60 },
     },
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
