@@ -29,16 +29,16 @@ local resentment_cape_override = { -- An additional override if resentment cape 
 }
 
 local sets = {
-    Idle = {
+    Idle = { -- 1407
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = 'displaced',
-        Body = { Name = 'Royal Cloak', Priority = 50 },
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Body = { Name = 'Royal Cloak', Priority = 50 },
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
@@ -48,16 +48,16 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     IdleALT = {},
-    IdleDT = { -- Disabled on horizon_safe_mode
+    IdleDT = { -- Disabled on horizon_safe_mode -- 1414
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = 'Darksteel Cap +1',
-        Body = 'Dst. Harness +1',
         Neck = { Name = 'Shield Torque', Priority = 60 },
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Body = 'Dst. Harness +1',
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Jelly Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
@@ -72,10 +72,10 @@ local sets = {
         Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = { Name = 'Kaiser Schaller', Priority = 60 },
-        Body = { Name = 'Kaiser Cuirass', Priority = 60 },
         Neck = { Name = 'Shield Torque', Priority = 60 },
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Body = { Name = 'Kaiser Cuirass', Priority = 60 },
         Hands = { Name = 'Kaiser Handschuhs', Priority = 60 },
         Ring1 = 'Jelly Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
@@ -97,7 +97,7 @@ local sets = {
     },
     Town = {},
     Movement = {
-        Head = { Name = 'Kaiser Schaller', Priority = 60 },
+        Head = { Name = 'Kaiser Schaller', Priority = 100 },
         Legs = { Name = 'Blood Cuisses', Priority = 70 },
     },
     Movement_TP = {
@@ -105,14 +105,14 @@ local sets = {
         Feet = { Name = 'Homam Gambieras', Priority = 70 },
     },
 
-    DT = {
+    DT = { -- 1414
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Head = 'Darksteel Cap +1',
-        Body = 'Dst. Harness +1',
         Neck = { Name = 'Shield Torque', Priority = 60 },
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Body = 'Dst. Harness +1',
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Jelly Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
@@ -121,9 +121,9 @@ local sets = {
         Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
         Feet = 'Dst. Leggings +1',
     },
-    MDT = {
-        Main = { Name = 'Tutelary', Priority = 60 },
-        Sub = 'Palmerin\'s Shield',
+    MDT = { -- 1415
+        Main = 'Terra\'s Staff',
+        Sub = 'displaced',
         Head = 'Coral Visor +1',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
@@ -254,7 +254,7 @@ local sets = {
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
         Legs = { Name = 'Homam Cosciales', Priority = 70 },
     },
-    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
+    SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use. -- 1459
         Main = { Name = 'Tutelary', Priority = 60 },
         Sub = 'Light Buckler',
         Head = { Name = 'Kaiser Schaller', Priority = 60 },
@@ -270,7 +270,7 @@ local sets = {
         Legs = { Name = 'Vlr. Breeches +1', Priority = 1 }, -- 10
         Feet = 'Mountain Gaiters',
     },
-    Haste = {
+    Haste = { -- 1478
         Main = { Name = 'Capricorn Staff', Priority = -100 },
         Sub = 'displaced',
         Head = { Name = 'Homam Zucchetto', Priority = 1 },
@@ -290,15 +290,15 @@ local sets = {
         Main = { Name = 'Durandal', Priority = -100 },
         Sub = 'Light Buckler',
     },
-    Flash = { -- Set Hierarchy is Hate -> Haste -> Flash
+    Flash = { -- Set Hierarchy is Hate -> Haste -> Flash -- 1436
         Neck = 'Harmonia\'s Torque',
-        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Ear2 = { Name = 'Hades Earring +1', Priority = 50 },
         Body = { Name = 'Hydra Haubert', Priority = -100 },
         Ring1 = 'Hercules\' Ring',
         Back = { Name = 'Valor Cape', Priority = 60 },
     },
 
-    Hate = {
+    Hate = { -- 1435
         Main = { Name = 'Tutelary', Priority = 60 },
         Sub = 'Kaiser Shield',
         Head = 'Bahamut\'s Mask',
@@ -306,7 +306,7 @@ local sets = {
         Ear1 = { Name = 'Hades Earring +1', Priority = 50 },
         Ear2 = { Name = 'Cassie Earring', Priority = 20 },
         Body = { Name = 'Hydra Haubert', Priority = -100 },
-        Hands = { Name = 'Vlr. Gauntlets +1', Priority = 60 },
+        Hands = { Name = 'Hydra Moufles', Priority = 20 },
         Ring1 = 'Hercules\' Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = { Name = 'Valor Cape', Priority = 60 },
@@ -338,7 +338,7 @@ local sets = {
         Legs = { Name = 'Vlr. Breeches +1', Priority = 60 },
         Feet = 'Mountain Gaiters',
     },
-    Cheat_C3HPUp = { -- 1464 (223)
+    Cheat_C3HPUp = { -- 1464 (223) -- n.b. slightly upoptimized for staff users for the purposes of accomodating tutelary / aegis in idle.
         Main = 'Apollo\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
