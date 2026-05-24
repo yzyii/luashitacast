@@ -85,7 +85,7 @@ local sets = {
         Feet = { Name = 'Homam Gambieras', Priority = 70 },
     },
 
-    DT = { -- 1414
+    DT = { -- 1434
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Head = 'Darksteel Cap +1',
