@@ -155,7 +155,7 @@ local sets = {
     },
     IceRes = {
         Main = { Name = 'Tutelary', Priority = 60 },
-        Sub = 'Ice Shield +1' -- 25
+        Sub = 'Ice Shield +1', -- 25
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Omn. Earring', -- 11
@@ -214,7 +214,7 @@ local sets = {
         Hands = { Name = 'Kaiser Handschuhs', Priority = 60 },
         Ring1 = 'Nimble Ring', -- 10
         Ring2 = 'Malgust Ring', -- 10
-        Back = 'Wolf Mantle +1' -- 3
+        Back = 'Wolf Mantle +1', -- 3
         Waist = 'Ice Belt', -- 20
         Legs = 'Mythril Cuisses +1', -- 3
         Feet = { Name = 'Blood Greaves', Priority = 70 }, -- 21
@@ -230,7 +230,7 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1', -- 4
         Ring1 = 'Communion Ring', -- 10
         Ring2 = 'Malflood Ring', -- 10
-        Back = 'Wolf Mantle +1' -- 3
+        Back = 'Wolf Mantle +1', -- 3
         Waist = 'Lightning Belt', -- 20
         Legs = { Name = 'Blood Cuisses', Priority = 70 }, -- 21
         Feet = { Name = 'Scp. Leggings +1', Priority = 60 }, -- 7
@@ -322,7 +322,7 @@ local sets = {
 
     Cheat_C3HPDown = { -- 1207
         Main = 'Terra\'s Staff',
-        Sub = 'displaced'
+        Sub = 'displaced',
         Range = 'Lightning Bow +1',
         Ammo = 'displaced',
         Head = 'Darksteel Cap +1',
@@ -358,7 +358,7 @@ local sets = {
     },
     Cheat_C4HPDown = { -- 1072
         Main = 'Terra\'s Staff',
-        Sub = 'displaced'
+        Sub = 'displaced',
         Range = 'Lightning Bow +1',
         Ammo = 'displaced',
         Head = { Name = 'Faerie Hairpin', Priority = 30 },
@@ -476,7 +476,7 @@ local sets = {
         Neck = 'Peacock Amulet',
     },
     Weapon_Loadout_3 = {
-        Main = 'Martial Club',
+        Main = 'Martial Wand',
         Sub = 'Octave Club',
         Range = 'Lightning Bow +1',
         Ammo = 'displaced',
@@ -502,11 +502,11 @@ local sets = {
         Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Waist = 'Life Belt',
     },
-    WS_Vorpal = {}
-    WS_Swift = {}
+    WS_Vorpal = {},
+    WS_Swift = {},
     WS_Savage = {
         Neck = 'Soil Gorget',
-    }
+    },
     WS_KnightsOfRound = {
         Neck = 'Light Gorget',
     },
