@@ -75,6 +75,8 @@ local sets = {
     },
     Town = {},
     Movement = {
+        Main = 'Terra\'s Staff',
+        Sub = 'displaced',
         Head = { Name = 'Kaiser Schaller', Priority = 100 },
         Legs = { Name = 'Blood Cuisses', Priority = 70 },
     },
