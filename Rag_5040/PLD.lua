@@ -77,8 +77,8 @@ local sets = {
     Movement = {
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
-        Head = { Name = 'Kaiser Schaller', Priority = 100 },
         Legs = { Name = 'Blood Cuisses', Priority = 70 },
+        Feet = { Name = 'Kaiser Schuhs', Priority = 100 },
     },
     Movement_TP = {
         Hands = { Name = 'Homam Manopolas', Priority = 70 },
