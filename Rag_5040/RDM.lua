@@ -458,7 +458,6 @@ local sets = {
         Legs = 'Nashira Seraweels',
     },
 
-    Divine = {},
     Banish = {},
     Dark = {
         Ammo = 'Phtm. Tathlum',

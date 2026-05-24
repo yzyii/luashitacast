@@ -592,3 +592,6 @@
 - MNK - Add a focus set modifier for hundred fists used if in LowAcc mode
 - WAR - Add Jump for /DRG
 - All Jobs - Moves resentment cape to gcinclude-rag.lua
+- All Mages - Removes redundant Divine sets
+- WHM - Adds Hate_Flash and Support_Flash as separate sets
+- PLD - Renames Hate_Flash to Flash as set naming does not indicate actual hierarchy

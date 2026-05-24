@@ -183,6 +183,6 @@ The default Schema for equipment swaps that have been pre-filled out within thes
 - if it has Convert HP to MP, priority = 10
 - if it has -MP, priority = -10
 - if it has -HP, priority = -20
-- Special cases should be marked as priority = 100 or -100. e.g. going from a -HP item in Precast to an item with no HP or MP at all.
+- Special cases should be marked as priority = 1, 100 or -100. e.g. going from a -HP item in Precast to an item with no HP or MP at all.
 
 Barely any special cases will have been identified for you. Reporting of any would be appreciated.

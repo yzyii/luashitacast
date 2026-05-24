@@ -372,6 +372,9 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 }
     },
+    Flash = { -- Set Hierarchy is Hate -> Haste -> Flash
+        Back = 'Toreador\'s Cape',
+    },
 
     Hate = {
         Ammo = 'Nokizaru Shuriken',
@@ -388,6 +391,46 @@ local sets = {
         Legs = { Name = 'Yasha Hakama +1', Priority = 60 },
         Feet = { Name = 'Yasha Sune-Ate +1', Priority = 60 },
     },
+    Cure = {
+        Main = 'Apollo\'s Staff',
+        Sub = 'displaced',
+    },
+
+    Cheat_C3HPDown = {
+        Main = 'Terra\'s Staff',
+        Sub = 'displaced',
+        Ammo = { Name = 'Tiphia Sting', Priority = -20 },
+        Head = 'Arhat\'s Jinpachi +1',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Triton Earring',
+        Body = 'Arhat\'s Gi +1',
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Serket Ring', Priority = 10 },
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Scouter\'s Rope', Priority = -20 },
+        Legs = 'Dst. Subligar +1',
+        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -20 },
+    },
+    Cheat_C3HPUp = {
+        Main = 'Apollo\'s Staff',
+        Sub = 'displaced',
+        Ammo = 'Nokizaru Shuriken',
+        Head = 'Yasha Jinpachi +1',
+        Neck = 'Harmonia\'s Torque',
+        Ear1 = 'Eris\' Earring +1',
+        Ear2 = 'Eris\' Earring +1',
+        Body = 'Yasha Samue +1',
+        Hands = 'Yasha Tekko +1',
+        Ring1 = 'Mermaid Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = 'Toreador\'s Cape',
+        Waist = 'Warwolf Belt',
+        Legs = { Name = 'Yasha Hakama +1', Priority = 60 },
+        Feet = { Name = 'Yasha Sune-Ate +1', Priority = 60 },
+    },
+
     NinDebuff = {
         Range = 'displaced',
         Ammo = 'Ensorcelled Shard',
@@ -482,26 +525,6 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = 'Suzaku\'s Sune-Ate',
     },
-    Cure = {}, -- Defaults to Hate
-    Cheat_C3HPDown = {
-        Main = 'Terra\'s Staff',
-        Sub = 'displaced',
-        Ammo = { Name = 'Tiphia Sting', Priority = -20 },
-        Head = 'Arhat\'s Jinpachi +1',
-        Neck = 'Jeweled Collar +1',
-        Ear1 = 'Novia Earring',
-        Ear2 = 'Triton Earring',
-        Body = 'Arhat\'s Gi +1',
-        Hands = 'Dst. Mittens +1',
-        Ring1 = 'Shadow Ring',
-        Ring2 = { Name = 'Serket Ring', Priority = 10 },
-        Back = 'Shadow Mantle',
-        Waist = { Name = 'Scouter\'s Rope', Priority = -20 },
-        Legs = 'Dst. Subligar +1',
-        Feet = { Name = 'Shr. Sune-Ate +1', Priority = -20 },
-    },
-    Cheat_C3HPUp = {}, -- Defaults to Hate
-    Flash = {}, -- Defaults to Haste
 
     TP_LowAcc = {
         Head = 'Panther Mask +1',

@@ -376,7 +376,6 @@ local sets = {
     },
     EnfeeblingACC = {},
 
-    Divine = {},
     Banish = {},
     Dark = {
         Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },

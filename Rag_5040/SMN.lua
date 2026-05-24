@@ -302,7 +302,6 @@ local sets = {
     EnfeeblingINT = {},
     EnfeeblingACC = {},
 
-    Divine = {},
     Banish = {},
     Dark = {},
     Stun = {},

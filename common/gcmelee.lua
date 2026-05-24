@@ -76,6 +76,10 @@ function gcmelee.SetIsDPS(isDPSVal)
     isDPS = isDPSVal
 end
 
+function gcmelee.GetIsDPS()
+    return isDPS
+end
+
 function gcmelee.Load()
     gcinclude.SetAlias(AliasList)
     gcinclude.Load()

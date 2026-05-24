@@ -1151,13 +1151,15 @@ end
 function gcmage.EquipDivine(maxMP)
     local action = gData.GetAction()
 
-    gFunc.EquipSet('Divine')
-    if (gcdisplay.GetToggle('Hate') == true) then
-        gFunc.EquipSet('Hate')
+    if (action.Name == 'Flash') then
+        gFunc.EquipSet('Support_Flash')
+        if (gcdisplay.GetToggle('Hate') == true) then
+            gFunc.EquipSet('Hate')
+            gFunc.EquipSet('Hate_Flash')
+        end
     end
 
     if (string.match(action.Name, 'Banish') or action.Name == 'Holy') then
-        gFunc.EquipSet('Divine')
         gFunc.EquipSet('Banish')
         if (action.MppAftercast < 51) then
             if (maxMP == 0 or action.MpAftercast < maxMP * 0.51) then
