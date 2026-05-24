@@ -49,10 +49,10 @@ local TpVariantTable = {
 
 local tp_variant = 1
 
-local WeaponOverrideTable = {
-    [1] = '1',
-    [2] = '2',
-    [3] = '3',
+local WeaponOverrideIndexes = {
+    ['1'] = 1,
+    ['2'] = 2,
+    ['3'] = 3,
 }
 
 local weapon_override = 1
@@ -103,11 +103,18 @@ function gcmelee.DoCommands(args)
         end
         gcinclude.Message('TP Set', TpVariantTable[tp_variant])
     elseif (args[1] == 'weapon' or args[1] == 'wl') then
-        weapon_override = weapon_override + 1
-        if (weapon_override > #WeaponOverrideTable) then
-            weapon_override = 1
+        if (args[2] ~= nil) then
+            local cycleIndex = WeaponOverrideIndexes[args[2]]
+            if (cycleIndex ~= nil) then
+                weapon_override = cycleIndex
+            end
+        else
+            weapon_override = weapon_override + 1
+            if (weapon_override > #WeaponOverrideIndexes) then
+                weapon_override = 1
+            end
         end
-        gcinclude.Message('Weapon Loadout', WeaponOverrideTable[weapon_override])
+        gcinclude.Message('Weapon Loadout', tostring(weapon_override))
     elseif (args[1] == 'dps') then
         isDPS = not isDPS
         gcinclude.Message('DPS Mode', isDPS)
@@ -221,7 +228,7 @@ function gcmelee.DoDefaultOverride()
     gcinclude.DoDefaultOverride(true)
 
     if (isDPS) then
-        gFunc.EquipSet('Weapon_Loadout_' .. WeaponOverrideTable[weapon_override])
+        gFunc.EquipSet('Weapon_Loadout_' .. tostring(weapon_override))
     end
 end
 
@@ -316,6 +323,10 @@ function gcmelee.DoMidcast(sets)
         gcmelee.SetupInterimEquipSet(sets, false)
     end
     gFunc.EquipSet('Haste')
+
+    if (isDPS) then
+        gFunc.EquipSet('Weapon_Loadout_' .. tostring(weapon_override))
+    end
 end
 
 function gcmelee.SetupInterimEquipSet(sets, isRanged)
@@ -337,7 +348,7 @@ function gcmelee.SetupInterimEquipSet(sets, isRanged)
     if (gcdisplay.IdleSet == 'Evasion') then interimSet = sets.Evasion end
     if (gcdisplay.IdleSet == 'Override') then interimSet = sets.Override end
 
-    local wlString = 'Weapon_Loadout_' .. WeaponOverrideTable[weapon_override]
+    local wlString = 'Weapon_Loadout_' .. tostring(weapon_override)
     interimSet = gFunc.Combine(interimSet, sets[wlString])
 
     if (isRanged) then

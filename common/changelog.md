@@ -595,3 +595,5 @@
 - All Mages - Removes redundant Divine sets
 - WHM - Adds Hate_Flash and Support_Flash as separate sets
 - PLD - Renames Hate_Flash to Flash as set naming does not indicate actual hierarchy
+- Melee - Add weapon loadout equip to midcast (primarily for PLD and capricorn staff)
+- Adds argument passing to /weapon and /wl commands

@@ -11,6 +11,8 @@
 /weapon /wl - toggles between using Weapon_Loadout sets.
               can be used to specify different weapon loadouts. e.g. virtue stones etc.
               there is no UI element for this.
+              an argument can be given to jump directly to the given weapon loadout.
+              e.g. /wl 3 will go directly to Weapon_Loadout_3
 
 [Idle Sets] (Changes your idle set to use these sets instead)
 /idle           - toggles between using 2 different idle sets
@@ -71,6 +73,8 @@
 /tp             - cycles TP set between being Off or a LowAcc and HighAcc set.
                   Using TP modes will cause spells / songs to no longer use staves etc.
                   as your weapons etc. will be locked to retain TP.
+                  an argument can be given to jump directly to the given tp set.
+                  i.e. "/tp off", "/tp lowacc", or "/tp highacc"
 /tptoggle       - toggles between the last used TP set and Off.
 ```
 
