@@ -252,7 +252,9 @@ local sets = {
     },
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
-    Ranged = {},
+    Ranged = {
+        Ammo = 'Dart',
+    },
 
     LockSet1 = {},
     LockSet2 = {},

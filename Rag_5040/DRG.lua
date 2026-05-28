@@ -87,7 +87,9 @@ local sets = {
     Weapon_Loadout_3 = {},
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
-    Ranged = {},
+    Ranged = {
+        Ammo = 'Pebble',
+    },
 
     VileElixir = {},
 }
