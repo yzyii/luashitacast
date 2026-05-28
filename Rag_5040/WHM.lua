@@ -128,7 +128,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
-        Back = 'Hexerei Cape',
+        Back = { Name = 'Hexerei Cape', Priority = 50 },
         Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = { Name = 'Root Sabots', Priority = 60 },
@@ -143,7 +143,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Triumph Ring', -- 10
         Ring2 = 'Malflame Ring', -- 10
-        Back = 'Hexerei Cape',
+        Back = { Name = 'Hexerei Cape', Priority = 50 },
         Waist = 'Water Belt', -- 20
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = 'Power Sandals', -- 7
@@ -173,7 +173,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
-        Back = 'Hexerei Cape',
+        Back = { Name = 'Hexerei Cape', Priority = 50 },
         Waist = 'Earth Belt', -- 20
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = { Name = 'Root Sabots', Priority = 60 },
@@ -552,6 +552,8 @@ local sets = {
     TP_HighAcc = {
         Head = 'Optical Hat',
         Body = { Name = 'Hydra Doublet', Priority = 50 },
+        Hands = 'Hydra Gloves',
+        Waist = 'Life Belt',
         Legs = 'Hydra Brais',
         Feet = 'Hydra Gaiters',
     },

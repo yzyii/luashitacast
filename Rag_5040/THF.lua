@@ -163,6 +163,7 @@ local sets = {
         Body = { Name = 'Homam Corazza', Priority = 70 },
         Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Waist = 'Life Belt',
         Feet = { Name = 'Homam Gambieras', Priority = 70 }
     },
     TP_NIN = {
