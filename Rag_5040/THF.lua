@@ -256,6 +256,7 @@ local sets = {
     },
     WS_MercyStroke = {
         Head = { Name = 'Hecatomb Cap +1', Priority = 60 },
+        Neck = 'Soil Gorget',
         Ear2 = 'Triumph Earring',
         Body = { Name = 'Hct. Harness +1', Priority = 60 },
         Ring1 = 'Flame Ring',
@@ -273,6 +274,7 @@ local sets = {
 
     -- The following are applied on both SA WS and SATA WS
     WS_SA = {
+        Neck = 'Love Torque',
         Feet = { Name = 'Hct. Leggings +1', Priority = 60 },
     },
     WS_SA_SharkBite = {
@@ -305,6 +307,7 @@ local sets = {
         Waist = { Name = 'Scouter\'s Rope', Priority = -20 },
     },
     WS_TA_MercyStroke = {
+        Neck = 'Soil Gorget',
         Ear2 = 'Drone Earring',
         Hands = { Name = 'Hct. Mittens +1', Priority = 60 },
     },

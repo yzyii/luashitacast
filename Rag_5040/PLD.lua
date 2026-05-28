@@ -489,6 +489,11 @@ local sets = {
     },
     WS_KnightsOfRound = {
         Neck = 'Light Gorget',
+        Ear2 = 'Triumph Earring',
+        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 60 },
+        Ring1 = 'Flame Ring',
+        Ring2 = 'Triumph Ring',
+        Waist = 'Warwolf Belt',
     },
     WS_SpiritsWithin = {},
 
