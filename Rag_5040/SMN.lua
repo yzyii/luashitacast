@@ -101,8 +101,7 @@ local sets = {
     Perpetuation = { -- There is no point in using this set over an Idle set except for equipping Penance Robe
         -- Body = 'Penance Robe',
     },
-    Perpetuation_Spirits = { -- For maximizing summoning skill with spirits out if you wish
-
+    Perpetuation_Spirits = { -- For maximizing summoning skill with spirits out if you wish. Note that this set is entirely pointless on Horizon due to spirit cooldown being checked only at BP.
     },
 
     DT = {
@@ -348,6 +347,9 @@ local sets = {
         -- Legs = 'Penance Slops',
         Feet = 'Nashira Crackows',
     },
+    BP_Spirit = {
+        Legs = 'Summoner\'s Spats',
+    },
     BP_Magical = {
         -- Head = 'Buffalo Helm',
     },
@@ -521,11 +523,18 @@ profile.HandleDefault = function()
     local player = gData.GetPlayer()
     local petAction = gData.GetPetAction()
 
+    local isSpirit = false
+    if (gData.GetPet() ~= nil) then
+        isSpirit = string.match(gData.GetPet().Name, 'Spirit')
+    end
+
     if (petAction ~= nil) then
         gFunc.EquipSet('BP')
 
         if (SmnSkill:contains(petAction.Name)) then
             -- Do Nothing
+        elseif (isSpirit) then
+            gFunc.EquipSet(sets.BP_Spirit)
         elseif (SmnMagical:contains(petAction.Name)) then
             gFunc.EquipSet(sets.BP_Magical)
             gFunc.EquipSet(sets.BP_Magical_Potency)

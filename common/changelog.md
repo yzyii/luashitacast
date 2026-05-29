@@ -597,3 +597,4 @@
 - PLD - Renames Hate_Flash to Flash as set naming does not indicate actual hierarchy
 - Melee - Add weapon loadout equip to midcast (primarily for PLD and capricorn staff)
 - Adds argument passing to /weapon and /wl commands
+- SMN - Fixes spirit usage for Horizon where the only thing that affects CD is BP usage
