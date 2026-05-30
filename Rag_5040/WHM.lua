@@ -386,11 +386,11 @@ local sets = {
     Cursna = {
         Main = 'Prelatic Pole',
         Neck = 'Healing Torque',
-        Ear1 = 'Healing Earring',
+        Ear2 = 'Healing Earring',
         Body = 'Nashira Manteel',
         Hands = { Name = 'Hlr. Mitts +1', Priority = 50 },
-        Legs = { Name = 'Clr. Pantaln. +1', Priority = 50 },
         Back = { Name = 'Altruistic Cape', Priority = 50 },
+        Legs = { Name = 'Clr. Pantaln. +1', Priority = 50 },
     },
 
     Enhancing = {

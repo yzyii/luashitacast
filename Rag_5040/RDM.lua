@@ -288,6 +288,7 @@ local sets = {
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 }
     },
     ConserveMP = {
+        Range = 'displaced',
         Ammo = { Name = 'Dream Sand', Priority = 50 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Back = 'Maledictor\'s Shawl',
@@ -367,6 +368,7 @@ local sets = {
     },
 
     Cure = {
+        Range = 'displaced',
         Ammo = { Name = 'Dream Sand', Priority = 50 },
         Head = 'Hydra Beret',
         Neck = { Name = 'Promise Badge', Priority = 60 },
@@ -382,9 +384,12 @@ local sets = {
         Feet = 'Hydra Gaiters',
     },
     Cursna = {
+        Main = 'Prelatic Pole',
+        Neck = 'Healing Torque',
+        Ear2 = 'Healing Earring',
         Body = { Name = 'Dls. Tabard +1', Priority = 50 },
-        Legs = { Name = 'Wlk. Tights +1', Priority = 50 },
         Back = { Name = 'Altruistic Cape', Priority = 50 },
+        Legs = { Name = 'Wlk. Tights +1', Priority = 50 },
     },
 
     Enhancing = {
@@ -478,6 +483,7 @@ local sets = {
 
     Banish = {},
     Dark = {
+        Range = 'displaced',
         Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },
         Head = 'Nashira Turban',
         Neck = 'Dark Torque',
@@ -494,6 +500,7 @@ local sets = {
     },
 
     Nuke = {
+        Range = 'displaced',
         Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },
         Head = { Name = 'Wlk. Chapeau +1', Priority = 50 },
         Neck = 'Prudence Torque',
@@ -563,6 +570,8 @@ local sets = {
 
     Stun = {
         Main = 'Jupiter\'s Staff',
+        Sub = 'displaced',
+        Range = 'displaced',
         Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },
         Head = { Name = 'Wlk. Chapeau +1', Priority = 50 },
         Neck = 'Dark Torque',
@@ -579,6 +588,8 @@ local sets = {
     },
     StunACC = { -- You can also type /csstun to equip this set and /lock your gear at the same time if you have a tinfoil hat. Since this uses /lac set, the full set must be supplied.
         Main = 'Jupiter\'s Staff',
+        Sub = 'displaced',
+        Range = 'displaced',
         Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },
         Head = 'Nashira Turban',
         Neck = 'Dark Torque',
@@ -753,6 +764,8 @@ local sets = {
 
     VileElixir = {
         Main = 'Terra\'s Staff',
+        Sub = 'displaced',
+        Range = 'displaced',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
         Head = { Name = 'Faerie Hairpin', Priority = 30 },
         Neck = { Name = 'Uggalepih Pendant', Priority = 50 },

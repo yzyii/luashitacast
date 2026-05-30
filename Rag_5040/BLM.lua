@@ -273,7 +273,7 @@ local sets = {
     Cursna = {
         Main = 'Prelatic Pole',
         Neck = 'Healing Torque',
-        Ear1 = 'Healing Earring',
+        Ear2 = 'Healing Earring',
         Body = 'Nashira Manteel',
         Back = { Name = 'Altruistic Cape', Priority = 50 },
         Legs = 'Druid\'s Slops',
