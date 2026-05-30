@@ -3,14 +3,14 @@ local profile = {}
 local fastCastValue = 0.42 -- 20% from traits 22% from gear listed in Precast set
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
-local ninSJMaxMP = 583 -- The Max MP you have when /nin in your idle set
-local whmSJMaxMP = 661 -- The Max MP you have when /whm in your idle set
-local blmSJMaxMP = 680 -- The Max MP you have when /blm in your idle set
-local drkSJMaxMP = 604 -- The Max MP you have when /drk in your idle set
+local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
+local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
+local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
+local drkSJMaxMP = nil -- The Max MP you have when /drk in your idle set
 
 -- Disabled on horizon_safe_mode
 local fencersRingForced = true -- Default /fring value
-local fencersRingMaxHP = 954
+local fencersRingMaxHP = 930
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local blue_cotehardie = {
@@ -181,7 +181,7 @@ local sets = {
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
-        Body = { Name = 'Dalmatica', Priority = 10 },
+        Body = { Name = 'Flora Cotehardie', Priority = 10 }, -- 5
         Hands = { Name = 'Feronia\'s Bangles', Priority = 60 },
         Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
@@ -200,7 +200,7 @@ local sets = {
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
         Body = 'Gaia Doublet', -- 10
-        Hands = 'Merman\'s Bangles',
+        Hands = 'Sand Gloves', -- 11
         Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10
         Back = 'Beak Mantle +1', -- 7
@@ -235,14 +235,14 @@ local sets = {
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
-        Body = 'Cor. Scale Mail +1', -- 6
-        Hands = 'Coral Fng. Gnt. +1', -- 4
+        Body = { Name = 'Scp. Harness +1', Priority = 60 }, -- 20
+        Hands = { Name = 'Scp. Mittens +1', Priority = 60 }, -- 7
         Ring1 = 'Communion Ring', -- 10
         Ring2 = 'Malflood Ring', -- 10
-        Back = { Name = 'Hexerei Cape', Priority = 50 },
+        Back = 'Wolf Mantle +1', -- 3
         Waist = 'Lightning Belt', -- 20
         Legs = { Name = 'Blood Cuisses', Priority = 70 }, -- 21
-        Feet = 'Coral Greaves +1', -- 4
+        Feet = { Name = 'Scp. Leggings +1', Priority = 60 }, -- 7
     },
     Evasion = {},
     Override = { -- An additional override set explicitly to be used for sets such as crafting, HELM, fishing, or any other special sets such as DRK 2HR, MNK Counter etc. n.b. Any unused Resist or Evasion set can be used similarly.
@@ -311,70 +311,70 @@ local sets = {
         Legs = 'Nashira Seraweels',
         Feet = 'Heroic Boots +1',
     },
-    Cheat_C3HPDown = {
-        Main = { Name = 'Eremite\'s Wand', Priority = 50 },
-        Sub = 'Genbu\'s Shield',
-        Range = 'displaced',
-        Ammo = { Name = 'Tiphia Sting', Priority = -20 },
-        Head = 'Nashira Turban',
-        Neck = 'Willpower Torque',
-        Ear1 = 'Merman\'s Earring',
+    Cheat_C3HPDown = { -- 1194
+        Main = 'Terra\'s Staff',
+        Sub = 'displaced',
+        Range = { Name = 'Arco de Velocidad', Priority = 60 },
+        Ammo = 'displaced',
+        Head = 'Darksteel Cap +1',
+        Neck = { Name = 'Uggalepih Pendant', Priority = 50 },
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = { Name = 'Wlk. Tabard +1', Priority = 50 },
         Hands = 'Dst. Mittens +1',
-        Ring1 = { Name = 'Serket Ring', Priority = 10 },
-        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
-        Back = 'Umbra Cape',
-        Waist = 'Druid\'s Rope',
+        Ring1 = 'Shadow Ring',
+        Ring2 = 'Jelly Ring',
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Hierarch Belt', Priority = 50 },
         Legs = 'Dst. Subligar +1',
-        Feet = 'Mountain Gaiters',
+        Feet = 'Dst. Leggings +1',
     },
-    Cheat_C4HPDown = {
-        Main = { Name = 'Eremite\'s Wand', Priority = 50 },
-        Sub = 'Genbu\'s Shield',
-        Range = 'displaced',
-        Ammo = { Name = 'Tiphia Sting', Priority = -20 },
-        Head = { Name = 'Zenith Crown +1', Priority = 10 },
-        Neck = 'Willpower Torque',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
-        Body = { Name = 'Wlk. Tabard +1', Priority = 50 },
-        Hands = { Name = 'Zenith Mitts +1', Priority = 10 },
-        Ring1 = { Name = 'Serket Ring', Priority = 10 },
-        Ring2 = { Name = 'Ether Ring', Priority = 10 },
-        Back = 'Umbra Cape',
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
-        Legs = 'Dst. Subligar +1',
-        Feet = { Name = 'Mahatma Pigaches', Priority = 10 },
-    },
-    Cheat_HPUp = {
-        Main = 'Apollo\'s Staff',
+    Cheat_C4HPDown = { -- 989
+        Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = 'displaced',
-        Ammo = { Name = 'Happy Egg', Priority = 60 },
+        Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },
+        Head = { Name = 'Zenith Crown +1', Priority = 10 },
+        Neck = { Name = 'Star Necklace', Priority = 10 },
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
+        Body = 'Dst. Harness +1',
+        Hands = { Name = 'Zenith Mitts +1', Priority = 10 },
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Serket Ring', Priority = 10 },
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Dst. Leggings +1',
+    },
+    Cheat_HPUp = { -- 1413 (219 / 424) - Note that Cure Power does not cap on C4 when /NIN
+        Main = 'Apollo\'s Staff',
+        Sub = 'displaced',
+        Range = { Name = 'Arco de Velocidad', Priority = 60 },
+        Ammo = 'displaced',
         Head = { Name = 'Rival Ribbon', Priority = 50 },
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Eris\' Earring +1',
         Ear2 = 'Eris\' Earring +1',
-        Body = { Name = 'Dls. Tabard +1', Priority = 50 },
-        Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
+        Body = { Name = 'Blood Scale Mail', Priority = 70 },
+        Hands = { Name = 'Feronia\'s Bangles', Priority = 60 },
         Ring1 = 'Bomb Queen Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Toreador\'s Cape',
         Waist = 'Warwolf Belt',
-        Legs = { Name = 'Blood Cuisses', Priority = 70 },
-        Feet = 'Heroic Boots',
+        Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
+        Feet = 'Heroic Boots +1',
     },
 
     Cure = {
         Ammo = { Name = 'Dream Sand', Priority = 50 },
         Head = 'Hydra Beret',
-        Neck = 'Benign Necklace',
+        Neck = { Name = 'Promise Badge', Priority = 60 },
         Ear1 = 'Novia Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = { Name = 'Hydra Doublet', Priority = 50 },
         Hands = 'Hydra Gloves',
-        Ring1 = 'Aqua Ring',
+        Ring1 = { Name = 'Serene Ring', Priority = 10 },
         Ring2 = 'Communion Ring',
         Back = { Name = 'Mahatma Cape', Priority = 50 },
         Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
@@ -594,7 +594,7 @@ local sets = {
         Feet = 'Wise Pigaches +1',
     },
 
-    TP = {
+    TP = { -- 1253
         Head = 'Nashira Turban',
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
@@ -609,7 +609,7 @@ local sets = {
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 }
     },
     TP_Mjollnir_Haste = {},
-    TP_HighAcc = {
+    TP_HighAcc = { -- 1224
         Head = 'Optical Hat',
         Body = { Name = 'Scp. Harness +1', Priority = 60 },
         Hands = 'Hydra Gloves',
@@ -619,6 +619,25 @@ local sets = {
     },
     TP_NIN = {
         Ear2 = 'Stealth Earring',
+    },
+
+    Weapon_Loadout_1 = {
+        Main = 'Martial Knife',
+        Sub = 'Octave Club',
+        Range = 'Lightning Bow +1',
+        Ammo = 'displaced',
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Blau Dolch',
+        Sub = 'Octave Club',
+        Range = 'Lightning Bow +1',
+        Ammo = 'displaced',
+    },
+    Weapon_Loadout_3 = {
+        Main = 'Octave Club',
+        Sub = 'Genbu\'s Shield',
+        Range = 'Lightning Bow +1',
+        Ammo = 'displaced',
     },
 
     WS = {
@@ -710,38 +729,15 @@ local sets = {
     },
     WS_SpiritsWithin = {},
 
-    LockSet1 = {},
-    LockSet2 = {},
-    LockSet3 = {},
-
-    Weapon_Loadout_1 = {
-        Main = 'Martial Knife',
-        Sub = 'Octave Club',
-        Range = 'Lightning Bow +1',
-        Ammo = 'displaced',
-    },
-    Weapon_Loadout_2 = {
-        Main = 'Blau Dolch',
-        Sub = 'Octave Club',
-        Range = 'Lightning Bow +1',
-        Ammo = 'displaced',
-    },
-    Weapon_Loadout_3 = {
-        Main = 'Octave Club',
-        Sub = 'Genbu\'s Shield',
-        Range = 'Lightning Bow +1',
-        Ammo = 'displaced',
-    },
-
-    FencersRingHPDown = { -- 924 - Set to force HP to or below fencersRingMaxHP
+    FencersRingHPDown = { -- Set to force HP to or below fencersRingMaxHP -- 929
         Head = { Name = 'Zenith Crown +1', Priority = 10 },
-        Neck = { Name = 'Star Necklace', Priority = 10 },
+        Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = { Name = 'Dalmatica', Priority = 10 },
         Hands = { Name = 'Zenith Mitts +1', Priority = 10 },
-        Ring1 = { Name = 'Serket Ring', Priority = 10 },
-        Ring2 = { Name = 'Ether Ring', Priority = 10 },
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Serket Ring', Priority = 10 },
         Back = 'Umbra Cape',
         Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
         Legs = 'Dst. Subligar +1',
@@ -750,6 +746,10 @@ local sets = {
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {},
+
+    LockSet1 = {},
+    LockSet2 = {},
+    LockSet3 = {},
 
     VileElixir = {
         Main = 'Terra\'s Staff',
