@@ -98,6 +98,7 @@ function gcdisplay.Unload()
         gcdisplay.FontObject = nil
     end
     ashita.events.unregister('d3d_present', 'gcdisplay_present_cb')
+    ashita.events.unregister('command', 'gcdisplay_command_cb')
 end
 
 function gcdisplay.Load()
@@ -128,5 +129,18 @@ function gcdisplay.Load()
         gcdisplay.FontObject.text = display
     end)
 end
+
+ashita.events.register('command', 'gcdisplay_command_cb', function (e)
+    local args = e.command:args()
+    if #args == 0 or args[1] ~= '/gcdisplay' then
+        return
+    end
+
+    e.blocked = true
+
+    if #args == 1 and gcdisplay.FontObject ~= nil then
+        gcdisplay.FontObject.visible = not gcdisplay.FontObject.visible
+    end
+end)
 
 return gcdisplay
