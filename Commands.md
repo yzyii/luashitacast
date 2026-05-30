@@ -51,6 +51,8 @@
                using a key press!
                i.e. You could push this 4 times a second just to mimic exactly what
                LuAshitacast would do for you automatically.
+
+/gcdisplay - toggles the visibility of the UI component.
 ```
 
 ## Additional Commands for All Mage Jobs:

@@ -598,3 +598,6 @@
 - Melee - Add weapon loadout equip to midcast (primarily for PLD and capricorn staff)
 - Adds argument passing to /weapon and /wl commands
 - SMN - Fixes spirit usage for Horizon where the only thing that affects CD is BP usage
+
+### v2.2.1
+- Add /gcdisplay command to allow toggling of the visibility of the UI component
