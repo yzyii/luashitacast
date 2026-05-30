@@ -601,3 +601,4 @@
 
 ### v2.2.1
 - Add /gcdisplay command to allow toggling of the visibility of the UI component
+- SMN - Shifts Horizon specific summoning magic cast time equipment into Precast_Summoning for clarity

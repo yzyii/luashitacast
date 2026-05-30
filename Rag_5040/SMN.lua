@@ -3,69 +3,63 @@ local profile = {}
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including carbuncles cuffs or evokers boots
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
-local cureMP = 895 -- Cure set max MP
+local cureMP = 9999 -- Cure set max MP
 
 -- Disabled on horizon_safe_mode
 local conjurersRingForced = false -- Default /cring value
-local conjurersRingMaxHP = 737
+local conjurersRingMaxHP = 9999
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
-local carbuncles_cuffs = {
-    -- Hands = 'Carbuncle\'s Cuffs',
-}
-local evokers_boots = {
-    -- Feet = 'Evoker\'s Boots',
-}
 local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
     Back = 'Warlock\'s Mantle',
 }
 local carbuncle_mitts = {
-    Hands = 'Carbuncle Mitts',
+    Hands = { Name = 'Carbuncle Mitts', Priority = 50 },
 }
 local yinyang_robe = {
-    Body = 'Yinyang Robe',
+    Body = { Name = 'Yinyang Robe', Priority = 50 },
 }
 local summoners_doublet = {
-    Body = 'Smn. Doublet +1',
+    Body = { Name = 'Smn. Doublet +1', Priority = 50 },
 }
 local summoners_horn = {
-    Head = 'Summoner\'s Horn',
+    Head = { Name = 'Summoner\'s Horn', Priority = 50 },
 }
 local conjurers_ring = {
     Ring1 = 'Conjurer\'s Ring',
 }
 local bahamuts_staff = {
-    -- Main = 'Bahamut\'s Staff',
+    Main = { Name = 'Bahamut\'s Staff', Priority = 50 },
 }
 
 -- Disabled on horizon_safe_mode
-local conjurers_earring_hp_threshold = 360 -- HP at which Conjurer's Earring set is equipped
+local conjurers_earring_hp_threshold = 9999 -- HP at which Conjurer's Earring set is equipped
 local conjurers_earring = { -- 
     Main = 'Terra\'s Staff',
-    Ammo = 'Hedgehog Bomb',
-    -- Head = 'Example',
-    Neck = 'Pch. Collar',
-    Ear1 = 'Cassie Earring',
+    Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },
+    Head = 'Dream Ribbon',
+    Neck = { Name = 'Shield Pendant', Priority = 20 },
+    Ear1 = { Name = 'Cassie Earring', Priority = 20 },
     Ear2 = 'Conjurer\'s Earring',
-    -- Body = 'Example',
-    Hands = 'Garden Bangles',
-    Ring1 = 'Bomb Queen Ring',
-    Ring2 = 'Sattva Ring',
-    Back = 'Gigant Mantle',
-    Waist = 'Ocean Sash',
-    -- Legs = 'Example',
-    Feet = 'Marine M Boots',
+    Body = { Name = 'Justaucorps +1', Priority = 60 },
+    Hands = { Name = 'Feronia\'s Bangles', Priority = 60 },
+    Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
+    Ring2 = { Name = 'Bloodbead Ring', Priority = 40 },
+    Back = { Name = 'Gigant Mantle', Priority = 60 },
+    Waist = { Name = 'Powerful Rope', Priority = 70 },
+    Legs = { Name = 'Silk Slacks +1', Priority = 60 },
+    Feet = { Name = 'Root Sabots', Priority = 60 },
 }
 
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
-        Ear1 = 'Loquac. Earring',
-        Ear2 = 'Magnetic Earring',
         Ammo = 'Hedgehog Bomb',
         Head = 'Summoner\'s Horn',
         Neck = 'Jeweled Collar +1',
-        Body = 'Yinyang Robe',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = { Name = 'Yinyang Robe', Priority = 50 },
         Hands = 'Nashira Gages',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
@@ -81,11 +75,11 @@ local sets = {
         Main = 'Pluto\'s Staff',
         Head = 'Hydra Beret',
         Neck = 'Pch. Collar',
-        Ear1 = 'Loquac. Earring',
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
         Ear2 = 'Relaxing Earring',
         Body = 'Mahatma Hpl.',
         Hands = 'Hydra Gloves',
-        Ring1 = 'Bomb Queen Ring',
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
         Ring2 = 'Ether Ring',
         Back = 'Mahatma Cape',
         Waist = 'Hierarch Belt',
@@ -219,7 +213,11 @@ local sets = {
     Precast = {
         Ear1 = 'Loquac. Earring',
         Feet = 'Rostrum Pumps',
-        Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
+    },
+    Precast_Summoning = {
+        Hands = 'Carbuncle\'s Cuffs',
+        Feet = { Name = 'Evoker\'s Boots', Priority = 50 },
     },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Main = 'Eremite\'s Wand', -- 25
@@ -229,7 +227,7 @@ local sets = {
         Neck = 'Willpower Torque', -- 5
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring', -- 8
-        Body = 'Yinyang Robe',
+        Body = { Name = 'Yinyang Robe', Priority = 50 },
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Sattva Ring',
         Ring2 = 'Evoker\'s Ring',
@@ -319,9 +317,9 @@ local sets = {
         Ring2 = 'Evoker\'s Ring',
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Novia Earring',
-        Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
         Back = 'Mahatma Cape',
-        Body = 'Yinyang Robe',
+        Body = { Name = 'Yinyang Robe', Priority = 50 },
         Hands = { Name = 'Smn. Bracers +1', Priority = 100 },
         Feet = 'Summoner\'s Pgch.',
         Ammo = 'Hedgehog Bomb',
@@ -336,10 +334,10 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Ear2 = 'Magnetic Earring',
 		-- Ear2 = 'Smn. Earring',
-        Body = 'Smn. Doublet +1',
+        Body = { Name = 'Smn. Doublet +1', Priority = 50 },
         -- Body = 'Shep. Doublet',
         Hands = 'Smn. Bracers +1',
-        Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
         Ring2 = 'Evoker\'s Ring',
         Back = 'Astute Cape',
         Waist = { Name = 'Hierarch Belt', Priority = 100 },
@@ -361,7 +359,7 @@ local sets = {
         -- Feet = 'Summoner\'s Pgch.', -- Increases damage at the cost of accuracy
     },
     BP_Physical_Crit = {
-        Body = 'Smn. Doublet +1',
+        Body = { Name = 'Smn. Doublet +1', Priority = 50 },
     },
     BP_Hybrid = {
         -- Feet = 'Shep. Boots', -- Increases damage at the cost of accuracy
@@ -369,13 +367,9 @@ local sets = {
     BP_Healing = { -- This set is pointless unless your server penalizes healing BPs by attributing amount healed enmity to you.
     },
 
-    TP = {
-        Ring1 = 'Jelly Ring',
-    },
+    TP = {},
     TP_Mjollnir_Haste = {},
-    TP_HighAcc = {
-        Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
-    },
+    TP_HighAcc = {},
 
     WS = {},
     WS_HighAcc = {},
@@ -391,7 +385,7 @@ local sets = {
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Novia Earring',
         Ear2 = 'Hades Earring +1',
-        Body = 'Yinyang Robe',
+        Body = { Name = 'Yinyang Robe', Priority = 50 },
         Hands = 'Zenith Mitts +1',
         Ring1 = 'Serket Ring',
         Ring2 = 'Ether Ring',
@@ -437,8 +431,6 @@ Everything below can be ignored.
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
-sets.carbuncles_cuffs = carbuncles_cuffs
-sets.evokers_boots = evokers_boots
 sets.warlocks_mantle = warlocks_mantle
 sets.carbuncle_mitts = carbuncle_mitts
 sets.yinyang_robe = yinyang_robe
@@ -587,8 +579,7 @@ profile.HandlePrecast = function()
 
     local action = gData.GetAction()
     if (action.Skill == 'Summoning') then
-        gFunc.EquipSet('carbuncles_cuffs')
-        gFunc.EquipSet('evokers_boots')
+        gFunc.EquipSet('Precast_Summoning')
     end
 end
 

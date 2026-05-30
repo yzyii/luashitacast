@@ -6,7 +6,7 @@ local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
 -- Disabled on horizon_safe_mode
-local shinobiRingForced = true -- Default /sring value
+local shinobiRingForced = false -- Default /sring value
 local shinobiRingMaxHP = 983
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them

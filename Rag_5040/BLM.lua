@@ -30,8 +30,8 @@ local sorcerers_tonban = {
 }
 
 -- Disabled on horizon_safe_mode
-local sorcerers_earring_hp_threshold = 424 -- HP at which Sorcerer's Earring set is equipped
-local sorcerers_earring = { -- 1414
+local sorcerers_earring_hp_threshold = 356 -- HP at which Sorcerer's Earring set is equipped
+local sorcerers_earring = { -- 1424
     Main = 'Terra\'s Staff',
     Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },
     Head = 'Genie Tiara',
@@ -41,7 +41,7 @@ local sorcerers_earring = { -- 1414
     Body = { Name = 'Src. Coat +1', Priority = 70 },
     Hands = { Name = 'Feronia\'s Bangles', Priority = 60 },
     Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
-    Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+    Ring2 = { Name = 'Bloodbead Ring', Priority = 40 },
     Back = { Name = 'Gigant Mantle', Priority = 60 },
     Waist = { Name = 'Powerful Rope', Priority = 70 },
     Legs = { Name = 'Silk Slacks +1', Priority = 60 },
