@@ -263,8 +263,8 @@ local sets = {
         Ear2 = 'Magnetic Earring',
         Body = { Name = 'Hydra Doublet', Priority = 50 }, -- 9
         Hands = 'Hydra Gloves', -- 5
-        Ring1 = 'Aqua Ring',
-        Ring2 = 'Communion Ring',
+        Ring1 = { Name = 'Serene Ring', Priority = 10 }, -- 2
+        Ring2 = { Name = 'Serene Ring', Priority = 10 }, -- 2
         Back = { Name = 'Mahatma Cape', Priority = 50 }, -- 6
         Waist = { Name = 'Penitent\'s Rope', Priority = -20 }, -- 3
         Legs = 'Hydra Brais', -- 6

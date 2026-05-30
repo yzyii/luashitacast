@@ -145,7 +145,7 @@ local sets = {
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
-        Body = 'Scp. Breastplate +1', -- 10
+        Body = 'Scp. Brstplate +1', -- 10
         Hands = 'Tarasque Mitts +1', -- 6
         Ring1 = 'Triumph Ring', -- 10
         Ring2 = 'Malflame Ring', -- 10
@@ -576,7 +576,7 @@ local sets = {
         Head = { Name = 'Wlk. Chapeau +1', Priority = 50 },
         Neck = 'Dark Torque',
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
-        Ear2 = 'Omn. Earring',
+        Ear2 = 'Dark Earring',
         Body = { Name = 'Dls. Tabard +1', Priority = 50 },
         Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
         Ring1 = 'Snow Ring',
