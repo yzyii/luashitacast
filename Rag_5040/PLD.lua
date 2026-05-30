@@ -175,7 +175,7 @@ local sets = {
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
         Body = 'Assault Brstplate', -- 15
-        Hands = { Name = 'Kaiser Handschuhs', Priority = 60 },
+        Hands = 'Sand Gloves', -- 11
         Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10
         Back = 'Gaia Mantle +1', -- 10
