@@ -118,7 +118,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
-        Back = 'Hexerei Cape',
+        Back = { Name = 'Hexerei Cape', Priority = 50 },
         Waist = { Name = 'Sorcerer\'s Belt', Priority = 60 },
         Feet = { Name = 'Root Sabots', Priority = 60 },
     },
@@ -132,7 +132,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Triumph Ring', -- 10
         Ring2 = 'Malflame Ring', -- 10
-        Back = 'Hexerei Cape',
+        Back = { Name = 'Hexerei Cape', Priority = 50 },
         Waist = 'Water Belt', -- 20
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },        
         Feet = 'Power Sandals', -- 7
@@ -158,11 +158,11 @@ local sets = {
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
-        Body = { Name = 'Dalmatica', Priority = 10 },
+        Body = { Name = 'Flora Cotehardie', Priority = 10 }, -- 5
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
-        Back = 'Hexerei Cape',
+        Back = { Name = 'Hexerei Cape', Priority = 50 },
         Waist = 'Earth Belt', -- 20
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = { Name = 'Root Sabots', Priority = 60 },
@@ -177,7 +177,7 @@ local sets = {
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10
-        Back = 'Blue Cape +1', -- 7
+        Back = { Name = 'Blue Cape +1', Priority = 30 }, -- 7
         Waist = 'Wind Belt', -- 20
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = 'Cmb.Cst. Shoes', -- 4
@@ -207,7 +207,7 @@ local sets = {
         Hands = 'Silk Cuffs +1', -- 7
         Ring1 = 'Communion Ring', -- 10
         Ring2 = 'Malflood Ring', -- 10
-        Back = 'Blue Cape +1', -- 7
+        Back = { Name = 'Blue Cape +1', Priority = 30 }, -- 7
         Waist = 'Lightning Belt', -- 20
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = { Name = 'Root Sabots', Priority = 60 },
@@ -260,7 +260,7 @@ local sets = {
         Head = 'Hydra Beret', -- 8
         Neck = 'Benign Necklace', -- 2
         Ear1 = 'Novia Earring', -- 7
-        Ear2 = 'Magnetic Earring',
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = { Name = 'Hydra Doublet', Priority = 50 }, -- 9
         Hands = 'Hydra Gloves', -- 5
         Ring1 = { Name = 'Serene Ring', Priority = 10 }, -- 2

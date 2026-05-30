@@ -53,21 +53,14 @@ local sets = {
         Legs = 'Bahamut\'s Hose',
     },
     IdleMaxMP = {
-        Main = 'Terra\'s Staff',
-        Sub = 'displaced',
         Range = 'displaced',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
-        Head = { Name = 'Dls. Chapeau +1', Priority = 70 },
         Neck = { Name = 'Uggalepih Pendant', Priority = 50 },
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
-        Body = { Name = 'Dalmatica', Priority = 10 },
         Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
         Ring1 = { Name = 'Serket Ring', Priority = 10 },
-        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = { Name = 'Mahatma Cape', Priority = 50 },
-        Waist = { Name = 'Hierarch Belt', Priority = 50 },
-        Legs = { Name = 'Blood Cuisses', Priority = 70 },
         Feet = { Name = 'Blood Greaves', Priority = 70 },
     },
     Resting = {
@@ -199,7 +192,7 @@ local sets = {
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
-        Body = 'Gaia Doublet', -- 10
+        Body = 'Gaia Doublet +1', -- 12
         Hands = 'Sand Gloves', -- 11
         Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10

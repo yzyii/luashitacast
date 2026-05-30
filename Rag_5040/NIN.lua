@@ -585,7 +585,7 @@ local sets = {
         Ring2 = 'Adroit Ring',
     }
 
-    ShinobiRingHPDown = { -- Set to force HP to or below shinobiRingMaxHP
+    ShinobiRingHPDown = { -- Set to force HP to or below shinobiRingMaxHP -- 970
         Ammo = { Name = 'Tiphia Sting', Priority = -20 },
         Head = { Name = 'Shr.Znr.Kabuto', Priority = -20 },
         Neck = { Name = 'Star Necklace', Priority = 10 },

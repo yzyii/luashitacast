@@ -64,7 +64,7 @@ local sets = {
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = { Name = 'Clr. Bliaut +1', Priority = 50 },
-        Hands = { Name = 'Clr. Mitts +1', Priority = 70 },
+        Hands = 'Merman\'s Bangles',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Umbra Cape',
@@ -74,20 +74,14 @@ local sets = {
     },
     IdleALT = {},
     IdleMaxMP = {
-        Main = 'Terra\'s Staff',
-        Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
         Head = { Name = 'Faerie Hairpin', Priority = 30 },
         Neck = { Name = 'Uggalepih Pendant', Priority = 50 },
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
-        Body = { Name = 'Clr. Bliaut +1', Priority = 50 },
         Hands = { Name = 'Clr. Mitts +1', Priority = 70 },
         Ring1 = { Name = 'Serket Ring', Priority = 10 },
-        Ring2 = { Name = 'Vivian Ring', Priority = 10 },
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = { Name = 'Mahatma Cape', Priority = 50 },
-        Waist = { Name = 'Hierarch Belt', Priority = 50 },
-        Legs = { Name = 'Bls. Trousers +1', Priority = 50 },
-        Feet = { Name = 'Blessed Pumps +1', Priority = 50 },
     },
     Resting = {
         Main = 'Pluto\'s Staff',
@@ -170,7 +164,7 @@ local sets = {
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
-        Body = { Name = 'Dalmatica', Priority = 10 },
+        Body = { Name = 'Flora Cotehardie', Priority = 10 }, -- 5
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
@@ -185,11 +179,11 @@ local sets = {
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
-        Body = { Name = 'Dalmatica', Priority = 10 },
+        Body = 'Gaia Doublet +1', -- 12
         Hands = 'Merman\'s Bangles',
         Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10
-        Back = 'Blue Cape +1', -- 7
+        Back = { Name = 'Blue Cape +1', Priority = 30 }, -- 7
         Waist = 'Wind Belt', -- 20
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = 'Cmb.Cst. Shoes', -- 4
@@ -219,7 +213,7 @@ local sets = {
         Hands = 'Silk Cuffs +1', -- 7
         Ring1 = 'Communion Ring', -- 10
         Ring2 = 'Malflood Ring', -- 10
-        Back = 'Blue Cape +1', -- 7
+        Back = { Name = 'Blue Cape +1', Priority = 30 }, -- 7
         Waist = 'Lightning Belt', -- 20
         Legs = 'Frog Trousers', -- 7
         Feet = { Name = 'Root Sabots', Priority = 60 },
@@ -234,6 +228,7 @@ local sets = {
 
     Precast = {
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
+        Ring2 = { Name = 'Bomb Queen Ring', Priority = 60 },
         Feet = { Name = 'Rostrum Pumps', Priority = 10 },
     },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
@@ -288,7 +283,7 @@ local sets = {
     Cheat_C3HPDown = {
         Head = 'Nashira Turban',
         Neck = 'Willpower Torque',
-        Ear1 = 'Merman\'s Earring',
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = { Name = 'Clr. Bliaut +1', Priority = 50 },
         Hands = 'Merman\'s Bangles',
@@ -437,6 +432,7 @@ local sets = {
         Ring2 = 'Omniscient Ring',
         Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
         Legs = 'Mahatma Slops',
+        Feet = { Name = 'Rostrum Pumps', Priority = 10 },
     },
     Barspell = {
         Body = { Name = 'Blessed Bliaut', Priority = 50 },
@@ -626,6 +622,7 @@ local sets = {
     LockSet3 = {},
 
     VileElixir = {
+        Main = 'Terra\'s Staff',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
         Head = { Name = 'Faerie Hairpin', Priority = 30 },
         Neck = { Name = 'Uggalepih Pendant', Priority = 50 },
