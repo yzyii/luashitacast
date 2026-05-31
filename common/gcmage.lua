@@ -484,7 +484,7 @@ function gcmage.DoDefault(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
             if (gcdisplay.GetCycle('TP') == 'HighAcc') then
                 gFunc.EquipSet('TP_HighAcc')
             end
-            if (player.SubJob == 'NIN') then
+            if (player.SubJob == 'NIN' and player.MainJob ~= 'SMN') then
                 local sub = gData.GetEquipment().Sub
                 if (sub ~= nil) then
                     if (sub.Resource.Slots == 3) then -- if this is a 1h weapon

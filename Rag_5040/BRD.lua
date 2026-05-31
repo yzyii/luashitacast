@@ -1,11 +1,11 @@
 local profile = {}
 
-local fastCastValue = 0.04 -- Only include Fast Cast e.g. Loquacious Earring, Rostrum Pumps
-local fastCastValueSong = 0.37 -- Only include Song Spellcasting Time e.g. Minstrel's Ring, Sha'ir Manteel
+local fastCastValue = 0.04 -- Only include Fast Cast i.e. Loquacious Earring, Rostrum Pumps
+local fastCastValueSong = 0.38 -- Only include Song Spellcasting Time i.e. Minstrel's Ring, Sha'ir Manteel
 
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
-local whmSJMaxMP = 233 -- The Max MP you have when /whm in your idle set
+local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
 local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
@@ -14,7 +14,7 @@ local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ 
     Back = 'Warlock\'s Mantle',
 }
 local gaudy_harness = {
-    -- Body = 'Gaudy Harness',
+    Body = 'Gaudy Harness',
 }
 
 local sets = {
@@ -371,10 +371,9 @@ local sets = {
     },
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {},
-    TP_NIN = {},
-
-    WS = {},
-    WS_HighAcc = {},
+    TP_NIN = {
+        Ear2 = 'Stealth Earring',
+    },
 
     Weapon_Loadout_1 = {
 		Main = 'Octave Club',
@@ -385,6 +384,9 @@ local sets = {
     },
     Weapon_Loadout_2 = {},
     Weapon_Loadout_3 = {},
+
+    WS = {},
+    WS_HighAcc = {},
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {
