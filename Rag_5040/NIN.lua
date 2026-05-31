@@ -555,7 +555,7 @@ local sets = {
     Weapon_Loadout_2 = {
         Main = 'Senjuinrikio',
         Sub = 'Unji',
-        Range = 'displaced'
+        Range = 'displaced',
         Ammo = 'Bomb Core',
     },
     Weapon_Loadout_3 = {},
@@ -583,7 +583,7 @@ local sets = {
     WS_Metsu = {
         Ring1 = 'Thunder Ring',
         Ring2 = 'Adroit Ring',
-    }
+    },
 
     ShinobiRingHPDown = { -- Set to force HP to or below shinobiRingMaxHP
         Ammo = { Name = 'Tiphia Sting', Priority = -20 },
