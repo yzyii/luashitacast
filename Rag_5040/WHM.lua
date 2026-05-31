@@ -87,7 +87,7 @@ local sets = {
         Main = 'Pluto\'s Staff',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
         Head = 'Hydra Beret',
-        Neck = { Name = 'Pch. Collar', Priority = 60 },
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
         Ear1 = 'Relaxing Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = 'Mahatma Hpl.',
@@ -363,7 +363,7 @@ local sets = {
     Benediction = {
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 }, -- 1
         Head = 'Hydra Beret', -- 8
-        Neck = { Name = 'Pch. Collar', Priority = 60 },
+        Neck = { Name = 'Shield Pendant', Priority = 20 },
         Ear1 = 'Novia Earring', -- 7
         Ear2 = { Name = 'Cassie Earring', Priority = 20 },
         Body = { Name = 'Hydra Doublet', Priority = 50 }, -- 9
@@ -371,7 +371,7 @@ local sets = {
         Ring1 = { Name = 'Serene Ring', Priority = 10 }, -- 2
         Ring2 = { Name = 'Serene Ring', Priority = 10 }, -- 2
         Back = { Name = 'Mahatma Cape', Priority = 50 }, -- 6
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 }, -- 3
+        Waist = { Name = 'Hierarch Belt', Priority = 50 },
         Legs = { Name = 'Bls. Trousers +1', Priority = 50 }, -- 6
         Feet = { Name = 'Blessed Pumps +1', Priority = 50 }, -- 5
     },

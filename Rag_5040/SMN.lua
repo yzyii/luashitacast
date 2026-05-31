@@ -83,7 +83,7 @@ local sets = {
         Main = 'Pluto\'s Staff',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
         Head = 'Hydra Beret',
-        Neck = { Name = 'Pch. Collar', Priority = 60 },
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
         Ear1 = 'Relaxing Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = 'Mahatma Hpl.',
@@ -138,6 +138,9 @@ local sets = {
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = { Name = 'Hexerei Cape', Priority = 50 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = { Name = 'Silk Slacks +1', Priority = 60 },
+        Feet = { Name = 'Root Sabots', Priority = 60 },
     },
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
@@ -268,7 +271,7 @@ local sets = {
     },
 
     Cure = {
-        Ammo = { Name = 'Dream Sand', Priority = 50 },
+        Ammo = { Name = 'Hedgehog Bomb', Priority = 50 }, -- 1
         Head = 'Hydra Beret', -- 8
         Neck = 'Benign Necklace', -- 2
         Ear1 = 'Novia Earring', -- 7

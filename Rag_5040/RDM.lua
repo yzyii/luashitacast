@@ -69,7 +69,7 @@ local sets = {
         Range = 'displaced',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
         Head = { Name = 'Dls. Chapeau +1', Priority = 70 },
-        Neck = { Name = 'Pch. Collar', Priority = 60 },
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
         Ear1 = 'Relaxing Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = 'Mahatma Hpl.',
@@ -622,7 +622,7 @@ local sets = {
         Feet = 'Hydra Gaiters',
     },
     TP_NIN = {
-        Ear2 = 'Stealth Earring',
+        Ear1 = 'Stealth Earring',
     },
 
     Weapon_Loadout_1 = {
@@ -637,12 +637,7 @@ local sets = {
         Range = 'Lightning Bow +1',
         Ammo = 'displaced',
     },
-    Weapon_Loadout_3 = {
-        Main = 'Octave Club',
-        Sub = 'Genbu\'s Shield',
-        Range = 'Lightning Bow +1',
-        Ammo = 'displaced',
-    },
+    Weapon_Loadout_3 = {},
 
     WS = {
         Head = 'Maat\'s Cap',

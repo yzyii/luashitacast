@@ -65,7 +65,7 @@ local sets = {
     Resting = {
         Main = 'Pluto\'s Staff',
         Sub = 'displaced',
-        Neck = { Name = 'Pch. Collar', Priority = 60 },
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
         Ear1 = 'Relaxing Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = 'Nomad\'s Tunica',
@@ -454,6 +454,7 @@ local sets = {
         Range = 'Lightning Bow +1',
         Ammo = 'Virtue Stone',
         Neck = 'Peacock Amulet',
+        Ear1 = 'Stealth Earring',
     },
     Weapon_Loadout_3 = {
         Main = 'Martial Wand',
@@ -461,6 +462,7 @@ local sets = {
         Range = 'Lightning Bow +1',
         Ammo = 'displaced',
         Neck = 'Prudence Torque',
+        Ear1 = 'Stealth Earring',
     },
 
     WS = {
@@ -541,7 +543,7 @@ local sets = {
         Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = { Name = 'Homam Zucchetto', Priority = 70 },
-        Neck = { Name = 'Pch. Collar', Priority = 60 },
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = { Name = 'Blood Scale Mail', Priority = 70 },
