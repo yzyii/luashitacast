@@ -154,7 +154,7 @@ The restrictions and assumptions made while doing so are as follows:
 - Apoc Nigh earring is be assumed to be Magnetic except for Ethereal on DRG.
 - No Relic Weapons, Defending Ring, Ancient Adamantoise Egg, Ridill, though some Relic WS sets are filled out as an example.
 - No HQ+1 Resistance Earrings / Rings
-- Some NQ items instead of HQ e.g. Dalmatica.
+- Some NQ items instead of HQ where the HQ makes little to no difference e.g. Dalmatica.
 - No RSE items.
 
 While a fair amount of effort has been made to ensure this is accurate, reporting any discrepancies would be appreciated.
