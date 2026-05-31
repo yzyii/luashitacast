@@ -163,10 +163,11 @@ While a fair amount of effort has been made to ensure this is accurate, reportin
 
 Some items pre-filled out for you contain syntax regarding "Priority". This dictates the equip order of items where items with a higher priority are equipped first. By default, all items have a priority of 0.
 
-e.g. The Dls. Chapeau +1 in this example has a priority of 30 while the Jeweled Collar +1 has a priprity of 0. Since 70 > 0, the Chapeau will be equipped first.
+e.g. The Dls. Chapeau +1 in this example has a priority of 70, the Hierarch Belt has a priority of 50, and the Jeweled Collar +1 has a priority of 0. The Dls. Chapeau is equipped first, the Hierarch Belt is equipped second, and the Jeweled Collar is equipped last.
 ```lua
         Head = { Name = 'Dls. Chapeau +1', Priority = 70 },
         Neck = 'Jeweled Collar +1',
+        Waist = { Name = 'Hierarch Belt', Priority = 50 },
 ```
 
 This functionality is generally not required except for power users that know what they are doing and are attempting to optimize preserving HP and MP totals across equipment swaps.

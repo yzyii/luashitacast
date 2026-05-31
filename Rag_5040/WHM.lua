@@ -577,7 +577,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Body = { Name = 'Flora Cotehardie', Priority = 10 },
         Hands = { Name = 'Hlr. Mitts +1', Priority = 50 },
-        Ring1 = 'Flame Ring',
+        Ring1 = 'Triumph Ring',
         Ring2 = 'Triumph Ring',
         Back = 'Ryl. Army Mantle',
         Waist = 'Life Belt',
