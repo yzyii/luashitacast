@@ -246,7 +246,7 @@ local sets = {
         Back = 'Shadow Mantle',
         Waist = 'Sonic Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 }
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
     ConserveMP = {
         Ammo = { Name = 'Dream Sand', Priority = 50 },
@@ -255,23 +255,23 @@ local sets = {
     },
 
     Sing_Default = { -- Defaulting to Wind and Debuffs just because we have to default to something
-        Range = { Name = 'Shofar +1', Priority = 60 } -- Realistically pointless to fill out
-        Head = { Name = 'Brd. Roundlet +1', Priority = 60 }
+        Range = { Name = 'Shofar +1', Priority = 60 }, -- Realistically pointless to fill out
+        Head = { Name = 'Brd. Roundlet +1', Priority = 60 },
         Neck = 'Wind Torque',
         Ear1 = 'Musical Earring',
         Ear2 = 'Singing Earring',
         Body = 'Mahatma Hpl.',
-        Hands = { Name = 'Chl. Cuffs +1', Priority = 60 }
+        Hands = { Name = 'Chl. Cuffs +1', Priority = 60 },
         Ring1 = 'Heavens Ring',
         Ring2 = 'Heavens Ring',
         Back = { Name = 'Astute Cape', Priority = 50 },
         Waist = 'Gleeman\'s Belt',
-        Legs = { Name = 'Chl. Cannions +1', Priority = 60 }
+        Legs = { Name = 'Chl. Cannions +1', Priority = 60 },
         Feet = { Name = 'Sheikh Crackows', Priority = 50 },
     },
     Sing_Buff = {
         Main = 'Chanter\'s Staff',
-        Body = { Name = 'Minstrel\'s Coat', Priority = 60 }
+        Body = { Name = 'Minstrel\'s Coat', Priority = 60 },
         Ring1 = { Name = 'Shadow Ring', Priority = 10 },
         Ring2 = { Name = 'Serene Ring', Priority = 10 },
         Waist = { Name = 'Powerful Rope', Priority = 70 },
@@ -288,7 +288,7 @@ local sets = {
         Range = 'Balladier\'s Harp',
     },
     Sing_Ballad_Small = {
-        Range = { Name = 'Shofar +1', Priority = 60 }
+        Range = { Name = 'Shofar +1', Priority = 60 },
     },
     Sing_Paeon = {
         Range = 'Ebony Harp +2',
@@ -312,29 +312,29 @@ local sets = {
     Sing_Lullaby = {
         Range = 'Nursemaid\'s Harp',
         Neck = 'String Torque',
-        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 }
+        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
         Legs = 'Mahatma Slops',
     },
     Sing_HordeLullaby_Large = {
         Range = 'Nursemaid\'s Harp',
         Neck = 'String Torque',
-        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 }
+        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
         Legs = 'Mahatma Slops',
     },
     Sing_HordeLullaby_Small = {
         Range = 'Mary\'s Horn',
         Neck = 'Wind Torque',
         Body = 'Mahatma Hpl.',
-        Legs = { Name = 'Chl. Cannions +1', Priority = 60 }
+        Legs = { Name = 'Chl. Cannions +1', Priority = 60 },
     },
     Sing_Finale = {
         Range = 'Military Harp',
         Neck = 'String Torque',
-        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 }
+        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
         Legs = 'Mahatma Slops',
     },
     Sing_Requiem = {
-        Range = { Name = 'Shofar +1', Priority = 60 }
+        Range = { Name = 'Shofar +1', Priority = 60 },
     },
     Sing_Carol = {
         Range = 'Crumhorn +2',
@@ -348,7 +348,7 @@ local sets = {
     Sing_Threnody = {
         Range = 'Sorrowful Harp',
         Neck = 'String Torque',
-        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 }
+        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
         Legs = 'Mahatma Slops',
     },
     Sing_Hymnus = {
@@ -368,19 +368,19 @@ local sets = {
     Sing_Etude = {
         Range = 'Mythic Harp +1',
         Neck = 'String Torque',
-        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 }
+        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
     },
     Sing_Minne = {
         Range = 'Harp +1',
         Neck = 'String Torque',
-        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 }
+        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
     },
     Sing_Virelai = {
         Range = 'Cyt. Anglica +1',
         Neck = 'String Torque',
-        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 }
+        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
         Legs = 'Mahatma Slops',
     },
 
@@ -421,7 +421,7 @@ local sets = {
         Back = { Name = 'Merciful Cape', Priority = 50 },
         Waist = 'Sonic Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 }
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
     Stoneskin = {
         Main = 'Chanter\'s Staff',
@@ -485,7 +485,7 @@ local sets = {
         Back = 'Bard\'s Cape',
         Waist = 'Sonic Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 }
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {},
@@ -503,7 +503,7 @@ local sets = {
     Weapon_Loadout_3 = {},
 
     WS = {
-        Range = 'Oliphant'
+        Range = 'Oliphant',
         Ammo = 'displaced',
         Head = { Name = 'Hecatomb Cap +1', Priority = 60 },
         Neck = 'Love Torque',
