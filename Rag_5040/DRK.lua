@@ -647,14 +647,14 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(obiOwned)
     end
 
-    if (action.Skill ~= 'Ninjutsu' and gcdisplay.GetToggle('Hate')) then
-        gFunc.EquipSet(sets.Haste)
-        gFunc.EquipSet(sets.Haste_Hate)
-    end
-
     if (string.contains(action.Name, 'Stun')) then
         gFunc.EquipSet(sets.Haste)
         gFunc.EquipSet(sets.Haste_Stun)
+    end
+
+    if (action.Skill ~= 'Ninjutsu' and gcdisplay.GetToggle('Hate') and action.Name ~= 'Drain') then
+        gFunc.EquipSet(sets.Haste)
+        gFunc.EquipSet(sets.Haste_Hate)
     end
 end
 
