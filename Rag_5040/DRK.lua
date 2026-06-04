@@ -59,7 +59,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    IdleALT = { -- 1385
+    IdleALT = {
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
         Range = { Name = 'Rosenbogen', Priority = 60 },
@@ -83,7 +83,7 @@ local sets = {
         Body = 'Dst. Harness +1',
         Ring1 = 'Jelly Ring',
     },
-    IdleALTDT = { -- Disabled on horizon_safe_mode -- 1385
+    IdleALTDT = { -- Disabled on horizon_safe_mode
         Head = 'Darksteel Cap +1',
         Neck = { Name = 'Evasion Torque', Priority = 60 },
         Body = 'Dst. Harness +1',
@@ -316,7 +316,7 @@ local sets = {
         Sub = 'Koenig Shield',
         Neck = 'Harmonia\'s Torque',
         Ear1 = { Name = 'Hades Earring +1', Priority = 50 },
-        Ear2 = { Name = 'Hades Earring +1', Priority = 50 },
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
         Body = { Name = 'Hydra Haubert', Priority = -100 },
         Back = 'Resentment Cape',
     },
