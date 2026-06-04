@@ -97,6 +97,7 @@ local sets = {
         Head = 'Panther Mask +1',
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
         Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
+        Ring2 = 'Blitz Ring',
         Back = 'Shadow Mantle',
         Waist = 'Sonic Belt',
         Legs = 'Byakko\'s Haidate',
@@ -119,19 +120,23 @@ local sets = {
     },
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {
-        Head = 'Maat\'s Cap',
+        Hands = 'Armada Mufflers',
     },
     TP_HighAcc = {
         Head = 'Optical Hat',
         Neck = 'Peacock Amulet',
         Hands = 'Armada Mufflers',
-        Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
         Back = 'Settler\'s Cape',
         Waist = 'Life Belt',
         Feet = 'Armada Sollerets',
     },
     TP_Aggressor = {
-        Ear2 = 'Merman\'s Earring',
+        Head = 'Panther Mask +1',
+        Neck = 'Fortitude Torque',
+        Ring2 = 'Blitz Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Sonic Belt',
     },
     TP_NIN = { -- Equips iff using 1h weapon in Sub
         Ear2 = 'Stealth Earring',
@@ -211,7 +216,6 @@ local sets = {
         Neck = 'Temp. Torque',
         Ear2 = 'Assault Earring',
         Body = 'Armada Hauberk',
-        Hands = { Name = 'Hct. Mittens +1', Priority = 60 },
         Waist = 'Warrior\'s Stone',
     },
 

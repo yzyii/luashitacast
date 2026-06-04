@@ -171,11 +171,11 @@ local sets = {
 
     Weapon_Loadout_1 = {
         Main = 'Destroyers',
-        Ammo = 'Tiphia Sting',
+        Ammo = { Name = 'Tiphia Sting', Priority = -20 },
     },
     Weapon_Loadout_2 = {
         Main = 'Cross-Counters',
-        Ammo = 'Tiphia Sting',
+        Ammo = { Name = 'Tiphia Sting', Priority = -20 },
     },
     Weapon_Loadout_3 = {
         Main = 'Faith Baghnakhs',
