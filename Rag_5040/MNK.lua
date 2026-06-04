@@ -39,7 +39,7 @@ local sets = {
     },
     IdleALT = {
         Head = 'Arh. Jinpachi +1',
-        Neck = 'Evasion Torque',
+        Neck = { Name = 'Evasion Torque', Priority = 60 },
         Ear1 = 'Novia Earring',
         Ear2 = 'Triton Earring',
         Body = 'Arhat\'s Gi +1',

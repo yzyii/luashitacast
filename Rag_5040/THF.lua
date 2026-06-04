@@ -32,7 +32,7 @@ local sets = {
     IdleALT = {
         Main = 'Terra\'s Staff',
         Head = { Name = 'Rog. Bonnet +1', Priority = 60 },
-        Neck = 'Evasion Torque',
+        Neck = { Name = 'Evasion Torque', Priority = 60 },
         Ear1 = 'Novia Earring',
         Ear2 = 'Triton Earring',
         Body = { Name = 'Scp. Harness +1', Priority = 60 },
@@ -93,7 +93,7 @@ local sets = {
     WaterRes = {},
     Evasion = {
         Head = 'Optical Hat',
-        Neck = 'Evasion Torque',
+        Neck = { Name = 'Evasion Torque', Priority = 60 },
         Ear1 = 'Novia Earring',
         Ear2 = 'Musical Earring',
         Body = { Name = 'Scp. Harness +1', Priority = 60 },
@@ -118,7 +118,7 @@ local sets = {
     },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Head = 'Optical Hat',
-        Neck = 'Evasion Torque',
+        Neck = { Name = 'Evasion Torque', Priority = 60 },
         Ear1 = 'Novia Earring',
         Ear2 = 'Triton Earring',
         Body = { Name = 'Scp. Harness +1', Priority = 60 },

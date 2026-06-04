@@ -207,7 +207,7 @@ local sets = {
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
         Body = 'Assault Brstplate', -- 15
-        Hands = 'Coral Fng. Gnt. +1', -- 4
+        Hands = { Name = 'Scp. Mittens +1', Priority = 60 }, -- 7
         Ring1 = 'Communion Ring', -- 10
         Ring2 = 'Malflood Ring', -- 10
         Back = 'Wolf Mantle +1', -- 3

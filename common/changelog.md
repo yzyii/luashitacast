@@ -602,3 +602,6 @@
 ### v2.2.1
 - Add /gcdisplay command to allow toggling of the visibility of the UI component
 - SMN - Shifts Horizon specific summoning magic cast time equipment into Precast_Summoning for clarity
+- Melee - Fixes tanking mode interim sets to ignore weapon loadouts
+- DRK - Adds relevant Haste sets for tanking
+- DRK Adds relevant WS sets

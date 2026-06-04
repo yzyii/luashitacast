@@ -5,7 +5,7 @@ local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
-local use_chaos_burgeonet_for_tp_during_souleater = true
+local use_chaos_burgeonet_for_tp_during_souleater = false
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local karin_obi = {
@@ -42,131 +42,129 @@ local fenrirs_stone = { -- Used on /evasion for Zergs. See Evasion set / README.
 
 local sets = {
     Idle = {
-        Main = 'Tredecim Scythe',
-        Ammo = 'Bomb Core',
+        Main = 'Terra\'s Staff',
+        Sub = 'displaced',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
+        Ammo = 'displaced',
+        Head = 'displaced',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Vampire Cloak',
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Shadow Ring',
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    IdleALT = { -- 1365
+    IdleALT = { -- 1385
         Main = 'Terra\'s Staff',
         Sub = 'displaced',
-        Range = 'Rosenbogen',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = 'displaced',
         Body = 'Vampire Cloak',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Shadow Ring',
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
     IdleDT = { -- Disabled on horizon_safe_mode
-        Head = 'Darksteel Cap +1', -- 2
-        Neck = 'Evasion Torque',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Merman\'s Earring',
-        Body = 'Dst. Harness +1', -- 4
-        Hands = 'Heavy Gauntlets', -- 3
-        Ring1 = 'Jelly Ring', -- 5
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
-        Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1', -- 3
-        Feet = 'Dst. Leggings +1', -- 2
+        Head = 'Darksteel Cap +1',
+        Neck = { Name = 'Evasion Torque', Priority = 60 },
+        Body = 'Dst. Harness +1',
+        Ring1 = 'Jelly Ring',
     },
-    IdleALTDT = { -- Disabled on horizon_safe_mode -- 1365
-        Head = 'Darksteel Cap +1', -- 2
-        Neck = 'Evasion Torque',
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
-        Body = 'Dst. Harness +1', -- 4
-        Hands = 'Heavy Gauntlets', -- 3
-        Ring1 = 'Jelly Ring', -- 5
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
-        Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1', -- 3
-        Feet = 'Dst. Leggings +1', -- 2
+    IdleALTDT = { -- Disabled on horizon_safe_mode -- 1385
+        Head = 'Darksteel Cap +1',
+        Neck = { Name = 'Evasion Torque', Priority = 60 },
+        Body = 'Dst. Harness +1',
+        Ring1 = 'Jelly Ring',
     },
     Resting = {
-        Neck = 'Paisley Scarf',
-        Ear2 = 'Sanative Earring',
+        Main = 'Pluto\'s Staff',
+        Sub = 'displaced',
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
+        Ear1 = 'Relaxing Earring',
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
+        Body = 'Nomad\'s Tunica',
+        Hands = 'Nomad\'s Gloves',
+        Legs = 'Nomad\'s Hose',
+        Feet = 'Nomad\'s Boots',
     },
     Town = {},
     Movement = {
-        Hands = 'Homam Manopolas',
-        Legs = 'Blood Cuisses',
+        Legs = { Name = 'Blood Cuisses', Priority = 70 },
     },
-    Movement_TP = {},
+    Movement_TP = {
+        Hands = { Name = 'Homam Manopolas', Priority = 70 },
+        Feet = { Name = 'Homam Gambieras', Priority = 70 },
+    },
 
     DT = {
-        Head = 'Darksteel Cap +1', -- 2
-        Neck = 'Evasion Torque',
+        Main = 'Terra\'s Staff',
+        Sub = 'displaced',
+        Head = 'Darksteel Cap +1',
+        Neck = { Name = 'Evasion Torque', Priority = 60 },
         Ear1 = 'Merman\'s Earring',
-        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
-        Body = 'Dst. Harness +1', -- 4
-        Hands = 'Heavy Gauntlets', -- 3
-        Ring1 = 'Jelly Ring', -- 5
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Body = 'Dst. Harness +1', 
+        Hands = 'Heavy Gauntlets',
+        Ring1 = 'Jelly Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
-        Legs = 'Dst. Subligar +1', -- 3
-        Feet = 'Dst. Leggings +1', -- 2
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Dst. Leggings +1',
     },
     MDT = {
-        Head = 'Darksteel Cap +1',
+        Head = 'Coral Visor +1',
         Neck = 'Jeweled Collar +1',
-        Ear1 = 'Merman\'s Earring', -- 2
-        Ear2 = 'Merman\'s Earring', -- 2
-        Body = 'Cor. Scale Mail +1', -- 4
-        Hands = 'Coral Fng. Gnt. +1', -- 2
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Cor. Scale Mail +1',
+        Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Shadow Ring',
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
-        Back = 'Resentment Cape',
-        Waist = 'Warwolf Belt',
-        Legs = 'Coral Cuisses +1', -- 3
-        Feet = 'Coral Greaves +1', -- 2
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = 'Coral Cuisses +1',
+        Feet = 'Coral Greaves +1',
     },
     FireRes = {
         Main = 'Neptune\'s Staff', -- 20
         Sub = 'displaced',
-        Range = 'Rosenbogen',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Cmn. Earring', -- 11
-        Ear2 = 'Cmn. Earring', -- 11
+        Ear1 = 'Triumph Earring', -- 11
+        Ear2 = 'Triumph Earring', -- 11
         Body = 'Assault Brstplate', -- 15
         Hands = 'Tarasque Mitts +1', -- 6
         Ring1 = 'Triumph Ring', -- 10
         Ring2 = 'Malflame Ring', -- 10
         Back = 'Dino Mantle', -- 4
         Waist = 'Water Belt', -- 20
-        Legs = 'Blood Cuisses', -- 21
+        Legs = { Name = 'Blood Cuisses', Priority = 70 }, -- 21
         Feet = 'Power Sandals', -- 7
     },
     IceRes = {
         Main = 'Vulcan\'s Staff', -- 20
         Sub = 'displaced',
-        Range = 'Rosenbogen',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Diamond Earring', -- 10
+        Ear1 = 'Omn. Earring', -- 11
         Ear2 = 'Omn. Earring', -- 11
         Body = 'Assault Brstplate', -- 15
         Hands = 'Feral Gloves', -- 4
@@ -175,7 +173,7 @@ local sets = {
         Back = 'Ram Mantle +1', -- 6
         Waist = 'Fire Belt', -- 20
         Legs = 'Feral Trousers', -- 6
-        Feet = 'Blood Greaves', -- 21
+        Feet = { Name = 'Blood Greaves', Priority = 70 }, -- 21
     },
     LightningRes = {
         Main = 'Terra\'s Staff',
@@ -187,84 +185,85 @@ local sets = {
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
         Body = 'Assault Brstplate', -- 15
-        Hands = 'Heavy Gauntlets',
+        Hands = { Name = 'Feronia\'s Bangles', Priority = 60 },
         Ring1 = 'Adroit Ring', -- 10
         Ring2 = 'Malflash Ring', -- 10
         Back = 'Gaia Mantle +1', -- 12
         Waist = 'Earth Belt', -- 20
-        Legs = 'Blood Cuisses', -- 21
-        Feet = 'Dst. Leggings +1',
+        Legs = { Name = 'Blood Cuisses', Priority = 70 }, -- 21
+        Feet = { Name = 'Root Sabots', Priority = 60 },
     },
     EarthRes = {
         Main = 'Auster\'s Staff', -- 20
         Sub = 'displaced',
-        Range = 'Rosenbogen',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
         Body = 'Assault Brstplate', -- 15
-        Hands = 'Coral Fng. Gnt. +1',
+        Hands = 'Sand Gloves', -- 11
         Ring1 = 'Robust Ring', -- 10
         Ring2 = 'Maldust Ring', -- 10
         Back = 'Gaia Mantle +1', -- 10
         Waist = 'Wind Belt', -- 20
         Legs = 'Beak Trousers +1', -- 7
-        Feet = 'Blood Greaves', -- 21
+        Feet = { Name = 'Blood Greaves', Priority = 70 }, -- 21
     },
     WindRes = {
         Main = 'Aquilo\'s Staff', -- 20
         Sub = 'displaced',
-        Range = 'Rosenbogen',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Diamond Earring', -- 10
+        Ear1 = 'Omn. Earring', -- 11
         Ear2 = 'Omn. Earring', -- 11
         Body = 'Assault Brstplate', -- 15
-        Hands = 'Coral Fng. Gnt. +1',
-        Ring1 = 'Emerald Ring', -- 9
+        Hands = 'Mage\'s Cuffs', -- 5
+        Ring1 = 'Nimble Ring', -- 10
         Ring2 = 'Malgust Ring', -- 10
-        Back = 'Shadow Mantle',
+        Back = 'Wolf Mantle +1', -- 3
         Waist = 'Ice Belt', -- 20
-        Legs = 'Coral Cuisses +1',
-        Feet = 'Blood Greaves', -- 21
+        Legs = 'Mythril Cuisses +1', -- 3
+        Feet = { Name = 'Blood Greaves', Priority = 70 }, -- 21
     },
     WaterRes = {
         Main = 'Jupiter\'s Staff', -- 20
         Sub = 'displaced',
-        Range = 'Rosenbogen',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
         Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
         Neck = 'Jeweled Collar +1', -- 10
         Ear1 = 'Cmn. Earring', -- 11
         Ear2 = 'Cmn. Earring', -- 11
         Body = 'Assault Brstplate', -- 15
-        Hands = 'Coral Fng. Gnt. +1', -- 4
+        Hands = { Name = 'Scp. Mittens +1', Priority = 60 }, -- 7
         Ring1 = 'Communion Ring', -- 10
         Ring2 = 'Malflood Ring', -- 10
-        Back = 'Shadow Mantle',
+        Back = 'Wolf Mantle +1', -- 3
         Waist = 'Lightning Belt', -- 20
-        Legs = 'Blood Cuisses', -- 21
-        Feet = 'Coral Greaves +1', -- 4
+        Legs = { Name = 'Blood Cuisses', Priority = 70 }, -- 21
+        Feet = { Name = 'Scp. Leggings +1', Priority = 60 }, -- 7
     },
     Evasion = { -- Currently using this as a set for 2H Zergs. See README.md
         Main = 'Octave Club',
         Sub = 'Wyvern Targe',
-        Ammo = 'Happy Egg',
-        Head = 'Homam Zucchetto',
-        Neck = 'Shield Pendant',
+        Range = 'displaced',
+        Ammo = { Name = 'Happy Egg', Priority = 60 },
+        Head = { Name = 'Homam Zucchetto', Priority = 70 },
+        Neck = { Name = 'Shield Pendant', Priority = 20 },
         Ear1 = 'Wyvern Earring',
-        Ear2 = 'Cassie Earring',
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
         Body = 'Gloom Breastplate',
-        Hands = 'Dusk Gloves +1',
-        Ring1 = 'Bomb Queen Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Gigant Mantle',
+        Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
         Waist = 'Sonic Belt',
-        Legs = 'Homam Cosciales',
-        Feet = 'Homam Gambieras',
+        Legs = { Name = 'Homam Cosciales', Priority = 70 },
+        Feet = { Name = 'Homam Gambieras', Priority = 70 },
     },
     Override = { -- An additional override set explicitly to be used for sets such as crafting, HELM, fishing, or any other special sets such as DRK 2HR, MNK Counter etc. n.b. Any unused Resist or Evasion set can be used similarly.
         Body = 'Field Tunica',
@@ -274,144 +273,217 @@ local sets = {
     },
 
     Precast = {
-        Ear1 = 'Loquac. Earring',
-        Legs = 'Homam Cosciales',
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
+        Legs = { Name = 'Homam Cosciales', Priority = 70 },
     },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
         Head = { Name = 'Aegishjalmr', Priority = 100 },
         Neck = 'Willpower Torque', -- 5
-        Ear1 = 'Magnetic Earring', -- 8
-        Ear2 = 'Knightly Earring', -- 9
-        Legs = { Name = 'Homam Cosciales', Priority = 100 },
+        Ear1 = 'Knightly Earring', -- 9
+        Ear2 = { Name = 'Magnetic Earring', Priority = 1 }, -- 8
+        Body = 'Dst. Harness +1',
+        Back = 'Shadow Mantle',
+        Legs = { Name = 'Homam Cosciales', Priority = 70 },
         Feet = 'Mountain Gaiters', -- 5
     },
     Haste = {
-        Head = { Name = 'Ace\'s Helm', Priority = -1 },
+        Head = { Name = 'Ace\'s Helm', Priority = -100 },
+        Neck = 'Willpower Torque',
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = 'Dst. Harness +1',
-        Hands = { Name = 'Dusk Gloves +1', Priority = 100 },
+        Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
+        Ring1 = 'Blitz Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = 'Shadow Mantle',
         Waist = 'Sonic Belt',
-        Legs = { Name = 'Homam Cosciales', Priority = 100 },
-        Feet = { Name = 'Homam Gambieras', Priority = 100 },
+        Legs = { Name = 'Homam Cosciales', Priority = 70 },
+        Feet = { Name = 'Homam Gambieras', Priority = 70 },
+    },
+    Haste_Stun = {
+        Main = 'Jupiter\'s Staff',
+        Sub = 'displaced',
+        Range = 'displaced',
+        Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },
+        Neck = 'Dark Torque',
+        Ear2 = 'Dark Earring',
+        Body = { Name = 'Demon\'s Harness', Priority = 10 },
+        Ring2 = 'Omniscient Ring',
+        Back = { Name = 'Merciful Cape', Priority = 50 },
+    }
+    Haste_Hate = {
+        Main = 'Octave Club',
+        Sub = 'Koenig Shield',
+        Neck = 'Harmonia\'s Torque',
+        Ear1 = { Name = 'Hades Earring +1', Priority = 50 },
+        Ear2 = { Name = 'Hades Earring +1', Priority = 50 },
+        Body = { Name = 'Hydra Haubert', Priority = -100 },
+        Back = 'Resentment Cape',
     },
 
     Hate = {
-        Main = 'Octave Club', -- lul
-        Sub = 'Koenig Shield', -- 3
-        Head = { Name = 'Aegishjalmr', Priority = 100 },
-        Neck = 'Harmonia\'s Torque', -- 3
-        Ear1 = 'Hades Earring +1', -- 2
-        Ear2 = { Name = 'Cassie Earring', Priority = 100 },
-        Body = { Name = 'Hydra Haubert', Priority = -100 }, -- 9
-        Hands = { Name = 'Hydra Moufles', Priority = -100 }, -- 6
-        Ring1 = 'Mermaid Ring', -- 2
-        Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
-        Back = { Name = 'Gigant Mantle', Priority = 100 },
-        Waist = 'Warwolf Belt', -- 3
-        Legs = { Name = 'Hydra Brayettes', Priority = -100 }, -- 6
-        Feet = { Name = 'Hydra Sollerets', Priority = -100 }, -- 4
+        Main = 'Octave Club',
+        Sub = 'Koenig Shield',
+        Head = { Name = 'Aegishjalmr', Priority = 60 },
+        Neck = 'Harmonia\'s Torque',
+        Ear1 = { Name = 'Hades Earring +1', Priority = 50 },
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Body = { Name = 'Hydra Haubert', Priority = -100 },
+        Hands = { Name = 'Hydra Moufles', Priority = -100 },
+        Ring1 = 'Mermaid Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
+        Waist = 'Warwolf Belt',
+        Legs = { Name = 'Hydra Brayettes', Priority = -100 },
+        Feet = { Name = 'Hydra Sollerets', Priority = -100 },
     },
-
-    LockSet1 = {},
-    LockSet2 = {},
-    LockSet3 = {},
 
     TP_LowAcc = {
         Head = 'Ace\'s Helm',
         Neck = 'Justice Torque',
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Abyssal Earring',
-        Body = 'Haubergeon +1',
-        Hands = 'Dusk Gloves +1',
-        Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Toreador\'s Ring',
+        Ear2 = 'Assault Earring',
+        Body = 'Armada Hauberk',
+        Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
+        Ring1 = 'Triumph Ring',
+        Ring2 = 'Blitz Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Sonic Belt',
-        Legs = 'Homam Cosciales',
-        Feet = 'Homam Gambieras',
+        Legs = { Name = 'Homam Cosciales', Priority = 70 },
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
-    TP_Aftermath = {},
-    TP_Mjollnir_Haste = {},
-    TP_Aftermath_Mjollnir_Haste = {},
+    TP_Aftermath = {
+        Head = 'Horus\'s Helm',
+        Hands = 'Armada Mufflers',
+        Ring2 = 'Triumph Ring',
+        Legs = { Name = 'Armada Breeches', Priority = -10 },
+        Feet = { Name = 'Armada Sollerets', Priority = -20 },
+    },
+    TP_Mjollnir_Haste = {
+        Ring2 = 'Triumph Ring',
+    },
+    TP_Aftermath_Mjollnir_Haste = {
+        Head = 'Maat\'s Cap',
+        Legs = 'Onyx Cuisses',
+    },
     TP_HighAcc = {
+        Head = 'Optical Hat',
         Neck = 'Peacock Amulet',
-        Back = 'Abyss Cape',
+        Hands = { Name = 'Homam Manopolas', Priority = 70 },
+        Ring1 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
+        Back = 'Settler\'s Cape',
+        Waist = 'Life Belt',
+        Legs = { Name = 'Armada Breeches', Priority = -10 },
+        Feet = { Name = 'Homam Gambieras', Priority = 70 }
     },
 
+    Weapon_Loadout_1 = {
+        Main = 'Tredecim Scythe',
+        Sub = 'displaced',
+        Range = 'displaced',
+        Ammo = 'Bomb Core',
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Subduer',
+        Sub = 'displaced',
+        Range = 'displaced',
+        Ammo = 'Bomb Core',
+    },
+    Weapon_Loadout_3 = {},
+
     WS = {
-        Head = 'Maat\'s Cap',
+        Head = { Name = 'Hecatomb Cap +1', Priority = 60 },
         Neck = 'Snow Gorget',
         Ear1 = 'Brutal Earring',
-        Ear2 = 'Abyssal Earring',
-        Body = 'Haubergeon +1',
-        Hands = 'Chs. Gauntlets +1',
+        Ear2 = 'Triumph Earring',
+        Body = 'Armada Hauberk',
+        Hands = { Name = 'Alkyoneus\'s Brc.', Priority = 60 },
         Ring1 = 'Triumph Ring',
-        Ring2 = 'Toreador\'s Ring',
+        Ring2 = 'Triumph Ring',
         Back = 'Forager\'s Mantle',
         Waist = 'Warwolf Belt',
         Legs = 'Onyx Cuisses',
-        Feet = 'Chs. Sollerets +1',
+        Feet = { Name = 'Chs. Sollerets +1', Priority = 70 },
     },
-    WS_HighAcc = {},
+    WS_HighAcc = {
+        Back = 'Abyss Cape',
+    },
 
-    WS_Guillotine = {},
-    WS_SpinningSlash = {},
+    WS_Guillotine = {
+        Neck = 'Justice Torque',
+    },
     WS_CrossReaper = {},
+    WS_Catastrophe = {
+        Back = 'Forager\'s Mantle',
+    },
+    WS_SpinningSlash = {
+        Neck = 'Breeze Gorget',
+        Back = 'Forager\'s Mantle',
+        Feet = { Name = 'Hct. Leggings +1', Priority = 60 },
+    },
+    WS_Scourge = {
+        Neck = 'Breeze Gorget',
+        Back = 'Forager\'s Mantle',
+    },
 
     WeaponBash = {
-        Hands = 'Chs. Gauntlets +1',
+        Hands = { Name = 'Chs. Gauntlets +1', Priority = 70 },
     },
     ArcaneCircle = {
-        Feet = 'Chs. Sollerets +1',
+        Feet = { Name = 'Chs. Sollerets +1', Priority = 70 },
     },
     SoulEater = {
-        Head = 'Chs. Burgeonet +1',
+        Head = { Name = 'Chs. Burgeonet +1', Priority = 70 },
     },
     Nuke = {},
     Enfeebling = {},
     Drain = {
-        Ammo = 'Phtm. Tathlum',
-        Head = { Name = 'Chs. Burgeonet +1', Priority = 100 },
+        Main = 'Pluto\'s Staff',
+        Sub = 'displaced',
+        Range = 'displaced',
+        Ammo = { Name = 'Phtm. Tathlum', Priority = 50 },
+        Head = { Name = 'Chs. Burgeonet +1', Priority = 70 },
         Neck = 'Dark Torque',
         Ear1 = 'Dark Earring',
-        Ear2 = 'Abyssal Earring',
-        Body = 'Dst. Harness +1',
-        Hands = { Name = 'Blood Fng. Gnt.', Priority = 100 },
+        Ear2 = 'Omn. Earring',
+        Body = { Name = 'Demon\'s Harness', Priority = 10 },
+        Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
         Ring1 = 'Omniscient Ring',
         Ring2 = 'Overlord\'s Ring',
-        Back = 'Merciful Cape',
+        Back = { Name = 'Merciful Cape', Priority = 50 },
         Waist = 'Sonic Belt',
-        Legs = 'Abs. Flanchard +1',
+        Legs = { Name = 'Abs. Flanchard +1', Priority = 70 },
         Feet = 'Mountain Gaiters',
     },
     Absorb = {
         Ring2 = 'Snow Ring',
     },
 
-    Weapon_Loadout_1 = {
-        Main = 'Tredecim Scythe',
-        Ammo = 'Bomb Core',
-    },
-    Weapon_Loadout_2 = {},
-    Weapon_Loadout_3 = {},
-
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {
         Ammo = 'Dart',
     },
 
+    LockSet1 = {},
+    LockSet2 = {},
+    LockSet3 = {},
+
     VileElixir = {
-        Head = 'Aegishjalmr',
-        Neck = 'Shield Pendant',
-        Ear1 = 'Loquac. Earring',
-        Ear2 = 'Cassie Earring',
-        Body = 'Dst. Harness +1',
-        Hands = 'Dusk Gloves +1',
-        Ring1 = 'Bomb Queen Ring',
-        Ring2 = 'Sattva Ring',
-        Back = 'Gigant Mantle',
-        Waist = 'Ocean Sash',
-        Legs = 'Blood Cuisses',
-        Feet = 'Homam Gambieras',
+        Range = { Name = 'Rosenbogen', Priority = 60 },
+        Ammo = 'displaced',
+        Head = { Name = 'Homam Zucchetto', Priority = 70 },
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
+        Body = { Name = 'Blood Scale Mail', Priority = 70 },
+        Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
+        Waist = { Name = 'Powerful Rope', Priority = 70 },
+        Legs = { Name = 'Blood Cuisses', Priority = 70 },
+        Feet = { Name = 'Homam Gambieras', Priority = 70 },
     },
 }
 
@@ -485,10 +557,14 @@ profile.HandleWeaponskill = function()
     local action = gData.GetAction()
     if (action.Name == 'Guillotine') then
         gFunc.EquipSet(sets.WS_Guillotine)
-    elseif (action.Name == 'Spinning Slash') then
-        gFunc.EquipSet(sets.WS_SpinningSlash)
     elseif (action.Name == 'Cross Reaper') then
         gFunc.EquipSet(sets.WS_CrossReaper)
+    elseif (action.Name == 'Catastrophe') then
+        gFunc.EquipSet(sets.WS_Catastrophe)
+    elseif (action.Name == 'Spinning Slash') then
+        gFunc.EquipSet(sets.WS_SpinningSlash)
+    elseif (action.Name == 'Scourge') then
+        gFunc.EquipSet(sets.WS_Scourge)
     end
 
     local souleater = gData.GetBuffCount('Souleater')
@@ -572,11 +648,13 @@ profile.HandleMidcast = function()
     end
 
     if (action.Skill ~= 'Ninjutsu' and gcdisplay.GetToggle('Hate')) then
-        gFunc.EquipSet(sets.Hate)
+        gFunc.EquipSet(sets.Haste)
+        gFunc.EquipSet(sets.Haste_Hate)
     end
 
     if (string.contains(action.Name, 'Stun')) then
         gFunc.EquipSet(sets.Haste)
+        gFunc.EquipSet(sets.Haste_Stun)
     end
 end
 

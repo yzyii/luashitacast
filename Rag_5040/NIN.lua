@@ -138,7 +138,7 @@ local sets = {
         Range = { Name = 'Ungur Boomerang', Priority = 70 },
         Ammo = 'displaced',
         Head = { Name = 'Nin. Hatsuburi +1', Priority = 60 },
-        Neck = 'Evasion Torque',
+        Neck = { Name = 'Evasion Torque', Priority = 60 },
         Ear1 = 'Novia Earring',
         Ear2 = 'Triton Earring',
         Body = { Name = 'Scp. Harness +1', Priority = 60 },
@@ -325,7 +325,7 @@ local sets = {
         Range = { Name = 'Ungur Boomerang', Priority = 70 },
         Ammo = 'displaced',
         Head = { Name = 'Nin. Hatsuburi +1', Priority = 60 },
-        Neck = 'Evasion Torque',
+        Neck = { Name = 'Evasion Torque', Priority = 60 },
         Ear1 = 'Novia Earring',
         Ear2 = 'Triton Earring',
         Body = { Name = 'Scp. Harness +1', Priority = 60 },
@@ -551,7 +551,7 @@ local sets = {
         Body = 'Haubergeon +1',
     },
 
-    Weapon_Loadout_1 = {}, -- Empty set for staff tanking
+    Weapon_Loadout_1 = {}, -- Empty set for staff tanking while still in dps mode for convenience
     Weapon_Loadout_2 = {
         Main = 'Senjuinrikio',
         Sub = 'Unji',
