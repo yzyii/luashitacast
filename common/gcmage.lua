@@ -889,6 +889,7 @@ function gcmage.DoPreshot(preshotSet, rangedSet, snapShotValue)
 
                 local player = gData.GetPlayer()
                 if (player.MainJob == 'RNG' or player.SubJob == "RNG") then
+                    gFunc.SetMidDelay(0)
                     return
                 end
 
@@ -898,7 +899,15 @@ function gcmage.DoPreshot(preshotSet, rangedSet, snapShotValue)
                 if (shotDelay >= packetDelay) then
                     gFunc.SetMidDelay(shotDelay)
                 end
+            else
+                print(chat.header('GCMage'):append(chat.message('Ranged weapons not filled out correctly. Unable to calculate delay for interim set usage.')))
+                gFunc.SetMidDelay(0)
+                gFunc.SetMidDelay(shotDelay)
             end
+        else
+            print(chat.header('GCMage'):append(chat.message('Ranged weapons not filled out correctly. Unable to calculate delay for interim set usage.')))
+            gFunc.SetMidDelay(0)
+            gFunc.SetMidDelay(shotDelay)
         end
     end
 end
