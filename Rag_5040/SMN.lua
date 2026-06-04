@@ -281,7 +281,7 @@ local sets = {
         Ring1 = { Name = 'Serene Ring', Priority = 10 }, -- 2
         Ring2 = { Name = 'Serene Ring', Priority = 10 }, -- 2
         Back = { Name = 'Mahatma Cape', Priority = 50 }, -- 6
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 }, -- 3
+        Waist = { Name = 'Penitent\'s Rope', Priority = -10 }, -- 3
         Legs = 'Hydra Brais', -- 6
         Feet = 'Hydra Gaiters', -- 5
     },
@@ -315,7 +315,7 @@ local sets = {
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
         Back = { Name = 'Prism Cape', Priority = 70 },
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
+        Waist = { Name = 'Penitent\'s Rope', Priority = -10 },
         Legs = 'Mahatma Slops',
         Feet = { Name = 'Mahatma Pigaches', Priority = 10 },
     },
@@ -329,7 +329,7 @@ local sets = {
         Hands = { Name = 'Zenith Mitts +1', Priority = 10 },
         Ring1 = 'Snow Ring',
         Ring2 = 'Omniscient Ring',
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
+        Waist = { Name = 'Penitent\'s Rope', Priority = -10 },
         Legs = 'Mahatma Slops',
         Feet = { Name = 'Rostrum Pumps', Priority = 10 },
     },
@@ -358,7 +358,7 @@ local sets = {
         Ring1 = { Name = 'Serene Ring', Priority = 10 },
         Ring2 = { Name = 'Serene Ring', Priority = 10 },
         Back = { Name = 'Mahatma Cape', Priority = 50 },
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
+        Waist = { Name = 'Penitent\'s Rope', Priority = -10 },
         Legs = { Name = 'Summoner\'s Spats', Priority = 50 },
         Feet = { Name = 'Summoner\'s Pgch.', Priority = 50 },
     },

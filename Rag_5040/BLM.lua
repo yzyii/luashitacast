@@ -61,7 +61,7 @@ local sets = {
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Umbra Cape',
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
+        Waist = { Name = 'Penitent\'s Rope', Priority = -10 },
         Legs = 'Genie Lappas',
         Feet = { Name = 'Herald\'s Gaiters', Priority = 50 },
     },
@@ -266,7 +266,7 @@ local sets = {
         Ring1 = { Name = 'Serene Ring', Priority = 10 }, -- 2
         Ring2 = { Name = 'Serene Ring', Priority = 10 }, -- 2
         Back = { Name = 'Mahatma Cape', Priority = 50 }, -- 6
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 }, -- 3
+        Waist = { Name = 'Penitent\'s Rope', Priority = -10 }, -- 3
         Legs = 'Hydra Brais', -- 6
         Feet = 'Hydra Gaiters', -- 5
     },
@@ -362,7 +362,7 @@ local sets = {
         Hands = { Name = 'Dvt. Mitts +1', Priority = 50 },
         Ring1 = 'Aqua Ring',
         Ring2 = 'Communion Ring',
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
+        Waist = { Name = 'Penitent\'s Rope', Priority = -10 },
         Feet = { Name = 'Mahatma Pigaches', Priority = 10 },
     },
     EnfeeblingINT = {
@@ -426,7 +426,7 @@ local sets = {
         Body = 'Mahatma Hpl.',
         Hands = { Name = 'Wzd. Gloves +1', Priority = 50 },
         Back = { Name = 'Mahatma Cape', Priority = 50 },
-        Waist = { Name = 'Penitent\'s Rope', Priority = -20 },
+        Waist = { Name = 'Penitent\'s Rope', Priority = -10 },
     },
     NukeACC = {
         Head = { Name = 'Src. Petasos +1', Priority = 50 },
