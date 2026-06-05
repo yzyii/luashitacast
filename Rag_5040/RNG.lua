@@ -50,32 +50,20 @@ local sets = {
     Haste = {
     },
 
-    LockSet1 = {},
-    LockSet2 = {},
-    LockSet3 = {},
-
     Preshot = {},
+    Ranged_ACC = {},
+    Ranged_ATK = {},
 
     TP_LowAcc = {
         Ammo = 'Silver Bullet',
     },
-    TP_Aftermath = {}, -- This can be ignored since the UnlimitedShot set will already equip for Aftermaths
+    TP_Aftermath = {}, -- This can be ignored since the UnlimitedShot set will already equip for Namas Arrow Aftermaths
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {},
 
-    Ranged_ACC = {},
-    Ranged_ATK = {},
-
-    EagleEyeShot = {},
-
-    Barrage = {},
-    Scavenge = {},
-    Shadowbind = {},
-    Camouflage = {},
-    Sharpshot = {},
-    UnlimitedShot = { -- Used for Namas Arrow Aftermath as well as Unlimited Shot. You do not need to edit this.
-        Ammo = special_ammo,
-    },
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 
     WS = { -- Technically could be used as the base set for Ranged WS but is probably best used for Melee WS instead e.g. Decimation.
     },
@@ -95,9 +83,19 @@ local sets = {
     WS_SJ_SAM = { -- If Brutal or similar is required for Store TP on WS
     },
 
-    Weapon_Loadout_1 = {},
-    Weapon_Loadout_2 = {},
-    Weapon_Loadout_3 = {},
+    EagleEyeShot = {},
+    Barrage = {},
+    Scavenge = {},
+    Shadowbind = {},
+    Camouflage = {},
+    Sharpshot = {},
+    UnlimitedShot = { -- Used for Namas Arrow Aftermath as well as Unlimited Shot. You do not need to edit this.
+        Ammo = special_ammo,
+    },
+
+    LockSet1 = {},
+    LockSet2 = {},
+    LockSet3 = {},
 
     VileElixir = {},
 }
