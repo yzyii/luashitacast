@@ -607,3 +607,5 @@
 - DRK - Adds relevant WS sets
 - All Jobs - Adds a fallback to set mid delay to 0 if ranged attack sets are unpopulated and prints an error message.
 - DRK - Fix priorities on enmity generation for tanking
+- DRG - Rename sets for consistency and to indicate inheritance
+- DRG - Add 2hr TP sets

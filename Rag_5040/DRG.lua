@@ -5,6 +5,7 @@ local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
+-- Define these if you wish to automatically equip PDT sets when /WHM or /RDM
 local heal_hp_threshold_whm = 859
 local heal_hp_threshold_rdm = 869
 
@@ -46,14 +47,25 @@ local sets = {
     Haste = {
     },
 
-    LockSet1 = {},
-    LockSet2 = {},
-    LockSet3 = {},
-
     TP_LowAcc = {},
     TP_Aftermath = {},
     TP_Mjollnir_Haste = {},
+    TP_2H_Haste = {},
+    TP_2H_Mjollnir_Haste = {},
     TP_HighAcc = {},
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
+
+    WS = {},
+    WS_HighAcc = {},
+
+    WS_PentaThrust = {},
+    WS_WheelingThrust = {},
+    WS_ImpulseDrive = {},
+    WS_Skewer = {},
+    WS_Geirskogul = {},
 
     MaxHP = {
         Head = 'Drachen Armet',
@@ -62,34 +74,26 @@ local sets = {
         Head = 'Wyrm Armet',
     },
     BreathBonus_NonMage = {},
+
     Stoneskin = {},
 
-    ['Ancient Circle'] = {},
-    ['Jump'] = {},
-    ['Jump Accuracy'] = {},
-    ['High Jump'] = {},
-    ['High Jump Accuracy'] = {},
-    ['Super Jump'] = {},
-    ['Call Wyvern'] = {},
-    ['Spirit Link'] = {},
-
-    WS = {},
-    WS_HighAcc = {},
-
-    ['Penta Thrust'] = {},
-    ['Wheeling Thrust'] = {},
-    ['Impulse Drive'] = {},
-    ['Skewer'] = {},
-    ['Geirskogul'] = {},
-
-    Weapon_Loadout_1 = {},
-    Weapon_Loadout_2 = {},
-    Weapon_Loadout_3 = {},
+    AncientCircle = {},
+    Jump = {},
+    Jump_Accuracy = {},
+    HighJump = {},
+    HighJump_Accuracy = {},
+    SuperJump = {},
+    CallWyvern = {},
+    SpiritLink = {},
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
     Ranged = {
         Ammo = 'Pebble',
     },
+
+    LockSet1 = {},
+    LockSet2 = {},
+    LockSet3 = {},
 
     VileElixir = {},
 }
@@ -111,39 +115,30 @@ sets.ethereal_earring = ethereal_earring
 sets.warlocks_mantle = warlocks_mantle
 profile.Sets = gcmelee.AppendSets(sets)
 
-local JobAbilities = T{
-    'Jump',
-    'High Jump',
-    'Super Jump',
-    'Spirit Link',
-    'Call Wyvern',
-    'Ancient Circle',
-}
-
-local WeaponSkills = T{
-    'Impulse Drive',
-    'Wheeling Thrust',
-    'Skewer',
-    'Penta Thrust',
-    'Geirskogul',
-}
-
 profile.HandleAbility = function()
     gcmelee.DoAbility()
 
     local action = gData.GetAction()
     if (action.Name == 'Steady Wing') then
         gFunc.EquipSet(sets.BreathBonus)
-    elseif (JobAbilities:contains(action.Name)) then
-        gFunc.EquipSet(sets[action.Name])
-    end
-
-    if (gcmelee.GetAccuracyMode() == 'HighAcc') then
-        if (action.Name == 'Jump') then
-            gFunc.EquipSet('Jump Accuracy')
-        elseif (action.Name == 'High Jump') then
-            gFunc.EquipSet('High Jump Accuracy')
+    elseif (action.Name == 'Ancient Circle') then
+        gFunc.EquipSet(sets.AncientCircle)
+    elseif (action.Name == 'Jump') then
+        gFunc.EquipSet(sets.Jump)
+        if (gcmelee.GetAccuracyMode() == 'HighAcc') then
+            gFunc.EquipSet(sets.Jump_Accuracy)
         end
+    elseif (action.Name == 'High Jump') then
+        gFunc.EquipSet(sets.HighJump)
+        if (gcmelee.GetAccuracyMode() == 'HighAcc') then
+            gFunc.EquipSet(sets.HighJump_Accuracy)
+        end
+    elseif (action.Name == 'Super Jump') then
+        gFunc.EquipSet(sets.SuperJump)
+    elseif (action.Name == 'Call Wyvern') then
+        gFunc.EquipSet(sets.CallWyvern)
+    elseif (action.Name == 'Spirit Link') then
+        gFunc.EquipSet(sets.SpiritLink)
     end
 end
 
@@ -163,8 +158,16 @@ profile.HandleWeaponskill = function()
     gcmelee.DoWS()
 
     local action = gData.GetAction()
-    if (WeaponSkills:contains(action.Name)) then
-      gFunc.EquipSet(sets[action.Name])
+    if (action.Name == 'Penta Thrust') then
+        gFunc.EquipSet(sets.WS_PentaThrust)
+    elseif (action.Name == 'Wheeling Thrust') then
+        gFunc.EquipSet(sets.WS_WheelingThrust)
+    elseif (action.Name == 'Impulse Drive') then
+        gFunc.EquipSet(sets.WS_ImpulseDrive)
+    elseif (action.Name == 'Skewer') then
+        gFunc.EquipSet(sets.WS_Skewer)
+    elseif (action.Name == 'Geirskogul') then
+        gFunc.EquipSet(sets.WS_Geirskogul)
     end
 end
 
@@ -196,8 +199,7 @@ profile.HandleDefault = function()
 
     if (isWHM and player.HP <= heal_hp_threshold_whm and weakened < 1) then
         gFunc.EquipSet(sets.DT)
-    end
-    if (isRDM and player.HP <= heal_hp_threshold_rdm and weakened < 1) then
+    elseif (isRDM and player.HP <= heal_hp_threshold_rdm and weakened < 1) then
         gFunc.EquipSet(sets.DT)
     end
 

@@ -178,6 +178,14 @@ function gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
                 end
                 if player.MainJob == 'DRK' and aftermath and mjollnirHaste then
                     gFunc.EquipSet('TP_Aftermath_Mjollnir_Haste')
+                elseif player.MainJob == 'DRG' then
+                    spiritSurge = gData.GetBuffCount('Spirit Surge') > 0
+                    if (spiritSurge) then
+                        gFunc.EquipSet('TP_2H_Haste')
+                        if (mjollnirHaste) 
+                            gFunc.EquipSet('TP_2H_Mjollnir_Haste')
+                        end
+                    end
                 end
                 if (gcdisplay.IdleSet == 'HighAcc') then
                     gFunc.EquipSet('TP_HighAcc')

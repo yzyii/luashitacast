@@ -340,7 +340,6 @@ profile.HandleAbility = function()
     gcmelee.DoAbility()
 
     local action = gData.GetAction()
-
     if (action.Name == 'Chi Blast') then
         gFunc.EquipSet(sets.ChiBlast)
     elseif (action.Name == 'Chakra') then
@@ -381,8 +380,6 @@ profile.HandleWeaponskill = function()
     gcmelee.DoWS()
 
     local action = gData.GetAction()
-    local player = gData.GetPlayer()
-
     if (action.Name == 'Asuran Fists') then
         gFunc.EquipSet(sets.WS_AsuranFists)
     elseif (action.Name == 'Dragon Kick') then
