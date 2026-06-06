@@ -29,7 +29,7 @@ If you have never used LuAshitacast before, and even if you have, read the follo
 - Edit Fenrir's Earring, Dream Ribbon and other conditional melee gear and settings in ..\\common\\gcmelee.lua if you are using these luas for melee jobs.
 - Edit Aketons and Dream gear etc. and turn on or off additional logging and other settings in ..\\common\\gcinclude-rag.lua.
 - Set the i_can_read_and_follow_instructions_test boolean settings to true within gcmage.lua, gcmelee.lua, and gcinclude-rag.lua to confirm you actually read this and didn't waste other people's time.
-- Make sure you fill out the fastcastValue etc. correctly in your [JOB].lua if you are using any Fast Cast gear etc. in the Precast set.
+- Make sure you fill out the fastcastValue etc. correctly in your [JOB].lua according to any Fast Cast gear contained in your Precast set.
 - Make sure you fill out the maxMP values correctly in your [JOB].lua if you are using these luas for mage jobs.
 - The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, you MUST adjust the values in gcmage.lua and/or gcmelee.lua.
 - If you have followed all these instructions and are experiencing crashes when loading the game or changing jobs, check out the Troubleshooting Crashes section below.
