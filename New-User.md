@@ -62,7 +62,7 @@ Ignore the fact that one set has local at the front. This is Lua syntax that you
 While setting up these profiles:
 - Do NOT change the names of these sets.
 - Do NOT create new sets. These profiles already contain all functionality that is required to play the game.
-- Do NOT make changes or edits to these profiles at all unless you have very good reason to (you probably don't).
+- Do NOT make changes or edits to these profiles at all outside of editing the contents of sets unless you have very good reason to (you probably don't).
 - If functionality is missing, the correct thing to do is raise an issue as per the [README](README.md)
 
 ## Entering Items into Sets
@@ -109,7 +109,7 @@ e.g.
     },
 ```
 
-## Commenting Out
+## Deleting Items / Commenting Out
 
 If you wish to not equip an item, either delete the entire line or "comment out" the line using two dashes i.e. "--". (https://en.wikipedia.org/wiki/Comment_(computer_programming))
 
