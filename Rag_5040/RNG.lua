@@ -69,9 +69,14 @@ local sets = {
     },
     WS_HighAcc = { -- Note that this will only be used for Melee WS when HighAcc tp mode is being used.
     },
-    
-    WS_Ranged_ACC = {},
+
+    Ranged_ATK = {},
+    Ranged_HNM = {},
+    Ranged_ACC = {},
+
     WS_Ranged_ATK = {},
+    WS_Ranged_HNM = {},
+    WS_Ranged_ACC = {},
 
     WS_SlugShot = {},
     WS_Coronach = {},
@@ -241,16 +246,19 @@ end
 profile.HandleMidshot = function()
     local environment = gData.GetEnvironment()
 
-    gFunc.EquipSet(sets.Ranged_ACC)
-    if (gcdisplay.GetCycle('Ranged') == 'Attack') then
-        gFunc.EquipSet(sets.Ranged_ATK)
-        if (environment.DayElement == 'Fire') then
-            gFunc.EquipSet(sets.rng_fire_ring)
-        end
+    gFunc.EquipSet(sets.Ranged_ATK)
+    if (environment.DayElement == 'Fire') then
+        gFunc.EquipSet(sets.rng_fire_ring)
+    end
+    if (environment.Time < 6 or environment.Time >= 18) then
+        gFunc.EquipSet(sets.rng_fenrirs_earring)
     end
 
-    if (environment.Time < 6 or environment.Time >= 18) then
-        gFunc.EquipSet(sets.fenrirs_earring)
+    if (gcdisplay.GetToggle('HNM')) then
+        gFunc.EquipSet(sets.Ranged_HNM)
+    end
+    if (gcdisplay.GetCycle('Ranged') == 'Accuracy') then
+        gFunc.EquipSet(sets.Ranged_ACC)
     end
 
     local barrage = gData.GetBuffCount('Barrage')
@@ -271,9 +279,21 @@ profile.HandleWeaponskill = function()
     local environment = gData.GetEnvironment()
 
     if (DistanceWS:contains(action.Name)) then
-        gFunc.EquipSet(sets.WS_Ranged_ACC)
-        if (gcdisplay.GetCycle('Ranged') == 'Attack') then
-            gFunc.EquipSet(sets.WS_Ranged_ATK)
+        gFunc.EquipSet(sets.WS_Ranged_ATK)
+        if (gcdisplay.GetCycle('Ranged') == 'Attack' and action.Name ~= 'Slug Shot' and action.Name ~= 'Sidewinder') then
+            if (environment.DayElement == 'Fire') then
+                gFunc.EquipSet(sets.rng_fire_ring)
+            end
+        end
+        if (environment.Time < 6 or environment.Time >= 18) then
+            gFunc.EquipSet(sets.rng_fenrirs_earring)
+        end
+
+        if (gcdisplay.GetToggle('HNM')) then
+            gFunc.EquipSet(sets.WS_Ranged_HNM)
+        end
+        if (gcdisplay.GetCycle('Ranged') == 'Accuracy') then
+            gFunc.EquipSet(sets.WS_Ranged_ACC)
         end
     end
 
@@ -297,15 +317,6 @@ profile.HandleWeaponskill = function()
         end
     end
 
-    if (gcdisplay.GetCycle('Ranged') == 'Attack' and action.Name ~= 'Slug Shot' and action.Name ~= 'Sidewinder') then
-        if (environment.DayElement == 'Fire') then
-            gFunc.EquipSet(sets.rng_fire_ring)
-        end
-    end
-    if (environment.Time < 6 or environment.Time >= 18) then
-        gFunc.EquipSet(sets.fenrirs_earring)
-    end
-
     if (player.SubJob == 'SAM') then
         gFunc.EquipSet(sets.WS_SJ_SAM)
     end
@@ -313,7 +324,9 @@ end
 
 profile.OnLoad = function()
     gcinclude.SetAlias(T{'ranged'})
-    gcdisplay.CreateCycle('Ranged', {[1] = 'Accuracy', [2] = 'Attack',})
+    gcdisplay.CreateCycle('Ranged', {[1] = 'Attack', [2] = 'Accuracy',})
+    gcinclude.SetAlias(T{'hnm'})
+    gcdisplay.CreateToggle('HNM', false)
     gcmelee.Load()
     profile.SetMacroBook()
 end
@@ -321,12 +334,16 @@ end
 profile.OnUnload = function()
     gcmelee.Unload()
     gcinclude.ClearAlias(T{'ranged'})
+    gcinclude.ClearAlias(T{'hnm'})
 end
 
 profile.HandleCommand = function(args)
     if (args[1] == 'ranged') then
         gcdisplay.AdvanceCycle('Ranged')
         gcinclude.Message('Ranged', gcdisplay.GetCycle('Ranged'))
+    elseif (args[1] == 'hnm') then
+        gcdisplay.AdvanceToggle('HNM')
+        gcinclude.Message('HNM', gcdisplay.GetToggle('HNM'))
     else
         gcmelee.DoCommands(args)
     end

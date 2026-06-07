@@ -255,7 +255,7 @@ local sets = {
     },
 
     Sing_Default = { -- Defaulting to Wind and Debuffs just because we have to default to something
-        Range = { Name = 'Shofar +1', Priority = 60 }, -- Realistically pointless to fill out
+        Range = 'Ryl.Spr. Horn', -- Realistically pointless to fill out if you have defined instruments for every song
         Head = { Name = 'Brd. Roundlet +1', Priority = 60 },
         Neck = 'Wind Torque',
         Ear1 = 'Musical Earring',
@@ -288,7 +288,7 @@ local sets = {
         Range = 'Balladier\'s Harp',
     },
     Sing_Ballad_Small = {
-        Range = { Name = 'Shofar +1', Priority = 60 },
+        Range = 'Ryl.Spr. Horn',
     },
     Sing_Paeon = {
         Range = 'Ebony Harp +2',
@@ -310,7 +310,7 @@ local sets = {
     },
 
     Sing_Lullaby = {
-        Range = 'Nursemaid\'s Harp',
+        Range = 'Nursemaid\'s Harp', -- Increases duration at potentially a cost to m.acc depending on your server.
         Neck = 'String Torque',
         Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
         Legs = 'Mahatma Slops',
@@ -328,10 +328,11 @@ local sets = {
         Legs = { Name = 'Chl. Cannions +1', Priority = 60 },
     },
     Sing_Finale = {
-        Range = 'Military Harp',
-        Neck = 'String Torque',
-        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
-        Legs = 'Mahatma Slops',
+        Range = 'Ryl.Spr. Horn',
+        -- Range = 'Military Harp', -- Potentially an incredibly slim upgrade or massive downgrade depending on your server.
+        -- Neck = 'String Torque',
+        -- Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
+        -- Legs = 'Mahatma Slops',
     },
     Sing_Requiem = {
         Range = { Name = 'Shofar +1', Priority = 60 },
@@ -346,7 +347,7 @@ local sets = {
         Range = 'Angel\'s Flute +1',
     },
     Sing_Threnody = {
-        Range = 'Sorrowful Harp',
+        Range = 'Sorrowful Harp', -- Piccolo +1 may be preferable depending on your server.
         Neck = 'String Torque',
         Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
         Legs = 'Mahatma Slops',
@@ -378,10 +379,11 @@ local sets = {
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
     },
     Sing_Virelai = {
-        Range = 'Cyt. Anglica +1',
-        Neck = 'String Torque',
-        Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
-        Legs = 'Mahatma Slops',
+        Range = 'Ryl.Spr. Horn',
+        -- Range = 'Cyt. Anglica +1', -- Potentially an incredibly slim upgrade or massive downgrade depending on your server.
+        -- Neck = 'String Torque',
+        -- Body = { Name = 'Chl. Jstcorps +1', Priority = 60 },
+        -- Legs = 'Mahatma Slops',
     },
 
     Cure = {

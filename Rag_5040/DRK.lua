@@ -436,6 +436,10 @@ local sets = {
     SoulEater = {
         Head = { Name = 'Chs. Burgeonet +1', Priority = 70 },
     },
+
+    Jump = {},
+    HighJump = {},
+
     Nuke = {},
     Enfeebling = {},
     Drain = {
@@ -536,6 +540,11 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.WeaponBash)
     elseif (action.Name == 'Arcane Circle') then
         gFunc.EquipSet(sets.ArcaneCircle)
+    elseif (action.Name == 'Jump') then
+        gFunc.EquipSet(sets.Jump)
+    elseif (action.Name == 'High Jump') then
+        gFunc.EquipSet(sets.Jump)
+        gFunc.EquipSet(sets.HighJump)
     end
 end
 

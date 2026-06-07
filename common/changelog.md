@@ -609,3 +609,7 @@
 - DRK - Fix priorities on enmity generation for tanking
 - DRG - Rename sets for consistency and to indicate inheritance
 - DRG - Add 2hr TP sets
+- RNG - Fixes fenrir's earring usage.
+- RNG - Re-organizes ranged accuracy / attack priorities to match the power / potency -> accuracy modifier paradigm used by all other jobs in these profiles.
+- RNG - Adds a HNM toggle
+- DRK / RNG - Adds Jump and High Jump sets
