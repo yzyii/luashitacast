@@ -62,7 +62,7 @@ Everything below can be ignored.
 ]]
 ```
 
-Copy everything above this line over to the new files. It is highly suggested that you do this set by set to avoid accidentally overwriting any new functionality placed in this section.
+Copy everything above this line over to the new files. Do this for ALL files. It is highly suggested that you do this set by set and setting by setting to avoid accidentally overwriting any new functionality placed in these top sections.
 
 This will work 99% of the time unless you have added your own logic and therefore presumably know what you're doing already.
 
