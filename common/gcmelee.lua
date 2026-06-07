@@ -182,7 +182,7 @@ function gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
                     spiritSurge = gData.GetBuffCount('Spirit Surge') > 0
                     if (spiritSurge) then
                         gFunc.EquipSet('TP_2H_Haste')
-                        if (mjollnirHaste) 
+                        if (mjollnirHaste) then
                             gFunc.EquipSet('TP_2H_Mjollnir_Haste')
                         end
                     end
