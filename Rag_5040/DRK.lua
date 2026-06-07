@@ -437,8 +437,24 @@ local sets = {
         Head = { Name = 'Chs. Burgeonet +1', Priority = 70 },
     },
 
-    Jump = {},
-    HighJump = {},
+    Jump = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Justice Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Robust Earring',
+        Body = 'Armada Hauberk',
+        Hands = { Name = 'Hct. Mittens +1', Priority = 60 },
+        Ring1 = 'Rajas Ring',
+        Ring2 = 'Robust Ring',
+        Back = 'Wyvern Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Onyx Cuisses',
+        Feet = { Name = 'Hct. Leggings +1', Priority = 60 },
+    },
+    HighJump = {
+        Ear2 = 'Merman\'s Earring',
+        Ring2 = { Name = 'Toreador\'s Ring', Priority = 60 },
+    },
 
     Nuke = {},
     Enfeebling = {},
