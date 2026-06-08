@@ -7,8 +7,8 @@ local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- Set this to 0 if you do not wish to ever use regen gear.
 
 -- Define these if you wish to automatically equip PDT sets when /WHM or /RDM
-local heal_hp_threshold_whm = 859
-local heal_hp_threshold_rdm = 869
+local heal_hp_threshold_whm = 0
+local heal_hp_threshold_rdm = 0
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local ethereal_earring = {
