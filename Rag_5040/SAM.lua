@@ -3,7 +3,8 @@ local profile = {}
 local fastCastValue = 0.02 -- 0% from gear listed in Precast set
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
-local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+-- The following is provided as a convenient saved setting over using the /sethp command. HP will fluctuate with SJ and usage of the command for this is required.
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- Set this to 0 if you do not wish to ever use regen gear.
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local using_both_amano_and_yoichi = false

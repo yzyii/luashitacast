@@ -5,9 +5,8 @@ local fastCastValueSong = 0.38 -- Only include Song Spellcasting Time i.e. Minst
 
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
+-- The following are provided as convenient saved settings over using the /setmp command. Not all SJs will be covered. e.g. DRG and usage of the command in these cases is required.
 local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
-local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
-local blmSJMaxMP = nil -- The Max MP you have when /blm in your idle set
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
@@ -621,7 +620,7 @@ end
 local MPJobs = T{ 'RDM','BLM','WHM','SMN' }
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(sets, nil, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP, nil)
+    gcmage.DoDefault(sets, nil, whmSJMaxMP, nil, nil, nil)
 
     local player = gData.GetPlayer()
     local isMPSJ = MPJobs:contains(player.SubJob)

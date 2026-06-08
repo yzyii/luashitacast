@@ -3,7 +3,8 @@ local profile = {}
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including carbuncles cuffs or evokers boots
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
-local cureMP = 947 -- Cure set max MP
+-- The following are provided as convenient saved settings over using the /setmp command. Not all SJs will be covered. e.g. DRG and usage of the command in these cases is required.
+local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
 
 -- Disabled on horizon_safe_mode
 local conjurersRingForced = false -- Default /cring value
@@ -620,7 +621,7 @@ profile.HandlePrecast = function()
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, cureMP, cureMP, cureMP, cureMP, cureMP)
+    gcmage.DoMidcast(sets, nil, whmSJMaxMP, nil, nil, nil)
 end
 
 return profile

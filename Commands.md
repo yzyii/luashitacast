@@ -57,14 +57,14 @@
 
 ## Additional Commands for All Mage Jobs:
 ```
+/setmp [number] - sets the MP at which your idle sets will automatically transition
+                  to using your IdleMaxMP set.
+                  this will override any convenience values located in your .lua files.
+                  /addmp will still work as per normal in conjunction with this.
+                  type /setmp without a number to display the current value.
 /addmp [number] - adds a set amount of MP to decide usage of the IdleMaxMP set.
                   this can be used when eating food or for other +MP effects.
                   type /addmp without a number to display the current value.
-/setmp [number] - sets the mp at which your idle sets will automatically transition
-                  to using your IdleMaxMP set.
-                  this will override the values defined for /NIN /WHM /RDM /BLM as well.
-                  /addmp will still work as per normal in conjunction with this.
-                  type /setmp without a number to display the current value.
 /resetmp        - resets addmp and setmp values to 0
 
 [RDM / WHM / BLM]
@@ -85,6 +85,14 @@
 /tp /tpset /mode - toggles TP set between a LowAcc and HighAcc set.
                    this will be overwritten if you have a DT or resistance set etc. enabled.
                    this is disabled for PLD in favour of using Idle sets by default.
+/sethp [number] - sets the HP under which regen gear will be used.
+                  this will override the convenience value located in your .lua file.
+                  /addhp will still work as per normal in conjunction with this.
+                  type /sethp without a number to display the current value.
+/addhp [number] - adds a set amount of HP to the HP value under which regen gear will be used.
+                  this can be used when eating food or for other +HP effects.
+                  type /addhp without a number to display the current value.
+/resethp        - resets addhp and sethp values to 0
 ```
 
 ## Additional Commands for RDM:

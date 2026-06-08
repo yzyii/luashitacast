@@ -616,3 +616,4 @@
 - DRK / DRG - Adds DRG or THF SJ TP sets
 - Mages - Removes DTNight set except for RDM as this has no functional use.
 - Moves the UI element base variables to the top of the gcdisplay file for idiots that are unable to just locate it 10 lines down.
+- Melee - Adds /sethp and related commands to allow control over regen HP values without reloading profiles

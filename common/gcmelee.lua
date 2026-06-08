@@ -62,7 +62,7 @@ local lastIdleSetBeforeEngaged = ''
 local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
 
 local AliasList = T{
-    'tpset','tp','mode','dps','lag','weapon','wl'
+    'tpset','tp','mode','dps','lag','weapon','wl','addhp','sethp','resethp',
 }
 
 local utsuBuffs = T{
@@ -71,6 +71,9 @@ local utsuBuffs = T{
     [445] = 3,
     [446] = 4, 
 }
+
+local setHP = 0
+local addHP = 0
 
 function gcmelee.SetIsDPS(isDPSVal)
     isDPS = isDPSVal
@@ -125,6 +128,24 @@ function gcmelee.DoCommands(args)
     elseif (args[1] == 'lag') then
         lag = not lag
         gcinclude.Message('[Note: Midcast Delays are disabled if Lag is true] Lag', lag)
+    elseif (args[1] == 'addhp') then
+        if (tonumber(args[2]) ~= nil) then
+            addHP = tonumber(args[2])
+            gcinclude.Message('Add HP', args[2])
+        else
+            gcinclude.Message('Add HP', addHP)
+        end
+    elseif (args[1] == 'sethp') then
+        if (tonumber(args[2]) ~= nil) then
+            setHP = tonumber(args[2])
+            gcinclude.Message('Set HP', args[2])
+        else
+            gcinclude.Message('Set HP', setHP)
+        end
+    elseif (args[1] == 'resethp') then
+        setHP = 0
+        addHP = 0
+        print(chat.header('Ashitacast'):append(chat.message('Reset HP')))
     end
 end
 
@@ -138,7 +159,7 @@ function gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
         if (player.HPP < 50) then
             if (MuscleBeltJobs:contains(player.MainJob)) then gFunc.EquipSet('muscle_belt') end
         end
-        if (player.HP < max_hp_in_idle_with_regen_gear_equipped) then
+        if (setHP > 0 and player.HP < setHP + addHP) or (setHP == 0 and player.HP < max_hp_in_idle_with_regen_gear_equipped + addHP) then
             local environment = gData.GetEnvironment()
             if (environment.Time >= 6 and environment.Time < 18) then
                 if (GardenBanglesJobs:contains(player.MainJob)) then gFunc.EquipSet('garden_bangles') end

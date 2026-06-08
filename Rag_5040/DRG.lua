@@ -3,7 +3,8 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear listed in Precast set
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
-local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+-- The following is provided as a convenient saved setting over using the /sethp command. HP will fluctuate with SJ and usage of the command for this is required.
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- Set this to 0 if you do not wish to ever use regen gear.
 
 -- Define these if you wish to automatically equip PDT sets when /WHM or /RDM
 local heal_hp_threshold_whm = 859
