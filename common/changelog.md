@@ -613,3 +613,6 @@
 - RNG - Re-organizes ranged accuracy / attack priorities to match the power / potency -> accuracy modifier paradigm used by all other jobs in these profiles.
 - RNG - Adds a HNM toggle
 - DRK / RNG - Adds Jump and High Jump sets
+- DRK / DRG - Adds DRG or THF SJ TP sets
+- Mages - Removes DTNight set except for RDM as this has no functional use.
+- Moves the UI element base variables to the top of the gcdisplay file for idiots that are unable to just locate it 10 lines down.

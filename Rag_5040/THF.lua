@@ -13,6 +13,9 @@ local wind_ring = {
 local evasion_master_casters_mitts = {
     Hands = 'Mst.Cst. Mitts',
 }
+local resentment_cape_override = { -- An additional override if resentment cape is active
+    Head = { Name = 'Homam Zucchetto', Priority = 70 },
+}
 
 local sets = {
     Idle = {
@@ -72,7 +75,7 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     MDT = {
-        Head = { Name = 'Homam Zucchetto', Priority = 70 },
+        Head = { Name = 'Merman\'s Cap', Priority = 20 },
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -483,6 +486,7 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 sets.evasion_master_casters_mitts = evasion_master_casters_mitts
 sets.wind_ring = wind_ring
+sets.resentment_cape_override = resentment_cape_override
 profile.Sets = gcmelee.AppendSets(sets)
 
 local ammo = T{'aacid','asleep','abloody','ablind','avenom','anone'}
@@ -681,6 +685,10 @@ profile.HandleDefault = function()
         if (environment.DayElement == 'Wind' and player.HP <= windRingMaxHP) then
             gFunc.EquipSet(sets.wind_ring)
         end
+    end
+
+    if (gcdisplay.IdleSet == 'MDT' and conquest:GetOutsideControl()) then
+        gFunc.EquipSet('resentment_cape_override')
     end
 
     local sa = gData.GetBuffCount('Sneak Attack')

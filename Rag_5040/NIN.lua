@@ -558,9 +558,15 @@ local sets = {
         Range = 'displaced',
         Ammo = 'Bomb Core',
     },
-    Weapon_Loadout_3 = {},
+    Weapon_Loadout_3 = {
+        Main = 'Senjuinrikio',
+        Sub = 'Unji',
+        Range = 'displaced',
+        Ammo = 'Bailathorn',
+    },
 
     WS = {
+        Ammo = 'Bomb Core',
         Head = 'Maat\'s Cap',
         Neck = 'Hope Torque',
         Ear1 = 'Brutal Earring',

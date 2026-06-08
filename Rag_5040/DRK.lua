@@ -377,6 +377,13 @@ local sets = {
         Legs = { Name = 'Armada Breeches', Priority = -10 },
         Feet = { Name = 'Homam Gambieras', Priority = 70 }
     },
+    TP_DRG = {
+        Ear2 = 'Wyvern Earring',
+        Ring2 = 'Triumph Ring',
+    },
+    TP_THF = {
+        Ear2 = 'Pilferer\'s Earring',
+    },
 
     Weapon_Loadout_1 = {
         Main = 'Tredecim Scythe',
@@ -627,20 +634,24 @@ profile.HandleDefault = function()
     gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
     local player = gData.GetPlayer()
-    local souleater = gData.GetBuffCount('Souleater')
-    if (souleater > 0 and player.Status == 'Engaged' and use_chaos_burgeonet_for_tp_during_souleater) then
-        gFunc.EquipSet(sets.SoulEater)
-    end
-
-    if (player.Status == 'Idle') then
-        if (player.HPP >= 85) then
-            gFunc.EquipSet('parade_gorget')
+    if (player.Status == 'Engaged') then
+        if (player.SubJob == 'DRG') then
+            gFunc.EquipSet(sets.TP_DRG)
+        elseif (player.SubJob == 'THF') then
+            gFunc.EquipSet(sets.TP_THF)
         end
-    end
 
-    local environment = gData.GetEnvironment()
+        local souleater = gData.GetBuffCount('Souleater')
+        if (souleater > 0 and use_chaos_burgeonet_for_tp_during_souleater) then
+            gFunc.EquipSet(sets.SoulEater)
+        end
+    elseif (player.HPP >= 85) then
+        gFunc.EquipSet('parade_gorget')
+    end
 
     gcmelee.DoDefaultOverride()
+
+    local environment = gData.GetEnvironment()
     if (gcdisplay.IdleSet == 'Evasion' and (environment.Time >= 6 and environment.Time < 18)) then
         gFunc.EquipSet('fenrirs_stone')
     end

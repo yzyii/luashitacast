@@ -83,7 +83,6 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    DTNight = {},
     MDT = {
         Head = 'Dream Ribbon',
         Neck = 'Jeweled Collar +1',

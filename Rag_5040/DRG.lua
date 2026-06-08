@@ -53,6 +53,9 @@ local sets = {
     TP_2H_Haste = {},
     TP_2H_Mjollnir_Haste = {},
     TP_HighAcc = {},
+    TP_THF = {
+        Ear2 = 'Pilferer\'s Earring',
+    },
 
     Weapon_Loadout_1 = {},
     Weapon_Loadout_2 = {},
@@ -196,6 +199,12 @@ profile.HandleDefault = function()
     local isRDM = player.SubJob == 'RDM'
     local isMage = isWHM or isRDM
     local weakened = gData.GetBuffCount('Weakness')
+
+    if (player.Status == 'Engaged') then
+        if (player.SubJob == 'THF') then
+            gFunc.EquipSet(sets.TP_THF)
+        end
+    end
 
     if (isWHM and player.HP <= heal_hp_threshold_whm and weakened < 1) then
         gFunc.EquipSet(sets.DT)

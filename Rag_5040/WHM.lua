@@ -113,7 +113,6 @@ local sets = {
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },
         Back = 'Umbra Cape',
     },
-    DTNight = {},
     MDT = {
         Head = 'Dream Ribbon',
         Neck = 'Jeweled Collar +1',

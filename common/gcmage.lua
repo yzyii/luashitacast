@@ -932,7 +932,7 @@ function gcmage.SetupInterimEquipSet(sets, isRanged)
 
     if (gcdisplay.IdleSet == 'DT') then
         interimSet = sets.DT
-        if (environment.Time < 6 and environment.Time >= 18) then
+        if (player.MainJob == 'RDM' and environment.Time < 6 and environment.Time >= 18) then
             interimSet = gFunc.Combine(sets.DT, sets.DTNight)
         end
     end

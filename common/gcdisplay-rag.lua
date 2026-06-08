@@ -1,3 +1,7 @@
+local visibilityOnLoad = true -- Default visibility of the UI element on loading the game / switching jobs.
+local positionOnLoad_x = 300 -- Default X position of the UI element on loading the game / switching jobs.
+local positionOnLoad_y = 0 -- Default Y position of the UI element on loading the game / switching jobs.
+
 --[[
 --------------------------------
 Everything below can be ignored.
@@ -15,13 +19,13 @@ local gcdisplay = {
 }
 
 local fontSettings = {
-    visible = true,
+    visible = visibilityOnLoad,
     font_family = 'Consolas',
     font_height = 12,
     color = 0xFFFFFFFF,
     color_outline = 0xFF000000,
-    position_x = 300,
-    position_y = 0,
+    position_x = positionOnLoad_x,
+    position_y = positionOnLoad_y,
     draw_flags = 0x10,
     background =
     T{

@@ -107,7 +107,6 @@ local sets = {
         Waist = { Name = 'Sorcerer\'s Belt', Priority = 60 },
         Legs = 'Genie Lappas',
     },
-    DTNight = {},
     MDT = {
         Main = 'Terra\'s Staff',
         Head = 'Dream Ribbon',
