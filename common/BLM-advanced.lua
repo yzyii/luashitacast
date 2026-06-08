@@ -4,6 +4,12 @@
 
 local blmAdvanced = {}
 
+-- The following 2 settings can be used for specific server failure to be accurate. 
+-- e.g. Horizon's failure to fix their bugs results in a HP threshold of 77% and and a hp offset required of 55 if using Zenith Mitts +1 on regular potency nukes.
+-- A correctly functioning server would use 0.76 and 0 respectively.
+local hp_threshold = 0.77
+local hp_offset = 55
+
 local hpBaseWHM = 1030 -- HP on WHM SJ with nothing equipped
 
 local hpOffset = { -- Difference in HP from WHM SJ
@@ -168,8 +174,12 @@ function blmAdvanced.BuildYellowSet(subJob, isObi, isHNM, isACC)
     if debug then print(chat.header('BLMADV'):append(chat.message('Base HP: ' .. tostring(baseHP)))) end
     if debug then print(chat.header('BLMADV'):append(chat.message('Max HP: ' .. tostring(maxHP)))) end
 
+    if not (isHNM or isACC) then
+        maxHP = maxHP - hp_offset
+    end
+
     -- Determine Target HP
-    local targetHPFloat = maxHP * 0.76
+    local targetHPFloat = maxHP * hp_threshold
     local targetHP = math.floor(targetHPFloat)
     if (targetHP == targetHPFloat) then
         targetHP = targetHP - 1
