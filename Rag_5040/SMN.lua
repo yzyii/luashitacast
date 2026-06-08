@@ -250,12 +250,17 @@ local sets = {
         Feet = { Name = 'Evoker\'s Boots', Priority = 50 },
     },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
+        Main = { Name = 'Eremite\'s Wand +1', Priority = 50 }, -- 25
+        Sub = 'Genbu\'s Shield',
+        Head = 'Nashira Turban', -- 10
         Neck = 'Willpower Torque', -- 5
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 }, -- 8
         Back = 'Shadow Mantle',
         Waist = 'Druid\'s Rope', -- 10
+        Feet = 'Mountain Gaiters', -- 5
     },
     SIRD_NIN = {
+        Sub = { Name = 'Eremite\'s Wand', Priority = 50 },
     },
     Haste = {
         Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
