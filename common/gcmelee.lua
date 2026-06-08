@@ -75,6 +75,8 @@ local utsuBuffs = T{
 local setHP = 0
 local addHP = 0
 
+local ver_loaded = nil
+
 function gcmelee.SetIsDPS(isDPSVal)
     isDPS = isDPSVal
 end
@@ -83,9 +85,23 @@ function gcmelee.GetIsDPS()
     return isDPS
 end
 
-function gcmelee.Load()
+function gcmelee.Load(version)
+    ver_loaded = version
     gcinclude.SetAlias(AliasList)
-    gcinclude.Load()
+    gcmelee.RetryLoad()
+end
+
+function gcmelee.RetryLoad()
+    local player = gData.GetPlayer()
+    if (player.MainJob ~= 'NON') then
+        gcinclude.Load(gcmelee.GetVer())
+
+        if (ver_loaded ~= gcmelee.GetVer()) then
+            print(chat.header('GCMelee'):append(chat.message('Version mismatch found. Read the README.md')))
+        end
+    else
+        gcmelee.RetryLoad:once(1)
+    end
 end
 
 function gcmelee.Unload()
@@ -435,6 +451,10 @@ function gcmelee.AppendSets(sets)
     sets.dream_ribbon = dream_ribbon
 
     return gcinclude.AppendSets(sets)
+end
+
+function gcmelee.GetVer()
+    return 3.00
 end
 
 return gcmelee

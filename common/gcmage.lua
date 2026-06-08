@@ -224,7 +224,10 @@ local WeaponOverrideIndexes = {
 
 local weapon_override = 1
 
-function gcmage.Load()
+local ver_loaded = nil
+
+function gcmage.Load(version)
+    ver_loaded = version
     gcinclude.SetAlias(AliasList)
     gcmage.RetryLoad()
 end
@@ -233,7 +236,11 @@ function gcmage.RetryLoad()
     local player = gData.GetPlayer()
     if (player.MainJob ~= 'NON') then
         gcmage.SetVariables()
-        gcinclude.Load()
+        gcinclude.Load(gcmage.GetVer())
+
+        if (ver_loaded ~= gcmelee.GetVer()) then
+            print(chat.header('GCMage'):append(chat.message('Version mismatch found. Read the README.md')))
+        end
     else
         gcmage.RetryLoad:once(1)
     end
@@ -1278,6 +1285,10 @@ function gcmage.AppendSets(sets)
     sets.tp_diabolos_earring = tp_diabolos_earring
 
     return gcinclude.AppendSets(sets)
+end
+
+function gcmage.GetVer()
+    return 3.00
 end
 
 return gcmage

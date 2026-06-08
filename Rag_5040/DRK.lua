@@ -609,7 +609,7 @@ end
 profile.OnLoad = function()
     gcinclude.SetAlias(T{'hate'})
     gcdisplay.CreateToggle('Hate', false)
-    gcmelee.Load()
+    gcmelee.Load(3.00)
     profile.SetMacroBook()
 end
 

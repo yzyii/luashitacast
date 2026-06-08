@@ -131,7 +131,11 @@ local isMageJobs = T{ 'RDM','BLM','WHM','SMN','BRD' }
 
 local lastIdleSet = 'Normal'
 
-function gcinclude.Load()
+local ver_loaded = nil
+
+function gcinclude.Load(version)
+    ver_loaded = version
+
     gSettings.AllowAddSet = true
     gcinclude.SetAlias(Overrides)
     gcinclude.SetAlias(Commands)
@@ -153,6 +157,10 @@ function gcinclude.RetryLoad()
             if (setStylistToBlinkSelf) then
                 AshitaCore:GetChatManager():QueueCommand(-1, '/stylist self off')
             end
+        end
+
+        if (ver_loaded ~= gcinclude.GetVer()) then
+            print(chat.header('GCInclude'):append(chat.message('Version mismatch found. Read the README.md')))
         end
     else
         gcinclude.RetryLoad:once(1)
@@ -432,6 +440,11 @@ function gcinclude.AppendSets(sets)
     sets.opo_opo_necklace = opo_opo_necklace
 
     return sets
+end
+
+
+function gcinclude.GetVer()
+    return 3.00
 end
 
 return gcinclude

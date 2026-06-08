@@ -523,7 +523,7 @@ profile.OnLoad = function()
         gcdisplay.CreateToggle('C-Ring', conjurersRingForced)
     end
 
-    gcmage.Load()
+    gcmage.Load(3.00)
     profile.SetMacroBook()
 end
 

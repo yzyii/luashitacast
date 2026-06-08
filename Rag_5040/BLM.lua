@@ -538,7 +538,7 @@ end
 profile.OnLoad = function()
     gcinclude.SetAlias(T{'extra'})
     gcdisplay.CreateToggle('Extra', false)
-    gcmage.Load()
+    gcmage.Load(3.00)
     profile.SetMacroBook()
 end
 
