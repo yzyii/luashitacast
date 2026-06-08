@@ -50,10 +50,6 @@ local sets = {
     Haste = {
     },
 
-    Preshot = {},
-    Ranged_ACC = {},
-    Ranged_ATK = {},
-
     TP_LowAcc = {
         Ammo = 'Silver Bullet',
     },
@@ -70,6 +66,7 @@ local sets = {
     WS_HighAcc = { -- Note that this will only be used for Melee WS when HighAcc tp mode is being used.
     },
 
+    Preshot = {},
     Ranged_ATK = {},
     Ranged_HNM = {},
     Ranged_ACC = {},
