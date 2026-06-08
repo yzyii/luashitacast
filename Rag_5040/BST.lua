@@ -140,18 +140,18 @@ local sets = {
     },
 
     Weapon_Loadout_1 = {
-		Main = 'Martial Axe',
-		Sub = 'Maneater',
+        Main = 'Martial Axe',
+        Sub = 'Maneater',
         Ammo = { Name = 'Tiphia Sting', Priority = -20 },
     },
     Weapon_Loadout_2 = {
-		Main = 'Maneater',
-		Sub = 'Temperance Axe',
+        Main = 'Maneater',
+        Sub = 'Temperance Axe',
         Ammo = 'Virtue Stone',
     },
     Weapon_Loadout_3 = {
-		Main = 'Maneater',
-		Sub = 'Tatami Shield',
+        Main = 'Maneater',
+        Sub = 'Tatami Shield',
         Ammo = { Name = 'Tiphia Sting', Priority = -20 },
     },
 
@@ -188,7 +188,7 @@ local sets = {
         Ear1 = 'Melody Earring +1',
         Ear2 = 'Melody Earring +1',
         Body = { Name = 'Monster Jackcoat +1', Priority = 60 },
-		Hands = { Name = 'Monster Gloves', Priority = 60 },
+        Hands = { Name = 'Monster Gloves', Priority = 60 },
         Ring1 = 'Heavens Ring',
         Ring2 = 'Heavens Ring',
         Back = 'Lyricist\'s Gonnelle ',
@@ -227,7 +227,7 @@ local sets = {
         Feet = 'Shep. Boots',
     },
     Call_Beast = {
-		Hands = { Name = 'Monster Gloves', Priority = 60 },
+        Hands = { Name = 'Monster Gloves', Priority = 60 },
     },
 
     Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available

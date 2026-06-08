@@ -1,4 +1,4 @@
--- The period of time prior to midcast (spell) completion upon which equipment will swap. 
+-- The period of time prior to midcast (spell) completion upon which equipment will swap.
 -- 400 milliseconds is provided as a default conservative value which is typically sufficient worldwide but this value can be increased if your internet is completely and consistently shit.
 local minimumBuffer = 0.4
 
@@ -69,7 +69,7 @@ local utsuBuffs = T{
     [66] = 1,
     [444] = 2,
     [445] = 3,
-    [446] = 4, 
+    [446] = 4,
 }
 
 local setHP = 0

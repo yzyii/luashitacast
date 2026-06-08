@@ -134,7 +134,7 @@ local sets = {
         Ring2 = 'Malflame Ring', -- 10
         Back = { Name = 'Hexerei Cape', Priority = 50 },
         Waist = 'Water Belt', -- 20
-        Legs = { Name = 'Silk Slacks +1', Priority = 60 },        
+        Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = 'Power Sandals', -- 7
     },
     IceRes = {

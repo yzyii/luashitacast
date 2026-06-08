@@ -18,7 +18,7 @@
     actionPacket.Id = UnpackBits(17);
     bitOffset = bitOffset + 15;
     actionPacket.Recast = UnpackBits(32);
-    
+
     actionPacket.Targets = T{};
     for i = 1,targetCount do
         local target = T{};

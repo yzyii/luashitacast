@@ -117,7 +117,7 @@ local sets = {
         Neck = { Name = 'Evasion Torque', Priority = 60 },
         Ear1 = 'Merman\'s Earring',
         Ear2 = { Name = 'Cassie Earring', Priority = 20 },
-        Body = 'Dst. Harness +1', 
+        Body = 'Dst. Harness +1',
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Jelly Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 60 },

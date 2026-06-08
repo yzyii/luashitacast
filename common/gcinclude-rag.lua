@@ -365,8 +365,8 @@ function gcinclude.DoItem()
     elseif (item.Name == 'Prism Powder') then
         gFunc.EquipSet('dream_mittens')
         gFunc.EquipSet('skulkers_cape')
-	elseif (item.Name:startswith("Vile Elixir")) then
-		gFunc.EquipSet('VileElixir')
+    elseif (item.Name:startswith("Vile Elixir")) then
+        gFunc.EquipSet('VileElixir')
     end
 end
 
@@ -378,16 +378,16 @@ end
 
 local timePointer = ashita.memory.find('FFXiMain.dll', 0, '8B0D????????8B410C8B49108D04808D04808D04808D04C1C3', 2, 0)
 function gcinclude.GetTimeUTC()
-	local ptr = ashita.memory.read_uint32(timePointer)
-	ptr = ashita.memory.read_uint32(ptr)
-	return ashita.memory.read_uint32(ptr + 0x0C)
+    local ptr = ashita.memory.read_uint32(timePointer)
+    ptr = ashita.memory.read_uint32(ptr)
+    return ashita.memory.read_uint32(ptr + 0x0C)
 end
 
 local vanaOffset = 0x3C307D70
 function gcinclude.ItemEnchantmentIsReady(item)
-	local currentTime = gcinclude.GetTimeUTC()
-	local useTimeRemaining = (struct.unpack('L', item.Item.Extra, 5) + vanaOffset) - currentTime
-	return useTimeRemaining <= 0
+    local currentTime = gcinclude.GetTimeUTC()
+    local useTimeRemaining = (struct.unpack('L', item.Item.Extra, 5) + vanaOffset) - currentTime
+    return useTimeRemaining <= 0
 end
 
 function gcinclude.BuildLockableSet(equipment)

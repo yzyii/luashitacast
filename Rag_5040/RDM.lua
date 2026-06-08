@@ -132,7 +132,7 @@ local sets = {
     },
     FireRes = {
         Main = 'Sapara of Trials', -- 10
-		Sub = 'Nms. Shield +1', -- 15
+        Sub = 'Nms. Shield +1', -- 15
         Range = { Name = 'Arco de Velocidad', Priority = 60 },
         Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
@@ -204,7 +204,7 @@ local sets = {
     },
     WindRes = {
         Main = 'Sapara of Trials', -- 10
-		Sub = 'Nms. Shield +1', -- 15
+        Sub = 'Nms. Shield +1', -- 15
         Range = { Name = 'Arco de Velocidad', Priority = 60 },
         Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
@@ -222,7 +222,7 @@ local sets = {
     },
     WaterRes = {
         Main = 'Merman\'s Sword', -- 9
-		Sub = 'Nms. Shield +1', -- 15
+        Sub = 'Nms. Shield +1', -- 15
         Range = { Name = 'Arco de Velocidad', Priority = 60 },
         Ammo = 'displaced',
         Head = 'Black Ribbon', -- 12
@@ -391,7 +391,7 @@ local sets = {
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
         Head = { Name = 'Wlk. Chapeau +1', Priority = 50 },
         Neck = 'Enhancing Torque',
-		Ear1 = 'Augment. Earring',
+        Ear1 = 'Augment. Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 50 },
         Body = 'Glamor Jupon',
         Hands = { Name = 'Dls. Gloves +1', Priority = 50 },

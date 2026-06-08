@@ -777,7 +777,7 @@ profile.WatchTreasureHunter = function()
                     for _, target in ipairs(packet.Targets) do
                         for i = 1, #target.Actions do
                             local action = target.Actions[1]
-                            if bit.band(target.Id, 0xFF000000) ~= 0 then -- isMob, also triggers on NPC but it's 
+                            if bit.band(target.Id, 0xFF000000) ~= 0 then -- isMob, also triggers on NPC
                                 if (packet.Type == 6 and packet.Id == 69) then
                                     -- Skip Fight when /BST. Screw /SMN.
                                 elseif (packet.Type == 3 or reaction[action.Reaction]) and target.Id then

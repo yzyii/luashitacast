@@ -334,7 +334,7 @@
 
 ### v1.5.0
 - Renames or moves some of the core common files: gcdisplayrag.lua, gcincluderag.lua, actionpacket.lua, changelog.
-- Shortens timers between forceEquips for Cure Cheats on RDM, PLD, and Yellow set equip on BLM. 
+- Shortens timers between forceEquips for Cure Cheats on RDM, PLD, and Yellow set equip on BLM.
 
 ### v1.5.1
 - BLM - Add MBHNM set for nuking with a choice of magic burst gear vs -enmity on HNMs.
@@ -483,7 +483,7 @@
 ### v2.0.17
 - SMN - Adds a BP_Healing set if -enmity desired for Healing Ruby etc.
 - WHM - Adds config options to enable correct usage of medicine ring when in max mp set.
-- BST, THF, WAR, Mages - Fixes TP_NIN set behaviour so that TP_NIN is only equipped if the offhand (Sub) is a 1h weapon. 
+- BST, THF, WAR, Mages - Fixes TP_NIN set behaviour so that TP_NIN is only equipped if the offhand (Sub) is a 1h weapon.
                        - In the case of WAR, removes DW entirely to automate this behaviour and renames the SAM set to TP_SAM for consistency.
 
 ### v2.0.18

@@ -78,7 +78,7 @@ The Resting set is equipped after 16 seconds of starting resting. This is to all
 
 ### Level Sync
 
-LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added. 
+LuAshitacast provides functionality to automatically equip Level Sync gear. This LuAshitacast intentionally does NOT make use of this functionality to make it easier for first time users to be able to copy paste their own gear sets in place of mine. Adding this functionality will make it quite difficult for users on older versions of this LuAshitacast to update and so is not planned to ever be added.
 
 It is highly suggested that you do not attempt to add Level Sync functionality to these luas as it will cause you to be unable to update to newer versions easily among several other reasons.
 

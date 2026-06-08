@@ -72,7 +72,7 @@ local sets = {
     },
 
     DT = {
-		Main = 'Terra\'s Staff',
+        Main = 'Terra\'s Staff',
         Head = 'Darksteel Cap +1',
         Body = 'Dst. Harness +1',
         Hands = 'Dst. Mittens +1',
@@ -203,7 +203,7 @@ local sets = {
     },
     Precast_Songs = { -- 1548
         Main = { Name = 'Tutelary', Priority = 60 },
- 		Sub = 'Genbu\'s Shield',
+         Sub = 'Genbu\'s Shield',
         Head = { Name = 'Genbu\'s Kabuto', Priority = 60 },
         Neck = { Name = 'Pch. Collar', Priority = 70 },
         Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
@@ -233,7 +233,7 @@ local sets = {
     },
     Haste = {
         Range = 'Angel Lyre',
-		Head = 'Patroclus\'s Helm',
+        Head = 'Patroclus\'s Helm',
         Neck = { Name = 'Uggalepih Pendant', Priority = 100 },
         Ear1 = { Name = 'Loquac. Earring', Priority = 100 },
         Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
@@ -409,7 +409,7 @@ local sets = {
 
     Enhancing = {
         Range = 'Angel Lyre',
-		Head = 'Patroclus\'s Helm',
+        Head = 'Patroclus\'s Helm',
         Neck = 'Enhancing Torque',
         Ear1 = 'Augment. Earring',
         Ear2 = { Name = 'Magnetic Earring', Priority = 100 },
@@ -473,7 +473,7 @@ local sets = {
     TP = {
         Range = 'Angel Lyre',
         Ammo = 'displaced',
-		Head = 'Patroclus\'s Helm',
+        Head = 'Patroclus\'s Helm',
         Neck = 'Peacock Amulet',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Merman\'s Earring',
@@ -494,7 +494,7 @@ local sets = {
 
     Weapon_Loadout_1 = {
         Main = 'Blau Dolch',
-		Sub = 'Octave Club',
+        Sub = 'Octave Club',
         -- Do not place a Ranged weapon or Ammo in these slots or instrument switching will be disabled entirely
         Ammo = 'displaced',
     },
@@ -526,7 +526,7 @@ local sets = {
 
     VileElixir = {
         Main = { Name = 'Tutelary', Priority = 60 },
- 		Sub = 'Genbu\'s Shield',
+        Sub = 'Genbu\'s Shield',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
         Head = { Name = 'Genbu\'s Kabuto', Priority = 60 },
         Neck = { Name = 'Pch. Collar', Priority = 70 },

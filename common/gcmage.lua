@@ -1,4 +1,4 @@
--- The period of time prior to midcast (spell) completion upon which equipment will swap. 
+-- The period of time prior to midcast (spell) completion upon which equipment will swap.
 -- 400 milliseconds is provided as a default conservative value which is typically sufficient worldwide but this value can be increased if your internet is completely and consistently shit.
 local minimumBuffer = 0.4
 
@@ -1201,7 +1201,7 @@ function gcmage.EquipStaff()
                 end
             end
             gFunc.EquipSet(staff)
-    
+
             if (player.MainJob == 'BLM' and DiabolosPoleSpells:contains(action.Name)) then
                 if (environment.WeatherElement == 'Dark') then
                     gFunc.EquipSet('diabolos_pole')
