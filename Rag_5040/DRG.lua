@@ -21,7 +21,9 @@ local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ 
 local sets = {
     Idle = {},
     IdleALT = {},
-    Resting = {},
+    Resting = {
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
+    },
     Town = {},
     Movement = {},
     Movement_TP = {},

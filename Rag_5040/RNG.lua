@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear listed in Precast set
+local fastCastValue = 0.02 -- 0% from gear listed in Precast set
 
 -- The following is provided as a convenient saved setting over using the /sethp command. HP will fluctuate with SJ and usage of the command for this is required.
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- Set this to 0 if you do not wish to ever use regen gear.
@@ -21,16 +21,51 @@ local rng_fire_ring = { -- Used if active and Ranged is in Attack mode
 
 local sets = {
     Idle = {
-        Ammo = 'Silver Bullet',
+        Head = 'Dream Ribbon',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Coral Scale Mail +1',
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = 'Shadow Mantle',
+        Waist = 'Scout\'s belt',
+        Legs = { Name = 'Blood Cuisses', Priority = 70 },
+        Feet = 'Coral Greaves +1',
     },
     IdleALT = {},
-    Resting = {},
+    Resting = {
+        Neck = { Name = 'Paisley Scarf', Priority = 60 },
+        Ear1 = 'Sanative Earring',
+        Body = 'Nomad\'s Tunica',
+        Hands = 'Nomad\'s Gloves',
+        Legs = 'Nomad\'s Hose',
+        Feet = 'Nomad\'s Boots',
+    },
     Town = {},
-    Movement = {},
+    Movement = {
+        Legs = { Name = 'Blood Cuisses', Priority = 70 },
+    },
     Movement_TP = {},
 
-    DT = {},
-    MDT = {},
+    DT = {
+        Ring1 = 'Jelly Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = 'Shadow Mantle',
+    },
+    MDT = {
+        Head = 'Coral Visor +1',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Coral Scale Mail +1',
+        Hands = 'Merman\'s Bangles',
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 60 },
+        Back = 'Gramary Cape',
+        Legs = 'Coral Cuisses +1',
+        Feet = 'Coral Greaves +1',
+    },
     FireRes = {},
     IceRes = {},
     LightningRes = {},
@@ -45,53 +80,218 @@ local sets = {
         Feet = 'Field Boots'
     },
 
-    Precast = {},
+    Precast = {
+        Ear1 = { Name = 'Loquac. Earring', Priority = 50 },
+    },
     SIRD = { -- Override sets (Resistance / Evasion) take precedence if in use.
+        Neck = 'Willpower Torque', -- 5
+        Ear2 = { Name = 'Magnetic Earring', Priority = 50 }, -- 8
+        Back = 'Shadow Mantle',
+        Waist = 'Druid\'s Rope', -- 10
+        Feet = 'Mountain Gaiters', -- 5
     },
     Haste = {
+        Hands = { Name = 'Dusk Gloves +1', Priority = 60 },
+        Waist = 'Sonic Belt',
+        Legs = 'Byakko\'s Haidate',
+        Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
 
-    TP_LowAcc = {
-        Ammo = 'Silver Bullet',
-    },
+    TP_LowAcc = {},
     TP_Aftermath = {}, -- This can be ignored since the UnlimitedShot set will already equip for Namas Arrow Aftermaths
     TP_Mjollnir_Haste = {},
     TP_HighAcc = {},
 
-    Weapon_Loadout_1 = {},
-    Weapon_Loadout_2 = {},
-    Weapon_Loadout_3 = {},
+    Weapon_Loadout_1 = {
+        Main = 'Vulcan\'s Staff',
+        Sub = 'displaced',
+        Range = 'Hellfire +1',
+        Ammo = 'Silver Bullet',
+    },
+    Weapon_Loadout_2 = {
+        Main = 'Vulcan\'s Staff',
+        Sub = 'displaced',
+        Range = 'Culverin +1',
+        Ammo = 'Cannon Shell',
+    },
+    Weapon_Loadout_3 = {
+        Main = 'Apollo\'s Staff',
+        Sub = 'displaced',
+        Range = 'Machine Crossbow',
+        Ammo = 'Holy Bolt',
+        Head = 'Maat\'s Cap',
+        Neck = 'Faith Torque',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Cmn. Earring',
+        Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+	    Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
+        Ring1 = 'Aqua Ring',
+        Ring2 = 'Communion Ring',
+        Back = 'Jaeger Mantle',
+        Waist = 'Scout\'s Belt',
+        Legs = { Name = 'Htr. Braccae +1', Priority = 60 },
+        Feet = 'Suzaku\'s Sune-Ate',
+    },
 
     WS = { -- Technically could be used as the base set for Ranged WS but is probably best used for Melee WS instead e.g. Decimation.
     },
     WS_HighAcc = { -- Note that this will only be used for Melee WS when HighAcc tp mode is being used.
     },
 
-    Preshot = {},
-    Ranged_ATK = {},
-    Ranged_HNM = {},
-    Ranged_ACC = {},
+    Preshot = {
+		Head = { Name = 'Htr. Beret +1', Priority = 60 },
+		Body = { Name = 'Sct. Jerkin +1', Priority = 60 },
+    },
+    Ranged_ATK = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Hope Torque',
+        Ear1 = 'Triumph Earring',
+        Ear2 = 'Triumph Earring',
+	    Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+	    Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
+	    Ring1 = 'Rajas Ring',
+	    Ring2 = 'Triumph Ring',
+	    Back = 'Amemet Mantle +1',
+        Waist = 'Scout\'s Belt',
+        Legs = { Name = 'Sct. Braccae +1', Priority = 60 },
+        Feet = { Name = 'Sct. Socks +1', Priority = 60 },
+    },
+    Ranged_ACC = {
+        Head = 'Optical Hat',
+        Ear1 = 'Drone Earring',
+	    Body = { Name = 'Htr. Jerkin +1', Priority = 60 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
+        Ring2 = 'Behemoth Ring +1',
+        Back = 'Jaeger Mantle',
+        Feet = { Name = 'Htr. Socks +1', Priority = 60 },
+    },
+    Ranged_HNM = {
+        Head = { Name = 'Sct. Beret +1', Priority = 60 },
+        Ear1 = 'Novia Earring',
+        Body = { Name = 'Sct. Jerkin +1', Priority = 60 },
+        Legs = { Name = 'Sct. Braccae +1', Priority = 60 },
+        Feet = { Name = 'Sct. Socks +1', Priority = 60 },
+    },
 
-    WS_Ranged_ATK = {},
-    WS_Ranged_HNM = {},
-    WS_Ranged_ACC = {},
+    WS_Ranged_ATK = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Hope Torque',
+        Ear1 = 'Triumph Earring',
+        Ear2 = 'Triumph Earring',
+	    Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+	    Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
+	    Ring1 = 'Rajas Ring',
+	    Ring2 = 'Triumph Ring',
+	    Back = 'Amemet Mantle +1',
+        Waist = 'Scout\'s Belt',
+        Legs = { Name = 'Htr. Braccae +1', Priority = 60 },
+        Feet = { Name = 'Sct. Socks +1', Priority = 60 },
+    },
+    WS_Ranged_ACC = {
+        Head = 'Optical Hat',
+        Neck = 'Breeze Gorget',
+        Ear1 = 'Drone Earring',
+	    Body = { Name = 'Htr. Jerkin +1', Priority = 60 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
+        Ring1 = 'Behemoth Ring +1',
+        Ring2 = 'Behemoth Ring +1',
+        Back = 'Jaeger Mantle',
+        Legs = { Name = 'Sct. Braccae +1', Priority = 60 },
+        Feet = { Name = 'Htr. Socks +1', Priority = 60 },
+    },
+    WS_Ranged_HNM = {
+        Head = { Name = 'Sct. Beret +1', Priority = 60 },
+        Ear1 = 'Novia Earring',
+        Body = { Name = 'Sct. Jerkin +1', Priority = 60 },
+        Legs = { Name = 'Sct. Braccae +1', Priority = 60 },
+        Feet = { Name = 'Sct. Socks +1', Priority = 60 },
+    },
 
-    WS_SlugShot = {},
-    WS_Coronach = {},
-    WS_Sidewinder = {},
-    WS_NamasArrow = { -- Unable to verify myself on Horizon but Namas Arrow should not use your ammo on use and therefore your special_ammo should be included in this set.
+    WS_HeavyShot = {
+        Neck = 'Light Gorget',
+    },
+    WS_Detonator = {
+        Neck = 'Light Gorget',
+    },
+    WS_SlugShot = {
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
+        Ring2 = 'Behemoth Ring +1',
+        Back = 'Jaeger Mantle',
+        Legs = { Name = 'Sct. Braccae +1', Priority = 60 },
+    },
+    WS_Coronach = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Breeze Gorget',
+        Ear1 = 'Triumph Earring',
+	    Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+	    Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
+	    Ring1 = 'Rajas Ring',
+	    Ring2 = 'Triumph Ring',
+	    Back = 'Amemet Mantle +1',
+        Waist = 'Scout\'s Belt',
+        Legs = { Name = 'Htr. Braccae +1', Priority = 60 },
+        Feet = { Name = 'Sct. Socks +1', Priority = 60 },
+    },
+    WS_ArchingArrow = {
+        Neck = 'Light Gorget',
+    },
+    WS_EmpyrealArrow = {
+        Neck = 'Light Gorget',
+    },
+    WS_Sidewinder = {
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
+        Ring2 = 'Behemoth Ring +1',
+        Back = 'Jaeger Mantle',
+        Legs = { Name = 'Sct. Braccae +1', Priority = 60 },
+    },
+    WS_NamasArrow = {
         Ammo = special_ammo,
+        Head = 'Maat\'s Cap',
+        Neck = 'Breeze Gorget',
+        Ear1 = 'Triumph Earring',
+	    Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+	    Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
+	    Ring1 = 'Rajas Ring',
+	    Ring2 = 'Triumph Ring',
+	    Back = 'Amemet Mantle +1',
+        Waist = 'Scout\'s Belt',
+        Legs = { Name = 'Htr. Braccae +1', Priority = 60 },
+        Feet = { Name = 'Sct. Socks +1', Priority = 60 },
     },
 
     WS_SJ_SAM = { -- If Brutal or similar is required for Store TP on WS
     },
 
-    EagleEyeShot = {},
-    Barrage = {},
-    Scavenge = {},
-    Shadowbind = {},
-    Camouflage = {},
-    Sharpshot = {},
+    EagleEyeShot = {
+        Head = 'Maat\'s Cap',
+        Neck = 'Justice Torque',
+        Ear1 = 'Triumph Earring',
+        Ear2 = 'Triumph Earring',
+	    Body = { Name = 'Kirin\'s Osode', Priority = 50 },
+	    Hands = { Name = 'Blood Fng. Gnt.', Priority = 70 },
+	    Ring1 = 'Rajas Ring',
+	    Ring2 = 'Triumph Ring',
+	    Back = 'Amemet Mantle +1',
+        Waist = 'Scout\'s Belt',
+        Legs = 'Garrison Hose',
+        Feet = { Name = 'Sct. Socks +1', Priority = 60 },
+    },
+    Barrage = {
+        Hands = { Name = 'Htr. Bracers +1', Priority = 60 },
+        -- Ring2 = 'Sharpshooter\'s Ring',
+    },
+    Scavenge = {
+        Feet = { Name = 'Htr. Socks +1', Priority = 60 },
+    },
+    Shadowbind = {
+        Hands = { Name = 'Htr. Bracers +1', Priority = 60 },
+    },
+    Camouflage = {
+	    Body = { Name = 'Htr. Jerkin +1', Priority = 60 },
+    },
+    Sharpshot = {
+        Legs = { Name = 'Htr. Braccae +1', Priority = 60 },
+    },
     UnlimitedShot = { -- Used for Namas Arrow Aftermath as well as Unlimited Shot. You do not need to edit this.
         Ammo = special_ammo,
     },
@@ -100,7 +300,20 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 
-    VileElixir = {},
+    VileElixir = {
+        Head = { Name = 'Genbu\'s Kabuto', Priority = 60 },
+        Neck = { Name = 'Shield Pendant', Priority = 20 },
+        Ear1 = { Name = 'Pigeon Earring +1', Priority = 60 },
+        Ear2 = { Name = 'Cassie Earring', Priority = 20 },
+        Body = { Name = 'Blood Scale Mail', Priority = 70 },
+        Hands = { Name = 'Seiryu\'s Kote', Priority = 60 },
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 60 },
+        Ring2 = { Name = 'Bloodbead Ring', Priority = 40 },
+        Back = { Name = 'Gigant Mantle', Priority = 60 },
+        Waist = { Name = 'Powerful Rope', Priority = 60 },
+        Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
+        Feet = { Name = 'Root Sabots', Priority = 60 },
+    },
 }
 
 profile.SetMacroBook = function()
@@ -252,11 +465,11 @@ profile.HandleMidshot = function()
         gFunc.EquipSet(sets.rng_fenrirs_earring)
     end
 
-    if (gcdisplay.GetToggle('HNM')) then
-        gFunc.EquipSet(sets.Ranged_HNM)
-    end
     if (gcdisplay.GetCycle('Ranged') == 'Accuracy') then
         gFunc.EquipSet(sets.Ranged_ACC)
+    end
+    if (gcdisplay.GetToggle('HNM')) then
+        gFunc.EquipSet(sets.Ranged_HNM)
     end
 
     local barrage = gData.GetBuffCount('Barrage')
@@ -287,21 +500,29 @@ profile.HandleWeaponskill = function()
             gFunc.EquipSet(sets.rng_fenrirs_earring)
         end
 
-        if (gcdisplay.GetToggle('HNM')) then
-            gFunc.EquipSet(sets.WS_Ranged_HNM)
-        end
         if (gcdisplay.GetCycle('Ranged') == 'Accuracy') then
             gFunc.EquipSet(sets.WS_Ranged_ACC)
+        end
+        if (gcdisplay.GetToggle('HNM')) then
+            gFunc.EquipSet(sets.WS_Ranged_HNM)
         end
     end
 
     if (action.Name == 'Namas Arrow') then
         gFunc.EquipSet(sets.WS_NamasArrow)
     else
-        if (action.Name == 'Slug Shot') then
+        if (action.Name == 'Heavy Shot') then
+            gFunc.EquipSet(sets.WS_HeavyShot)
+        elseif (action.Name == 'Detonator') then
+            gFunc.EquipSet(sets.WS_Detonator)
+        elseif (action.Name == 'Slug Shot') then
             gFunc.EquipSet(sets.WS_SlugShot)
         elseif (action.Name == 'Coronach') then
             gFunc.EquipSet(sets.WS_Coronach)
+        elseif (action.Name == 'Arching Arrow') then
+            gFunc.EquipSet(sets.WS_ArchingArrow)
+        elseif (action.Name == 'Empyreal Arrow') then
+            gFunc.EquipSet(sets.WS_EmpyrealArrow)
         elseif (action.Name == 'Sidewinder') then
             gFunc.EquipSet(sets.WS_Sidewinder)
         end

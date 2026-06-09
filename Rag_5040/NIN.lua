@@ -170,7 +170,7 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     Resting = {
-        Neck = { Name = 'Paisley Scarf', Priority = 60 },
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
         Ear1 = 'Sanative Earring',
         Ear2 = 'Relaxing Earring',
         Body = 'Nomad\'s Tunica',

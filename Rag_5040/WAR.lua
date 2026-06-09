@@ -28,7 +28,7 @@ local sets = {
     },
     IdleALT = {},
     Resting = {
-        Neck = { Name = 'Paisley Scarf', Priority = 60 },
+        Neck = { Name = 'Pch. Collar', Priority = 70 },
         Ear1 = 'Sanative Earring',
         Body = 'Nomad\'s Tunica',
         Hands = 'Nomad\'s Gloves',
