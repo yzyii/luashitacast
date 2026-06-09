@@ -311,7 +311,7 @@ local sets = {
         Body = { Name = 'Demon\'s Harness', Priority = 10 },
         Ring2 = 'Omniscient Ring',
         Back = { Name = 'Merciful Cape', Priority = 50 },
-    }
+    },
     Haste_Hate = {
         Main = 'Octave Club',
         Sub = 'Koenig Shield',

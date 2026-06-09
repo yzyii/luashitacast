@@ -238,7 +238,7 @@ function gcmage.RetryLoad()
         gcmage.SetVariables()
         gcinclude.Load(gcmage.GetVer())
 
-        if (ver_loaded ~= gcmelee.GetVer()) then
+        if (ver_loaded ~= gcmage.GetVer()) then
             print(chat.header('GCMage'):append(chat.message('Version mismatch found. Read the README.md')))
         end
     else
