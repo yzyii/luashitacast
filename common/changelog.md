@@ -599,7 +599,7 @@
 - Adds argument passing to /weapon and /wl commands
 - SMN - Fixes spirit usage for Horizon where the only thing that affects CD is BP usage
 
-### v2.2.1
+### v3.0.0
 - Add /gcdisplay command to allow toggling of the visibility of the UI component
 - SMN - Shifts Horizon specific summoning magic cast time equipment into Precast_Summoning for clarity
 - Melee - Fixes tanking mode interim sets to ignore weapon loadouts
