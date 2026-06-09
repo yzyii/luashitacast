@@ -142,7 +142,7 @@ The following is incorrect:
     },
 ```
 
-## Example Gear (WIP)
+## Example Gear
 
 The luas have been filled out with BiS gear for CoP era.
 
@@ -156,6 +156,8 @@ The restrictions and assumptions made while doing so are as follows:
 - No HQ+1 Resistance Earrings / Rings
 - Some NQ items instead of HQ where the HQ makes little to no difference e.g. Dalmatica.
 - No RSE items.
+- Generally, there is a preference for non-custom items. i.e. no Begrudging Rings, Dream Collars etc.
+- No attention has been paid to calculating any actually useful Accuracy thresholds. HighAcc sets exist purely to demonstrate some options and [Composition](Composition.md).
 
 While a fair amount of effort has been made to ensure this is accurate, reporting any discrepancies would be appreciated.
 
