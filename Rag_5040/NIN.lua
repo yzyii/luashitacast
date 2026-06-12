@@ -151,7 +151,7 @@ local sets = {
         Legs = 'Arhat\'s Hakama +1',
         Feet = 'Dance Shoes +1',
     },
-    IdleDT = {
+    IdleDT = { -- Disabled on horizon_safe_mode
         Main = 'Terra\'s Staff',
         Head = 'Arhat\'s Jinpachi +1',
         Body = 'Arhat\'s Gi +1',
@@ -160,7 +160,7 @@ local sets = {
         Legs = 'Dst. Subligar +1',
         Feet = 'Dst. Leggings +1',
     },
-    IdleALTDT = {
+    IdleALTDT = { -- Disabled on horizon_safe_mode
         Main = 'Terra\'s Staff',
         Head = 'Arhat\'s Jinpachi +1',
         Body = 'Arhat\'s Gi +1',
