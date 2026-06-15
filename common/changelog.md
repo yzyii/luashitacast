@@ -619,3 +619,6 @@
 - Melee - Adds /sethp and related commands to allow control over regen HP values without reloading profiles
 - DRG - Remove redundant breath set and rename BreathBonus to HealingBreath_SteadyWing_SpiritLink
 - DRG - Remove pointless super jump set
+
+## v3.0.1
+- BRD - Adds haste and recast gear to finale
