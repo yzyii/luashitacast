@@ -49,14 +49,6 @@ local TpVariantTable = {
 
 local tp_variant = 1
 
-local WeaponOverrideIndexes = {
-    ['1'] = 1,
-    ['2'] = 2,
-    ['3'] = 3,
-}
-
-local weapon_override = 1
-
 local lastIdleSetBeforeEngaged = ''
 
 local SurvivalSpells = T{ 'Utsusemi: Ichi','Utsusemi: Ni','Blink','Aquaveil','Stoneskin' }
@@ -94,6 +86,7 @@ end
 function gcmelee.RetryLoad()
     local player = gData.GetPlayer()
     if (player.MainJob ~= 'NON') then
+        gcdisplay.CreateCycle('Weapon Loadout', {[1] = '1', [2] = '2', [3] = '3'})
         gcinclude.Load(gcmelee.GetVer())
 
         if (ver_loaded ~= gcmelee.GetVer()) then
@@ -123,17 +116,11 @@ function gcmelee.DoCommands(args)
         gcinclude.Message('TP Set', TpVariantTable[tp_variant])
     elseif (args[1] == 'weapon' or args[1] == 'wl') then
         if (args[2] ~= nil) then
-            local cycleIndex = WeaponOverrideIndexes[args[2]]
-            if (cycleIndex ~= nil) then
-                weapon_override = cycleIndex
-            end
+            gcdisplay.SetCycleIndex('Weapon Loadout', tonumber(args[2]))
         else
-            weapon_override = weapon_override + 1
-            if (weapon_override > #WeaponOverrideIndexes) then
-                weapon_override = 1
-            end
+            gcdisplay.AdvanceCycle('Weapon Loadout')
         end
-        gcinclude.Message('Weapon Loadout', tostring(weapon_override))
+        gcinclude.Message('Weapon Loadout', gcdisplay.GetCycle('Weapon Loadout'))
     elseif (args[1] == 'dps') then
         isDPS = not isDPS
         gcinclude.Message('DPS Mode', isDPS)
@@ -273,7 +260,7 @@ function gcmelee.DoDefaultOverride()
     gcinclude.DoDefaultOverride(true)
 
     if (isDPS) then
-        gFunc.EquipSet('Weapon_Loadout_' .. tostring(weapon_override))
+        gFunc.EquipSet('Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout'))
     end
 end
 
@@ -379,7 +366,7 @@ function gcmelee.DoMidcast(sets)
     gFunc.EquipSet('Haste')
 
     if (isDPS) then
-        gFunc.EquipSet('Weapon_Loadout_' .. tostring(weapon_override))
+        gFunc.EquipSet('Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout'))
     end
 end
 
@@ -403,7 +390,7 @@ function gcmelee.SetupInterimEquipSet(sets, isRanged)
     if (gcdisplay.IdleSet == 'Override') then interimSet = sets.Override end
 
     if (isDPS) then
-        local wlString = 'Weapon_Loadout_' .. tostring(weapon_override)
+        local wlString = 'Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout')
         interimSet = gFunc.Combine(interimSet, sets[wlString])
     end
 

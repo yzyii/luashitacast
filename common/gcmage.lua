@@ -216,14 +216,6 @@ local restingMaxMP = false
 
 local lag = false
 
-local WeaponOverrideIndexes = {
-    ['1'] = 1,
-    ['2'] = 2,
-    ['3'] = 3,
-}
-
-local weapon_override = 1
-
 local ver_loaded = nil
 
 function gcmage.Load(version)
@@ -259,6 +251,7 @@ function gcmage.SetVariables()
     end
     if (player.MainJob ~= 'BLM') then
         gcdisplay.CreateCycle('TP', {[1] = 'Off', [2] = 'LowAcc', [3] = 'HighAcc'})
+        gcdisplay.CreateCycle('Weapon Loadout', {[1] = '1', [2] = '2', [3] = '3'})
     end
     if (player.MainJob == 'RDM') then
         gcdisplay.CreateToggle('Hate', false)
@@ -331,17 +324,11 @@ function gcmage.DoCommands(args, sets)
         gcinclude.Message('[Note: Midcast Delays are disabled if Lag is true] Lag', lag)
     elseif ((args[1] == 'weapon' or args[1] == 'wl') and player.MainJob ~= 'BLM') then
         if (args[2] ~= nil) then
-            local cycleIndex = WeaponOverrideIndexes[args[2]]
-            if (cycleIndex ~= nil) then
-                weapon_override = cycleIndex
-            end
+            gcdisplay.SetCycleIndex('Weapon Loadout', tonumber(args[2]))
         else
-            weapon_override = weapon_override + 1
-            if (weapon_override > #WeaponOverrideIndexes) then
-                weapon_override = 1
-            end
+            gcdisplay.AdvanceCycle('Weapon Loadout')
         end
-        gcinclude.Message('Weapon Loadout', tostring(weapon_override))
+        gcinclude.Message('Weapon Loadout', gcdisplay.GetCycle('Weapon Loadout'))
     end
 
     if (player.MainJob == 'RDM' or player.MainJob == 'WHM') then
@@ -588,7 +575,7 @@ function gcmage.DoPrecast(sets, fastCastValue, cureCastMeritValue)
 
             if (whmYellow) then
                 if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-                    local weapon = sets['Weapon_Loadout_' .. tostring(weapon_override)]
+                    local weapon = sets['Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout')]
                     yellow = gFunc.Combine(yellow, weapon)
                 end
             end
@@ -651,7 +638,7 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue, cureCastMeritValue)
                     local hpUp = sets.Cheat_HPUp
 
                     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-                        local weapon = sets['Weapon_Loadout_' .. tostring(weapon_override)]
+                        local weapon = sets['Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout')]
                         hpDownC3 = gFunc.Combine(hpDownC3, weapon)
                         hpDownC4 = gFunc.Combine(hpDownC4, weapon)
                         hpUp = gFunc.Combine(hpUp, weapon)
@@ -702,7 +689,7 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue, cureCastMeritValue)
 
             if (whmYellow) then
                 if (gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-                    local weapon = sets['Weapon_Loadout_' .. tostring(weapon_override)]
+                    local weapon = sets['Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout')]
                     yellow = gFunc.Combine(yellow, weapon)
                 end
             end
@@ -815,7 +802,7 @@ end
 function gcmage.EquipWeaponLoadout()
     local player = gData.GetPlayer()
     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-        gFunc.EquipSet('Weapon_Loadout_' .. tostring(weapon_override))
+        gFunc.EquipSet('Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout'))
     end
 end
 
@@ -955,7 +942,7 @@ function gcmage.SetupInterimEquipSet(sets, isRanged)
     if (gcdisplay.IdleSet == 'Override') then interimSet = sets.Override end
 
     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-        interimSet = gFunc.Combine(interimSet, sets['Weapon_Loadout_' .. tostring(weapon_override)])
+        interimSet = gFunc.Combine(interimSet, sets['Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout')])
     end
 
     if (isRanged) then

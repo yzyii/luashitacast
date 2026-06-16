@@ -622,3 +622,4 @@
 
 ## v3.0.1
 - BRD - Adds haste and recast gear to finale
+- All Jobs - Weapon Loadout cycling via /wl or /weapon with no argument was broken in 3.0.0 and probably 2.0.0. This fixes it and also makes it a visible UI element. The UI element is hidden when TP mode is Off for mages

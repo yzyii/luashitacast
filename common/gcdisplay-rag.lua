@@ -126,8 +126,12 @@ function gcdisplay.Load()
                 display = display .. '|cFF989898|' .. k .. '|r'
             end
         end
+
+        local tpOff = gcdisplay.GetCycle('TP') == 'Off'
         for key, value in pairs(Cycles) do
-            display = display .. '   ' .. key .. ': ' .. '|cFF5FFF5F|' .. value.Array[value.Index] .. '|r'
+            if (not (tpOff and key == 'Weapon Loadout')) then
+                display = display .. '   ' .. key .. ': ' .. '|cFF5FFF5F|' .. value.Array[value.Index] .. '|r'
+            end
         end
         display = display .. '   ' .. 'IdleSet' .. ': ' .. '|cFF5FFF5F|' .. gcdisplay.IdleSet .. '|r' .. ' '
         gcdisplay.FontObject.text = display
