@@ -421,6 +421,14 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Scavenge)
     elseif (action.Name == 'Shadowbind') then
         gFunc.EquipSet(sets.Shadowbind)
+
+        local equipment = gData.GetEquipment()
+        if (check_special_ammo(buffer_ja_ws)) then
+            gFunc.EquipSet(sets.UnlimitedShot)
+        elseif (equipment.Ammo ~= nil and equipment.Ammo.Name == special_ammo) then
+            print(chat.header('RNG'):append(chat.message('Action Canceled: Special Ammo Protection')))
+            gFunc.CancelAction()
+        end
     elseif (action.Name == 'Camouflage') then
         gFunc.EquipSet(sets.Camouflage)
     elseif (action.Name == 'Sharpshot') then
