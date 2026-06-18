@@ -478,6 +478,8 @@ profile.HandleMidshot = function()
         gFunc.EquipSet(sets.Ranged_HNM)
     end
 
+    gFunc.EquipSet('Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout'))
+
     local barrage = gData.GetBuffCount('Barrage')
     if (barrage == 1) then
         gFunc.EquipSet(sets.Barrage)
