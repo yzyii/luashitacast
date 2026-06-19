@@ -3,6 +3,8 @@ local profile = {}
 local fastCastValue = 0.07 -- 0% from gear listed in Precast set
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
+local petActionEquipmentDelay = 2.50 -- Approx. 3.25 to 3.5 seconds for a Breath to be executed. Do not increase this value beyond ~2.90 to allow for packet delay and the 0.25 sec loop delay on HandleDefault execution.
+
 -- The following is provided as a convenient saved setting over using the /sethp command. HP will fluctuate with SJ and usage of the command for this is required.
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- Set this to 0 if you do not wish to ever use regen gear.
 
@@ -310,6 +312,8 @@ sets.ethereal_earring = ethereal_earring
 sets.warlocks_mantle = warlocks_mantle
 profile.Sets = gcmelee.AppendSets(sets)
 
+local petActionDelay = 0
+
 profile.HandleAbility = function()
     gcmelee.DoAbility()
 
@@ -409,7 +413,7 @@ profile.HandleDefault = function()
     gcmelee.DoDefaultOverride()
 
     local petAction = gData.GetPetAction()
-    if (petAction ~= nil) then
+    if (petAction ~= nil and os.clock() - petActionDelay > petActionEquipmentDelay) then
         if (isMage) then
             gFunc.EquipSet(sets.HealingBreath_SteadyWing_SpiritLink)
         end
@@ -439,6 +443,7 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.Stoneskin)
         else
             gFunc.EquipSet(sets.MaxHP)
+            petActionDelay = os.clock()
         end
     end
 end

@@ -3,6 +3,8 @@ local profile = {}
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including carbuncles cuffs or evokers boots
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
+local petActionEquipmentDelay = 2.50 -- Approx. 3.25 to 3.5 seconds for a BP to be executed. Do not increase this value beyond ~2.90 to allow for packet delay and the 0.25 sec loop delay on HandleDefault execution.
+
 -- The following are provided as convenient saved settings over using the /setmp command. Not all SJs will be covered. e.g. DRG and usage of the command in these cases is required.
 local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
 
@@ -492,12 +494,15 @@ local SmnCrit = T{'Predator Claws','Claw'}
 
 local nextConjurersRingCheck = 0
 
+local petActionDelay = 0
+
 profile.HandleAbility = function()
     gcmage.DoAbility()
 
     local action = gData.GetAction()
     if (string.match(action.Type, 'Blood')) then
         gFunc.EquipSet('BP_Delay')
+        petActionDelay = os.clock()
     end
 end
 
@@ -561,7 +566,7 @@ profile.HandleDefault = function()
         isSpirit = string.match(gData.GetPet().Name, 'Spirit')
     end
 
-    if (petAction ~= nil) then
+    if (petAction ~= nil and os.clock() - petActionDelay > petActionEquipmentDelay) then
         gFunc.EquipSet('BP')
 
         if (SmnSkill:contains(petAction.Name)) then

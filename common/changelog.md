@@ -627,3 +627,6 @@
 
 ## v3.0.2
 RNG - Fix Weapon Loadouts to be equipped on ranged attacks
+
+## v3.0.3
+SMN / DRG / BST - Implements a rudimentary delay for pet actions to allow for more defensive or offensive gearing while BPs / Breaths / Readies are executing

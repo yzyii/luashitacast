@@ -3,6 +3,8 @@ local profile = {}
 local fastCastValue = 0.02 -- 0% from gear listed in Precast set
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
+local petActionEquipmentDelay = 1.00 -- Approx. 2.0 to 2.5 seconds for a Ready to be executed. Do not increase this value beyond ~1.65 to allow for packet delay and the 0.25 sec loop delay on HandleDefault execution.
+
 -- The following is provided as a convenient saved setting over using the /sethp command. HP will fluctuate with SJ and usage of the command for this is required.
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- Set this to 0 if you do not wish to ever use regen gear.
 
@@ -298,6 +300,8 @@ local PetTable2 = {
 local PetMagicAttack = T{'Gloom Spray','Fireball','Acid Spray','Molting Plumage','Cursed Sphere','Nectarous Deluge','Charged Whisker','Nepenthic Plunge'}
 local PetMagicAccuracy = T{'Toxic Spit','Acid Spray','Leaf Dagger','Venom Spray','Venom','Dark Spore','Sandblast','Dust Cloud','Stink Bomb','Slug Family','Intimidate','Gloeosuccus','Spider Web','Filamented Hold','Choke Breath','Blaster','Snow Cloud','Roar','Palsy Pollen','Spore','Brain Crush','Choke Breath','Silence Gas','Chaotic Eye','Sheep Song','Soporific','Predatory Glare','Sudden Lunge','Numbing Noise','Jettatura','Bubble Shower','Spoil','Scream','Noisome Powder','Acid Mist','Rhinowrecker','Swooping Frenzy','Venom Shower','Corrosive Ooze','Spiral Spin','Infrasonics','Hi-Freq Field','Purulent Ooze','Foul Waters','Sandpit','Infected Leech','Pestilent Plume'}
 
+local petActionDelay = 0
+
 profile.HandleAbility = function()
     gcmelee.DoAbility()
 
@@ -385,6 +389,8 @@ profile.HandleAbility = function()
                 print(chat.header('Ashitacast'):append(chat.message('Level too low...')))
             end
         end
+    elseif (action.Type == 'Ready') then
+        petActionDelay = os.clock()
     end
 end
 
@@ -457,7 +463,7 @@ profile.HandleDefault = function()
     gcmelee.DoDefaultOverride()
 
     local petAction = gData.GetPetAction()
-    if (petAction ~= nil) then
+    if (petAction ~= nil and os.clock() - petActionDelay > petActionEquipmentDelay) then
         gFunc.EquipSet(sets.Ready_Physical)
         if (PetMagicAttack:contains(petAction) or PetMagicAccuracy:contains(petAction)) then
             gFunc.EquipSet(sets.Ready_Magic)
