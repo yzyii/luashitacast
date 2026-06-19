@@ -512,6 +512,9 @@ function gcmage.DoDefaultOverride()
             if (dark_staff.Main) then
                 gFunc.EquipSet('dark_staff')
             end
+            if (claustrum.Main) then
+                gFunc.EquipSet('claustrum')
+            end
         end
     else
         restingMaxMP = false
