@@ -854,10 +854,10 @@ end
 
 function gcmage.EquipSneakInvisGear()
     local action = gData.GetAction()
-    local target = gData.GetActionTarget()
-    local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
+    -- local target = gData.GetActionTarget()
+    -- local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
-    if (target.Name == me) then
+    -- if (target.Name == me) then -- private servers do not implement this correctly
         if (action.Name == 'Sneak' or string.match(action.Name, 'Monomi')) then
             gFunc.EquipSet('dream_boots')
             gFunc.EquipSet('skulkers_cape')
@@ -865,7 +865,7 @@ function gcmage.EquipSneakInvisGear()
             gFunc.EquipSet('dream_mittens')
             gFunc.EquipSet('skulkers_cape')
         end
-    end
+    -- end
 end
 
 function gcmage.DoPreshot(preshotSet, rangedSet, snapShotValue)

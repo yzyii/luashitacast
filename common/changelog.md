@@ -626,8 +626,12 @@
 - RNG - Add ammo protection to Shadowbind
 
 ## v3.0.2
-RNG - Fix Weapon Loadouts to be equipped on ranged attacks
+- RNG - Fix Weapon Loadouts to be equipped on ranged attacks
 
 ## v3.0.3
-SMN / DRG / BST - Implements a rudimentary delay for pet actions to allow for more defensive or offensive gearing while BPs / Breaths / Readies are executing
-SMN / BLM - Fixes claustrum to be used for hMP when resting for IdleMaxMP set
+- SMN / DRG / BST - Implements a rudimentary delay for pet actions to allow for more defensive or offensive gearing while BPs / Breaths / Readies are executing
+- SMN / BLM - Fixes claustrum to be used for hMP when resting for IdleMaxMP set
+
+## v3.0.4
+- Mages - Use sneak and invis gear on all casts regardless of target due to private servers failing to implement these correctly
+- PLD - Adds a Haste_Double_March set

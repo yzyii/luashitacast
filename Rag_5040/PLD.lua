@@ -271,6 +271,10 @@ local sets = {
         Main = { Name = 'Durandal', Priority = -100 },
         Sub = 'Light Buckler',
     },
+    Haste_Double_March = { -- Provided to avoid using Capricorn Staff etc. if recast is already capped.
+        Main = { Name = 'Durandal', Priority = -100 },
+        Sub = 'Aegis',
+    },
     Flash = { -- Set Hierarchy is Hate -> Haste -> Flash -- 1436
         Neck = 'Harmonia\'s Torque',
         Ear2 = { Name = 'Hades Earring +1', Priority = 50 },
@@ -758,6 +762,10 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Haste)
         if (action.Name == 'Utusemi: Ichi') then
             gFunc.EquipSet(sets.Haste_Ichi)
+        end
+        local march = gData.GetBuffCount('March')
+        if (march >= 2) then
+            gFunc.EquipSet(sets.Haste_Double_March)
         end
     elseif (action.Skill == 'Enhancing Magic') then
         gFunc.EquipSet(sets.Enhancing)
