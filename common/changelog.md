@@ -635,3 +635,8 @@
 ## v3.0.4
 - Mages - Use sneak and invis gear on all casts regardless of target due to private servers failing to implement these correctly
 - PLD - Adds a Haste_Double_March set
+- DRK - Add Diabolos' Ring and Mst.Cst. Bracelets
+- NIN - Add Diabolos' Ring
+- Mages - Adjust Diabolos' Ring usage on Aspir upwards to 60% from 50%
+- NIN - Split Drain and Aspir sets to allow aspir to be used purely for hate
+- RDM / THF - Add Uggalepih Pendant for Cyclone

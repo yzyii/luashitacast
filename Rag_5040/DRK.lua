@@ -40,6 +40,12 @@ local parade_gorget = {
 local fenrirs_stone = { -- Used on /evasion for Zergs. See Evasion set / README.md
     Ammo = 'Fenrir\'s Stone',
 }
+local diabolos_ring = {
+    Ring2 = 'Diabolos\'s Ring',
+}
+local master_casters_bracelets = {
+    Hands = 'Mst.Cst. Bracelets',
+}
 
 local sets = {
     Idle = {
@@ -538,6 +544,8 @@ sets.korin_obi = korin_obi
 sets.anrin_obi = anrin_obi
 sets.parade_gorget = parade_gorget
 sets.fenrirs_stone = fenrirs_stone
+sets.diabolos_ring = diabolos_ring
+sets.master_casters_bracelets = master_casters_bracelets
 profile.Sets = gcmelee.AppendSets(sets)
 
 local NukeObiOwnedTable = {
@@ -672,10 +680,23 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Nuke)
     elseif (action.Skill == 'Enfeebling Magic') then
         gFunc.EquipSet(sets.Enfeebling)
+        if (conquest:GetOutsideControl()) then
+            gFunc.EquipSet('master_casters_bracelets')
+        end
     elseif (action.Skill == 'Dark Magic') then
         gFunc.EquipSet(sets.Drain)
         if (string.contains(action.Name, 'Absorb')) then
             gFunc.EquipSet(sets.Absorb)
+        end
+
+        local player = gData.GetPlayer()
+        local environment = gData.GetEnvironment()
+        if (environment.DayElement == 'Dark') then
+            if (player.MPP <= 85 and action.Name == 'Drain') then
+                gFunc.EquipSet('diabolos_ring')
+            elseif (player.MPP <= 72 and action.Name == 'Aspir') then
+                gFunc.EquipSet('diabolos_ring')
+            end
         end
     end
 

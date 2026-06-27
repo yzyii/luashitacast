@@ -168,6 +168,9 @@ local sets = {
         Legs = { Name = 'Blood Cuisses', Priority = 70 }, -- 21
         Feet = { Name = 'Kaiser Schuhs', Priority = 60 },
     },
+    LightningRes_NoBarthunder = {
+        Head = 'Dream Ribbon',
+    },
     EarthRes = {
         Main = { Name = 'Club of Trials', Priority = 70 }, -- 10
         Sub = { Name = 'Nms. Shield +1', Priority = 50 }, -- 15
@@ -531,6 +534,7 @@ local sets = {
         Feet = { Name = 'Kaiser Schuhs', Priority = 60 },
     },
     ShieldBash = {
+        Main = { Name = 'Tutelary', Priority = 60 },
         Sub = 'Kaiser Shield',
         Ear1 = 'Knightly Earring',
         Hands = { Name = 'Vlr. Gauntlets +1', Priority = 60 },

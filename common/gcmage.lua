@@ -1145,8 +1145,8 @@ function gcmage.EquipDark(maxMP)
             if (maxMP == 0 or player.MP < maxMP * 0.85) then
                 gFunc.EquipSet('diabolos_ring')
             end
-        elseif (player.MPP <= 50 and action.Name == 'Aspir') then
-            if (maxMP == 0 or player.MP < maxMP * 0.50) then
+        elseif (player.MPP <= 60 and action.Name == 'Aspir') then
+            if (maxMP == 0 or player.MP < maxMP * 0.60) then
                 gFunc.EquipSet('diabolos_ring')
             end
         end

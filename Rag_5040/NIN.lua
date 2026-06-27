@@ -104,6 +104,9 @@ local blue_cotehardie = {
 local blue_cotehardie_plus_one = {
     Body = { Name = 'Blue Cotehard. +1', Priority = 10 },
 }
+local diabolos_ring = {
+    Ring1 = 'Diabolos\'s Ring',
+}
 
 local windRingMaxHP = 0
 local wind_ring = {
@@ -488,7 +491,7 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
-    DrkDarkMagic_DrainAspir = {
+    DrkDarkMagic_Drain = {
         Range = 'displaced',
         Ammo = 'Ensorcelled Shard',
         Head = 'Yasha Jinpachi +1',
@@ -497,12 +500,14 @@ local sets = {
         Ear2 = 'Omn. Earring',
         Body = { Name = 'Kirin\'s Osode', Priority = 50 },
         Hands = 'Garrison Gloves',
-        Ring1 = 'Overlord\'s Ring',
-        Ring2 = 'Omniscient Ring',
+        Ring1 = 'Omniscient Ring',
+        Ring2 = 'Overlord\'s Ring',
         Back = { Name = 'Merciful Cape', Priority = 50 },
         Waist = 'Koga Sarashi',
         Legs = { Name = 'Yasha Hakama +1', Priority = 60 },
         Feet = { Name = 'Nin. Kyahan +1', Priority = 60 },
+    },
+    DrkDarkMagic_Aspir = { -- Can be left empty if the goal is to use aspir for hate. i.e. use the base DrkDarkMagic set. Note that Diabolos' Ring will still be used.
     },
 
     Enhancing = {
@@ -676,6 +681,7 @@ sets.blue_cotehardie = blue_cotehardie
 sets.blue_cotehardie_plus_one = blue_cotehardie_plus_one
 sets.wind_ring = wind_ring
 sets.bat_earrings = bat_earrings
+sets.diabolos_ring = diabolos_ring
 profile.Sets = gcmelee.AppendSets(sets)
 
 local nextShinobiRingCheck = 0
@@ -974,8 +980,20 @@ profile.HandleMidcast = function()
     elseif (action.Skill == 'Dark Magic') then
         gFunc.EquipSet(sets.Hate)
         gFunc.EquipSet(sets.DrkDarkMagic)
-        if (action.Name == 'Drain' or action.Name == 'Aspir') then
-            gFunc.EquipSet(sets.DrkDarkMagic_DrainAspir)
+        if (action.Name == 'Drain') then
+            gFunc.EquipSet(sets.DrkDarkMagic_Drain)
+            if (environment.DayElement == 'Dark') then
+                if (player.MPP <= 85) then
+                    gFunc.EquipSet('diabolos_ring')
+                end
+            end
+        elseif (action.Name == 'Aspir') then
+            gFunc.EquipSet(sets.DrkDarkMagic_Aspir)
+            if (environment.DayElement == 'Dark') then
+                if (player.MPP <= 72) then
+                    gFunc.EquipSet('diabolos_ring')
+                end
+            end
         end
         EquipStaffAndObi(action)
     elseif (action.Skill == 'Enhancing Magic') then

@@ -119,7 +119,7 @@ local sets = {
         Legs = { Name = 'Evk. Spats +1', Priority = 50 },
         Feet = { Name = 'Evk. Pigaches +1', Priority = 50 },
     },
-    Perpetuation_Spirits = { -- For maximizing summoning skill with spirits out if you wish. Note that this set is entirely pointless on Horizon due to spirit cooldown being checked only at BP.
+    Perpetuation_Spirits = { -- For maximizing summoning skill with spirits out if you wish. Note that this set is entirely pointless on Horizon due to spirit stats and cooldown being checked only at BP.
     },
 
     DT = {

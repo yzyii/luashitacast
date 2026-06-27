@@ -17,6 +17,9 @@ local evasion_master_casters_mitts = {
 local resentment_cape_override = { -- An additional override if resentment cape is active
     Head = { Name = 'Homam Zucchetto', Priority = 70 },
 }
+local uggalepih_pendant = {
+    Neck = { Name = 'Uggalepih Pendant', Priority = 50 },
+}
 
 local sets = {
     Idle = {
@@ -488,6 +491,7 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 sets.evasion_master_casters_mitts = evasion_master_casters_mitts
 sets.wind_ring = wind_ring
 sets.resentment_cape_override = resentment_cape_override
+sets.uggalepih_pendant = uggalepih_pendant
 profile.Sets = gcmelee.AppendSets(sets)
 
 local ammo = T{'aacid','asleep','abloody','ablind','avenom','anone'}
@@ -615,6 +619,10 @@ profile.HandleWeaponskill = function()
 
     if (action.Name == 'Cyclone') then
         gFunc.EquipSet(sets.WS_Cyclone)
+        local player = gData.GetPlayer()
+        if (player.MPP < 51 and player.MaxMP > 0) then
+            gFunc.EquipSet('uggalepih_pendant')
+        end
     end
 
     if (profile.NeedTH()) then

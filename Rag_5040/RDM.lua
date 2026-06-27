@@ -833,6 +833,10 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_KnightsOfRound)
     elseif (action.Name == 'Cyclone') then
         gFunc.EquipSet(sets.WS_Cyclone)
+        local player = gData.GetPlayer()
+        if (player.MPP < 51) then
+            gFunc.EquipSet('uggalepih_pendant')
+        end
     elseif (action.Name == 'Energy Steal') then
         gFunc.EquipSet(sets.WS_EnergySteal)
     elseif (action.Name == 'Spirits Within') then
