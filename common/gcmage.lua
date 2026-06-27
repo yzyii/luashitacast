@@ -937,7 +937,13 @@ function gcmage.SetupInterimEquipSet(sets, isRanged)
     if (gcdisplay.IdleSet == 'MDT') then interimSet = sets.MDT end
     if (gcdisplay.IdleSet == 'FireRes') then interimSet = sets.FireRes end
     if (gcdisplay.IdleSet == 'IceRes') then interimSet = sets.IceRes end
-    if (gcdisplay.IdleSet == 'LightningRes') then interimSet = sets.LightningRes end
+    if (gcdisplay.IdleSet == 'LightningRes') then
+        interimSet = sets.LightningRes
+        local barthunder = gData.GetBuffCount('Barthunder')
+        if (barthunder == 0) then
+            interimSet = gFunc.Combine(interimSet, sets.LightningRes_NoBarthunder)
+        end
+    end
     if (gcdisplay.IdleSet == 'EarthRes') then interimSet = sets.EarthRes end
     if (gcdisplay.IdleSet == 'WindRes') then interimSet = sets.WindRes end
     if (gcdisplay.IdleSet == 'WaterRes') then interimSet = sets.WaterRes end

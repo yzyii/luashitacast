@@ -335,7 +335,13 @@ function gcinclude.DoDefaultOverride(isMelee)
     end
     if (gcdisplay.IdleSet == 'FireRes') then gFunc.EquipSet('FireRes') end
     if (gcdisplay.IdleSet == 'IceRes') then gFunc.EquipSet('IceRes') end
-    if (gcdisplay.IdleSet == 'LightningRes') then gFunc.EquipSet('LightningRes') end
+    if (gcdisplay.IdleSet == 'LightningRes') then
+        gFunc.EquipSet('LightningRes')
+        local barthunder = gData.GetBuffCount('Barthunder')
+        if (barthunder == 0) then
+            gFunc.EquipSet('LightningRes_NoBarthunder')
+        end
+    end
     if (gcdisplay.IdleSet == 'EarthRes') then gFunc.EquipSet('EarthRes') end
     if (gcdisplay.IdleSet == 'WindRes') then gFunc.EquipSet('WindRes') end
     if (gcdisplay.IdleSet == 'WaterRes') then gFunc.EquipSet('WaterRes') end

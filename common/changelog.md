@@ -640,3 +640,4 @@
 - Mages - Adjust Diabolos' Ring usage on Aspir upwards to 60% from 50%
 - NIN - Split Drain and Aspir sets to allow aspir to be used purely for hate
 - RDM / THF - Add Uggalepih Pendant for Cyclone
+- All Jobs - Adds a LightningRes_NoBarthunder set that is equipped when barthunder is not active for usage of items such as Dream Ribbon or Arete del Sol

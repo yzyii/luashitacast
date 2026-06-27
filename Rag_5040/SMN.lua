@@ -189,6 +189,9 @@ local sets = {
         Legs = { Name = 'Silk Slacks +1', Priority = 60 },
         Feet = { Name = 'Root Sabots', Priority = 60 },
     },
+    LightningRes_NoBarthunder = {
+        Head = 'Dream Ribbon',
+    },
     EarthRes = {
         Main = 'Auster\'s Staff', -- 20
         Head = 'Black Ribbon', -- 12

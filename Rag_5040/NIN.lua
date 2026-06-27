@@ -270,6 +270,9 @@ local sets = {
         Legs = 'Byakko\'s Haidate', -- 50
         Feet = 'Soil Kyahan +1' -- 2
     },
+    LightningRes_NoBarthunder = {
+        Head = 'Dream Ribbon',
+    },
     EarthRes = {
         Main = 'Auster\'s Staff', -- 20
         Sub = 'displaced',

@@ -69,6 +69,7 @@ local sets = {
     FireRes = {},
     IceRes = {},
     LightningRes = {},
+    LightningRes_NoBarthunder = {},
     EarthRes = {},
     WindRes = {},
     WaterRes = {},
