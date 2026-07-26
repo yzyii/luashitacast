@@ -180,8 +180,8 @@ local sets = {
     },
 
     Weapon_Loadout_1 = {
-        Main = 'Blau Dolch',
-        Sub = 'X\'s Knife',
+        Main = 'X\'s Knife',
+        Sub = 'Blau Dolch',
     },
     Weapon_Loadout_2 = {
         Main = 'Blau Dolch',
