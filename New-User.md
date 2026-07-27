@@ -60,7 +60,7 @@ local blue_cotehardie_plus_one = {
 Ignore the fact that one set has local at the front. This is Lua syntax that you do not need to understand.
 
 While setting up these profiles:
-- Do NOT change the names of these sets.
+- Do NOT change the names of these sets or delete them or comment them out.
 - Do NOT create new sets. These profiles already contain all functionality that is required to play the game.
 - Do NOT make changes or edits to these profiles at all outside of editing the contents of sets unless you have very good reason to (you probably don't).
 - If functionality is missing, the correct thing to do is raise an issue as per the [README](README.md)
@@ -113,6 +113,8 @@ e.g.
 
 If you wish to not equip an item, either delete the entire line or "comment out" the line using two dashes i.e. "--". (https://en.wikipedia.org/wiki/Comment_(computer_programming))
 
+Do NOT delete the entire set.
+
 e.g. If I have the following set named "Movement" and wish to remove the Blood Cuisses:
 ```lua
     Movement = {
@@ -140,6 +142,38 @@ The following is incorrect:
         Head = 'Dls. Chapeau +1',
         Legs = '',
     },
+```
+
+e.g. If I have the following set named "Movement" and wish to remove all items from the set:
+
+```lua
+    Movement = {
+        Head = 'Dls. Chapeau +1',
+        Legs = 'Blood Cuisses',
+    },
+```
+
+Either of the following two examples are correct:
+```lua
+    Movement = {
+    },
+```
+```lua
+    Movement = {
+        -- Head = 'Dls. Chapeau +1',
+        -- Legs = 'Blood Cuisses',
+    },
+```
+
+The following two examples are incorrect:
+```lua
+    -- Movement = {
+        -- Head = 'Dls. Chapeau +1',
+        -- Legs = '',
+    -- },
+```
+```lua
+    -- Deleted the entire set.
 ```
 
 ## Example Gear
