@@ -115,7 +115,9 @@ If you wish to not equip an item, either delete the entire line or "comment out"
 
 Do NOT delete the entire set.
 
-e.g. If I have the following set named "Movement" and wish to remove the Blood Cuisses:
+### Example 1
+
+If I have the following set named "Movement" and wish to remove the Blood Cuisses:
 ```lua
     Movement = {
         Head = 'Dls. Chapeau +1',
@@ -144,7 +146,9 @@ The following is incorrect:
     },
 ```
 
-e.g. If I have the following set named "Movement" and wish to remove all items from the set:
+### Example 2
+
+If I have the following set named "Movement" and wish to remove all items from the set:
 
 ```lua
     Movement = {
