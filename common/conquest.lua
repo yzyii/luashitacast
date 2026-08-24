@@ -202,7 +202,7 @@ local function LookupControl(zone)
     end
     local control = regionControllers[region]
     if control == nil then
-        return 'Unknown'
+        return 'N/A'
     else
         return control
     end
@@ -281,7 +281,7 @@ function lib:GetInsideControl()
 end
 
 function lib:GetOutsideControl()
-    if (currentControl == 'Unknown') then
+    if (currentControl == 'N/A') then
         return false
     end
 
