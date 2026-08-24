@@ -260,7 +260,10 @@ function gcmelee.DoDefaultOverride()
     gcinclude.DoDefaultOverride(true)
 
     if (isDPS) then
-        gFunc.EquipSet('Weapon_Loadout_' .. gcdisplay.GetCycle('Weapon Loadout'))
+        local loudout = gcdisplay.GetCycle('Weapon Loadout')
+        if (loadout ~= 'Unknown') then
+            gFunc.EquipSet('Weapon_Loadout_' .. loudout)
+        end
     end
 end
 

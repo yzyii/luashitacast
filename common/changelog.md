@@ -652,3 +652,8 @@
 - RNG - Changes special_ammo to a table to allow multiple different weapon types to be supported within a single lua
 - RDM / WHM - Implements a gated /extra and /mb command
 - Fixes debuff or cancel functionality targeting for sneak
+
+## v3.1.1
+- BRD - Adds nightingale and troubadour checks for song casting speed
+- Fixes conquest to return correct values for non-CoP areas and not use outside of control conquest items
+- Suppresses attempts to equip weapon loadouts on initial game load until cycles are populated
