@@ -638,8 +638,18 @@ function gcmage.SetupMidcastDelay(sets, fastCastValue, cureCastMeritValue)
             end
         end
     end
-    if (action.Type == 'Bard Song' and string.match(action.Name, 'Prelude')) then
-        castTime = 4000
+    if (action.Type == 'Bard Song') then
+        if (string.match(action.Name, 'Prelude')) then
+            castTime = 4000
+        end
+        local nightingale = gData.GetBuffCount("Nightingale")
+        if (nightingale > 0) then
+            castTime = castTime * 0.5
+        end
+        local troubadour = gData.GetBuffCount("Troubadour")
+        if (troubadour > 0) then
+            castTime = castTime * 1.5
+        end
     end
     if (action.Skill == 'Divine Magic' and action.Name == 'Banish III') then
         castTime = 3000
