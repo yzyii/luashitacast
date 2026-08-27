@@ -850,9 +850,9 @@ end
 function gcmage.EquipWeaponLoadout()
     local player = gData.GetPlayer()
     if (player.MainJob ~= 'BLM' and gcdisplay.GetCycle('TP') ~= 'Off' and (player.Status == 'Engaged' or player.TP > 0)) then
-        local loudout = gcdisplay.GetCycle('Weapon Loadout')
+        local loadout = gcdisplay.GetCycle('Weapon Loadout')
         if (loadout ~= 'Unknown') then
-            gFunc.EquipSet('Weapon_Loadout_' .. loudout)
+            gFunc.EquipSet('Weapon_Loadout_' .. loadout)
         end
     end
 end
