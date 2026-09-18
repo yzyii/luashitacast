@@ -3,7 +3,11 @@ local profile = {}
 local fastCastValue = 0.04 -- 4% from gear listed in Precast set not including carbuncles cuffs or evokers boots
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
-local petActionEquipmentDelay = 2.50 -- Approx. 3.25 to 3.5 seconds for a BP to be executed. Do not increase this value beyond ~2.90 to allow for packet delay and the 0.25 sec loop delay on HandleDefault execution.
+-- The period of time LAC will wait before equipping relevant equipment. 
+-- It takes approx. 3.25 to 3.50 seconds for a BP to be executed.
+-- 2.50 seconds is provided as a default conservative value which is typically sufficient worldwide but this value can be decreased if your internet is completely and consistently shit.
+-- Do not increase this value beyond ~2.90 to allow for packet delay and the 0.25 sec loop delay on HandleDefault execution.
+local petActionEquipmentDelay = 2.50
 
 -- The following are provided as convenient saved settings over using the /setmp command. Not all SJs will be covered. e.g. DRG and usage of the command in these cases is required.
 local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set

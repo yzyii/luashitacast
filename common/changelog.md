@@ -657,3 +657,7 @@
 - BRD - Adds nightingale and troubadour checks for song casting speed
 - Fixes conquest to return correct values for non-CoP areas and not use outside of control conquest items
 - Suppresses attempts to equip weapon loadouts on initial game load until cycles are populated
+
+## v3.1.2
+- PLD - Adds a Flash_Double_March set for haste optimization
+- Adds a placeholder BLU / COR / PUP file so that job changes to these jobs and back to other jobs will work without issues.

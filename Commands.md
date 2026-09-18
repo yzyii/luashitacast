@@ -160,8 +160,10 @@ Alternatively, use /nextpet to cycle through them.
 
 ## Additional Commands for THF:
 ```
-/th - forces you to equip TH gear when TP-ing in case you have a tinfoil hat.
-      Will also force you to equip TH gear when using a ranged attack and ability.
+/th - cycles between an auto mode where TH will only applied on first action on a mob
+      an On mode that will equip TH on all actions and an Off mode that will not equip
+      TH at all.
+      TH is implemented for Ranged and Melee Attacks, JAs, and Spells.
 
 All of the following toggles set what bolt ammo will be used.
 /aacid

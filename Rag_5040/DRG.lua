@@ -3,7 +3,11 @@ local profile = {}
 local fastCastValue = 0.07 -- 0% from gear listed in Precast set
 local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
-local petActionEquipmentDelay = 2.50 -- Approx. 3.25 to 3.5 seconds for a Breath to be executed. Do not increase this value beyond ~2.90 to allow for packet delay and the 0.25 sec loop delay on HandleDefault execution.
+-- The period of time LAC will wait before equipping relevant equipment. 
+-- It takes approx. 3.25 to 3.50 seconds for a Breath to be executed.
+-- 2.50 seconds is provided as a default conservative value which is typically sufficient worldwide but this value can be decreased if your internet is completely and consistently shit.
+-- Do not increase this value beyond ~2.90 to allow for packet delay and the 0.25 sec loop delay on HandleDefault execution.
+local petActionEquipmentDelay = 2.50
 
 -- The following is provided as a convenient saved setting over using the /sethp command. HP will fluctuate with SJ and usage of the command for this is required.
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- Set this to 0 if you do not wish to ever use regen gear.
