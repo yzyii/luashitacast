@@ -261,6 +261,10 @@ local sets = {
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
+
+    WeaponBash = {
+        Main = 'Terra\'s Staff',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -398,6 +402,8 @@ profile.HandleAbility = function()
     elseif (action.Type == 'Ready') then
         petActionDelay = os.clock()
     end
+
+    gcmelee.DoWeaponBash()
 end
 
 profile.HandleItem = function()

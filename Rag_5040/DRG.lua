@@ -303,6 +303,10 @@ local sets = {
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
         Feet = { Name = 'Homam Gambieras', Priority = 70 },
     },
+
+    WeaponBash = {
+        Main = 'Orichalcum Lance',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -347,6 +351,8 @@ profile.HandleAbility = function()
     elseif (action.Name == 'Spirit Link') then
         gFunc.EquipSet(sets.HealingBreath_SteadyWing_SpiritLink)
     end
+
+    gcmelee.DoWeaponBash()
 end
 
 profile.HandleItem = function()

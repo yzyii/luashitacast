@@ -286,6 +286,10 @@ local sets = {
         Legs = { Name = 'Kaiser Diechlings', Priority = 60 },
         Feet = { Name = 'Ucn. Leggings +1', Priority = 60 },
     },
+
+    WeaponBash = {
+        Main = 'Byakko\'s Axe',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -320,6 +324,8 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Jump)
         gFunc.EquipSet(sets.HighJump)
     end
+
+    gcmelee.DoWeaponBash()
 end
 
 profile.HandleItem = function()

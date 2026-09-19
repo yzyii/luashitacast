@@ -35,6 +35,9 @@ local dream_mittens = {
 local skulkers_cape = {
     -- Back = 'Skulker\'s Cape',
 }
+local storm_crackows = {
+    Feet = 'Storm Crackows',
+}
 
 -- Disabled on horizon_legal_mode
 local opo_opo_necklace = {
@@ -96,6 +99,8 @@ local Towns = T{
 local Sandy = T{ 'Southern San d\'Oria [S]','Southern San d\'Oria','Northern San d\'Oria','Port San d\'Oria','Chateau d\'Oraguille' }
 local Bastok = T{ 'Bastok Markets [S]','Bastok Mines','Bastok Markets','Port Bastok','Metalworks' }
 local Windy = T{ 'Windurst Waters [S]','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower' }
+
+local Assault = T{ 'Zhayolm Remnants','Periqia','Ilrusi Atoll','Mamool Ja Training Grounds','Lebros Caverns','Leujoaom Sanctum','Nyzul Isle','The Ashu Talif' }
 
 local OverrideNameTable = {
     ['idle'] = 'Idle',
@@ -318,17 +323,23 @@ function gcinclude.DoDefaultOverride(isMelee)
             or gcdisplay.IdleSet == 'Evasion'
             or gcdisplay.IdleSet == 'Override'
         ) then
+            if (gcinclude.IsInAssault()) then
+                gFunc.EquipSet('storm_crackows')
+            end
             gFunc.EquipSet('Movement')
         end
 
         if (player.Status == 'Engaged') then
+            if (gcinclude.IsInAssault()) then
+                gFunc.EquipSet('storm_crackows')
+            end
             gFunc.EquipSet('Movement')
             gFunc.EquipSet('Movement_TP')
         end
     end
 
-    if (gcdisplay.IdleSet == 'MDT')
-        then gFunc.EquipSet('MDT')
+    if (gcdisplay.IdleSet == 'MDT') then 
+        gFunc.EquipSet('MDT')
         if (conquest:GetOutsideControl() and not notResentmentCapeJobs:contains(player.MainJob)) then
             gFunc.EquipSet('resentment_cape')
         end
@@ -395,6 +406,32 @@ function gcinclude.DoAbility()
     end
 end
 
+function gcinclude.DoWeaponBash()
+    local action = gData.GetAction()
+    if (action.Name == 'Weapon Bash') then
+        local main = gData.GetEquipment().Main
+        if (main ~= nil) then
+            if (main.Resource.Slots ~= 1) then -- if this is not a 2h weapon
+                gFunc.EquipSet('WeaponBash')
+            elseif (main.Resource.Skill == 1) then -- if this is a h2h weapon
+                gFunc.EquipSet('WeaponBash')
+            end
+        else
+            gFunc.EquipSet('WeaponBash')
+        end
+    end
+end
+
+function gcinclude.IsInAssault()
+    local environment = gData.GetEnvironment()
+
+    if (environment.Area ~= nil) and (Assault:contains(environment.Area)) then
+        return true
+    end
+
+    return false
+end
+
 local timePointer = ashita.memory.find('FFXiMain.dll', 0, '8B0D????????8B410C8B49108D04808D04808D04808D04C1C3', 2, 0)
 function gcinclude.GetTimeUTC()
     local ptr = ashita.memory.read_uint32(timePointer)
@@ -448,6 +485,7 @@ function gcinclude.AppendSets(sets)
     sets.dream_boots = dream_boots
     sets.dream_mittens = dream_mittens
     sets.skulkers_cape = skulkers_cape
+    sets.storm_crackows = storm_crackows
     sets.opo_opo_necklace = opo_opo_necklace
 
     return sets

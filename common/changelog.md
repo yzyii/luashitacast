@@ -661,3 +661,9 @@
 ## v3.1.2
 - PLD - Adds a Flash_Double_March set for haste optimization
 - Adds a placeholder BLU / COR / PUP file so that job changes to these jobs and back to other jobs will work without issues.
+
+## v3.1.3
+- All Mages - Adds Diabolos Ring for Bio under 85% MP
+- All Jobs - Adds a Weapon Bash set for usage when /DRK
+- Implements a rudimentary helper function on gcinclude for assault zone lookup. Storm Crackows are implemented as an example usage
+- Adds a check for signet/sanction/sigil for conquest items

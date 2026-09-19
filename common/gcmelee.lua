@@ -445,6 +445,10 @@ function gcmelee.DoAbility()
     gcinclude.DoAbility()
 end
 
+function gcmelee.DoWeaponBash()
+    gcinclude.DoWeaponBash()
+end
+
 function gcmelee.AppendSets(sets)
     sets.fenrirs_earring = fenrirs_earring
     sets.muscle_belt = muscle_belt

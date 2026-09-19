@@ -475,6 +475,10 @@ local sets = {
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
         Feet = { Name = 'Homam Gambieras', Priority = 70 },
     },
+
+    WeaponBash = {
+        Main = 'Terra\'s Staff',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -545,6 +549,8 @@ profile.HandleAbility = function()
     if (profile.NeedTH()) then
         gFunc.EquipSet(sets.TH)
     end
+
+    gcmelee.DoWeaponBash()
 end
 
 profile.HandleItem = function()

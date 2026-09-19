@@ -648,6 +648,10 @@ local sets = {
     StoneskinExtra = {},
     PhalanxExtra = {},
     MB = {},
+
+    WeaponBash = {
+        Main = 'Terra\'s Staff',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -681,6 +685,8 @@ profile.HandleAbility = function()
     if (action.Name == 'Benediction') then
         gFunc.EquipSet(sets.Benediction)
     end
+
+    gcmage.DoWeaponBash()
 end
 
 profile.HandleItem = function()

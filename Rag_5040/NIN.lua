@@ -640,6 +640,10 @@ local sets = {
         Legs = { Name = 'Kog. Hakama +1', Priority = 60 },
         Feet = { Name = 'Dusk Ledelsens +1', Priority = 60 },
     },
+
+    WeaponBash = {
+        Main = 'Terra\'s Staff',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -726,6 +730,8 @@ profile.HandleAbility = function()
     gcmelee.DoAbility()
 
     gFunc.EquipSet(sets.Hate)
+
+    gcmelee.DoWeaponBash()
 end
 
 profile.HandleItem = function()

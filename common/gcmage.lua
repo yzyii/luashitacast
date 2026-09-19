@@ -1207,7 +1207,7 @@ function gcmage.EquipDark(maxMP)
     end
 
     if (environment.DayElement == 'Dark') then
-        if (player.MPP <= 85 and action.Name == 'Drain') then
+        if (player.MPP <= 85 and (action.Name == 'Drain' or string.match(action.Name, 'Bio'))) then
             if (maxMP == 0 or player.MP < maxMP * 0.85) then
                 gFunc.EquipSet('diabolos_ring')
             end
@@ -1312,6 +1312,10 @@ function gcmage.DoAbility()
     if (action.Name == 'Release') then
         lastSummoningElement = ''
     end
+end
+
+function gcmage.DoWeaponBash()
+    gcinclude.DoWeaponBash()
 end
 
 function gcmage.AppendSets(sets)

@@ -782,6 +782,10 @@ local sets = {
     StoneskinExtra = {},
     PhalanxExtra = {},
     MB = {},
+
+    WeaponBash = {
+        Main = 'Terra\'s Staff',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -808,6 +812,7 @@ local nextFencersRingCheck = 0
 
 profile.HandleAbility = function()
     gcmage.DoAbility()
+    gcmage.DoWeaponBash()
 end
 
 profile.HandleItem = function()

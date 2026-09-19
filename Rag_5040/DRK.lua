@@ -533,6 +533,10 @@ local sets = {
         Legs = { Name = 'Blood Cuisses', Priority = 70 },
         Feet = { Name = 'Homam Gambieras', Priority = 70 },
     },
+
+    WeaponBash = {
+        Main = 'Tredecim Scythe',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -592,6 +596,8 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.Jump)
         gFunc.EquipSet(sets.HighJump)
     end
+
+    gcmelee.DoWeaponBash()
 end
 
 profile.HandleItem = function()

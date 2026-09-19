@@ -546,6 +546,10 @@ local sets = {
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
         Feet = { Name = 'Rostrum Pumps', Priority = 10 },
     },
+
+    WeaponBash = {
+        Main = 'Terra\'s Staff',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -567,6 +571,7 @@ profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmage.DoAbility()
+    gcmage.DoWeaponBash()
 end
 
 profile.HandleItem = function()

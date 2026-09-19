@@ -467,6 +467,10 @@ local sets = {
         Legs = { Name = 'Evk. Spats +1', Priority = 50 },
         Feet = { Name = 'Evk. Pigaches +1', Priority = 50 },
     },
+
+    WeaponBash = {
+        Main = 'Terra\'s Staff',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -512,6 +516,8 @@ profile.HandleAbility = function()
         gFunc.EquipSet('BP_Delay')
         petActionDelay = os.clock()
     end
+
+    gcmage.DoWeaponBash()
 end
 
 profile.HandleItem = function()

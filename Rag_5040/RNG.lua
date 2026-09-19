@@ -320,6 +320,10 @@ local sets = {
         Legs = { Name = 'Dusk Trousers +1', Priority = 60 },
         Feet = { Name = 'Root Sabots', Priority = 60 },
     },
+
+    WeaponBash = {
+        Main = 'Terra\'s Staff',
+    },
 }
 
 profile.SetMacroBook = function()
@@ -479,6 +483,8 @@ profile.HandleAbility = function()
             cancel_if_special_ammo_equipped(ammo_name)
         end
     end
+
+    gcmelee.DoWeaponBash()
 end
 
 profile.HandleItem = function()

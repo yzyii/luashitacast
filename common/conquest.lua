@@ -277,11 +277,25 @@ function lib:GetZoneControl(zone)
 end
 
 function lib:GetInsideControl()
+    local signet = gData.GetBuffCount('Signet')
+    local sanction = gData.GetBuffCount('Sanction')
+    local sigil = gData.GetBuffCount('Sigil')
+    if (signet == 0 and sanction == 0 and sigil == 0) then
+        return false
+    end
+
     return (currentControl == currentNation)
 end
 
 function lib:GetOutsideControl()
     if (currentControl == 'N/A') then
+        return false
+    end
+
+    local signet = gData.GetBuffCount('Signet')
+    local sanction = gData.GetBuffCount('Sanction')
+    local sigil = gData.GetBuffCount('Sigil')
+    if (signet == 0 and sanction == 0 and sigil == 0) then
         return false
     end
 
