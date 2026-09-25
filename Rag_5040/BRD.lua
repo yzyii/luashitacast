@@ -600,7 +600,7 @@ profile.OnLoad = function()
     gcdisplay.CreateToggle('SmallBallad', false)
     gcdisplay.CreateToggle('SmallHorde', false)
     gcdisplay.CreateToggle('SleepRecast', true)
-    gcmage.Load(310)
+    gcmage.Load(320)
     profile.SetMacroBook()
 end
 

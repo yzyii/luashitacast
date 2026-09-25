@@ -460,7 +460,7 @@ function gcmelee.AppendSets(sets)
 end
 
 function gcmelee.GetVer()
-    return 310
+    return 320
 end
 
 return gcmelee

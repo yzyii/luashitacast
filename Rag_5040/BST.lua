@@ -428,7 +428,7 @@ profile.OnLoad = function()
     gcinclude.SetAlias(pets)
     gcinclude.SetAlias(T{'nextpet'})
     gcdisplay.CreateCycle('Pet', PetTable1)
-    gcmelee.Load(310)
+    gcmelee.Load(320)
     profile.SetMacroBook()
 end
 
