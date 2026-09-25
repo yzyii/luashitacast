@@ -356,6 +356,7 @@ local sets = {
     Banish = {},
     Dark = {},
     Stun = {},
+    StunACC = {},
 
     Nuke = {},
     NukeACC = {},

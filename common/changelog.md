@@ -667,3 +667,8 @@
 - All Jobs - Adds a Weapon Bash set for usage when /DRK
 - Implements a rudimentary helper function on gcinclude for assault zone lookup. Storm Crackows are implemented as an example usage
 - Adds a check for signet/sanction/sigil for conquest items
+
+## v3.2.0
+- All Mages - Adds a StunACC set used when /mode = Accuracy. Fixes Obi usage to only be used when StunACC is being used.
+- SAM - Adds fenrir's earring for Namas Arrow usage
+- BST - Adds a Cure set

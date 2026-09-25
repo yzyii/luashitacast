@@ -1197,34 +1197,41 @@ function gcmage.EquipDark(maxMP)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
 
+    local ignoreACC = false
+
     gFunc.EquipSet('Dark')
     if (action.Name == 'Stun') then
         gFunc.EquipSet('Stun')
+
         local chainspell = gData.GetBuffCount('Chainspell')
-        if (chainspell > 0) then
+		if (chainspell > 0 or gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('StunACC')
+        else
+            ignoreACC = true
+		end
+    else
+        if (environment.DayElement == 'Dark') then
+            if (player.MPP <= 85 and (action.Name == 'Drain' or string.match(action.Name, 'Bio'))) then
+                if (maxMP == 0 or player.MP < maxMP * 0.85) then
+                    gFunc.EquipSet('diabolos_ring')
+                end
+            elseif (player.MPP <= 60 and action.Name == 'Aspir') then
+                if (maxMP == 0 or player.MP < maxMP * 0.60) then
+                    gFunc.EquipSet('diabolos_ring')
+                end
+            end
+        end
+        if (DiabolosPoleSpells:contains(action.Name)) then
+            gFunc.EquipSet('overlords_ring')
         end
     end
 
-    if (environment.DayElement == 'Dark') then
-        if (player.MPP <= 85 and (action.Name == 'Drain' or string.match(action.Name, 'Bio'))) then
-            if (maxMP == 0 or player.MP < maxMP * 0.85) then
-                gFunc.EquipSet('diabolos_ring')
-            end
-        elseif (player.MPP <= 60 and action.Name == 'Aspir') then
-            if (maxMP == 0 or player.MP < maxMP * 0.60) then
-                gFunc.EquipSet('diabolos_ring')
-            end
+    if (not ignoreACC) then
+        if (environment.WeatherElement == 'Dark') and (not dark_and_abyssal_earrings) then
+            gFunc.EquipSet('diabolos_earring')
         end
+        gcmage.EquipObi(action)
     end
-    if (DiabolosPoleSpells:contains(action.Name)) then
-        gFunc.EquipSet('overlords_ring')
-    end
-    if (environment.WeatherElement == 'Dark') and (not dark_and_abyssal_earrings) then
-        gFunc.EquipSet('diabolos_earring')
-    end
-
-    gcmage.EquipObi(action)
 end
 
 function gcmage.EquipDivine(maxMP, extraMPThreshold)

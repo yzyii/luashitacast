@@ -8,8 +8,12 @@ local max_hp_in_idle_with_regen_gear_equipped = 0 -- Set this to 0 if you do not
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local using_both_amano_and_yoichi = false
-local using_both_amano_and_yoichi_special_arrow = {
+local using_both_amano_and_yoichi_special_arrow = { -- Note that this set is specifically only for those that own both relics. If you only own Yoichi, simply include the arrow within your weapon loadout
     Ammo = 'T.K. Arrow',
+}
+
+local rng_fenrirs_earring = { -- Used always if active
+    Ear2 = 'Fenrir\'s Earring',
 }
 
 local sets = {
@@ -307,6 +311,7 @@ Everything below can be ignored.
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 sets.using_both_amano_and_yoichi_special_arrow = using_both_amano_and_yoichi_special_arrow
+sets.rng_fenrirs_earring = rng_fenrirs_earring
 profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
@@ -397,6 +402,8 @@ profile.HandleWeaponskill = function()
     gcmelee.DoFenrirsEarring()
 
     local action = gData.GetAction()
+    local environment = gData.GetEnvironment()
+
     if (action.Name == 'Tachi: Yukikaze') then
         gFunc.EquipSet(sets.WS_Yukikaze)
     elseif (action.Name == 'Tachi: Gekko') then
@@ -411,6 +418,9 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_PentaThrust)
     elseif (action.Name == 'Namas Arrow') then
         gFunc.EquipSet(sets.WS_NamasArrow)
+        if (environment.Time < 6 or environment.Time >= 18) then
+            gFunc.EquipSet(sets.rng_fenrirs_earring)
+        end
     end
 
     local meikyo = gData.GetBuffCount('Meikyo Shisui')
@@ -424,6 +434,9 @@ profile.HandleWeaponskill = function()
             gFunc.EquipSet(sets.WS_2H_PentaThrust)
         elseif (action.Name == 'Namas Arrow') then
             gFunc.EquipSet(sets.WS_2H_NamasArrow)
+            if (environment.Time < 6 or environment.Time >= 18) then
+                gFunc.EquipSet(sets.rng_fenrirs_earring)
+            end
         end
     end
 
