@@ -494,6 +494,7 @@ end
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
 
+    local action = gData.GetAction()
     if (string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga')) then
         gFunc.EquipSet(sets.Cure)
     end
