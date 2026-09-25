@@ -265,6 +265,8 @@ local sets = {
     WeaponBash = {
         Main = 'Terra\'s Staff',
     },
+
+    Cure = {},
 }
 
 profile.SetMacroBook = function()
@@ -491,6 +493,10 @@ end
 
 profile.HandleMidcast = function()
     gcmelee.DoMidcast(sets)
+
+    if (string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga')) then
+        gFunc.EquipSet(sets.Cure)
+    end
 end
 
 return profile
