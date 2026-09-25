@@ -66,11 +66,18 @@ While TP-ing on a potentially dual wielding Job while /NIN. e.g. RDM, WAR, THF:
         Ear1 = 'Brutal Earring',
         Ear2 = 'Stealth Earring',
     },
+
+    Weapon_Loadout_1 = {
+        Main = 'Martial Bhuj',
+        Ammo = 'Bomb Core'
+    },
 ```
 
 The final composition of all these sets would result in the following set being equipped when /NIN and if the HighAcc tp mode is being used:
 ```lua
     Final_Set = {
+        Main = 'Martial Bhuj',
+        Ammo = 'Bomb Core'
         Ear1 = 'Brutal Earring',
         Ear2 = 'Stealth Earring',
         Waist = 'Life Belt',
@@ -100,11 +107,18 @@ The following sets fix the issue pointed out previously:
     TP_NIN = {
         Ear2 = 'Stealth Earring',
     },
+
+    Weapon_Loadout_1 = {
+        Main = 'Martial Bhuj',
+        Ammo = 'Bomb Core'
+    },
 ```
 
 The final composition of all these sets would result in the following set being equipped when /NIN and if the HighAcc tp mode is being used:
 ```lua
     Final_Set = {
+        Main = 'Martial Bhuj',
+        Ammo = 'Bomb Core'
         Ear1 = 'Hollow Earring',
         Ear2 = 'Stealth Earring',
         Waist = 'Life Belt',
@@ -114,10 +128,29 @@ The final composition of all these sets would result in the following set being 
 Note how if HighACC tp mode were turned off, the final composition would still instead result in the following desired set for LowAcc tp mode when /NIN:
 ```lua
     Final_Set = {
+        Main = 'Martial Bhuj',
+        Ammo = 'Bomb Core'
         Ear1 = 'Brutal Earring',
         Ear2 = 'Stealth Earring',
         Waist = 'Sonic Belt',
     },
 ```
 
+## Weapon Loadout Sets
 
+You may have noticed that Weapon_Loadout_1 was included in these examples.
+
+The Weapon_Loadout_X sets (where X is 1, 2 or 3) are simply another TP set that are applied on top of all other sets.
+
+Weapon Loadout sets can also include items other than weapons.
+
+The SAM.lua includes the following example of a Weapon Loadout set which is used to create a polearm specific TP set - Equipping a Love Torque for Polearm Skill and Hachiman Kote +1 for Store TP:
+```lua
+    Weapon_Loadout_2 = {
+        Main = 'Leviathan\'s Couse',
+        Range = 'displaced',
+        Ammo = { Name = 'Tiphia Sting', Priority = -20 },
+        Neck = 'Love Torque',
+        Hands = 'Hachiman Kote +1',
+    },
+```
