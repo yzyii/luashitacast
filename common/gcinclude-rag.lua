@@ -36,7 +36,7 @@ local skulkers_cape = {
     -- Back = 'Skulker\'s Cape',
 }
 local storm_crackows = {
-    Feet = 'Storm Crackows',
+    -- Feet = 'Storm Crackows',
 }
 
 -- Disabled on horizon_legal_mode

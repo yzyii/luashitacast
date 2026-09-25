@@ -101,7 +101,7 @@
 ```
 /tp /tpset /mode - toggles TP set between a LowAcc and HighAcc set.
                    this will be overwritten if you have a DT or resistance set etc. enabled.
-                   this is disabled for PLD in favour of using Idle sets by default.
+                   this is disabled on PLD in favour of using Idle sets by default. See: /dps
 /sethp [number]  - sets the HP under which regen gear will be used.
                    this will override the convenience value located in your .lua file.
                    /addhp will still work as per normal in conjunction with this.
