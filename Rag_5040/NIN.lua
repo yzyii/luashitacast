@@ -539,10 +539,6 @@ local sets = {
     },
 
     TP_LowAcc = {
-        Main = 'Senjuinrikio', -- These weapons / ranged items are populated here purely for white hits while staff tanking in weapon loadout 1
-        Sub = 'Unji',
-        Range = 'displaced',
-        Ammo = 'Bomb Core',
         Head = 'Panther Mask +1',
         Neck = 'Hope Torque',
         Ear1 = 'Brutal Earring',
