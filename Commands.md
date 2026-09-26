@@ -195,6 +195,8 @@ Alternatively, use /ammo to cycle through them.
 /staff - toggles between always switching to staff for spells or not.
          This is typically used in conjunction with the /dps command and an
          empty weapon loadout to result in staff tanking even while engaged.
+         This can also be used while using regular melee weapons for additional white hit 
+         damage and will simply continually dump TP on spell cast.
 /sring - toggles usage of Shinobi Ring.
 /bat   - forces bat earring to equip if /evasion is already toggled on.
          this command is only available in horizon_safe_mode as this is already
