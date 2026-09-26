@@ -267,6 +267,8 @@ local sets = {
     },
 
     Cure = {},
+    Enhancing = {},
+    Stoneskin = {},
 }
 
 profile.SetMacroBook = function()
@@ -497,6 +499,11 @@ profile.HandleMidcast = function()
     local action = gData.GetAction()
     if (string.match(action.Name, 'Cure') or string.match(action.Name, 'Curaga')) then
         gFunc.EquipSet(sets.Cure)
+    elseif (action.Skill == 'Enhancing Magic') then
+        gFunc.EquipSet(sets.Enhancing)
+        if (action.Name == 'Stoneskin') then
+            gFunc.EquipSet(sets.Stoneskin)
+        end
     end
 end
 

@@ -557,37 +557,37 @@ profile.HandleWeaponskill = function()
         if (gcdisplay.GetToggle('HNM')) then
             gFunc.EquipSet(sets.WS_Ranged_HNM)
         end
-    end
 
-    if (action.Name == 'Namas Arrow') then
-        gFunc.EquipSet(sets.WS_NamasArrow)
-    else
-        if (action.Name == 'Heavy Shot') then
-            gFunc.EquipSet(sets.WS_HeavyShot)
-        elseif (action.Name == 'Detonator') then
-            gFunc.EquipSet(sets.WS_Detonator)
-        elseif (action.Name == 'Slug Shot') then
-            gFunc.EquipSet(sets.WS_SlugShot)
-        elseif (action.Name == 'Coronach') then
-            gFunc.EquipSet(sets.WS_Coronach)
-        elseif (action.Name == 'Arching Arrow') then
-            gFunc.EquipSet(sets.WS_ArchingArrow)
-        elseif (action.Name == 'Empyreal Arrow') then
-            gFunc.EquipSet(sets.WS_EmpyrealArrow)
-        elseif (action.Name == 'Sidewinder') then
-            gFunc.EquipSet(sets.WS_Sidewinder)
-        end
-
-        local ammo_name = resolve_special_ammo_name()
-        if (should_use_special_ammo(buffer_ja_ws)) then
-            equip_special_ammo(ammo_name)
+        if (action.Name == 'Namas Arrow') then
+            gFunc.EquipSet(sets.WS_NamasArrow)
         else
-            cancel_if_special_ammo_equipped(ammo_name)
-        end
-    end
+            if (action.Name == 'Heavy Shot') then
+                gFunc.EquipSet(sets.WS_HeavyShot)
+            elseif (action.Name == 'Detonator') then
+                gFunc.EquipSet(sets.WS_Detonator)
+            elseif (action.Name == 'Slug Shot') then
+                gFunc.EquipSet(sets.WS_SlugShot)
+            elseif (action.Name == 'Coronach') then
+                gFunc.EquipSet(sets.WS_Coronach)
+            elseif (action.Name == 'Arching Arrow') then
+                gFunc.EquipSet(sets.WS_ArchingArrow)
+            elseif (action.Name == 'Empyreal Arrow') then
+                gFunc.EquipSet(sets.WS_EmpyrealArrow)
+            elseif (action.Name == 'Sidewinder') then
+                gFunc.EquipSet(sets.WS_Sidewinder)
+            end
 
-    if (player.SubJob == 'SAM') then
-        gFunc.EquipSet(sets.WS_SJ_SAM)
+            local ammo_name = resolve_special_ammo_name()
+            if (should_use_special_ammo(buffer_ja_ws)) then
+                equip_special_ammo(ammo_name)
+            else
+                cancel_if_special_ammo_equipped(ammo_name)
+            end
+        end
+
+        if (player.SubJob == 'SAM') then
+            gFunc.EquipSet(sets.WS_SJ_SAM)
+        end
     end
 end
 

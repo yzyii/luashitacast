@@ -672,3 +672,7 @@
 - All Mages - Adds a StunACC set used when /mode = Accuracy. Fixes Obi usage to only be used when StunACC is being used.
 - SAM - Adds fenrir's earring for Namas Arrow usage
 - BST - Adds a Cure set
+
+## v3.2.1
+- BST - Adds an Enhancing and Stoneskin set
+- COR - First pass at implementing the job
