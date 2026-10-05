@@ -246,7 +246,7 @@ profile.HandleAbility = function()
         gFunc.EquipSet(sets.QuickDraw_DMG)
 
         local player = gData.GetPlayer()
-        if (player.MPP < 51) then
+        if (player.MPP < 51 and player.MaxMP > 0) then
             gFunc.EquipSet(sets.uggalepih_pendant)
         end
         if (conquest:GetInsideControl()) then
@@ -313,7 +313,7 @@ profile.HandleWeaponskill = function()
             gFunc.EquipSet(sets.WS_SlugShot)
         elseif (action.Name == 'Leaden Salute') then
             gFunc.EquipSet(sets.WS_Leaden_Salute)
-            if (player.MPP < 51) then
+            if (player.MPP < 51 and player.MaxMP > 0) then
                 gFunc.EquipSet(sets.uggalepih_pendant)
             end
             if (conquest:GetInsideControl()) then

@@ -979,7 +979,7 @@ profile.HandleMidcast = function()
             if (gcdisplay.GetCycle('Nuke') == 'Accuracy') then
                 gFunc.EquipSet(sets.NinElemental_Accuracy)
             end
-            if (action.MppAftercast < 51) then
+            if (player.MPP < 51 and player.MaxMP > 0) then
                 gFunc.EquipSet('uggalepih_pendant')
             end
             EquipStaffAndObi(action)
