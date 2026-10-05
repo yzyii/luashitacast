@@ -235,7 +235,7 @@ profile.HandleAbility = function()
 
     local action = gData.GetAction()
 
-    if (PhantomRolls:contains(action.Name)) then
+    if (PhantomRolls:contains(action.Name) or (action.Name == 'Double-Up')) then
         gFunc.EquipSet(sets.PhantomRoll)
         if (gcdisplay.GetToggle('Luzaf')) then
             gFunc.EquipSet(sets.luzafs_ring)

@@ -205,6 +205,15 @@ Alternatively, use /ammo to cycle through them.
 
 ## Additional Commands for RNG:
 ```
-/ranged - switches Ranged Attacks between Attack and Accuracy modes / sets.
+/ranged - toggles Ranged Attacks between Attack and Accuracy modes / sets.
 /hnm    - uses HNM relevant ranged sets (i.e. -enmity sets).
+```
+
+## Additional Commands for COR:
+```
+/luzaf         - Use's Luzaf's Ring
+/ranged        - toggles Ranged Attacks between Attack and Accuracy modes / sets.
+/quickdraw /qd - toggles Quick Draw sets between Damage and Accuracy modes / sets.
+/staff         - toggles between always switching to staff for spells and quick draw or not.
+                 i.e. turning this on will dump TP when you cast a spell or use quick draw.
 ```
