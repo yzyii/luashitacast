@@ -100,7 +100,7 @@ local Sandy = T{ 'Southern San d\'Oria [S]','Southern San d\'Oria','Northern San
 local Bastok = T{ 'Bastok Markets [S]','Bastok Mines','Bastok Markets','Port Bastok','Metalworks' }
 local Windy = T{ 'Windurst Waters [S]','Windurst Waters','Windurst Walls','Port Windurst','Windurst Woods','Heavens Tower' }
 
-local Assault = T{ 'Zhayolm Remnants','Periqia','Ilrusi Atoll','Mamool Ja Training Grounds','Lebros Caverns','Leujoaom Sanctum','Nyzul Isle','The Ashu Talif' }
+local Assault = T{ 'Arrapago Remnants','Bhaflau Remnants','Silver Sea Remnants','Zhayolm Remnants','Periqia','Ilrusi Atoll','Mamool Ja Training Grounds','Lebros Caverns','Leujoaom Sanctum','Nyzul Isle','The Ashu Talif' }
 
 local OverrideNameTable = {
     ['idle'] = 'Idle',
