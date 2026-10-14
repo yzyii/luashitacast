@@ -676,3 +676,4 @@
 ## v3.2.1
 - BST - Adds an Enhancing and Stoneskin set
 - COR - First pass at implementing the job
+- Adds missing Remnant assault areas
