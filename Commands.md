@@ -10,7 +10,6 @@
 
 /weapon /wl - toggles between using Weapon_Loadout sets.
               can be used to specify different weapon loadouts. e.g. virtue stones etc.
-              there is no UI element for this.
               an argument can be given to jump directly to the given weapon loadout.
               e.g. /wl 3 will go directly to Weapon_Loadout_3
 
