@@ -154,3 +154,5 @@ The SAM.lua includes the following example of a Weapon Loadout set which is used
         Hands = 'Hachiman Kote +1',
     },
 ```
+
+Note that for the purposes of TP retention, Weapon Loadout sets take precedence over all sets including sets typically used to override regular Idle / TP behaviour such as Elemental Resistance sets or Evasion sets. For this reason, it is suggested that you avoid using them as much as possible outside of defining the 4 TP slots - Main, Sub, Range and Ammo.
