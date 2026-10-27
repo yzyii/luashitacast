@@ -1,4 +1,4 @@
-# Idle Commands:
+## Idle Commands for All Jobs:
 
 The following commands change the behaviour of what your character will idle or tp in as well as the behaviour of interim sets used while casting spells or performing ranged attacks etc.
 
@@ -38,7 +38,7 @@ The following commands change the behaviour of what your character will idle or 
               e.g. /wl 3 will go directly to Weapon_Loadout_3
 ```
 
-# Additional Default Commands for All Jobs:
+## Additional Default Commands for All Jobs:
 ```
 [Regular Commands]
 /lock - locks or unlocks all equipment.
