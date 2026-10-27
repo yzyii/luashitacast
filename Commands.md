@@ -2,9 +2,9 @@
 
 The following commands change the behaviour of what your character will idle or tp in as well as the behaviour of interim sets used while casting spells or performing ranged attacks etc.
 
-For Idle Sets i.e. Idle and IdleALT, when performing an action, SIRD sets will be used as interim sets.
-For Override Sets i.e. PDT, MDT, Resistance, Evasion or the Override set, the same set will be used as interim sets.
-Weapon Loadout sets are overlaid over the top of all sets as noted in [Composition](Composition.md)
+- For Idle Sets i.e. Idle and IdleALT, when performing an action, SIRD sets will be used as interim sets.
+- For Override Sets i.e. PDT, MDT, Resistance, Evasion or the Override set, the same set will be used as interim sets.
+- Weapon Loadout sets are overlaid over the top of all sets as noted in [Composition](Composition.md)
 
 ```
 [Idle Sets]
