@@ -1,21 +1,17 @@
-# Default Commands:
+# Idle Commands:
+
+The following commands change the behaviour of what your character will idle or tp in as well as the behaviour of interim sets used while casting spells or performing ranged attacks etc.
+
+For Idle Sets i.e. Idle and IdleALT, when performing an action, SIRD sets will be used as interim sets.
+For Override Sets i.e. PDT, MDT, Resistance, Evasion or the Override set, the same set will be used as interim sets.
+Weapon Loadout sets are overlaid over the top of all sets as noted in [Composition](Composition.md)
+
 ```
-[Regular Toggles]
-/lock - locks or unlocks all equipment.
-/kite - toggles Kite set on/off.
-        /kite always takes precedence over any other set overrides active.
-        e.g. if you have /kite and /fireres toggled on,
-        it will equip the kite set instead of or on top of the fire resistance set.
-        this allows you to gain 12% move speed while keeping most of your fire resistance.
-
-/weapon /wl - toggles between using Weapon_Loadout sets.
-              can be used to specify different weapon loadouts. e.g. virtue stones etc.
-              an argument can be given to jump directly to the given weapon loadout.
-              e.g. /wl 3 will go directly to Weapon_Loadout_3
-
-[Idle Sets] (Changes your idle set to use these sets instead)
+[Idle Sets]
 /idle    - toggles between using 2 different idle sets
            i.e. Normal and Alternate / Idle and IdleALT.
+
+[Override Sets]
 /dt /pdt - toggles DT set on/off.
 /mdt     - toggles MDT set on/off.
 
@@ -34,6 +30,23 @@
                 HELM/Fishing/Crafting sets, as it will simply override your
                 default idle / TP gear.
                 Note that any unused resistance set or evasion set can be used similarly.
+
+[Weapon Loadout Sets]
+/weapon /wl - toggles between using Weapon_Loadout sets.
+              can be used to specify different weapon loadouts. e.g. virtue stones etc.
+              an argument can be given to jump directly to the given weapon loadout.
+              e.g. /wl 3 will go directly to Weapon_Loadout_3
+```
+
+# Additional Default Commands for All Jobs:
+```
+[Regular Commands]
+/lock - locks or unlocks all equipment.
+/kite - toggles Kite set on/off.
+        /kite always takes precedence over any other set overrides active.
+        e.g. if you have /kite and /fireres toggled on,
+        it will equip the kite set instead of or on top of the fire resistance set.
+        this allows you to gain 12% move speed while keeping most of your fire resistance.
 
 [Special Commands]
 /lockset [number] - equips the given lockset and locks equipment
