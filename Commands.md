@@ -1,6 +1,6 @@
 ## Idle Commands for All Jobs:
 
-The following commands change the behaviour of what your character will idle or tp in as well as the behaviour of interim sets used while casting spells or performing ranged attacks etc.
+The following commands change the behaviour of what your character will idle (or potentially tp in) as well as the behaviour of interim sets used while casting spells or performing ranged attacks etc.
 
 - For Idle Sets i.e. Idle and IdleALT, when performing an action, SIRD sets will be used as interim sets.
 - For Override Sets i.e. PDT, MDT, Resistance, Evasion or the Override set, the same set will be used as interim sets.
