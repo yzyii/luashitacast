@@ -14,7 +14,7 @@ local hercules_ring = {
     -- Ring1 = 'Hercules\' Ring',
 }
 local valor_leggings = {
-    Legs = { Name = 'Vlr. Leggings +1', Priority = 60 },
+    Feet = { Name = 'Vlr. Leggings +1', Priority = 60 },
 }
 local arco_de_velocidad = {
     Range = { Name = 'Arco de Velocidad', Priority = 60 },
