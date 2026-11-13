@@ -677,3 +677,7 @@
 - BST - Adds an Enhancing and Stoneskin set
 - COR - First pass at implementing the job
 - Adds missing Remnant assault areas
+
+## v3.2.2
+- RDM - Adds automatic convert set usage rather than requiring manual input of /vert commands etc.
+- Adds an optional second /displayhead on ability usage to revert head equipment display if desired.

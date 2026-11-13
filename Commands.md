@@ -129,14 +129,14 @@ The following commands change the behaviour of what your character will idle (or
 [Regular Toggles]
 /fring  - toggles usage of Fencer's Ring.
 
-[Special Sets]
-These commands and sets were created before /lockset was implemented and do the same thing.
+[Legacy]
+Note that these are deprecated and only still here for legacy reasons / peace of mind.
+They also do essentially the same thing as /lockset.
+
 /vert   - equips the Convert set and locks equipment.
           use /lock to unlock again.
 /csstun - equips the Stun set and locks equipment.
           use /lock to unlock again.
-          Note that this is not actually required and only still here for legacy reasons
-          and peace of mind.
 ```
 
 ## Additional Commands for BLM:

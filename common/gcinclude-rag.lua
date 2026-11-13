@@ -8,6 +8,7 @@ local load_stylist = true -- Set to true to just load stylist on game start.
 -- The following 2 settings force your character model to blink on every spell cast or ability usage for the purposes of animation cancelling.
 local setStylistToBlinkSelf = true -- Forces blinks on visible equipment changes.
 local toggleDisplayHeadOnAbility = true -- Forces blinks on JA usage.
+local toggleDisplayHeadTwice = false -- Forces 2 blinks to revert head equipment display
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local resentment_cape = {
@@ -401,9 +402,17 @@ function gcinclude.DoItem()
 end
 
 function gcinclude.DoAbility()
-    if (toggleDisplayHeadOnAbility) then
-        AshitaCore:GetChatManager():QueueCommand(-1, '/displayhead')
+    local function displayHead()
+        AshitaCore:GetChatManager():QueueCommand(-1, '/displayhead');
     end
+
+    if (toggleDisplayHeadOnAbility) then
+        displayHead()
+        if (toggleDisplayHeadTwice) then
+            displayHead:once(0.8)
+        end
+    end
+
 end
 
 function gcinclude.DoWeaponBash()

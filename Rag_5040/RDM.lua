@@ -11,6 +11,10 @@ local drkSJMaxMP = nil -- The Max MP you have when /drk in your idle set
 
 local extraThreshold = 999 -- The minimum MP for which NukeExtra StoneskinExtra, and PhalanxExtra set will be used instead of regular sets (to allow additional nukes using max mp sets or specific defensive buffing above idle max mp thresholds)
 
+local convert_use_set_on_job_ability = true
+local convert_delay_swaps = true
+local convert_delay_swaps_in_seconds = 10
+
 -- Disabled on horizon_safe_mode
 local fencersRingForced = true -- Default /fring value
 local fencersRingMaxHP = 930
@@ -812,6 +816,23 @@ local nextFencersRingCheck = 0
 
 profile.HandleAbility = function()
     gcmage.DoAbility()
+
+    local action = gData.GetAction()
+    if (action.Name == 'Convert') then
+        local convertSet = action.Name
+        if (conquest:GetOutsideControl()) then
+            convertSet = 'ConvertOOR'
+        end
+
+        if (convert_use_set_on_job_ability) then
+            if (convert_delay_swaps) then
+                gFunc.LockSet(convertSet, convert_delay_swaps_in_seconds)
+            else
+                gFunc.EquipSet(convertSet)
+            end
+        end
+    end
+
     gcmage.DoWeaponBash()
 end
 
