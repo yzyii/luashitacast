@@ -582,6 +582,7 @@ end
 
 profile.HandleWeaponskill = function()
     gcmelee.DoWS()
+    gcmelee.DoFenrirsEarring()
 
     local action = gData.GetAction()
     if (action.Name == 'Evisceration') then

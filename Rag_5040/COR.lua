@@ -322,6 +322,7 @@ profile.HandleWeaponskill = function()
             end
         end
     else
+        gcmelee.DoFenrirsEarring()
         if (action.Name == 'Evisceration') then
             gFunc.EquipSet(sets.WS_Evisceration)
         elseif (action.Name == 'Vorpal Blade') then

@@ -588,6 +588,8 @@ profile.HandleWeaponskill = function()
         if (player.SubJob == 'SAM') then
             gFunc.EquipSet(sets.WS_SJ_SAM)
         end
+    else
+        gcmelee.DoFenrirsEarring()
     end
 end
 
