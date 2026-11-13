@@ -681,3 +681,5 @@
 ## v3.2.2
 - RDM - Adds automatic convert set usage rather than requiring manual input of /vert commands etc.
 - Adds an optional second /displayhead on ability usage to revert head equipment display if desired.
+- BST - Adds missing unimplemented handling for Rampage / Decimation sets.
+- Adds some missing usages of Fenris Earring for Melee Weapon Skills. Note that no guarantees are made to see if composition is correct.
