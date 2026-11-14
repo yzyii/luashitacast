@@ -195,7 +195,7 @@ local sets = {
         Neck = 'Temp. Torque',
         Ear1 = 'Melody Earring +1',
         Ear2 = 'Melody Earring +1',
-        Body = { Name = 'Monster Jackcoat +1', Priority = 60 },
+        Body = { Name = 'Mst. Jackcoat +1', Priority = 60 },
         Hands = { Name = 'Monster Gloves', Priority = 60 },
         Ring1 = 'Heavens Ring',
         Ring2 = 'Heavens Ring',
@@ -219,10 +219,10 @@ local sets = {
         Feet = { Name = 'Monster Gaiters', Priority = 60 },
     },
     Reward_Status_1 = { -- Paralyze, Poison, Blind
-        Body = { Name = 'Monster Jackcoat +1', Priority = 60 },
+        Body = { Name = 'Mst. Jackcoat +1', Priority = 60 },
     },
     Reward_Status_2 = { -- Weight, Slow, Silence
-        Body = { Name = 'Monster Jackcoat +1', Priority = 60 },
+        Body = { Name = 'Mst. Jackcoat +1', Priority = 60 },
     },
     Ready_Physical = {
         Head = { Name = 'Shep. Bonnet', Priority = 60 },
