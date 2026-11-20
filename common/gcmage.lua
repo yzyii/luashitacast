@@ -779,7 +779,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
         maxMP = ninSJMMP + addMP
     end
 
-    if (gcmage.ShouldSkipCast(maxMP, isNoModSpell)) then
+    if (gcmage.ShouldSkipCast(sets, maxMP, isNoModSpell)) then
         gcmage.EquipWeaponLoadout()
         do return end
     end
@@ -842,7 +842,7 @@ function gcmage.DoMidcast(sets, ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP
     end
 
     if (gcdisplay.GetToggle('Hate') == false or CureSpells:contains(action.Name) or not HateSpells:contains(action.Name)) then
-        gcmage.EquipStaff()
+        gcmage.EquipStaff(sets)
     end
     gcmage.EquipWeaponLoadout()
 end
@@ -857,7 +857,7 @@ function gcmage.EquipWeaponLoadout()
     end
 end
 
-function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
+function gcmage.ShouldSkipCast(sets, maxMP, isNoModSpell)
     local player = gData.GetPlayer()
     local action = gData.GetAction()
 
@@ -889,7 +889,7 @@ function gcmage.ShouldSkipCast(maxMP, isNoModSpell)
                     end
                 end
             end
-            gcmage.EquipStaff()
+            gcmage.EquipStaff(sets)
         end
     end
 
@@ -1265,7 +1265,7 @@ function gcmage.EquipDivine(maxMP, extraMPThreshold)
     gcmage.EquipObi(action)
 end
 
-function gcmage.EquipStaff()
+function gcmage.EquipStaff(sets)
     local action = gData.GetAction()
     local environment = gData.GetEnvironment()
     local player = gData.GetPlayer()
@@ -1277,7 +1277,11 @@ function gcmage.EquipStaff()
                 if (claustrum.Main and action.Skill ~= 'Healing Magic') then
                     staff = 'claustrum'
                 end
+                if (sets.bahamuts_staff.Main and action.Skill == 'Summoning Magic') then
+                    staff = 'bahamuts_staff'
+                end
             end
+			
             gFunc.EquipSet(staff)
 
             if (player.MainJob == 'BLM' and DiabolosPoleSpells:contains(action.Name)) then
