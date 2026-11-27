@@ -156,3 +156,24 @@ The SAM.lua includes the following example of a Weapon Loadout set which is used
 ```
 
 Note that for the purposes of TP retention, Weapon Loadout sets take precedence over all sets including sets typically used to override regular Idle / TP behaviour such as Elemental Resistance sets or Evasion sets. For this reason, it is suggested that you avoid using them as much as possible outside of defining the 4 TP slots - Main, Sub, Range and Ammo.
+
+Due to Weapon Loadout sets being equipped last or at the highest priority, equipping of items such as Elemental Staves or Cerberus Bow for Fire Resist etc. if tanking while engaged would either require:
+- use of an empty Weapon Loadout set to allow Idle and Override sets to continue using predefined weapons
+- careful thought as to how compose sets from base Idle / Override layers 
+- a unique Weapon Loadout set and toggling to use of that set 
+in order to switch to these items and potentially dump TP 
+
+## Default Set Hierarchies
+
+By Default, the following sets are equipped as follows:
+- Idle
+- IdleALT
+- TP sets if engaged
+- Override sets
+- Weapon Loadout sets
+
+Note that Override sets as noted in [Commands](Commands.md) will change interim set usage to that set while SIRD sets are only used for Idle and TP sets.
+
+Currently 2 Idle sets, ~10 Override sets and 3 Weapon Loadout sets are available with limits intentionally set low to discourage users from failing even more to configure their sets correctly.
+
+If more sets or configuration is required, it is suggested you duplicate your [JOB].lua file and use the /lac load <filename> command built into LAC.
