@@ -163,7 +163,7 @@ Due to Weapon Loadout sets being equipped last or at the highest priority, equip
 - a unique Weapon Loadout set and toggling to use of that set
 in order to switch to these items and potentially dump TP 
 
-## Default Set Hierarchies
+## Default "Idle" Set Hierarchies
 
 By Default, the following sets are equipped top down in order of increasing priority as follows:
 - Idle
