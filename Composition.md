@@ -1,6 +1,6 @@
 # Set Composition
 
-Sets within this collection of LuAshitacast profiles are typically grouped logically and equipped TOP DOWN by category.
+Sets within this collection of LuAshitacast profiles are typically grouped logically and equipped TOP DOWN by category. For technical users, this is essentially a z-notation override operation (⊕) or dictionary / map update.
 
 This results in a user being able to specify shared items across multiple sets without having to repeat themselves but also allows a reduced number of sets to be specified through logical composition when multiple options are combined.
 
@@ -165,7 +165,7 @@ in order to switch to these items and potentially dump TP
 
 ## Default Set Hierarchies
 
-By Default, the following sets are equipped as follows:
+By Default, the following sets are equipped top down in order of increasing priority as follows:
 - Idle
 - IdleALT
 - TP sets if engaged
