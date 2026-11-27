@@ -1273,11 +1273,11 @@ function gcmage.EquipStaff(sets)
     if (action.Skill ~= 'Enhancing Magic' and not string.match(action.Name, 'Utsusemi')) then
         if (use_staves_for_elemental_debuffs or not ElementalDebuffs:contains(action.Name) or player.MainJob ~= 'BLM') then
             local staff = ElementalStaffTable[action.Element]
-            if (player.MainJob == 'SMN' or player.MainJob == 'BLM') then
+            if (player.MainJob == 'SMN' or player.MainJob == 'RDM') then
                 if (claustrum.Main and action.Skill ~= 'Healing Magic') then
                     staff = 'claustrum'
                 end
-                if (sets.bahamuts_staff.Main and action.Skill == 'Summoning Magic') then
+                if (player.MainJob == 'SMN' and sets.bahamuts_staff.Main and action.Skill == 'Summoning Magic') then
                     staff = 'bahamuts_staff'
                 end
             end

@@ -55,13 +55,7 @@ local sets = {
         Legs = { Name = 'Blood Cuisses', Priority = 70 },
         Feet = 'Dst. Leggings +1',
     },
-    IdleALT = {
-        Head = 'Darksteel Cap +1',
-        Body = { Name = 'Blood Scale Mail', Priority = 70 },
-        Legs = 'Bahamut\'s Hose',
-        Back = { Name = 'Hexerei Cape', Priority = 50 },
-        Legs = 'Dst. Subligar +1',
-    },
+    IdleALT = {},
     IdleMaxMP = {
         Range = 'displaced',
         Ammo = { Name = 'Hedgehog Bomb', Priority = 50 },
@@ -253,7 +247,13 @@ local sets = {
         Legs = { Name = 'Blood Cuisses', Priority = 70 }, -- 21
         Feet = { Name = 'Scp. Leggings +1', Priority = 60 }, -- 7
     },
-    Evasion = {},
+    Evasion = {
+        Head = 'Darksteel Cap +1',
+        Body = { Name = 'Blood Scale Mail', Priority = 70 },
+        Legs = 'Bahamut\'s Hose',
+        Back = { Name = 'Hexerei Cape', Priority = 50 },
+        Legs = 'Dst. Subligar +1',
+    },
     Override = { -- An additional override set explicitly to be used for sets such as crafting, HELM, fishing, or any other special sets such as DRK 2HR, MNK Counter etc. n.b. Any unused Resist or Evasion set can be used similarly.
         Body = 'Field Tunica',
         Hands = 'Field Gloves',
