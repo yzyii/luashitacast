@@ -56,8 +56,11 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     IdleALT = {
+        Head = 'Darksteel Cap +1',
         Body = { Name = 'Blood Scale Mail', Priority = 70 },
         Legs = 'Bahamut\'s Hose',
+        Back = { Name = 'Hexerei Cape', Priority = 50 },
+        Legs = 'Dst. Subligar +1',
     },
     IdleMaxMP = {
         Range = 'displaced',
